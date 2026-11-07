@@ -1,0 +1,54 @@
+ACTA APERTURA — LAB CALENDARIO-HOD
+==================================
+fecha: 2026-08-29
+lab: hilo-corto/lab-calendario-hod/
+fuente: depuracion/depurar-all-4G-detail.txt (solo lectura)
+holdout: 72h cronológico · anti-Jaccard
+
+PREGUNTA
+  ¿hod×día de semana y pares de horas (ej. h8 lun–sáb vs mar–jue;
+  h8–h9 parecidos mar–mié) dejan olor con cinta larga?
+
+FORMA (no techo)
+  H1 spread DOW por hod
+  H2 foco h8 (ejemplo base humano)
+  H3 celdas hod×DOW vs mediana del hod
+  H4 pares mismo día · por DOW
+  H5 cruces +1d (tejido)
+  H6 holdout spreads
+
+VETO
+  Jaccard · chips · LIVE · álbum como juez
+
+SCRIPT
+  run_lab.py → reports/LAB_CALENDARIO_HOD.txt
+
+── P0 (2026-08-29) ──
+894h · 38d · holdout 72h.
+h08: spread 32.5 train pero vie/sab altos, dom bajo (n~5/celda).
+h08↔h09: r global −0.13; lun r=+0.90 · mie r=−0.87 (modulado DOW).
+Tejido: h10→h08 +1d r=+0.79 (reconfirma mirada 3D).
+Spread max hod: h02 (74.8), no h08.
+Veredicto P0: OLOR calendario fino; FRÍO como ley por celda.
+
+── R2 (2026-08-29) ──
+DOW×tramo holdout: 3 OK / 3 FLIP (vie/noc OK −17%; vie/tar FLIP).
+Costura tar h14 op→h15: med +18 train (VIVE patrón h15-lab).
+lun h08↔h09: r=0.90 n=5 — sigue frágil, test n=0.
+Tejido: holdout n≈1–3 por par — no revalida aún.
+Script: run_lab_r2.py → reports/LAB_CALENDARIO_HOD_R2.txt
+
+── R3 (2026-08-30) ──
+Holdout fino (72h + mitades A/B): INFO 3 OK / 1 FLIP.
+  VIVE: vie/noc −17% train / −11% test · sab/noc · vie/man.
+  FLIP: vie/tar (+15% train → −9% test).
+Costura h14→h15 vie/tar: n_op=1 en celda fina — patrón R2 (+18) no
+  revalida por DOW; h10→h11 tar op +12 (n=11) sigue descriptivo.
+h08 profundo: spread 32.5 train; vie/sab altos, dom bajo.
+  h08↔h14 r=+0.55 (mejor que h08↔h09 global −0.13).
+  lun h08↔h09 r=+0.90 n=5 — acumular, no cartel.
+Tejido h10→h08 r=0.79 train — test n≈2, sin revalidar.
+Borrador cartel Brillo: vie/noc + costura opaca (texto en reporte).
+Script: run_lab_r3.py → reports/LAB_CALENDARIO_HOD_R3.txt
+Veredicto R3: INFO 1 línea Brillo (vie/noc) pendiente OK humano.
+  Cable: no. h08: FRÍO ley / OLOR acumular.

@@ -1,0 +1,493 @@
+LOOK · hora en secuencia (frase, no promedio)
+Unidad = esta hora caminando, y la hora de al lado.
+Átomo = un hueco G→G de ESA hora + si la G que abre es estirada (≥100 s).
+No se saca «de N horas, M hacen X». Eso ya se sabe que aplasta.
+Cero tip. Cero cable. Extra (tipo 5) no sienta.
+
+DATA
+  train histórico: 1093 horas con G núcleo
+  hold 72 h: no se mezcla en las películas
+  fuente: depurar-all-4G-detail.txt (mismo loader que FORMAS / ELÁSTICO)
+  NO es la cola de ~900 anclas G+7.
+
+ÁTOMOS (vocabulario de la cinta, no de un relato)
+  T  tren  (0 R · 2G pegadas)
+  C  casi  (1 R · G-R-G)
+  k  corto (2–4 R · paso / G-RR-G)
+  m  medio (5–8 R · el 6–7 del vivo)
+  L  cola  (9–15 R · el 12–15 del vivo)
+  S  sequía (≥16 R · 20 y más)
+  E  marca la G que ABRE el hueco si duró ≥100 s (estirada).
+  ·  G corta.  El número pegado es cuántas R hubo.
+  Ejemplo de token: 21E m6 = G estirada en :21, luego 6 R, luego otra G.
+
+════════════════════════════════ PELÍCULAS DE DÍAS ════════════════════════════════
+Cada renglón es UNA hora, de :00 a :59, en el orden en que se tiró.
+Se lee de izquierda a derecha. No se promedia con la de al lado.
+E=estiradas de esa hora. T=trenes (hueco 0) de esa hora.
+
+── día 240726  ·  24 horas (histórico, no la cola) ──
+  h0-240726    apag mesa  nG=10 E=1 T=1
+      04·k4  09·k3  13·k4  18·k3  22·m8  31·C1  34·m8  42·L12  54ET0  →56
+   └ costura h0-240726→h1-240726: cerró · @56 · abre k
+  h1-240726    opac mesa  nG=10 E=0 T=0
+      00·k2  04·m7  11·k3  15·m6  22·m6  29·m5  35·m7  43·L10  54·C1  →56
+   └ costura h1-240726→h2-240726: cerró · @56 · abre k
+  h2-240726    opac mesa  nG=12 E=1 T=2
+      06·k2  09·k4  14·L10  25·T0  27·k4  32·k4  37·m6  44·k3  48·C1  51·m5  56ET0  →58
+   └ costura h2-240726→h3-240726: cerró · @58 · abre m
+  h3-240726    norm mesa  nG=12 E=3 T=3
+      14·m8  22ET0  23·k2  27ET0  29·k2  32·k2  36·k2  39·k2  43ET0  45·m5  52·C1  →54
+   └ costura h3-240726→h4-240726: cerró · @54 · abre T
+  h4-240726    norm cupo+ nG=13 E=2 T=6
+      11·T0  12·T0  13·k2  17·T0  19·k2  22·T0  23·k4  28·m5  34·L10  45ET0  48ET0  49·m7  →57
+   └ costura h4-240726→h5-240726: cerró · @57 · abre k
+  h5-240726    norm mesa  nG=9  E=1 T=1
+      01·k3  06·m8  13ET0  16·L11  27·m6  35·k2  38·m5  46·k3  →50
+   └ costura h5-240726→h6-240726: cerró · @50 · abre L
+  h6-240726    rica cupo+ nG=16 E=3 T=5
+      01·L13  14·k2  18·T0  19·C1  23ET0  25·C1  27ET0  29·k3  33·C1  36ET0  38·C1  41·L9  50·C1  54·C1  56·T0  →58
+   └ costura h6-240726→h7-240726: cerró · @58 · abre C
+  h7-240726    fuer mesa  nG=11 E=2 T=3
+      03·C1  06·L13  20·T0  22ET0  24·k2  27·C1  29·L13  42·C1  45·m8  54ET0  →56
+   └ costura h7-240726→h8-240726: cerró · @56 · abre L
+  h8-240726    opac mesa  nG=10 E=1 T=2
+      02·L9  10ET0  12·S18  28·m7  36·C1  39·C1  42·T0  43·L14  56·C1  →59
+   └ costura h8-240726→h9-240726: cerró · @59 · abre C
+  h9-240726    rica mesa  nG=9  E=0 T=0
+      00·C1  03·m6  09·k3  13·C1  16·L12  27·m8  34·S17  49·m6  →56
+   └ costura h9-240726→h10-240726: cerró · @56 · abre m
+  h10-240726   opac mesa  nG=11 E=2 T=2
+      00·m7  08·C1  10·m6  17·m6  24·C1  26ET0  28ET0  30·m7  38·k2  48·k4  →53
+   └ costura h10-240726→h11-240726: cerró · @53 · abre k
+  h11-240726   apag mesa  nG=11 E=2 T=3
+      05·k3  09·L15  22·m7  30Ek2  35·T0  37·k4  42·m7  50·T0  51·m6  58·T0  →59E
+   └ costura h11-240726→h12-240726: cerró E @59 · abre C
+  h12-240726   fuer mesa  nG=11 E=0 T=2
+      01·C1  04·T0  05·L10  15·C1  18·T0  20·k3  24·L12  35·m5  42·k2  45·L11  →57
+   └ costura h12-240726→h13-240726: cerró · @57 · abre m
+  h13-240726   norm mesa  nG=10 E=0 T=1
+      04·m7  11·L10  22·T0  23·C1  26·k2  29·k3  33·L11  44·m7  51·k2  →54
+   └ costura h13-240726→h14-240726: cerró · @54 · abre m
+  h14-240726   norm mesa  nG=8  E=0 T=0
+      05·m7  12·L9  22·C1  24·L10  35·k3  39·m7  47·m7  →55
+   └ costura h14-240726→h15-240726: cerró · @55 · abre k
+  h15-240726   norm mesa  nG=8  E=0 T=0
+      07·k4  12·m7  19·m5  26·k3  30·m8  39·k2  43·L11  →55
+   └ costura h15-240726→h16-240726: cerró · @55 · abre L
+  h16-240726   norm mesa  nG=11 E=0 T=1
+      05·L9  14·k2  17·k2  20·m5  26·k3  31·k4  37·k2  40·m8  49·k3  53·T0  →54
+   └ costura h16-240726→h17-240726: cerró · @54 · abre L
+  h17-240726   opac mesa  nG=9  E=0 T=1
+      02·L10  12·k4  16·L12  28·m6  35·k2  38·L9  48·m5  55·T0  →56
+   └ costura h17-240726→h18-240726: cerró · @56 · abre k
+  h18-240726   apag floja nG=6  E=1 T=1
+      27·k4  32·L11  44·k3  48ET0  50·k4  →56
+   └ costura h18-240726→h19-240726: cerró · @56 · abre L
+  h19-240726   apag floja nG=5  E=0 T=0
+      19·L11  29·L9  39·k2  44·C1  →47
+   └ costura h19-240726→h20-240726: cerró · @47 · abre k
+  h20-240726   opac cupo+ nG=13 E=1 T=2
+      02·k2  05·L11  16·k2  20·k2  23·C1  26·T0  27·k2  31·k2  34·m6  41ET0  43·L10  54·C1  →56
+   └ costura h20-240726→h21-240726: cerró · @56 · abre C
+  h21-240726   norm mesa  nG=9  E=0 T=0
+      01·C1  04·m5  09·L12  21·L9  31·C1  34·C1  36·L10  47·m6  →54
+   └ costura h21-240726→h22-240726: cerró · @54 · abre T
+  h22-240726   fuer cupo+ nG=13 E=1 T=2
+      01ET0  03·T0  05·k2  08·k2  12·k2  16·k3  19·S16  37·C1  40·C1  42·C1  45·k2  49·k4  →55
+   └ costura h22-240726→h23-240726: cerró · @55 · abre k
+  h23-240726   apag floja nG=7  E=0 T=0
+      10·k2  13·C1  15·L10  25·m5  31·S23  54·C1  →56
+
+── día 250726  ·  24 horas (histórico, no la cola) ──
+  h0-250726    opac cupo+ nG=13 E=1 T=2
+      01·C1  03ET0  05·T0  07·m6  13·k3  18·m6  24·k2  27·L10  37·m5  43·m5  49·k3  53·k3  →57
+   └ costura h0-250726→h1-250726: cerró · @57 · abre L
+  h1-250726    apag floja nG=7  E=0 T=0
+      00·L14  14·k3  19·S31  46·k4  51·C1  53·k2  →56
+   └ costura h1-250726→h2-250726: cerró · @56 · abre k
+  h2-250726    norm mesa  nG=11 E=1 T=1
+      02·k4  08·C1  10·k2  13·C1  16·L10  27ET0  29·C1  31·C1  34·k4  40·L15  →55
+   └ costura h2-250726→h3-250726: cerró · @55 · abre C
+  h3-250726    norm mesa  nG=12 E=1 T=4
+      02·C1  04·T0  06·T0  08·k2  11·L13  23·L14  37·T0  38ET0  41·C1  43·k3  47·m8  →56
+   └ costura h3-250726→h4-250726: cerró · @56 · abre k
+  h4-250726    opac mesa  nG=10 E=3 T=3
+      07·k3  11ET0  14·k4  19·k3  24·k2  27·m5  33ET0  35·k3  39ET0  →40
+   └ costura h4-250726→h5-250726: cerró · @40 · abre k
+  h5-250726    fuer cupo+ nG=15 E=3 T=5
+      05·k2  08·C1  11ET0  12·k3  17·T0  18·T0  20·C1  22ET0  24·m5  31·L10  42·k2  45·m5  52·k3  56ET0  →58
+   └ costura h5-250726→h6-250726: cerró · @58 · abre L
+  h6-250726    apag floja nG=7  E=1 T=2
+      00·L10  10·T0  12·k2  15·S39  49·k3  54ET0  →56
+   └ costura h6-250726→h7-250726: cerró · @56 · abre T
+  h7-250726    opac cupo+ nG=14 E=1 T=5
+      00·T0  01ET0  03·L9  13·C1  15·k2  19·L9  28·T0  30·T0  31·m5  37·m5  43·T0  45·L9  54·C1  →57
+   └ costura h7-250726→h8-250726: cerró · @57 · abre m
+  h8-250726    norm floja nG=6  E=1 T=1
+      05·m7  12ET0  15·m6  21·S26  45·k3  →49
+   └ costura h8-250726→h9-250726: cerró · @49 · abre m
+  h9-250726    rica mesa  nG=12 E=3 T=4
+      03·m5  10ET0  12·T0  13·k2  17·L14  30ET0  32ET0  34·k4  39·C1  42·k3  46·k2  →51
+   └ costura h9-250726→h10-250726: cerró · @51 · abre k
+  h10-250726   rica mesa  nG=8  E=1 T=0
+      02·k4  07·S17  22·m8  31·m5  37·L11  49·m6  55·C1  →58E
+   └ costura h10-250726→h11-250726: cerró E @58 · abre k
+  h11-250726   apag cupo+ nG=13 E=0 T=3
+      00·k3  04·k3  08·T0  10·k3  14·k2  17·k3  21·T0  23·m5  28·m5  34·T0  36·L12  47·m8  →56
+   └ costura h11-250726→h12-250726: cerró · @56 · abre S
+  h12-250726   apag mesa  nG=8  E=2 T=3
+      01·S16  17·k3  21·m8  30·m5  36ET0  38·T0  39ET0  →41
+   └ costura h12-250726→h13-250726: cerró · @41 · abre k
+  h13-250726   norm mesa  nG=9  E=0 T=0
+      02·k3  06·S17  22·L10  32·m5  38·m5  44·m7  52·C1  54·C1  →57
+   └ costura h13-250726→h14-250726: cerró · @57 · abre m
+  h14-250726   opac mesa  nG=9  E=1 T=2
+      10·m6  17·k4  22·L11  33·T0  34ET0  36·m7  44·k2  47·m7  →54
+   └ costura h14-250726→h15-250726: cerró · @54 · abre C
+  h15-250726   rica mesa  nG=12 E=1 T=1
+      07·C1  10·C1  12·m6  18·C1  21ET0  23·L10  32·k2  35·k3  40·m5  46·k2  49·C1  →52
+   └ costura h15-250726→h16-250726: cerró · @52 · abre L
+  h16-250726   norm cupo+ nG=13 E=1 T=1
+      01·L10  11·C1  13·k4  18·k2  22·k3  26·m7  33ET0  35·k3  38·k3  43·C1  45·k4  49·m8  →57
+   └ costura h16-250726→h17-250726: cerró · @57 · abre k
+  h17-250726   rica mesa  nG=12 E=2 T=2
+      02·k3  07·m5  12·L9  22ET0  24·k3  29·m5  35·k2  38ET0  40·k4  45·k3  50·k4  →55
+   └ costura h17-250726→h18-250726: cerró · @55 · abre m
+  h18-250726   norm cupo+ nG=13 E=2 T=4
+      17·m8  25·C1  29·k4  33·k2  37·m5  42·C1  45·T0  46·C1  49ET0  50ET0  52·T0  54·C1  →56
+   └ costura h18-250726→h19-250726: cerró · @56 · abre m
+  h19-250726   norm cupo+ nG=13 E=0 T=2
+      03·m8  11·k4  16·k4  21·k2  24·T0  26·k4  30·m6  37·k2  41·T0  42·m5  48·k4  53·m5  →59
+   └ costura h19-250726→h20-250726: cerró · @59 · abre T
+  h20-250726   apag mesa  nG=8  E=1 T=2
+      24·T0  25·k2  29ET0  30·k3  35·C1  37·L15  51·m6  →58
+   └ costura h20-250726→h21-250726: cerró · @58 · abre S
+  h21-250726   opac mesa  nG=8  E=0 T=1
+      08·S20  26·T0  28·k3  31·C1  34·k2  37·k2  40·S18  →56
+   └ costura h21-250726→h22-250726: cerró · @56 · abre m
+  h22-250726   opac floja nG=7  E=1 T=1
+      03·m6  10·L11  21·L15  34·m7  41ET0  44·m8  →52
+   └ costura h22-250726→h23-250726: cerró · @52 · abre k
+  h23-250726   apag mesa  nG=11 E=1 T=2
+      01·k3  05·L10  16·L12  27·k2  30ET0  32·m6  39·k4  44·T0  45·C1  48·m7  →55
+
+── día 260726  ·  24 horas (histórico, no la cola) ──
+  h0-260726    norm cupo+ nG=14 E=2 T=5
+      01·k2  04·k3  09·k2  12ET0  14·L10  26·C1  28·T0  30ET0  32·k2  35·S19  53·T0  54·T0  56·C1  →58
+   └ costura h0-260726→h1-260726: cerró · @58 · abre S
+  h1-260726    rica cupo+ nG=13 E=1 T=4
+      01·S18  18·m6  25·k4  30·C1  33·k3  37ET0  39·k2  43·T0  44·m5  50·T0  52·T0  53·k4  →58
+   └ costura h1-260726→h2-260726: cerró · @58 · abre C
+  h2-260726    fuer cupo+ nG=16 E=2 T=2
+      01·C1  03·k2  07·C1  09·C1  12·C1  15·k2  19·k4  24·C1  26ET0  27·k4  32·m5  38·k2  41·k2  45ET0  47·m5  →53
+   └ costura h2-260726→h3-260726: cerró · @53 · abre m
+  h3-260726    rica mesa  nG=9  E=0 T=0
+      05·m5  11·L12  24·k3  29·m6  36·C1  38·C1  41·k2  44·L13  →57
+   └ costura h3-260726→h4-260726: cerró · @57 · abre S
+  h4-260726    apag mesa  nG=11 E=1 T=2
+      01·S16  15·C1  18·L12  30·k2  34·T0  36·m5  42ET0  44·C1  46·k2  50·C1  →53
+   └ costura h4-260726→h5-260726: cerró · @53 · abre k
+  h5-260726    opac mesa  nG=11 E=1 T=2
+      03·k3  07·T0  09·k3  13·k4  18·m5  24·C1  27·m5  32·L11  43·m8  51ET0  →53
+   └ costura h5-260726→h6-260726: cerró · @53 · abre k
+  h6-260726    norm mesa  nG=8  E=0 T=1
+      00·k4  05·C1  08·m7  16·C1  19·L10  30·S18  47·T0  →49
+   └ costura h6-260726→h7-260726: cerró · @49 · abre k
+  h7-260726    opac mesa  nG=12 E=1 T=2
+      05·k4  10·C1  13·C1  15·m6  23·T0  24·k2  28·C1  30·C1  32·L11  44ET0  45·k2  →48
+   └ costura h7-260726→h8-260726: cerró · @48 · abre m
+  h8-260726    rica floja nG=6  E=0 T=0
+      05·m6  12·L15  25·k2  29·L15  44·m6  →51
+   └ costura h8-260726→h9-260726: cerró · @51 · abre m
+  h9-260726    opac mesa  nG=9  E=1 T=2
+      07·m6  14ET0  16·C1  18·m5  24·T0  25·L9  35·k4  40·S19  →58
+   └ costura h9-260726→h10-260726: cerró · @58 · abre T
+  h10-260726   norm cupo+ nG=17 E=2 T=6
+      00·T0  02·k4  07·m8  15ET0  18·k2  21·T0  22·k3  27·C1  29·T0  30·k4  35·C1  38·k2  41·m5  48·m8  56·T0  58ET0  →59
+   └ costura h10-260726→h11-260726: cerró · @59 · abre T
+  h11-260726   apag mesa  nG=10 E=0 T=1
+      03·T0  04·L10  14·S19  31·k3  35·k4  40·m7  48·k2  51·C1  54·k4  →59
+   └ costura h11-260726→h12-260726: cerró · @59 · abre m
+  h12-260726   norm mesa  nG=9  E=0 T=1
+      09·m8  17·m5  24·T0  25·k2  28·C1  31·k4  36·k2  40·m5  →46
+   └ costura h12-260726→h13-260726: cerró · @46 · abre m
+  h13-260726   opac floja nG=7  E=0 T=0
+      01·m5  08·k2  11·m5  17·k3  21·L11  33·S22  →54
+   └ costura h13-260726→h14-260726: cerró · @54 · abre k
+  h14-260726   rica mesa  nG=12 E=0 T=2
+      05·k2  09·k3  13·L9  23·k3  26·T0  28·C1  32·m8  41·C1  44·T0  45·k3  49·m7  →58
+   └ costura h14-260726→h15-260726: cerró · @58 · abre T
+  h15-260726   norm cupo+ nG=14 E=1 T=5
+      03·T0  04ET0  06·T0  08·C1  10·T0  12·m8  21·k4  26·k2  29·L11  39·C1  42·m7  49·m5  56·T0  →57
+   └ costura h15-260726→h16-260726: cerró · @57 · abre C
+  h16-260726   opac floja nG=7  E=0 T=0
+      03·C1  05·k3  09·S18  27·L11  38·k3  44·m7  →51
+   └ costura h16-260726→h17-260726: cerró · @51 · abre m
+  h17-260726   apag mesa  nG=9  E=1 T=1
+      00·m7  08·T0  09·L11  20·m8  29·k2  32·k4  41Em8  51·k4  →56
+   └ costura h17-260726→h18-260726: cerró · @56 · abre k
+  h18-260726   opac mesa  nG=10 E=2 T=3
+      03·k2  06ET0  08·L14  21·S22  42ET0  44·k3  49·T0  50·C1  52·k2  →56
+   └ costura h18-260726→h19-260726: cerró · @56 · abre L
+  h19-260726   fuer mesa  nG=10 E=1 T=1
+      01·L12  14·k2  17·m5  24·S18  40·C1  43ET0  45·m5  51·k3  56·k2  →59
+   └ costura h19-260726→h20-260726: cerró · @59 · abre S
+  h20-260726   apag floja nG=7  E=0 T=0
+      02·S16  17·C1  20·k2  24·m7  31·C1  33·S21  →52
+   └ costura h20-260726→h21-260726: cerró · @52 · abre k
+  h21-260726   opac mesa  nG=12 E=1 T=1
+      02·k3  07·C1  10·k4  15·L12  27·k3  30ET0  32·m6  39·m6  45·k3  49·C1  51·m5  →57
+   └ costura h21-260726→h22-260726: cerró · @57 · abre k
+  h22-260726   norm mesa  nG=10 E=0 T=0
+      02·k4  07·m7  14·C1  17·C1  19·k2  23·k2  26·L14  40·L11  53·k3  →57
+   └ costura h22-260726→h23-260726: cerró · @57 · abre k
+  h23-260726   apag floja nG=2  E=0 T=0
+      54·k4  →59
+
+════════════════════════════════ DESPUÉS DEL PRIMER TREN ════════════════════════════════
+Oficio que pediste: si pasó un tren al inicio, ¿se espera otro?
+No es un %. Son películas. El corte es el PRIMER T de esa hora;
+a la derecha queda el resto de LA MISMA hora.
+
+— tren en los primeros 3 huecos (arranque de hora) —
+  h10-230726   norm mesa  nG=11 E=1 T=3  volvió T
+      06·L11  17ET0  |  18·T0  20·k3  24·m8  32·T0  33·m7  40·m7  47·k2  50·m5
+  h13-230726   fuer mesa  nG=9  E=2 T=2  volvió T
+      02·S16  18·k3  21ET0  |  24·C1  26·C1  29·k4  34·S17  50ET0
+  h18-230726   rica cupo+ nG=13 E=1 T=1  no volvió T
+      03·k4  08ET0  |  10·k2  14·k2  18·C1  21·m6  28·k2  31·C1  34·k2  37·C1  40·S16  55·k3
+  h20-230726   rica mesa  nG=9  E=0 T=1  no volvió T
+      10·k3  14·m5  21·T0  |  22·k3  27·k3  31·L11  42·L11  52·k3
+  h3-240726    norm mesa  nG=12 E=3 T=3  volvió T
+      14·m8  22ET0  |  23·k2  27ET0  29·k2  32·k2  36·k2  39·k2  43ET0  45·m5  52·C1
+  h4-240726    norm cupo+ nG=13 E=2 T=6  volvió T
+      11·T0  |  12·T0  13·k2  17·T0  19·k2  22·T0  23·k4  28·m5  34·L10  45ET0  48ET0  49·m7
+  h5-240726    norm mesa  nG=9  E=1 T=1  no volvió T
+      01·k3  06·m8  13ET0  |  16·L11  27·m6  35·k2  38·m5  46·k3
+  h6-240726    rica cupo+ nG=16 E=3 T=5  volvió T
+      01·L13  14·k2  18·T0  |  19·C1  23ET0  25·C1  27ET0  29·k3  33·C1  36ET0  38·C1  41·L9  50·C1  54·C1  56·T0
+  h7-240726    fuer mesa  nG=11 E=2 T=3  volvió T
+      03·C1  06·L13  20·T0  |  22ET0  24·k2  27·C1  29·L13  42·C1  45·m8  54ET0
+  h8-240726    opac mesa  nG=10 E=1 T=2  volvió T
+      02·L9  10ET0  |  12·S18  28·m7  36·C1  39·C1  42·T0  43·L14  56·C1
+  h12-240726   fuer mesa  nG=11 E=0 T=2  volvió T
+      01·C1  04·T0  |  05·L10  15·C1  18·T0  20·k3  24·L12  35·m5  42·k2  45·L11
+  h13-240726   norm mesa  nG=10 E=0 T=1  no volvió T
+      04·m7  11·L10  22·T0  |  23·C1  26·k2  29·k3  33·L11  44·m7  51·k2
+
+— tren más tarde (no es el arranque); el resto de ESA hora —
+  h12-230726   fuer mesa  nG=12 E=1 T=1  no volvió T
+      03·k2  06·C1  10·k4  14·m5  20·k3  24·k2  28·m6  34·m7  41·L9  49·C1  52ET0  |  (se acabó la hora)
+  h15-230726   fuer mesa  nG=12 E=1 T=4  volvió T
+      05·C1  08·S17  24·m7  31ET0  |  33·T0  34·T0  36·T0  37·k2  41·k2  43·m6  51·k2
+  h19-230726   rica mesa  nG=10 E=1 T=2  volvió T
+      12·L11  25·k3  30·m7  37·k3  42ET0  |  44·T0  45·m5  51·C1  54·k4
+  h21-230726   opac mesa  nG=11 E=0 T=1  no volvió T
+      02·k4  07·k4  12·L14  25·k4  30·T0  |  31·m5  37·C1  39·k3  43·k3  47·m7
+  h22-230726   rica cupo+ nG=15 E=0 T=3  volvió T
+      13·k2  17·k3  21·k3  26·C1  28·k2  32·k2  35·C1  37·T0  |  39·m5  45·T0  46·C1  49·T0  51·k2  54·k3
+  h23-230726   norm cupo+ nG=13 E=2 T=3  volvió T
+      03·C1  05·S18  21·k4  27·k3  31ET0  |  33·C1  36·T0  37ET0  39·C1  42·k4  48·m6  54·C1
+  h0-240726    apag mesa  nG=10 E=1 T=1  no volvió T
+      04·k4  09·k3  13·k4  18·k3  22·m8  31·C1  34·m8  42·L12  54ET0  |  (se acabó la hora)
+  h2-240726    opac mesa  nG=12 E=1 T=2  volvió T
+      06·k2  09·k4  14·L10  25·T0  |  27·k4  32·k4  37·m6  44·k3  48·C1  51·m5  56ET0
+
+════════════════════════════════ ESTIRADA vs TREN (mientras camina) ════════════════════════════════
+A cada hueco se anota el marcador E/T ACUMULADO de ESA hora.
+Así se ve si «vienen más estiradas que trenes» SIN promediar mesas.
+Doce horas del arranque del corpus, distintas tintas de tono.
+
+  h10-230726   norm mesa  nG=11 E=1 T=3
+      06·L11[0/0]  17ET0[1/1]  18·T0[1/2]  20·k3[1/2]  24·m8[1/2]  32·T0[1/3]  33·m7[1/3]  40·m7[1/3]  47·k2[1/3]  50·m5[1/3]
+  h11-230726   opac mesa  nG=9  E=0 T=0
+      01·m7[0/0]  08·L11[0/0]  20·k2[0/0]  23·L10[0/0]  33·k2[0/0]  37·k3[0/0]  41·L14[0/0]  53·k2[0/0]
+  h12-230726   fuer mesa  nG=12 E=1 T=1
+      03·k2[0/0]  06·C1[0/0]  10·k4[0/0]  14·m5[0/0]  20·k3[0/0]  24·k2[0/0]  28·m6[0/0]  34·m7[0/0]  41·L9[0/0]  49·C1[0/0]  52ET0[1/1]
+  h13-230726   fuer mesa  nG=9  E=2 T=2
+      02·S16[0/0]  18·k3[0/0]  21ET0[1/1]  24·C1[1/1]  26·C1[1/1]  29·k4[1/1]  34·S17[1/1]  50ET0[2/2]
+  h15-230726   fuer mesa  nG=12 E=1 T=4
+      05·C1[0/0]  08·S17[0/0]  24·m7[0/0]  31ET0[1/1]  33·T0[1/2]  34·T0[1/3]  36·T0[1/4]  37·k2[1/4]  41·k2[1/4]  43·m6[1/4]  51·k2[1/4]
+  h16-230726   opac floja nG=7  E=0 T=0
+      10·L13[0/0]  23·k4[0/0]  29·m8[0/0]  37·L9[0/0]  47·k4[0/0]  51·k3[0/0]
+  h17-230726   apag mesa  nG=9  E=0 T=0
+      03·m6[0/0]  10·L10[0/0]  20·S17[0/0]  36·m5[0/0]  41·m5[0/0]  47·k3[0/0]  51·C1[0/0]  54·k2[0/0]
+  h18-230726   rica cupo+ nG=13 E=1 T=1
+      03·k4[0/0]  08ET0[1/1]  10·k2[1/1]  14·k2[1/1]  18·C1[1/1]  21·m6[1/1]  28·k2[1/1]  31·C1[1/1]  34·k2[1/1]  37·C1[1/1]  40·S16[1/1]  55·k3[1/1]
+  h19-230726   rica mesa  nG=10 E=1 T=2
+      12·L11[0/0]  25·k3[0/0]  30·m7[0/0]  37·k3[0/0]  42ET0[1/1]  44·T0[1/2]  45·m5[1/2]  51·C1[1/2]  54·k4[1/2]
+  h20-230726   rica mesa  nG=9  E=0 T=1
+      10·k3[0/0]  14·m5[0/0]  21·T0[0/1]  22·k3[0/1]  27·k3[0/1]  31·L11[0/1]  42·L11[0/1]  52·k3[0/1]
+  h21-230726   opac mesa  nG=11 E=0 T=1
+      02·k4[0/0]  07·k4[0/0]  12·L14[0/0]  25·k4[0/0]  30·T0[0/1]  31·m5[0/1]  37·C1[0/1]  39·k3[0/1]  43·k3[0/1]  47·m7[0/1]
+  h23-230726   norm cupo+ nG=13 E=2 T=3
+      03·C1[0/0]  05·S18[0/0]  21·k4[0/0]  27·k3[0/0]  31ET0[1/1]  33·C1[1/1]  36·T0[1/2]  37ET0[2/3]  39·C1[2/3]  42·k4[2/3]  48·m6[2/3]  54·C1[2/3]
+  [E/T] = estiradas / trenes VISTOS hasta ese hueco (incluye ese).
+
+════════════════════════════════ SÍLABAS (pares que la cinta habla) ════════════════════════════════
+Se camina hueco→hueco DENTRO de la hora. Un par = dos átomos seguidos.
+Esto no es «% de horas». Es el idioma: qué par EXISTE, con UNA película.
+Tus ejemplos (T, C, m, L) son átomos. Las sílabas de abajo son otras.
+
+— pares que NO son la coreografía G-6 / G-12 / 2G —
+  T→k   tren   luego corto
+      h10-230726   norm mesa  nG=11 E=1 T=3
+      06·L11  17ET0  18·T0  20·k3  24·m8  32·T0  33·m7  40·m7  47·k2  50·m5  →56
+  T→S   tren   luego sequía
+      h8-240726    opac mesa  nG=10 E=1 T=2
+      02·L9  10ET0  12·S18  28·m7  36·C1  39·C1  42·T0  43·L14  56·C1  →59
+  C→C   casi   luego casi
+      h13-230726   fuer mesa  nG=9  E=2 T=2
+      02·S16  18·k3  21ET0  24·C1  26·C1  29·k4  34·S17  50ET0  →52
+  C→k   casi   luego corto
+      h12-230726   fuer mesa  nG=12 E=1 T=1
+      03·k2  06·C1  10·k4  14·m5  20·k3  24·k2  28·m6  34·m7  41·L9  49·C1  52ET0  →54
+  C→m   casi   luego medio
+      h18-230726   rica cupo+ nG=13 E=1 T=1
+      03·k4  08ET0  10·k2  14·k2  18·C1  21·m6  28·k2  31·C1  34·k2  37·C1  40·S16  55·k3  →59
+  C→L   casi   luego cola
+      h6-240726    rica cupo+ nG=16 E=3 T=5
+      01·L13  14·k2  18·T0  19·C1  23ET0  25·C1  27ET0  29·k3  33·C1  36ET0  38·C1  41·L9  50·C1  54·C1  56·T0  →58
+  C→S   casi   luego sequía
+      h15-230726   fuer mesa  nG=12 E=1 T=4
+      05·C1  08·S17  24·m7  31ET0  33·T0  34·T0  36·T0  37·k2  41·k2  43·m6  51·k2  →54
+  k→T   corto  luego tren
+      h13-230726   fuer mesa  nG=9  E=2 T=2
+      02·S16  18·k3  21ET0  24·C1  26·C1  29·k4  34·S17  50ET0  →52
+  k→C   corto  luego casi
+      h12-230726   fuer mesa  nG=12 E=1 T=1
+      03·k2  06·C1  10·k4  14·m5  20·k3  24·k2  28·m6  34·m7  41·L9  49·C1  52ET0  →54
+  k→k   corto  luego corto
+      h11-230726   opac mesa  nG=9  E=0 T=0
+      01·m7  08·L11  20·k2  23·L10  33·k2  37·k3  41·L14  53·k2  →56
+  k→m   corto  luego medio
+      h10-230726   norm mesa  nG=11 E=1 T=3
+      06·L11  17ET0  18·T0  20·k3  24·m8  32·T0  33·m7  40·m7  47·k2  50·m5  →56
+  k→L   corto  luego cola
+      h11-230726   opac mesa  nG=9  E=0 T=0
+      01·m7  08·L11  20·k2  23·L10  33·k2  37·k3  41·L14  53·k2  →56
+  k→S   corto  luego sequía
+      h13-230726   fuer mesa  nG=9  E=2 T=2
+      02·S16  18·k3  21ET0  24·C1  26·C1  29·k4  34·S17  50ET0  →52
+  m→C   medio  luego casi
+      h19-230726   rica mesa  nG=10 E=1 T=2
+      12·L11  25·k3  30·m7  37·k3  42ET0  44·T0  45·m5  51·C1  54·k4  →59
+  m→k   medio  luego corto
+      h10-230726   norm mesa  nG=11 E=1 T=3
+      06·L11  17ET0  18·T0  20·k3  24·m8  32·T0  33·m7  40·m7  47·k2  50·m5  →56
+  m→m   medio  luego medio
+      h10-230726   norm mesa  nG=11 E=1 T=3
+      06·L11  17ET0  18·T0  20·k3  24·m8  32·T0  33·m7  40·m7  47·k2  50·m5  →56
+  m→S   medio  luego sequía
+      h9-240726    rica mesa  nG=9  E=0 T=0
+      00·C1  03·m6  09·k3  13·C1  16·L12  27·m8  34·S17  49·m6  →56
+  L→C   cola   luego casi
+      h12-230726   fuer mesa  nG=12 E=1 T=1
+      03·k2  06·C1  10·k4  14·m5  20·k3  24·k2  28·m6  34·m7  41·L9  49·C1  52ET0  →54
+  L→k   cola   luego corto
+      h11-230726   opac mesa  nG=9  E=0 T=0
+      01·m7  08·L11  20·k2  23·L10  33·k2  37·k3  41·L14  53·k2  →56
+  L→L   cola   luego cola
+      h20-230726   rica mesa  nG=9  E=0 T=1
+      10·k3  14·m5  21·T0  22·k3  27·k3  31·L11  42·L11  52·k3  →57
+  L→S   cola   luego sequía
+      h17-230726   apag mesa  nG=9  E=0 T=0
+      03·m6  10·L10  20·S17  36·m5  41·m5  47·k3  51·C1  54·k2  →57
+  S→T   sequía luego tren
+      h13-230726   fuer mesa  nG=9  E=2 T=2
+      02·S16  18·k3  21ET0  24·C1  26·C1  29·k4  34·S17  50ET0  →52
+  S→C   sequía luego casi
+      h22-240726   fuer cupo+ nG=13 E=1 T=2
+      01ET0  03·T0  05·k2  08·k2  12·k2  16·k3  19·S16  37·C1  40·C1  42·C1  45·k2  49·k4  →55
+  S→k   sequía luego corto
+      h13-230726   fuer mesa  nG=9  E=2 T=2
+      02·S16  18·k3  21ET0  24·C1  26·C1  29·k4  34·S17  50ET0  →52
+  S→m   sequía luego medio
+      h15-230726   fuer mesa  nG=12 E=1 T=4
+      05·C1  08·S17  24·m7  31ET0  33·T0  34·T0  36·T0  37·k2  41·k2  43·m6  51·k2  →54
+  S→L   sequía luego cola
+      h13-250726   norm mesa  nG=9  E=0 T=0
+      02·k3  06·S17  22·L10  32·m5  38·m5  44·m7  52·C1  54·C1  →57
+  S→S   sequía luego sequía
+      h0-300726    apag floja nG=5  E=0 T=0
+      07·S25  31·S16  48·k4  53·k2  →56
+
+— pares que SÍ coinciden con lo que notaste (una película cada uno) —
+  T→T   h10-230726   norm mesa  nG=11 E=1 T=3
+      06·L11  17ET0  18·T0  20·k3  24·m8  32·T0  33·m7  40·m7  47·k2  50·m5  →56
+  T→C   h13-230726   fuer mesa  nG=9  E=2 T=2
+      02·S16  18·k3  21ET0  24·C1  26·C1  29·k4  34·S17  50ET0  →52
+  T→m   h10-230726   norm mesa  nG=11 E=1 T=3
+      06·L11  17ET0  18·T0  20·k3  24·m8  32·T0  33·m7  40·m7  47·k2  50·m5  →56
+  T→L   h5-240726    norm mesa  nG=9  E=1 T=1
+      01·k3  06·m8  13ET0  16·L11  27·m6  35·k2  38·m5  46·k3  →50
+  C→T   h12-230726   fuer mesa  nG=12 E=1 T=1
+      03·k2  06·C1  10·k4  14·m5  20·k3  24·k2  28·m6  34·m7  41·L9  49·C1  52ET0  →54
+  m→T   h10-230726   norm mesa  nG=11 E=1 T=3
+      06·L11  17ET0  18·T0  20·k3  24·m8  32·T0  33·m7  40·m7  47·k2  50·m5  →56
+  m→L   h11-230726   opac mesa  nG=9  E=0 T=0
+      01·m7  08·L11  20·k2  23·L10  33·k2  37·k3  41·L14  53·k2  →56
+  L→T   h10-230726   norm mesa  nG=11 E=1 T=3
+      06·L11  17ET0  18·T0  20·k3  24·m8  32·T0  33·m7  40·m7  47·k2  50·m5  →56
+  L→m   h5-240726    norm mesa  nG=9  E=1 T=1
+      01·k3  06·m8  13ET0  16·L11  27·m6  35·k2  38·m5  46·k3  →50
+
+— tres gestos que no estaban en tu lista (oficio, no ejemplo) —
+  1. SEQUÍA y después TREN (elástico que suelta de golpe)
+      h13-230726   fuer mesa  nG=9  E=2 T=2
+      02·S16  18·k3  21ET0  24·C1  26·C1  29·k4  34·S17  50ET0  →52
+  2. ESTIRADA que abre SEQUÍA (G gorda y después silencio largo)
+      h13-060826   apag floja nG=6  E=1 T=0
+      01·L10  10ES16  28·C1  30·k4  36·L9  →45
+  3. SEQUÍA que cierra en G4 (pulso: L largo → tinta gorda; bitácora)
+      h12-250726   apag mesa  nG=8  E=2 T=3
+      01·S16  17·k3  21·m8  30·m5  36ET0  38·T0  39ET0  →41
+  4. TREN al CIERRE (no al inicio): la hora se va pegada
+      h12-230726   fuer mesa  nG=12 E=1 T=1
+      03·k2  06·C1  10·k4  14·m5  20·k3  24·k2  28·m6  34·m7  41·L9  49·C1  52ET0  →54
+
+════════════════════════════════ LÍMITES (el cuerpo no se ensancha) ════════════════════════════════
+Esto NO es un promedio. Es el BORDE: lo más que hizo UNA hora,
+y lo que no vi nunca en el train. Así se reconoce «sigue adentro».
+
+  más trenes en UNA hora:     8   h20-130826   fuer cupo+ nG=17 E=5 T=8
+      00·m5  06ET0  08·C1  10ET0  12·k4  17·L9  26·L14  38·T0  39ET0  41·T0  42ET0  44·C1  47·C1  50ET0  52·T0  53·k4  →58
+  más estiradas en UNA hora:  13   h5-030926    rica cupo+ nG=14 E=13 T=4
+      04ET0  05Ek3  10ET0  12EC1  15Em7  23ET0  26Ek3  30ET0  32·m5  37EC1  40Ek2  43Em8  56EC1  →58E
+  más sequías en UNA hora:    2   h13-230726   fuer mesa  nG=9  E=2 T=2
+      02·S16  18·k3  21ET0  24·C1  26·C1  29·k4  34·S17  50ET0  →52
+  nG del cuerpo: 1 … 18  (cupo; bitácora: salta hora a hora)
+
+  racha más larga del MISMO átomo (no se apila hasta el cielo):
+    T ×5   h18-030926  01·T0  03ET0  05ET0  08ET0  10·T0  11·k3  15EC1  18·k4  23·T0  25EL14  →39
+    C ×4   h16-050826  01·k4  06·C1  08·C1  11·C1  13·C1  16·L11  26·m6  33·S22  →54
+    k ×6   h7-290726  03ET0  05ET0  07·m7  14·m6  21·m7  30·k4  36·k2  39·k2  42·k3  48·k2  52·k2  →55
+    m ×5   h18-040826  15·m6  21·m6  27·m6  34·m7  42·m5  →48
+    L ×4   h9-060826  03·m6  09·T0  11·L9  21·L9  30·L14  43·L10  →53
+    S ×2   h0-300726  07·S25  31·S16  48·k4  53·k2  →56
+
+  pares que NO vi nunca (hueco→hueco, misma hora):
+    todos los pares de 6 átomos aparecen al menos una vez.
+
+════════════════════════════════ CÓMO SE LEE (sin saco) ════════════════════════════════
+Bitácora ya decía: cómo VA esta hora, no cómo se viene; isla;
+no hay álbum de mapas de minutos. Esto no reabre H-1→H de cupo.
+La ficha es la FRASE de huecos+estirada, de izquierda a derecha.
+
+1. La hora es una palabra de átomos T C k m L S, con E rayado
+   en las G gordas. Tus 6–7 / 12–15 / 2G son tres letras, no la lengua.
+2. Se mueve: el renglón de un día no se parece al siguiente renglón.
+   Los átomos son los mismos. Eso es «sin ensancharse ni irse al cielo».
+3. Después de un tren al arranque: mira el lado derecho de las
+   películas de arriba. A veces se acabó la hora. A veces vuelve T.
+   No es ley «nunca otro tren». Es: ya se gastó un T; el resto se LEE,
+   no se espera el mismo gesto por promedio.
+4. Estirada vs tren se lee en el marcador [E/T] mientras camina.
+   Si a media hora va 3/0, esa hora viene estirada, no en trenes.
+5. Gestos que no nombraste y sí están: S→T (suelta), E abre S,
+   S cierra en G4, tren al cierre. Están en las películas, no en un %.
+
+NO SENTAR: tip · d≤1 · taxonomía al dashboard · «si tren, no tren»
+como regla. COVER/SPAN. Jaccard. Cubetas de día.
+NO es predicción. Es reconocer la frase que ya está en la mesa.

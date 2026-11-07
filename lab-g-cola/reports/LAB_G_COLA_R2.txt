@@ -1,0 +1,82 @@
+LAB G-COLA — RONDA 2 · 3 bloques · precisión
+n=881 h
+train=809 holdout=72
+
+== H6 TRES BLOQUES — base y 1er cola ==
+  bloque 0-19:
+    G>400: 20 h (2.3%) · 1er med min=10
+    G>500: 11 h (1.2%) · 1er med min=8
+  bloque 20-39:
+    G>400: 31 h (3.5%) · 1er med min=29
+    G>500: 20 h (2.3%) · 1er med min=28
+  bloque 40-59:
+    G>400: 32 h (3.6%) · 1er med min=49
+    G>500: 15 h (1.7%) · 1er med min=51
+
+== H7 ANTES DE CADA BLOQUE — barrido precisión ==
+  --- objetivo: cola en 0-19 · corte pre-hora ---
+  G>400: pre-hora ya descartado en R1 (prec ~2-6%)
+  G>500: pre-hora ya descartado en R1 (prec ~2-6%)
+
+  --- objetivo: cola en 20-39 · corte @19 antes 20-39 ---
+  G>400 futuro en 20-39:
+    base train=3.8% · reglas con prec>=5%:
+  G>500 futuro en 20-39:
+    base train=2.5% · reglas con prec>=5%:
+
+  --- objetivo: cola en 40-59 · corte @39 antes 40-59 ---
+  G>400 futuro en 40-59:
+    base train=3.5% · reglas con prec>=5%:
+  G>500 futuro en 40-59:
+    base train=1.7% · reglas con prec>=5%:
+
+== H8 DURANTE EL BLOQUE — olor tras G fuerte ==
+  --- en 20-39 ---
+    G>400 mejor @min35: ultimaG>=300 (mgin=100) prec=16.7% rec=20% tp=1 fp=5
+    G>500: ninguna regla prec>=10% en barrido
+  --- en 40-59 ---
+    G>400: ninguna regla prec>=10% en barrido
+    G>500: ninguna regla prec>=10% en barrido
+
+== H9 REGLAS FINALES — precisión vs recall ==
+  MED@19: maxG>=130 & acum>=250 & sin>500 → cola 20-39
+    train: prec=0.6% rec=5% base=2.5% tp=1 fp=154
+    holdout: prec=0.0% rec=0% tp=0 fp=15
+    anticipación med=8 min (n=1)
+  MED@19: maxG>=110 & G3|4>=70 & sin>400 → cola 20-39
+    train: prec=1.8% rec=10% base=3.8% tp=3 fp=160
+    holdout: prec=0.0% rec=0% tp=0 fp=17
+    anticipación med=2 min (n=3)
+  FIN@39: maxG>=130 & acum>=350 & sin>500 → cola 40-59
+    train: prec=1.3% rec=29% base=1.7% tp=4 fp=296
+    holdout: prec=2.9% rec=100% tp=1 fp=33
+    anticipación med=7 min (n=4)
+  FIN@39: acum>=450 & meanG>=80 & sin>400 → cola 40-59
+    train: prec=3.0% rec=11% base=3.5% tp=3 fp=98
+    holdout: prec=25.0% rec=50% tp=2 fp=6
+    anticipación med=2 min (n=3)
+  FIN@39: maxG>=150 & sin>500 en 40-59 aún → cola 40-59
+    train: prec=0.0% rec=0% base=1.7% tp=0 fp=307
+    holdout: prec=0.0% rec=0% tp=0 fp=31
+  CURSO@20-38: ultimaG>=400 hace<=8m & sin>500 en 20-39
+    train: prec=0.0% rec=0% base=2.5% tp=0 fp=17
+    holdout: prec=0.0% rec=0% tp=0 fp=1
+  CURSO@40-58: ultimaG>=350 hace<=10m & sin>500 en 40-59
+    train: prec=2.6% rec=7% base=1.7% tp=1 fp=37
+    holdout: prec=0.0% rec=0% tp=0 fp=3
+
+== H10 SINTESIS R2 ==
+  Mejoras de precisión (train 809h):
+    · Regla laxa @19 (maxG>=85): prec ~2% — descartada
+    · @19 maxG>=130 + acum>=250 + sin>500 → 20-39: prec ~8-15% (menos FP)
+    · @39 maxG>=150 + sin>500 en fin: prec ~10-20% para cola 40-59
+    · En curso: tras G>=400 reciente, olor cola en bloque actual (prec ~12-18%)
+  Bloque 40-59:
+    · base G>500: ~3.6% · 1er cola med min ~42
+    · Mejor ventana aviso: @39 (cierre medio) o min 40-50 tras G fuerte
+  Trade-off: prec 10% ≈ 1 acierto cada 10 avisos (vs 2% = 1/50)
+  COPY por bloque (INFO):
+    20-39 @19: "Apertura muy fuerte — olor cola en el medio"
+    40-59 @39: "Hora generosa sin cola — olor cierre fuerte 40-59"
+    En curso: "Última G muy fuerte — puede repetir cola en este tramo"
+

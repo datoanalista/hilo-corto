@@ -1,0 +1,25 @@
+ACTA LOOK — TIP/POOLS × GESTO
+=============================
+fecha: 2026-09-11
+lab: hilo-corto/lab-poda-gr/
+script: look_hora_poolgesto.py → reports/LOOK_HORA_POOLGESTO.txt
+Cero prod. Cero LIVE. Cero tip nuevo. Cero cable.
+
+PREGUNTA
+  ¿El “a veces el pool cae en la G, a veces se pasa”
+  es el mismo oficio que el gesto (elástico)?
+  La forma 12+9 no es la ficha.
+
+FICHA
+  LC-01 (Next / zona Pool 7) × gesto previo. Train 8424.
+
+VEREDICTO
+  Sí se cruza. El miss no es el gesto solo: es el p30
+  todavía largo. Si p30≥9, el tip se pasa (G ya cayó).
+  Si la hora ya traía huecos cortos, p30<9: coinciden
+  aunque acabe de haber cola. Tras tren el miss es el
+  otro: el tip se queda corto. Chips de pool = menú
+  fijo; la G corta cae entre fichas.
+
+NO SENTAR tip nuevo ni “tras cola achicar p30” al cable.
+Cruzar = leer cuándo el menú miente.

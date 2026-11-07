@@ -1,0 +1,36 @@
+ACTA — banda BASE vs HUECO (HZ primero)
+======================================
+stamp 2026-08-22 22:49
+Lab: hilo-corto (prod = dashboard)
+Fuente: reports/BANDA_HUECO.txt
+Comando: python medir_banda_hueco.py
+motor.py no tocado. Cero boleto prod.
+
+════════════════════════════════
+NÚMEROS (n=725)
+════════════════════════════════
+
+  BASE         k=9.02  score=4.27  colapso=0.97%  eff=0.473
+  HUECO-HZ     k=8.78  score=4.18  colapso=1.10%  eff=0.476
+  HUECO-SOM02  k=9.26  score=4.37  colapso=0.83%  eff=0.472
+  HZ→SOM02     k=9.14  score=4.34  colapso=0.69%  eff=0.475
+
+════════════════════════════════
+CENSO
+════════════════════════════════
+
+  HUECO-HZ      DESCARTA  Δscore −0.09  (sacar 01 duele)
+  HUECO-SOM02   PROMETE   Δscore +0.10
+  HZ→SOM02      PROMETE   Δscore +0.07  (peor que SOM02 sola)
+
+════════════════════════════════
+VEREDICTO
+════════════════════════════════
+
+  Hazard min1 (sacar chip 01) NO ayuda: baja score.
+  Sombra SOM-02 sigue PROMETE.
+  Combinar HZ→SOM02 no supera SOM02 sola.
+
+  No cablear HZ. SOM02 pendiente OK humano.
+
+FIN

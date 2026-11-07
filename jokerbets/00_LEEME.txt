@@ -1,0 +1,32 @@
+JOKERBETS — taller de apuesta (MVP)
+===================================
+stamp 2026-10-12
+Casa: experimento-nueva-caja-negra/hilo-corto/jokerbets/
+
+Qué es
+  Taller de REGLA, no de física nueva. No es el dashboard.
+  Prod sigue siendo hilo-corto/dashboard.
+  El bot de clics no se escribe hasta que la regla esté en papel.
+
+Qué no es
+  No es A01. No es boleto del edificio anterior.
+  No es pool de minado. La bitácora ya tiene tren, sequía, brillo, costura.
+  Aquí se COMBINA eso para decidir entrar / no entrar.
+
+Orden
+  1. REQUERIMIENTOS.txt   contrato mecánico (cuentas, clics, montos)
+  2. ANALISIS_BONOS.txt   etapa 1 + happy hour (piso, no un G)
+     LOOK_BONOS · LOOK_HAPPY · LOOK_BANCA · LOOK_API · LOOK_FICHA100
+     LOOK_ESCALA · LOOK_OPTIMO · LOOK_SIZER
+  3. REGLA.txt            (vacío hasta que el humano dicte la estrategia)
+  4. Cero implementación de clics mientras 3 no esté cerrado.
+
+Contrato corto
+  $200 = 4×$50 (Luck/Deluxe/Dice/Showhow).
+  Si cae bono: 3 cuentas × 3 colores (rojo/azul/verde) = total.
+  Happy hour se DETECTA, no se adivina. No dura la hora siguiente.
+
+Pregunta al inventario
+  ¿Sección nueva de conocimiento? No: mismo objeto (luces G / brillo).
+  ¿Ficha del mismo objeto? Sí: uso (apuesta mínima × 3 cuentas).
+  Un renglón en INVENTARIO. No carpeta 03_pools.

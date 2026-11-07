@@ -1,0 +1,173 @@
+INVENTARIO FICHAS — dashboard (prod) × leyes / VIVA
+=====================================================
+stamp 2026-09-02  (V2 — lecturas live + pools sombra)
+Prod: experimento-nueva-caja-negra/hilo-corto/dashboard
+Motor: hilo-corto/src/motor.py · tablero.py · boleto_inter2.py
+Juez prod: banda d<=1 (G o vecino). +-2 = fuera.
+Índice acta: ACTA_DASHBOARD_FICHAS_V2.txt
+Instrumentos Bib: Biblioteca/06_instrumentos/LECTURAS_LIVE_DASHBOARD.txt
+No Exact de cinta como “prod”. Cero edificio anterior.
+
+════════════════════════════════
+1. QUÉ ENTREGA EL DASHBOARD (prod)
+════════════════════════════════
+
+A) BOLETO / CHIPS (motor.py → emitir_boleto)
+   SEGURO   costura: cierre LARGO H-1 → 1er minuto H
+            exacto ~95%. Único chip SEGURO.
+   TIBIO    isla H-1: casilla de la foto previa;
+            cubre persist + ambos ±1 (banda).
+   SOM02    +1 chip sombra (max H-1 + paso huecos); rol sombra TIBIO;
+            motor.py · ACTA_LAB_SOM02_VS_PROD 2026-08-29
+   Cupo     recorte de islas al clima (nG mediana cola);
+            fermión: prioriza islas aisladas.
+   NO CHIP  orillas de cruce (±1 de dos islas): informe
+   NO CHIP  skip ±2, puentes dist4: se nombran
+   NO CHIP  zonas andén / racimo: teatro, no boleto
+
+B) HABLA / TIPS (ciudad.js + piso.js + Habla)
+   Faro · cupo     nG esperado desde nG H-1 (tabla)
+   Lluvia          pronóstico orillas ±2 (~17%)
+   Orilla          fila por minuto ±2 (estado vivo)
+   Cronista        lejos / sola / pareja / racimo al caer
+   Piso            urna R + boost + extra (se nombra;
+                   no se ficha)
+
+C) VISTAS
+   MesasTodasV2 = tablero principal (pools 0–7 rank · P8 fijo · P7 LC · P10 RC)
+   Panel = mesa individual (legacy)
+   LiveAvance = reloj + ingesta manual + lecturas header
+   Extraccion = captura Playwright + histórico + reingesta
+
+D) LECTURAS INFO LIVE (no chip — sombra)
+   LC-01 tip           EN_PROD  tipProxima.js · Next en bar
+   Brillo @40          EN_PROD  lab-prohibido E7 · brilloInfo.js
+   Eco tejido          EN_PROD  ecoInfo.js · icono libro
+   Calendario hod      EN_PROD  calendarioInfo.js
+   Supernova           EN_PROD  lab-supernova H4 · supernovaInfo.js
+   Generosidad/opacidad EN_PROD ACTA_GENEROSIDAD_OPACO
+   Cola G>500          EN_PROD  lab-g-cola · colaGInfo.js
+   Bloque perfil @20+  EN_PROD  lab-intra-hora · bloquePerfilInfo.js
+   Cierre abierto @55  EN_PROD  lab-alerta-costura · cierreAbiertoInfo.js
+   Global-pool @40     EN_PROD  lab-global-pool · globalPoolInfo.js
+   Costura h14→h15     EN_PROD  lab-h15 · pasoLiveInfo.js
+   Ola post-SN         EN_PROD  olaPostSnInfo.js (olor 40–59 post-SN)
+   Mapa lumen          EN_PROD  mapaInfo.js (dentro BrilloModal)
+
+E) POOLS SOMBRA EN UI (chips visibles, no LIVE)
+   Pool 7  LC-01 tips derivados de luces
+   Pool 10 LIVE-RC (lab-live-recompute RC-MULTI93)
+
+F) EXTRACCIÓN
+   Captura cinta en vivo · merge Cargar live · Reingesta
+   extraccion-jokers.js · /api/extraccion/*
+
+════════════════════════════════
+2. MAPA CAPA × ESTADO
+════════════════════════════════
+
+Leyenda estado:
+  EN_PROD     cableado en dashboard/motor hoy
+  EN_LAB      medido en mente-en-blanco / VIVA;
+              no es chip del boleto (o no cablea más)
+  HUECO       ley lo nombra; prod no lo usa aún
+              (candidato de experimento)
+  OTRO        oficio hermano; no confundir con prod
+
+── CUPO (cuántas) ──
+  Faro / clima H-1→nG     EN_PROD (Tips + recorte k)
+  nG=REAL (VIVA foto)     EN_LAB  (gen dial; no chip)
+  Faro autónomo dial~4.3  EN_LAB  (peor que copiar nG
+                                  en gen; en prod Faro
+                                  solo avisa cupo)
+
+── GESTO (sí/no tiro / costura) ──
+  Costura cierre Largo    EN_PROD (SEGURO)
+  Fuga ~5%                EN_LAB  (ley cinta; F2 no
+                                  mejoró gen foto;
+                                  prod no ficha fuga)
+  Exact L→G techo         OTRO    (cinta; no dashboard)
+
+── RELOJ / DÓNDE ──
+  Islas H-1 → TIBIO banda EN_PROD (núcleo del boleto)
+  Marco H-1 techo área    EN_LAB  (= techo ~45% ACTA_BANDA)
+  Fermión en recorte      EN_PROD (elige islas aisladas)
+  SOM-02 chip sombra              EN_PROD motor.py (+1 ficha lab +0.10)
+                                  Tips: ACTA_TIPS_SOMBRA · som02Info.js
+  SOM-02 nsil+2 (VIVA gen foto)   EN_LAB  (gen dial; distinto del chip prod)
+  wrap/accum apertura     EN_LAB  (VIVA; prod usa
+                                  costura cas0, no accum)
+  Lluvia orilla ±2        EN_PROD (Tips; no chip)
+  Cronista lejos          EN_PROD (Tips; no chip)
+  Piso urna/boost/extra   EN_PROD (Tips; no chip)
+  Sombra SOM-02 Tips              EN_PROD (recomendación INFO + ejemplos)
+                                  Chip sombra: EN_PROD motor (ver arriba)
+  Hazard min1 (sacar 01)         DESCARTA lab Δscore−0.09
+  Dial PERSIST/VECINO…    EN_LAB  (juez VIVA foto;
+                                  prod juzga banda,
+                                  no L1 dial)
+
+════════════════════════════════
+3. COMPARACIÓN CORRECTA (juez = banda)
+════════════════════════════════
+
+Fuente: python walk.py --from h10-230726 --no-filas
+(data hilo-corto, cilindro armado)
+
+  Boleto prod (islas+costura):
+    k medio     ~9.0
+    score banda ~4.27  (hits Exact + ±1 por hora)
+    colapso     ~1.0%
+    lift vs azar ~1.10
+
+  Techo área (ACTA_BANDA, mismo oficio):
+    ~45% de las G de H caen a d<=1 de H-1
+    Copiar islas ≈ ese techo (no magia)
+    Costura = único ~95% exacto
+
+  CONFIG_VIVA (lab):
+    dial foto TEST ~1.9 · replay gesto ~98%
+    Juez distinto (foto de cinta, no banda boleto)
+    NO se compara como “quién gana al dashboard”
+    Sirve si una capa VIVA mejora chips/habla
+
+════════════════════════════════
+4. QUÉ FALTA / QUÉ NO
+════════════════════════════════
+
+NO falta: rearmar dashboard ni rearmar VIVA desde 0.
+Biblioteca al día 2026-09-02: BITACORA + REGISTRO + este inventario.
+
+SÍ falta (experimentos posibles, uno a la vez):
+  1. Livecero F5 — STANDBY documental (LC-01 cableado; no bloquea prod)
+
+g-explosion: CERRADO R2 2026-09-02 · archivo. Humano: sin utilidad predictiva.
+  No cable. Acta: lab-g-explosion/ACTA_G_EXPLOSION.txt
+
+SOM02 chip sombra: CABLEADO motor 2026-08-29 (ACTA_LAB_SOM02_VS_PROD).
+  Medición original ACTA_BANDA_HUECO (2026-08-22) quedó PROMETE → superseded por cableado.
+
+VETADO como “vs prod”:
+  Exact L→G sombra vs VIVA (archivo: mal nombrado).
+  Variantes INTER2 / filtros INFO @19/@20 (lab-inter2 R2 FRÍO).
+  HUECO-HZ chip 01 (DESCARTA).
+  HZ→SOM02 combo (DESCARTA — peor que SOM02 sola).
+  Edificio anterior (no se nombra acá).
+
+PENDIENTES cerrados: PENDIENTES_REVISADOS.txt (2026-09-02)
+  0 labs ABIERTO hilo-corto
+
+════════════════════════════════
+5. ARCHIVOS
+════════════════════════════════
+
+  motor boleto   hilo-corto/src/motor.py · tablero.py
+  Tips ciudad    dashboard/src/ciudad.js (legacy panel)
+  Tips piso      dashboard/src/piso.js
+  Lecturas live  dashboard/src/*Info.js (ver ACTA_DASHBOARD_FICHAS_V2)
+  Acta juez      ACTA_BANDA.txt
+  Acta fichas V2 ACTA_DASHBOARD_FICHAS_V2.txt
+  Ley            mente-en-blanco/biblioteca/LEY_CAIDA_Y_GENERADOR.txt
+  Gen            lab-proyeccion/CONFIG_VIVA.txt
+
+FIN

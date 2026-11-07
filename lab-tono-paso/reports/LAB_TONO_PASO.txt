@@ -1,0 +1,128 @@
+LAB TONO-PASO · Next 3 / P7-V3 vs camino aletargado
+Juez: banda d≤1 minuto tip vs ESA G. Unidad: la hora.
+Políticas causales. Tono final solo para leer, no para tipar.
+
+Cinta 1086 h · train 1014 · holdout 72
+
+════════ TRAIN  1013 horas ════════
+
+1. ¿LA PRÓXIMA G CAE EN 3 TIROS? (cobertura SEQUIA3 / P7-V3 / Next 3)
+   Esto es el camino feliz. Se cuenta por EVENTO (tras cada G), y % de HORAS
+   donde la mediana de huecos de ESA hora fue ≤3 tiros.
+Tono           | eventos | G en ≤3 tiros | horas paso≤3 | med R-entre
+muy_apagado    |    1862 |         36.2% |        14.7% |         4 R
+opaco          |    2113 |         41.1% |        22.4% |         3 R
+normal         |    2899 |         48.1% |        40.5% |         3 R
+fuerte         |    1155 |         50.5% |        48.6% |         2 R
+muy_fuerte+    |     815 |         52.0% |        48.0% |         2 R
+
+2. BANDA d≤1 DEL TIP (todas las G-siguientes, sin filtrar por 3 tiros)
+  política     |     N |    banda
+  LC-01        |  8844 |    36.7%
+  FELIZ+2      |  8844 |    38.3%
+  PASO_R       |  8844 |    32.9%
+  FLOOR4       |  8844 |    36.0%
+  FLOOR6       |  8844 |    31.3%
+  HOD7         |  8844 |    36.3%
+
+3. MISMO TIP, PARTIDO POR TONO FINAL (foto · no se usó para decidir)
+  tono           |    LC-01 |  FELIZ+2 |   FLOOR4 |   FLOOR6 |     N
+  muy_apagado    |    28.5% |    30.9% |    29.0% |    24.8% |  1862
+  opaco          |    35.1% |    35.0% |    35.0% |    29.3% |  2113
+  normal         |    40.5% |    42.0% |    39.1% |    33.8% |  2899
+  fuerte         |    38.1% |    43.4% |    36.1% |    33.0% |  1155
+  muy_fuerte+    |    44.2% |    43.6% |    43.9% |    39.4% |   815
+
+4. PRIMER TIP DE LA HORA (aún no hay p30 · fallback)
+  política     |     N |    banda   ← acá el tono aún no se vio
+  LC-01        |  1013 |    30.6%
+  FELIZ+2      |  1013 |    34.1%
+  HOD7         |  1013 |    27.4%
+  por tono final del cierre (lectura):
+  tono           | LC-01 (T+5) |  FELIZ+2 |     HOD7 |    N
+  muy_apagado    |       27.7% |    28.1% |    23.5% |  285
+  opaco          |       28.9% |    33.7% |    30.5% |  246
+  normal         |       33.1% |    40.5% |    29.7% |  296
+  fuerte         |       30.6% |    37.8% |    23.4% |  111
+  muy_fuerte+    |       37.3% |    26.7% |    29.3% |   75
+
+5. CUANDO YA SE VE ALETARGADO (causal: mean<48 o paso≥5 o T≥20 y ≤3 G)
+  aletargado 5022 eventos · camino vivo 3822
+  política     | aletarg. |     vivo
+  LC-01        |    34.8% |    39.2%
+  FELIZ+2      |    38.3% |    38.4%
+  FLOOR4       |    33.6% |    39.2%
+  FLOOR6       |    25.2% |    39.2%
+
+6. HORAS EN LAS QUE V3 TIENE ALGO QUE JUGAR (alguna G siguiente en ≤3 tiros)
+  tono           | horas |  con ≥1 V3 |  med #V3
+  muy_apagado    |   285 |      93.0% |        2
+  opaco          |   246 |      95.1% |        3
+  normal         |   296 |      98.3% |        5
+  fuerte         |   111 |      99.1% |        5
+  muy_fuerte+    |    75 |     100.0% |        5
+
+════════ HOLDOUT  72 horas ════════
+
+1. ¿LA PRÓXIMA G CAE EN 3 TIROS? (cobertura SEQUIA3 / P7-V3 / Next 3)
+   Esto es el camino feliz. Se cuenta por EVENTO (tras cada G), y % de HORAS
+   donde la mediana de huecos de ESA hora fue ≤3 tiros.
+Tono           | eventos | G en ≤3 tiros | horas paso≤3 | med R-entre
+muy_apagado    |     155 |         45.8% |        30.4% |         3 R
+opaco          |      96 |         36.5% |         0.0% |         4 R
+normal         |     254 |         51.2% |        45.8% |         2 R
+fuerte         |      92 |         56.5% |        77.8% |         2 R
+muy_fuerte+    |      45 |         55.6% |        50.0% |         2 R
+
+2. BANDA d≤1 DEL TIP (todas las G-siguientes, sin filtrar por 3 tiros)
+  política     |     N |    banda
+  LC-01        |   642 |    40.2%
+  FELIZ+2      |   642 |    42.2%
+  PASO_R       |   642 |    32.4%
+  FLOOR4       |   642 |    39.1%
+  FLOOR6       |   642 |    30.8%
+  HOD7         |   642 |    40.5%
+
+3. MISMO TIP, PARTIDO POR TONO FINAL (foto · no se usó para decidir)
+  tono           |    LC-01 |  FELIZ+2 |   FLOOR4 |   FLOOR6 |     N
+  muy_apagado    |    35.5% |    38.7% |    32.9% |    26.5% |   155
+  opaco          |    29.2% |    31.2% |    29.2% |    22.9% |    96
+  normal         |    44.9% |    45.3% |    43.7% |    31.5% |   254
+  fuerte         |    43.5% |    48.9% |    43.5% |    38.0% |    92
+  muy_fuerte+    |    46.7% |    46.7% |    46.7% |    44.4% |    45
+
+4. PRIMER TIP DE LA HORA (aún no hay p30 · fallback)
+  política     |     N |    banda   ← acá el tono aún no se vio
+  LC-01        |    72 |    33.3%
+  FELIZ+2      |    72 |    31.9%
+  HOD7         |    72 |    36.1%
+  por tono final del cierre (lectura):
+  tono           | LC-01 (T+5) |  FELIZ+2 |     HOD7 |    N
+  muy_apagado    |       34.8% |    39.1% |    39.1% |   23
+  opaco          |       41.7% |     8.3% |    50.0% |   12
+  normal         |       37.5% |    25.0% |    41.7% |   24
+  fuerte         |       11.1% |    55.6% |    11.1% |    9
+  muy_fuerte+    |       25.0% |    50.0% |     0.0% |    4
+
+5. CUANDO YA SE VE ALETARGADO (causal: mean<48 o paso≥5 o T≥20 y ≤3 G)
+  aletargado 352 eventos · camino vivo 290
+  política     | aletarg. |     vivo
+  LC-01        |    37.5% |    43.4%
+  FELIZ+2      |    43.8% |    40.3%
+  FLOOR4       |    35.5% |    43.4%
+  FLOOR6       |    20.5% |    43.4%
+
+6. HORAS EN LAS QUE V3 TIENE ALGO QUE JUGAR (alguna G siguiente en ≤3 tiros)
+  tono           | horas |  con ≥1 V3 |  med #V3
+  muy_apagado    |    23 |      91.3% |        3
+  opaco          |    12 |      91.7% |        3
+  normal         |    24 |     100.0% |        5
+  fuerte         |     9 |     100.0% |        6
+  muy_fuerte+    |     4 |     100.0% |        6
+
+════════════════════════════════ LECTURA ════════════════════════════════
+LC-01 ya estira el tip cuando ESA hora ya mostró huecos largos.
+Piso de tono (FLOOR4/6) y prior hod no deberían ganar si el p30 basta.
+FELIZ+2 = Next 3 / V3 en minutos: camino de hora fuerte.
+Si FELIZ pierde en apagada y LC-01 no, Next 3 debe hablar minutos,
+no alargar la ventana de 3 tiros ni pintar color.

@@ -1,0 +1,50 @@
+LAB COSTURA — CANDIDATOS H1-H6
+n=873 train=801 test=72
+
+-- H1 TECHO h15->h16 (post-pico h15) --
+  h15->h16  n=34  lift=-141  med_a=732  med_b=562
+    op=+220(6)  no=-88(17)  fu=-780(11)
+    test lift=-157  op=+0(0)  fu=+0(0)
+  ref h14->h15 lift=+152  op=+345  fu=-183
+  VEREDICTO: OLOR
+
+-- H2 REBOTE h18->h19 (tarde) --
+  h18->h19  n=34  lift=-9  med_a=530  med_b=612
+    op=+313(13)  no=-84(16)  fu=-213(5)
+    test lift=-170  op=+0(0)  fu=-325(1)
+  ref h17->h18 fu=-597
+  VEREDICTO: OLOR (op fuerte; total plano)
+
+-- H3 GAP2 h13->h15 (salta h14) --
+  h13->h15  n=34  lift=+168  med_a=554  med_b=732
+    op=+383(11)  no=+151(19)  fu=-149(4)
+    test lift=+67  op=+0(0)  fu=-468(1)
+  ref h14->h15 lift=+152  op=+345
+  dias 13+14+15 n=33  lift13->15=+170  lift14->15=+152
+    si h14 opaca: lift13->15=+152 (n=13)
+  VEREDICTO: OLOR
+
+-- H4 REBOTE h01->h02 (madrugada) --
+  h01->h02  n=32  lift=+102  med_a=534  med_b=648
+    op=+464(11)  no=-6(16)  fu=-484(5)
+    test lift=-151  op=-108(1)  fu=+0(0)
+  VEREDICTO: OLOR
+
+-- H5 VALLE-PICO h20->h21 --
+  h20->h21  n=33  lift=+123  med_a=509  med_b=609
+    op=+166(14)  no=+78(12)  fu=-367(7)
+    test lift=-111  op=+0(0)  fu=-111(1)
+  VEREDICTO: OLOR
+
+-- H6 BASELINE generico opaco->H+1 --
+  med lift opaco-> =+246  n=204
+  VEREDICTO: VIVE (opacidadInfo; no 23 tips)
+
+============================================================
+SINTESIS
+  H1: OLOR
+  H2: OLOR
+  H3: OLOR
+  H4: OLOR
+  H5: OLOR
+  H6: VIVE

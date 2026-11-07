@@ -1,0 +1,33 @@
+LAB POOL × VENTANA 3 — R0 puntería Pool 8
+ventana=3 tiros · CERO prod · CERO cable P8
+
+n_horas=1065 train=993 hold=72
+
+== TRAIN ==
+  eventos G (2ª+): 8666 · gap≤3: 3867 (44.6%) · sequía: 4799
+  [P8-ALL] n=8666 exacto=24.7% banda=59.6% k≈14.6
+  [P8-V3] n=3867 exacto=23.7% banda=58.9% k≈14.6
+  [P8-SEQ] n=4799 exacto=25.4% banda=60.2% k≈14.6
+  [TIP-V3] n=3867 exacto=22.3% banda=57.7% k≈1.0
+  [P8∩TIP-V3] n=3867 exacto=13.4% banda=33.2% k≈0.7
+  acuerdo tip∩P8 en V3: 59.4%
+
+== HOLDOUT ==
+  eventos G (2ª+): 618 · gap≤3: 290 (46.9%) · sequía: 328
+  [P8-ALL] n=618 exacto=16.3% banda=38.2% k≈9.6
+  [P8-V3] n=290 exacto=15.2% banda=38.3% k≈9.4
+  [P8-SEQ] n=328 exacto=17.4% banda=38.1% k≈9.7
+  [TIP-V3] n=290 exacto=19.3% banda=60.3% k≈1.0
+  [P8∩TIP-V3] n=290 exacto=9.7% banda=21.7% k≈0.5
+  acuerdo tip∩P8 en V3: 37.6%
+
+== DELTA holdout vs P8-ALL ==
+  P8-ALL banda=38.2% exacto=16.3%
+  P8-V3  Δbanda=+0.1pp Δexacto=-1.2pp cov=46.9%
+  P8-SEQ Δbanda=-0.1pp (G largas — ¿P8 peor aquí?)
+  TIP-V3 banda=60.3% · P8∩TIP-V3 banda=21.7% k≈0.5
+
+== VEREDICTO ==
+  SIN OLOR fuerte: ventana 3 no reconstruye P8 mejor en holdout.
+  Puede seguir como filtro de CUÁNDO apostar (apostador), no de chips.
+

@@ -1,0 +1,87 @@
+ACTA LAB H678
+=============
+fecha: 2026-08-29
+lab: hilo-corto/lab-h678/
+script: run_lab.py -> reports/LAB_H678.txt
+cinta: data_3dias.txt · 873 h · holdout 72h
+
+PREGUNTA
+  Que son h06/h07/h08? Mismo rol que h15? Costura? Pico h08?
+
+── RONDA 1 ──
+
+H1 PERFIL
+  SE VE: h06 rank#3 med=655 · h07 rank#4 med=646 · h08 rank#9 med=612
+         vs mediana dia: +62 / +53 / +19
+         mean_G ~63 (h09 mas alto 68 pero sum baja por nG)
+  NO SE VE: #1 global como h15 · h08 no siempre top-5 en train
+  VEREDICTO: OLOR — bloque manana alto por cartel hod
+
+H2 COSTURA h05->h06->h07->h08
+  SE VE: rebote opaco generico (+212..+284 en estratos)
+         h07->h08 lift +53 · opaco +284 (n=9)
+  NO SE VE: lift total fuerte (+41..+58) · test inestable
+         ratio vs h14->h15: 2.9x mas debil
+  VEREDICTO: OLOR — fisica opaco->rebote si; NO clonar tip h15
+
+H3 h08 PICO -> h09 CAIDA
+  SE VE: lift total -37 · h08 fuerte -> h09 -679 (n=8)
+         h08 opaco -> h09 +314 (simetrico rebote)
+  NO SE VE: test confirma (n=3 lift +4)
+  VEREDICTO: OLOR — senal techo h08->h09 (espejo inverso h14-h15)
+
+H4 BLOQUE mismo dia
+  SE VE: med sum h6+h7+h8 ~1969/dia
+  NO SE VE: corr con resto dia r=-0.02 · corr h6-h7 r=0.18
+         triple_gen solo 1/33 dias
+  VEREDICTO: FRIO — no tubo; horas semi-independientes
+
+H5 DOW
+  SE VE: spread max 395 (h07)
+  VEREDICTO: OLOR — variacion local, n chico
+
+H6 DIA GENEROSO
+  SE VE: h07/h08 p_gen 44% en dia gen vs ~17-21% gris
+  NO SE VE: h06 casi plano (11% vs 17%)
+  VEREDICTO: OLOR — h07/h08 amplifican dia caliente; h06 no
+
+H7 INTRA @40
+  SE VE: mean@40 ~54-62 · late-heavy ~33%
+  VEREDICTO: FRIO — hora completa, no cola
+
+H8 ECO h10->h08 +1d
+  NO SE VE: lift -7
+  VEREDICTO: FRIO
+
+H9 SN h08
+  SE VE: 2 SN · rank aguanta top-10 sin ellas
+  VEREDICTO: OLOR
+
+H10 vs h14-h15
+  SE VE: mecanismos distintos confirmados
+         manana = meseta alta · mediodia = valle->pico
+  VEREDICTO: VIVE
+
+── SINTESIS ──
+
+NO son h15:
+  · Suben por perfil hod (cartel manana), no por valle previo como h14.
+  · Costura opaco->rebote existe pero lift total 3x mas debil.
+  · h08->h09 es la costura accionable: fuerte->fuerte cae fuerte.
+
+VIVE / cablear si OK humano:
+  H10 diferencia manana vs mediodia (doc/mapa)
+  H3 tip h08 fuerte -> h09 techo (paralelo tip h14->h15)
+
+OLOR bodega:
+  H2 rebote opaco h07->h08 · H6 h07/h08 en dia gen · H5 DOW
+
+FRIO:
+  H4 bloque tubo · H8 eco h10->h08 · H7 intra
+
+DECISION
+  Cableado INFO: tip costura h08->h09 en BrilloModal (costuraInfo.js).
+  Paralelo h14->h15 · AVISO cuando h08 fuerte.
+  No clonar tip a h6/h7. Siguiente: acumular holdout h08->h09.
+
+fin

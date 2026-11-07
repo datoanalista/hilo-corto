@@ -1,0 +1,119 @@
+STORYBOARD — dashboard + bots (jokerbets-mesa)
+==============================================
+stamp 2026-10-13
+Solo diseño. Cero implementación. Prod = hilo-corto.
+
+Infra (servidor notebook)
+  Cloudflare ──► tu PC (lector)
+  Servidor: servir.py + Node extracción + 3 Chrome (cuentas)
+  Los 3 Chrome NO son pestañas del dashboard. Son ventanas/perfiles
+  aparte, como hoy ×3.
+
+┌─────────────────────────────────────────────────────────────┐
+│  SERVIDOR (notebook)                                        │
+│                                                             │
+│  [Chrome A] URL cuenta 1 · rojo   · Playwright perfil 1     │
+│  [Chrome B] URL cuenta 2 · azul   · Playwright perfil 2     │
+│  [Chrome C] URL cuenta 3 · verde  · Playwright perfil 3     │
+│       │              │              │                       │
+│       └──────────────┴──────────────┘                       │
+│                      │ WS (1 primaria + 2 backup)           │
+│                      ▼                                      │
+│              extraccion-jokers.js → cinta                   │
+│                      │                                      │
+│                      ▼                                      │
+│  [Chrome dashboard] localhost:8765 o build estático         │
+│     Pestaña 1 │ Pestaña 2                                   │
+└─────────────────────────────────────────────────────────────┘
+
+══════════════════════════════════════════════════════════════
+PESTAÑA 1 — MESA (la de hoy, casi igual)
+══════════════════════════════════════════════════════════════
+
+  ┌─ header ─────────────────────────────────────────────┐
+  │ ● Online    21:48:54    ☀ NORMAL 523/600    🏆 7 …  │
+  └──────────────────────────────────────────────────────┘
+
+  ┌─ cabecera bonos (chips G) ───────────────────────────┐
+  │ 00:G2 36x │ 11:G3 18x │ 16:G4 175x │ 20:G3 96x │ …  │
+  └──────────────────────────────────────────────────────┘
+
+  ┌─ pills ──────────────────────────────────────────────┐
+  │ 👤 │ 21:48 Gol 1 │ Next: 51 │ Gesto │ Apostador: No │
+  └──────────────────────────────────────────────────────┘
+
+  ┌─ pools (Pool 7 arriba) ──────────────────────────────┐
+  │ Pool 7  ○ ○ ● ○ …  (marcas minuto, zona, playhead)    │
+  │ Pool 1  …                                            │
+  │ Pool 5  …                                            │
+  │ Pool 0  …                                            │
+  └──────────────────────────────────────────────────────┘
+
+  (Extracción / live / tablero: como hoy. No se quita nada.)
+
+══════════════════════════════════════════════════════════════
+PESTAÑA 2 — CUENTAS & BOTS (nueva)
+══════════════════════════════════════════════════════════════
+
+  ┌─ interruptor global ─────────────────────────────────┐
+  │ Hora actual: h21-131026   Interruptor: OFF │ ALERTA │ ON│
+  │ Puerta A: media≥68 · ≥2G · min<40 · no techo · no cola│
+  │ Pool 7 tip: 51   en zona: sí/no   ficha: $150 (×3)   │
+  │ Señal WS: ● viva   primaria: cuenta 2   backup: 1,3  │
+  └──────────────────────────────────────────────────────┘
+
+  ┌─ modal / config URLs (icono engranaje) ──────────────┐
+  │  + Agregar URL                                        │
+  │  [https://… cuenta rojo    ]  [Abrir] [Primaria WS]  │
+  │  [https://… cuenta azul    ]  [Abrir]                 │
+  │  [https://… cuenta verde   ]  [Abrir]                 │
+  │  (lista N filas; guardar en servidor)                 │
+  └──────────────────────────────────────────────────────┘
+
+  ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+  │ CUENTA ROJO  │ │ CUENTA AZUL  │ │ CUENTA VERDE │
+  │ estado:      │ │ estado:      │ │ estado:      │
+  │  ESPERANDO   │ │  ALERTA      │ │  EN RACHA    │
+  │              │ │              │ │              │
+  │ SALDO (DOM)  │ │ SALDO (DOM)  │ │ SALDO (DOM)  │
+  │  $7.85K      │ │  $20.1K      │ │  $19.4K      │
+  │ Apuesta: $0  │ │ Apuesta: $600│ │ Premio: …    │
+  │              │ │              │ │              │
+  │ Rachas ON: 3 │ │ Rachas ON: 3 │ │ Rachas ON: 3 │
+  │ (horas fuertes│ │              │ │              │
+  │  con apuesta)│ │              │ │              │
+  │ Bot: idle    │ │ Bot: zona OK │ │ Bot: color   │
+  │              │ │  (espera 12s)│ │  pendiente   │
+  └──────────────┘ └──────────────┘ └──────────────┘
+
+  ┌─ log / alertas ──────────────────────────────────────┐
+  │ 18:39 apuesta zona min 51 · 3× círculo · OK          │
+  │ 17:00 hora ON cerrada · mail enviado (futuro)        │
+  │ 16:12 WS silencio 90s · F5 protocolo cuenta 1        │
+  └──────────────────────────────────────────────────────┘
+
+  Estados (3 tarjetas, mismo mapa):
+    ESPERANDO = interruptor OFF
+    ALERTA    = se arma (00–19, media 40–67, <2 G…)
+    EN RACHA  = puerta A ON (clic solo si tip±1)
+
+══════════════════════════════════════════════════════════════
+GESTO EN CADA CHROME (cuando ON + zona)
+══════════════════════════════════════════════════════════════
+
+  1) Elegir ficha 50 en la tira (chip 50 activo).
+  2) Círculo dorado del medio × 3  →  $50×4×3 = $600/apuesta.
+     (4 bonos: Luck, Dice, Deluxe, Show — una sola pulsación
+      reparte en los 4; ver captura con cuatro “50”.)
+  3) Si cae bono: pantalla color → clic rojo|azul|verde
+     (izq | centro | der) según cuenta.
+  4) Ventana ~12 s entre giro y apuesta.
+
+Puerta B: fuera del MVP. Refinamiento futuro (registrado).
+
+══════════════════════════════════════════════════════════════
+CLOUDFLARE (tu PC)
+══════════════════════════════════════════════════════════════
+
+  Mismo URL trycloudflare → ves Pestaña 1 y 2.
+  Solo lectura de estado. Los clics ocurren en el servidor.

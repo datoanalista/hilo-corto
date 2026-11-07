@@ -1,0 +1,39 @@
+REQUERIMIENTOS — jokerbets
+==========================
+stamp 2026-10-12 (rev color + $200)
+Estado: papel. Cero bot hasta REGLA.txt.
+
+1. Oficio
+   No se persigue cada G. Se espera el régimen “happy hour”:
+   la rueda YA está entregando bonos altos y se sostiene un rato.
+   No se anticipa. Se detecta en curso. La bandera se escribe
+   en REGLA.txt después del análisis.
+
+2. Mesa (gesto)
+   Tras cada giro: 12 s para apostar.
+   Círculo del medio = los 4 bonos (Deluxe, Luck, Dice, Showhow).
+   Cada pulsación suma un monto. Mínimo por bono: $50.
+   Cada apuesta = 4 × $50 = $200. Las 3 cuentas pagan los 4.
+   Si cae G (Luck/Deluxe/Dice/Showhow): las 3 entran al juego.
+   Ahí se elige COLOR rojo / azul / verde. Una cuenta = un color.
+   Las 3 cubren los 3. Casa = suma de los multiplicadores.
+   No apilar dos cuentas al mismo color. No es elegir G1–G4.
+   Perder un bono gordo no importa.
+   Subir ficha: después, si el libro da. Ahora = mínimo.
+
+3. Cuentas
+   3 cuentas, mismo PC, $20.000 de arranque cada una.
+   Extracción puede respaldarse en esas 3.
+   Clics / perfiles: al implementar.
+
+4. Disparo
+   Quietud horas. Despierta con la bandera.
+   5AM / 10AM existen (foto hod).
+   Red / iframe / emisor: se asumen. Peor caso en REGLA.
+
+5. Rachas
+   Muy apagada / apagada / opaca no se “arreglan” al tiro.
+   Se van subiendo de a horas. Ver ANALISIS_BONOS + LOOK_HAPPY.
+
+6. Fuera de esta etapa
+   Bot, fantasmas, rotación: después de REGLA.

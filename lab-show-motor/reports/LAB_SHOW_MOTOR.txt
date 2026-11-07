@@ -1,0 +1,96 @@
+LAB SHOW-MOTOR — Live Jokers Show · 54 casillas · R1+R2
+cinta: depurar-all-4G-detail.txt
+horas cerradas=920 · holdout=72h
+
+== H0 SHOW — plato 54 (Live Jokers Show) ==
+  casillas=54 · R=45 · G=9 · P(G)=16.67%
+  urna R: {'R1': 21, 'R2': 13, 'R3': 7, 'R4': 4}
+  menú G emp: {'G4': 1, 'G3': 3, 'G2': 3, 'G1': 2}
+  tinta G: menú L previo (E01) — no ruleta-G iid para color G
+  capas motor: plato → mapa H-1 → cierre → clima → SOM02 → INTER2
+
+== H1 MINUTO — motores incrementales vs prod (banda d≤1) ==
+  horas train=848 · holdout=71
+
+  motor · banda_tr · banda_ho · hit_ho · k_med_ho · Δ vs M4
+    M0-PLATO54    tr=43.0%  ho=41.0%  hit=100.0%  k=9.6  Δclásico=-4.1pp
+    M1-MAPA       tr=41.9%  ho=43.1%  hit=98.6%  k=8.3  Δclásico=-2.0pp
+    M2-CIERRE     tr=43.6%  ho=43.9%  hit=98.6%  k=8.4  Δclásico=-1.2pp
+    M3-SOM02      tr=44.5%  ho=45.1%  hit=98.6%  k=8.7  Δclásico=+0.0pp
+    M4-CLASSIC    tr=44.5%  ho=45.1%  hit=98.6%  k=8.7  Δclásico=+0.0pp
+    M5-INTER2     tr=60.1%  ho=60.6%  hit=100.0%  k=14.3  Δclásico=+15.5pp
+    M6-SHOW-V1    tr=44.4%  ho=44.9%  hit=98.6%  k=8.6  Δclásico=-0.2pp
+
+  SEGURO cierre largo train: 241/255 (94.5%)
+  SEGURO cierre largo holdout: 17/19 (89.5%)
+
+  ranking holdout banda:
+    1. M5-INTER2  60.6%  (Δ clásico +15.5pp)
+    2. M4-CLASSIC  45.1%  (Δ clásico +0.0pp)
+    3. M3-SOM02  45.1%  (Δ clásico +0.0pp)
+    4. M6-SHOW-V1  44.9%  (Δ clásico -0.2pp)
+    5. M2-CIERRE  43.9%  (Δ clásico -1.2pp)
+
+== H4 R2 ORDEN / PLATO — vs clásico (holdout) ==
+  motor · banda_ho · k_med · Δ vs M4 · Δ vs M5
+    M7-MAPA-CIERRE      ho=45.0%  k=8.5  Δclásico=-0.1pp  ΔINTER2=-15.6pp
+    M8-K-PLATO          ho=43.9%  k=8.4  Δclásico=-1.2pp  ΔINTER2=-16.8pp
+    M9-PLATO×MAPA       ho=44.0%  k=8.4  Δclásico=-1.1pp  ΔINTER2=-16.6pp
+    M10-SIN-CIERRE      ho=44.4%  k=8.6  Δclásico=-0.7pp  ΔINTER2=-16.2pp
+    H1-INTER2-SHOW-P0   ho=60.6%  k=14.3  Δclásico=+15.5pp  ΔINTER2=+0.0pp
+    H2-INTER2-SHOW+7    ho=72.1%  k=18.0  Δclásico=+27.0pp  ΔINTER2=+11.4pp
+    H3-INTER2-CL∩SH     ho=45.1%  k=8.7  Δclásico=+0.0pp  ΔINTER2=-15.5pp
+    H4-UNION-CL+SH      ho=45.1%  k=8.7  Δclásico=+0.0pp  ΔINTER2=-15.5pp
+
+  ranking R2 holdout:
+    1. H2-INTER2-SHOW+7  72.1%  (Δ clásico +27.0pp · Δ INTER2 +11.4pp)
+    2. H1-INTER2-SHOW-P0  60.6%  (Δ clásico +15.5pp · Δ INTER2 +0.0pp)
+    3. H4-UNION-CL+SH  45.1%  (Δ clásico +0.0pp · Δ INTER2 -15.5pp)
+    4. H3-INTER2-CL∩SH  45.1%  (Δ clásico +0.0pp · Δ INTER2 -15.5pp)
+    5. M7-MAPA-CIERRE  45.0%  (Δ clásico -0.1pp · Δ INTER2 -15.6pp)
+    6. M10-SIN-CIERRE  44.4%  (Δ clásico -0.7pp · Δ INTER2 -16.2pp)
+
+== H2 CAPAS — lift incremental (holdout) ==
+    M0-PLATO54    41.0%  (+41.0pp vs capa anterior)
+    M1-MAPA       43.1%  (+2.2pp vs capa anterior)
+    M2-CIERRE     43.9%  (+0.8pp vs capa anterior)
+    M3-SOM02      45.1%  (+1.2pp vs capa anterior)
+    M4-CLASSIC    45.1%  (+0.0pp vs capa anterior)
+    M5-INTER2     60.6%  (+15.5pp vs clásico)
+
+== H5 HÍBRIDO — fallback INTER2 (holdout) ==
+    H1-INTER2-SHOW-P0: horas con k=clásico (posible fallback) ≈ revisar meta
+    H2-INTER2-SHOW+7: horas con k=clásico (posible fallback) ≈ revisar meta
+    H1-INTER2-SHOW-P0: horas k=0 → 0/71
+    H2-INTER2-SHOW+7: horas k=0 → 0/71
+    H3-INTER2-CL∩SH: horas k=0 → 0/71
+
+== H3 LETRA — menú L vs ruleta-G (show) ==
+  test tiros G con L previo: n=697
+    MENU-L tinta:  62.4%
+    WHEEL-G moda:  35.0%
+    azar 1/4:      25.0%
+
+== SÍNTESIS R2 ==
+  ORDEN/PLATO (M7–M10): FRÍO — ninguno supera clásico (±1pp).
+  H1 show→P0: idéntico INTER2 (60.6%) — show ≈ clásico.
+  H3/H4 intersección/unión: = clásico (listas casi iguales).
+  H2 7 pools: 72.1% banda · k≈18 vs INTER2 k≈14.
+    OLOR lab: show duplica P0 en acuerdo → infla conteos.
+    No es motor válido prod; artefacto de doble voto.
+  Techo operativo sigue INTER2 prod (60.6%).
+
+============================================================
+SÍNTESIS lab-show-motor (R1 + R2)
+============================================================
+  R1: Mejor motor SHOW puro ≈ M3/M4 (cierre+mapa+SOM02) ≈ clásico.
+  R1: M0 plato 54 solo no basta; cada capa suma lift.
+  R1: M5 INTER2 sigue arriba del clásico show (+~15pp banda).
+  R2: ver H4/H5 — orden invertido · k-plato · híbridos INTER2+show.
+
+  VEREDICTO R1:
+    · Motor desde show: cierre → mapa H-1 → clima → sombra.
+    · Prod clásico ya emula el show; INTER2 es capa acuerdo.
+    · No reemplazar por plato 54 iid — azar de casino.
+    · Tinta G: menú L, no casilla G del plato.
+

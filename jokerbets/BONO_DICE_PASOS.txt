@@ -1,0 +1,40 @@
+BONO COLOR — un solo script para todos los juegos
+================================================
+Dice, Luck, Deluxe, Show, Betano… misma pantalla “TOMA TU DECISIÓN”.
+No hace falta un script por bono. La etiqueta al final (dice, show, luck)
+solo organiza el reporte.
+
+QUÉ HACE
+  · Abre los 3 Chrome (cuentas de config: c-rojo, c-azul, c-verde).
+  · Escaneo ANTES de tus clics.
+  · Tú eliges el color a mano en cada ventana.
+  · Escaneo DESPUÉS y compara qué quedó marcado.
+  · Guarda TODO sin borrar lo anterior:
+      bono-scan/REGISTRO_BONO.jsonl  ← se suma línea a línea
+      bono-scan/REPORTE-<juego>-<fecha>.txt
+      PNG por cuenta y fase (antes / despues)
+
+CASAR NAVEGADOR ↔ COLOR
+  · El script ya sabe qué Chrome es cuál: tarjeta rojo/azul/verde en Cuentas
+    = id c-rojo / c-azul / c-verde y bonoColor en config.json.
+  · Tú clic manual = “así debe quedar”; el DESPUÉS registra rojo/azul/verde
+    según qué botón quedó marcado en el DOM (izq/centro/der).
+
+PASOS
+  1) Dashboard → Detener 3 Chrome.
+  2) PowerShell:
+       cd .../jokerbets-mesa/dashboard/extraccion
+       node jokerbets-bono-dom-scan.js dice
+     (cambia dice por show, luck, deluxe, betano…)
+  3) Entra al juego en las 3 ventanas; espera el bono.
+  4) Enter → ANTES.
+  5) Clic color en cada ventana (la estrategia que quieras probar).
+  6) Enter → DESPUÉS.
+  7) Envía REGISTRO_BONO.jsonl (o el REPORTE nuevo) + PNG despues.
+
+VOLVER AL BOT
+  Detener script (cierra Chrome) → Dashboard → Iniciar 3 Chrome.
+
+NOTA
+  El bot de producción aún NO usa este registro; esto es lab para cablear
+  bien los clics por juego/casa.

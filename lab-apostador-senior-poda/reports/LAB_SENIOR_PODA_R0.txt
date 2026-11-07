@@ -1,0 +1,107 @@
+LAB SENIOR-PODA — R0
+puerta: espera G post-sequía · poda +1 salvo Tren/Estirada · +2..+4
+chip: LC-01 minutos ±1 · ayuda: acuerdo pools (no unión)
+juez: banda d<=1 + PnL 1:1 en jugadas · hora a hora
+CERO prod · CERO ML/fuzzy
+
+precompute mesas (P0 classic + P8 INTER2)…
+n=1096 train=1024 hold=72 mesas=1046
+horas con chips P0/P8: train 1016/1024 · hold 30/72  (cinta motor last=h20-060926)
+  AYUDA holdout solo es legible en horas con mesa; PODA/SEQUIA3/ALL no necesitan chips.
+
+== TRAIN ==
+  [LC01_ALL]
+    eventos=8919  GO=8919 (100.0%)  NO_GO=0
+    exacto 13.7%  borde 23.1%  banda 36.8%
+    pnl=-2361.0  avg/evento=-0.2647
+    hora a hora: 1023 h · con GO 1023 · cobraron banda 927/1023 (90.6%) · PnL>0 160/1023 (15.6%) · med PnL/h -3.0
+    motivos GO: all_g=8919
+  [SEQUIA3_VIEJO]
+    eventos=8919  GO=3986 (44.7%)  NO_GO=4933
+    exacto 22.4%  borde 35.5%  banda 57.9%
+    pnl=+626.0  avg/evento=+0.0702
+    hora a hora: 1023 h · con GO 984 · cobraron banda 770/984 (78.3%) · PnL>0 471/1023 (46.0%) · med PnL/h +0.0
+    motivos GO: seq3_gap=1=1579, seq3_gap=2=1304, seq3_gap=3=1103
+  [PODA]
+    eventos=8919  GO=4259 (47.8%)  NO_GO=4660
+    exacto 22.4%  borde 37.0%  banda 59.4%
+    pnl=+797.0  avg/evento=+0.0894
+    hora a hora: 1023 h · con GO 992 · cobraron banda 846/992 (85.3%) · PnL>0 508/1023 (49.7%) · med PnL/h +0.0
+    motivos GO: estirada=676, gap2=1304, gap3=1103, gap4=914, tren=262
+  [PODA_AYUDA_P8]
+    eventos=8919  GO=2522 (28.3%)  NO_GO=6397
+    exacto 22.5%  borde 36.7%  banda 59.2%
+    pnl=+466.0  avg/evento=+0.0522
+    hora a hora: 1023 h · con GO 886 · cobraron banda 702/886 (79.2%) · PnL>0 432/1023 (42.2%) · med PnL/h +0.0
+    motivos GO: estirada=393, gap2=760, gap3=671, gap4=539, tren=159
+  [PODA_AYUDA_K2]
+    eventos=8919  GO=1411 (15.8%)  NO_GO=7508
+    exacto 23.4%  borde 36.5%  banda 59.9%
+    pnl=+279.0  avg/evento=+0.0313
+    hora a hora: 1023 h · con GO 717 · cobraron banda 529/717 (73.8%) · PnL>0 365/1023 (35.7%) · med PnL/h +0.0
+    motivos GO: estirada=214, gap2=441, gap3=384, gap4=287, tren=85
+
+== HOLDOUT ==
+  [LC01_ALL]
+    eventos=640  GO=640 (100.0%)  NO_GO=0
+    exacto 13.6%  borde 24.4%  banda 38.0%
+    pnl=-154.0  avg/evento=-0.2406
+    hora a hora: 72 h · con GO 72 · cobraron banda 63/72 (87.5%) · PnL>0 14/72 (19.4%) · med PnL/h -2.0
+    motivos GO: all_g=640
+  [SEQUIA3_VIEJO]
+    eventos=640  GO=298 (46.6%)  NO_GO=342
+    exacto 21.8%  borde 37.6%  banda 59.4%
+    pnl=+56.0  avg/evento=+0.0875
+    hora a hora: 72 h · con GO 69 · cobraron banda 54/69 (78.3%) · PnL>0 37/72 (51.4%) · med PnL/h +1.0
+    motivos GO: seq3_gap=1=113, seq3_gap=2=102, seq3_gap=3=83
+  [PODA]
+    eventos=640  GO=328 (51.2%)  NO_GO=312
+    exacto 21.6%  borde 39.0%  banda 60.7%
+    pnl=+70.0  avg/evento=+0.1094
+    hora a hora: 72 h · con GO 70 · cobraron banda 58/70 (82.9%) · PnL>0 39/72 (54.2%) · med PnL/h +1.0
+    motivos GO: estirada=54, gap2=102, gap3=83, gap4=68, tren=21
+  [PODA_AYUDA_P8]
+    eventos=640  GO=67 (10.5%)  NO_GO=573
+    exacto 16.4%  borde 41.8%  banda 58.2%
+    pnl=+11.0  avg/evento=+0.0172
+    hora a hora: 72 h · con GO 27 · cobraron banda 18/27 (66.7%) · PnL>0 12/72 (16.7%) · med PnL/h +0.0
+    motivos GO: estirada=11, gap2=19, gap3=23, gap4=13, tren=1
+  [PODA_AYUDA_K2]
+    eventos=640  GO=41 (6.4%)  NO_GO=599
+    exacto 22.0%  borde 36.6%  banda 58.5%
+    pnl=+7.0  avg/evento=+0.0109
+    hora a hora: 72 h · con GO 24 · cobraron banda 14/24 (58.3%) · PnL>0 12/72 (16.7%) · med PnL/h +0.0
+    motivos GO: estirada=8, gap2=11, gap3=16, gap4=5, tren=1
+
+== DIFF HOLDOUT (vs baselines) ==
+  PODA − SEQUIA3_VIEJO:  Δbanda +1.3pp  Δpnl +14.0  Δcov +4.7pp
+  PODA − LC01_ALL:       Δbanda +22.7pp  Δpnl +224.0  Δcov -48.8pp
+  PODA_AYUDA_P8 − PODA:  Δbanda -2.5pp  Δpnl -59.0  Δcov -40.8pp
+  PODA_AYUDA_K2 − PODA:  Δbanda -2.1pp  Δpnl -63.0  Δcov -44.8pp
+
+== HOLDOUT SOLO HORAS CON MESA (30/72) — lectura AYUDA ==
+  [PODA]
+    eventos=255  GO=127 (49.8%)  NO_GO=128
+    exacto 21.3%  borde 36.2%  banda 57.5%
+    pnl=+19.0  avg/evento=+0.0745
+    hora a hora: 30 h · con GO 29 · cobraron banda 24/29 (82.8%) · PnL>0 14/30 (46.7%) · med PnL/h -0.5
+  [PODA_AYUDA_P8]
+    eventos=255  GO=67 (26.3%)  NO_GO=188
+    exacto 16.4%  borde 41.8%  banda 58.2%
+    pnl=+11.0  avg/evento=+0.0431
+    hora a hora: 30 h · con GO 27 · cobraron banda 18/27 (66.7%) · PnL>0 12/30 (40.0%) · med PnL/h +0.0
+  [PODA_AYUDA_K2]
+    eventos=255  GO=41 (16.1%)  NO_GO=214
+    exacto 22.0%  borde 36.6%  banda 58.5%
+    pnl=+7.0  avg/evento=+0.0275
+    hora a hora: 30 h · con GO 24 · cobraron banda 14/24 (58.3%) · PnL>0 12/30 (40.0%) · med PnL/h +0.0
+  AYUDA_P8 − PODA (mesa): Δbanda +0.7pp  Δpnl -8.0  Δcov -23.5pp
+  AYUDA_K2 − PODA (mesa): Δbanda +1.1pp  Δpnl -12.0  Δcov -33.7pp
+
+== LECTURA ==
+  Go/No-Go vigente (pill) ya habla esta puerta. Este R0 mide el APOSTADOR.
+  SEQUIA3_VIEJO = misma ventana que el lab 2026-09-04 (incluye +1).
+  Ayuda ≠ segundo tip: solo recorta stake. Cero unión de chips.
+  ML/fuzzy: no en R0. Primero la puerta. Fuzzy senior ya se midió
+  sin esta poda (SENIOR_FUZZY hold pnl −167). Otro edificio: no se nombra.
+

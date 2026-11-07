@@ -1,0 +1,46 @@
+LOOK BANCA — normal vs fuerte · zona vs todos · colchón
+horas 1310  modelo: casa 50×lm−600 por G, −600 por R
+cuenta ≈ casa/3. Apuesta $200. Colchón $20.000.
+
+— lumen/G según cómo CIERRA la hora —
+  opaco        nG= 3121  med 41  media 54  %≥85 18.0%
+  normal       nG= 3834  med 45  media 66  %≥85 24.1%
+  fuerte       nG= 1669  med 50  media 84  %≥85 30.5%
+  muy_fuerte   nG=  855  med 53  media 108  %≥85 33.0%
+  supernova    nG=  210  med 45  media 254  %≥85 28.6%
+
+— horas con indicio @19 (media≥68, ≥2 G): 350 —
+  TODAS las horas, TODO tiro post-19: tiros 51126  G 8466 (16.6%)  pnl casa -1758450  med/hora -4600
+    por cuenta ≈ -586150  ·  vidas a $0 recargando $20k: 27 en 1310 h  ·  suelo marca -4150
+    lumen apostado med 45 media 68
+  TODAS las horas, solo ZONA tip±1: tiros 15915  G 3991 (25.1%)  pnl casa +3782900  med/hora +800
+    por cuenta ≈ +1260967  ·  vidas a $0 recargando $20k: 0 en 1310 h  ·  suelo marca 18417
+    lumen apostado med 45 media 67
+  indicio @19, TODO tiro post-19: tiros 13634  G 2268 (16.6%)  pnl casa -503050  med/hora -3975
+    por cuenta ≈ -167683  ·  vidas a $0 recargando $20k: 7 en 350 h  ·  suelo marca -4933
+    lumen apostado med 45 media 68
+  indicio @19, solo ZONA tip±1: tiros 4407  G 1029 (23.3%)  pnl casa +781750  med/hora +325
+    por cuenta ≈ +260583  ·  vidas a $0 recargando $20k: 0 en 350 h  ·  suelo marca 19250
+    lumen apostado med 45 media 67
+
+— del indicio @19, cierran fuerte+ 129 / normal 123 (oráculo, no se puede exigir en vivo) —
+  oráculo fuerte+, ZONA: tiros 1794  G 474 (26.4%)  pnl casa +840450  med/hora +3900
+    por cuenta ≈ +280150  ·  vidas a $0 recargando $20k: 0 en 129 h  ·  suelo marca 19250
+    lumen apostado med 48 media 81
+  oráculo normal, ZONA: tiros 1620  G 362 (22.3%)  pnl casa +100600  med/hora +300
+    por cuenta ≈ +33533  ·  vidas a $0 recargando $20k: 0 en 123 h  ·  suelo marca 20000
+    lumen apostado med 41 media 59
+  oráculo fuerte+, TODO: tiros 4881  G 963 (19.7%)  pnl casa +1190550  med/hora +8000
+    por cuenta ≈ +396850  ·  vidas a $0 recargando $20k: 0 en 129 h  ·  suelo marca 17983
+    lumen apostado med 48 media 86
+  oráculo normal, TODO: tiros 4777  G 797 (16.7%)  pnl casa -479600  med/hora -4600
+    por cuenta ≈ -159867  ·  vidas a $0 recargando $20k: 7 en 123 h  ·  suelo marca -5033
+    lumen apostado med 41 media 60
+
+— colchón $20.000 / $200 = 100 tiros por cuenta —
+  $400 (doble) = 50 tiros. Casa $600 / tiro en juego.
+  SILLA_TODOS (acta) seca: 81% de los asientos son R.
+  SOLO_ZONA hold: cov 28% banda 89% pnl +141 (silla, no color).
+
+Modelo de cobro es supuesto de mesa. Si el color no paga lm×$50,
+estos PnL no sirven. Verificar un G real (recibo) antes de REGLA.

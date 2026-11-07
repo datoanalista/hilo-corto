@@ -1,0 +1,64 @@
+LOOK BONOS — cinta oficial hilo-corto
+fuente C:\operacion-joker\experimento-nueva-caja-negra\hilo-corto\data\data_3dias.txt
+horas 1310
+
+Tintas: G1 Deluxe · G2 Luck · G3 Dice · G4 Showhow
+Banda = suma lumen de la hora (misma escala Brillo).
+Tren aquí = G con arranque a ≤2 min de la anterior (foto, no ley).
+
+— cupo de G por hora —
+nG med 10  p25 8  p75 11  min 1  max 18
+
+— banda de hora (suma lumen) —
+  muy_apagado      0-449     392   29.9%
+  opaco          450-599     323   24.7%
+  normal         600-849     357   27.3%
+  fuerte         850-1099    148   11.3%
+  muy_fuerte    1100-1599     71    5.4%
+  supernova     1600-…        19    1.5%
+  entrar-olor (fuerte+): 238/1310 = 18.2%
+
+— tinta de cada bono (toda la cinta) —
+  G1 Deluxe    2805   22.2%
+  G2 Luck      4221   33.4%
+  G3 Dice      4218   33.4%
+  G4 Showhow   1399   11.1%
+
+— racha de horas apagadas/opacas seguidas —
+  racha máxima observada: 8 h
+  qué banda rompe una racha apagada:
+    normal       209
+    fuerte       77
+    muy_fuerte   37
+    supernova    12
+
+— tren y cierre 45–59 —
+  horas con tren≥2: 1075  ·  de esas, 0 G desde min 45: 45 (4.2%)
+
+— hod de horas fuerte+ (olor de reloj, no boleto) —
+  h00  10
+  h01  8
+  h02  12
+  h03  8
+  h04  9
+  h05  13
+  h06  8
+  h07  11
+  h08  12
+  h09  9
+  h10  13
+  h11  9
+  h12  10
+  h13  6
+  h14  15
+  h15  14
+  h16  7
+  h17  12
+  h18  11
+  h19  9
+  h20  11
+  h21  4
+  h22  8
+  h23  9
+
+No sentar. No es REGLA. Es foto para la etapa 1.

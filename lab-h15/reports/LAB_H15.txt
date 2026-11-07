@@ -1,0 +1,93 @@
+LAB H15 — hilo-corto
+n=872 train=800 test=72 holdout=72
+h15 train n=34  test n=3
+
+============================================================
+RONDA 1
+============================================================
+-- H1 PERFIL h15 vs vecinos (E1) --
+  train n=34  med_sum=732  rank=1/24  p_gen=32%  med_nG=10  med_meanG=66.1
+  h14 train: med=495  med_meanG=52.4  med_nG=9  p_gen=21%
+  h16 train: med=562  med_meanG=62.8  med_nG=9  p_gen=9%
+  h08 train: med=612  med_meanG=63.3  med_nG=10  p_gen=24%
+  h19 train: med=612  med_meanG=55.8  med_nG=10  p_gen=24%
+  test h15: med=765  rank=4  p_gen=0%  n=3
+  lift h15 vs h14: mean_G +13.7  nG +1
+  VEREDICTO: OLOR (masa por mean_G, no cupo)
+
+-- H2 COSTURA h14->h15 mismo dia (E2) --
+  train pares n=33  med h14=495  med h15=733  med lift=+152
+    h14 opaco -> lift h15 med=+345 (n=13)
+    h14 normal -> lift h15 med=+212 (n=13)
+    h14 fuerte -> lift h15 med=-183 (n=7)
+  test lift med=+195 (n=3)
+  VEREDICTO: VIVE
+
+-- H3 DOW x h15 (E3) --
+  dom  n=5  med=689  p_gen=20%
+  lun  n=5  med=732  p_gen=40%
+  mar  n=5  med=372  p_gen=0%
+  mie  n=4  med=700  p_gen=25%
+  jue  n=5  med=733  p_gen=40%
+  vie  n=5  med=866  p_gen=60%
+  sab  n=5  med=764  p_gen=40%
+  spread DOW med=494
+  test spread DOW=200 (n=3)
+  VEREDICTO: VIVE (DOW local fuerte; n chico por celda)
+
+-- H4 DIA GENEROSO x h15 (E4) --
+  h15 en dia gen: p_gen=50% (n=10)  dia gris: p_gen=25% (n=24)
+  med_sum dia gen=826  dia gris=720  lift=+107
+  h15 = 1er hora gen del dia: 0/10 (0%)
+  VEREDICTO: FRIO
+
+-- H5 ECO h15->h19 +1d (E5) --
+  h19 tras h15 fuerte@40: med=616 (n=9)
+  h19 tras h15 no-fuerte: med=605 (n=24)
+  lift=+11
+  null |delta| med sim=293
+  baseline h19 med=612
+  VEREDICTO: FRIO
+
+-- H6 SN / COLGANTE h15 (E6) --
+  SN n=2  casi-SN n=3  p_sn=6%
+  leave-out h15-250726: med 732 -> 732
+  leave-out h15-170826: med 732 -> 732
+  rank h15 train=1  med=732
+  VEREDICTO: VIVE (mediana robusta; cola SN explica p75 no rank)
+
+-- H7 INTRA @20/@40 h15 vs h14/h19 (E7) --
+  h14: med mean@20=50.0  @40=59.3  late-heavy=48% (n=33)
+  h15: med mean@20=58.4  @40=69.3  late-heavy=41% (n=34)
+  h19: med mean@20=51.0  @40=57.1  late-heavy=50% (n=34)
+  h15 @40 >= q75 (74): 15/34
+  VEREDICTO: OLOR (hora completa fuerte, no solo cola)
+
+-- H8 ECO h5->h15 +1d (E8) --
+  h15 tras h5 fuerte@40: med=916 (n=6)
+  h15 tras h5 no-fuerte: med=707 (n=25)
+  lift=+209
+  baseline h15 med=732
+  VEREDICTO: OLOR
+
+============================================================
+SINTESIS
+============================================================
+  H1: OLOR
+  H2: VIVE
+  H3: VIVE
+  H4: FRIO
+  H5: FRIO
+  H6: VIVE
+  H7: OLOR
+  H8: OLOR
+
+-- INFO cableable (si humano OK) --
+  H1: cartel h15 = intensidad mean_G (GEN_HOD_OLOR ya lo dice)
+  H2: tip costura h14 opaco -> h15 sube (modal Brillo/mapa)
+  H5: eco h15@40>=85 -> vigilar h19 manana
+
+-- FRIO / OLOR bodega --
+  H3 DOW: olor fuerte pero n~5/celda — no regla dura
+  H8 h5->h15: validar con mas cinta
+

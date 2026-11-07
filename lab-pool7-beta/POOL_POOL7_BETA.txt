@@ -1,0 +1,35 @@
+POOL LAB — POOL 7 BETA (ventana 3 vs ventana 5 tiros)
+======================================================
+stamp 2026-09-05
+Lab: hilo-corto/lab-pool7-beta/
+Cero prod · cero LIVE · estudio experimental de performance
+
+PREGUNTA
+  ¿Cómo rinde un "Pool 7 Beta" cuya predicción solo está activa
+  y analiza los siguientes 3 tiros tras cada G, comparado con
+  los siguientes 5 tiros y contra el Pool 7 base (sin límite)?
+  ¿El horizonte de 3 tiros se confirma como el estándar de oro
+  de precisión y rentabilidad?
+
+ANALOGÍA Y CONTEXTO
+  Pool 7 (LC-01) predice la próxima G. En la mesa real, perseguir
+  la G durante sequías largas destruye el PnL y la banda.
+  La ventana 3 tiros (V3) y ventana 5 tiros (V5) actúan como un
+  "Time-to-Live" (TTL) del tip: tras una G, el tip solo compite
+  durante N tiros. Si la G no llega en N tiros, el tip se apaga.
+
+JUEZ
+  - Cobertura (% de G cazadas)
+  - Exacto (d=0)
+  - Vecino (d=1)
+  - Banda (d<=1) [juez oficial]
+  - PnL (unidad 1:1 en banda d<=1)
+  - Desglose por tiro (tiro 1, 2, 3 vs 4, 5)
+  - Holdout 72 h (cinta completa ~1065 horas, train 993 h)
+
+VARIANTES
+  P7-ALL      Pool 7 base continuo (caza todas las G, sin expiración)
+  P7-BETA-V3  Pool 7 Beta con ventana de 3 tiros (gap <= 3)
+  P7-BETA-V5  Pool 7 Beta con ventana de 5 tiros (gap <= 5)
+  P7-BETA-V3-HORIZ  P7 Beta 3 tiros con gap acotado a horizonte físico (1..3 min)
+  P7-BETA-V5-HORIZ  P7 Beta 5 tiros con gap acotado a horizonte físico (1..5 min)

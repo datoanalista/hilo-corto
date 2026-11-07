@@ -1,0 +1,120 @@
+LAB G-EXPLOSION — Ronda 2
+target: aviso @39 → G>=umbral en bloque 20–39 OR 40–59
+cinta: depurar-all-4G-detail.txt + extraccion-en-vivo
+n=988 h · train=916 · holdout=72
+
+== H1 AVISO @39 → multi-bloque 20–39 OR 40–59 · G>=800 ==
+  base train=1.53% (14 pos / 916)
+    generosa@39: nG>=8 & meanG>=75
+      tr prec=7.9% rec=36% tp=5 fp=58 | ho prec=20.0% tp=1 fp=4
+    dia_caliente_proxy: hod14|15 & acum@39>=400
+      tr prec=4.9% rec=14% tp=2 fp=39 | ho prec=0.0% tp=0 fp=1
+    COMBO: generosa|cierre|estricta|dia|unicornio
+      tr prec=3.6% rec=50% tp=7 fp=186 | ho prec=13.3% tp=2 fp=13
+    estricta@39: maxG>=250 & meanG>=70 & G34 fuerte & sin cola
+      tr prec=1.1% rec=7% tp=1 fp=93 | ho prec=0.0% tp=0 fp=10
+    cierre@39: acum>=550 & maxG>=200 & sin G>=umbral ya
+      tr prec=0.8% rec=7% tp=1 fp=122 | ho prec=0.0% tp=0 fp=11
+    flaca+dia: hod14|15 & mean@39<50 & nG@39<=5
+      tr prec=0.0% rec=0% tp=0 fp=8 | ho prec=50.0% tp=1 fp=1
+    flaca+dia2: hod14|15 & acum@39<200 & maxG@39<100
+      tr prec=0.0% rec=0% tp=0 fp=9 | ho prec=50.0% tp=1 fp=1
+  VEREDICTO H1: OLOR débil (prec 5–15%)
+
+== H1 AVISO @39 → multi-bloque 20–39 OR 40–59 · G>=1000 ==
+  base train=1.31% (12 pos / 916)
+    generosa@39: nG>=8 & meanG>=75
+      tr prec=6.3% rec=33% tp=4 fp=59 | ho prec=20.0% tp=1 fp=4
+    dia_caliente_proxy: hod14|15 & acum@39>=400
+      tr prec=4.9% rec=17% tp=2 fp=39 | ho prec=0.0% tp=0 fp=1
+    COMBO: generosa|cierre|estricta|dia|unicornio
+      tr prec=3.1% rec=50% tp=6 fp=189 | ho prec=13.3% tp=2 fp=13
+    estricta@39: maxG>=250 & meanG>=70 & G34 fuerte & sin cola
+      tr prec=1.0% rec=8% tp=1 fp=96 | ho prec=0.0% tp=0 fp=10
+    cierre@39: acum>=550 & maxG>=200 & sin G>=umbral ya
+      tr prec=0.8% rec=8% tp=1 fp=126 | ho prec=0.0% tp=0 fp=11
+    flaca+dia: hod14|15 & mean@39<50 & nG@39<=5
+      tr prec=0.0% rec=0% tp=0 fp=8 | ho prec=50.0% tp=1 fp=1
+    flaca+dia2: hod14|15 & acum@39<200 & maxG@39<100
+      tr prec=0.0% rec=0% tp=0 fp=9 | ho prec=50.0% tp=1 fp=1
+  VEREDICTO H1: OLOR débil (prec 5–15%)
+
+== H1 AVISO @39 → multi-bloque 20–39 OR 40–59 · G>=1200 ==
+  base train=1.09% (10 pos / 916)
+    generosa@39: nG>=8 & meanG>=75
+      tr prec=6.3% rec=40% tp=4 fp=59 | ho prec=20.0% tp=1 fp=4
+    dia_caliente_proxy: hod14|15 & acum@39>=400
+      tr prec=4.9% rec=20% tp=2 fp=39 | ho prec=0.0% tp=0 fp=1
+    COMBO: generosa|cierre|estricta|dia|unicornio
+      tr prec=3.1% rec=60% tp=6 fp=190 | ho prec=13.3% tp=2 fp=13
+    estricta@39: maxG>=250 & meanG>=70 & G34 fuerte & sin cola
+      tr prec=1.0% rec=10% tp=1 fp=96 | ho prec=0.0% tp=0 fp=10
+    cierre@39: acum>=550 & maxG>=200 & sin G>=umbral ya
+      tr prec=0.8% rec=10% tp=1 fp=127 | ho prec=0.0% tp=0 fp=11
+    flaca+dia: hod14|15 & mean@39<50 & nG@39<=5
+      tr prec=0.0% rec=0% tp=0 fp=8 | ho prec=50.0% tp=1 fp=1
+    flaca+dia2: hod14|15 & acum@39<200 & maxG@39<100
+      tr prec=0.0% rec=0% tp=0 fp=9 | ho prec=50.0% tp=1 fp=1
+  VEREDICTO H1: OLOR débil (prec 5–15%)
+
+== H2 COBERTURA G>=1200 — snapshot @39 (caso a caso) ==
+  h22-230726 G3000@35 bloque=20-39 @39 acum=3286 mean=365 max=3000 -> generosa@39
+  h9-240726 G1400@27 bloque=20-39 @39 acum=1789 mean=256 max=1400 -> NINGUNA
+  h15-250726 G2190@40 bloque=40-59 @39 acum=509 mean=64 max=130 -> dia_caliente_proxy
+  h8-260726 G2700@51 bloque=40-59 @39 acum=261 mean=65 max=144 -> NINGUNA
+  h14-260726 G1750@23 bloque=20-39 @39 acum=2351 mean=336 max=1750 -> dia_caliente_proxy
+  h21-020826 G1260@28 bloque=20-39 @39 acum=1453 mean=208 max=1260 -> NINGUNA
+  h4-040826 G1425@56 bloque=40-59 @39 acum=761 mean=95 max=405 -> generosa@39 | cierre@39 | estricta@39
+  h13-050826 G1800@31 bloque=20-39 @39 acum=2133 mean=267 max=1800 -> generosa@39
+  h15-170826 G1625@55 bloque=40-59 @39 acum=239 mean=34 max=54 -> NINGUNA
+  h0-200826 G1313@09 bloque=0-19 (fuera multi) @39 acum=1615 mean=179 max=1313 -> generosa@39
+  h23-210826 G1350@13 bloque=0-19 (fuera multi) @39 acum=1449 mean=362 max=1350 -> NINGUNA
+  h12-240826 G1300@37 bloque=20-39 @39 acum=1574 mean=197 max=1300 -> generosa@39
+  h14-300826 G1200@45 bloque=40-59 @39 acum=149 mean=37 max=59 -> flaca+dia | flaca+dia2
+  h12-010926 G1800@39 bloque=20-39 @39 acum=2207 mean=245 max=1800 -> generosa@39
+  resumen: 9/14 con alguna regla @39 · 12/14 en bloques 20-59
+  unicornio/flaca: 2 hits en reglas unicornio
+
+== H3 UNICORNIO H14-300826 (R2) ==
+  evento: G1200@45 bloque=40-59 hod=14
+  @39: acum=149 nG=4 mean=37.2 max=59
+    flaca+dia: hod14|15 & mean@39<50 & nG@39<=5: SÍ
+    flaca+dia2: hod14|15 & acum@39<200 & maxG@39<100: SÍ
+    unicornio@39: maxG_hora>=400 & mean_hora<55 & nG_hora<=6 & acum@39<250: no
+  R2 atrapa unicornio: SÍ (flaca+dia)
+
+== H4 PROXY G>=800 — COMBO multi-bloque (mejor señal) ==
+  tr prec=3.6% rec=50% tp=7 fp=186 | ho prec=13.3% tp=2 fp=13
+  VEREDICTO H4: OLOR proxy G>=800 (rec alta, prec baja)
+
+== H5 COPY INFO (no cableado — propuesta lab) ==
+  Si COMBO @39 dispara:
+    "Olor explosión: cola 20–59 posible (G alta). Perfil @39 caliente o unicornio tarde."
+  Si solo generosa@39:
+    "Hora generosa @39 — vigilar bloques 20–59."
+  Si solo flaca+dia (hod 14|15):
+    "Unicornio tarde: hora flaca @39 en franja 14–15h — no descartar 40–59."
+  NO prometer minuto. NO confundir con supernova (suma≥1600).
+
+============================================================
+SÍNTESIS RONDA 2
+============================================================
+  PREGUNTA R2: multi-bloque @39 + capa unicornio (h14)
+
+  n=988 h · G>=1200: 14 eventos
+  Mejor regla suelta: generosa@39 (~6–8% prec, ~33–40% rec)
+  COMBO OR: ~3% prec, ~50–60% rec — muchos falsos positivos
+  Unicornio h14-300826: SÍ vía flaca+dia (hod14, mean@39<50)
+  2/14 G>=1200 caen en 0–19 — fuera del target multi-bloque
+
+  CENSO:
+    VIVE prod (chip/aviso dashboard): 0 — prec insuficiente
+    OLOR INFO @39 multi-bloque: sí — perfil + unicornio documentado
+    FRÍO: regla única G>=1200 → bloque 40–59 (R1 confirmado)
+
+  DECISIÓN R2:
+    · Lab CERRADO (R2 cumple mandato R1)
+    · NO cablear dashboard sin OK humano
+    · Si cable INFO: usar COMBO cauteloso o generosa@39 sola
+    · R3 no obligatoria — n eventos G>=1200 sigue ~1.4%
+

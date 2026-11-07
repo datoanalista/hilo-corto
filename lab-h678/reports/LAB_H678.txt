@@ -1,0 +1,96 @@
+LAB H678 — bloque manana h06/h07/h08
+n=873 train=801 test=72 holdout=72
+
+============================================================
+-- H1 PERFIL h06/h07/h08 vs manana --
+  h05  rank=12  med=584  p_gen=12%  med_nG=10  med_meanG=59.2  p_op=19%
+  h06  rank= 3  med=655  p_gen=15%  med_nG=11  med_meanG=62.6  p_op=18%
+  h07  rank= 4  med=646  p_gen=27%  med_nG=10  med_meanG=64.6  p_op=33%
+  h08  rank= 9  med=612  p_gen=24%  med_nG=10  med_meanG=63.3  p_op=18%
+  h09  rank=19  med=544  p_gen=15%  med_nG=8  med_meanG=67.9  p_op=18%
+  h10  rank=13  med=579  p_gen=24%  med_nG=10  med_meanG=56.8  p_op=29%
+  h06 vs mediana global dia: +62
+  h07 vs mediana global dia: +53
+  h08 vs mediana global dia: +19
+  lift h08 vs h09: mean_G -4.5  nG +2
+  VEREDICTO: OLOR (bloque alto por perfil hod, no outlier)
+
+-- H2 COSTURA h05->h06->h07->h08 --
+  h05->h06  n=32  lift=+41  op=+212(5)  no=+26(23)  fu=-675(4)
+    test lift=-220 (n=3)
+  h06->h07  n=33  lift=+58  op=+262(5)  no=-18(23)  fu=-281(5)
+    test lift=-129 (n=3)
+  h07->h08  n=33  lift=+53  op=+284(9)  no=+5(15)  fu=-320(9)
+    test lift=+181 (n=3)
+  vs h14->h15 train: lift +174 opaco +345 (referencia)
+  VEREDICTO: OLOR (rebote opaco generico; lift total debil vs h14-h15)
+
+-- H3 h08 PICO -> h09 CAIDA --
+  h08->h09  n=33  med_h8=612  med_h9=544  lift=-37
+  strata: op=+314(4)  no=-27(21)  fu=-679(8)
+  test lift=+4 (n=3)
+  VEREDICTO: OLOR (h08 cierra alto; h09 regresion, fuerte->fuerte muy negativo)
+
+-- H4 BLOQUE h06+h07+h08 mismo dia --
+  dias completos n=33  med bloque=1969  triple_gen=1  triple_fuerte=1
+  corr bloque vs resto del dia: r=-0.02
+  corr h06 sum vs h07 sum (pares): r=0.18
+  VEREDICTO: FRIO (bloque co-mueve un poco; no tubo cerrado)
+
+-- H5 DOW x h06/h07/h08 --
+  h06 spread DOW=340
+  h07 spread DOW=395
+  h08 spread DOW=341
+  max spread=395 (ref h15=494)
+  VEREDICTO: OLOR
+
+-- H6 DIA GENEROSO x bloque --
+  h06  dia gen p_gen=11% (n=9)  gris=17% (n=24)
+  h07  dia gen p_gen=44% (n=9)  gris=21% (n=24)
+  h08  dia gen p_gen=44% (n=9)  gris=17% (n=24)
+  VEREDICTO: OLOR (amplifica debil vs h15)
+
+-- H7 INTRA @20/@40 h06/h07/h08 --
+  h05  mean@40=65.5  late-heavy=34%  n=32
+  h06  mean@40=54.2  late-heavy=33%  n=33
+  h07  mean@40=60.3  late-heavy=33%  n=33
+  h08  mean@40=61.8  late-heavy=36%  n=33
+  h09  mean@40=54.9  late-heavy=36%  n=33
+  VEREDICTO: FRIO (sin firma cola; hora completa estable)
+
+-- H8 ECO h10->h08 +1d --
+  h08 tras h10 fuerte@40: med=612 (n=5)
+  h08 tras h10 no: med=619 (n=28)
+  lift=-7  baseline h08=612
+  VEREDICTO: FRIO
+
+-- H9 SN / RANK h08 --
+  h08 SN n=2  rank=9  med=612
+  leave-out h8-260726: med 612 -> 594
+  leave-out h8-110826: med 612 -> 594
+  VEREDICTO: OLOR
+
+-- H10 BLOQUE manana vs costura h14-h15 --
+  h07->h08 lift=+53  opaco=+284
+  h14->h15 lift=+152  opaco=+345
+  ratio lift total: h14-h15 es 2.9x h07-h08
+  VEREDICTO: VIVE (mecanismos distintos: manana=plano alto; mediodia=rebote valle)
+
+============================================================
+SINTESIS
+  H1: OLOR
+  H2: OLOR
+  H3: OLOR
+  H4: FRIO
+  H5: OLOR
+  H6: OLOR
+  H7: FRIO
+  H8: FRIO
+  H9: OLOR
+  H10: VIVE
+
+-- INFO posible --
+  H3: tip h08 fuerte -> h09 techo (simetrico costura h14-h15 invertida)
+  H2: rebote opaco generico h07->h08 (OLOR, no clonar tip h15)
+  H1: cartel hod manana alto — ya en mapa
+

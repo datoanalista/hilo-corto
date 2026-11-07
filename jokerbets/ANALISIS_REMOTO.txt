@@ -1,0 +1,41 @@
+Análisis remoto (notebook + Cloudflare)
+======================================
+
+Prod en el servidor (PC mesa):
+  · extracción + 3 Chrome — puede correr sin nadie mirando el dashboard local.
+  · servir.py (puerto ej. 8765) — obligatorio para API y front estático.
+
+Desde otro PC (solo navegador):
+  · Cloudflare Tunnel apuntando a http://127.0.0.1:8765
+  · Login normal en el dashboard vía URL trycloudflare (cookie de sesión).
+  · No hace falta abrir Chrome del dashboard en el servidor; solo el túnel + servir.
+
+Cards Cuentas (panel): se refrescan por pulso (bono terminado / premio), no cada 3 s.
+  GET /api/jokerbets/ui-pulse  — el front consulta cada ~8 s (ligero).
+
+Logs en disco (notebook):
+  dashboard/extraccion/jokerbets-apuestas.jsonl   — humano (tabla Cuentas)
+  dashboard/extraccion/jokerbets-performance.jsonl — agente (saldo, apuestas, premios, freno)
+
+Pasadizo HTTP (servir.py), sin abrir el dashboard:
+  GET /api/jokerbets/analisis/resumen
+  GET /api/jokerbets/analisis/log?limit=500&cuentaId=...&event=apuesta_bot
+
+Auth (una de dos):
+  1) Cookie de sesión (login normal en el front vía Cloudflare).
+  2) Clave solo lectura en el notebook:
+       set JOKERBETS_ANALISIS_KEY=tu-clave-larga
+     Request:
+       Header: X-Joker-Analisis-Key: tu-clave-larga
+
+Ejemplo (desde cualquier máquina):
+  curl -s -H "X-Joker-Analisis-Key: tu-clave-larga" ^
+    https://TU-TUNNEL.trycloudflare.com/api/jokerbets/analisis/resumen
+
+Para el agente en Cursor: pegar el JSON del resumen en el chat, o compartir
+URL + clave en variable de entorno del túnel (no commitear la clave).
+
+Resumen local sin HTTP:
+  python lab-pool7-beta/resumir_performance_vivo.py
+
+El log del front (100 líneas) no alcanza para performance; usar resumen o performance.jsonl.

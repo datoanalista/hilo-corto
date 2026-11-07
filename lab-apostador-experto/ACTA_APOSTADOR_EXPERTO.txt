@@ -1,0 +1,115 @@
+ACTA LAB APOSTADOR EXPERTO — Ronda 0
+====================================
+fecha: 2026-09-04
+lab: hilo-corto/lab-apostador-experto/
+script: run_r0.py → reports/LAB_APOSTADOR_EXPERTO_R0.txt
+cinta: depurar-all-4G-detail + extraccion-en-vivo · n=1023 h · holdout 72
+Cero cambios prod (dashboard/motor/LIVE).
+
+PREGUNTA
+  ¿GO / NO_GO × STRONG / WEAK como apostador senior de dinero real,
+  con Pool7 LC-01 + Pool8 INTER2 + memoria de errores?
+
+── RONDA 0 ──
+
+H0 ALWAYS_TIP (Pool 7 LC-01, stake=1 siempre)
+  train: n=8302 hit=36.7% pnl=−2210
+  hold:  n=606  hit=38.1% pnl=−144
+  acuerdo tip∩P8 hold: 65.2%
+  VEREDICTO: tip tiene hit ~38% — A odds lab 1:1 PIERDE (hace falta edge>50%
+  o payout asimétrico real). Selectividad ≠ tip ciego.
+
+H1–H3 políticas holdout
+  NEVER        pnl=0     cov=0%     (pasivo)
+  EWMA_GATE    pnl=−85   hit=38.2%  cov=59%   ← menos daño que always
+  ALWAYS_TIP   pnl=−144  hit=38.1%  cov=100%
+  SENIOR_FUZZY pnl=−167  hit=40.5%  cov=67%   strong=275
+               STRONG amplifica pérdidas a stake×3 con hit aún <50%
+
+── PISTAS ──
+  se ve: tip LC denso; hit banda ~37–40%
+  se ve: EWMA (aprender de rachas) recorta exposición y mejora PnL vs always
+  se ve: STRONG prematuro castiga bankroll (gema sin edge suficiente)
+  se ve: NEVER gana a todos en PnL lab 1:1 (no apostar > tip ciego)
+  ya estaba: Pool7/8 en prod — no tocados
+  es nuevo: contrato decisión + memoria + acuerdo P8 medido
+
+── CENSO ──
+  VIVE prod: 0
+  OLOR: filtro EWMA / selectividad (daño menor)
+  FRÍO: SENIOR con STRONG sin calibrar (peor PnL que always)
+  OLOR método: perfil dinero real exige umbral de edge o payout real
+
+── DECISIÓN ──
+  Lab ABIERTO.
+  R1: (a) no STRONG hasta hit_cond≥ umbral o payout real
+      (b) calibrar NO_GO más agresivo
+      (c) opcional ML logístico features=[acuerdo,ewma,miss,nG,gap]
+  Cero cable dashboard.
+
+════════════════════════════════════════════════════════════════
+ACTA — R1 SEQUÍA-5 (2026-09-04)
+════════════════════════════════════════════════════════════════
+script: run_r1_sequia.py → reports/LAB_APOSTADOR_EXPERTO_R1_SEQUIA.txt
+
+REGLA
+  Tras una G: ventana ≤5 tiros para la siguiente G.
+  Si gap>5 → sequía → NO_GO (se pierde esa G a propósito) · nuevo ancla.
+  Objetivo: no cazar todas · más exactitud en los GO.
+
+CENSO gaps (holdout): gap≤5 = 64.7% · sequía 35.3%
+
+HOLDOUT — tip LC solo cuando hay GO
+  ALWAYS_TIP   cov 100%  exacto 15.0%  ±1 23.6%  banda 38.6%  pnl −139
+  SEQUIA5      cov 64.7% exacto 22.1%  ±1 31.8%  banda 53.9%  pnl +31
+  SEQUIA5+EWMA cov 40.4% exacto 22.9%  ±1 31.0%  banda 53.9%  pnl +19
+
+TRAIN SEQUIA5: exacto 20.8% · banda 54.0% · pnl +422 (vs always −2218)
+
+VEREDICTO R1
+  OLOR-VIVE método: ventana sequía-5 sube exacto ~15→22% y banda ~39→54%.
+  PnL lab 1:1 pasa a positivo al no cazar gaps largos.
+  No cable prod sin OK humano.
+
+── RANGO 3 / 4 / 5 (2026-09-04) ──
+script: run_sequia_rango.py → LAB_APOSTADOR_EXPERTO_SEQUIA_RANGO.txt
+
+HOLDOUT
+  ALWAYS   cov 100%  exacto 15.0%  ±1 23.6%  banda 38.6%  pnl −139
+  SEQUIA3  cov 45%   exacto 25.1%  ±1 34.9%  banda 60.0%  pnl +55
+  SEQUIA4  cov 57%   exacto 23.3%  ±1 33.7%  banda 57.0%  pnl +48
+  SEQUIA5  cov 65%   exacto 22.1%  ±1 31.8%  banda 53.9%  pnl +31
+
+Lectura: acortar ventana ↑ exactitud/banda y PnL, ↓ cobertura.
+Rango útil de trabajo: 3–5 tiros (tradeoff cobertura vs precisión).
+Elección: ventana 3 (mejor banda/±1/PnL holdout).
+
+════════════════════════════════════════════════════════════════
+ACTA — R2+R3 potencias sobre SEQUIA3 (2026-09-04)
+════════════════════════════════════════════════════════════════
+script: run_r2_r3.py → reports/LAB_APOSTADOR_EXPERTO_R2_R3.txt
+VENTANA_SEQUIA=3 fijada en core_ae.py
+
+HOLDOUT vs SEQUIA3 sola (banda 60% · pnl +55 · cov 45%)
+  SEQUIA_P8        Δbanda −0.7 · Δpnl −22 · FRÍO (recorta sin subir)
+  SEQUIA_EWMA      Δbanda +2.4 · Δpnl −12 · olor débil banda, PnL peor
+  SEQUIA_SOFT      Δbanda +2.4 · Δpnl −7  · igual
+  SEQUIA_P8_EWMA   Δbanda +3.2 · Δpnl −25 · más selectivo, menos banco
+  SEQUIA_P8_SOFT   Δbanda +1.4 · Δpnl −25
+  SEQUIA_MISS2     Δbanda +2.6 · Δpnl −10 · espina R3: no gana PnL
+
+VEREDICTO R2+R3
+  SIN OLOR nuevo material: ninguna potencia mejora banda+PnL juntos.
+  Candidata cable lab→prod: SEQUIA3 = tip LC-01 + TTL ≤3 tiros + WEAK.
+  Sin STRONG. Sin P8/EWMA/fuzzy como filtro extra.
+  Cero cable hasta OK humano explícito.
+
+════════════════════════════════════════════════════════════════
+CABLE UI — pill Go! / No-Go (2026-09-04)
+════════════════════════════════════════════════════════════════
+OK humano: simplecito en el pill del tiro (antes "en curso…").
+Prod: dashboard sequiaGo.js · LiveAvance.goSequia · MesasTodasV2.
+Regla: tras última G, si length−idx_G ≤ 3 → "Go!" else "No-Go".
+Sin STRONG · sin P8/EWMA en el pill.
+
+fin

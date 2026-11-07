@@ -1,0 +1,44 @@
+ACTA LOOK — G + 7 CASILLAS × TONO
+================================
+fecha: 2026-09-11
+lab: hilo-corto/lab-poda-gr/
+script: look_g7_tono.py → reports/LOOK_G7_TONO.txt
+Cero prod. Cero LIVE. Cero Jaccard. Cero cable.
+
+PREGUNTA
+  Tras una G, las 7 casillas siguientes: ¿hay comportamientos
+  que se clasifiquen? ¿Cambian por tipo (opaco, muy opaco, normal)?
+
+FICHA
+  Casilla = minuto de pista (Tiro.casilla = m0). No es el tiro.
+  Ancla = G núcleo (tipo ≠ 5). Ventana = m+1..m+7 en ESA hora.
+  Tono = TONO DE HORA (suma lumen), cubetas de LOOK_HUECO_TONO.
+  Día = solo oficio ya definido (generoso ≥25% horas suma≥850).
+  7 tiros = contraste. Juez hermano = banda d≤1 (nota).
+
+CINTA
+  1164 h · train 1092 · holdout 72.
+  Anclas G: 10591 / 637. Ventanas min completas: 9343 / 559.
+
+VEREDICTO
+  Cuatro formas estables. No siete máquinas.
+  Tono mueve desierto ↔ racimo. Las sillas sueltas son planas.
+  Tipo de DÍA no corta. No sentar.
+
+NÚMEROS (train / hold, ventanas min completas)
+  desierto        27.6% (2577) / 31.1% (174)
+  silla_ventana   22.3% (2084) / 22.0% (123)
+  silla_lejos     21.6% (2020) / 22.2% (124)
+  racimo_ventana  21.0% (1962) / 19.0% (106)
+  muy_apagado desierto 39.2%/39.2% · racimo_ventana 12.5%/10.5%
+  silla_ventana ~22% en todos los tonos
+  día generoso vs no: desierto 26.4 vs 28.0 · silla_ventana 22.3=22.3
+
+CENSUS
+  Taxonomía G+7 como tip / alarma / cubeta de día   FRÍO
+  Ventana +5..+7 como oficio nuevo                   FRÍO (Go! ya calla a 4 R)
+  Relato apagada ⇒ sequía luego racimo               ya FALSO (LOOK_HUECO_TONO)
+  Tono = volumen; silla suelta plana                 VIVE (foto, no cable)
+
+DÓNDE
+  look_g7_tono.py · reports/LOOK_G7_TONO.txt

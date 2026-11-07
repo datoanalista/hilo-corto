@@ -1,0 +1,49 @@
+Escaneo DOM — ciclo de apuesta (Pool 7 / centro / barra)
+======================================================
+
+Objetivo: capturar en las 3 ventanas (rojo, azul, verde) qué ve el bot en:
+  · cuenta regresiva (12 s, HAGAN JUEGO)
+  · después de apostar
+  · mesa cerrada (ESPERE SIGUIENTE RONDA)
+  · fin de bono (si hubo)
+
+Salida:
+  dashboard/extraccion/apuesta-scan/REGISTRO_APUESTA.jsonl  (append)
+  dashboard/extraccion/apuesta-scan/REPORTE-mesa-*.txt
+  PNG por cuenta y fase
+
+Antes de correr
+---------------
+  1) Dashboard → Detener 3 Chrome (libera perfiles).
+  2) PowerShell:
+
+     cd c:\operacion-joker\experimento-nueva-caja-negra\jokerbets-mesa\dashboard\extraccion
+     node jokerbets-apuesta-dom-scan.js mesa
+
+  3) El script abre 3 Chrome con los perfiles de config (Jugabet x2 + Betano).
+     Inicia sesión si hace falta y deja la mesa Joker's Show en vivo.
+
+Durante la captura (mirá PowerShell, no solo Chrome)
+----------------------------------------------------
+  Enter 1 — cuenta_regresiva
+    Timer verde / "HAGAN JUEGO", barra de apuestas abierta, aún sin tu clic.
+
+  Enter 2 — apuesta_hecha
+    Apostaste a mano (ficha $50 + clic centro dorado). Esperá 1–2 s antes de Enter.
+
+  Enter 3 — mesa_cerrada
+    Pasaron los ~12 s o sale "ESPERE A LA SIGUIENTE RONDA"; no podés sumar más.
+
+  Enter 4 — fin_bono
+    Terminó el bono y volvió la mesa normal. Si no hubo bono en esa ronda, Enter igual.
+
+Después
+-------
+  Detener el script (cierra Chrome) o Ctrl+C.
+  Dashboard → Iniciar 3 Chrome cuando vuelvas a prod.
+
+Notas
+-----
+  · Repetí el script en distintas rondas (con/sin bono) para enriquecer el JSONL.
+  · La etiqueta "mesa" en el comando es solo nombre de reporte; no cambia el flujo.
+  · Siguiente lab: jokerbets/INACTIVIDAD_PASOS.txt (play + SALIR/506).

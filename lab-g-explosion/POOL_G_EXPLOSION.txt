@@ -1,0 +1,31 @@
+POOL G-EXPLOSION — hilo-corto
+=============================
+stamp 2026-08-30
+lab: hilo-corto/lab-g-explosion/
+
+PREGUNTA (humano)
+  ¿Se puede avisar el BLOQUE (00–19 / 20–39 / 40–59) donde vendrá
+  una G explosiva (≥1200 lumen), ANTES de que caiga?
+  No registro post-facto. No minuto exacto.
+
+SUB-PREGUNTAS
+  H0  Censo: cuántas G≥500/800/1000/1200 hay en cinta+live.
+  H1  ¿En qué bloque caen las G extremas?
+  H2  Perfil @19/@39: hora con explosión vs hora sin.
+  H3  Reglas @39 → bloque 40–59 (G≥1000, G≥1200).
+  H4  Reglas @19 → bloque 20–39.
+  H5  Contexto día/hod/costura para olor de bloque.
+  H6  Caso H14-300826 (G3 1200 min 44) — ¿alguna regla lo olería?
+
+FUENTES
+  depuracion/depurar-all-4G-detail.txt (903 h · solo lectura)
+  + dashboard/extraccion/extraccion-en-vivo.txt (horas nuevas post-detail)
+  Hereda métricas de lab-g-cola/core_gc.py
+
+VETOS
+  Cero LIVE · cero boleto · cero chips al dashboard sin OK humano.
+  No confundir con supernova suma≥1600 (lab-supernova).
+
+HIPÓTESIS INICIAL
+  G≥1200 n≈1 → no corona regla única; explorar G≥1000/800 como proxy.
+  Mejor ventana @39 para bloque 40–59 (lab-g-cola R2/R3).

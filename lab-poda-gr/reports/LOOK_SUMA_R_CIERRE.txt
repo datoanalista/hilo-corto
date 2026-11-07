@@ -1,0 +1,100 @@
+CIERRE · SUMA-R  (primer hueco + total ±2)
+cinta data_all_lightgreen.txt  288 h  h0-300726 → h23-100826
+Nula = barajar firmas; el reloj no se mueve.
+
+════ 1 · primer hueco de horas pegadas ════
+  pares civiles pegados: 287
+  Σ0==Σ1: 10/287  3.5%  (ambos 0: 8 · ambos >0: 2)
+  n_R0==n_R1: 15/287  5.2%
+  1ª G al mismo minuto: 17/287  5.9%
+  corr(Σ primer, minuto 1ª G) = +0.684
+  corr(Σ primer, n_R primer) = +0.924
+  nula Σ==     med 6.3%  p_izq=2/80
+  nula ambos 0 med 4.2%  p_izq=4/80
+  nula ambos>0 med 1.7%  p_izq=4/80
+  nula n_R==   med 9.8%  p_izq=0/80
+
+  cortes
+    1ª mitad   == 7/119  5.9%  (0=0: 5 · >0: 2)
+    2ª mitad   == 2/119  1.7%  (0=0: 2 · >0: 0)
+    hold       == 1/47  2.1%  (0=0: 1 · >0: 0)
+
+  las 10 películas donde Σ0==Σ1
+    h20-300726 Σ=36  nR=12 @01→12   h21-300726 Σ=36  nR=14 @00→13   masa
+    h11-310726 Σ=0   nR=0 @04→05   h12-310726 Σ=0   nR=0 @02→04   TREN
+    h21-010826 Σ=0   nR=0 @11→13   h22-010826 Σ=0   nR=0 @01→03   TREN
+    h22-010826 Σ=0   nR=0 @01→03   h23-010826 Σ=0   nR=0 @00→02   TREN
+    h2-020826 Σ=1   nR=1 @05→08   h3-020826 Σ=1   nR=1 @06→09   masa
+    h22-020826 Σ=0   nR=0 @04→05   h23-020826 Σ=0   nR=0 @00→02   TREN
+    h4-030826 Σ=0   nR=0 @00→02   h5-030826 Σ=0   nR=0 @01→03   TREN
+    h4-040826 Σ=0   nR=0 @02→03   h5-040826 Σ=0   nR=0 @07→09   TREN
+    h18-080826 Σ=0   nR=0 @04→06   h19-080826 Σ=0   nR=0 @04→05   TREN
+    h12-090826 Σ=0   nR=0 @05→08   h13-090826 Σ=0   nR=0 @00→02   TREN
+
+  Σ0+Σ1  p50=21  min=0 max=134  (no es cupo fijo)
+  |Σ0-Σ1| p50=13
+  |Σ0-Σ1| cubetas: 0=10  1-2=24  3-5=40  6-10=50  >10=163
+
+════ 2 · total R de la hora a ±2 h ════
+  pares únicos H / H+2 con mismo total: 8
+  totales más frecuentes de la cinta: 126×11, 138×9, 128×9, 160×8, 151×8, 137×7, 120×7, 113×6
+
+  películas (todas)
+    h2-300726 tot=113 nR=47 nG=12  huecos[0 25 1 4 5 16 8 0 0 22 0]
+    h4-300726 tot=113 nR=41 nG=14  huecos[0 3 1 23 36 10 0 3 9 8 5 14 0]
+      bag de ese total en 288 h: 6 veces  · nR distinto  · nG distinto  · 1er hueco 0 vs 0
+
+    h12-300726 tot=126 nR=56 nG=6  huecos[3 9 28 40 2]
+    h14-300726 tot=126 nR=48 nG=10  huecos[0 46 0 39 5 3 14 1 10]
+      bag de ese total en 288 h: 11 veces  · nR distinto  · nG distinto  · 1er hueco 3 vs 0
+
+    h11-010826 tot=128 nR=49 nG=10  huecos[29 3 2 5 16 3 18 5 39]
+    h13-010826 tot=128 nR=48 nG=10  huecos[6 5 1 0 0 25 64 21 0]
+      bag de ese total en 288 h: 9 veces  · nR distinto  · nG igual  · 1er hueco 29 vs 6
+
+    h18-040826 tot=142 nR=55 nG=6  huecos[17 13 10 12 27]
+    h20-040826 tot=142 nR=50 nG=11  huecos[25 13 17 14 1 10 50 4 4 2]
+      bag de ese total en 288 h: 5 veces  · nR distinto  · nG distinto  · 1er hueco 17 vs 25
+
+    h14-050826 tot=138 nR=52 nG=13  huecos[3 0 27 19 1 11 6 0 34 2 0 5]
+    h16-050826 tot=138 nR=53 nG=9  huecos[5 5 2 2 2 30 11 63]
+      bag de ese total en 288 h: 9 veces  · nR distinto  · nG distinto  · 1er hueco 3 vs 5
+
+    h10-060826 tot=128 nR=49 nG=11  huecos[9 15 4 21 9 1 12 0 57 0]
+    h12-060826 tot=128 nR=51 nG=9  huecos[0 0 3 21 75 1 3 2]
+      bag de ese total en 288 h: 9 veces  · nR distinto  · nG distinto  · 1er hueco 9 vs 0
+
+    h17-060826 tot=126 nR=46 nG=12  huecos[17 37 1 2 1 53 5 0 0 1 0]
+    h19-060826 tot=126 nR=56 nG=7  huecos[30 20 24 1 6 7]
+      bag de ese total en 288 h: 11 veces  · nR distinto  · nG distinto  · 1er hueco 17 vs 30
+
+    h15-090826 tot=114 nR=49 nG=9  huecos[0 9 26 9 0 31 4 20]
+    h17-090826 tot=114 nR=49 nG=11  huecos[0 5 10 10 10 22 11 6 8 22]
+      bag de ese total en 288 h: 5 veces  · nR igual  · nG distinto  · 1er hueco 0 vs 0
+
+  corr(total, n_R hora) = +0.632
+  corr(total, n_G hora) = -0.496
+  de esos pares: n_R igual 1/8  n_G igual 1/8
+
+  mismos totales, pares únicos, por lag (vs nula)
+    +1h  3/287  1.0%  nula 1.4%  p_nula=59/80
+    +2h  8/286  2.8%  nula 1.4%  p_nula=2/80
+    +3h  2/285  0.7%  nula 1.1%  p_nula=70/80
+    +4h  3/284  1.1%  nula 1.4%  p_nula=59/80
+    +5h  3/283  1.1%  nula 1.4%  p_nula=55/80
+
+  +2 en cortes (dirigido, como el look previo)
+    todas  16/572  2.8%
+    1ª     6/236  2.5%
+    2ª     8/236  3.4%
+    hold   2/92  2.2%
+
+  hod del primero del par: h2=1 h10=1 h11=1 h12=1 h14=1 h15=1 h17=1 h18=1
+  días: 010826=1 040826=1 050826=1 060826=2 090826=1 300726=2
+
+════ cierre ════
+  Cifra suelta de hueco vs ±5 h: no. Queda cerrado.
+  Primer hueco pegado: el ‘anti’ vive casi todo en 0=0.
+  Si el 0=0 no levanta vs nula, no hay oficio.
+  Total ±2: pocos pares; si +1/+3/+4/+5 quedan igual, no es lag 2.
+  Cero cable.

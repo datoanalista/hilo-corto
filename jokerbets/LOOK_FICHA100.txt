@@ -1,0 +1,42 @@
+LOOK FICHA100 — $100/bono · $400/cuenta · $30k × 3
+API rondas 61070  horas 1043  indicio 281  fuerte+ 100
+R −400/cuenta. G: 100×color − 300  (3 bonos que no salieron).
+Casa G: 100×lm − 900. Ejemplo 150+100+50 → +29.100.
+Colchón: 75 R seguidos ($30k/$400). A $50/$20k eran 100 R.
+
+— recibos zona lm≥250 (el caso 300× que nombraste) —
+  2026-07-23T18:40  dice     lm  720  80+320+320  casa +71100  w +7700/+31700/+31700
+  2026-07-25T08:21  dice     lm  336  28+28+280  casa +32700  w +2500/+2500/+27700
+  2026-07-25T17:50  deluxe   lm  340  120+20+200  casa +33100  w +11700/+1700/+19700
+  2026-07-28T19:25  wheel    lm  282  9+88+185  casa +27300  w +600/+8500/+18200
+  2026-07-30T14:55  dice     lm  288  24+24+240  casa +27900  w +2100/+2100/+23700
+  2026-08-02T01:21  deluxe   lm  390  40+100+250  casa +38100  w +3700/+9700/+24700
+  2026-08-02T14:20  dice     lm  600  50+50+500  casa +59100  w +4700/+4700/+49700
+  2026-08-09T16:47  wheel    lm  251  22+17+212  casa +24200  w +1900/+1400/+20900
+
+— oficio (indicio @19 + zona). Esto NO es rociar —
+  indicio+zona: tiros 3376  G 858  casa +2250500  med/hora +3800
+    pozo $90k: suelo 86400  vidas@0 0  / 281 h
+    c0 $30k: pnl +870600  suelo 30000  vidas@0 0  cierre 900600
+    c1 $30k: pnl +617800  suelo 27100  vidas@0 0  cierre 647800
+    c2 $30k: pnl +762100  suelo 27100  vidas@0 0  cierre 792100
+
+— techo oráculo fuerte+ + zona —
+  oráculo fuerte+: tiros 1309  G 380  casa +1878600  med/hora +10350
+    pozo $90k: suelo 86400  vidas@0 0  / 100 h
+    c0 $30k: pnl +788400  suelo 30000  vidas@0 0  cierre 818400
+    c1 $30k: pnl +489400  suelo 27100  vidas@0 0  cierre 519400
+    c2 $30k: pnl +600800  suelo 27100  vidas@0 0  cierre 630800
+
+— lo que el casino quiere: TODO tiro post-19 en esas horas —
+  spray post-19: tiros 10878  G 1841  casa +174200  med/hora -3800
+    pozo $90k: suelo -15500  vidas@0 3  / 281 h
+    c0 $30k: pnl +57300  suelo -10500  vidas@0 8  cierre 358400
+    c1 $30k: pnl -103600  suelo -9600  vidas@0 8  cierre 202100
+    c2 $30k: pnl +220500  suelo 26300  vidas@0 0  cierre 250500
+
+Lectura
+  · $90k no es el doble de $60k: ficha ×2, pozo ×1.5.
+    Menos tiros de colchón (75 vs 100).
+  · Si el oficio se cumple, el suelo lo dice la API.
+  · Spray a $400 seca más rápido que a $50.

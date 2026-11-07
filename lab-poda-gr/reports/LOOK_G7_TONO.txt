@@ -1,0 +1,220 @@
+LOOK · G + 7 casillas × tono
+Casilla = minuto de pista (lectores.Tiro.casilla = m0; analogía: silla).
+Ancla = cada G núcleo (tipo ≠ 5). Extra no sienta casilla.
+Ventana = los 7 minutos siguientes EN ESA hora (no se cose :00).
+Tono = TONO DE HORA (suma lumen), cubetas de LOOK_HUECO_TONO.
+'Día opaco / muy opaco / normal' del boleto = esas cubetas de HORA.
+Día (oficio ya definido) = generoso ≥25% horas suma≥850. No se inventan cubetas.
+Juez de corrimiento = banda d≤1 (nota). Unidad = la hora. Cero cable.
+
+Cinta 1164 h · train 1092 · holdout 72
+Con ≥1 G núcleo: train 1092 · hold 72
+
+════════ TRAIN  1092 horas con ≥1 G núcleo  ·  10591 anclas G ════════
+Horas por tono: muy_apagado=313  opaco=264  normal=315  fuerte=122  muy_fuerte=62  supernova=16
+Días en el lote: 47  · generosos (oficio): 11
+Ventanas completas: minutos 9343/10591  · tiros 9279/10591
+Colas (no caben 7): reloj 1248  · cinta 1312
+
+1. FORMAS · 7 CASILLAS = minutos (ficha). Completas. n y %.
+corte          |     N |       desierto |   silla_vecina |  silla_ventana |    silla_lejos |  racimo_pegado | racimo_ventana |   racimo_tarde
+---------------------------------------------------------------------------------------------------------------------------------------------
+todas          |  9343 |  27.6% 2577 |   1.8%  164 |  22.3% 2084 |  21.6% 2020 |   3.1%  286 |  21.0% 1962 |   2.7%  250
+muy_apagado    |  2068 |  39.2%  811 |   1.9%   39 |  22.4%  464 |  20.6%  427 |   1.6%   33 |  12.5%  258 |   1.7%   36
+opaco          |  2237 |  29.3%  656 |   1.8%   40 |  22.5%  504 |  23.4%  523 |   2.5%   56 |  18.4%  411 |   2.1%   47
+normal         |  3000 |  23.5%  705 |   1.7%   50 |  22.8%  684 |  20.7%  622 |   3.4%  103 |  24.8%  744 |   3.1%   92
+fuerte         |  1228 |  20.7%  254 |   1.7%   21 |  22.2%  273 |  22.5%  276 |   4.7%   58 |  25.0%  307 |   3.2%   39
+muy_fuerte+    |   810 |  18.6%  151 |   1.7%   14 |  19.6%  159 |  21.2%  172 |   4.4%   36 |  29.9%  242 |   4.4%   36
+  -- cupo (nG), no es tono --
+floja          |  1138 |  50.9%  579 |   1.6%   18 |  18.2%  207 |  21.9%  249 |   0.4%    5 |   6.2%   71 |   0.8%    9
+normal         |  6333 |  27.9% 1767 |   1.8%  114 |  23.9% 1516 |  22.3% 1412 |   2.6%  165 |  19.0% 1204 |   2.4%  155
+rica           |  1872 |  12.3%  231 |   1.7%   32 |  19.3%  361 |  19.2%  359 |   6.2%  116 |  36.7%  687 |   4.6%   86
+
+2. PRIMERA LUZ en las 7 casillas (minuto), sin nombrar racimo
+corte          |     N |           +1 |       +2..+4 |       +5..+7 |      ninguna
+--------------------------------------------------------------------------------
+todas          |  9343 |   4.8%  450 |  43.3% 4046 |  24.3% 2270 |  27.6% 2577
+muy_apagado    |  2068 |   3.5%   72 |  34.9%  722 |  22.4%  463 |  39.2%  811
+opaco          |  2237 |   4.3%   96 |  40.9%  915 |  25.5%  570 |  29.3%  656
+normal         |  3000 |   5.1%  153 |  47.6% 1428 |  23.8%  714 |  23.5%  705
+fuerte         |  1228 |   6.4%   79 |  47.2%  580 |  25.7%  315 |  20.7%  254
+muy_fuerte+    |   810 |   6.2%   50 |  49.5%  401 |  25.7%  208 |  18.6%  151
+
+3. CONTRASTE · 7 TIROS de cinta (no es la ficha). Completas.
+corte          |     N |       desierto |         pegada |    ventana_234 |   sequia_rompe |           tren |  estirada_pega | racimo_ventana
+---------------------------------------------------------------------------------------------------------------------------------------------
+todas          |  9279 |  28.5% 2648 |   5.2%  479 |  17.1% 1591 |  20.3% 1884 |   5.1%  472 |   6.0%  554 |  17.8% 1651
+muy_apagado    |  2067 |  40.5%  838 |   4.8%  100 |  18.2%  376 |  19.0%  392 |   2.3%   47 |   3.9%   80 |  11.3%  234
+opaco          |  2226 |  30.1%  671 |   4.9%  109 |  17.7%  393 |  21.7%  483 |   3.7%   82 |   5.8%  129 |  16.1%  359
+normal         |  2983 |  24.2%  722 |   4.9%  146 |  17.1%  509 |  19.9%  593 |   6.1%  182 |   7.0%  210 |  20.8%  621
+fuerte         |  1205 |  21.8%  263 |   6.0%   72 |  15.8%  190 |  21.2%  256 |   7.8%   94 |   6.6%   79 |  20.8%  251
+muy_fuerte+    |   798 |  19.3%  154 |   6.5%   52 |  15.4%  123 |  20.1%  160 |   8.4%   67 |   7.0%   56 |  23.3%  186
+  -- cupo (nG), no es tono --
+floja          |  1134 |  52.1%  591 |   3.4%   39 |  16.1%  183 |  18.3%  207 |   0.5%    6 |   3.3%   37 |   6.3%   71
+normal         |  6296 |  28.8% 1813 |   4.7%  294 |  18.4% 1160 |  20.7% 1301 |   4.3%  273 |   6.2%  393 |  16.9% 1062
+rica           |  1849 |  13.2%  244 |   7.9%  146 |  13.4%  248 |  20.3%  376 |  10.4%  193 |   6.7%  124 |  28.0%  518
+
+4. PRIMERA G núcleo en los 7 tiros
+corte          |     N |           +1 |       +2..+4 |       +5..+7 |      ninguna
+--------------------------------------------------------------------------------
+todas          |  9279 |  16.2% 1505 |  34.9% 3242 |  20.3% 1884 |  28.5% 2648
+muy_apagado    |  2067 |  11.0%  227 |  29.5%  610 |  19.0%  392 |  40.5%  838
+opaco          |  2226 |  14.4%  320 |  33.8%  752 |  21.7%  483 |  30.1%  671
+normal         |  2983 |  18.0%  538 |  37.9% 1130 |  19.9%  593 |  24.2%  722
+fuerte         |  1205 |  20.3%  245 |  36.6%  441 |  21.2%  256 |  21.8%  263
+muy_fuerte+    |   798 |  21.9%  175 |  38.7%  309 |  20.1%  160 |  19.3%  154
+
+5. ¿EL DÍA MUEVE? mismas formas de minutos, corte oficio de día
+Día generoso = oficio ya definido (≥25% horas del día con suma≥850; ≥8 h).
+Moda = cubeta de TONO DE HORA más frecuente ese día (sin cubeta nueva).
+corte            |     N |     desierto | silla_vecina | silla_ventana |  silla_lejos | …
+dia_generoso     |  2239 |  26.4%  590 |   1.8%   40 |  22.3%  499 |  21.8%  489 |   3.5%   78 |  21.4%  480 |   2.8%   63
+dia_no_gen       |  7104 |  28.0% 1987 |   1.7%  124 |  22.3% 1585 |  21.6% 1531 |   2.9%  208 |  20.9% 1482 |   2.6%  187
+moda_muy_apagado |  3228 |  29.7%  959 |   2.0%   63 |  22.6%  731 |  21.2%  683 |   2.5%   82 |  19.5%  631 |   2.4%   79
+moda_opaco       |  1774 |  26.7%  473 |   1.4%   25 |  22.6%  401 |  21.6%  384 |   3.1%   55 |  22.1%  392 |   2.5%   44
+moda_normal      |  3793 |  26.2%  992 |   1.7%   64 |  21.8%  825 |  22.3%  845 |   3.5%  131 |  21.9%  830 |   2.8%  106
+
+6. SILLA / BANDA d≤1 (oficio hermano, no color)
+Oficio hermano (no juez de esta ficha): d(tip LC-01, minuto de la PRÓXIMA G) ≤ 1.
+Tip causal = luces ya caídas + esta G. Sin 1ª G de hora no hay p30.
+  N con tip y próxima G en la hora: 7993
+  banda d≤1 próxima G: 2913  36.4%
+  de esas, próxima G cae en las 7 casillas: 5987  · banda 2859  47.8%
+corte          |     N |      banda |   prox en +2..+4 y banda
+todas          |  7993 |      36.4% |  2351  29.4%
+muy_apagado    |  1651 |      27.9% |   334  20.2%
+opaco          |  1910 |      35.2% |   520  27.2%
+normal         |  2622 |      40.0% |   892  34.0%
+fuerte         |  1086 |      38.9% |   359  33.1%
+muy_fuerte+    |   724 |      42.8% |   246  34.0%
+
+7. BANDERAS (no son clase; van encima de la forma)
+  ancla ya en tren (G previa): 1473  15.9%
+  ancla estirada (≥100 s): 2024  21.8%
+  media de luces en las 7 casillas (completas) por tono:
+    muy_apagado     n=2068   media=0.78  p0=39.2%  p≥2=15.8%
+    opaco           n=2237   media=0.97  p0=29.3%  p≥2=23.0%
+    normal          n=3000   media=1.13  p0=23.5%  p≥2=31.3%
+    fuerte          n=1228   media=1.20  p0=20.7%  p≥2=32.9%
+    muy_fuerte+     n=810    media=1.27  p0=18.6%  p≥2=38.8%
+
+════════ HOLDOUT  72 horas con ≥1 G núcleo  ·  637 anclas G ════════
+Horas por tono: muy_apagado=33  opaco=14  normal=15  fuerte=6  muy_fuerte=2  supernova=2
+Días en el lote: 4  · generosos (oficio): 0
+Ventanas completas: minutos 559/637  · tiros 547/637
+Colas (no caben 7): reloj 78  · cinta 90
+
+1. FORMAS · 7 CASILLAS = minutos (ficha). Completas. n y %.
+corte          |     N |       desierto |   silla_vecina |  silla_ventana |    silla_lejos |  racimo_pegado | racimo_ventana |   racimo_tarde
+---------------------------------------------------------------------------------------------------------------------------------------------
+todas          |   559 |  31.1%  174 |   1.3%    7 |  22.0%  123 |  22.2%  124 |   1.8%   10 |  19.0%  106 |   2.7%   15
+muy_apagado    |   209 |  39.2%   82 |   2.9%    6 |  20.6%   43 |  22.0%   46 |   2.4%    5 |  10.5%   22 |   2.4%    5
+opaco          |   124 |  27.4%   34 |   0.0%    0 |  24.2%   30 |  20.2%   25 |   1.6%    2 |  22.6%   28 |   4.0%    5
+normal         |   142 |  23.2%   33 |   0.7%    1 |  23.2%   33 |  23.9%   34 |   0.7%    1 |  25.4%   36 |   2.8%    4
+fuerte         |    53 |  30.2%   16 |   0.0%    0 |  20.8%   11 |  22.6%   12 |   3.8%    2 |  20.8%   11 |   1.9%    1
+muy_fuerte+    |    31 |  29.0%    9 |   0.0%    0 |  19.4%    6 |  22.6%    7 |   0.0%    0 |  29.0%    9 |   0.0%    0
+  -- cupo (nG), no es tono --
+floja          |   124 |  47.6%   59 |   1.6%    2 |  21.8%   27 |  25.0%   31 |   0.0%    0 |   4.0%    5 |   0.0%    0
+normal         |   364 |  28.8%  105 |   1.1%    4 |  22.3%   81 |  21.2%   77 |   2.2%    8 |  20.6%   75 |   3.8%   14
+rica           |    71 |  14.1%   10 |   1.4%    1 |  21.1%   15 |  22.5%   16 |   2.8%    2 |  36.6%   26 |   1.4%    1
+
+2. PRIMERA LUZ en las 7 casillas (minuto), sin nombrar racimo
+corte          |     N |           +1 |       +2..+4 |       +5..+7 |      ninguna
+--------------------------------------------------------------------------------
+todas          |   559 |   3.0%   17 |  41.0%  229 |  24.9%  139 |  31.1%  174
+muy_apagado    |   209 |   5.3%   11 |  31.1%   65 |  24.4%   51 |  39.2%   82
+opaco          |   124 |   1.6%    2 |  46.8%   58 |  24.2%   30 |  27.4%   34
+normal         |   142 |   1.4%    2 |  48.6%   69 |  26.8%   38 |  23.2%   33
+fuerte         |    53 |   3.8%    2 |  41.5%   22 |  24.5%   13 |  30.2%   16
+muy_fuerte+    |    31 |   0.0%    0 |  48.4%   15 |  22.6%    7 |  29.0%    9
+
+3. CONTRASTE · 7 TIROS de cinta (no es la ficha). Completas.
+corte          |     N |       desierto |         pegada |    ventana_234 |   sequia_rompe |           tren |  estirada_pega | racimo_ventana
+---------------------------------------------------------------------------------------------------------------------------------------------
+todas          |   547 |  30.0%  164 |   2.6%   14 |  16.1%   88 |  22.3%  122 |   5.7%   31 |   5.9%   32 |  17.6%   96
+muy_apagado    |   208 |  39.4%   82 |   1.9%    4 |  16.3%   34 |  21.2%   44 |   7.2%   15 |   4.8%   10 |   9.1%   19
+opaco          |   121 |  24.0%   29 |   3.3%    4 |  16.5%   20 |  22.3%   27 |   1.7%    2 |   6.6%    8 |  25.6%   31
+normal         |   137 |  23.4%   32 |   2.9%    4 |  16.8%   23 |  21.9%   30 |   4.4%    6 |   5.8%    8 |  24.8%   34
+fuerte         |    50 |  26.0%   13 |   4.0%    2 |  10.0%    5 |  28.0%   14 |  12.0%    6 |   8.0%    4 |  12.0%    6
+muy_fuerte+    |    31 |  25.8%    8 |   0.0%    0 |  19.4%    6 |  22.6%    7 |   6.5%    2 |   6.5%    2 |  19.4%    6
+  -- cupo (nG), no es tono --
+floja          |   125 |  47.2%   59 |   1.6%    2 |  16.8%   21 |  23.2%   29 |   0.0%    0 |   4.0%    5 |   7.2%    9
+normal         |   352 |  27.0%   95 |   3.1%   11 |  15.9%   56 |  22.2%   78 |   6.0%   21 |   6.2%   22 |  19.6%   69
+rica           |    70 |  14.3%   10 |   1.4%    1 |  15.7%   11 |  21.4%   15 |  14.3%   10 |   7.1%    5 |  25.7%   18
+
+4. PRIMERA G núcleo en los 7 tiros
+corte          |     N |           +1 |       +2..+4 |       +5..+7 |      ninguna
+--------------------------------------------------------------------------------
+todas          |   547 |  14.1%   77 |  33.6%  184 |  22.3%  122 |  30.0%  164
+muy_apagado    |   208 |  13.9%   29 |  25.5%   53 |  21.2%   44 |  39.4%   82
+opaco          |   121 |  11.6%   14 |  42.1%   51 |  22.3%   27 |  24.0%   29
+normal         |   137 |  13.1%   18 |  41.6%   57 |  21.9%   30 |  23.4%   32
+fuerte         |    50 |  24.0%   12 |  22.0%   11 |  28.0%   14 |  26.0%   13
+muy_fuerte+    |    31 |  12.9%    4 |  38.7%   12 |  22.6%    7 |  25.8%    8
+
+5. ¿EL DÍA MUEVE? mismas formas de minutos, corte oficio de día
+Día generoso = oficio ya definido (≥25% horas del día con suma≥850; ≥8 h).
+Moda = cubeta de TONO DE HORA más frecuente ese día (sin cubeta nueva).
+corte            |     N |     desierto | silla_vecina | silla_ventana |  silla_lejos | …
+dia_no_gen       |   559 |  31.1%  174 |   1.3%    7 |  22.0%  123 |  22.2%  124 |   1.8%   10 |  19.0%  106 |   2.7%   15
+moda_muy_apagado |   407 |  31.4%  128 |   1.2%    5 |  21.9%   89 |  21.4%   87 |   2.2%    9 |  19.4%   79 |   2.5%   10
+
+6. SILLA / BANDA d≤1 (oficio hermano, no color)
+Oficio hermano (no juez de esta ficha): d(tip LC-01, minuto de la PRÓXIMA G) ≤ 1.
+Tip causal = luces ya caídas + esta G. Sin 1ª G de hora no hay p30.
+  N con tip y próxima G en la hora: 466
+  banda d≤1 próxima G: 153  32.8%
+  de esas, próxima G cae en las 7 casillas: 335  · banda 148  44.2%
+corte          |     N |      banda |   prox en +2..+4 y banda
+todas          |   466 |      32.8% |   115  24.7%
+muy_apagado    |   162 |      27.8% |    27  16.7%
+opaco          |   109 |      34.9% |    32  29.4%
+normal         |   122 |      36.9% |    39  32.0%
+fuerte         |    46 |      30.4% |     9  19.6%
+muy_fuerte+    |    27 |      40.7% |     8  29.6%
+
+7. BANDERAS (no son clase; van encima de la forma)
+  ancla ya en tren (G previa): 77  14.1%
+  ancla estirada (≥100 s): 158  28.9%
+  media de luces en las 7 casillas (completas) por tono:
+    muy_apagado     n=209    media=0.79  p0=39.2%  p≥2=15.3%
+    opaco           n=124    media=1.03  p0=27.4%  p≥2=28.2%
+    normal          n=142    media=1.11  p0=23.2%  p≥2=28.9%
+    fuerte          n=53     media=1.08  p0=30.2%  p≥2=26.4%
+    muy_fuerte+     n=31     media=1.06  p0=29.0%  p≥2=29.0%
+
+════════════════════════════════ LECTURA ════════════════════════════════
+Ficha = 7 minutos tras la G, misma hora. 7 tiros = contraste, no el boleto.
+
+Hay FORMAS recurrentes, no siete máquinas. Cuatro cubos mayoritarios
+estables train/hold (ventanas completas):
+  desierto        27.6% / 31.1%   (0 luces en las 7)
+  silla_ventana   22.3% / 22.0%   (1 luz, primera en +2..+4)
+  silla_lejos     21.6% / 22.2%   (1 luz, primera en +5..+7)
+  racimo_ventana  21.0% / 19.0%   (2+ luces, primera en +2..+4)
+Las otras tres (silla_vecina, racimo_pegado, racimo_tarde) <4%. No sentar.
+
+TONO DE HORA mueve VOLUMEN, no el gesto:
+  muy_apagado: desierto 39.2%/39.2% · racimo_ventana 12.5%/10.5%
+  normal:      desierto 23.5%/23.2% · racimo_ventana 24.8%/25.4%
+  silla_ventana ~22% en TODOS los tonos (plana). silla_lejos igual ~22%.
+  Cupo (floja/rica) mueve más que el tono: floja desierto ~51/48;
+  rica racimo_ventana ~37/37. Misma física que LOOK_HUECO_TONO / PASO_HORA.
+
+TIPO DE DÍA no corta. Día generoso vs no: mismas % (desierto 26.4 vs 28.0;
+  silla_ventana 22.3=22.3). Moda del tono del día ≈ plana. El objeto del
+  boleto ('opaco, muy opaco, normal') es TONO DE HORA, no un clima de día.
+
+YA ESTABA: apagada estira el paso (4 R vs 2 R); hueco bimodal racimo/sequía;
+  'apagada ⇒ sequía 6–15 luego racimo' era FALSO (más racimo en fuertes);
+  islas (casi no se pegan): +1 minuto 4.8%/3.0% vs iid ~nG/60.
+  desierto ~28% ≈ sombra de ocupación (1−nG/60)^7 en hora normal.
+
+NUEVO (esta ventana): las dos sillas sueltas (+2..+4 y +5..+7) son planas
+  al tono; lo que el tono cambia es desierto ↔ racimo. +1 minuto no es clase.
+  +1 TIRO sí es frecuente (~16%) porque tren/estirada/pegada viven en cinta,
+  no en la silla de al lado.
+
+NO SENTAR / NO CABLEAR: taxonomía G+7 al dashboard · alarma · ventana +5..+7
+  como oficio nuevo (Go! ya calla a 4 R) · cubetas de 'día opaco' ·
+  P(tiro=G) / Jaccard como juez · COVER/SPAN.

@@ -1,0 +1,58 @@
+LAB INTER2 VARIANTES R2 — ge2 + filtros INFO
+detail: c:\operacion-joker\depuracion\depurar-all-4G-detail.txt · holdout=72h · juez banda d≤1
+  ge2 intacto (≥2 P0–P5); INFO recorta bloques @19/@20 o H-1
+
+horas eval=913 · holdout=72
+REF train 60.3% k=14.7 · holdout 60.5% k=14.3
+
+== RANKING holdout ==
+  motor                       banda   k   exact  hit  trim%  k=0   Δpp
+  REF-INTER2-ge2               60.5%   14.3   24.9%    100%    0.0    0   +0.0pp
+  F-H1-wrap-09+20              58.5%   13.8   24.8%    100%    2.9    0   -2.0pp
+  F-H1-sinEarly-drop019        56.0%   13.2   23.4%    100%    7.4    0   -4.5pp
+  F-H1-late-4059               51.9%   12.5   22.0%     96%   12.9    0   -8.6pp
+  F-H1-h14sinG-2059            59.7%   14.1   24.5%    100%    1.5    0   -0.7pp
+  F-@19-cola-A-2059            52.1%   12.4   21.7%    100%   13.2    0   -8.4pp
+  F-@19-cola-B-2039            46.7%   11.0   18.8%     99%   22.5    0  -13.8pp
+  F-@19-noCola-trim2039        46.3%   11.1   19.2%     94%   22.0    0  -14.2pp
+  F-@20-opaca-drop019          50.8%   11.6   20.9%    100%   18.8    0   -9.7pp
+  F-@20-opaca-2059             50.8%   11.6   20.9%    100%   18.8    0   -9.7pp
+  F-@20-brill-trim4059         44.6%   10.3   17.0%     99%   27.8    0  -15.9pp
+  F-@20-lowNG-3059             50.8%   11.7   20.6%     99%   17.9    0   -9.7pp
+  F-@20-highNG-039             52.9%   12.0   21.8%    100%   15.4    0   -7.5pp
+  F-19cola+20opaca             42.9%   10.0   17.9%    100%   30.2    0  -17.6pp
+  F-H1wrap+19cola              50.3%   12.0   21.6%    100%   15.6    0  -10.2pp
+
+== H-1 pre-hora ==
+  F-H1-wrap-09+20             58.5%  k=13.8  trim=3%  Δ=-2.0pp
+  F-H1-sinEarly-drop019       56.0%  k=13.2  trim=7%  Δ=-4.5pp
+  F-H1-late-4059              51.9%  k=12.5  trim=13%  Δ=-8.6pp
+  F-H1-h14sinG-2059           59.7%  k=14.1  trim=1%  Δ=-0.7pp
+  F-H1wrap+19cola             50.3%  k=12.0  trim=16%  Δ=-10.2pp
+
+== @19 cola ==
+  F-@19-cola-A-2059           52.1%  k=12.4  trim=13%  Δ=-8.4pp
+  F-@19-cola-B-2039           46.7%  k=11.0  trim=23%  Δ=-13.8pp
+  F-@19-noCola-trim2039       46.3%  k=11.1  trim=22%  Δ=-14.2pp
+
+== @20 intra ==
+  F-@20-opaca-drop019         50.8%  k=11.6  trim=19%  Δ=-9.7pp
+  F-@20-opaca-2059            50.8%  k=11.6  trim=19%  Δ=-9.7pp
+  F-@20-brill-trim4059        44.6%  k=10.3  trim=28%  Δ=-15.9pp
+  F-@20-lowNG-3059            50.8%  k=11.7  trim=18%  Δ=-9.7pp
+  F-@20-highNG-039            52.9%  k=12.0  trim=15%  Δ=-7.5pp
+
+== COMBOS ==
+  F-19cola+20opaca            42.9%  k=10.0  Δ=-17.6pp
+  F-H1wrap+19cola             50.3%  k=12.0  Δ=-10.2pp
+
+== PARETO banda/k vs REF ==
+  (ninguno domina REF)
+
+== TOP 5 holdout ==
+  1. REF-INTER2-ge2  60.5%  k=14.3  ΔREF=+0.0pp
+  2. F-H1-h14sinG-2059  59.7%  k=14.1  ΔREF=-0.7pp
+  3. F-H1-wrap-09+20  58.5%  k=13.8  ΔREF=-2.0pp
+  4. F-H1-sinEarly-drop019  56.0%  k=13.2  ΔREF=-4.5pp
+  5. F-@20-highNG-039  52.9%  k=12.0  ΔREF=-7.5pp
+

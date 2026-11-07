@@ -1,0 +1,164 @@
+LAB G-COLA — RONDA 3 · discovery · patrones
+n=882 train=810 holdout=72
+
+== H1 ESPECIE — taxonomía de horas con cola ==
+  horas con G>400: 80 · G>500: 44
+  G>400 por especie: {'cola_temprana': 10, 'cola_cierre': 31, 'multi_cola': 2, 'cola_medio': 29, 'cola_apertura': 8}
+  G>400 por bloque 1er cola: {'0-19': 20, '40-59': 32, '20-39': 31}
+  G>500 por especie: {'cola_cierre': 14, 'multi_cola': 2, 'cola_medio': 18, 'cola_temprana': 4, 'cola_apertura': 6}
+  G>500 por bloque 1er cola: {'40-59': 15, '20-39': 20, '0-19': 11}
+
+== H2 PERFIL HORA — con cola vs vecinas sin cola ==
+  con G>500: n=44 · sin G>500 (nG>=3): n=835
+  nG: med 10 vs 10 (Δ+0)
+  sumG: med 1352 vs 574 (Δ+778)
+  meanG: med 152 vs 58 (Δ+94)
+  maxG: med 740 vs 151 (Δ+590)
+  acum@19: med 176 vs 170 (Δ+6)
+  maxG@19: med 76 vs 85 (Δ-10)
+  acum@39: med 952 vs 374 (Δ+578)
+  nG@39: med 7 vs 6 (Δ+1)
+  G3|4>=70 en 0-19 (horas con cola): 50%
+
+== H3 ANATOMÍA G COLA — la ficha gorda en sí ==
+  --- G>500 n=46 eventos ---
+  min med=30 · lumen med=740
+  tipos: {3: 20, 2: 7, 4: 14, 1: 5}
+  R largo antes: 72%
+  gap desde G previa med=5 min
+  ordinal G med=6 (1=primera luz)
+  es 1er G de hora: 13%
+  --- G>400 n=83 eventos ---
+  min med=34 · lumen med=543
+  tipos: {4: 24, 3: 42, 2: 11, 1: 6}
+  R largo antes: 67%
+  gap desde G previa med=5 min
+  ordinal G med=6 (1=primera luz)
+  es 1er G de hora: 10%
+
+== H4 TRAYECTORIA — acumulación antes de la cola ==
+  G>500: acum justo antes med=246 · cola/acum med=3.96 (salto relativo)
+  G>400: acum justo antes med=276 · cola/acum med=2.48 (salto relativo)
+  cola_cierre: Δacum 19→39 med=204
+
+== H5 TEJIDO — día, hod, hora previa ==
+  G>500: otra cola mismo día: 70% (n=44)
+  H-1 maxG>=110 o tuvo G>500: 73% antes hora cola
+  hod P(G>500) top:
+    h00: 13.5% (5/37)
+    h15: 10.8% (4/37)
+    h20: 8.3% (3/36)
+    h13: 8.3% (3/36)
+    h01: 8.3% (3/36)
+    h08: 8.1% (3/37)
+
+== H6 PATRONES — reglas de comportamiento (train→holdout) ==
+  --- target: G>500 cualquier bloque ---
+  base train=5.2% holdout=2.8%
+    multi_señal: nG>=8 & meanG>=75: tr prec=21.0% rec=81% tp=34 fp=128 | ho prec=11.8% rec=100% tp=2
+    post_SN_proxy: sumG>=1200 h previa: tr prec=17.6% rec=29% tp=12 fp=56 | ho prec=20.0% rec=50% tp=1
+    R_largo antes 1era G>=85: tr prec=7.0% rec=17% tp=7 fp=93 | ho prec=0.0% rec=0% tp=0
+    medio_L_largo: G34 min20-38 & R_largo_antes: tr prec=6.0% rec=40% tp=17 fp=265 | ho prec=0.0% rec=0% tp=0
+    G34_apertura + meanG@19>=65: tr prec=4.9% rec=19% tp=8 fp=156 | ho prec=0.0% rec=0% tp=0
+    escalera: maxG@19>=110 & acum@39>=500 & sin>500@39: tr prec=2.2% rec=7% tp=3 fp=131 | ho prec=0.0% rec=0% tp=0
+    cierre_spec: acum@39>=550 & maxG@39>=200 & sin>500@39: tr prec=2.2% rec=5% tp=2 fp=88 | ho prec=14.3% rec=50% tp=1
+    cola_temprana_spec: G>200 min<=15: tr prec=1.8% rec=2% tp=1 fp=55 | ho prec=0.0% rec=0% tp=0
+
+  --- target: G>500 en 40-59 ---
+  base train=1.7% holdout=1.4%
+    multi_señal: nG>=8 & meanG>=75: tr prec=7.4% rec=86% tp=12 fp=150 | ho prec=5.9% rec=100% tp=1
+    post_SN_proxy: sumG>=1200 h previa: tr prec=2.9% rec=14% tp=2 fp=66 | ho prec=0.0% rec=0% tp=0
+    G34_apertura + meanG@19>=65: tr prec=2.4% rec=29% tp=4 fp=160 | ho prec=0.0% rec=0% tp=0
+    escalera: maxG@19>=110 & acum@39>=500 & sin>500@39: tr prec=2.2% rec=21% tp=3 fp=131 | ho prec=0.0% rec=0% tp=0
+    cierre_spec: acum@39>=550 & maxG@39>=200 & sin>500@39: tr prec=2.2% rec=14% tp=2 fp=88 | ho prec=14.3% rec=100% tp=1
+    medio_L_largo: G34 min20-38 & R_largo_antes: tr prec=2.1% rec=43% tp=6 fp=276 | ho prec=0.0% rec=0% tp=0
+    R_largo antes 1era G>=85: tr prec=2.0% rec=14% tp=2 fp=98 | ho prec=0.0% rec=0% tp=0
+    cola_temprana_spec: G>200 min<=15: tr prec=1.8% rec=7% tp=1 fp=55 | ho prec=0.0% rec=0% tp=0
+
+  --- target: G>500 en 20-39 ---
+  base train=2.5% holdout=0.0%
+    multi_señal: nG>=8 & meanG>=75: tr prec=10.5% rec=85% tp=17 fp=145 | ho prec=0.0% rec=0% tp=0
+    medio_L_largo: G34 min20-38 & R_largo_antes: tr prec=4.3% rec=60% tp=12 fp=270 | ho prec=0.0% rec=0% tp=0
+    G34_apertura + meanG@19>=65: tr prec=2.4% rec=20% tp=4 fp=160 | ho prec=0.0% rec=0% tp=0
+    R_largo antes 1era G>=85: tr prec=2.0% rec=10% tp=2 fp=98 | ho prec=0.0% rec=0% tp=0
+    post_SN_proxy: sumG>=1200 h previa: tr prec=1.5% rec=5% tp=1 fp=67 | ho prec=0.0% rec=0% tp=0
+    escalera: maxG@19>=110 & acum@39>=500 & sin>500@39: tr prec=0.0% rec=0% tp=0 fp=134 | ho prec=0.0% rec=0% tp=0
+    cola_temprana_spec: G>200 min<=15: tr prec=0.0% rec=0% tp=0 fp=56 | ho prec=0.0% rec=0% tp=0
+    cierre_spec: acum@39>=550 & maxG@39>=200 & sin>500@39: tr prec=0.0% rec=0% tp=0 fp=90 | ho prec=0.0% rec=0% tp=0
+
+== H7 CENSO — todas las G>500 (identidad) ==
+  total eventos G>500: 46
+  tag · hod · min · lumen · tipo · bloque · especie · R_largo_antes
+  h22-230726 h22 m35 L3000 G3 20-39 multi_cola RL=Y
+  h8-260726 h08 m51 L2700 G3 40-59 cola_cierre RL=Y
+  h15-250726 h15 m40 L2190 G4 40-59 cola_cierre RL=Y
+  h13-050826 h13 m31 L1800 G3 20-39 cola_medio RL=N
+  h14-260726 h14 m23 L1750 G2 20-39 cola_medio RL=Y
+  h15-170826 h15 m55 L1625 G1 40-59 cola_cierre RL=Y
+  h4-040826 h04 m56 L1425 G2 40-59 cola_cierre RL=Y
+  h9-240726 h09 m27 L1400 G2 20-39 cola_medio RL=Y
+  h23-210826 h23 m12 L1350 G3 0-19 cola_apertura RL=N
+  h0-200826 h00 m06 L1313 G4 0-19 cola_temprana RL=N
+  h12-240826 h12 m35 L1300 G1 20-39 cola_medio RL=N
+  h21-020826 h21 m28 L1260 G4 20-39 cola_medio RL=Y
+  h20-230726 h20 m52 L1080 G3 40-59 cola_cierre RL=Y
+  h0-080826 h00 m35 L1065 G1 20-39 cola_medio RL=Y
+  h2-280726 h02 m12 L952 G4 0-19 cola_temprana RL=N
+  h10-250726 h10 m49 L900 G2 40-59 cola_cierre RL=Y
+  h19-180826 h19 m05 L900 G3 0-19 cola_apertura RL=Y
+  h22-230726 h22 m58 L900 G3 40-59 multi_cola RL=Y
+  h1-040826 h01 m25 L866 G4 20-39 cola_medio RL=Y
+  h13-270826 h13 m00 L800 G2 0-19 cola_apertura RL=N
+  h19-080826 h19 m40 L776 G4 40-59 cola_cierre RL=Y
+  h11-210826 h11 m23 L770 G2 20-39 cola_medio RL=Y
+  h15-230826 h15 m22 L741 G4 20-39 cola_medio RL=N
+  h3-020826 h03 m21 L740 G1 20-39 cola_medio RL=Y
+  h1-260726 h01 m33 L720 G3 20-39 cola_medio RL=Y
+  h18-230726 h18 m40 L720 G3 40-59 cola_cierre RL=Y
+  h2-030826 h02 m10 L720 G3 0-19 cola_temprana RL=Y
+  h8-110826 h08 m08 L720 G3 0-19 multi_cola RL=Y
+  h7-290826 h07 m52 L640 G1 40-59 cola_cierre RL=N
+  h8-110826 h08 m29 L636 G4 20-39 multi_cola RL=Y
+  h0-220826 h00 m49 L600 G3 40-59 cola_cierre RL=N
+  h14-020826 h14 m20 L600 G3 20-39 cola_medio RL=Y
+  h15-070826 h15 m37 L600 G3 20-39 cola_medio RL=Y
+  h20-080826 h20 m25 L600 G3 20-39 cola_medio RL=Y
+  h21-050826 h21 m02 L600 G3 0-19 cola_apertura RL=Y
+  h3-260726 h03 m38 L600 G3 20-39 cola_medio RL=Y
+  h7-140826 h07 m24 L600 G3 20-39 cola_medio RL=Y
+  h8-220826 h08 m17 L600 G3 0-19 cola_temprana RL=N
+  h9-040826 h09 m52 L600 G3 40-59 cola_cierre RL=Y
+  h6-100826 h06 m25 L578 G2 20-39 cola_medio RL=Y
+  h7-200826 h07 m45 L560 G4 40-59 cola_cierre RL=Y
+  h0-120826 h00 m34 L543 G4 20-39 cola_medio RL=N
+  h0-240826 h00 m57 L543 G4 40-59 cola_cierre RL=N
+  h1-240826 h01 m00 L543 G4 0-19 cola_apertura RL=N
+  h20-300726 h20 m46 L531 G4 40-59 cola_cierre RL=Y
+  h13-170826 h13 m08 L508 G4 0-19 cola_apertura RL=Y
+
+== H8 VALIDAR — reglas por especie en holdout ==
+  cierre_G34 @39 train: prec=1.0% rec=7% tp=1 fp=98 base=1.7%
+  cierre_G34 @39 holdout: prec=11.1% rec=100% tp=1 fp=8 base=1.4%
+  unicornio train: prec=0.0% rec=0% tp=0 fp=0
+  unicornio holdout: prec=0.0% rec=0% tp=0 fp=0
+  escalera 19→39 train: prec=2.2% rec=21% tp=3 fp=131
+  escalera 19→39 holdout: prec=0.0% rec=0% tp=0 fp=12
+
+== H9 SÍNTESIS R3 ==
+  Universo: 882 h · 44 con G>500 (5.0%)
+  SE VE:
+    · 5 especies: temprana / medio / cierre / multi / unicornio
+    · G>500 casi siempre G3|G4 · R largo antes ~40-50%
+    · cola_cierre: hora ya generosa @39 (acum med alto)
+    · unicornio: pocas G, una explosiva (max alto mean bajo)
+  NO SE VE:
+    · Cadencia fija entre colas · mismo hod estable
+    · Regla única pre-hora
+  OLOR-VIVE (patrones identificables pese a n bajo):
+    1. cierre_G34 @39 → cola 40-59
+    2. escalera acum 19→39 sin cola intermedia → cierre
+    3. unicornio en vivo (maxG>=400 mean<52) → ya es cola o viene sola
+  FRÍO:
+    · medio_L_largo como predictor único
+    · mismo día cluster (anecdótico)
+

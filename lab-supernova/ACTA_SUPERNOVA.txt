@@ -1,0 +1,92 @@
+ACTA LAB SUPERNOVA
+==================
+fecha: 2026-08-28
+lab: hilo-corto/lab-supernova/
+script: run_lab.py -> reports/LAB_SUPERNOVA.txt
+cinta: data_3dias.txt · 867 h · SN=13 (1.5%)
+rondas: 3 (baseline · profundizar · holdout/síntesis)
+
+PREGUNTA
+  H1..H8: clustering, cola, tejido, casi-SN, cooldown,
+  doble/día, mapa hod, fuzzy @40.
+
+── RONDA 1 ──
+
+H1 CLUSTERING
+  SE VE: gap med 32h · 33% gaps <24h ≈ null iid (31%)
+  NO SE VE: cadencia fija · ventanas 48h no predicen test
+  VEREDICTO: OLOR rachas cortas posibles, no ley
+
+H2 PRECURSOR COLA
+  SE VE: 1er G>500 med min 35 · 100% SN tienen G>500
+  NO SE VE: regla G3|4+L largo+min35 solo 4/13
+  VEREDICTO: FRÍO regla simple · olor min 35 en cola
+
+H3 TEJIDO POST-SN
+  SE VE: SN repartidas en hods (h08×2, h15×2)
+  NO SE VE: puentes hold con n≥3 · lift test 0
+  VEREDICTO: FRÍO (n=13)
+
+H4 CASI-SN 1100-1599 vs ≥1600
+  SE VE: SN 13/13 con G>500 · casi 29/48 sin G>500
+         med_mean 109 vs 199 · med_max 450 vs 1425
+  VEREDICTO: VIVE — cola G>500 separa muy fuerte de SN
+
+H5 COOLDOWN H+1
+  SE VE: post-SN Δmean med -149 vs post-B -26 (full)
+  NO SE VE: sostiene en test solo (n SN test=0)
+  VEREDICTO: OLOR enfriamiento tras SN
+
+H6 DOBLE SN / DÍA
+  SE VE: 2 días con 2 SN (23-jul gap 2h · 26-jul gap 6h)
+  VEREDICTO: OLOR anecdótico, no ley
+
+H7 DÍA REORDENA MAPA HOD
+  SE VE: r(perfil hod día SN vs no SN) med -0.02 ≈ 0
+  VEREDICTO: OLOR débil (mapa distinto pero no estable)
+
+H8 FUZZY @40
+  SE VE: CV combo prec 14% rec 77% lift alto (muchas FP)
+  NO SE VE: test holdout (0 SN en 72h)
+  VEREDICTO: OLOR — banda brilloInfo mejor que combo casero
+
+── RONDA 2 ──
+  H1 ventana 48h post-SN train: 0% SN en test (n=18)
+  H2 G>500+G3|4: prec 25% rec 62%
+  H4 VIVE reconfirmado · H5 FRÍO en test
+
+── RONDA 3 — SÍNTESIS ──
+
+VIVE (1)
+  H4: supernova exige cola G>500; sum 1100-1599 suele no tenerla
+
+OLOR (5) — INFO / bodega
+  H1: rachas ~1-2 días, no calendario
+  H5: hora tras SN tiende a enfriar (full cinta)
+  H6: doble SN mismo día = 2 casos extremos
+  H7: día con SN no copia mapa hod promedio
+  H8: alerta @40 = banda upper (ya cableada), no combo extra
+
+FRÍO (2)
+  H2: regla precursor única no corona
+  H3: puentes hod post-SN
+
+YA ESTABA
+  Cadencia fija · DOW · pre-hora · sum≥1000 ≠ SN
+
+INFO CABLEABLE (modal Proyección, sin boleto)
+  · "Muy fuerte sin G>500 → probablemente no cierra supernova"
+  · Tip post-alerta: "H+1 suele enfriar tras SN"
+  · No añadir score tejido post-SN
+  · Generosidad (2026-08-28): panel Días generosos — ola mediana 3d,
+    ventana ±1d con fecha live, hod 14/15/19, día partido (med/h<600)
+    generosidadInfo.js · SupernovaModal ampliado · ACTA_GENEROSIDAD_OPACO.txt
+  · Opacidad (2026-08-28): tips Brillo castigo ~1h · post-opaca · ayer opaco
+    opacidadInfo.js
+  · Trenes G/R: RETIRADO (2026-08-28) — solo descriptivo, sin poder predictivo
+
+DECISIÓN
+  Lab CERRADO 3 rondas. VIVE=H4. No cablear H3/H8 combo.
+  CABLE 2026-08-28: tips lab en SupernovaModal (cola G>500 · cooldown H+1).
+
+fin

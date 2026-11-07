@@ -1,0 +1,68 @@
+ARQUITECTURA — Apostador Experto (lab)
+======================================
+stamp 2026-09-04
+Cero prod. Solo reports + acta.
+
+════════════════════════════════
+1. PREGUNTA / JUEZ
+════════════════════════════════
+
+  Tras cada G de la hora (salvo la última), el agente decide
+  la apuesta al tip de la PRÓXIMA G:
+
+    NO_GO | GO_WEAK | GO_STRONG
+
+  hit := |G_next.m0 − tip| ≤ 1
+  stake := 0 | 1 | 3
+  pnl  := +stake si hit else −stake   (lab odds 1:1)
+
+  Baseline azar banda ±1 sobre anillo 60 ≈ 3/60 = 5% exacto+borde
+  (aprox; el walk reporta base empírica tip siempre).
+
+════════════════════════════════
+2. SEÑALES (herramientas)
+════════════════════════════════
+
+  A) Pool 7 LC-01 (réplica Python del tip p30 huecos)
+     tip = min(59, T + max(1, p30(gaps)))
+
+  B) Boleto H-1 (islas+costura vía motor.emitir_boleto) como
+     proxy de “mesa / Pool 8 acuerdo”: tip cerca (±1) de algún chip.
+     INTER2 full walk = R2 si hace falta (más caro).
+
+  C) Live prefix: luces ya caídas en la hora (causal).
+
+  D) Memoria: EWMA hit-rate del tip + racha de misses.
+     Aprende en train online; se congela lógica en holdout
+     (mismos umbrales; EWMA sigue actualizándose causal).
+
+  E) Fuzzy senior (R0):
+       score = 0.45*lc_edge + 0.25*acuerdo + 0.30*ewma_norm
+       − 0.15*min(3, miss_streak)/3
+       lc_edge = 1 si tip plausible (T<58) else 0
+       acuerdo = 1 si ∃ chip boleto con |c−tip|≤1
+       ewma_norm = clip((ewma − 0.25)/0.35, 0, 1)  # 25%≈flojo, 60%≈fuerte
+
+════════════════════════════════
+3. PERFIL DINERO REAL
+════════════════════════════════
+
+  STRONG solo con score alto (gemas).
+  WEAK = “por si acaso” (piedra).
+  NO_GO = no forzar cuando el historial reciente castiga.
+
+════════════════════════════════
+4. PIPELINE
+════════════════════════════════
+
+  load_cinta (detail+live) → walk por hora → eventos tip
+  → políticas: ALWAYS_TIP | NEVER | SENIOR_FUZZY | EWMA_GATE
+  → train / holdout 72h → reports + ACTA
+
+════════════════════════════════
+5. QUÉ NO ES
+════════════════════════════════
+
+  No reemplaza Pool 7/8 en UI.
+  No escribe LIVE.
+  No es A01 ni super-apostador dormido.

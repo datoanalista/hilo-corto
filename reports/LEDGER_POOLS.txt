@@ -1,0 +1,40 @@
+LEDGER POOLS LIVE — hilo-corto
+Banda d≤1 por hora · P0–P5 + P8 INTER2
+
+Horas en ledger: 922 (completas 80 — todas las mesas)
+
+=== RESUMEN (horas completas) ===
+  P0    banda 42.8%  media/h 43.0%  score/h 3.913  n=80
+  P1    banda 45.8%  media/h 45.7%  score/h 4.188  n=80
+  P4    banda 46.1%  media/h 46.8%  score/h 4.213  n=80
+  P2    banda 47.2%  media/h 48.0%  score/h 4.312  n=80
+  P3    banda 42.5%  media/h 41.8%  score/h 3.888  n=80
+  P5    banda 46.7%  media/h 46.5%  score/h 4.263  n=80
+  P8    banda 60.3%  media/h 60.3%  score/h 5.513  n=80
+  P8−P0 mean +17.3% · P8 gana 65h · P0 gana 8h · empates 7
+  Mejor boleto/hora: P4=20, P1=16, P5=16, P2=14, P3=8, P0=6
+  P0 rank medio (entre 6 boletos): 4.22
+
+=== ÚLTIMAS 80 h (completas) ===
+  P0  42.8%  n=80
+  P8  60.3%  n=80
+  P1  45.8%  n=80
+  P2  47.2%  n=80
+  P5  46.7%  n=80
+  P8−P0 +17.3%
+
+=== ÚLTIMAS 12 h ===
+  h15-300826  P0 33%  P8 83%  Δ +50%  best P5
+  h16-300826  P0 42%  P8 58%  Δ +17%  best P5
+  h17-300826  P0 20%  P8 50%  Δ +30%  best P2
+  h18-300826  P0 60%  P8 10%  Δ -50%  best P3
+  h19-300826  P0 67%  P8 89%  Δ +22%  best P1
+  h20-300826  P0 44%  P8 78%  Δ +33%  best P5
+  h21-300826  P0 30%  P8 60%  Δ +30%  best P5
+  h22-300826  P0 44%  P8 67%  Δ +22%  best P4
+  h23-300826  P0 30%  P8 40%  Δ +10%  best P4
+  h0-310826  P0 42%  P8 67%  Δ +25%  best P1
+  h1-310826  P0 44%  P8 78%  Δ +33%  best P2
+  h2-310826  P0 33%  P8 67%  Δ +33%  best P3
+
+INFO sombra. No boleto LIVE automático.

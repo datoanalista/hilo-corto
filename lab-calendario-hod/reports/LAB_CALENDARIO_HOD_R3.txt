@@ -1,0 +1,83 @@
+LAB CALENDARIO-HOD — RONDA 3
+============================================================
+train=827 test=72 (A=36 B=36)
+base mean_G train=66.5 test=64.9
+
+-- R3-H1 INFO · DOW×tramo candidatos (train / test / test-A / test-B) --
+  vie/noc: train -17% (n=40) test -11% (n=8) A — B -12% OK
+  vie/tar: train +15% (n=40) test -9% (n=8) A -10% B -9% FLIP
+  vie/man: train -7% (n=40) test -22% (n=8) A -21% B — OK
+  mar/man: train +14% (n=40) test — (n=0) A — B — —
+  sab/noc: train -11% (n=40) test -5% (n=8) A — B -6% OK
+  resumen INFO: OK=3 FLIP=1 sin_test=1
+
+-- R3-H2 COSTURA opaco→sig · foco R2 (train / test) --
+  */tar h10→h11: op med=+12.0 (n=11) test_op=None (n=0)
+
+-- R3-H3 h08 PROFUNDO --
+  spread train=32.5
+    dom: med=45.7 n=5
+    lun: med=53.3 n=5
+    mar: med=58.7 n=5
+    mie: med=50.6 n=5
+    jue: med=59.5 n=4
+    vie: med=71.6 n=5
+    sab: med=78.2 n=5
+  spread test=17.1
+    jue: med=60.9 n=1
+    vie: med=77.6 n=1
+    sab: med=60.5 n=1
+  spread all=29.1
+    dom: med=45.7 n=5
+    lun: med=53.3 n=5
+    mar: med=58.7 n=5
+    mie: med=50.6 n=5
+    jue: med=60.9 n=5
+    vie: med=74.6 n=6
+    sab: med=74.8 n=6
+  h08↔h09 por DOW (mean_G mismo día):
+    train global: r=-0.12628515275141028 n=34
+      dom: r=-0.16432211960866716 n=5 med=46/50
+      lun: r=0.8965403363900257 n=5 med=53/74
+      mar: r=-0.3793035270336907 n=5 med=59/73
+      mie: r=-0.8690882513842162 n=5 med=51/68
+      jue: r=— n=4 med=59/71
+      vie: r=-0.5143698212407726 n=5 med=72/59
+      sab: r=0.2785374318762526 n=5 med=78/76
+    test global: r=— n=3
+  h08 celdas vs mediana hod (train):
+  h08 mean_G@40 por DOW (train):
+    dom: @40=48.0 n=5
+    lun: @40=58.1 n=5
+    mar: @40=75.4 n=5
+    mie: @40=57.9 n=5
+    jue: @40=67.3 n=4
+    vie: @40=76.5 n=5
+    sab: @40=98.8 n=5
+
+-- R3-H4 PARES con h08 (train) --
+  h08↔h09: r=-0.12628515275141028 n=34
+  h08↔h14: r=0.5497169236137179 n=34
+  h08↔h18: r=-0.08450541509461504 n=34
+  h20↔h22: r=0.6815793177283191 n=34
+
+-- R3-H5 TEJIDO +1d (train / test / test-A / test-B) --
+  h10→h08: tr r=0.7872626311701021 n=34 te r=— n=2 A=— B=— —
+  h04→h13: tr r=0.7149622950407555 n=33 te r=— n=2 A=— B=— —
+  h15→h19: tr r=0.6325613167068178 n=34 te r=— n=2 A=— B=— —
+  h22→h09: tr r=0.738572863298901 n=34 te r=— n=2 A=— B=— —
+
+-- R3-H6 BORRADOR CARTEL INFO (Brillo modal · no cable) --
+  [Brillo calendario] vie noc: mean_G suele ir -17% vs base (train). Holdout -11%. Solo lectura — no boleto.
+  [Brillo costura] Si h10 cierra opaca (*/tar), h11 mismo día med +12 lumen (n=11). Descriptivo.
+  [h08 acumular] Spread DOW alto; lun↔h09 r frágil (n pequeño). No cartel hasta más semanas.
+
+-- SÍNTESIS R3 --
+  INFO DOW×tramo holdout: 3 OK / 1 FLIP
+    VIVE INFO: vie/noc train -17% test -11%
+    VIVE INFO: sab/noc train -11% test -5%
+    VIVE INFO: vie/man train -7% test -22%
+  Costura VIVE: */tar h10→h11
+  h08 spread train=32.5 — acumular, no ley
+  cable dashboard: no · borrador cartel arriba · anti-Jaccard
+  siguiente: OK humano para 1–2 líneas Brillo calendario

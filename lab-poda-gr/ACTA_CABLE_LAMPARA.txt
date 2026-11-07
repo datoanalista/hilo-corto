@@ -1,0 +1,17 @@
+ACTA CABLE — LÁMPARA EN BARRA
+=============================
+fecha: 2026-09-12
+lab: hilo-corto/dashboard
+Cero LIVE. Cero cambio de tip LC-01. Cero corte P7.
+
+QUÉ
+  Pastilla «se pasa» junto a Next.
+  Enciende si p30≥9 Y la puerta (Go/poda) dejaría jugar.
+  Tooltip: el minuto no se mueve · no me siento.
+
+QUÉ NO
+  No achica p30. No mueve Pool 7. No es ficha.
+  Sequía o pegado sin tren/estirada: apagada.
+
+Dónde: dashboard/src/lamparaInfo.js · LiveAvance · MesasTodasV2
+       espejo prod/src

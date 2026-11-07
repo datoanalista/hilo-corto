@@ -1,0 +1,163 @@
+LAB CALENDARIO-HOD (anti-Jaccard)
+============================================================
+fuente: c:\operacion-joker\depuracion\depurar-all-4G-detail.txt
+horas: 894  train: 822  test: 72  holdout: 72h
+eje: mean_G / sum_g · sin Jaccard · sin chips
+
+-- P0 CATÁLOGO --
+  días únicos: 38
+  rango: h9-230726 .. h18-290826
+
+-- H1 SPREAD DOW por hod (train) --
+  h02 spread mean_G=74.8
+    dom: med=56.3 n=5
+    lun: med=56.5 n=5
+    mar: med=115.4 n=5
+    mie: med=50.2 n=5
+    jue: med=74.2 n=4
+    vie: med=40.6 n=5
+    sab: med=69.8 n=5
+  h14 spread mean_G=54.3
+    dom: med=93.3 n=5
+    lun: med=47.7 n=5
+    mar: med=52.4 n=5
+    mie: med=51.7 n=5
+    jue: med=60.0 n=5
+    vie: med=51.0 n=5
+    sab: med=39.0 n=5
+  h10 spread mean_G=45.0
+    dom: med=40.1 n=5
+    lun: med=69.7 n=5
+    mar: med=57.1 n=5
+    mie: med=58.2 n=5
+    jue: med=63.5 n=5
+    vie: med=85.2 n=5
+    sab: med=45.5 n=5
+  h15 spread mean_G=43.4
+    dom: med=68.8 n=5
+    lun: med=64.3 n=5
+    mar: med=41.5 n=5
+    mie: med=65.6 n=5
+    jue: med=61.9 n=5
+    vie: med=66.6 n=5
+    sab: med=84.9 n=5
+  h00 spread mean_G=42.6
+    dom: med=56.1 n=5
+    lun: med=79.9 n=5
+    mar: med=64.4 n=5
+    mie: med=62.2 n=5
+    jue: med=56.2 n=4
+    vie: med=37.3 n=5
+    sab: med=70.2 n=5
+  h11 spread mean_G=37.1
+    dom: med=72.6 n=5
+    lun: med=49.8 n=5
+    mar: med=56.0 n=5
+    mie: med=71.7 n=5
+    jue: med=60.2 n=5
+    vie: med=80.6 n=5
+    sab: med=43.5 n=5
+  h12 spread mean_G=35.0
+    dom: med=62.7 n=5
+    lun: med=81.0 n=5
+    mar: med=46.0 n=5
+    mie: med=52.0 n=5
+    jue: med=74.8 n=5
+    vie: med=62.2 n=5
+    sab: med=52.3 n=5
+  h20 spread mean_G=33.0
+    dom: med=52.9 n=4
+    lun: med=65.9 n=5
+    mar: med=41.5 n=5
+    mie: med=72.2 n=4
+    jue: med=55.8 n=5
+    vie: med=39.2 n=5
+    sab: med=48.0 n=5
+
+-- H2 FOCO h08 × DOW (train / test) --
+  train: spread=32.5
+    dom: med=45.7 n=5
+    lun: med=53.3 n=5
+    mar: med=58.7 n=5
+    mie: med=50.6 n=5
+    jue: med=59.5 n=4
+    vie: med=71.6 n=5
+    sab: med=78.2 n=5
+  test: spread=17.1
+    jue: med=60.9 n=1
+    vie: med=77.6 n=1
+    sab: med=60.5 n=1
+
+-- H3 CELDAS hod×DOW vs mediana del hod (train) --
+  CALIENTES (mean_G +8 vs med hod):
+  FRÍAS (-8):
+
+-- H4 PARES mismo día (mean_G) train --
+  h08↔h09: r=-0.12628515275141028 n=34
+    dom: r=-0.16432211960866716 n=5 med=46/50
+    lun: r=0.8965403363900257 n=5 med=53/74
+    mar: r=-0.3793035270336907 n=5 med=59/73
+    mie: r=-0.8690882513842162 n=5 med=51/68
+    jue: r=— n=4 med=59/71
+    vie: r=-0.5143698212407726 n=5 med=72/59
+    sab: r=0.2785374318762526 n=5 med=78/76
+  h08↔h18: r=-0.08450541509461504 n=34
+    dom: r=-0.2121704433154249 n=5 med=46/60
+    lun: r=0.4052546836577325 n=5 med=53/81
+    mar: r=-0.5385702856668652 n=5 med=59/48
+    mie: r=0.024398217891360863 n=5 med=51/58
+    jue: r=— n=4 med=59/45
+    vie: r=-0.7700874366489797 n=5 med=72/57
+    sab: r=-0.6463564973059481 n=5 med=78/54
+  h10↔h08: r=-0.010510060843925906 n=34
+    dom: r=-0.4212879975893846 n=5 med=40/46
+    lun: r=-0.5278615132153504 n=5 med=70/53
+    mar: r=0.04887240621053582 n=5 med=57/59
+    mie: r=0.49412930814979467 n=5 med=58/51
+    jue: r=— n=4 med=62/59
+    vie: r=-0.2630667422879649 n=5 med=85/72
+    sab: r=0.7793912705141102 n=5 med=46/78
+  h15↔h19: r=0.0073009905609467615 n=34
+    dom: r=-0.5017673549347832 n=5 med=69/57
+    lun: r=-0.09613122145943036 n=5 med=64/55
+    mar: r=0.6667278877205205 n=5 med=42/67
+    mie: r=— n=4 med=71/77
+    jue: r=0.11415286847070871 n=5 med=62/52
+    vie: r=0.6416922640590847 n=5 med=67/56
+    sab: r=-0.021932391314456564 n=5 med=85/52
+  h04↔h13: r=0.0027354077989817523 n=34
+    dom: r=-0.0470205023916673 n=5 med=62/63
+    lun: r=-0.2243511310355543 n=5 med=58/63
+    mar: r=0.3511804196957045 n=5 med=49/45
+    mie: r=0.07336758977404771 n=5 med=59/53
+    jue: r=— n=4 med=53/52
+    vie: r=0.16297112613079415 n=5 med=51/59
+    sab: r=-0.7147478195387437 n=5 med=71/64
+
+-- H5 CRUCES +1d (train) --
+  h10→h08(+1d): r=+0.79 n=34
+  h04→h13(+1d): r=+0.71 n=33
+  h15→h19(+1d): r=+0.63 n=33
+  h08→h09(+1d): r=+0.18 n=33
+  h08→h18(+1d): r=+0.13 n=33
+
+-- H6 HOLDOUT top spreads (train top3 hod) --
+  h02: train spread=74.8  test spread=27.2
+    test jue: med=65.8 n=1
+    test vie: med=38.6 n=1
+    test sab: med=46.4 n=1
+  h14: train spread=54.3  test spread=100.0
+    test jue: med=31.7 n=1
+    test vie: med=84.6 n=1
+    test sab: med=131.7 n=1
+  h10: train spread=45.0  test spread=42.9
+    test jue: med=89.4 n=1
+    test vie: med=46.5 n=1
+    test sab: med=73.9 n=1
+
+-- SÍNTESIS (P0) --
+  h08 spread DOW train=32.5 (ejemplo humano: revisar celdas arriba)
+  hod max spread: h02=74.8
+  mejor cruce +1d: h10→h08 r=+0.79
+  Jaccard: no entra. Cable: no. INFO / Brillo / Eco solamente.
+

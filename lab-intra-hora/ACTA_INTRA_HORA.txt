@@ -1,0 +1,89 @@
+ACTA LAB INTRA-HORA — perfil G apertura vs cola
+================================================
+fecha: 2026-08-29
+lab: hilo-corto/lab-intra-hora/
+script: run_lab.py · _wrap_c01.py
+cinta: 873 h
+
+PREGUNTA
+  Algunas horas cierran con G en 58-03; otras casi sin G
+  los primeros 10 min. Hay escenario / senal?
+
+── H1 PERFILES GLOBAL ──
+
+  sin G min 0-9:     14% horas (121/873)
+  early-heavy:     25% · late-heavy: 27%
+  med 1er G: min 3 · med ultimo G: min 56
+  G en 58+:          32% horas (>=1 G m0>=58)
+  G en 0-3:          54% horas
+  ambos cola+apertura: 24%
+  solo apertura (0-9 sin 58+): 59%
+  solo cola (58+ sin 0-9):      5%
+
+  VEREDICTO: VIVE — dos arquetipos reales (apertura vs cola)
+
+── H2 CRUCE H→H+1 (58-03 usuario) ──
+
+  1er G h(N+1) en min 0-3: 54%
+  ultimo tiro hN en 58+:     98% pares (847/867)
+  cola 58+ -> 1er G <=5:     580 secuencias
+  med min 1er G siguiente:   3
+
+  VEREDICTO: VIVE — el "58-03" es costura fisica L wrap
+  (bitacora C01: si L cruza :00, 1er G = cola del L)
+
+── H3 L WRAP proxy (C01) ──
+
+  wrap proxy ~75% horas
+  sin wrap: 1er G min 0 en 100% casos
+  con wrap: 1er G med min 5 · 39% en 0-3
+
+  VEREDICTO: VIVE — confirma ACTA_C01_FINO bitacora
+
+── H4 MASA vs apertura ──
+
+  sin G 0-9: med sum 474
+  con G 0-9: med sum 604  (delta +130)
+  late-heavy med 614 · early-heavy med 594
+
+  VEREDICTO: VIVE — sin apertura = hora mas opaca/debil
+
+── H5 COSTURA h14 sin G 0-9 ──
+
+  h14 sin G 0-9 -> h15 lift +345 (n=7)
+  h14 con G 0-9 -> h15 lift +128 (n=29)
+
+  VEREDICTO: OLOR — refuerza costura h14-h15 (apertura
+  tardia en h14 = mejor rebote h15)
+
+── H6 hod especifico ──
+
+  mas sin_early: h03 25%, h14 19%, h20 19%
+  mas early_heavy: h11 39%, h01 37%, h09 36%
+  h14 med first_m=5 (apertura tardia vs h15=4)
+
+  VEREDICTO: OLOR — spread hod moderado
+
+── SINTESIS ──
+
+  SI hay escenario:
+  1. COLA L wrap (58->03): fisica de cinta, no boleto.
+     1er G de hora = often cola del L anterior (~54% en 0-3).
+  2. HORA sin G apertura (14%): suma menos; olor opaca.
+  3. ARQUETIPO solo-cola (5%) vs solo-apertura (59%).
+  4. Refuerzo costura: h14 sin G temprano -> h15 rebote mayor.
+
+  NO cablear mapa minuto a minuto. Posible INFO:
+  · tip Brillo "sin G apertura aun @10" (olor opaco)
+  · en costura h14: flag sin G 0-9 refuerza rebote h15
+
+  Ya en bitacora: costura no ancla 1er min; C01 wrap;
+  fermion intra-hora VIVE. Este lab CUANTIFICA en 873h.
+
+DECISION
+  Cableado INFO (2026-08-29):
+  · intraHoraInfo.js — tip Brillo @min>=10 sin G apertura
+  · refuerzo costura h14->h15 cuando h14 sin G min 0-9
+  No boleto.
+
+fin

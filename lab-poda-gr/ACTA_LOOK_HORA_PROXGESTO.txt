@@ -1,0 +1,25 @@
+ACTA LOOK — PRÓXIMO GESTO ESPERADO
+==================================
+fecha: 2026-09-11
+lab: hilo-corto/lab-poda-gr/
+script: look_hora_proxgesto.py → reports/LOOK_HORA_PROXGESTO.txt
+Cero prod. Cero LIVE. Cero tip. Cero cable.
+
+PREGUNTA
+  ¿El gesto ya visto permite indicar el próximo esperado
+  (no preciso)? La forma 12 R luego 9 R no es la ficha.
+
+FICHA
+  8424 pares del train. Un gesto y dos gestos → el siguiente.
+  Hueco abierto (≥9 R) aparte: eso ya es el gesto de ahora.
+
+VEREDICTO
+  El esperado casi no se mueve: gana corto (2–4 R),
+  luego medio. Tras tren / casi / corto / medio / cola /
+  sequía, el ganador es el mismo. R mediana del siguiente = 3.
+  Tras cola o sequía el siguiente no copia el largo.
+  Dos colas no mandan una tercera (sale corto / tren / medio).
+  Si el hueco va por 9+ y no cerró: suele quedarse cola,
+  no irse a sequía. Eso no es el próximo; es ESTE.
+
+NO SENTAR cadena 12→9→X ni cartel de tip. Cero cable.

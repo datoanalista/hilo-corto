@@ -1,0 +1,78 @@
+ANÁLISIS BONOS — etapa 1 (papel)
+================================
+stamp 2026-10-12 rev happy-hour
+Cinta: 1310 h · LOOK_BONOS.txt · LOOK_HAPPY.txt
+Partida: BITÁCORA v2. No se reabre física.
+
+Contrato (corregido)
+  Cada cuenta cubre los 4 bonos ($200). Color = rojo/azul/verde
+  al caer G. Tres cuentas = tres colores. G1–G4 no se eligen.
+
+1. Ya traíamos
+  Tren/sequía = letras de ESA hora. El resto no copia el arranque.
+  Costura: h15 fuerte → h16 techo. Pool 7 = minuto, no color.
+  Brillo hora: fuerte ≥850 · muy fuerte ≥1100.
+
+2. Foto de cupo (sigue vigente)
+  Fuerte o más: 18.2%. Apagada+opaca: 54.6%.
+  Racha apagada máx: 8 h.
+  Lo que rompe la racha: sobre todo NORMAL, no un salto a fuerte.
+  Tras K=1…5 apagadas, P(siguiente fuerte+) baja o se queda
+  ~15–20%. P(normal) sube un poco (27% → 36–39%).
+  “Se arregla” = piso que CAMINA hacia normal. No happy hour aún.
+
+3. Happy hour — qué es y qué no (esta cinta)
+  Objetivo que dijiste: no cada G; entrar cuando YA elevó
+  los altos y se mantiene. Aún hay bajos en esa hora.
+
+  Lo que SÍ se ve:
+  · Horas que CIERRAN fuerte+ tienen ~31% de G con lumen≥85
+    en los TRES tercios (00–19 / 20–39 / 40–59). Med 50.
+    En la cinta entera eso es ~21% y med 43.
+    El régimen es de la HORA, no de un tercio que “se prende”.
+  · @19, si la media de G ya caídas es ≥68: el 36.9% cierra
+    fuerte+ (base 18%). Si la media va <40: solo 9%.
+    Eso es detector de régimen, no anticipo del próximo tiro.
+  · Tras una hora fuerte, la siguiente cae a muy_apagado 34%
+    / opaco 29%. El happy hour no se hereda. Dura poco:
+    a menudo ESA hora y se acaba.
+
+  Lo que NO se ve (y conviene no construir la regla encima):
+  · Un G gordo suelto no levanta los que siguen.
+    Tras 1ª G≥85, 1ª G≥150 o 2× G≥85, el resto sigue med 45
+    y ~21% ≥85 — igual que el control (1ª G<40).
+  · Cuando la SUMA ya tocó 850 (min med 42), lo que queda
+    es MÁS flaco (med 39). Entrar tarde = cola, no happy.
+  · Los tercios no suben el piso minuto a minuto. Andén plano
+    de lumen/G: ya estaba en bitácora.
+
+  Lectura combinada (tres oficios, no uno):
+    1) Racha apagada → esperar el caminar a normal. No apostar
+       el primer respiro.
+    2) Régimen = media/acum de lo YA caído @19–29, no un G.
+       Ahí se parece a “ya está happy”.
+    3) No perseguir el cierre cuando la suma ya cruzó 850:
+       el resto no es más gordo. Happy hour corto: esa hora,
+       no la siguiente (techo).
+
+4. Color (rev 2026-10-13 — cobertura total)
+  4 bonos = ruleta (Luck/Deluxe/Dice/Showhow).
+  3 colores = juego de bono. 3 cuentas = los 3. Casa = total.
+  Un color saca menos (2× vs 60×): eso come UNA wallet,
+  no la casa. Rotar no suma. Cazar el cargado destapa
+  otro color y SÍ fuga. Fijo RGB. COLORES.txt.
+  LOOK_COLORES 3/4 = archivo, premisa falsa.
+
+5. Siguiente medición (detalle que pediste)
+  Evolución del PISO MÍNIMO (p25 de lumen/G) hora a hora
+  en una racha que camina apagada → normal → fuerte.
+  Y, DENTRO de horas que sí cierran fuerte+, el p25 de
+  cada G en orden (¿el suelo sube o solo hay más gordos?).
+  Eso decide si la bandera mira “mínimo que no baja”
+  o “ya hay 2 altos y la media ≥68”.
+
+6. Bandera
+  Sigue vacía. REGLA.txt la llena el humano.
+  Ficha ahora: $200 × 3 = $600 por ronda en juego, mínimo.
+
+Cero bot hasta REGLA.

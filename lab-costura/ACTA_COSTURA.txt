@@ -1,0 +1,66 @@
+ACTA LAB COSTURA — CANDIDATOS
+==============================
+fecha: 2026-08-29
+lab: hilo-corto/lab-costura/
+scripts:
+  _barrido_rebotes.py -> ACTA_COSTURA_BARRIDO.txt
+  run_lab_candidatos.py -> reports/LAB_COSTURA.txt
+cinta: 873 h · holdout 72h
+previo cableado: h14->h15 rebote · h08->h09 techo AVISO
+
+PREGUNTA
+  Validar candidatos del barrido antes de nuevos tips.
+
+── RONDA CANDIDATOS ──
+
+H1 TECHO h15->h16
+  SE VE train: fuerte->h16 fu=-780 (n=11) · total lift=-141
+         opaco-> +220 · complemento natural post-h15
+  NO SE VE: test fu n=0 (sin h15 fuerte en 72h holdout)
+  VEREDICTO: OLOR — senal train muy fuerte; falta confirmar test
+  NOTA: prioridad cable igual; AVISO simetrico a h14-h15
+
+H2 REBOTE h18->h19
+  SE VE train: opaco-> +313 (n=13)
+  NO SE VE: total lift=-9 · test op n=0
+  VEREDICTO: OLOR — rebote opaco generico; no decision extra
+
+H3 GAP2 h13->h15
+  SE VE train: op=+383 (n=11) · lift total=+168
+         si h14 opaca: lift13->15=+152 ≈ h14->h15 (+152)
+  NO SE VE: h14 no es skip — h13->h15 no agrega sobre h14->h15
+  VEREDICTO: OLOR — cerrar; no lab gap2 aparte
+
+H4 REBOTE h01->h02
+  SE VE train: op=+464 (n=11) — max rebote opaco cinta
+  NO SE VE: test op=-108 (n=1) · total train +102 inestable
+  VEREDICTO: OLOR — madrugada; no cable par especifico
+
+H5 VALLE-PICO h20->h21
+  SE VE train: lift=+123 (2do tras h14-h15)
+  NO SE VE: test lift=-111 (n=3)
+  VEREDICTO: OLOR — estructura interesante; holdout flojo
+
+H6 BASELINE generico
+  SE VE: med lift opaco->H+1 = +246 (n=204 pares)
+  VEREDICTO: VIVE — opacidadInfo ya cubre; no 23 tips
+
+── SINTESIS ──
+
+VIVE confirmado (cableado o existente)
+  h14->h15 rebote · h08->h09 techo · generico H+1 opacidadInfo
+
+OLOR — train fuerte, test no confirma (bodega / cable con cautela)
+  h15->h16 techo fu=-780  ← unico candidato nuevo serio
+  h18->h19 · h13->h15 · h01->h02 · h20->h21
+
+FRIO / cerrado
+  h13->h15 gap2 no aporta sobre h14
+  h22->h23 contradictorio (barrido)
+
+DECISION
+  Cableado INFO: h15->h16 AVISO en costuraInfo.js (2026-08-29).
+  Cierra ciclo mediodia h14-h15-h16. OLOR train; cautela holdout.
+  Resto OLOR: no cablear — generico basta.
+
+fin

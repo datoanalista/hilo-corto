@@ -1,0 +1,50 @@
+ACTA LAB LIVE-RECOMPUTE — Ronda 1 + R2 (CERRADO)
+=================================================
+fecha: 2026-08-31
+lab: hilo-corto/lab-live-recompute/
+R1: run_lab.py · R2: run_lab_r2.py (48 estrategias)
+
+PREGUNTA
+  Pool ADICIONAL intra-hora (extracción live min a min).
+  ¿Qué motor recomputa mejor? ¿Aguanta detail + extra-en-vivo?
+
+── RONDA 1 (detail 913h) ──
+  RC-04-MULTI93 paso 59.8% · INTER2-fix paso 27.1%
+  Hora: INTER2 60.5% · MULTI93 union 60.3% · LC-01 41.1%
+
+── RONDA 2 — agota 48 estrategias ──
+
+H1 DETAIL holdout (72h) — ranking top
+  1. RC-M93-p35 / p30 / RC-04-MULTI93   59.8%
+  2. RC-M24-p35-d4                      59.7%
+  3. RC-M92-p30                         56.3%
+  4. REF-LC01                           39.6%
+  Ventana/híbrido/LC12-48               ≤38%
+  REF-INTER2-fix                        27.1%
+
+H2 MERGED data_3dias+extra (912h)
+  RC-M93-p30/p35                        61.4%  (+35pp vs fix paso)
+  Confirma dirección multi reloj
+
+H3 EXTRA only (3h cerradas: h0–h2-310826)
+  n pequeño · M24-d4 57% · M93 46% · OLOR mixto
+
+H4 REFRESH overlap extra∩detail (30h recientes)
+  M24-d4 61.6% · M93-p25 58.9%
+
+H5 ABLATION grid
+  MULTI93: p30=p35 (59.8%) > p25 (58.7%) — meseta
+  MULTI24: d4 (59.7%) > d3 > d2 — ventana ancha ayuda paso
+  MULTI92: 56.3% < MULTI93
+
+── SÍNTESIS R1+R2 ──
+  GANADOR: RC-04-MULTI93 = reloj p30 · tips {c,c+1,c+2}
+  Producto: pool sombra Pool 10 LIVE-RC · juez paso/multi
+  NO reemplaza Pool 8 INTER2 (boleto pre-hora distinto)
+  LC-01 sigue tip reloj single (~40% paso)
+  Cable propuesto: chipsLiveRc() en UI · sin tocar P0–P8/P7
+
+  VIVE=1 pool extra sombra · CERRADO R2
+  OLOR=M24-d4 en refresh reciente · FRÍO=ventana single
+
+fin

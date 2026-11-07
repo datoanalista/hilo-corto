@@ -1,0 +1,48 @@
+ACTA LAB RULETA-ZERO — Ronda 1
+================================
+fecha: 2026-08-31
+lab: hilo-corto/lab-ruleta-zero/
+script: run_lab.py → reports/LAB_RULETA_ZERO.txt
+
+PREGUNTA
+  Si la data fuera ruleta casino (54 casillas, imagen usuario),
+  ¿qué predicciones salen desde cero y cómo comparan con prod?
+
+SUPUESTO
+  45 R (1x/2x/5x/10x partidos 21/13/7/4) + G4=1 G3=3 G2=2 G1=3
+  Cinta: detail 920 h (minuto) + lightgreen 17k tiros (letras)
+
+── RONDA 1 ──
+
+H0 MEZCLA
+  G = 16.6% (lightgreen y detail) · teórico 9/54 = 16.7% · CALCE
+  Slots empíricos: R 21/13/7/4 calza; G1↔G2 invertido vs imagen (2/3 vs 3/2)
+
+H1 LETRA (holdout 72 h)
+  RZ-EMP / RZ-HUMAN iid: logloss 1.71 vs uniform 2.08
+  top1 ~37% (= frecuencia marginal, no secuencia)
+  VEREDICTO: OLOR descripción · FRÍO predicción secuencial
+
+H2 MINUTO banda d≤1 (holdout 71 h)
+  RZ-PLANTATE        0%
+  RZ-IID-UNIF       45.9%  k≈10
+  RZ-WHEEL-K        44.8%
+  REF-H1            45.7%
+  PROD-CLASSIC      45.1%
+  PROD-INTER2       60.6%  k≈14
+  VEREDICTO: ruleta uniforme ≈ H1/clásico; INTER2 +15pp
+
+H3 CIERRE (no ruleta)
+  Largo → G 94.5% · Corto → G 0%
+  VEREDICTO: VIVE conocimiento · VETO ruleta-iid como motor
+
+H4 PROD
+  919 h · 0 idénticas P0/P9 · INTER2 60.3% vs CLASSIC 44.6%
+
+── SÍNTESIS ──
+  La ruleta 54 DESCRIBE el plato (mezcla G/R).
+  NO reemplaza prod: sin H-1 útil, sin cierre, sin INTER2.
+  A la larga NO mismo boleto — otro edificio para minuto.
+  VIVE=0 como motor · OLOR=forma global · FRÍO=tip casino
+
+fin

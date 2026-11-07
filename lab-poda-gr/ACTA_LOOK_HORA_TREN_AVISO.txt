@@ -1,0 +1,42 @@
+ACTA LOOK — AVISO DEL ACORTADERO
+================================
+fecha: 2026-09-12
+lab: hilo-corto/lab-poda-gr/
+script: look_hora_tren_aviso.py → reports/LOOK_HORA_TREN_AVISO.txt
+Cero prod. Cero tip. Cero Jaccard. Cero cable.
+
+PREGUNTA
+  ¿Se ve el acortadero ANTES del tren?
+  ¿Cuántos minutos dura la cola, para
+  no sentar muchos?
+
+VEREDICTO
+  A veces se ve. No se puede cosechar
+  como ventana.
+
+  Aviso = se cerró S≥10 y el siguiente
+  hueco ya no es sequía.
+
+  · Aviso y el tren viene después: 47
+    películas. La primera corta tarda
+    2–5 min. La cola aviso→tren NO es
+    corta: hay de 2 min y hay de 15, 25,
+    41. Toda la actividad suele pasar
+    de 12 min.
+  · Aviso = 1ª G del tren: 16 películas.
+    No lo viste venir. La cola ES el tren:
+    3–6 min.
+  · Sequía pegada (sin aviso): 38.
+    Tren 3–6 min. No hay identificación.
+  · Aviso y NO tren: 878 películas.
+    El mismo gesto (se acortó) se apaga.
+
+  Hold: misma forma. 4 «se ve después»
+  (dos esperan 22 y 27 min). 50 secos.
+
+  Lo corto y real es el tren ya pegado
+  (3–5 min). Eso ya es la puerta +1.
+  El acortadero no nombra cuándo sentarse.
+
+NO CABLEAR. No «tras sequía corta,
+espera tren».

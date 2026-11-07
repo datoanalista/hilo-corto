@@ -1,0 +1,45 @@
+ACTA CIERRE — SUMA-R
+====================
+fecha: 2026-09-12
+lab: hilo-corto/lab-poda-gr/
+script: look_suma_r_cierre.py → reports/LOOK_SUMA_R_CIERRE.txt
+cinta: data_all_lightgreen.txt · 288 h
+Cero prod. Cero LIVE. Cero tip. Cero cable.
+
+PREGUNTA (la del humano)
+  Σ pesos R entre G, ¿calza en otra hora
+  |Δt|≤5, no el hueco de al lado?
+
+CIERRE DE ESA PREGUNTA
+  No. Real ≈ nula. Cifras comunes (0,1,2,5)
+  hinchan la ventana. Ordinal no. Raro no.
+  Wrap :00 no. Σ vs lumen G no.
+
+LOS DOS OLORES (capa 2), película a película
+
+  Primer hueco de horas pegadas
+    10 calces / 287. Ocho son tren 0=0.
+    Dos masas: 36=36 (h20–h21 30-jul) y 1=1.
+    El ‘anti’ (3.5 vs nula 6.3, p_izq=2/80)
+    es más fuerte en n_R que en los pesos
+    (5.2 vs nula 9.8, p_izq=0/80).
+    1ª mitad 5.9% ≈ nula. 2ª y hold bajan.
+    No es cupo (Σ0+Σ1 p50=21, max=134).
+    Σ del primer hueco ≈ cuántas R / cuándo
+    cae la 1ª G (corr 0.92 / 0.68).
+    No oficio. No se sienta.
+
+  Total de la hora a +2 h
+    8 pares únicos. Único lag que levanta
+    (+2: 8/286 vs nula 1.4%, p=2/80;
+     +1/+3/+4/+5 = nula o menos).
+    Los 8 no copian la frase: n_R distinto
+    7/8, n_G distinto 7/8, huecos distintos.
+    Los totales son los más comunes de la
+    bolsa (126, 128, 138…). Días y hod
+    repartidos. n chico. No ley.
+
+DECISIÓN
+  Tema cerrado. Cero cable. Cero pool.
+  Lo que queda escrito: la masa de R entre
+  G no nombra otra hora a ≤5 h.

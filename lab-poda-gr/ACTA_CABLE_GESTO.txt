@@ -1,0 +1,15 @@
+ACTA CABLE — GESTO ESPERADO EN BARRA
+===================================
+fecha: 2026-09-11
+lab: hilo-corto/dashboard
+Cero LIVE. Cero cambio de tip LC-01.
+
+QUÉ
+  Pastilla «Gesto: corto 2–4» junto a Next.
+  Si el hueco ya va 9+ R: «Gesto: cola/sequía · luego corto».
+  Tooltip: último hueco + que no es un minuto.
+
+QUÉ NO
+  No achica p30. No mueve Pool 7. No es ficha.
+
+Dónde: dashboard/src/gestoInfo.js · LiveAvance · MesasTodasV2

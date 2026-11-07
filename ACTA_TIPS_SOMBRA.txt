@@ -1,0 +1,33 @@
+ACTA — Tips recomendación principal (sombra)
+============================================
+stamp 2026-08-22 23:15
+Lab: hilo-corto / dashboard (prod)
+Pedido: sombra en Tips, remarcada al inicio, botón
+con tabla de ejemplos en lenguaje claro. No chip.
+
+Qué se cableó
+  ciudad.js   leerSombra + fila id=sombra primera
+  piso.js     cabecera: sombra → faro → lluvia
+  Habla.jsx   caja “Lo más importante…” + botón
+              “Ver ejemplos con números” (tabla)
+  mesa.js     párrafo de recomendación al frente
+  index.css   .reco-* · .tip-sombra
+
+Qué NO
+  No entra al boleto (sigue SEGURO + TIBIO).
+  No hazard como chip (DESCARTA en banda).
+  Sin códigos de lab en la UI (minutos en claro).
+
+Qué se cableó (vuelta si-entonces)
+  Qué mirás: luz en el minuto recomendado o ±1. Nada más.
+  Si marca exacto → no vayas por la próxima ficha del boleto.
+  Si no marca exacto pero marca el de al lado → mantenete
+  con esa próxima ficha.
+  Si no marca ninguno → no inventes; boleto igual.
+  La “próxima ficha” se toma del boleto (ej. 04 → 15).
+
+Veredictos lab previos
+  SOM02 PROMETE Δscore +0.10 (como chip; acá = tip)
+  HZ DESCARTA
+
+FIN

@@ -1,0 +1,68 @@
+ACTA LOOK — HORA ELÁSTICA (bloques / vida)
+=========================================
+fecha: 2026-09-11
+lab: hilo-corto/lab-poda-gr/
+script: look_hora_elastico.py → reports/LOOK_HORA_ELASTICO.txt
+Cero prod. Cero LIVE. Cero Jaccard. Cero tip. Cero cable.
+
+PREGUNTA
+  El vivo: la hora apagada/opaca se ESTIRA. Mezcla 2–3 tipos
+  (G-6R-G, G-12R-G, 2G en medio). ¿A mitad pasa de apagado
+  a generoso? ¿Un bloque concentra las G?
+  Oficio = reconocer el comportamiento de la hora, no predecir.
+
+  Conflicto que no se esconde (LOOK_HORA_FORMAS):
+  apagada plural 3–4 R (no 6–7) · empate ~40% · colas = evento
+  · corto+cola bimodal · horas del mismo tono no se parecen.
+  Pregunta NUEVA: ¿ese empate ES 2–3 bloques (elástico)?
+
+FICHA
+  Unidad = la hora. Dentro = RACHA de cubos, no pool de G.
+  Cuerpo = TRAIN histórico (1093 h). Hold 72 = testigo.
+  NO es la cola de ~900 anclas G+7 ni 559 ventanas hold.
+  Fuente: depurar-all-4G-detail.txt (mismo loader que FORMAS;
+  +1 h vs 1164 de esa mañana por live ausente en detail).
+  Cubos de oficio (colapsan el catálogo R):
+    pegada 0–1 · corto 2–4 · medio 5–8 · cola 9–15 · sequia ≥16
+  Analogías G-6R-G / G-12R-G / 2G / mitad = FORMA del relato.
+  Tono = suma lumen. Cupo = nG. Extra no sienta (0).
+  Zona 00/20/40: no se reabre “manda hueco”; se mide densidad.
+
+VEREDICTO
+  Apagada/opaca NO es monotipo (1/308 y 0/264).
+  Tampoco es “dos bloques G-6 y G-12”.
+  El empate es SOPA: 3–4 cubos distintos; a menudo 2 cubren
+  ≥2/3 de los huecos, pero las rachas≥2 de medio Y cola
+  juntas son raras (5/308 apagada, 4/264 opaca).
+  Medio+cola+pegada como PRESENCIA sí (44% / 60%).
+  Pegada entre dos rachas sí (63% / 79%).
+  Vuelco a mitad apagado→generoso: 41/1042 (3.9%). No es ley.
+  Inclina |Δ|≥3: 30% ≈ nulo binomial (~34% a nG=10).
+  Tramo caliente > p90 nulo: 96/1042 (9.2%) ≈ el nulo.
+  Tercios no cortan densidad (257/251/254).
+  No sentar. Hold: celdas chicas.
+
+NÚMEROS (train; n = HORAS con ≥3 huecos salvo vida nG≥6)
+  muy_apagado 308 h: mono 1 · mez2 13 · mez3 106 · 4+ 188
+             2 cubos cubren ≥2/3: 217 · bloques≥2: 78
+             BLOQUE med+col: 5 · pegada-entre: 194
+  opaco 264 h: mono 0 · mez2 4 · mez3 72 · 4+ 188
+             BLOQUE med+col: 4 · pegada-entre: 209
+  empate-catálogo 399/1087: mono 0 · 2 cubos 7 · 3 120 · 4+ 272
+             sopa (3+ cubos y 0–1 bloque): 243/399
+             ≥2 bloques: 152/399
+  vida 1042 h nG≥6: eq |Δ|≤1 452 · vuelco→gen 41 · calor>nulo 96
+  tiras históricas: h16-280726 · h5-090826 · h16-060826 · h18-290726
+  (primera mitad del train, no la cola)
+
+CENSUS
+  Relato vivo «apagada = elástico 2–3 tipos»     SÍ (mezcla / no mono)
+  Relato vivo «un bloque 6 y un bloque 12»       NO (racha≥2 de ambos)
+  Relato vivo «2G en medio»                      SÍ (pegada entre rachas)
+  Relato vivo «a mitad se prende»                NO (≈ nulo)
+  Empate FORMAS = 2–3 bloques elásticos          NO (es sopa 3–4)
+  Taxonomía / tip / dashboard                    FRÍO
+  Jaccard / pool de G                            VETO (juez)
+
+DÓNDE
+  look_hora_elastico.py · reports/LOOK_HORA_ELASTICO.txt

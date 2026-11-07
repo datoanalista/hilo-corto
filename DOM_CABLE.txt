@@ -1,0 +1,60 @@
+DOM — qué hace falta para manipular el juego
+============================================
+stamp 2026-10-13
+Cero implementación. Esto es para el día del cable.
+
+Quién lee el DOM
+  Playwright en el SERVIDOR, en cada perfil Chrome.
+  No hace falta que copies el DOM entero al chat (sería enorme
+  y cambia cada build). Yo no “veo” tu mesa en vivo desde acá.
+
+Qué SÍ puedo hacer al implementar (en el servidor)
+  · page.frames() → localizar el iframe del juego Skywind.
+  · frame.locator(...) → chip 50, círculo central, SALDO,
+    botones de color, play/pausa, “session expired”.
+  · Leer texto: Apuesta, Premio, ON AIR.
+  · Escuchar WS (ya lo hace extraccion-jokers.js en una cuenta).
+
+Qué nos ayuda ANTES (opcional, 5 minutos en el notebook)
+  No pegues todo el HTML. Con una cuenta abierta en Chrome:
+
+  1) Iframe del juego
+     F12 → pestaña Elements → clic en el recuadro del juego
+     → copiar el selector del <iframe> (src contiene skywind
+     o el host que uses). O: en consola del iframe:
+       document.querySelector('iframe')?.src
+
+  2) Chip 50 (Skywind — cableado 2026-10-16)
+     Ficha $50 = use.chip-image.chip-1 · $250 = chip-2.
+     Jugabet y Betano mismo patrón. Clic al chip-1 antes del centro.
+
+  3) Círculo del medio
+     Igual: Copy selector del botón dorado central.
+
+  4) SALDO / Apuesta / Premio
+     Inspeccionar la barra inferior (“SALDO $7.85K”).
+     Copy selector del nodo de texto o del contenedor.
+
+  5) Pantalla de color (cuando cae bono)
+     Captura ya ayuda. Si puedes: Copy selector de los 3
+     botones (rojo izq, azul centro, verde der).
+
+  6) Play / pausa por inactividad
+     Selector del botón play cuando el video se congela.
+
+Si el juego está en iframe anidado (OOPIF)
+  Playwright entra con frameLocator. A veces hace falta
+  probar en el servidor con un script de 20 líneas que
+  liste frames y haga screenshot — lo hacemos nosotros
+  en jokerbets-mesa, no tú.
+
+Qué NO hace falta
+  · Volcar document.documentElement.outerHTML completo.
+  · Copiar la consola de red entera.
+  · Acceso desde Cloudflare al DOM del casino (no existe).
+
+Controles (de tus capturas, ya anclados)
+  · Ficha 50 seleccionada en la tira.
+  · 1 clic círculo = $50 en cada uno de los 4 bonos.
+  · 3 clics = $150 por bono = $600 total por cuenta.
+  · Barra: SALDO, Apuesta, Premio, ON AIR, fecha.

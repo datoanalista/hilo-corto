@@ -1,0 +1,32 @@
+ACTA LOOK — ¿LOS GESTOS VAN ENLAZADOS?
+======================================
+fecha: 2026-09-11
+lab: hilo-corto/lab-poda-gr/
+script: look_hora_enlace.py → reports/LOOK_HORA_ENLACE.txt
+Cero prod. Cero LIVE. Cero Jaccard. Cero tip. Cero cable.
+
+PREGUNTA
+  ¿Los gestos van de la mano según el tipo de hora, o salen
+  sueltos? ¿Hay un hilo entre uno y el siguiente?
+  No puntuar 6–7 / 12 / 2G.
+
+FICHA
+  Tres ataduras: (1) tipo → BOLSA  (2) letra → siguiente
+  (barajar la misma bolsa de ESA hora)  (3) E, lumen, tinta,
+  costura, primer hueco.
+  Cuerpo = train histórico 1092 h con hueco.
+
+VEREDICTO
+  El tipo elige la BOLSA (floja corta + L/S; rica larga + T/C).
+  No elige el baile.
+  El orden, dada la bolsa, casi no ata: pegajosas 31 ·
+  revueltas 807. La pegajosa es racha de la misma letra
+  (crowding), no un coreógrafo k→L.
+  El largo de un hueco no copia al siguiente; cuando |corr|
+  es alta, suele ser SIGNO MENOS (largo luego corto).
+  E / lumen que abren no fijan el hueco. La tinta que CIERRA
+  sequía es el pulso (interruptor), no el gesto.
+  Costura: a veces se copia la letra (215/1039); es crowding
+  de dos bolsas, no memoria. El pulso cruza el :00.
+
+NO SENTAR cadena gesto→gesto ni «apagada implica S».

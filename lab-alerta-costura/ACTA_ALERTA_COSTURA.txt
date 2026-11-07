@@ -1,0 +1,130 @@
+ACTA LAB ALERTA COSTURA — senales @min 55
+====================================================
+fecha: 2026-08-31
+lab: hilo-corto/lab-alerta-costura/
+script: run_lab.py · core_alerta.py
+cinta: 939 h · pares h→h+1: 933
+holdout: ultimos 72 pares
+
+PREGUNTA
+  A min 55 (5 min antes del :00), se puede predecir actividad G
+  en costura (cola 58+ de hN y/o 1er G de hN+1 en min 0-3)?
+  No boleto — solo alerta INFO.
+
+TARGETS
+  costura (cola OR early): 655/933 (70%)
+  cola 58+ hN solo:         294 (32%)
+  1er G hN+1 en 0-3 solo:   503 (54%)  ← ~54/100 usuario
+
+VENTANA
+  Alerta encendida min 55..59 · snapshot inicio min 55
+
+── H1 L wrap proxy @55 (C01) ──
+  Hipotesis: L abierto que cruza 58+ → costura casi segura.
+  L_wrap→costura                train prec=50% rec=0% cov=1%  |  hold prec=0% rec=0% cov=1%
+  L_wrap→early03                train prec=50% rec=1% cov=1%  |  hold prec=0% rec=0% cov=1%
+  VEREDICTO: FRIO — proxy dispara ~1%; no confirma precision en holdout
+
+── H2 ultimo=R @55 ──
+  Hipotesis: pulso abierto → G en costura.
+  ultimo_R→costura              train prec=69% rec=80% cov=81%  |  hold prec=82% rec=76% cov=69%
+  ultimo_R→early03              train prec=54% rec=81% cov=81%  |  hold prec=60% rec=77% cov=69%
+  NOTA: prec ~baseline (70%) — R al cierre es casi siempre
+  VEREDICTO: OLOR — util como recall (80%), no sube precision
+
+── H3 G en 50-54 @55 ──
+  Hipotesis: luz en cola temprana → continua en costura.
+  G_50_54→costura               train prec=70% rec=54% cov=54%  |  hold prec=72% rec=39% cov=40%
+  VEREDICTO: FRIO — prec ≈ baseline
+
+── H4 sin G min 0-9 @55 (filtro OFF) ──
+  Hipotesis: hora sin apertura → menos 1er G temprano en hN+1.
+  sin_early→OFF                 train OFF prec=43% (no costura) cov=14%  |  hold OFF prec=64% cov=15%
+  pares sin G 0-9 @55: 131 (14%)
+  de esos, early03 igual ocurre: 72 (55%)
+  VEREDICTO: OLOR — filtro OFF parcial; no apaga todo
+
+── H5 COMBO alerta ON (L_wrap | ultimo_R | G_50_54) ──
+  Hipotesis: union fisica → alerta costura.
+  combo→costura                 train prec=69% rec=89% cov=90%  |  hold prec=78% rec=85% cov=82%
+  combo→early03                 train prec=54% rec=90% cov=90%  |  hold prec=58% rec=87% cov=82%
+  VEREDICTO: OLOR — recall 85-89%; precision ~baseline (no boleto)
+
+── H6 alerta ON/OFF (combo ON · sin_early apaga early) ──
+  Hipotesis: encender combo salvo hora opaca sin apertura.
+  filtrado→costura              train prec=68% rec=77% cov=78%  |  hold prec=80% rec=76% cov=71%
+  filtrado→early03              train prec=53% rec=77% cov=78%  |  hold prec=61% rec=79% cov=71%
+
+── H7 predecir NO costura (alerta apagada) ──
+  Hipotesis: sin G 50-54 AND NOT ultimo_R → costura improbable.
+  off_conservador               train OFF prec=24% (no costura) cov=10%  |  hold OFF prec=38% cov=18%
+
+── NEGATIVOS (sin costura, n=278) ──
+  ultimo=R @55: 227 (82%)
+  sin G 0-9 @55: 36 (13%)
+  sin G 50-54: 131 (47%)
+
+── SINTESIS ──
+  ~54/100 = 1er G hN+1 en 0-3 (early solo). Union con cola = 70%.
+  SI alerta @min55 (no boleto):
+    · L_wrap @55: proxy C01 dispara poco (~1%); precision no confirma en holdout
+    · ultimo=R: casi siempre al cierre — recall alto, no discrimina
+    · sin G 0-9 @55: apaga parcialmente expectativa early (~40% acierto OFF)
+    · combo ON: aviso generico costura (prec ~70%, rec ~88%)
+  NO:
+    · No supera baseline en precision con reglas simples
+    · 82% de falsos negativos tienen ultimo=R — R solo no basta
+    · No predice minuto del G (bitacora costura no ancla 1er min)
+
+DECISION (2026-08-31 inicial)
+  VIVE como alerta INFO (no boleto):
+  · min>=55: tip costura si combo (L_wrap|ultimo_R|G_50_54)
+  · refuerzo OFF: sin G min 0-9 → tip opaca / early menos probable
+  · L_wrap detectado → tip C01 (cola del L) — olor, no certeza
+  Pendiente OK humano para cablear (costuraAlertaInfo.js).
+
+── H8 REGLA h+1-only (cableada cierreAbiertoInfo.js) ──
+  fecha: 2026-08-31 · script: eval_h1_only.py
+  Target: early_03 (1er G hN+1 min 0-3) — señal hacia h+1, no cola 58+ sola.
+  Regla NUEVA:
+    · @55-59 hN: G 50-54 AND apertura (G 0-9) → olor predictivo
+    · @0-3 hN+1: G en apertura → confirmado (parpadea)
+    · NO: gCola 58+ en hN sola (evita parpadeo @59 sin cruce)
+  cinta: 936 pares · baseline early 54%
+
+  olor @55 snap (G50-54 + apertura)
+    train prec=54% rec=46% cov=46% (401 ON · 184 falsas)
+    hold  prec=60% rec=41% cov=35% (25 ON · 10 falsas)
+
+  olor @55-59 hN (solo predictivo, sin confirmado)
+    train prec=54% rec=55% cov=54% (468 ON · 213 falsas)
+    hold  prec=53% rec=49% cov=47% (34 ON · 16 falsas)
+
+  solo gCola 58+ @55-59 hN (descartado)
+    train prec=50% rec=29% cov=32% (274 ON · 137 falsas)
+    hold  prec=24% rec=14% cov=29% (21 ON · 16 falsas)
+    → 153 falsas en cinta; prec 48% hacia early_03
+
+  NUEVA h+1-only (olor + confirmado h+1)
+    train prec=69% rec=100% cov=79% acc=75% (680 ON · 213 falsas)
+    hold  prec=70% rec=100% cov=74% acc=78% (53 ON · 16 falsas)
+
+  VIEJA (+ gCola 58+ hN)
+    train prec=63% rec=100% cov=86% (740 ON · 273 falsas)
+    hold  prec=58% rec=100% cov=89% (64 ON · 27 falsas)
+
+  Delta hold vs vieja: +12 pp precision · 11 falsas menos · recall 100% igual
+  Desglose: olor@55=426 · confirmado solo=272 · ambos=232 · extra gCola=71
+
+  VEREDICTO: VIVE cableado — sube precision hacia early_03 sin perder recall.
+  Olor @55 solo no basta (prec ~54%); confirmado h+1 cierra el 100% recall.
+
+DECISION (2026-08-31 cableado OK humano)
+  Icono cierre abierto (LiveAvance):
+  · Sin icono = cierre cerrado
+  · Olor @55-59: G 50-54 + hora abrio
+  · Confirmado: G min 0-3 hN+1 (parpadea)
+  · No gCola 58+ sola en hN
+  INFO — no boleto.
+
+fin

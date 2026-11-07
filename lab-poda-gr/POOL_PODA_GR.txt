@@ -1,0 +1,35 @@
+POOL LAB — PODA G-R (ENTRADA TRAS G vs ENTRADA TRAS G-R)
+======================================================
+stamp 2026-09-06
+Lab: hilo-corto/lab-poda-gr/
+Cero prod · cero LIVE · estudio experimental de poda y corrimiento
+
+PREGUNTA
+  ¿Conviene arrancar la ventana de 3 tiros inmediatamente tras una G
+  (política clásica V3: tiros +1, +2, +3 desde G) o podar el tiro +1
+  asumiéndolo como R y arrancar la ventana de 3 tiros recién al confirmar
+  la secuencia G-R (política Poda G-R: tiros +2, +3, +4 desde G)?
+
+HIPÓTESIS Y FÍSICA DEL MOTOR
+  1. En el tiro inmediatamente contiguo a una G (+1), el 83.8% de las
+     veces el motor sella un número (R) y solo el 16.2% repite bono (G).
+  2. Debido a la repulsión fermiónica temporal y a la duración del bono previo
+     (animaciones de 80-120s), el minuto +1 de reloj tiene probabilidad ~0.0%
+     de albergar otra G independiente.
+  3. Al podar el tiro +1 (asumir R), se ahorra 1 tiro fallido en el 83.8%
+     de los episodios, a cambio de ceder las repeticiones inmediatas (trenes).
+  4. Los tiros +2, +3, +4 caen exactamente en los minutos +2 a +5, que es
+     donde apunta el corrimiento de Pool 7 (84.2% de sus tips caen entre
+     T+2 y T+5).
+
+JUEZ (parche 2026-09-06)
+  Vigente: banda d<=1 y exacto d=0 del corrimiento
+           (tip LC-01 vs minuto real de ESA G, hora a hora).
+           Residual Δ. Ver JUEZ.txt.
+  NO es juez: Hit G / color / cadenas R-G-R en toda la cinta / Jaccard.
+
+POLÍTICAS A EVALUAR
+  POL-A: V3 Clásica (disparar tiros +1, +2, +3 inmediatamente tras G).
+  POL-B: Poda G-R (podar tiro +1 asumiendo R; disparar +2, +3, +4 solo tras G-R).
+  POL-C: Poda G-R + Confluencia Pool 7 (disparar en +2, +3, +4 solo si el tiro cae en tip Pool 7 +-1).
+  POL-D: Híbrida (tiro +1 solo con señal previa de Tren/Estirada; si no, podar y jugar +2, +3, +4).

@@ -1,0 +1,98 @@
+LOOK · tipo de hora × R entre G × corrimiento
+Juez: banda d≤1 tip vs minuto de ESA G. Unidad: la hora.
+No se unionan cadenas de color. No se cobra P(tiro=G).
+
+Cinta 1083 h · train 1011 · holdout 72
+
+════════ TRAIN  1010 horas con ≥2 G ════════
+
+1. PASO DE LA HORA (mediana de R entre G, una cifra por hora)
+   Esto es lo que pediste: no se mezclan los tiros de todas las horas.
+Clima (nG)     | Horas | mediana del paso |  4-6 R | 10-12 R |  13+ R
+---------------+-------+------------------+--------+---------+-------
+floja          |   200 |          6 R     |  47.0% |   12.5% |   4.0%
+normal         |   665 |          3 R     |  42.7% |    0.2% |   0.0%
+rica           |   145 |          2 R     |   3.4% |    0.0% |   0.0%
+
+   Horas según su propio paso (todas):
+     paso   0-3 R/G :  541 horas  53.6%
+     paso   4-6 R/G :  383 horas  37.9%
+     paso   7-9 R/G :   52 horas  5.1%
+     paso 10-12 R/G :   26 horas  2.6%
+     paso   13+ R/G :    8 horas  0.8%
+
+2. ¿EL PASO AGARRA EN LA MISMA HORA? (primer gap vs el resto)
+   Primer hueco y el resto caen en el mismo cubo: 35.4%  (356/1007 h)
+   Si el 1º fue 4-6 R, el resto se queda corto (≤7): 33.2%  (73/220 h)
+   Si el 1º fue ≥10 R, el resto se queda largo (≥8): 9.4%  (17/181 h)
+
+3. CORRIMIENTO (cuando llega la G: ¿el minuto era el tip?)
+Tip                    |    N G |  Banda d≤1 |   Exacto
+-----------------------+--------+------------+---------
+LC-01 p30 minutos      |   8814 |      36.7% |    13.7%
+Paso R de ESTA hora    |   8814 |      33.1% |    11.7%
+Ritmo corto/largo visto |   8814 |      29.0% |     9.8%
+
+   Banda d≤1 por clima de esa hora (no se mezcla floja con rica):
+   Clima      |    LC-01 |   Paso R |    Ritmo |     N
+   floja      |    21.2% |    20.7% |    21.8% |  1027
+   normal     |    35.6% |    31.8% |    29.1% |  5917
+   rica       |    48.8% |    44.2% |    32.8% |  1870
+
+4. FÍSICA DEL PALO (dentro de la hora: R-entre vs minutos-entre)
+   minuto_gap − (R_entre+1): mediana +0 · eso es la sombra de la G previa (bonus), no un ledger de 100x.
+   Identidad de cupo (no se promedian tiros; se cuentan HORAS):
+   nG≈10 (normal) ⇒ ~50 R / ~9 huecos ⇒ ~5–6 R por G.
+   nG≤7  (floja)  ⇒ menos huecos ⇒ el paso de ESA hora se va a 9–12 R.
+
+════════ HOLDOUT  72 horas con ≥2 G ════════
+
+1. PASO DE LA HORA (mediana de R entre G, una cifra por hora)
+   Esto es lo que pediste: no se mezclan los tiros de todas las horas.
+Clima (nG)     | Horas | mediana del paso |  4-6 R | 10-12 R |  13+ R
+---------------+-------+------------------+--------+---------+-------
+floja          |    15 |          8 R     |  33.3% |   40.0% |   0.0%
+normal         |    43 |          3 R     |  27.9% |    0.0% |   0.0%
+rica           |    14 |          2 R     |   0.0% |    0.0% |   0.0%
+
+   Horas según su propio paso (todas):
+     paso   0-3 R/G :   44 horas  61.1%
+     paso   4-6 R/G :   17 horas  23.6%
+     paso   7-9 R/G :    5 horas  6.9%
+     paso 10-12 R/G :    6 horas  8.3%
+     paso   13+ R/G :    0 horas  0.0%
+
+2. ¿EL PASO AGARRA EN LA MISMA HORA? (primer gap vs el resto)
+   Primer hueco y el resto caen en el mismo cubo: 44.4%  (32/72 h)
+   Si el 1º fue 4-6 R, el resto se queda corto (≤7): 27.3%  (3/11 h)
+   Si el 1º fue ≥10 R, el resto se queda largo (≥8): 30.8%  (4/13 h)
+
+3. CORRIMIENTO (cuando llega la G: ¿el minuto era el tip?)
+Tip                    |    N G |  Banda d≤1 |   Exacto
+-----------------------+--------+------------+---------
+LC-01 p30 minutos      |    642 |      39.7% |    13.6%
+Paso R de ESTA hora    |    642 |      31.8% |    10.6%
+Ritmo corto/largo visto |    642 |      27.9% |     8.7%
+
+   Banda d≤1 por clima de esa hora (no se mezcla floja con rica):
+   Clima      |    LC-01 |   Paso R |    Ritmo |     N
+   floja      |    18.6% |    17.1% |    20.0% |    70
+   normal     |    38.1% |    30.6% |    26.0% |   396
+   rica       |    51.7% |    40.3% |    35.2% |   176
+
+4. FÍSICA DEL PALO (dentro de la hora: R-entre vs minutos-entre)
+   minuto_gap − (R_entre+1): mediana +0 · eso es la sombra de la G previa (bonus), no un ledger de 100x.
+   Identidad de cupo (no se promedian tiros; se cuentan HORAS):
+   nG≈10 (normal) ⇒ ~50 R / ~9 huecos ⇒ ~5–6 R por G.
+   nG≤7  (floja)  ⇒ menos huecos ⇒ el paso de ESA hora se va a 9–12 R.
+
+════════════════════════════════ LECTURA ════════════════════════════════
+El 5–6 R/G en hora normal y 10–12 R/G en hora floja/opaca de CUPOS
+no es un saco de 100x que se equilibra. Es el palo de 60 tiros:
+menos G en ESA hora ⇒ más R entre cada G de ESA hora.
+Eso ya está en bitácora: la espera G→G es sombra de los L; la p es de la hora.
+LC-01 (p30 de minutos ya vistos en la hora) ya lee ese paso.
+Forzar el tip con el conteo de R no gana banda al p30 de minutos.
+El primer hueco NO fija el resto de la hora (mismo cubo ~35–44%).
+Un arranque de ≥10 R no obliga a que el resto siga largo.
+10–12 R/G es la cola de horas flojas, no el día opaco típico.

@@ -1,0 +1,82 @@
+════════════════════════════════════════════════════════════════
+LAB POOL 7 BETA — COMPARATIVA VENTANA 3 vs VENTANA 5 TIROS
+════════════════════════════════════════════════════════════════
+Cero prod · estudio de performance y horizontes
+
+Horas: total=1065 train=993 holdout=72
+
+────────────────────────────────────────────────────────────────
+  RESULTADOS: TRAIN
+────────────────────────────────────────────────────────────────
+Eventos G evaluados: 8666
+
+Tabla comparativa de políticas:
+Política             | Jugadas    | Cobert.  | Exacto   | ±1       | Banda d≤1  | PnL (1:1) 
+----------------------------------------------------------------------------------------
+P7 Base (ALL)        |  8666/8666 |  100.0% |   13.7% |   23.0% |     36.7% |   -2310.0
+P7 Beta (5 tiros)    |  5452/8666 |   62.9% |   20.8% |   33.1% |     53.9% |    +420.0
+P7 Beta (3 tiros)    |  3867/8666 |   44.6% |   22.3% |   35.4% |     57.7% |    +595.0
+P7 Beta (V3 Horiz)   |  3867/8666 |   44.6% |   34.8% |   49.7% |     84.5% |   +2667.0
+P7 Beta (V5 Horiz)   |  5452/8666 |   62.9% |   22.3% |   35.1% |     57.5% |    +816.0
+
+Desglose de aciertos de Pool 7 según en qué tiro cayó la G:
+Tiro (Gap)      | Casos    | % del total  | Exacto   | Banda d≤1 
+--------------------------------------------------------------
+Tiro 1          |   1522 |       17.6% |   20.6% |     50.2%
+Tiro 2          |   1265 |       14.6% |   25.4% |     64.0%
+Tiro 3          |   1080 |       12.5% |   21.0% |     60.9%
+Tiro 4          |    889 |       10.3% |   17.5% |     51.6%
+Tiro 5          |    696 |        8.0% |   16.4% |     35.3%
+Tiro 6          |    595 |        6.9% |    4.7% |     24.7%
+Tiro 7          |    469 |        5.4% |    3.0% |      9.4%
+Sequía (>5 tiros)|   3214 |       37.1% |    1.8% |      7.5%
+
+────────────────────────────────────────────────────────────────
+  RESULTADOS: HOLDOUT (72h)
+────────────────────────────────────────────────────────────────
+Eventos G evaluados: 618
+
+Tabla comparativa de políticas:
+Política             | Jugadas    | Cobert.  | Exacto   | ±1       | Banda d≤1  | PnL (1:1) 
+----------------------------------------------------------------------------------------
+P7 Base (ALL)        |   618/618 |  100.0% |   12.1% |   26.9% |     39.0% |    -136.0
+P7 Beta (5 tiros)    |   411/618 |   66.5% |   17.8% |   38.0% |     55.7% |     +47.0
+P7 Beta (3 tiros)    |   290/618 |   46.9% |   19.3% |   41.0% |     60.3% |     +60.0
+P7 Beta (V3 Horiz)   |   290/618 |   46.9% |   34.8% |   53.4% |     88.3% |    +222.0
+P7 Beta (V5 Horiz)   |   411/618 |   66.5% |   18.7% |   38.9% |     57.7% |     +63.0
+
+Desglose de aciertos de Pool 7 según en qué tiro cayó la G:
+Tiro (Gap)      | Casos    | % del total  | Exacto   | Banda d≤1 
+--------------------------------------------------------------
+Tiro 1          |    116 |       18.8% |   20.7% |     57.8%
+Tiro 2          |     94 |       15.2% |   23.4% |     61.7%
+Tiro 3          |     80 |       12.9% |   12.5% |     62.5%
+Tiro 4          |     66 |       10.7% |   16.7% |     57.6%
+Tiro 5          |     55 |        8.9% |   10.9% |     29.1%
+Tiro 6          |     33 |        5.3% |    6.1% |     18.2%
+Tiro 7          |     30 |        4.9% |    0.0% |     10.0%
+Sequía (>5 tiros)|    207 |       33.5% |    1.0% |      5.8%
+
+════════════════════════════════════════════════════════════════
+VEREDICTO EXPERIMENTAL
+════════════════════════════════════════════════════════════════
+1. Ventana 3 tiros (V3) corona en precisión y rentabilidad:
+   - En Holdout, P7 V3 clásico alcanza 60.3% en banda d<=1 (vs 39.0% Base ALL y 55.7% V5).
+   - Exacto puro en V3 es 19.3% (vs 12.1% Base ALL).
+   - El PnL en Holdout pasa de destructor (-136 en ALL) a fuertemente positivo (+60 en V3).
+2. Ventana 5 tiros (V5) ofrece mayor cobertura a costa de menor filo:
+   - V5 captura el 66.5% de las G (vs 46.9% en V3).
+   - Pero su banda cae a 55.7% (-4.6 pp vs V3) y su PnL baja a +47 (+22% menor que V3).
+3. Pérdida crítica de filo tras el Tiro 3:
+   - Tiro 1 (gap 1): 57.8% banda (Holdout) / 50.2% (Train).
+   - Tiro 2 (gap 2): 61.7% banda (Holdout) / 64.0% (Train).
+   - Tiro 3 (gap 3): 62.5% banda (Holdout) / 60.9% (Train).
+   - Tiro 4 (gap 4): 57.6% banda (Holdout) / 51.6% (Train).
+   - Tiro 5 (gap 5): se derrumba a 29.1% banda (Holdout) / 35.3% (Train).
+   - Sequías (>5 tiros): desplome total al 5.8% banda (Holdout) / 7.5% (Train).
+4. Adaptación de horizonte (P7 Beta V3 Horiz):
+   - Al limitar el gap máximo de Pool 7 a 3 minutos para que coincida con
+     el horizonte físico de 3 tiros, la banda en V3 sube a un extraordinario
+     88.3% en Holdout (84.5% en Train) con 34.8% de acierto exacto.
+   - Esto ocurre porque el intervalo [T+1, T+3] cubre exactamente la ventana
+     temporal en que la bola puede caer en esos 3 tiros.

@@ -1,0 +1,50 @@
+POOL lab-show-motor — Motor desde Live Jokers Show (54 casillas)
+================================================================
+fecha alta: 2026-08-31
+lab: hilo-corto/lab-show-motor/
+
+CONTEXTO
+  El juego ES Live Jokers Show: ruleta 54 (45 R + 9 G bonos).
+  R = 1x/2x/5x/10x · G1–G4 bonos (G4=1 G3=3 G2=2 G1=3 forma imagen;
+  empírico G1=2 G2=3). Tinta G viene del menú L, no ruleta-G iid (E01).
+
+PREGUNTA
+  Construido desde la física del show, ¿cuál es el mejor motor nuevo
+  y cómo compara con prod (clásico / INTER2)?
+
+CAPAS SHOW (orden natural)
+  L0  Plato 54 — P(G)=9/54 · urna R 21/13/7/4
+  L1  Mapa H-1 — islas = minutos G hora anterior
+  L2  Cierre — largo → SEGURO casilla arranque (~95%)
+  L3  Clima — cupo nG ventana · fermión al recortar islas
+  L4  Sombra SOM02 — hueco max(H-1)+paso
+  L5  INTER2 — acuerdo ≥2 pools (prod live)
+
+MOTORES CANDIDATOS (minuto · juez banda d≤1)
+  M0-PLATO54      k=n_tiros·9/54 · minutos uniformes
+  M1-MAPA         islas H-1 · cap clima
+  M2-CIERRE       M1 + SEGURO costura largo
+  M3-SOM02        M2 + chip sombra (motor show completo sin INTER2)
+  M4-CLASSIC      emitir_boleto (referencia hilo)
+  M5-INTER2       prod live (referencia)
+  M6-SHOW-V1      motor nuevo explícito: plato→cierre→mapa→sombra
+
+LETRA (tiro G/R)
+  MENU-L          tinta G | banda L previo (E01)
+  WHEEL-G-iid     ruleta 9 casillas G
+
+CINTA
+  depurar-all-4G-detail.txt · PRIMERA_UTIL · holdout 72 h
+
+VETO
+  No cablear dashboard sin OK. No tip casino como prod.
+
+── RONDA 2 (2026-08-31) ──
+  M7-MAPA-CIERRE   orden invertido · 45.0% (−0.1pp)
+  M8-K-PLATO       tope k=9/54 · 43.9% (−1.2pp)
+  M9-PLATO×MAPA    plato∩H-1 · 44.4% (−0.7pp)
+  M10-SIN-CIERRE   mapa+sombra sin SEGURO · 44.4%
+  H1-INTER2-SHOW-P0  P0=show · = INTER2 60.6%
+  H2-INTER2-SHOW+7   7 pools · 72.1% OLOR (doble voto show≈P0)
+  H3/H4            inter/unión clásico+show = clásico
+  VEREDICTO R2: orden/plato FRÍO · híbrido H2 artefacto · prod intacto

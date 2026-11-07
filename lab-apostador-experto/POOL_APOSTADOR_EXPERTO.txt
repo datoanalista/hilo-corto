@@ -1,0 +1,44 @@
+POOL APOSTADOR EXPERTO — hilo-corto
+====================================
+stamp 2026-09-04
+lab: hilo-corto/lab-apostador-experto/
+
+PREGUNTA (humano)
+  ¿Se puede decidir, como apostador senior de dinero real, si el
+  SIGUIENTE tiro conviene: GO / NO_GO y, si GO, STRONG / WEAK —
+  usando Pool 7 (LC-01), Pool 8 (INTER2), luces live, historial de
+  aciertos/errores e ingestas — sin cablear el dashboard?
+
+PERFIL
+  Apostador experto · bankroll real · selectivo.
+  No es “siempre tip”. Es “¿apuesto ahora y con cuánto?”.
+  Analogía (FORMA): gema ≠ piedra de río — el tamaño de la apuesta
+  cambia con la confianza calibrada, no con el deseo.
+
+SALIDA (contrato)
+  decision ∈ {NO_GO, GO_WEAK, GO_STRONG}
+  + score ∈ [0,1] + reasons[] (auditoría)
+
+SUB-PREGUNTAS
+  H0  Censo: hit-rate LC-01 (banda d≤1) y cobertura tip.
+  H1  ¿El acuerdo tip∩Pool8 (o proxy boleto) mejora el edge?
+  H2  ¿Un filtro por rendimiento reciente (EWMA errores) sube EV?
+  H3  Fuzzy/senior: umbrales GO/STRONG vs siempre-tip / nunca-tip.
+  H4  Holdout causal: ¿sostiene?
+
+FUENTES (solo lectura)
+  depuracion/depurar-all-4G-detail.txt
+  + dashboard/extraccion/extraccion-en-vivo.txt (horas nuevas)
+  Oficio hermano: tip LC-01 (Pool 7) · INTER2 (Pool 8) en motor
+  Bitácora v2 · ACTA_DASHBOARD_FICHAS_V2 · LECTURAS_LIVE
+
+VETOS
+  Cero cambios en dashboard / motor.py / servir.py / LIVE.
+  Cero cable UI sin OK humano.
+  No edificio anterior (A01). No reabrir super-apostador vs A01.
+  No confundir con apostador-6m (tip cableado LC-01); este lab = sizing + filtro.
+
+HIPÓTESIS INICIAL
+  Tip siempre (LC) tiene edge vs azar, pero EV bankroll mejora si
+  NO_GO cuando el historial reciente del tip está frío o hay conflicto
+  de señales; STRONG solo con acuerdo + racha calibrada.

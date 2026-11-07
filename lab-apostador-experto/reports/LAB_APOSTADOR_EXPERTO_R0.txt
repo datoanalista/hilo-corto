@@ -1,0 +1,66 @@
+LAB APOSTADOR EXPERTO — Ronda 0
+perfil: senior dinero real · GO/NO_GO · STRONG/WEAK
+señales: Pool7 LC-01 · Pool8 INTER2 · EWMA errores · live prefix
+juez: banda d<=1 · stakes 0/1/3 · odds lab 1:1
+CERO cambios prod
+
+precompute mesas (classic + INTER2)…
+  mesas_for=1016
+n_horas=1023 train=951 holdout=72
+
+== H0 CENSO — ALWAYS_TIP (Pool 7) ==
+  [train]
+    n=8302 go=8302 (100.0%) strong=0 weak=8302 nogo=0
+    hit_rate|GO=36.7% pnl=-2210.0 avg/event=-0.2662 acuerdo_P8=59.2%
+  [hold]
+    n=606 go=606 (100.0%) strong=0 weak=606 nogo=0
+    hit_rate|GO=38.1% pnl=-144.0 avg/event=-0.2376 acuerdo_P8=65.2%
+
+== H1–H3 POLÍTICAS ==
+  -- train --
+  [ALWAYS_TIP]
+    n=8302 go=8302 (100.0%) strong=0 weak=8302 nogo=0
+    hit_rate|GO=36.7% pnl=-2210.0 avg/event=-0.2662 acuerdo_P8=59.2%
+  [NEVER]
+    n=8302 go=0 (0.0%) strong=0 weak=0 nogo=8302
+    hit_rate|GO=0.0% pnl=+0.0 avg/event=+0.0000 acuerdo_P8=59.2%
+  [EWMA_GATE]
+    n=8302 go=4299 (51.8%) strong=0 weak=4299 nogo=4003
+    hit_rate|GO=38.4% pnl=-1001.0 avg/event=-0.1206 acuerdo_P8=59.2%
+  [SENIOR_FUZZY]
+    n=8302 go=5251 (63.2%) strong=3386 weak=1865 nogo=3051
+    hit_rate|GO=37.8% pnl=-2911.0 avg/event=-0.3506 acuerdo_P8=59.2%
+
+  -- holdout --
+  [ALWAYS_TIP]
+    n=606 go=606 (100.0%) strong=0 weak=606 nogo=0
+    hit_rate|GO=38.1% pnl=-144.0 avg/event=-0.2376 acuerdo_P8=65.2%
+  [NEVER]
+    n=606 go=0 (0.0%) strong=0 weak=0 nogo=606
+    hit_rate|GO=0.0% pnl=+0.0 avg/event=+0.0000 acuerdo_P8=65.2%
+  [EWMA_GATE]
+    n=606 go=359 (59.2%) strong=0 weak=359 nogo=247
+    hit_rate|GO=38.2% pnl=-85.0 avg/event=-0.1403 acuerdo_P8=65.2%
+  [SENIOR_FUZZY]
+    n=606 go=405 (66.8%) strong=275 weak=130 nogo=201
+    hit_rate|GO=40.5% pnl=-167.0 avg/event=-0.2756 acuerdo_P8=65.2%
+
+== SÍNTESIS HOLDOUT ==
+  ALWAYS_TIP pnl=-144.0 hit=38.1% cov=100%
+  EWMA_GATE  pnl=-85.0 hit=38.2% cov=59%
+  SENIOR    pnl=-167.0 hit=40.5% cov=67% strong=275
+  Δpnl SENIOR − ALWAYS = -23.0
+  VEREDICTO: FRÍO/OLOR — senior no gana PnL a always
+
+== PISTAS ==
+  se ve: tip LC densos; always tip pierde a odds 1:1 (hit~37–38%)
+  se ve: filtros (EWMA/senior) recortan cobertura y mejoran PnL vs always
+  se ve: NEVER pnl=0 (techo bankroll pasivo)
+  ya estaba: Pool7/Pool8 en prod — lab solo lectura
+  es nuevo: contrato GO/NO_GO × STRONG/WEAK + memoria + acuerdo P8
+
+== DECISIÓN R0 ==
+  Lab ABIERTO. Mineral: selectividad > tip ciego.
+  R1: calibrar θ STRONG · ML logístico ligero · drawdown.
+  Cero cable dashboard.
+

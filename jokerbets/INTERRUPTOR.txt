@@ -1,0 +1,37 @@
+INTERRUPTOR — cuándo se enciende la ficha
+=========================================
+stamp 2026-10-13
+Ficha: $150/bono = $600/cuenta × 3. Color a muerte.
+Dónde: solo Pool 7, tip±1 (min tip−1, tip y tip+1). Nunca el resto de minutos.
+Cerrado en REGLA.txt (2026-10-13). Cable por rondas; clics en fase C.
+
+ON  (se apuesta el resto de ESA hora, en zona)
+  Puerta A — régimen @19 (principal)
+    Juntos:
+      1. Ya cayeron ≥2 G.
+      2. Media de esas G ≥68.
+      3. Minuto <40.
+      4. La suma aún no tocó 850 (si ya la tocó, es cola).
+      5. Esta hora NO es la siguiente a fuerte / muy_fuerte / supernova.
+  Puerta B — chispa temprana (NO entra al MVP)
+      2 G ≥100 antes del min 19. 44 h / 1043. Med min 30.
+      LOOK_OPTIMO: no vale retrasar el cable. Después, si el libro corre.
+
+OFF  (ficha en el bolsillo)
+  · <2 G, o media <40.
+  · Media 40–67: olor a normal. Se mira, no se compra.
+  · Hora apagada / opaca. Pool 7 ahí: med −600/hora (ficha $100).
+  · Primer respiro tras racha apagada.
+  · Un solo G gordo. El resto no se levanta (med 45 = control).
+  · Minuto ≥40 y suma ya ≥850: llegaste tarde.
+  · Fuera de tip±1: no existe apuesta.
+  · Más de 3 tiros desde la última G: sequía — el bot no auto-apuesta
+    (Pool 7 pierde filo; Puerta A sola no alcanza).
+
+Se apaga al cerrar la hora. La siguiente nace en OFF.
+El happy no se hereda.
+
+Estimado (API 23-jul → 4-sep, 43,4 d, ficha $150, A+zona)
+  Casa +3.375.750 en 281 h de puerta A.
+  Si se repite la densidad: ~+77.800/día · ~+2,33M / 30 d.
+  No es sueldo. 0 vaciados en ESA muestra. Suelo pozo 94%.

@@ -1,0 +1,10 @@
+PROTOCOLO — lab-g-explosion
+===========================
+stamp 2026-08-30
+
+0. Punto de partida: BITACORA v2 + POOL_G_EXPLOSION.txt
+1. Script: python run_lab.py → reports/LAB_G_EXPLOSION.txt
+2. Máx 3 rondas. R1 = censo + bloque + reglas @19/@39. R2 = multi-bloque + unicornio (run_r2.py).
+3. Holdout: 72 h (igual lab-g-cola).
+4. Veredicto por H: VIVE | OLOR | FRÍO
+5. Tras ronda: ACTA_G_EXPLOSION.txt + INVENTARIO + REGISTRO si aplica.

@@ -1,0 +1,37 @@
+{
+  "resumen": {
+    "desde": "h10-230726",
+    "hasta": "h21-220826",
+    "n_horas_puntuadas": 728,
+    "k_pedido": null,
+    "todas": {
+      "n": 728,
+      "hits_nucleo": 1.6236263736263736,
+      "pm1_nucleo": 2.6538461538461537,
+      "score_banda": 4.277472527472527,
+      "colapso": 0.009615384615384616,
+      "azar_nucleo": 1.4774496336996337,
+      "hits_holgada": 1.6236263736263736,
+      "azar_holgada": 1.4774496336996337,
+      "hits_copia_prev": 1.5714285714285714,
+      "azar_copia": 1.611515567765568,
+      "k_medio": 9.024725274725276,
+      "lift_vs_azar": 1.0989385604710622,
+      "lift_vs_copia": 1.0332167832167833
+    },
+    "desde_4a": {
+      "n": 725,
+      "hits_nucleo": 1.6193103448275863,
+      "pm1_nucleo": 2.649655172413793,
+      "score_banda": 4.268965517241379,
+      "colapso": 0.009655172413793104,
+      "azar_nucleo": 1.476528735632184,
+      "hits_holgada": 1.6193103448275863,
+      "azar_holgada": 1.476528735632184,
+      "hits_copia_prev": 1.566896551724138,
+      "k_medio": 9.019310344827586,
+      "lift_vs_azar": 1.096700867209516,
+      "lift_vs_copia": 1.033450704225352
+    }
+  }
+}

@@ -1,0 +1,40 @@
+ACTA — LAB SOM02 vs PROD (BASE)
+================================
+stamp 2026-08-29 03:25
+Lab: hilo-corto
+Comando: python lab_som02_vs_prod.py
+Fuente: reports/LAB_SOM02_VS_PROD.txt · .json
+Cero LIVE.
+
+════════════════════════════════
+FICHA (regla prod)
+════════════════════════════════
+
+  cand = (max(islas H-1) + mediana_huecos) % 60
+  Entra si: k < clima · ≠01 · no duplicada · d≥2
+  Rol tiro: sombra · flag TIBIO (banda d≤1)
+
+════════════════════════════════
+LAB PRE-CABLEADO (871 h)
+════════════════════════════════
+
+  BASE (sin sombra)  score 4.21
+  SOM02 (+1 chip)    score 4.31  Δ +0.10
+  Entra ~25% horas · holdout 168h Δ +0.077
+
+════════════════════════════════
+DECISIÓN 2026-08-29
+════════════════════════════════
+
+  OK humano: cablear SOM02 a src/motor.py (construir_informe).
+  Monitoreo: lab_som02_vs_prod.py (BASE=sin rol sombra vs PROD).
+  Tips: fila "SOM02 · prod" cuando rol sombra en tiros.
+  Regenerar logs tras cierre hora (tablero_live auto).
+
+════════════════════════════════
+CENSO
+════════════════════════════════
+
+  VIVE prod. Ejemplo h3-290826: cand 58 (k 8→9).
+
+FIN

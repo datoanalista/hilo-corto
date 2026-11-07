@@ -1,0 +1,542 @@
+LOOK · formas de CADA hora (no promedio global)
+Unidad = la hora. Train y holdout separados. Cero Jaccard.
+Tono = suma lumen (cubetas LOOK_HUECO_TONO). Cupo = nG (floja/rica).
+Hueco = tiros G→G núcleo (tipo≠5; extra no sienta).
+  paso 1 = tren/pegada (0 R) · 2 = G-R-G (1 R) · 3 = G-R-R-G (2 R)
+  4–5 · 6–7 (eso son 5–6 R) · 8–10 · 11–15 · ≥16
+Relato vivo «6–7 R / colas ≥10/15» = EVENTO y moda-en-R de ESA hora.
+No se reporta % poolado de todas las G. Cero cable.
+
+Cinta 1164 h · train 1092 · holdout 72
+Horas con ≥1 G núcleo: train 1092 · hold 72
+Con ≥1 hueco G→G: train 1091 · hold 72
+Extra (tipo 5, no sienta): 0 en el lote. No entran al vector.
+
+════════ TRAIN  1092 horas ════════
+Horas por tono: muy_apagado=313  opaco=264  normal=315  fuerte=122  muy_fuerte=62  supernova=16
+Horas por cupo: floja=213  normal=726  rica=153
+
+A. TONO DE HORA — cuántas HORAS tienen cada moda
+
+── muy_apagado  ·  313 horas  ·  312 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=312   1_tren=20(6.4%)  2_GRG=18(5.8%)  3_GRRG=19(6.1%)  4-5=35(11.2%)  6-7=31(9.9%)  8-10=19(6.1%)  11-15=25(8.0%)  16+=15(4.8%)  empate=130(41.7%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=312   0_tren=19(6.1%)  1_GRG=22(7.1%)  2_GRRG=21(6.7%)  3-4R=41(13.1%)  5R=12(3.8%)  6-7R=19(6.1%)  8-10R=17(5.4%)  11-15R=23(7.4%)  16R+=8(2.6%)  empate=130(41.7%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 56.1%  G-R-G≥1 53.5%  6–7R≥1 47.4%  cola≥10R 89.7%  cola≥15R 60.9%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=29 9.3%  medio=3 1.0%  corto+cola=253 81.1%  solo_cola=27 8.7%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=288 92.0%  mix=12 3.8%  tren=13 4.2%
+   Cupo/ocupación de esas horas: med nG=8  med min-lit=8/60  med desierto=16 min  med paso=4 R
+
+── opaco  ·  264 horas  ·  264 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=264   1_tren=38(14.4%)  2_GRG=20(7.6%)  3_GRRG=15(5.7%)  4-5=46(17.4%)  6-7=18(6.8%)  8-10=13(4.9%)  11-15=8(3.0%)  16+=3(1.1%)  empate=103(39.0%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=264   0_tren=42(15.9%)  1_GRG=22(8.3%)  2_GRRG=17(6.4%)  3-4R=48(18.2%)  5R=5(1.9%)  6-7R=11(4.2%)  8-10R=10(3.8%)  11-15R=4(1.5%)  16R+=2(0.8%)  empate=103(39.0%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 74.2%  G-R-G≥1 69.7%  6–7R≥1 61.0%  cola≥10R 81.8%  cola≥15R 43.9%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=47 17.8%  medio=1 0.4%  corto+cola=205 77.7%  solo_cola=11 4.2%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=226 85.6%  mix=11 4.2%  tren=27 10.2%
+   Cupo/ocupación de esas horas: med nG=10  med min-lit=10/60  med desierto=13 min  med paso=4 R
+
+── normal  ·  315 horas  ·  315 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=315   1_tren=55(17.5%)  2_GRG=36(11.4%)  3_GRRG=24(7.6%)  4-5=46(14.6%)  6-7=10(3.2%)  8-10=18(5.7%)  11-15=5(1.6%)  empate=121(38.4%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=315   0_tren=62(19.7%)  1_GRG=37(11.7%)  2_GRRG=25(7.9%)  3-4R=51(16.2%)  5R=1(0.3%)  6-7R=10(3.2%)  8-10R=10(3.2%)  11-15R=4(1.3%)  empate=115(36.5%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 82.5%  G-R-G≥1 78.4%  6–7R≥1 68.6%  cola≥10R 76.8%  cola≥15R 30.8%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=73 23.2%  corto+cola=237 75.2%  solo_cola=5 1.6%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=250 79.4%  mix=19 6.0%  tren=46 14.6%
+   Cupo/ocupación de esas horas: med nG=11  med min-lit=11/60  med desierto=12 min  med paso=3 R
+
+── fuerte  ·  122 horas  ·  122 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=122   1_tren=30(24.6%)  2_GRG=16(13.1%)  3_GRRG=7(5.7%)  4-5=20(16.4%)  6-7=3(2.5%)  8-10=5(4.1%)  11-15=3(2.5%)  16+=2(1.6%)  empate=36(29.5%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=122   0_tren=34(27.9%)  1_GRG=17(13.9%)  2_GRRG=8(6.6%)  3-4R=23(18.9%)  5R=1(0.8%)  6-7R=2(1.6%)  8-10R=3(2.5%)  16R+=1(0.8%)  empate=33(27.0%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 89.3%  G-R-G≥1 80.3%  6–7R≥1 56.6%  cola≥10R 67.2%  cola≥15R 27.0%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=39 32.0%  medio=1 0.8%  corto+cola=82 67.2%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=89 73.0%  mix=11 9.0%  tren=22 18.0%
+   Cupo/ocupación de esas horas: med nG=11  med min-lit=11/60  med desierto=11 min  med paso=2 R
+
+── muy_fuerte+  ·  78 horas  ·  78 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=78    1_tren=20(25.6%)  2_GRG=9(11.5%)  3_GRRG=5(6.4%)  4-5=15(19.2%)  6-7=4(5.1%)  8-10=1(1.3%)  empate=24(30.8%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=78    0_tren=22(28.2%)  1_GRG=11(14.1%)  2_GRRG=7(9.0%)  3-4R=16(20.5%)  5R=1(1.3%)  6-7R=1(1.3%)  8-10R=1(1.3%)  empate=19(24.4%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 85.9%  G-R-G≥1 79.5%  6–7R≥1 74.4%  cola≥10R 65.4%  cola≥15R 16.7%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=27 34.6%  corto+cola=51 65.4%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=56 71.8%  mix=2 2.6%  tren=20 25.6%
+   Cupo/ocupación de esas horas: med nG=12  med min-lit=12/60  med desierto=11 min  med paso=2 R
+
+B. CUPO (nG) — mismo inventario, sin mezclarlo con el tono
+
+── floja  ·  213 horas  ·  212 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=212   1_tren=5(2.4%)  2_GRG=5(2.4%)  3_GRRG=6(2.8%)  4-5=20(9.4%)  6-7=16(7.5%)  8-10=14(6.6%)  11-15=28(13.2%)  16+=19(9.0%)  empate=99(46.7%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=212   0_tren=6(2.8%)  1_GRG=6(2.8%)  2_GRRG=5(2.4%)  3-4R=24(11.3%)  5R=6(2.8%)  6-7R=15(7.1%)  8-10R=17(8.0%)  11-15R=26(12.3%)  16R+=11(5.2%)  empate=96(45.3%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 39.6%  G-R-G≥1 38.2%  6–7R≥1 42.9%  cola≥10R 92.9%  cola≥15R 68.4%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=11 5.2%  medio=4 1.9%  corto+cola=158 74.5%  solo_cola=39 18.4%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=207 97.2%  mix=2 0.9%  tren=4 1.9%
+   Cupo/ocupación de esas horas: med nG=6  med min-lit=6/60  med desierto=18 min  med paso=6 R
+
+── normal  ·  726 horas  ·  726 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=726   1_tren=102(14.0%)  2_GRG=70(9.6%)  3_GRRG=54(7.4%)  4-5=116(16.0%)  6-7=48(6.6%)  8-10=42(5.8%)  11-15=13(1.8%)  16+=1(0.1%)  empate=280(38.6%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=726   0_tren=113(15.6%)  1_GRG=78(10.7%)  2_GRRG=62(8.5%)  3-4R=128(17.6%)  5R=14(1.9%)  6-7R=28(3.9%)  8-10R=24(3.3%)  11-15R=5(0.7%)  empate=274(37.7%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 78.8%  G-R-G≥1 74.0%  6–7R≥1 63.1%  cola≥10R 81.4%  cola≥15R 39.9%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=134 18.5%  medio=1 0.1%  corto+cola=587 80.9%  solo_cola=4 0.6%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=607 83.6%  mix=45 6.2%  tren=74 10.2%
+   Cupo/ocupación de esas horas: med nG=10  med min-lit=10/60  med desierto=13 min  med paso=3 R
+
+── rica  ·  153 horas  ·  153 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=153   1_tren=56(36.6%)  2_GRG=24(15.7%)  3_GRRG=10(6.5%)  4-5=26(17.0%)  6-7=2(1.3%)  empate=35(22.9%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=153   0_tren=60(39.2%)  1_GRG=25(16.3%)  2_GRRG=11(7.2%)  3-4R=27(17.6%)  empate=30(19.6%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 98.7%  G-R-G≥1 91.5%  6–7R≥1 67.3%  cola≥10R 54.2%  cola≥15R 9.2%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=70 45.8%  corto+cola=83 54.2%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=95 62.1%  mix=8 5.2%  tren=50 32.7%
+   Cupo/ocupación de esas horas: med nG=13  med min-lit=13/60  med desierto=10 min  med paso=2 R
+
+C. ¿LAS HORAS DEL MISMO TONO SE PARECEN ENTRE SÍ?
+   Vector de cada hora = fracción de SUS huecos en las 8 cubetas de paso.
+   Distancia = L1 (0 = idénticas, 2 = ajenas). No es % poolado de G.
+   Intra = media entre pares de horas del mismo tono (muestra ≤90).
+   Centro = L1 entre el vector medio de un tono y el de otro.
+   tono            n_h  intra_L1  (más bajo = más parecidas)
+   muy_apagado     309  1.127
+   opaco           264  1.041
+   normal          315  0.871
+   fuerte          122  0.970
+   muy_fuerte+      78  0.880
+   L1 entre centros de tono (apagada vs generosa):
+             muy_apa   opaco  normal  fuerte muy_fue
+   muy_apaga    0.00    0.19    0.33    0.36    0.40
+   opaco        0.19    0.00    0.14    0.18    0.22
+   normal       0.33    0.14    0.00    0.07    0.09
+   fuerte       0.36    0.18    0.07    0.00    0.06
+   muy_fuert    0.40    0.22    0.09    0.06    0.00
+   Intra de TODAS las horas (sin cortar tono): 0.997
+   Si intra-tono ≈ intra-todas, el tono no agrupa la FORMA, solo el cupo.
+
+D. TIRAS DE UN DÍA (hora por hora; no se aplastan)
+   vec(paso) = conteos 1_tren,2_GRG,3_GRRG,4-5,6-7,8-10,11-15,16+
+   tr/GRG/67R/≥10/≥15 = 1 si ESA hora tuvo ese evento.
+
+   Tira train 1
+   día 310826  ·  24 horas  (una fila = una hora, no se promedian)
+   hod  tag              tono         cupo    nG modaP    modaR    patr  mezcla      tr GRG 67R ≥10 ≥15  vec(paso)
+   h00  h0-310826        fuerte       normal  12 1_tren   0_tren   tren  corto+cola   1   1   1   1   1  4,2,0,1,2,0,1,1
+   h01  h1-310826        muy_apagado  normal   9 empate   empate   isla  corto+cola   1   1   1   1   0  2,1,0,1,1,2,1,0
+   h02  h2-310826        opaco        normal   9 11-15    empate   isla  corto+cola   1   0   1   1   0  1,0,0,2,2,0,3,0
+   h03  h3-310826        opaco        normal  10 empate   6-7R     isla  corto+cola   1   1   1   1   1  1,1,0,2,2,2,0,1
+   h04  h4-310826        normal       normal   8 empate   empate   isla  corto+cola   0   0   0   1   1  0,0,1,2,1,2,0,1
+   h05  h5-310826        fuerte       normal   9 1_tren   0_tren   tren  corto+cola   1   0   1   1   0  3,0,1,0,0,2,2,0
+   h06  h6-310826        muy_apagado  normal   9 11-15    empate   isla  corto+cola   1   1   0   1   0  2,2,0,1,0,0,3,0
+   h07  h7-310826        opaco        normal   9 4-5      3-4R     isla  corto+cola   1   1   1   1   1  1,1,0,2,1,1,1,1
+   h08  h8-310826        muy_apagado  normal   8 8-10     8-10R    isla  corto+cola   1   1   0   1   0  1,1,1,0,0,3,1,0
+   h09  h9-310826        normal       normal  12 empate   empate   isla  corto+cola   1   0   1   1   0  3,0,2,3,0,2,1,0
+   h10  h10-310826       muy_fuerte+  rica    16 4-5      3-4R     isla  solo_corto   1   1   1   0   0  4,1,1,7,2,0,0,0
+   h11  h11-310826       muy_apagado  floja    6 empate   1_GRG    isla  corto+cola   0   1   0   1   1  0,2,0,1,0,0,0,2
+   h12  h12-310826       normal       normal   9 1_tren   0_tren   tren  corto+cola   1   0   1   1   1  3,0,0,0,2,1,1,1
+   h13  h13-310826       normal       normal   9 empate   3-4R     isla  corto+cola   0   0   1   1   0  0,0,1,3,0,3,1,0
+   h14  h14-310826       muy_fuerte+  rica    15 1_tren   0_tren   isla  corto+cola   1   1   0   1   0  4,3,2,3,1,0,1,0
+   h15  h15-310826       normal       normal  10 1_tren   0_tren   tren  corto+cola   1   1   1   1   0  5,1,0,0,1,0,2,0
+   h16  h16-310826       normal       normal   9 empate   0_tren   isla  corto+cola   1   1   1   1   1  2,1,0,1,2,0,1,1
+   h17  h17-310826       fuerte       normal   9 4-5      3-4R     isla  corto+cola   0   1   1   1   0  0,1,0,3,0,2,2,0
+   h18  h18-310826       normal       normal  11 4-5      3-4R     isla  solo_corto   1   1   0   0   0  1,1,2,3,2,1,0,0
+   h19  h19-310826       normal       normal  10 8-10     empate   isla  solo_corto   1   1   1   0   0  1,2,1,2,0,3,0,0
+   h20  h20-310826       opaco        normal   9 8-10     empate   isla  corto+cola   1   0   1   1   1  2,0,0,1,1,3,0,1
+   h21  h21-310826       muy_apagado  normal  11 empate   empate   isla  corto+cola   1   1   1   1   1  3,1,0,3,2,0,0,1
+   h22  h22-310826       muy_apagado  normal   9 3_GRRG   2_GRRG   isla  corto+cola   1   0   1   1   1  2,0,3,1,0,1,0,1
+   h23  h23-310826       opaco        normal  11 4-5      3-4R     isla  corto+cola   1   0   1   1   1  2,0,2,3,1,1,0,1
+   movimiento hora→hora CONSECUTIVA (hod+1; no se salta un hueco del día):
+     h00 fuerte       1_tren   → h01 muy_apagado  emp       baja tren/GRG
+     h01 muy_apagado  emp      → h02 opaco        11-15     baja tren/GRG
+     h02 opaco        11-15    → h03 opaco        emp       sube tren/GRG
+     h03 opaco        emp      → h04 normal       emp       baja tren/GRG
+     h04 normal       emp      → h05 fuerte       1_tren    sube tren/GRG
+     h05 fuerte       1_tren   → h06 muy_apagado  11-15     sube tren/GRG
+     h06 muy_apagado  11-15    → h07 opaco        4-5       baja tren/GRG
+     h07 opaco        4-5      → h08 muy_apagado  8-10      misma mezcla corta
+     h08 muy_apagado  8-10     → h09 normal       emp       misma mezcla corta
+     h09 normal       emp      → h10 muy_fuerte+  4-5       sube tren/GRG
+     h10 muy_fuerte+  4-5      → h11 muy_apagado  emp       sube tren/GRG
+     h11 muy_apagado  emp      → h12 normal       1_tren    misma mezcla corta
+     h12 normal       1_tren   → h13 normal       emp       baja tren/GRG
+     h13 normal       emp      → h14 muy_fuerte+  1_tren    sube tren/GRG
+     h14 muy_fuerte+  1_tren   → h15 normal       1_tren    sube tren/GRG
+     h15 normal       1_tren   → h16 normal       emp       baja tren/GRG
+     h16 normal       emp      → h17 fuerte       4-5       baja tren/GRG
+     h17 fuerte       4-5      → h18 normal       4-5       sube tren/GRG
+     h18 normal       4-5      → h19 normal       8-10      sube tren/GRG
+     h19 normal       8-10     → h20 opaco        8-10      baja tren/GRG
+     h20 opaco        8-10     → h21 muy_apagado  emp       sube tren/GRG
+     h21 muy_apagado  emp      → h22 muy_apagado  3_GRRG    baja tren/GRG
+     h22 muy_apagado  3_GRRG   → h23 opaco        4-5       misma mezcla corta
+   de 23 pasos hod→hod+1, 10 suben tren/GRG (43.5%).
+
+   Tira train 2
+   día 310726  ·  24 horas  (una fila = una hora, no se promedian)
+   hod  tag              tono         cupo    nG modaP    modaR    patr  mezcla      tr GRG 67R ≥10 ≥15  vec(paso)
+   h00  h0-310726        normal       rica    15 empate   empate   isla  solo_corto   1   1   1   0   0  4,2,1,4,1,2,0,0
+   h01  h1-310726        muy_apagado  normal   8 empate   empate   isla  corto+cola   1   1   1   1   1  1,1,1,1,1,0,1,1
+   h02  h2-310726        fuerte       normal   8 empate   empate   isla  corto+cola   1   1   0   1   0  1,2,1,1,0,0,2,0
+   h03  h3-310726        normal       rica    13 4-5      3-4R     isla  corto+cola   1   1   1   1   0  2,2,2,4,0,1,1,0
+   h04  h4-310726        normal       rica    13 1_tren   0_tren   tren  corto+cola   1   1   1   1   0  6,1,0,1,1,1,2,0
+   h05  h5-310726        opaco        normal  10 6-7      empate   isla  corto+cola   0   1   1   1   1  0,2,2,0,3,0,1,1
+   h06  h6-310726        normal       rica    14 1_tren   0_tren   tren  corto+cola   1   1   0   1   0  5,1,3,2,0,0,2,0
+   h07  h7-310726        muy_apagado  floja    5 empate   empate   isla  corto+cola   1   0   0   1   1  1,0,0,1,0,0,1,1
+   h08  h8-310726        fuerte       rica    13 1_tren   0_tren   tren  solo_corto   1   1   1   0   0  4,2,0,2,3,1,0,0
+   h09  h9-310726        muy_apagado  normal   8 empate   3-4R     isla  solo_cola    0   0   1   1   1  0,0,0,3,0,3,0,1
+   h10  h10-310726       muy_fuerte+  rica    13 3_GRRG   2_GRRG   isla  corto+cola   1   1   1   1   0  1,2,4,3,1,0,1,0
+   h11  h11-310726       fuerte       normal  12 1_tren   0_tren   tren  corto+cola   1   1   1   1   0  5,1,1,0,1,1,2,0
+   h12  h12-310726       muy_apagado  normal   9 1_tren   0_tren   tren  corto+cola   1   0   1   1   1  4,0,0,1,1,0,1,1
+   h13  h13-310726       muy_apagado  floja    7 empate   8-10R    isla  corto+cola   1   0   0   1   1  1,0,1,0,0,2,0,2
+   h14  h14-310726       opaco        normal  10 empate   empate   isla  corto+cola   1   1   0   1   1  2,2,1,1,0,1,1,1
+   h15  h15-310726       normal       normal  12 empate   empate   isla  corto+cola   1   1   1   1   1  3,1,1,3,1,1,0,1
+   h16  h16-310726       muy_apagado  normal   9 4-5      3-4R     isla  corto+cola   1   1   1   1   1  1,1,1,2,1,0,1,1
+   h17  h17-310726       muy_apagado  floja    5 empate   empate   isla  corto+cola   1   1   0   1   1  1,1,0,0,0,0,1,1
+   h18  h18-310726       muy_apagado  normal   8 empate   empate   isla  corto+cola   0   1   0   1   1  0,1,1,0,2,0,1,2
+   h19  h19-310726       muy_apagado  normal   8 empate   empate   isla  corto+cola   0   1   0   1   1  0,2,0,1,1,2,0,1
+   h20  h20-310726       muy_apagado  normal  11 8-10     6-7R     isla  solo_corto   1   0   1   0   0  1,0,3,0,2,4,0,0
+   h21  h21-310726       normal       rica    13 empate   empate   isla  corto+cola   1   1   1   1   0  1,4,1,4,1,0,1,0
+   h22  h22-310726       normal       normal   9 1_tren   0_tren   tren  corto+cola   1   1   1   1   1  3,1,0,0,1,1,1,1
+   h23  h23-310726       opaco        normal  10 1_tren   0_tren   tren  corto+cola   1   0   0   1   1  3,0,1,2,0,0,2,1
+   movimiento hora→hora CONSECUTIVA (hod+1; no se salta un hueco del día):
+     h00 normal       emp      → h01 muy_apagado  emp       baja tren/GRG
+     h01 muy_apagado  emp      → h02 fuerte       emp       sube tren/GRG
+     h02 fuerte       emp      → h03 normal       4-5       baja tren/GRG
+     h03 normal       4-5      → h04 normal       1_tren    sube tren/GRG
+     h04 normal       1_tren   → h05 opaco        6-7       baja tren/GRG
+     h05 opaco        6-7      → h06 normal       1_tren    sube tren/GRG
+     h06 normal       1_tren   → h07 muy_apagado  emp       baja tren/GRG
+     h07 muy_apagado  emp      → h08 fuerte       1_tren    sube tren/GRG
+     h08 fuerte       1_tren   → h09 muy_apagado  emp       baja tren/GRG
+     h09 muy_apagado  emp      → h10 muy_fuerte+  3_GRRG    sube tren/GRG
+     h10 muy_fuerte+  3_GRRG   → h11 fuerte       1_tren    sube tren/GRG
+     h11 fuerte       1_tren   → h12 muy_apagado  1_tren    misma mezcla corta
+     h12 muy_apagado  1_tren   → h13 muy_apagado  emp       baja tren/GRG
+     h13 muy_apagado  emp      → h14 opaco        emp       sube tren/GRG
+     h14 opaco        emp      → h15 normal       emp       baja tren/GRG
+     h15 normal       emp      → h16 muy_apagado  4-5       baja tren/GRG
+     h16 muy_apagado  4-5      → h17 muy_apagado  emp       sube tren/GRG
+     h17 muy_apagado  emp      → h18 muy_apagado  emp       baja tren/GRG
+     h18 muy_apagado  emp      → h19 muy_apagado  emp       sube tren/GRG
+     h19 muy_apagado  emp      → h20 muy_apagado  8-10      baja tren/GRG
+     h20 muy_apagado  8-10     → h21 normal       emp       sube tren/GRG
+     h21 normal       emp      → h22 normal       1_tren    sube tren/GRG
+     h22 normal       1_tren   → h23 opaco        1_tren    baja tren/GRG
+   de 23 pasos hod→hod+1, 11 suben tren/GRG (47.8%).
+
+════════ HOLDOUT  72 horas ════════
+Horas por tono: muy_apagado=32  opaco=15  normal=15  fuerte=6  muy_fuerte=2  supernova=2
+Horas por cupo: floja=22  normal=44  rica=6
+Hold: n = HORAS. fuerte/muy_fuerte+ son celdas chicas. No coronar.
+
+A. TONO DE HORA — cuántas HORAS tienen cada moda
+
+── muy_apagado  ·  32 horas  ·  32 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=32    1_tren=2(6.2%)  4-5=3(9.4%)  6-7=4(12.5%)  8-10=1(3.1%)  11-15=3(9.4%)  16+=2(6.2%)  empate=17(53.1%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=32    0_tren=5(15.6%)  3-4R=3(9.4%)  8-10R=3(9.4%)  11-15R=2(6.2%)  16R+=2(6.2%)  empate=17(53.1%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 50.0%  G-R-G≥1 50.0%  6–7R≥1 62.5%  cola≥10R 84.4%  cola≥15R 53.1%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=5 15.6%  corto+cola=21 65.6%  solo_cola=6 18.8%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=27 84.4%  mix=3 9.4%  tren=2 6.2%
+   Cupo/ocupación de esas horas: med nG=7  med min-lit=7/60  med desierto=16 min  med paso=5 R
+
+── opaco  ·  15 horas  ·  15 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=15    1_tren=1(6.7%)  2_GRG=2(13.3%)  3_GRRG=2(13.3%)  4-5=3(20.0%)  6-7=2(13.3%)  empate=5(33.3%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=15    0_tren=1(6.7%)  1_GRG=2(13.3%)  2_GRRG=2(13.3%)  3-4R=4(26.7%)  6-7R=1(6.7%)  8-10R=1(6.7%)  empate=4(26.7%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 73.3%  G-R-G≥1 80.0%  6–7R≥1 73.3%  cola≥10R 73.3%  cola≥15R 20.0%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=4 26.7%  corto+cola=11 73.3%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=14 93.3%  tren=1 6.7%
+   Cupo/ocupación de esas horas: med nG=10  med min-lit=10/60  med desierto=11 min  med paso=3 R
+
+── normal  ·  15 horas  ·  15 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=15    1_tren=1(6.7%)  2_GRG=3(20.0%)  4-5=3(20.0%)  6-7=3(20.0%)  empate=5(33.3%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=15    0_tren=1(6.7%)  1_GRG=4(26.7%)  3-4R=3(20.0%)  5R=1(6.7%)  empate=6(40.0%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 60.0%  G-R-G≥1 86.7%  6–7R≥1 66.7%  cola≥10R 66.7%  cola≥15R 26.7%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=5 33.3%  corto+cola=10 66.7%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=14 93.3%  mix=1 6.7%
+   Cupo/ocupación de esas horas: med nG=10  med min-lit=10/60  med desierto=12 min  med paso=3 R
+
+── fuerte  ·  6 horas  ·  6 con ≥1 hueco G→G ──
+   (celda chica: n=6 HORAS, no n G. No coronar.)
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=6     1_tren=4(66.7%)  4-5=1(16.7%)  11-15=1(16.7%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=6     0_tren=4(66.7%)  3-4R=1(16.7%)  empate=1(16.7%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 83.3%  G-R-G≥1 83.3%  6–7R≥1 66.7%  cola≥10R 83.3%  cola≥15R 16.7%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=1 16.7%  corto+cola=5 83.3%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=2 33.3%  mix=1 16.7%  tren=3 50.0%
+   Cupo/ocupación de esas horas: med nG=11  med min-lit=11/60  med desierto=12 min  med paso=3 R
+
+── muy_fuerte+  ·  4 horas  ·  4 con ≥1 hueco G→G ──
+   (celda chica: n=4 HORAS, no n G. No coronar.)
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=4     2_GRG=1(25.0%)  4-5=1(25.0%)  8-10=1(25.0%)  11-15=1(25.0%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=4     1_GRG=1(25.0%)  6-7R=1(25.0%)  11-15R=1(25.0%)  empate=1(25.0%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 100.0%  G-R-G≥1 75.0%  6–7R≥1 100.0%  cola≥10R 75.0%  cola≥15R 25.0%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=1 25.0%  corto+cola=3 75.0%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=4 100.0%
+   Cupo/ocupación de esas horas: med nG=9  med min-lit=9/60  med desierto=14 min  med paso=5 R
+
+B. CUPO (nG) — mismo inventario, sin mezclarlo con el tono
+
+── floja  ·  22 horas  ·  22 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=22    4-5=2(9.1%)  6-7=4(18.2%)  8-10=1(4.5%)  11-15=4(18.2%)  16+=1(4.5%)  empate=10(45.5%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=22    0_tren=1(4.5%)  3-4R=2(9.1%)  5R=1(4.5%)  6-7R=1(4.5%)  8-10R=3(13.6%)  11-15R=3(13.6%)  16R+=1(4.5%)  empate=10(45.5%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 31.8%  G-R-G≥1 31.8%  6–7R≥1 50.0%  cola≥10R 81.8%  cola≥15R 54.5%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=4 18.2%  corto+cola=12 54.5%  solo_cola=6 27.3%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=21 95.5%  tren=1 4.5%
+   Cupo/ocupación de esas horas: med nG=6  med min-lit=6/60  med desierto=18 min  med paso=6 R
+
+── normal  ·  44 horas  ·  44 con ≥1 hueco G→G ──
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=44    1_tren=7(15.9%)  2_GRG=5(11.4%)  3_GRRG=2(4.5%)  4-5=8(18.2%)  6-7=4(9.1%)  8-10=1(2.3%)  11-15=1(2.3%)  16+=1(2.3%)  empate=15(34.1%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=44    0_tren=8(18.2%)  1_GRG=5(11.4%)  2_GRRG=2(4.5%)  3-4R=8(18.2%)  6-7R=1(2.3%)  8-10R=1(2.3%)  16R+=1(2.3%)  empate=18(40.9%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 72.7%  G-R-G≥1 84.1%  6–7R≥1 77.3%  cola≥10R 77.3%  cola≥15R 31.8%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=10 22.7%  corto+cola=34 77.3%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=35 79.5%  mix=4 9.1%  tren=5 11.4%
+   Cupo/ocupación de esas horas: med nG=10  med min-lit=10/60  med desierto=14 min  med paso=3 R
+
+── rica  ·  6 horas  ·  6 con ≥1 hueco G→G ──
+   (celda chica: n=6 HORAS, no n G. No coronar.)
+   Moda del PASO (tiros G→G; 1=tren  2=G-R-G  3=G-R-R-G  6-7=5–6 R):
+  paso           n_h=6     1_tren=1(16.7%)  2_GRG=1(16.7%)  4-5=1(16.7%)  6-7=1(16.7%)  empate=2(33.3%)
+   Moda en R entre G (relato vivo: ¿manda 6–7 R?):
+  R              n_h=6     0_tren=2(33.3%)  1_GRG=2(33.3%)  3-4R=1(16.7%)  empate=1(16.7%)
+   Eventos de ESA hora (sí/no; no es media de huecos):
+     tren≥1 100.0%  G-R-G≥1 83.3%  6–7R≥1 66.7%  cola≥10R 66.7%  cola≥15R 0.0%
+   Mezcla de la hora (corto≤2R vs cola≥10R, formas del catálogo):
+     solo_corto=2 33.3%  corto+cola=4 66.7%
+   Patrón tren vs isla (quién tiene más G de esa hora):
+     isla=5 83.3%  mix=1 16.7%
+   Cupo/ocupación de esas horas: med nG=13  med min-lit=13/60  med desierto=10 min  med paso=2 R
+
+C. ¿LAS HORAS DEL MISMO TONO SE PARECEN ENTRE SÍ?
+   Vector de cada hora = fracción de SUS huecos en las 8 cubetas de paso.
+   Distancia = L1 (0 = idénticas, 2 = ajenas). No es % poolado de G.
+   Intra = media entre pares de horas del mismo tono (muestra ≤90).
+   Centro = L1 entre el vector medio de un tono y el de otro.
+   tono            n_h  intra_L1  (más bajo = más parecidas)
+   muy_apagado      32  1.247
+   opaco            15  0.965
+   normal           15  0.906
+   fuerte            6  0.983
+   muy_fuerte+       4  1.084
+   L1 entre centros de tono (apagada vs generosa):
+             muy_apa   opaco  normal  fuerte muy_fue
+   muy_apaga    0.00    0.32    0.41    0.47    0.27
+   opaco        0.32    0.00    0.16    0.51    0.21
+   normal       0.41    0.16    0.00    0.64    0.30
+   fuerte       0.47    0.51    0.64    0.00    0.40
+   muy_fuert    0.27    0.21    0.30    0.40    0.00
+   Intra de TODAS las horas (sin cortar tono): 1.114
+   Si intra-tono ≈ intra-todas, el tono no agrupa la FORMA, solo el cupo.
+
+D. TIRAS DE UN DÍA (hora por hora; no se aplastan)
+   vec(paso) = conteos 1_tren,2_GRG,3_GRRG,4-5,6-7,8-10,11-15,16+
+   tr/GRG/67R/≥10/≥15 = 1 si ESA hora tuvo ese evento.
+
+   Tira hold 1
+   día 090926  ·  24 horas  (una fila = una hora, no se promedian)
+   hod  tag              tono         cupo    nG modaP    modaR    patr  mezcla      tr GRG 67R ≥10 ≥15  vec(paso)
+   h00  h0-090926        muy_apagado  normal   9 empate   empate   isla  corto+cola   1   1   1   1   0  1,1,2,1,1,0,2,0
+   h01  h1-090926        normal       normal  10 empate   empate   isla  corto+cola   1   1   1   1   1  2,2,0,2,0,1,1,1
+   h02  h2-090926        normal       rica    13 4-5      3-4R     isla  solo_corto   1   1   0   0   0  2,2,2,3,1,2,0,0
+   h03  h3-090926        muy_apagado  floja    5 11-15    empate   isla  solo_cola    0   0   1   1   1  0,0,0,0,0,1,2,1
+   h04  h4-090926        normal       rica    13 2_GRG    1_GRG    isla  corto+cola   1   1   1   1   0  2,5,1,1,1,1,1,0
+   h05  h5-090926        normal       normal   8 empate   empate   isla  corto+cola   0   1   0   1   1  0,1,2,2,0,1,0,1
+   h06  h6-090926        muy_apagado  floja    6 empate   8-10R    isla  solo_cola    0   0   1   1   1  0,0,0,0,2,2,0,1
+   h07  h7-090926        muy_fuerte+  floja    7 11-15    11-15R   isla  corto+cola   1   0   1   1   0  1,0,1,0,1,0,3,0
+   h08  h8-090926        opaco        normal  11 3_GRRG   2_GRRG   isla  corto+cola   1   1   1   1   1  2,2,3,0,1,0,1,1
+   h09  h9-090926        muy_apagado  floja    4 empate   8-10R    isla  corto+cola   0   1   0   1   0  0,1,0,0,0,1,1,0
+   h10  h10-090926       normal       normal   9 2_GRG    1_GRG    isla  solo_corto   0   1   0   0   0  0,3,0,2,2,1,0,0
+   h11  h11-090926       normal       normal  11 2_GRG    1_GRG    isla  solo_corto   0   1   0   0   0  0,4,2,0,2,2,0,0
+   h12  h12-090926       muy_apagado  normal   8 1_tren   0_tren   mix   corto+cola   1   1   1   1   0  2,1,0,1,1,1,1,0
+   h13  h13-090926       muy_apagado  normal  12 empate   empate   mix   corto+cola   1   1   1   1   0  3,3,1,0,1,1,2,0
+   h14  h14-090926       muy_apagado  floja    6 6-7      empate   isla  solo_corto   0   1   1   0   0  0,1,1,1,2,0,0,0
+   h15  h15-090926       fuerte       normal  12 1_tren   0_tren   tren  corto+cola   1   1   1   1   0  5,1,1,0,1,1,2,0
+   h16  h16-090926       muy_apagado  floja    5 11-15    11-15R   isla  solo_cola    0   0   0   1   1  0,0,0,0,1,0,2,1
+   h17  h17-090926       muy_apagado  floja    3 empate   empate   isla  solo_cola    0   0   1   1   1  0,0,0,0,1,0,0,1
+   h18  h18-090926       muy_apagado  normal   9 6-7      empate   isla  corto+cola   1   0   1   1   1  2,0,1,1,3,0,0,1
+   h19  h19-090926       muy_apagado  floja    7 empate   empate   isla  solo_cola    0   0   1   1   0  0,0,0,2,1,2,1,0
+   h20  h20-090926       normal       normal   8 empate   empate   isla  corto+cola   1   0   1   1   0  1,0,1,2,0,2,1,0
+   h21  h21-090926       opaco        normal  10 2_GRG    1_GRG    isla  corto+cola   0   1   0   1   1  0,3,0,2,2,1,0,1
+   h22  h22-090926       muy_apagado  floja    6 empate   empate   isla  corto+cola   1   0   0   1   1  1,0,0,2,0,0,0,2
+   h23  h23-090926       muy_apagado  normal   9 1_tren   0_tren   tren  solo_corto   1   1   1   0   0  5,1,0,0,1,1,0,0
+   movimiento hora→hora CONSECUTIVA (hod+1; no se salta un hueco del día):
+     h00 muy_apagado  emp      → h01 normal       emp       sube tren/GRG
+     h01 normal       emp      → h02 normal       4-5       baja tren/GRG
+     h02 normal       4-5      → h03 muy_apagado  11-15     baja tren/GRG
+     h03 muy_apagado  11-15    → h04 normal       2_GRG     sube tren/GRG
+     h04 normal       2_GRG    → h05 normal       emp       baja tren/GRG
+     h05 normal       emp      → h06 muy_apagado  emp       baja tren/GRG
+     h06 muy_apagado  emp      → h07 muy_fuerte+  11-15     sube tren/GRG
+     h07 muy_fuerte+  11-15    → h08 opaco        3_GRRG    sube tren/GRG
+     h08 opaco        3_GRRG   → h09 muy_apagado  emp       baja tren/GRG
+     h09 muy_apagado  emp      → h10 normal       2_GRG     misma mezcla corta
+     h10 normal       2_GRG    → h11 normal       2_GRG     misma mezcla corta
+     h11 normal       2_GRG    → h12 muy_apagado  1_tren    misma mezcla corta
+     h12 muy_apagado  1_tren   → h13 muy_apagado  emp       sube tren/GRG
+     h13 muy_apagado  emp      → h14 muy_apagado  6-7       baja tren/GRG
+     h14 muy_apagado  6-7      → h15 fuerte       1_tren    sube tren/GRG
+     h15 fuerte       1_tren   → h16 muy_apagado  11-15     baja tren/GRG
+     h16 muy_apagado  11-15    → h17 muy_apagado  emp       misma mezcla corta
+     h17 muy_apagado  emp      → h18 muy_apagado  6-7       sube tren/GRG
+     h18 muy_apagado  6-7      → h19 muy_apagado  emp       baja tren/GRG
+     h19 muy_apagado  emp      → h20 normal       emp       sube tren/GRG
+     h20 normal       emp      → h21 opaco        2_GRG     sube tren/GRG
+     h21 opaco        2_GRG    → h22 muy_apagado  emp       baja tren/GRG
+     h22 muy_apagado  emp      → h23 muy_apagado  1_tren    sube tren/GRG
+   de 23 pasos hod→hod+1, 10 suben tren/GRG (43.5%).
+
+   Tira hold 2
+   día 110926  ·  19 horas  (una fila = una hora, no se promedian)
+   hod  tag              tono         cupo    nG modaP    modaR    patr  mezcla      tr GRG 67R ≥10 ≥15  vec(paso)
+   h00  h0-110926        opaco        normal   9 6-7      8-10R    isla  corto+cola   1   0   1   1   0  2,0,0,0,3,1,2,0
+   h01  h1-110926        opaco        normal  11 2_GRG    1_GRG    isla  corto+cola   1   1   1   1   0  2,4,0,0,2,1,1,0
+   h02  h2-110926        opaco        floja    7 6-7      6-7R     isla  solo_corto   1   0   1   0   0  1,0,0,1,3,1,0,0
+   h03  h3-110926        fuerte       normal   8 11-15    empate   isla  corto+cola   1   1   1   1   0  1,1,0,0,2,0,3,0
+   h04  h4-110926        opaco        normal  10 empate   empate   isla  corto+cola   1   1   1   1   0  1,1,2,1,1,1,2,0
+   h05  h5-110926        muy_fuerte+  normal   8 8-10     6-7R     isla  corto+cola   1   1   1   1   0  1,1,0,1,1,2,1,0
+   h06  h6-110926        muy_apagado  normal   9 empate   empate   isla  corto+cola   1   1   1   1   1  2,2,1,1,1,0,0,1
+   h07  h7-110926        muy_apagado  rica    13 empate   0_tren   isla  solo_corto   1   0   1   0   0  4,0,0,3,4,1,0,0
+   h08  h8-110926        muy_apagado  floja    7 empate   empate   isla  corto+cola   0   1   0   1   1  0,1,2,1,0,0,0,2
+   h11  h11-110926       muy_fuerte+  normal  10 4-5      empate   isla  solo_corto   1   1   1   0   0  1,1,1,3,2,1,0,0
+   h12  h12-110926       normal       normal  12 empate   empate   isla  solo_corto   1   1   1   0   0  1,1,3,2,3,1,0,0
+   h13  h13-110926       opaco        normal  11 1_tren   0_tren   tren  corto+cola   1   1   1   1   0  3,1,2,0,2,1,1,0
+   h14  h14-110926       opaco        normal  10 empate   empate   isla  corto+cola   1   1   1   1   0  2,2,0,1,2,1,1,0
+   h15  h15-110926       muy_apagado  normal   8 4-5      3-4R     isla  corto+cola   0   1   1   1   0  0,1,0,3,1,1,1,0
+   h16  h16-110926       muy_apagado  normal   8 16+      16R+     isla  corto+cola   0   1   0   1   1  0,1,1,1,1,0,1,2
+   h17  h17-110926       opaco        rica    13 empate   empate   isla  corto+cola   1   1   0   1   0  3,2,3,1,1,1,1,0
+   h18  h18-110926       muy_apagado  normal   8 empate   empate   isla  corto+cola   1   1   1   1   0  2,1,0,0,1,2,1,0
+   h19  h19-110926       normal       normal  10 empate   empate   isla  corto+cola   1   1   1   1   1  2,1,2,1,0,2,0,1
+   h20  h20-110926       opaco        normal   8 empate   empate   isla  corto+cola   0   1   1   1   0  0,1,0,2,1,2,1,0
+   movimiento hora→hora CONSECUTIVA (hod+1; no se salta un hueco del día):
+     h00 opaco        6-7      → h01 opaco        2_GRG     sube tren/GRG
+     h01 opaco        2_GRG    → h02 opaco        6-7       baja tren/GRG
+     h02 opaco        6-7      → h03 fuerte       11-15     sube tren/GRG
+     h03 fuerte       11-15    → h04 opaco        emp       baja tren/GRG
+     h04 opaco        emp      → h05 muy_fuerte+  8-10      sube tren/GRG
+     h05 muy_fuerte+  8-10     → h06 muy_apagado  emp       sube tren/GRG
+     h06 muy_apagado  emp      → h07 muy_apagado  emp       baja tren/GRG
+     h07 muy_apagado  emp      → h08 muy_apagado  emp       baja tren/GRG
+     h11 muy_fuerte+  4-5      → h12 normal       emp       misma mezcla corta
+     h12 normal       emp      → h13 opaco        1_tren    sube tren/GRG
+     h13 opaco        1_tren   → h14 opaco        emp       misma mezcla corta
+     h14 opaco        emp      → h15 muy_apagado  4-5       baja tren/GRG
+     h15 muy_apagado  4-5      → h16 muy_apagado  16+       misma mezcla corta
+     h16 muy_apagado  16+      → h17 opaco        emp       sube tren/GRG
+     h17 opaco        emp      → h18 muy_apagado  emp       misma mezcla corta
+     h18 muy_apagado  emp      → h19 normal       emp       baja tren/GRG
+     h19 normal       emp      → h20 opaco        emp       baja tren/GRG
+   de 17 pasos hod→hod+1, 6 suben tren/GRG (35.3%).
+
+
+════════════════════════════════ LECTURA ════════════════════════════════
+Unidad = HORA. Train y hold no se mezclan en un %.
+
+TRAIN: 1092 h  ·  1091 con hueco
+  muy_apagado     312 h  plural-paso 4-5 35/312  empate 130/312  plural-R 3-4R 41/312  empate-R 130/312
+                 ev 6–7R 47.4%  ev≥10R 89.7%  ev≥15R 60.9%  isla 92.0%  corto+cola 81.1%
+  opaco           264 h  plural-paso 4-5 46/264  empate 103/264  plural-R 3-4R 48/264  empate-R 103/264
+                 ev 6–7R 61.0%  ev≥10R 81.8%  ev≥15R 43.9%  isla 85.6%  corto+cola 77.7%
+  fuerte          122 h  plural-paso 1_tren 30/122  empate 36/122  plural-R 0_tren 34/122  empate-R 33/122
+                 ev 6–7R 56.6%  ev≥10R 67.2%  ev≥15R 27.0%  isla 73.0%  corto+cola 67.2%
+  muy_fuerte+      78 h  plural-paso 1_tren 20/78  empate 24/78  plural-R 0_tren 22/78  empate-R 19/78
+                 ev 6–7R 74.4%  ev≥10R 65.4%  ev≥15R 16.7%  isla 71.8%  corto+cola 65.4%
+HOLDOUT: 72 h  ·  72 con hueco
+  muy_apagado      32 h  plural-paso 6-7 4/32  empate 17/32  plural-R 0_tren 5/32  empate-R 17/32
+                 ev 6–7R 62.5%  ev≥10R 84.4%  ev≥15R 53.1%  isla 84.4%  corto+cola 65.6%
+  opaco            15 h  plural-paso 4-5 3/15  empate 5/15  plural-R 3-4R 4/15  empate-R 4/15
+                 ev 6–7R 73.3%  ev≥10R 73.3%  ev≥15R 20.0%  isla 93.3%  corto+cola 73.3%
+  fuerte            6 h  plural-paso 1_tren 4/6  empate 0/6  plural-R 0_tren 4/6  empate-R 1/6
+                 ev 6–7R 66.7%  ev≥10R 83.3%  ev≥15R 16.7%  isla 33.3%  corto+cola 83.3%
+  muy_fuerte+       4 h  plural-paso 2_GRG 1/4  empate 0/4  plural-R 1_GRG 1/4  empate-R 1/4
+                 ev 6–7R 100.0%  ev≥10R 75.0%  ev≥15R 25.0%  isla 100.0%  corto+cola 75.0%
+
+CONTRASTE CON EL RELATO VIVO (unidad HORA, no media de G)
+  Apagada/opaca: NO manda hueco 6–7 R. Train muy_apagado: plural
+    de moda-R = 3–4 R (41/312) · 6–7 R solo 19/312 · empate 130/312.
+    Opaco: plural 3–4 R (48/264) · 6–7 R 11/264. Hold apagada: 32 h (celda chica); plural-paso 6–7 = 4/32 · empate 17/32. No corona.
+  Colas ≥10 / ≥15 SÍ son evento común de ESA hora apagada (89.7% / 60.9%), no la moda.
+    El vivo las ve porque casi toda apagada tiene UNA cola;
+    no porque la hora SEA una cola.
+  Generosa: sube tren/G-R-G como EVENTO (fuerte tren 89.3%, GRG 80.3%; rica tren 98.7%, GRG 91.5%) y el plural de moda se va a tren (fuerte 30/122, rica 56/153).
+    La hora sigue siendo ISLA (fuerte 73.0%, rica 62.1%): hay tren, no manda el tren.
+  La forma que manda de verdad: corto+cola (apagada 81.1%, fuerte 67.2%).
+    Bimodal de la hora. No es «6–7 luego racimo» ni «todo G-R-G».
+
+YA ESTABA: paso mediano 4 R apagada / 2 R fuerte; islas; hueco
+  bimodal; «apagada ⇒ 6–15 luego racimo» FALSO como ley (LOOK_HUECO).
+NUEVO: la MODA de la hora tampoco es 6–7 R. Empate es lo más
+  frecuente (~40% apagadas): la hora no tiene un gesto único.
+  Horas del mismo tono NO se parecen entre sí (intra L1 ~1.1
+  apagada ≈ intra-todas 1.00). El centro sí se corre un poco
+  (apagada↔muy_fuerte+ L1 0.40): el tono mueve el PROMEDIO del
+  vector, no clona la hora. Cupo (floja/rica) corta más que el tono.
+POR QUÉ G+7 SE VEÍA AZAR: pooló ~9000 anclas de horas bimodales.
+  Cada hora aporta desierto Y silla Y racimo al mismo saco.
+  Cuatro formas ~22% = Jaccard de ventanas, no huella de hora.
+  El G+7 aplastó precisamente esta moda-por-hora (y el empate).
+NO SENTAR: tip · cubetas de día · taxonomía al dashboard ·
+  P(tiro=G) / Jaccard · COVER/SPAN. Hold: celdas de tono chicas.

@@ -1,0 +1,204 @@
+LAB G-COLA — G>400/500 · bloque 20-40
+lab: C:\operacion-joker\experimento-nueva-caja-negra\hilo-corto\lab-g-cola
+cinta: data_3dias + extraccion-en-vivo · 881 h
+
+train=809 holdout=72
+
+== H0 BASE — frecuencia G alta ==
+  horas con G+lumen: 881
+  horas con al menos 1 G>400: 80 (9.1%)
+    bloque 0-19: 20 (2.3%)
+    bloque 20-39: 31 (3.5%)
+    bloque 40-59: 32 (3.6%)
+  1er G>400: med min=34 p75=45
+  horas con al menos 1 G>500: 44 (5.0%)
+    bloque 0-19: 11 (1.2%)
+    bloque 20-39: 20 (2.3%)
+    bloque 40-59: 15 (1.7%)
+  1er G>500: med min=30 p75=40
+
+== H1 PRE-HORA — señales antes del min 0 ==
+  -- train n=809 --
+  target gt400_20-39: base=3.8%
+    hod en top caliente (h15,h00,h14): prec=7% rec=77% lift=1.7 (fp=343 tp=24)
+    H-1 maxG>=85: prec=4% rec=100% lift=1.1 (fp=687 tp=31)
+    H-1 maxG>=110: prec=4% rec=77% lift=1.1 (fp=570 tp=24)
+    H-1 maxG>=150: prec=4% rec=52% lift=1.0 (fp=413 tp=16)
+    H-1 tuvo G>500: prec=2% rec=3% lift=0.6 (fp=41 tp=1)
+    H-1 sumG>=600: prec=5% rec=58% lift=1.2 (fp=377 tp=18)
+    H-1 sumG>=800: prec=4% rec=26% lift=1.2 (fp=171 tp=8)
+    H-1 sumG>=1000: prec=5% rec=13% lift=1.3 (fp=75 tp=4)
+    hod meanG hist >= p75 global: prec=4% rec=29% lift=1.0 (fp=229 tp=9)
+  >> mejor pre-hora gt400_20-39: hod en top caliente (h15,h00,h14) lift=1.7
+  target gt500_20-39: base=2.5%
+    hod en top caliente (h14,h01,h15): prec=6% rec=50% lift=2.4 (fp=157 tp=10)
+    H-1 maxG>=85: prec=3% rec=100% lift=1.1 (fp=698 tp=20)
+    H-1 maxG>=110: prec=3% rec=75% lift=1.0 (fp=579 tp=15)
+    H-1 maxG>=150: prec=2% rec=50% lift=0.9 (fp=419 tp=10)
+    H-1 tuvo G>500: prec=2% rec=5% lift=1.0 (fp=41 tp=1)
+    H-1 sumG>=600: prec=3% rec=50% lift=1.0 (fp=385 tp=10)
+    H-1 sumG>=800: prec=3% rec=30% lift=1.4 (fp=173 tp=6)
+    H-1 sumG>=1000: prec=4% rec=15% lift=1.5 (fp=76 tp=3)
+    hod meanG hist >= p75 global: prec=3% rec=40% lift=1.4 (fp=230 tp=8)
+  >> mejor pre-hora gt500_20-39: hod en top caliente (h14,h01,h15) lift=2.4
+  target gt400_any: base=9.1%
+    hod en top caliente (h15,h00,h02): prec=13% rec=55% lift=1.5 (fp=263 tp=41)
+    H-1 maxG>=85: prec=10% rec=93% lift=1.1 (fp=649 tp=69)
+    H-1 maxG>=110: prec=9% rec=70% lift=1.0 (fp=542 tp=52)
+    H-1 maxG>=150: prec=9% rec=51% lift=1.0 (fp=391 tp=38)
+    H-1 tuvo G>500: prec=10% rec=5% lift=1.0 (fp=38 tp=4)
+    H-1 sumG>=600: prec=10% rec=51% lift=1.1 (fp=357 tp=38)
+    H-1 sumG>=800: prec=11% rec=26% lift=1.2 (fp=160 tp=19)
+    H-1 sumG>=1000: prec=13% rec=14% lift=1.4 (fp=69 tp=10)
+    hod meanG hist >= p75 global: prec=10% rec=32% lift=1.1 (fp=214 tp=24)
+  >> mejor pre-hora gt400_any: hod en top caliente (h15,h00,h02) lift=1.5
+  target gt500_any: base=5.2%
+    hod en top caliente (h00,h15,h20): prec=11% rec=43% lift=2.1 (fp=150 tp=18)
+    H-1 maxG>=85: prec=6% rec=95% lift=1.1 (fp=678 tp=40)
+    H-1 maxG>=110: prec=5% rec=76% lift=1.0 (fp=562 tp=32)
+    H-1 maxG>=150: prec=5% rec=55% lift=1.0 (fp=406 tp=23)
+    H-1 tuvo G>500: prec=7% rec=7% lift=1.4 (fp=39 tp=3)
+    H-1 sumG>=600: prec=5% rec=48% lift=1.0 (fp=375 tp=20)
+    H-1 sumG>=800: prec=8% rec=33% lift=1.5 (fp=165 tp=14)
+    H-1 sumG>=1000: prec=9% rec=17% lift=1.7 (fp=72 tp=7)
+    hod meanG hist >= p75 global: prec=6% rec=33% lift=1.1 (fp=224 tp=14)
+  >> mejor pre-hora gt500_any: hod en top caliente (h00,h15,h20) lift=2.1
+
+  -- holdout n=72 --
+  target gt400_20-39: base=0.0%
+    hod en top caliente (h15,h00,h14): prec=0% rec=0% lift=0.0 (fp=33 tp=0)
+    H-1 maxG>=85: prec=0% rec=0% lift=0.0 (fp=64 tp=0)
+    H-1 maxG>=110: prec=0% rec=0% lift=0.0 (fp=53 tp=0)
+    H-1 maxG>=150: prec=0% rec=0% lift=0.0 (fp=40 tp=0)
+    H-1 tuvo G>500: prec=0% rec=0% lift=0.0 (fp=2 tp=0)
+    H-1 sumG>=600: prec=0% rec=0% lift=0.0 (fp=34 tp=0)
+    H-1 sumG>=800: prec=0% rec=0% lift=0.0 (fp=17 tp=0)
+    H-1 sumG>=1000: prec=0% rec=0% lift=0.0 (fp=5 tp=0)
+    hod meanG hist >= p75 global: prec=0% rec=0% lift=0.0 (fp=21 tp=0)
+  >> mejor pre-hora gt400_20-39: hod en top caliente (h15,h00,h14) lift=0.0
+  target gt500_20-39: base=0.0%
+    hod en top caliente (h14,h01,h15): prec=0% rec=0% lift=0.0 (fp=15 tp=0)
+    H-1 maxG>=85: prec=0% rec=0% lift=0.0 (fp=64 tp=0)
+    H-1 maxG>=110: prec=0% rec=0% lift=0.0 (fp=53 tp=0)
+    H-1 maxG>=150: prec=0% rec=0% lift=0.0 (fp=40 tp=0)
+    H-1 tuvo G>500: prec=0% rec=0% lift=0.0 (fp=2 tp=0)
+    H-1 sumG>=600: prec=0% rec=0% lift=0.0 (fp=34 tp=0)
+    H-1 sumG>=800: prec=0% rec=0% lift=0.0 (fp=17 tp=0)
+    H-1 sumG>=1000: prec=0% rec=0% lift=0.0 (fp=5 tp=0)
+    hod meanG hist >= p75 global: prec=0% rec=0% lift=0.0 (fp=21 tp=0)
+  >> mejor pre-hora gt500_20-39: hod en top caliente (h14,h01,h15) lift=0.0
+  target gt400_any: base=8.3%
+    hod en top caliente (h15,h00,h02): prec=11% rec=50% lift=1.3 (fp=24 tp=3)
+    H-1 maxG>=85: prec=9% rec=100% lift=1.1 (fp=58 tp=6)
+    H-1 maxG>=110: prec=8% rec=67% lift=0.9 (fp=49 tp=4)
+    H-1 maxG>=150: prec=10% rec=67% lift=1.2 (fp=36 tp=4)
+    H-1 tuvo G>500: prec=0% rec=0% lift=0.0 (fp=2 tp=0)
+    H-1 sumG>=600: prec=9% rec=50% lift=1.1 (fp=31 tp=3)
+    H-1 sumG>=800: prec=12% rec=33% lift=1.4 (fp=15 tp=2)
+    H-1 sumG>=1000: prec=0% rec=0% lift=0.0 (fp=5 tp=0)
+    hod meanG hist >= p75 global: prec=14% rec=50% lift=1.7 (fp=18 tp=3)
+  >> mejor pre-hora gt400_any: hod meanG hist >= p75 global lift=1.7
+  target gt500_any: base=2.8%
+    hod en top caliente (h00,h15,h20): prec=0% rec=0% lift=0.0 (fp=15 tp=0)
+    H-1 maxG>=85: prec=3% rec=100% lift=1.1 (fp=62 tp=2)
+    H-1 maxG>=110: prec=0% rec=0% lift=0.0 (fp=53 tp=0)
+    H-1 maxG>=150: prec=0% rec=0% lift=0.0 (fp=40 tp=0)
+    H-1 tuvo G>500: prec=0% rec=0% lift=0.0 (fp=2 tp=0)
+    H-1 sumG>=600: prec=0% rec=0% lift=0.0 (fp=34 tp=0)
+    H-1 sumG>=800: prec=0% rec=0% lift=0.0 (fp=17 tp=0)
+    H-1 sumG>=1000: prec=0% rec=0% lift=0.0 (fp=5 tp=0)
+    hod meanG hist >= p75 global: prec=5% rec=50% lift=1.7 (fp=20 tp=1)
+  >> mejor pre-hora gt500_any: hod meanG hist >= p75 global lift=1.7
+
+== H2 EN CURSO — aviso ANTES del bloque 20-40 ==
+  -- corte @min 0 (antes de 20-39) --
+  target G>400 en 20-39 · base train=3.8%
+    maxG@0>=110: prec=0% rec=0% lift=0.0
+    maxG@0>=85: prec=0% rec=0% lift=0.0
+    meanG@0>=70: prec=3% rec=3% lift=0.8
+    acum@0>=150: prec=0% rec=0% lift=0.0
+    ya hay G>>400 antes de 0: prec=0% rec=0% lift=0.0
+  holdout maxG@0>=85: prec=0% rec=0%
+  target G>500 en 20-39 · base train=2.5%
+    maxG@0>=110: prec=0% rec=0% lift=0.0
+    maxG@0>=85: prec=0% rec=0% lift=0.0
+    meanG@0>=70: prec=3% rec=5% lift=1.2
+    acum@0>=150: prec=0% rec=0% lift=0.0
+    ya hay G>>500 antes de 0: prec=0% rec=0% lift=0.0
+  holdout maxG@0>=85: prec=0% rec=0%
+
+  -- corte @min 10 (antes de 20-39) --
+  target G>400 en 20-39 · base train=3.8%
+    maxG@10>=110: prec=2% rec=13% lift=0.6
+    maxG@10>=85: prec=2% rec=16% lift=0.5
+    meanG@10>=70: prec=2% rec=13% lift=0.5
+    acum@10>=150: prec=2% rec=16% lift=0.6
+    nG@10>=3 y meanG>=60: prec=4% rec=10% lift=1.0
+    ya hay G>>400 antes de 10: prec=10% rec=3% lift=2.6
+  holdout maxG@10>=85: prec=0% rec=0%
+  target G>500 en 20-39 · base train=2.5%
+    maxG@10>=110: prec=2% rec=15% lift=0.7
+    maxG@10>=85: prec=1% rec=15% lift=0.5
+    meanG@10>=70: prec=1% rec=15% lift=0.6
+    acum@10>=150: prec=1% rec=15% lift=0.6
+    nG@10>=3 y meanG>=60: prec=2% rec=10% lift=1.0
+    ya hay G>>500 antes de 10: prec=14% rec=5% lift=5.8
+  holdout maxG@10>=85: prec=0% rec=0%
+
+  -- corte @min 19 (antes de 20-39) --
+  target G>400 en 20-39 · base train=3.8%
+    maxG@19>=110: prec=2% rec=16% lift=0.5
+    maxG@19>=85: prec=2% rec=26% lift=0.5
+    meanG@19>=70: prec=2% rec=16% lift=0.6
+    acum@19>=150: prec=2% rec=35% lift=0.6
+    nG@19>=3 y meanG>=60: prec=2% rec=13% lift=0.5
+    ya hay G>>400 antes de 19: prec=6% rec=3% lift=1.4
+  holdout maxG@19>=85: prec=0% rec=0%
+  target G>500 en 20-39 · base train=2.5%
+    maxG@19>=110: prec=1% rec=20% lift=0.6
+    maxG@19>=85: prec=1% rec=25% lift=0.5
+    meanG@19>=70: prec=2% rec=20% lift=0.8
+    acum@19>=150: prec=2% rec=35% lift=0.6
+    nG@19>=3 y meanG>=60: prec=1% rec=15% lift=0.5
+    ya hay G>>500 antes de 19: prec=10% rec=5% lift=4.0
+  holdout maxG@19>=85: prec=0% rec=0%
+
+== H3 DENTRO 20-39 — cuándo cae la cola ==
+  G>400 en 20-39: n=31 horas-evento med min=29 tipos={3: 14, 2: 4, 4: 10, 1: 3}
+  G>500 en 20-39: n=20 horas-evento med min=28 tipos={3: 8, 2: 4, 1: 3, 4: 5}
+
+  -- regla compuesta INFO (train) --
+  @min19 olor cola >400 en 20-39: prec=2% rec=26% lift=0.5 base=3.8%
+  holdout: prec=0% rec=0% lift=0.0
+  @min19 olor cola >500 en 20-39: prec=1% rec=25% lift=0.5 base=2.5%
+  holdout: prec=0% rec=0% lift=0.0
+
+== H4 MAPA HOD — P(G>500 en 20-39) ==
+  h14: 6% (n=35)
+  h01: 6% (n=36)
+  h15: 5% (n=37)
+  h03: 5% (n=37)
+  h00: 5% (n=37)
+  h21: 3% (n=36)
+  h20: 3% (n=36)
+  h13: 3% (n=36)
+  global: 2.3%
+
+== H5 SINTESIS — aviso cableable ==
+  base G>400 en 20-39: 3.5%
+  base G>500 en 20-39: 2.3%
+  aviso compuesto @19 + H-1: 27 hits en horas con G>400 en 20-39
+    h9-240726: apertura fuerte sin cola aún · meanG alto en 0-19 · H-1 trajo G muy fuerte -> [1400]
+    h3-260726: H-1 trajo G muy fuerte -> [600]
+    h14-260726: H-1 trajo G muy fuerte -> [1750]
+    h0-280726: H-1 trajo G muy fuerte -> [422]
+    h20-290726: H-1 trajo G muy fuerte -> [415]
+
+VEREDICTO PRELIMINAR:
+  PRE-HORA solo: OLOR (lift bajo, muchas FP) salvo hod extremo
+  @min19 antes de 20-39: OLOR-VIVE si maxG>=85 sin G>500 aún
+  G>500 en 20-39: raro (~base baja); 1er >500 suele min~35 (lab-SN)
+  COPY INFO sugerido:
+    "Olor de cola: apertura fuerte — posible G>400-500 en bloque 20-40"
+    Solo @min>=15-19 o tras 1er G>=85 sin cola; no boleto.
+

@@ -1,0 +1,20 @@
+JUEZ DE ESTE LAB (2026-09-06, parche)
+=====================================
+Vigente: banda d≤1 del CORRIMIENTO.
+         minuto tip LC-01 vs minuto real de ESA G, HORA A HORA.
+         Residual Δ = mG − tip (anillo).
+
+NO ES JUEZ (inválido, no se cita como veredicto):
+  · Jaccard / álbum / foto H-1 vs H
+  · Promedio global de cadenas de color (R-R-G, G-R-R, R-R-R en toda la cinta)
+  · Hit G = aciertos_color / tiros  (densidad 9/54, no oficio)
+  · P(el tiro es G | el reloj está en tip ±1)
+
+Lectura vigente:
+  reports/LAB_NEXT3_CORRIMIENTO.txt
+  eval_corrimiento_hora.py
+  ACTA_PODA_GR.txt (esta versión)
+
+Archivo. No usar:
+  reports/LAB_NEXT3_HIST.txt
+  eval_next3_hist.py

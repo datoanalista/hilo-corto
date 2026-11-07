@@ -1,0 +1,80 @@
+LAB G-COLA — RONDA 4 · generosidad · costura · combos
+n=882 train=810 holdout=72
+días generosos: 11 / 38
+
+== H1 GENEROSIDAD — día generoso vs normal ==
+  G>500: día generoso 7.5% (n=253) vs normal 4.0% (n=629)
+  G>400: día generoso 14.2% (n=253) vs normal 7.0% (n=629)
+  G>500: día partido (med<600) 4.1% vs resto 6.2%
+
+== H2 HOD + DÍA CALIENTE ==
+  h14: P(G>500)=5.7% P(gen)=22.9% n=35
+  h15: P(G>500)=10.8% P(gen)=29.7% n=37
+  h19: P(G>500)=5.4% P(gen)=21.6% n=37
+  h00: P(G>500)=13.5% P(gen)=21.6% n=37
+  h01: P(G>500)=8.3% P(gen)=13.9% n=36
+  h08: P(G>500)=8.1% P(gen)=21.6% n=37
+  h20: P(G>500)=8.3% P(gen)=22.2% n=36
+  cola previa mismo día: base=5.0% prec=5.2% rec=43% tp=19 fp=348
+  2+ generosas previas mismo día: base=5.0% prec=5.2% rec=59% tp=26 fp=473
+  día generoso + hod olor: base=5.0% prec=12.1% rec=9% tp=4 fp=29
+
+== H3 COSTURA — par hod y cola en destino ==
+  h14->h15 n=35 P(cola@B)=11.4%
+    orig opaca: 7.1% · normal: 15.4% · fuerte: 12.5%
+    lift sum med=+195
+  h15->h16 n=37 P(cola@B)=0.0%
+    orig opaca: 0.0% · normal: 0.0% · fuerte: 0.0%
+    lift sum med=-146
+  h08->h09 n=37 P(cola@B)=5.4%
+    orig opaca: 0.0% · normal: 8.3% · fuerte: 0.0%
+    lift sum med=-31
+  h18->h19 n=37 P(cola@B)=5.4%
+    orig opaca: 7.7% · normal: 0.0% · fuerte: 16.7%
+    lift sum med=-25
+  h13->h15 n=36 P(cola@B)=11.1%
+    orig opaca: 10.0% · normal: 14.3% · fuerte: 0.0%
+    lift sum med=+160
+  h06->h07 n=37 P(cola@B)=8.1%
+    orig opaca: 0.0% · normal: 11.5% · fuerte: 0.0%
+    lift sum med=+58
+  h14 sin G 0-9 -> h15: P(cola)=16.7% n=6
+  h14 con G 0-9 -> h15: P(cola)=10.3% n=29
+
+== H4 POST-SN / POST-OPACA — hora previa ==
+  H-1 SN: P(G>500)=0.0% n=13
+  H-1 generosa: P(G>500)=8.2% n=122
+  H-1 opaca: P(G>500)=4.2% n=259
+  H-1 cola500: P(G>500)=9.7% n=31
+  H-1 normal: P(G>500)=4.4% n=456
+
+== H6 ESPECIE × COSTURA ==
+  cola_cierre n=31 P(gen)=84% en día generoso=45%
+  cola_medio n=29 P(gen)=90% en día generoso=41%
+  cola_apertura n=8 P(gen)=88% en día generoso=50%
+
+== H5 COMBOS — reglas cruzadas (train → holdout) ==
+  dia_generoso + hod14|15|19: tr prec=3.7% rec=2% tp=1 fp=26 | ho prec=0.0% rec=0% tp=0 fp=3
+  h14 sin G0-9 -> h15: tr prec=20.0% rec=2% tp=1 fp=4 | ho prec=0.0% rec=0% tp=0 fp=1
+  costura opaca-> rebote (15|9|16|19): tr prec=5.7% rec=5% tp=2 fp=33 | ho prec=0.0% rec=0% tp=0 fp=3
+  generosa @39: tr prec=2.5% rec=5% tp=2 fp=79 | ho prec=16.7% rec=50% tp=1 fp=5
+  dia_gen + generosa@39: tr prec=0.0% rec=0% tp=0 fp=3 | ho prec=0.0% rec=0% tp=0 fp=3
+  h14 rebote + generosa@39: tr prec=0.0% rec=0% tp=0 fp=1 | ho prec=0.0% rec=0% tp=0 fp=0
+  triple olor: tr prec=12.5% rec=2% tp=1 fp=7 | ho prec=0.0% rec=0% tp=0 fp=1
+  H-1 opaca + hod15: tr prec=7.7% rec=2% tp=1 fp=12 | ho prec=0.0% rec=0% tp=0 fp=2
+
+== H7 SÍNTESIS R4 ==
+  SE VE:
+    · Día generoso sube P(cola) vs día normal
+    · h14 sin G0-9 -> h15 más P(cola) que h14 con G temprano
+    · Costura opaca->rebote: destino con más cola que base
+    · Post-SN H-1: enfriamiento (menos cola)
+  NO SE VE:
+    · Día partido como predictor estable
+    · Combo triple crown en holdout
+  OLOR-VIVE cableable:
+    1. dia_generoso + hod15 + generosa@39
+    2. h14 sin G0-9 -> tip h15 cola (costura intra-hora)
+    3. costura opaca-> AVISO rebote + olor cola
+  Mejor prec combo (train): revisar H5 top fila
+

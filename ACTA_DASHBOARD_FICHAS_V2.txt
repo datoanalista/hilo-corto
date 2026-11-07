@@ -1,0 +1,96 @@
+ACTA — fichas e INFO cableados en dashboard (V2)
+=================================================
+stamp 2026-09-02
+Prod: experimento-nueva-caja-negra/hilo-corto/dashboard
+Backend: servir.py · src/motor.py · src/tablero.py
+Juez prod chips: banda d≤1 (G o vecino ±1). Cero LIVE. Cero edificio anterior.
+
+════════════════════════════════
+1. BOLETO (motor.py → pools P0–P8)
+════════════════════════════════
+
+  Pool 0   oficial (mesa principal)
+  Pool 1–5 betas v1–v5 (sombra, rank G/Score en UI)
+  Pool 8   INTER2 fijo arriba (acuerdo ≥2 pools, k~14) — NO variantes lab
+  Pool 9   clásico (= oficial si distinto)
+  Pool 7   LC-01 tips sombra (chips derivados de luces, no boleto)
+  Pool 10  LIVE-RC sombra (chipsLiveRc; lab live-recompute RC-MULTI93)
+
+  SEGURO   costura cierre LARGO H-1 → 1er min H (~95% exacto)
+  TIBIO    islas H-1 banda d≤1
+  SOM02    +1 chip sombra max(H-1)+paso mediana huecos; rol sombra;
+           entra si cupo/fermión · Δscore +0.10 lab · ACTA_LAB_SOM02_VS_PROD
+  Recorte  fermión + cupo clima (Faro)
+
+════════════════════════════════
+2. LECTURAS LIVE (INFO — no boleto)
+════════════════════════════════
+
+Instrumento          Fuente lab / acta              UI dashboard
+───────────────────  ───────────────────────────  ──────────────────────
+LC-01 tip            livecero F4 · TIP_PROXIMA_G  Next · tipProxima.js
+Brillo @40           lab-prohibido E3/E7          icono Brillo · modal
+Eco tejido           lab-prohibido E7             icono libro · EcoModal
+Calendario hod       lab-prohibido · calendario   CalendarioModal
+Supernova            lab-supernova H4             estrella header · modal
+Generosidad día      ACTA_GENEROSIDAD_OPACO       panel SupernovaModal
+Opacidad             ACTA_GENEROSIDAD_OPACO       tips Brillo · opacidadInfo
+Cola G>500           lab-g-cola · lab-supernova   tips Brillo · ColaModal
+Intra-hora perfil    lab-intra-hora               BloquePerfilBtn @20+
+Cierre abierto       lab-alerta-costura           CierreAbiertoBtn reloj
+Global-pool @40      lab-global-pool H4-quorum-6  👍/👎 en curso (v2-bar)
+Costura h14→h15      lab-h15 · lab-costura        pill costuraH15
+Ola post-SN          sesión UX 2026-09 (olor)     OlaPostSnBtn junto Next
+SOM02 tips sombra    ACTA_TIPS_SOMBRA · motor     som02Info.js · Tips ciudad
+Cronista tips        livegreen F4.5               /api/tips/cronista · Habla
+Mapa lumen           lab-prohibido                BrilloModal / mapaInfo
+
+Todas: lectura sombra. No escriben LIVE. No cambian chips P8.
+
+════════════════════════════════
+3. EXTRACCIÓN EN VIVO (operación, no boleto)
+════════════════════════════════
+
+  Node: dashboard/extraccion/extraccion-jokers.js (Playwright)
+  Estado: /api/extraccion/estado · cinta extraccion-en-vivo.txt
+  UI: modal Extraccion · Reingesta · Cargar live (merge overwrite)
+  LiveAvance poll 2s (cinta fingerprint; tail 32 h parse)
+  Poll Extraccion solo con modal abierto (evita doble carga)
+
+════════════════════════════════
+4. LABS CERRADOS (hilo-corto) — veredicto
+════════════════════════════════
+
+  lab-supernova       CERRADO · VIVE H4 cola G>500 separa SN
+  lab-g-cola          CERRADO · olor @min19 pre-bloque 20-39
+  lab-intra-hora      CERRADO · arquetipos apertura/cola · C01 wrap
+  lab-alerta-costura  CERRADO · cierre abierto INFO · no gate pools
+  lab-global-pool     CERRADO · @40 quorum-6 lift holdout +13pp
+  lab-costura         CERRADO · h14-h15 VIVE · h15-h16 OLOR
+  lab-h15             CERRADO · rebote post-h14 opaco VIVE
+  lab-live-recompute  CERRADO · Pool 10 sombra · no reemplaza P8
+  lab-inter2-variants CERRADO · Pool 8 intacto
+  lab-show-motor      CERRADO · clásico ≈ show · INTER2 +15pp
+  lab-ruleta-zero     CERRADO · prod intacto · ACTA_RULETA_ZERO
+  lab-calendario-hod  CERRADO · CalendarioModal cableado · vie/noc NO
+  lab-g-explosion     CERRADO R2 · FRÍO utilidad predictiva · archivo
+                      humano 2026-09-02: no cable
+
+════════════════════════════════
+5. FRONT (2026-09-02) — estabilidad sesión
+════════════════════════════════
+
+  liveSyncKey: setLive solo si cambia lectura real (~1/min)
+  tailLineasHoras(32): parse cinta acotado (OOM)
+  Playhead V2PlayheadLayer: tick DOM, grid memo V2PoolRow
+  Refresco horario: cargar silencioso tablero (sin reload página)
+
+════════════════════════════════
+6. PENDIENTES
+════════════════════════════════
+
+  Cierre 2026-09-02: PENDIENTES_REVISADOS.txt
+  18 cableados · 21 cerrados sin cable · 0 promete · 0 labs ABIERTO
+  Casa hilo-corto limpia — ver BITACORA bloque CASA LIMPIA 2026-09-02
+
+FIN

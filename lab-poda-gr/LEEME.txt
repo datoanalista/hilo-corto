@@ -1,0 +1,11 @@
+LAB PODA G-R
+============
+Cero prod. Cero LIVE. Cero Jaccard.
+
+Leer en este orden:
+  1. JUEZ.txt
+  2. ACTA_PODA_GR.txt
+  3. reports/LAB_NEXT3_CORRIMIENTO.txt
+
+No leer como veredicto:
+  reports/LAB_NEXT3_HIST.txt  (juez inválido: color / cadenas globales)

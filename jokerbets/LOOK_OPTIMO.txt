@@ -1,0 +1,70 @@
+LOOK OPTIMO — ficha, racha ZONA, chispa vs @19
+API rondas 61070  horas 1043  indicio @19 281
+Racha R = tiros APOSTADOS en zona que salen R. No es la hora entera.
+Nunca se apuesta fuera de tip±1.
+
+— ficha de 50 en 50, mismo $30k × 3, SOLO indicio+zona —
+  [$50/bono = $200/cuenta  aire 150 R]
+  indicio+zona $50: tiros 3376  G 858  casa +1125250  med/hora +1900  racha R máx 16
+    pozo $90k: suelo 88200  (98% del arranque)  vidas@0 0 / 281 h
+    c0 $30k: pnl +435300  suelo 30000 (100%)  vidas@0 0  cierre 465300
+    c1 $30k: pnl +308900  suelo 28550 (95%)  vidas@0 0  cierre 338900
+    c2 $30k: pnl +381050  suelo 28550 (95%)  vidas@0 0  cierre 411050
+
+  [$100/bono = $400/cuenta  aire 75 R]
+  indicio+zona $100: tiros 3376  G 858  casa +2250500  med/hora +3800  racha R máx 16
+    pozo $90k: suelo 86400  (96% del arranque)  vidas@0 0 / 281 h
+    c0 $30k: pnl +870600  suelo 30000 (100%)  vidas@0 0  cierre 900600
+    c1 $30k: pnl +617800  suelo 27100 (90%)  vidas@0 0  cierre 647800
+    c2 $30k: pnl +762100  suelo 27100 (90%)  vidas@0 0  cierre 792100
+
+  [$150/bono = $600/cuenta  aire 50 R]
+  indicio+zona $150: tiros 3376  G 858  casa +3375750  med/hora +5700  racha R máx 16
+    pozo $90k: suelo 84600  (94% del arranque)  vidas@0 0 / 281 h
+    c0 $30k: pnl +1305900  suelo 30000 (100%)  vidas@0 0  cierre 1335900
+    c1 $30k: pnl +926700  suelo 25650 (86%)  vidas@0 0  cierre 956700
+    c2 $30k: pnl +1143150  suelo 25650 (86%)  vidas@0 0  cierre 1173150
+
+  [$200/bono = $800/cuenta  aire 37 R]
+  indicio+zona $200: tiros 3376  G 858  casa +4501000  med/hora +7600  racha R máx 16
+    pozo $90k: suelo 82800  (92% del arranque)  vidas@0 0 / 281 h
+    c0 $30k: pnl +1741200  suelo 30000 (100%)  vidas@0 0  cierre 1771200
+    c1 $30k: pnl +1235600  suelo 24200 (81%)  vidas@0 0  cierre 1265600
+    c2 $30k: pnl +1524200  suelo 24200 (81%)  vidas@0 0  cierre 1554200
+
+  [$250/bono = $1000/cuenta  aire 30 R]
+  indicio+zona $250: tiros 3376  G 858  casa +5626250  med/hora +9500  racha R máx 16
+    pozo $90k: suelo 81000  (90% del arranque)  vidas@0 0 / 281 h
+    c0 $30k: pnl +2176500  suelo 30000 (100%)  vidas@0 0  cierre 2206500
+    c1 $30k: pnl +1544500  suelo 22750 (76%)  vidas@0 0  cierre 1574500
+    c2 $30k: pnl +1905250  suelo 22750 (76%)  vidas@0 0  cierre 1935250
+
+— Pool 7 (zona) según cómo CIERRA la hora. Toda la cinta —
+  muy_apagado  h= 297  tiros  4125  G 1008  casa +42400  med/hora -600
+  opaco        h= 253  tiros  4258  G 1156  casa +1486600  med/hora +5500
+  normal       h= 302  tiros  5685  G 1678  casa +4784200  med/hora +15400
+  fuerte       h= 115  tiros  2249  G  671  casa +3038800  med/hora +24500
+  muy_fuerte   h=  60  tiros  1125  G  383  casa +2657200  med/hora +44100
+  supernova    h=  16  tiros   323  G   98  casa +2474400  med/hora +43050
+
+— ¿un G alto levanta los que siguen? (toda la API) —
+  1ª G≥100: cola n=4903  med 45  %≥100 16.1%
+  1ª G≥200: cola n=1576  med 45  %≥100 16.2%
+  1ª G<40 control: cola n=7889  med 45  %≥100 16.0%
+
+— chispa: 2 G altos y se entra YA (zona), ficha $150 —
+  2 G≥100 seguidas (G-G, R en medio ok): horas 186  tiros 1690  G 521  casa +3596850  med/hora +16650  pozo suelo 90000  vidas@0 0
+  2 G≥200 seguidas: horas 16  tiros 140  G 51  casa +524700  med/hora +33450  pozo suelo 90000  vidas@0 0
+  tren: 2 TIROS G≥100 pegados: horas 29  tiros 306  G 94  casa +625800  med/hora +17100  pozo suelo 90000  vidas@0 0
+  control: indicio @19 (misma ficha): horas 281  tiros 3469  G 883  casa +3741450  med/hora +6300  pozo suelo 84600  vidas@0 0
+
+  2×G≥100: 186 h  cierra fuerte+ 45.7%  minuto de la 2ª G med 30
+  2×G≥200: 16 h  cierra fuerte+ 87.5%  minuto de la 2ª G med 31
+  base cinta: fuerte+ 18.3%
+
+Lectura
+  · 16 R = 16 apuestas de zona seguidas que fueron R.
+    No son 16 rojos de la hora. Pool 7 no se ensancha.
+  · Óptimo de ficha = aire vs racha máx, no el techo.
+  · Chispa 2 altos: si el resto no sube, es momento suelto.
+  · Pool 7 en apagada: el med/hora lo dice la fila de arriba.

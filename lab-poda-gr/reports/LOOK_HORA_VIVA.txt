@@ -1,0 +1,73 @@
+LOOK · tipo vivo → lo que queda de ESTA hora
+No es tip del próximo hueco. Es: ¿el ritmo ya visto se sostiene?
+train 1094 h. Hold no se mezcla.
+
+════ al minuto 12  (quedan 47 min) ════
+  flaca  364 h   G ya~1   quedan G 5…8…11   cierra 8 G   hueco máx resto med 11   S en resto 173/364   tren en resto 235/364   sigue flaca al cierre 126/364   vuelco flaca→llena 25
+  mesa   349 h   G ya~2   quedan G 5…7…10   cierra 9 G   hueco máx resto med 12   S en resto 120/349   tren en resto 232/349   sigue mesa al cierre 264/349
+  llena  381 h   G ya~3   quedan G 5…8…11   cierra 11 G   hueco máx resto med 12   S en resto 118/381   tren en resto 270/381   sigue llena al cierre 103/381   vuelco llena→flaca 27
+
+════ al minuto 15  (quedan 44 min) ════
+  flaca  247 h   G ya~1   quedan G 4…7…10   cierra 8 G   hueco máx resto med 11   S en resto 143/247   tren en resto 154/247   sigue flaca al cierre 101/247   vuelco flaca→llena 9
+  mesa   585 h   G ya~2   quedan G 4…7…10   cierra 9 G   hueco máx resto med 11   S en resto 188/585   tren en resto 379/585   sigue mesa al cierre 429/585
+  llena  262 h   G ya~4   quedan G 4…7…10   cierra 12 G   hueco máx resto med 11   S en resto 77/262   tren en resto 178/262   sigue llena al cierre 92/262   vuelco llena→flaca 8
+
+════ al minuto 20  (quedan 39 min) ════
+  flaca  329 h   G ya~2   quedan G 4…6…9   cierra 8 G   hueco máx resto med 10   S en resto 146/329   tren en resto 193/329   sigue flaca al cierre 134/329   vuelco flaca→llena 8
+  mesa   515 h   G ya~3   quedan G 4…6…9   cierra 10 G   hueco máx resto med 10   S en resto 151/515   tren en resto 310/515   sigue mesa al cierre 389/515
+  llena  250 h   G ya~5   quedan G 4…6…9   cierra 12 G   hueco máx resto med 10   S en resto 62/250   tren en resto 151/250   sigue llena al cierre 95/250   vuelco llena→flaca 3
+
+════ al minuto 25  (quedan 34 min) ════
+  flaca  397 h   G ya~3   quedan G 3…5…8   cierra 8 G   hueco máx resto med 9   S en resto 154/397   tren en resto 211/397   sigue flaca al cierre 155/397   vuelco flaca→llena 8
+  mesa   467 h   G ya~4   quedan G 3…5…8   cierra 10 G   hueco máx resto med 9   S en resto 123/467   tren en resto 256/467   sigue mesa al cierre 357/467
+  llena  230 h   G ya~6   quedan G 3…6…8   cierra 12 G   hueco máx resto med 9   S en resto 47/230   tren en resto 130/230   sigue llena al cierre 92/230   vuelco llena→flaca 1
+
+════ al minuto 30  (quedan 29 min) ════
+  flaca  223 h   G ya~3   quedan G 2…5…7   cierra 7 G   hueco máx resto med 8   S en resto 90/223   tren en resto 92/223   sigue flaca al cierre 122/223   vuelco flaca→llena 1
+  mesa   655 h   G ya~5   quedan G 2…4…7   cierra 9 G   hueco máx resto med 8   S en resto 154/655   tren en resto 326/655   sigue mesa al cierre 514/655
+  llena  216 h   G ya~7   quedan G 3…5…7   cierra 12 G   hueco máx resto med 9   S en resto 41/216   tren en resto 118/216   sigue llena al cierre 102/216   vuelco llena→flaca 0
+
+════ al minuto 40  (quedan 19 min) ════
+  flaca  336 h   G ya~4   quedan G 1…3…5   cierra 7 G   hueco máx resto med 6   S en resto 90/336   tren en resto 102/336   sigue flaca al cierre 185/336   vuelco flaca→llena 2
+  mesa   553 h   G ya~7   quedan G 1…3…5   cierra 10 G   hueco máx resto med 6   S en resto 83/553   tren en resto 219/553   sigue mesa al cierre 491/553
+  llena  205 h   G ya~10   quedan G 1…3…5   cierra 13 G   hueco máx resto med 6   S en resto 22/205   tren en resto 80/205   sigue llena al cierre 117/205   vuelco llena→flaca 0
+
+════ películas  (lectura @20 → lo que quedó) ════
+Se lee: G ya / tipo vivo → resto de la frase. No un %.
+  h12-230726   @20 llena G= 5  cierra mesa nG=12  ya [3, 6, 10, 14, 20]  luego 24·k2  28·m6  34·m7  41·L9  49·C1  52ET0
+  h13-230726   @20 flaca G= 2  cierra mesa nG=9  ya [2, 18]  luego 21ET0  24·C1  26·C1  29·k4  34·S17  50ET0
+  h15-230726   @20 flaca G= 2  cierra mesa nG=12  ya [5, 8]  luego 24·m7  31ET0  33·T0  34·T0  36·T0  37·k2  41·k2  43·m6  51·k2
+  h16-230726   @20 flaca G= 1  cierra flaca nG=7  ya [10]  luego 23·k4  29·m8  37·L9  47·k4  51·k3
+  h18-230726   @20 llena G= 5  cierra llena nG=13  ya [3, 8, 10, 14, 18]  luego 21·m6  28·k2  31·C1  34·k2  37·C1  40·S16  55·k3
+  h19-230726   @20 flaca G= 1  cierra mesa nG=10  ya [12]  luego 25·k3  30·m7  37·k3  42ET0  44·T0  45·m5  51·C1  54·k4
+  h20-230726   @20 flaca G= 2  cierra mesa nG=9  ya [10, 14]  luego 21·T0  22·k3  27·k3  31·L11  42·L11  52·k3
+  h22-230726   @20 flaca G= 2  cierra llena nG=15  ya [13, 17]  luego 21·k3  26·C1  28·k2  32·k2  35·C1  37·T0  39·m5  45·T0  46·C1  49·T0  51·k2  54·k3
+  h23-230726   @20 flaca G= 2  cierra llena nG=13  ya [3, 5]  luego 21·k4  27·k3  31ET0  33·C1  36·T0  37ET0  39·C1  42·k4  48·m6  54·C1
+  h3-240726    @20 flaca G= 1  cierra mesa nG=12  ya [14]  luego 22ET0  23·k2  27ET0  29·k2  32·k2  36·k2  39·k2  43ET0  45·m5  52·C1
+  h4-240726    @20 llena G= 5  cierra llena nG=13  ya [11, 12, 13, 17, 19]  luego 22·T0  23·k4  28·m5  34·L10  45ET0  48ET0  49·m7
+  h9-240726    @20 llena G= 5  cierra mesa nG=9  ya [0, 3, 9, 13, 16]  luego 27·m8  34·S17  49·m6
+  h11-240726   @20 flaca G= 2  cierra mesa nG=11  ya [5, 9]  luego 22·m7  30Ek2  35·T0  37·k4  42·m7  50·T0  51·m6  58·T0
+  h12-240726   @20 llena G= 6  cierra mesa nG=11  ya [1, 4, 5, 15, 18, 20]  luego 24·L12  35·m5  42·k2  45·L11
+  h13-240726   @20 flaca G= 2  cierra mesa nG=10  ya [4, 11]  luego 22·T0  23·C1  26·k2  29·k3  33·L11  44·m7  51·k2
+  h14-240726   @20 flaca G= 2  cierra mesa nG=8  ya [5, 12]  luego 22·C1  24·L10  35·k3  39·m7  47·m7
+  h18-240726   @20 flaca G= 0  cierra flaca nG=6  ya []  luego 27·k4  32·L11  44·k3  48ET0  50·k4
+  h19-240726   @20 flaca G= 1  cierra flaca nG=5  ya [19]  luego 29·L9  39·k2  44·C1
+  h22-240726   @20 llena G= 7  cierra llena nG=13  ya [1, 3, 5, 8, 12, 16, 19]  luego 37·C1  40·C1  42·C1  45·k2  49·k4
+  h0-250726    @20 llena G= 6  cierra llena nG=13  ya [1, 3, 5, 7, 13, 18]  luego 24·k2  27·L10  37·m5  43·m5  49·k3  53·k3
+  h2-250726    @20 llena G= 5  cierra mesa nG=11  ya [2, 8, 10, 13, 16]  luego 27ET0  29·C1  31·C1  34·k4  40·L15
+  h3-250726    @20 llena G= 5  cierra mesa nG=12  ya [2, 4, 6, 8, 11]  luego 23·L14  37·T0  38ET0  41·C1  43·k3  47·m8
+  h5-250726    @20 llena G= 7  cierra llena nG=15  ya [5, 8, 11, 12, 17, 18, 20]  luego 22ET0  24·m5  31·L10  42·k2  45·m5  52·k3  56ET0
+  h7-250726    @20 llena G= 6  cierra llena nG=14  ya [0, 1, 3, 13, 15, 19]  luego 28·T0  30·T0  31·m5  37·m5  43·T0  45·L9  54·C1
+
+Lectura (sin saco):
+  El resto NO copia el arranque.
+  En todos los cortes, las G que QUEDAN son las mismas
+  (al :20: 4…6…9 tanto si iba flaca como si iba llena).
+  “Sigue flaca/llena” baja porque el resto es ritmo de mesa:
+  2 ya + 6 resto = 8 (mesa); 5 ya + 6 resto = 11 (mesa).
+  Sequía en el resto: un poco más tras arranque flojo,
+  un poco menos tras arranque lleno. El tren en el resto
+  no lo decide el arranque (sale igual).
+  El tipo vivo sirve de MARCADOR de lo ya caído, no de
+  pronóstico de los 30–40 min que faltan.
+  Antes de ~:12 el recuento no decide nada.

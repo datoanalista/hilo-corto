@@ -1,0 +1,53 @@
+LOOK ESCALA — ventana, ritmo, $250 y $1.000/bono
+API 2026-07-23T09:28 → 2026-09-04T19:56  (43.4 días)  rondas 61070  horas 1043
+actualizado 2026-09-04T19:56:43-04:00
+Horas con indicio @19: 281  (26.9% de las horas de cinta)
+Indicio por día de calendario: 6.5 h
+0 en una muestra ≠ 0 para siempre. Es esta cinta, este oficio.
+
+— ritmo del oficio (ficha $100, ya medido) —
+  indicio+zona $100: tiros 3376  G 858  casa +2250500  med/hora +3800  racha R máx 16
+    pozo $90k: suelo 86400  (96% del arranque)  vidas@0 0 / 281 h
+    c0 $30k: pnl +870600  suelo 30000 (100%)  vidas@0 0  cierre 900600
+    c1 $30k: pnl +617800  suelo 27100 (90%)  vidas@0 0  cierre 647800
+    c2 $30k: pnl +762100  suelo 27100 (90%)  vidas@0 0  cierre 792100
+    ritmo: +2250500 en 43.4 d  →  +51812/día  ·  +1554363 / 30 días (si se repite la densidad de indicio)
+    Eso NO es “cada mes cae eso”. Es regla de tres sobre 43 días. 24/7 MIRAR ≠ 24/7 APOSTAR.
+
+— mismo $30k × 3, oficio, ficha más alta —
+  [$250/bono = $1.000/cuenta  colchón 30 R]
+  indicio+zona $250/bono = $1.000/cuenta: tiros 3376  G 858  casa +5626250  med/hora +9500  racha R máx 16
+    pozo $90k: suelo 81000  (90% del arranque)  vidas@0 0 / 281 h
+    c0 $30k: pnl +2176500  suelo 30000 (100%)  vidas@0 0  cierre 2206500
+    c1 $30k: pnl +1544500  suelo 22750 (76%)  vidas@0 0  cierre 1574500
+    c2 $30k: pnl +1905250  suelo 22750 (76%)  vidas@0 0  cierre 1935250
+
+  [$1.000/bono = $4.000/cuenta  colchón 7 R]
+  indicio+zona $1.000/bono = $4.000/cuenta: tiros 3376  G 858  casa +22505000  med/hora +38000  racha R máx 16
+    pozo $90k: suelo 54000  (60% del arranque)  vidas@0 0 / 281 h
+    c0 $30k: pnl +8706000  suelo 30000 (100%)  vidas@0 0  cierre 8736000
+    c1 $30k: pnl +6178000  suelo 1000 (3%)  vidas@0 0  cierre 6208000
+    c2 $30k: pnl +7621000  suelo 1000 (3%)  vidas@0 0  cierre 7651000
+
+— si se deja 24/7 APOSTANDO cada hora (zona, SIN bandera) —
+  todas las horas + zona $100: tiros 12098  G 3187  casa +9128900  med/hora +3800  racha R máx 17
+    pozo $90k: suelo 84100  (93% del arranque)  vidas@0 0 / 1043 h
+    c0 $30k: pnl +3512200  suelo 25000 (83%)  vidas@0 0  cierre 3542200
+    c1 $30k: pnl +2650800  suelo 28600 (95%)  vidas@0 0  cierre 2680800
+    c2 $30k: pnl +2965900  suelo 28200 (94%)  vidas@0 0  cierre 2995900
+  todas las horas + zona $250: tiros 12098  G 3187  casa +22822250  med/hora +9500  racha R máx 17
+    pozo $90k: suelo 75250  (84% del arranque)  vidas@0 0 / 1043 h
+    c0 $30k: pnl +8780500  suelo 17500 (58%)  vidas@0 0  cierre 8810500
+    c1 $30k: pnl +6627000  suelo 26500 (88%)  vidas@0 0  cierre 6657000
+    c2 $30k: pnl +7414750  suelo 25500 (85%)  vidas@0 0  cierre 7444750
+
+— colchón que deja el mismo aire que $100/$30k (75 R) —
+  $250/bono ($1.000/cuenta): $75.000 / cuenta  ·  pozo $225k
+  $1.000/bono ($4.000/cuenta): $300.000 / cuenta  ·  pozo $900k
+  Subir ficha y dejar el mismo $30k = menos aire, no el mismo riesgo 0.
+
+Lectura
+  · El +2.25M es de ESTA ventana (~43 d), no un sueldo mensual.
+  · 24/7 el reloj puede correr. La ficha solo con bandera × zona.
+  · $250 en este $30k: la API dice si roza la mitad o no.
+  · $1.000 en este $30k: 7 R de aire. Eso sí puede ir a $0.

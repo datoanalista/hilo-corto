@@ -1,0 +1,50 @@
+ACTA LOOK — FORMAS DE CADA HORA
+===============================
+fecha: 2026-09-11
+lab: hilo-corto/lab-poda-gr/
+script: look_hora_formas.py → reports/LOOK_HORA_FORMAS.txt
+Cero prod. Cero LIVE. Cero Jaccard. Cero cable.
+
+PREGUNTA
+  El look G+7 fue promedio global (partes iguales ≈ azar).
+  ¿Cómo se mueven las FORMAS hora a hora? ¿Qué manda en
+  apagada / opaca / generosa, contando HORAS no G?
+
+FICHA
+  Unidad = la hora. Train 1092 / hold 72, nunca un % mezclado.
+  Tono = suma lumen (cubetas LOOK_HUECO). Cupo = nG.
+  Hueco = paso en TIROS G→G núcleo. Extra no sienta (0 en lote).
+  Vector por hora: n_tren, n_GRG, n_6-7, n_cola≥11, …
+  Moda = cubeta que más se repite EN ESA hora (empate = sin gesto).
+  Evento = esa hora tuvo al menos uno (no es media).
+  Analogías G-R-G / 6–7 R / tren = forma de lo visto, no la
+  única cubeta. También: isla, corto+cola, ocupación, desierto.
+
+VEREDICTO
+  Sí se ve hora a hora: moda + eventos + tira de un día.
+  Apagada/opaca: NO manda 6–7 R. Plural = 3–4 R / paso 4–5.
+  Empate ~40%: la hora a menudo no tiene un gesto único.
+  Colas ≥10/15 SÍ son evento de esa hora (~90% / ~61% apagadas).
+  Generosa: sube tren/G-R-G como evento; plural de moda → tren.
+  La hora sigue ISLA. La forma que manda: corto+cola (bimodal).
+  Horas del mismo tono NO se parecen (intra L1 ≈ intra-todas).
+  G+7 se veía azar porque pooló anclas de horas bimodales.
+  No sentar. Hold: celdas de tono chicas.
+
+NÚMEROS (train; hold en el report — n = HORAS)
+  muy_apagado 312 h: moda-R 3–4R 41 · 6–7R 19 · empate 130
+             ev≥10R 89.7% · ev≥15R 60.9% · isla 92% · corto+cola 81%
+  opaco 264 h: moda-R 3–4R 48 · 6–7R 11 · empate 103
+  fuerte 122 h: moda-paso tren 30 · ev tren 89% · isla 73%
+  rica 153 h: moda-paso tren 56 · ev tren 99% · isla 62%
+  intra L1 apagada 1.13 ≈ todas 1.00 · centro apagada↔fuerte+ 0.40
+
+CENSUS
+  Relato vivo «apagada manda 6–7 R»              NO (moda)
+  Relato vivo «colas ≥10/15 en apagada»          SÍ (evento)
+  Relato vivo «generosa = G-R-G / trenes»        SÍ evento / NO isla
+  Taxonomía de moda como tip / dashboard         FRÍO
+  Jaccard / P(tiro=G) / pool de G                VETO (juez)
+
+DÓNDE
+  look_hora_formas.py · reports/LOOK_HORA_FORMAS.txt

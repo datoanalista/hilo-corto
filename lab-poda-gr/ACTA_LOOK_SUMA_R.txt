@@ -1,0 +1,32 @@
+ACTA LOOK — SUMA DE R ENTRE G vs ±5 h
+=====================================
+fecha: 2026-09-12
+lab: hilo-corto/lab-poda-gr/
+script: look_suma_r.py → reports/LOOK_SUMA_R.txt
+cinta: depuracion/data_all_lightgreen.txt · 288 h
+R1=1 R2=2 R3=5 R4=10
+Cero prod. Cero LIVE. Cero tip. Cero Jaccard.
+
+PREGUNTA
+  Sumar multiplicadores R entre dos G.
+  ¿Esa suma calza en otra hora, pasado o
+  futuro, |Δt|≤5? No el hueco de al lado.
+
+VEREDICTO
+  La cifra suelta no ecoa. ~32% aparece en
+  algún hueco de H+k; nula de firmas ~32%.
+  Ventana ±5 “alguno” 83% = cifras comunes
+  (0,1,2,5), no memoria. Ordinal #k ≈ nula
+  o por debajo. Σ≥20 tampoco vuelve.
+
+  Capa 2 (libertad):
+  · Primer hueco de horas pegadas: calza
+    MENOS que nula (3.5% vs 6.3%, 80/80).
+    8 de 10 iguales eran tren (0). Mitades
+    y hold del mismo lado, 1ª mitad más floja.
+  · Total R de la hora a ±2 h: 2.8% vs
+    nula 1.0% (2/80). 8 pares. n chico.
+    Mitades mismo signo.
+  · Wrap :00 y Σ vs lumen G: no.
+
+NO CABLEAR. No es ley. Dos olores finos.

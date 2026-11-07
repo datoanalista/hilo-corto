@@ -1,0 +1,5 @@
+Esta casa = jokerbets-mesa (bots).
+Prod = ../hilo-corto/dashboard. No se pisa.
+
+Leer: 00_CASA.txt · CLARIDAD.txt · jokerbets/INTERRUPTOR.txt
+Cero implementación hasta REGLA.txt llena.

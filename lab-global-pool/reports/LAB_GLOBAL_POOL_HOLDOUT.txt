@@ -1,0 +1,51 @@
+LAB GLOBAL-POOL — HOLDOUT 72h
+Train: 850 h · Holdout: 72 h (ultimas 72)
+Holdout: h11-280826 .. h10-310826
+Reglas fijadas en train · sin re-tune en holdout
+
+=== TOP 10 TRAIN ===
+   cut  estrategia          play%   banda@GO   lift
+  @50  H4-quorum-6         52.0%    64.8%    +3.9pp
+  @40  H4-quorum-6         47.1%    64.2%    +3.4pp
+  @50  H4-quorum-LC        67.0%    63.4%    +2.6pp
+  @50  H4-quorum-4         79.4%    63.0%    +2.2pp
+  @30  H4-quorum-6         47.6%    61.4%    +1.2pp
+  @40  H4-quorum-LC        64.4%    61.9%    +1.2pp
+  @40  H4-quorum-4         77.5%    61.6%    +0.9pp
+  @30  H4-quorum-LC        63.8%    61.0%    +0.8pp
+  @30  H4-quorum-4         76.9%    60.9%    +0.7pp
+  @40  H3-P8-gate          82.0%    61.1%    +0.4pp
+
+=== TRAIN vs HOLDOUT ===
+   cut  estrategia          train lift  hold lift  hold play  hold banda
+  @50  H4-quorum-6           +3.9pp    +9.8pp    41.7%    59.0%
+  @40  H4-quorum-6           +3.4pp   +13.2pp    40.8%    64.3%
+  @50  H4-quorum-LC          +2.6pp    +6.2pp    61.7%    55.4%
+  @50  H4-quorum-4           +2.2pp    +2.0pp    71.7%    51.2%
+  @30  H4-quorum-6           +1.2pp    -3.2pp    36.1%    52.8%
+  @40  H4-quorum-LC          +1.2pp    +8.3pp    54.9%    59.3%
+
+=== HOLDOUT baseline siempre-SI ===
+  @20  banda=54.9%  n=72
+  @30  banda=56.0%  n=72
+  @40  banda=51.1%  n=71
+  @50  banda=49.2%  n=60
+
+=== HOLDOUT pierde-bloque @cut ===
+  @30  H4-quorum-6         play=36.1%  banda=52.8%  lift=-3.2pp
+  @30  H4-quorum-LC        play=48.6%  banda=55.8%  lift=-0.2pp
+  @30  H4-quorum-4         play=65.3%  banda=55.9%  lift=-0.1pp
+  @40  H4-quorum-6         play=40.8%  banda=64.3%  lift=+13.2pp
+  @40  H4-quorum-LC        play=54.9%  banda=59.3%  lift=+8.3pp
+  @40  H4-quorum-4         play=66.2%  banda=58.6%  lift=+7.5pp
+  @50  H4-quorum-6         play=41.7%  banda=59.0%  lift=+9.8pp
+  @50  H4-quorum-LC        play=61.7%  banda=55.4%  lift=+6.2pp
+  @50  H4-quorum-4         play=71.7%  banda=51.2%  lift=+2.0pp
+
+=== VEREDICTO HOLDOUT ===
+  Mejor train: @50 H4-quorum-6  lift=+3.9pp
+  Mejor holdout 1-shot: @40 H4-quorum-6  lift=+13.2pp  play=40.8%  banda=64.3%  (train +3.4pp)
+  Mejor holdout pierde-bloque: @40 H4-quorum-6  lift=+13.2pp  play=40.8%  banda=64.3%
+  OK: lift positivo en 72h ciegas.
+
+INFO sombra. No boleto LIVE.

@@ -1,0 +1,70 @@
+ACTA LAB POOL × CIERRE ABIERTO
+================================
+fecha: 2026-08-31
+lab: hilo-corto/lab-alerta-costura/
+script: eval_pool_cierre.py
+cinta: 936 pares h→h+1 · 938 h con pool P8 (inter2)
+holdout: 72 pares
+
+PREGUNTA
+  ¿La señal cierre abierto (h+1-only) ayuda a leer pools
+  en el bloque 00-19 de la hora nueva?
+
+SEÑAL (NUEVA cableada)
+  · olor @55-59 hN: G 50-54 + apertura
+  · confirmado: 1er G hN+1 en min 0-3
+
+JUEZ POOLS
+  · Pool 8 (inter2): banda d≤1 sobre G oficiales
+  · Bloque 00-19 vs 40-59
+  · LC-01 incremental (tips tras cada G en 0-19)
+
+── TODA CINTA · señal NUEVA ──
+  ON  n=730  early03=69%  early19=99%  P8∈00-19=100%
+      banda00-19=61%  banda40-59=59%  1erG med=min 2
+  OFF n=203  early03= 0%  early19=98%  P8∈00-19=100%
+      banda00-19=59%  banda40-59=62%  1erG med=min 7
+  Δ banda 00-19: +2 pp · Δ early03: +69 pp (circular: confirmado)
+
+── HOLDOUT 72 · señal NUEVA ──
+  ON  n=53   early03=70%  banda00-19=65%  1erG med=2
+  OFF n=19   early03= 0%  banda00-19=60%  1erG med=8
+  Δ banda 00-19: +5 pp
+
+── SOLO OLOR @55-59 (predictivo, sin confirmado) ──
+  TODA: early03 ON=55% OFF=53% · banda00-19 +1 pp
+  HOLD: early03 ON=53% OFF=50% · banda00-19 +7 pp
+
+── LC-01 incremental 0-19 ──
+  ON:  hit d≤1 = 70% (1266/1797 tiros)
+  OFF: hit d≤1 = 65% (211/324 tiros)
+
+── BASELINE ──
+  Todas las horas P8: early19=99% · banda00-19=61% · 1erG med=3
+
+── LECTURA ──
+  1. early19 ~99% siempre — casi toda hora tiene G en 00-19.
+     La señal NO filtra “¿habrá actividad temprana?” (casi siempre sí).
+  2. Sí separa TIMING del 1er G: ON med min 2 vs OFF med min 7-8.
+     OFF = sin olor y sin G 0-3 → arranque tardío más probable.
+  3. P8 banda en 00-19 sube poco: +2 pp cinta · +5 pp holdout ON vs OFF.
+     Olor solo: +7 pp banda holdout (olor predictivo @55).
+  4. P8 siempre tiene chip en 00-19 (100%) — no es filtro de cobertura.
+  5. LC-01 incremental: +5 pp hit cuando señal ON (70 vs 65%).
+
+── VEREDICTO ──
+  OLOR para pools — contexto de TIMING, no gate:
+  · Útil: “cierre abierto @55 → oler 1er G pronto (med ~2)”
+  · Útil: “sin señal @55 y sin G 0-3 → 1er G ~min 7+”
+  · Modesto: banda P8 00-19 +5-7 pp cuando ON / olor
+  NO:
+  · No filtrar global-pool @40 con esta señal (bloques distintos)
+  · No apagar pools si cierre cerrado (early19 sigue ~98%)
+  · No boleto — INFO sombra como global-pool
+
+DECISION
+  Mantener icono solo en reloj (OK cableado).
+  Opcional futuro (sin OK): tip INFO en fila pools
+  “olor bloque temprano” @55-58 — no cablear sin pedido humano.
+
+fin

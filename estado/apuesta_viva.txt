@@ -1,0 +1,34 @@
+APUESTA VIVA (sombra hilo-corto, no A01)
+
+Mesa h3-190926
+(en la anterior, h2-190926, ya se vieron las luces)
+
+Boleto LIVE · INTER2 (acuerdo exacto ≥2 de P0–P5).
+Minutos con acuerdo: 11. Pool 9 tenía 11.
+Sin acuerdo ≥2 esta hora — se usó el boleto clásico P0 (fallback).
+
+1) Número seguro
+INTER2 no usa SEGURO de costura: todas las fichas son banda (±1).
+
+2) ¿Te sentás a esta mesa?
+Sí. 11 fichas donde al menos dos pools (P0–P5) pusieron el mismo minuto. No agregues de más.
+
+3) Tus fichas
+Cada una cobra si sale ESE minuto o el de al lado (tres números pegados).
+  01  cobra 00, 01 y 02
+  06  cobra 05, 06 y 07
+  10  cobra 09, 10 y 11
+  15  cobra 14, 15 y 16
+  22  cobra 21, 22 y 23
+  29  cobra 28, 29 y 30
+  40  cobra 39, 40 y 41
+  45  cobra 44, 45 y 46
+  51  cobra 50, 51 y 52
+  55  cobra 54, 55 y 56
+  59  cobra 58, 59 y 00
+
+Pool 9 (motor clásico) sigue visible en sombra para comparar.
+
+
+chips: 01, 06, 10, 15, 22, 29, 40, 45, 51, 55, 59
+cierre largo  clima normal  k=11

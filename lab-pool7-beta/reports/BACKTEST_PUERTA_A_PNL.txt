@@ -1,0 +1,36 @@
+BACKTEST PnL — Puerta A + Pool7 (histórico)
+Horas con G: 1324 · días calendario ~58 · semanas ISO ~9
+Apuesta: $400/clic (4×$100) · banca inicial $10,000/cuenta
+Premio en acierto: lumen × 20 × (stake/200) — proxy capturas $200→lumen×20
+Reglas: tip LC-01 · zona min piso en tip±1 · gap≤3 tiros · latch Puerta A
+  Clásica: ≥2 G, media≥68, min<40, suma<850, sin techo
+  Ampliada: + forma (oleada/piso/meseta) con media 40–67 en ALERTA
+
+========================================================================
+Solo Puerta A clásica (media≥68)
+------------------------------------------------------------------------
+  Apuestas: 2,979 · aciertos banda en tiro apostado: 643 (21.6%)
+  PnL total: $795,440 · por apuesta: $267.02
+  Promedio por día (calendario): $13,714
+  Promedio por semana (ISO): $88,382
+  Banca final (1 cuenta): $805,440
+  Mínimo banca: $25,680 · drawdown máx: $34,920
+  ¿Llegó a $0? NO (banca inicial $10,000)
+
+========================================================================
+Puerta A ampliada (+ forma)
+------------------------------------------------------------------------
+  Apuestas: 4,180 · aciertos banda en tiro apostado: 931 (22.3%)
+  PnL total: $1,117,320 · por apuesta: $267.30
+  Promedio por día (calendario): $19,264
+  Promedio por semana (ISO): $124,147
+  Banca final (1 cuenta): $1,127,320
+  Mínimo banca: $7,720 · drawdown máx: $32,440
+  ¿Llegó a $0? NO (banca inicial $10,000)
+
+Delta ampliada vs clásica: $+321,880 total · +1,201 apuestas
+
+Notas:
+  · Sin pill Brillo opaca (cinta no trae brillo); techo = hora tras suma G≥850.
+  · 3 cuentas = ~3× PnL y ~3× riesgo de drawdown si apuestan en paralelo.
+  · Premio real varía por tipo G; proxy puede desviarse ±20% del neto.

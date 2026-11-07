@@ -1,0 +1,76 @@
+ACTA LAB SHOW-MOTOR — Ronda 1
+================================
+fecha: 2026-08-31
+lab: hilo-corto/lab-show-motor/
+script: run_lab.py → reports/LAB_SHOW_MOTOR.txt
+
+PREGUNTA
+  Asumiendo que el juego ES Live Jokers Show (54 casillas),
+  construir motores incrementales desde la física del show
+  y comparar con prod (clásico / INTER2).
+
+SUPUESTO (base explícita)
+  Plato 54: 45 R (21/13/7/4) + 9 G bonos · P(G)=9/54
+  Tinta G = menú L previo (E01), no casilla G iid
+  Cinta: depurar-all-4G-detail.txt · 920 h · holdout 72 h
+
+── RONDA 1 ──
+
+H0 SHOW — plato
+  Mezcla G 16.67% · urna R calza · menú G emp ≈ imagen (G1↔G2 swap)
+  Capas naturales: plato → mapa H-1 → cierre → clima → SOM02 → INTER2
+
+H1 MINUTO banda d≤1 (holdout 71 h)
+  M0-PLATO54      38.4%  k≈9.6   (plato solo — insuficiente)
+  M1-MAPA         43.1%  (+4.8pp vs M0)
+  M2-CIERRE       43.9%  (+0.8pp)
+  M3-SOM02        45.1%  (+1.2pp)  ≈ clásico
+  M4-CLASSIC      45.1%  (referencia prod hilo)
+  M6-SHOW-V1      44.9%  (motor nuevo explícito ≈ clásico)
+  M5-INTER2       60.6%  k≈14.3  (+15.5pp vs clásico)
+  VEREDICTO: mejor show puro = M3/M4; INTER2 sigue arriba
+
+H2 CIERRE (show)
+  Largo → G 94.5% train · 89.5% holdout
+  VEREDICTO: VIVE — capa obligatoria, no ruleta iid
+
+H3 LETRA (tiro G con L previo, n=697)
+  MENU-L 62.4% · WHEEL-G 35.0% · azar 25%
+  VEREDICTO: confirma E01 — tinta desde menú, no plato-G
+
+── SÍNTESIS ──
+  Prod clásico YA emula la física del show (cierre+mapa+sombra).
+  M6 SHOW-V1 no supera clásico — no hay motor “desde cero” mejor.
+  INTER2 = capa acuerdo ≥2 pools; no es física del plato.
+  Plato 54 iid = piso (38%); capas show suben a ~45%.
+  VIVE=0 reemplazar prod por casino · VIVE=1 orden capas show
+  OLOR=forma global 54 · FRÍO=plato uniforme como motor único
+
+DIF vs lab-ruleta-zero
+  Ruleta-zero probó “¿y si fuera casino?” → no.
+  Show-motor parte “el juego ES el show” → clásico = respuesta.
+  Misma cifra INTER2 60.6%; misma banda clásico 45.1%.
+
+── RONDA 2 ──
+
+H4 ORDEN / PLATO (holdout 71 h)
+  M7-MAPA-CIERRE   45.0%  (−0.1pp vs clásico)
+  M8-K-PLATO       43.9%  (−1.2pp)
+  M9-PLATO×MAPA    44.4%  (−0.7pp)
+  M10-SIN-CIERRE   44.4%  (−0.7pp)
+  VEREDICTO: FRÍO — reordenar capas no mejora prod
+
+H5 HÍBRIDO INTER2 + show
+  H1-INTER2-SHOW-P0   60.6%  (= INTER2; show ≈ P0)
+  H2-INTER2-SHOW+7    72.1%  k≈18 · OLOR artefacto doble voto
+  H3-INTER2-CL∩SH     45.1%  (= clásico)
+  H4-UNION-CL+SH      45.1%  (= clásico)
+  VEREDICTO: H2 infla acuerdo contando show+clásico aparte;
+  no motor válido. Techo operativo = INTER2 prod 60.6%.
+
+── SÍNTESIS R1+R2 ──
+  Show → clásico (R1). Orden/plato/híbrido no supera prod (R2).
+  VIVE=0 reemplazar motor · VIVE=1 capas show ya en clásico
+  OLOR=H2 7 pools · FRÍO=M7–M10 reorden · CERRADO R2
+
+fin

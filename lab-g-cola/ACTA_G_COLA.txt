@@ -1,0 +1,175 @@
+ACTA LAB G-COLA
+===============
+fecha: 2026-08-29
+lab: hilo-corto/lab-g-cola/
+script: run_lab.py -> reports/LAB_G_COLA.txt
+cinta: data_3dias.txt + extraccion-en-vivo (sanitizado) · 881 h
+holdout: 72 h
+
+PREGUNTA
+  ¿Se puede detectar G>400 o G>500 en bloque 20-40 antes o en curso?
+  ¿Aviso tipo "probable cola en 20-40" antes de que empiece el bloque?
+
+── H0 BASE ──
+  G>400: 80/881 h (9.1%) · G>500: 44/881 h (5.0%)
+  En bloque 20-39:
+    G>400: 31 h (3.5%) · med 1er >400 min=34
+    G>500: 20 h (2.3%) · med 1er >500 min=28
+  Tipos en 20-39: G3 domina (>500), G4 también presente
+
+── H1 PRE-HORA (min 0, sin tiros) ──
+  SE VE: hod cálido (h14/h01/h15) sube P(G>500 en 20-39) ~2× vs base
+         lift ~2.4 train · prec ~6% (157 FP / 10 TP)
+  NO SE VE: holdout 72h → 0 eventos G>400/500 en 20-39 (muestra vacía)
+  NO SE VE: H-1 maxG>=110 → prec ~4% rec ~77% (casi todo FP)
+  VEREDICTO: FRÍO para aviso específico de bloque 20-40
+             OLOR débil solo como sesgo hod (no copy solo)
+
+── H2 EN CURSO — antes del bloque 20-40 ──
+  @min 0-10: sin señal útil (prec ~0-2%)
+  @min 19 (último minuto antes de 20-39):
+    maxG>=85 en 0-19 → rec ~26% G>400 en 20-39 · prec ~2%
+    meanG>=65 + nG>=2 → similar olor
+    Si ya cayó G>500 en 0-19 → lift alto pero rec 5% (cola ya pasó)
+  holdout: 0 hits en 20-39 → no valida
+  VEREDICTO: OLOR-VIVE @min19 si apertura fuerte SIN cola aún
+
+── H3 DENTRO 20-39 ──
+  Cola cae med min 28-29 (alinea lab-supernova med 35 global)
+  G3|G4 mayoría · no regla única de tipo
+
+── H4 MAPA HOD ──
+  h14/h01/h15/h00 ~5-6% P(G>500 en 20-39) vs global 2.3%
+
+── H5 AVISO CABLEABLE (INFO, no boleto) ──
+
+  DISPARO @min 19 (o al cerrar tercio 0-19):
+    · aún NO hay G>500 en la hora
+    · maxG en 0-19 >= 85  OR  (meanG>=65 y nG>=2)
+
+  COPY sugerido:
+    "Olor de cola: apertura fuerte — posible G>400-500 en bloque 20-40"
+
+  Métricas train (aviso compuesto):
+    G>400 en 20-39: base 3.8% · prec ~2% · rec ~26% · lift ~0.5
+    G>500 en 20-39: base 2.5% · prec ~1% · rec ~25% · lift ~0.5
+
+  Interpretación humana:
+    · Cuando dispara, ~1 de cada 40 avisos acierta cola en 20-40
+    · Pero ~1 de cada 4 horas que SÍ traen cola en 20-40 habrían avisado @19
+    · NO avisar pre-hora solo (min 0): demasiadas FP
+    · NO confundir con supernova (suma hora); esto es UNA G gorda en el medio
+
+DECISIÓN
+  Lab ronda 1 CERRADA. VIVE=0 · OLOR=aviso @min19 apertura fuerte sin cola
+  Siguiente paso si OK humano: colaGInfo.js + tip en BrilloModal/Extracción
+
+── RONDA 2 (2026-08-29) — 3 bloques · precisión ──
+  Script: run_lab_r2.py + barrido_prec.py -> reports/LAB_G_COLA_R2.txt
+
+  H6 tres bloques (881 h):
+    0-19:  G>500 1.2% med min 8
+    20-39: G>500 2.3% med min 28
+    40-59: G>500 1.7% med min 51  ← cola tardía
+
+  ¿Mejorar precisión? SÍ, con trade-off (menos avisos, menos recall).
+
+  Bloque 20-39 @19:
+    TECHO ~2-3% prec aunque endurezcas (maxG+G34+acum)
+    Holdout 72h: 0 eventos >500 en 20-39 → no valida
+
+  Bloque 40-59 @39 — MEJOR CASO:
+    G>400: maxG>=250 & meanG>=70 & G3|4 & sin>400 ya
+      train prec 8.2% rec 14% (4/49)
+      holdout prec 29% rec 50% (2/7) — muestra chica
+    G>500: maxG>=250 & acum>=600 & G34 & sin>500
+      train prec 4.4% · holdout prec 20% (1/5)
+
+  En curso (durante bloque):
+    Tras G>=400 reciente en 20-39: prec ~17% pero n muy bajo
+    Cierre 40-59: mejor esperar @39 que disparar minuto a minuto
+
+  RESTO de hora (@39 cualquier cola futura >400):
+    mejor prec ~3.3% — no crown
+
+  VEREDICTO R2:
+    VIVE=0 regla única
+    OLOR-DOBLE:
+      · Tier A (sensible): maxG>=85 @19 / hora generosa @39 — rec alto, prec ~2%
+      · Tier B (estricto): @39 maxG>=250 + meanG>=70 + G34 + sin cola → 40-59
+        copy: "Hora muy generosa — olor cola fuerte en cierre (40-59)"
+        prec ~8-30% según umbral · dispara ~5-7% de horas
+
+── RONDA 3 (2026-08-29) — discovery · especies · comportamiento ──
+  Script: run_lab_r3.py -> reports/LAB_G_COLA_R3.txt
+
+  H1 ESPECIE (44 h G>500 / 882):
+    cola_medio 18 · cola_cierre 14 · cola_apertura 6 · cola_temprana 4 · multi 2
+
+  H2 PERFIL con cola vs sin:
+    SE VE: sumG 1352 vs 574 · meanG 152 vs 58 · acum@39 952 vs 374
+    NO SE VE: acum@19 igual (176 vs 170) — hora normal al cerrar 0-19
+    Insight: no predecir al min 19; leer @35-39 o cuando hora ya es generosa
+
+  H3 ANATOMÍA (46 eventos G>500):
+    min med 30 · lumen 740 · G3/G4 · R largo antes 72% · ~6ª G · salto 4× acum
+
+  H5 TEJIDO:
+    SE VE: 70% comparten día con otra cola · 73% H-1 fuerte
+    hod caliente: h00 13.5% · h15 10.8%
+
+  H6 MEJOR PRECISIÓN:
+    nG>=8 & meanG>=75 @39 → prec 21% train / 12% holdout (G>500)
+    cierre acum>=550 @39 → ho prec 14% cola 40-59
+
+  H7 CENSO: 46 eventos identificados uno a uno (ver reporte)
+
+  VEREDICTO R3:
+    VIVE=0 · OLOR-VIVE por especie + lectura en curso tardía
+    Cableable: hora_generosa @39 · cola_cierre · dia_caliente · post-G R_largo+G34
+
+── RONDA 4 (2026-08-29) — generosidad · costura · combos ──
+  Script: run_lab_r4.py -> reports/LAB_G_COLA_R4.txt
+
+  H1 GENEROSIDAD DÍA:
+    SE VE: día generoso 7.5% G>500 vs 4.0% normal (1.9×)
+           G>400 14.2% vs 7.0%
+    NO SE VE: día partido (med<600) — 4.1% vs 6.2%
+
+  H2 HOD + DÍA:
+    h15 P(cola)=10.8% · h14 5.7% · h00 13.5%
+    dia_generoso + hod14|15|19: prec 12.1% train (4 tp / 29 fp)
+
+  H3 COSTURA:
+    SE VE: h14->h15 P(cola@15)=11.4% lift sum +195
+           h14 sin G0-9 -> h15: 16.7% vs con G 10.3% (n=6/29)
+    NO SE VE: h15->h16 cola (0%) — post-techo enfría
+
+  H4 POST VECINA:
+    SE VE: H-1 SN -> 0% cola (enfriamiento)
+           H-1 cola500 -> 9.7% cola (día caliente)
+    H-1 opaca -> 4.2% (no rebote cola directo)
+
+  H5 COMBOS (mejor holdout):
+    generosa@39: ho prec 16.7% rec 50% (1/6)
+    h14 sin G0-9 -> h15: tr prec 20% (1/5) — n bajo
+
+  H6 ESPECIE × gen:
+    cola_cierre/medio: ~84-90% horas generosas · ~41-45% en día generoso
+
+  VEREDICTO R4:
+    VIVE=0 · OLOR-VIVE reforzado:
+      · Capa día generoso (+90% lift relativo)
+      · Capa costura h14->h15 (sin G0-9 refuerza)
+      · Capa @39 generosa (holdout 17% prec)
+      · NO apilar post-h15-techo (h16)
+    Lab 4 rondas CERRADO para cableado colaGInfo.js
+
+CABLE 2026-08-29:
+  colaGInfo.js · buildColaGTips
+  BrilloModal sección Cola G · tooltip brillo
+  LiveAvance tag Cola + blink botón Brillo
+  Extraccion banner ex-cola-tips (hora activa)
+  cintaParse: maxG/cola500/cola400 por hora
+
+fin

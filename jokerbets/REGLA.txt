@@ -1,0 +1,64 @@
+REGLA — cerrada (puerta A)
+==========================
+stamp 2026-10-13
+Human OK: puerta A · $150/bono · zona Pool 7 · color fijo · $20k.
+Puerta B: fuera del MVP. Mail: fase D (final).
+
+Oficio
+  No perseguir cada G. Entrar cuando el régimen de ESA hora ya
+  se ve “happy”: bonos altos y sostenidos. No anticipar.
+  Apagar al cerrar la hora. La siguiente nace en OFF.
+
+Cuándo ON (Puerta A — resto de ESA hora, solo en zona tip±1)
+  Juntos:
+    1. ≥2 G ya caídas en la hora.
+    2. Media de esas G ≥68 lumen.
+    3. Minuto <40.
+    4. Suma acumulada aún no tocó 850 (si ya la tocó → cola, no ON).
+    5. Esta hora NO es la siguiente a fuerte / muy_fuerte / supernova
+       (techo de costura; el happy no se hereda).
+
+Cuándo OFF (ficha en el bolsillo)
+  · <2 G o media <40.
+  · Hora muy apagada / opaca (no comprar el primer respiro).
+  · Media 40–67: olor a normal; mirar, no comprar.
+  · Un solo G gordo sin compañía que levante la media.
+  · Minuto ≥40 y suma ≥850: llegaste tarde.
+  · Fuera de tip±1 en Pool 7: no existe apuesta.
+  · Puerta B: no cableada en MVP.
+
+Dónde
+  Pool 7 únicamente. Zona = minuto del tiro en curso dentro de tip±1.
+  No rociar el resto de minutos (Apostador / todas las sillas = FRÍO).
+
+Ficha y gesto (mesa)
+  Chip 50 activo. Círculo central ×3 → $50×4×3 = $600 por apuesta
+  ($150 por bono × 4 bonos). Tras bono en ruleta: color rojo|azul|verde
+  (izq|centro|der). Una cuenta = un color, fijo a muerte. Las 3 cubren
+  los 3 colores; nunca dos cuentas al mismo color.
+
+Dinero
+  Arranque $20.000 por cuenta (holgura ~$30k aceptada).
+  Modelo casa: R → −$600; G → 50×lm − $600 (lm = suma colores).
+
+Cuentas e infra
+  Un notebook = 3 URLs (3 perfiles Chrome/Playwright), misma mesa distinta
+  wallet. Pueden existir N notebooks (N×3 URLs); config en servidor,
+  no hardcode. Dashboard: pestaña Mesa + pestaña Cuentas. Cloudflare =
+  lectura; clics solo en el notebook que apuesta.
+
+Extracción
+  WS primaria + backups en las otras cuentas del mismo notebook.
+  F5 / sesión: protocolo por alarma (fase C/D), no reloj ciego.
+
+Peor caso (papel)
+  Sin iframe en dashboard (cookies + X-Frame). Sin captura → no zona.
+  Sin zona → no clic aunque ON.
+
+Rondas de cable
+  A: pestaña Cuentas, config N notebooks, interruptor A solo lectura.
+  B: 3 Chrome, extracción primaria/backup.
+  C: chip 50, círculo ×3, color, SALDO DOM.
+  D: alarma WS/mantenimiento, mail al cerrar hora ON.
+
+Ver también: INTERRUPTOR.txt · COLORES.txt · DINERO.txt · STORYBOARD.txt

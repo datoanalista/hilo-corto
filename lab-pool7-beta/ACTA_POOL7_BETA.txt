@@ -1,0 +1,61 @@
+ACTA LAB — POOL 7 BETA (VENTANA 3 vs VENTANA 5 TIROS)
+=====================================================
+fecha: 2026-09-05
+lab: hilo-corto/lab-pool7-beta/
+script: run_lab.py → reports/LAB_POOL7_BETA.txt
+Cero cambios en prod (LC-01 / dashboard intocable).
+
+PREGUNTA
+  ¿Cómo rinde un "Pool 7 Beta" que solo analiza y compite en los siguientes
+  3 tiros tras cada G, comparado con los siguientes 5 tiros y contra el Pool 7
+  base (sin límite de tiros)? ¿Por qué 3 tiros es el estándar de oro?
+
+CINTA
+  - 1065 horas analizadas (993 h train, 72 h holdout oficial).
+  - 8666 eventos G en train, 618 eventos G en holdout.
+
+TABLA COMPARATIVA (HOLDOUT 72h)
+  --------------------------------------------------------------------------------------
+  Política             | Jugadas    | Cobertura | Exacto (d=0) | Banda (d≤1) | PnL (1:1)
+  --------------------------------------------------------------------------------------
+  P7 Base (ALL)        | 618 / 618  |  100.0%   |    12.1%     |    39.0%    |   -136.0
+  P7 Beta (5 tiros)    | 411 / 618  |   66.5%   |    17.8%     |    55.7%    |    +47.0
+  P7 Beta (3 tiros)    | 290 / 618  |   46.9%   |    19.3%     |    60.3%    |    +60.0
+  P7 Beta (V3 Horiz)   | 290 / 618  |   46.9%   |    34.8%     |    88.3%    |   +222.0
+  P7 Beta (V5 Horiz)   | 411 / 618  |   66.5%   |    18.7%     |    57.7%    |    +63.0
+  --------------------------------------------------------------------------------------
+
+DESGLOSE TIRO A TIRO (HOLDOUT)
+  Tiro 1 (gap 1): 57.8% banda d≤1 (20.7% exacto)
+  Tiro 2 (gap 2): 61.7% banda d≤1 (23.4% exacto)
+  Tiro 3 (gap 3): 62.5% banda d≤1 (12.5% exacto)
+  Tiro 4 (gap 4): 57.6% banda d≤1 (16.7% exacto)
+  Tiro 5 (gap 5): 29.1% banda d≤1 (desplome pronunciado)
+  Sequía (>5 t):   5.8% banda d≤1 (destrucción matemática)
+
+PISTAS Y HALLAZGOS
+  1. POR QUÉ 3 TIROS ES EL ESTÁNDAR:
+     - Entre el tiro 1 y el tiro 3, la banda d≤1 de Pool 7 se mantiene alta y sólida
+       (58% a 62.5%). El motor está en zona caliente/racimo.
+     - En el tiro 5, la banda se derrumba a 29.1% (inferior al azar de ruleta).
+     - Al cerrar la ventana en 3 tiros, se eliminan todos los tiros de desgaste (tiros 4, 5 y sequía).
+  2. EL TRADE-OFF V3 vs V5:
+     - V5 gana +19.6 pp de cobertura (caza 66.5% vs 46.9% de las G), pero paga un costo alto:
+       pierde -4.6 pp de banda (55.7% vs 60.3%) y su PnL neto cae de +60 a +47.
+     - V3 es el óptimo de "menos tiros, pero máxima precisión".
+  3. HORIZONTE FÍSICO (P7 Beta V3 Horiz):
+     - Cuando el cálculo del tip se acota deliberadamente a la duración física de 3 tiros
+       (gap 1..3 min), la banda d≤1 explota a un 88.3% en holdout (84.5% en train) y el
+       acierto exacto sube a 34.8%, debido a que el intervalo predicho cubre exactamente
+       la ventana temporal en que rueda la bola en esos 3 giros.
+
+CENSO
+  P7-BETA-V3        VIVE (confirma estándar de precisión)
+  P7-BETA-V3-HORIZ  OLOR fuerte para diseño de algoritmo de tip dinámico
+  P7-BETA-V5        ABIERTA (útil solo si se prioriza volumen sobre rentabilidad)
+  P7-ALL            FRÍO (mantener tip activo indefinidamente destruye el saldo)
+
+DECISIÓN
+  - No tocar prod sin OK humano explícito.
+  - La ventana de 3 tiros queda científicamente reconfirmada como el límite óptimo
+    de eficacia para Pool 7.

@@ -1,0 +1,120 @@
+LOOK · ¿se puede estimar el próximo gesto?
+Esperado ≠ preciso. No se corona el 12-luego-9.
+train 1090 h · 8424 pares gesto→siguiente. Hold no se mezcla.
+
+Menú general (siguiente, sin mirar el anterior):
+  corto 2571/8424  medio 1678/8424  tren 1509/8424
+  (si el anterior no aporta, el ‘esperado’ es siempre ese menú)
+
+════ 1. Un gesto → el siguiente ════
+  tras tren    n=1513  esperado corto 462/1513  tren 289/1513  medio 284/1513  R med del siguiente 3  mismo menú
+  tras casi    n=1243  esperado corto 358/1243  medio 261/1243  tren 215/1243  R med del siguiente 3  mismo menú
+  tras corto   n=2585  esperado corto 821/2585  medio 531/2585  tren 429/2585  R med del siguiente 3  mismo menú
+  tras medio   n=1685  esperado corto 498/1685  tren 331/1685  medio 330/1685  R med del siguiente 3  mismo menú
+  tras cola    n=1065  esperado corto 327/1065  medio 208/1065  tren 192/1065  R med del siguiente 3  mismo menú
+  tras sequía  n= 333  esperado corto 105/333  medio 64/333  casi 59/333  R med del siguiente 3  mismo menú
+
+════ 2. Dos gestos → el siguiente ════
+Solo pares con ≥25 casos. ¿El segundo cambia lo que ya decía el último?
+  corto+corto   n= 717  esperado corto 227/717  medio 163/717  tren 120/717  igual que tras el último
+  corto+medio   n= 460  esperado corto 145/460  medio 101/460  tren 76/460  igual que tras el último
+  medio+corto   n= 445  esperado corto 146/445  medio 83/445  tren 79/445  igual que tras el último
+  tren+corto   n= 409  esperado corto 128/409  medio 80/409  tren 75/409  igual que tras el último
+  corto+tren    n= 380  esperado corto 115/380  tren 72/380  medio 72/380  igual que tras el último
+  corto+casi    n= 351  esperado corto 97/351  medio 80/351  tren 61/351  igual que tras el último
+  casi+corto   n= 320  esperado corto 99/320  casi 60/320  medio 59/320  igual que tras el último
+  medio+tren    n= 293  esperado corto 86/293  tren 55/293  medio 53/293  igual que tras el último
+  medio+medio   n= 285  esperado corto 84/285  medio 54/285  tren 53/285  igual que tras el último
+  cola+corto   n= 284  esperado corto 98/284  medio 59/284  tren 53/284  igual que tras el último
+  tren+medio   n= 258  esperado corto 74/258  medio 51/258  tren 50/258  igual que tras el último
+  corto+cola    n= 256  esperado corto 87/256  medio 66/256  cola 33/256  igual que tras el último
+  tren+tren    n= 254  esperado corto 78/254  medio 57/254  tren 47/254  igual que tras el último
+  casi+medio   n= 229  esperado tren 63/229  corto 62/229  medio 43/229  cambia vs solo medio → tren
+  medio+casi    n= 215  esperado corto 65/215  medio 42/215  casi 39/215  igual que tras el último
+  tren+casi    n= 193  esperado corto 53/193  medio 38/193  cola 34/193  igual que tras el último
+  casi+tren    n= 191  esperado corto 60/191  tren 37/191  casi 35/191  igual que tras el último
+  medio+cola    n= 182  esperado corto 53/182  tren 34/182  medio 32/182  igual que tras el último
+  tren+cola    n= 181  esperado corto 47/181  casi 36/181  medio 35/181  igual que tras el último
+  casi+casi    n= 179  esperado corto 58/179  tren 35/179  casi 32/179  igual que tras el último
+  cola+tren    n= 174  esperado corto 58/174  tren 42/174  casi 25/174  igual que tras el último
+  cola+medio   n= 166  esperado corto 50/166  tren 35/166  medio 26/166  igual que tras el último
+  casi+cola    n= 143  esperado corto 45/143  tren 32/143  medio 26/143  igual que tras el último
+  cola+casi    n= 124  esperado casi 30/124  corto 30/124  medio 27/124  cambia vs solo casi → casi
+  cola+cola    n= 117  esperado corto 32/117  tren 23/117  medio 20/117  igual que tras el último
+  corto+sequía  n=  89  esperado corto 35/89  tren 19/89  casi 14/89  igual que tras el último
+  sequía+corto   n=  81  esperado corto 25/81  medio 19/81  casi 13/81  igual que tras el último
+  sequía+medio   n=  58  esperado corto 20/58  tren 12/58  medio 10/58  igual que tras el último
+  sequía+casi    n=  52  esperado corto 24/52  casi 8/52  medio 7/52  igual que tras el último
+  medio+sequía  n=  50  esperado casi 14/50  corto 13/50  medio 9/50  cambia vs solo sequía → casi
+  tren+sequía  n=  46  esperado corto 14/46  cola 11/46  medio 8/46  igual que tras el último
+  sequía+tren    n=  41  esperado medio 10/41  corto 9/41  tren 7/41  cambia vs solo tren → medio
+  cola+sequía  n=  37  esperado corto 10/37  medio 8/37  cola 7/37  igual que tras el último
+  sequía+cola    n=  36  esperado corto 16/36  tren 5/36  casi 5/36  igual que tras el último
+  casi+sequía  n=  34  esperado corto 10/34  medio 8/34  tren 7/34  igual que tras el último
+
+════ 3. Películas: tras cola, qué salió ════
+No es el 12. Es ‘después de un hueco largo (9–15 R)’.
+  h10-230726   06·L11  →  17ET0   cola luego tren
+  h11-230726   08·L11  →  20·k2   cola luego corto
+  h11-230726   23·L10  →  33·k2   cola luego corto
+  h11-230726   41·L14  →  53·k2   cola luego corto
+  h12-230726   41·L9  →  49·C1   cola luego casi
+  h16-230726   10·L13  →  23·k4   cola luego corto
+  h16-230726   37·L9  →  47·k4   cola luego corto
+  h17-230726   10·L10  →  20·S17   cola luego sequía
+  h19-230726   12·L11  →  25·k3   cola luego corto
+  h20-230726   31·L11  →  42·L11   cola luego cola
+  h20-230726   42·L11  →  52·k3   cola luego corto
+  h21-230726   12·L14  →  25·k4   cola luego corto
+  h0-240726    42·L12  →  54ET0   cola luego tren
+  h1-240726    43·L10  →  54·C1   cola luego casi
+  h2-240726    14·L10  →  25·T0   cola luego tren
+  h4-240726    34·L10  →  45ET0   cola luego tren
+
+════ 4. Películas: dos colas seguidas (la forma del 12+9) ════
+  h20-230726   31·L11  42·L11  →  52·k3
+  h19-240726   19·L11  29·L9  →  39·k2
+  h21-240726   09·L12  21·L9  →  31·C1
+  h3-250726    11·L13  23·L14  →  37·T0
+  h22-250726   10·L11  21·L15  →  34·m7
+  h23-250726   05·L10  16·L12  →  27·k2
+  h22-260726   26·L14  40·L11  →  53·k3
+  h9-270726    19·L9  29·L9  →  39ET0
+  h8-280726    17·L12  30·L9  →  40·T0
+  h13-280726   21·L10  31·L12  →  43·T0
+  h3-290726    10·L15  24·L15  →  38·T0
+  h6-290726    27·L9  36·L15  →  50ET0
+  (en el train hay 117 veces cola+cola con un gesto después; arriba van las primeras tiras)
+
+════ 5. Películas: tras sequía ════
+  h13-230726   02·S16  →  18·k3   luego corto
+  h13-230726   34·S17  →  50ET0   luego tren
+  h15-230726   08·S17  →  24·m7   luego medio
+  h17-230726   20·S17  →  36·m5   luego medio
+  h18-230726   40·S16  →  55·k3   luego corto
+  h23-230726   05·S18  →  21·k4   luego corto
+  h8-240726    12·S18  →  28·m7   luego medio
+  h9-240726    34·S17  →  49·m6   luego medio
+  h22-240726   19·S16  →  37·C1   luego casi
+  h23-240726   31·S23  →  54·C1   luego casi
+  h1-250726    19·S31  →  46·k4   luego corto
+  h6-250726    15·S39  →  49·k3   luego corto
+
+════ 6. Hueco ABIERTO (vas 9 R y todavía no cerró) ════
+Eso ya ES el gesto de ahora, no el próximo.
+Si el anterior cerró cola/sequía y este ya lleva 9+ R,
+la pregunta es si ESTE se queda cola o se va a sequía.
+  Cuando el siguiente YA midió ≥9 R, ¿cerró cola o sequía?
+  anterior tren    n= 260  cola 207/260  sequía 53/260
+  anterior casi    n= 208  cola 167/208  sequía 41/208
+  anterior corto   n= 410  cola 300/410  sequía 110/410
+  anterior medio   n= 275  cola 206/275  sequía 69/275
+  anterior cola    n= 189  cola 139/189  sequía 50/189
+  anterior sequía  n=  52  cola 47/52  sequía 5/52
+
+Lectura:
+  El menú del siguiente casi no se mueve: gana corto, luego medio.
+  Tras cola/sequía el siguiente NO copia el largo (elástico).
+  Dos colas seguidas no mandan una tercera.
+  Un tren no prohíbe otro; tampoco lo promete.
+  Esperado = ‘lo más frecuente del menú’, no un minuto.

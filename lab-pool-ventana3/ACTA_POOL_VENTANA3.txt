@@ -1,0 +1,109 @@
+ACTA LAB POOL × VENTANA 3 — R0
+================================
+fecha: 2026-09-04
+lab: hilo-corto/lab-pool-ventana3/
+script: run_r0.py → reports/LAB_POOL_VENTANA3_R0.txt
+Cero cambios prod (Pool 8 / INTER2 / dashboard).
+
+PREGUNTA
+  ¿Construir o filtrar pools con ventana 3 (gap≤3 tiros)
+  aumenta la puntería de Pool 8?
+
+── HOLDOUT (72 h, 623 G 2ª+) ──
+  gap≤3: 46.5% de las G
+
+  P8-ALL      exacto 26.2%  banda 61.2%  k≈14.4
+  P8-V3       exacto 25.9%  banda 59.3%  Δbanda −1.8pp
+  P8-SEQ      exacto 26.4%  banda 62.8%  Δbanda +1.6pp
+  TIP-V3      exacto 23.8%  banda 60.3%  k=1
+  P8∩TIP-V3   exacto 14.5%  banda 34.8%  k≈0.7  FRÍO
+
+── PISTAS ──
+  se ve: P8 NO apunta mejor en gap≤3; incluso un poco peor
+  se ve: P8 en sequía (gap>3) banda ≥ P8-V3 (hold)
+  se ve: tip LC en V3 ~60% banda (mismo oficio apostador)
+  se ve: P8∩TIP destroza cobertura/banda (recorta de más)
+  ya estaba: SEQUIA3 ayuda al tip (CUÁNDO apostar), no a chips
+  es nuevo: oficio tip-ventana ≠ oficio acuerdo-pools (P8)
+
+── CENSO ──
+  VIVE prod: 0
+  FRÍO: reconstruir / filtrar P8 por ventana 3
+  OLOR método: ventana 3 = filtro de tip/Go!, no de boleto P8
+
+── DECISIÓN ──
+  No cablear cambio a Pool 8.
+  Ventana 3 sigue en apostador (Go!/alarma), no en INTER2.
+  Lab ABIERTO solo si humano pide otra construcción (emuladores
+  entrenados solo en G cortas, etc.). R0 cierra la pregunta
+  “¿P8 más puntero en V3?” → NO.
+
+════════════════════════════════════════════════════════════════
+ACTA — R1 Pool 0 × ventana 3 (2026-09-04)
+════════════════════════════════════════════════════════════════
+script: run_r1_pool0.py → reports/LAB_POOL_VENTANA3_R1_POOL0.txt
+chips = boleto classic H-1 (Pool 0) · juez gap≤3 vs all
+
+HOLDOUT
+  P0-ALL      exacto 12.3%  banda 36.6%  k≈8.4
+  P0-V3       exacto 14.0%  banda 37.3%  Δbanda +0.7pp · Δexacto +1.7pp
+  P0-SEQ      exacto 10.8%  banda 36.0%
+  TIP-V3      exacto 23.6%  banda 60.3%  << P0
+  P0∩TIP-V3   banda 21.2%  FRÍO
+  P8-V3 ref   banda 58.9%
+
+VEREDICTO R1
+  P0 en V3: lift débil (+0.7pp banda), no material (≥3pp).
+  Tip LC en V3 (~60%) domina a P0 (~37%).
+  Misma conclusión: ventana 3 = CUÁNDO del tip, no rediseño de P0.
+  Cero cable Pool 0.
+
+════════════════════════════════════════════════════════════════
+ACTA — R2 boleto desde histórico V3 (2026-09-04)
+════════════════════════════════════════════════════════════════
+script: run_r2_hist_v3.py → reports/LAB_POOL_VENTANA3_R2_HIST.txt
+Diseño: freq minutos G gap≤3 en lookback 80h (causal) → chips.
+Controles: HIST-ALL mismo k · P0 · P8 · tip.
+
+HOLDOUT juez=todas las G
+  P0              banda 37.2%  k≈8.5
+  HIST-ALL-k9     banda 39.6%  k=9     (+2.4 vs P0)
+  HIST-V3-k9      banda 30.0%  k=9     (−7.2 vs P0)  FRÍO
+  HIST-V3-k14     banda 45.9%  k=14    (+8.8 vs P0; k mayor)
+  HIST-ALL-top20  banda 75.9%  k=20
+  HIST-V3-top20   banda 65.1%  k=20    < HIST-ALL mismo k
+  P8              banda 59.4%  k≈14.5
+
+Juez=solo G gap≤3: HIST-V3-k9 39.0% ≈ HIST-ALL-k9 37.4% (empate débil).
+Tip-V3 sigue ~60% banda (oficio distinto).
+
+VEREDICTO R2
+  Filtrar el histórico a V3 para DISEÑAR el boleto NO ayuda:
+  a mismo k, HIST-ALL ≥ HIST-V3. El +pp de V3-k14/top20 es
+  sobre todo más fichas, no la criba V3.
+  Ventana 3 no es generador de islas/boleto; sigue siendo
+  criba de CUÁNDO (tip/Go!). Cero cable.
+
+════════════════════════════════════════════════════════════════
+ACTA — R3 ruteo tip↔P8 · ESPINA CERRADA (2026-09-04)
+════════════════════════════════════════════════════════════════
+script: run_r3_ruteo.py → reports/LAB_POOL_VENTANA3_R3_RUTEO.txt
+Espina: ¿en sequía confiar P8 (chip≈tip) y en V3 tip LC?
+
+HOLDOUT censo
+  V3:  LC 60.3% >> P8tip 40.1%
+  SEQ: LC 18.6%  = P8tip 18.6%   (empate; no hay “P8 salva sequía”)
+
+HOLDOUT políticas (odds 1:1)
+  SEQUIA3   cov 47%  banda 60.3%  pnl +60
+  ROUTE     cov 97%  banda 39.3%  pnl −129   Δpnl −189
+  ALWAYS    cov 100% banda 38.1%  pnl −149
+  ROUTE_INV / ALWAYS_P8 / SEQUIA3_P8: peores
+
+VEREDICTO R3
+  ESPINA SACADA. El “P8 mejor en sequía” era banda de menú k~14,
+  no un tip útil. Meter P8 en sequía solo diluye a ALWAYS.
+  Política vigente: SEQUIA3 = tip LC solo en gap≤3 · else NO_GO.
+  Lab pools×ventana3 CERRADO. Cero cable nuevo.
+
+fin

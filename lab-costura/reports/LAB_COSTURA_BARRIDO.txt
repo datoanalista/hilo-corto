@@ -1,0 +1,67 @@
+LAB COSTURA — BARRIDO REBOTES
+cinta 873 h · 23 pares consecutivos
+
+=== YA CABLEADO ===
+  h14->h15 rebote (VIVE lab-h15) · h08->h09 techo AVISO (lab-h678)
+  Generico: opacidadInfo castigo ~1h + post-opaca
+
+=== TOP REBOTE opaco-> (n>=8, op>=250) ===
+  h01->h02  op=+434(n=12)  total=+38  med_a=532
+  h22->h23  op=+399(n=9)  total=-63  med_a=613
+  h14->h15  op=+345(n=15)  total=+174  med_a=492
+  h04->h05  op=+341(n=9)  total=-8  med_a=594
+  h18->h19  op=+313(n=13)  total=-25  med_a=535
+  h07->h08  op=+310(n=10)  total=+87  med_a=658
+  h19->h20  op=+306(n=11)  total=+5  med_a=604
+  h16->h17  op=+299(n=9)  total=+27  med_a=554
+  h00->h01  op=+286(n=10)  total=-55  med_a=565
+  h03->h04  op=+283(n=9)  total=+43  med_a=609
+
+=== TOP TECHO fuerte-> (n>=5, fu<=-400) ===
+  h15->h16  fu=-780(n=11)  total=-146
+  h13->h14  fu=-721(n=5)  total=-9
+  h03->h04  fu=-677(n=5)  total=+43
+  h22->h23  fu=-662(n=8)  total=-63
+  h19->h20  fu=-637(n=8)  total=+5
+  h08->h09  fu=-620(n=9)  total=-34
+  h05->h06  fu=-578(n=5)  total=+26
+  h00->h01  fu=-573(n=7)  total=-55
+  h17->h18  fu=-568(n=9)  total=-23
+  h09->h10  fu=-556(n=6)  total=+27
+  h04->h05  fu=-515(n=6)  total=-8
+  h11->h12  fu=-498(n=6)  total=+52
+  h01->h02  fu=-484(n=5)  total=+38
+  h12->h13  fu=-460(n=6)  total=-3
+
+=== VALLE->PICO (lift total >=80) ===
+  h14->h15  lift=+174  med 492->748
+  h20->h21  lift=+121  med 546->612
+  h07->h08  lift=+87  med 658->661
+
+=== GAP 2 (no consecutivo) op>=300 n>=8 ===
+  h13->h15  op=+383(n=11)  total=+152
+  h17->h19  op=+362(n=13)  total=-105
+  h04->h06  op=+351(n=9)  total=+73
+  h19->h21  op=+339(n=11)  total=-3
+  h03->h05  op=+306(n=9)  total=+22
+  h02->h04  op=+301(n=9)  total=-80
+
+=== HOLDOUT opaco (train vs test) — candidatos nuevos ===
+  h01->h02  train op=+464(11) fu=-484(5) | test op=- fu=-
+  h18->h19  train op=+313(13) fu=-213(5) | test op=- fu=-
+  h15->h16  train op=+220(6) fu=-780(11) | test op=- fu=-
+  h11->h12  train op=+232(12) fu=-498(6) | test op=- fu=-
+  h22->h23  train op=+399(9) fu=-662(8) | test op=- fu=-
+  h19->h20  train op=+268(10) fu=-637(8) | test op=- fu=-
+
+=== VEREDICTOS PROPUESTOS ===
+  h14->h15: VIVE rebote — cableado
+  h08->h09: VIVE techo — cableado AVISO
+  h15->h16: VIVE techo — complemento h14-h15 · prioridad cable
+  h01->h02: OLOR rebote — op max +434 · total +38 · madrugada
+  h18->h19: OLOR rebote — cluster tarde · op +313 · total plano
+  h11->h12: OLOR rebote — valle h11 · lift +52
+  h13->h15: OLOR gap2 — salta h14 · investigar
+  h07->h08: OLOR rebote — generico manana
+  h22->h23: FRIO — op alto pero total/fu contradictorios
+  generico H+1: VIVE — opacidadInfo ya cubre

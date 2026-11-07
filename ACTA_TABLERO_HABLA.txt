@@ -1,0 +1,66 @@
+ACTA — tablero habla la mesa
+============================
+stamp 2026-08-19
+Lab: hilo-corto (prod de ESTA caja). Cero LIVE. Cero A01.
+Pedido humano: entender cómo va hablando la mesa.
+OK a tocar React / motor de informe. Mismo boleto.
+
+Qué se cableó (2026-08-18)
+  Vista principal = Joker (la mesa). Kino = otra vista.
+  Arriba: habla viva (árbol TODO-03). Cadencia 0 / 20 / 40.
+  Reloj: tres andenes, aguja del minuto, lengua humana
+  (pleno / ficha cobra tres / cobró / ya jugó).
+  Fichas clicables. Replay de una hora del histórico.
+  Modal para pegar data. Plan de arranque plegado.
+  Avance live: un textbox + Analizar avance. Hora estricta
+  (no mezclar 59→00). Tramo 20 min animado con el reloj
+  del sistema; si no es esa hora, “está fuera de hora”.
+  texto_informe: corte 20 y 40 + TODO-01 (no persigas
+  la tripleta de una ficha que ya cobró).
+
+Qué se cableó (2026-08-19, OK humano: habla L-06…L-15)
+  Mismo boleto. Cero chips. Kino no fusionado.
+  Informe §6: el resto se lee, no se apuesta.
+  Orillas a dos minutos de las islas (lista corta).
+  Puente si hay. Luces lejos se nombran al caer.
+  No persigas la tripleta de la ficha ≠ no persigas
+  la compañera lejos. El +2 de la última luz no es
+  orilla. Extra no se cuelga. La próxima mesa no se
+  llena con estas cuatro.
+  Habla viva: mismas frases, lengua de mesa (orillas,
+  lejos, juntas). No dump de skip/chispa/pareja/racimo.
+  Payload: foto + skip + puentes al slim y a predicción
+  (replay). Cero asiento.
+
+Qué NO
+  No segundo emisor. No sentar extra / skip / pareja /
+  post-L / +2 / G5 / campo H+1. No COVER/SPAN.
+  No canvas de lab. Kino no fusionado. 17 no se vuelve
+  SEGURO porque fallaron otras.
+
+Feedback (esta rueda)
+  Encontró: la ronda L-06…L-15 era habla, no ticket.
+  Funcionó: un diff de informe + UI. Boleto intacto.
+  Provecho: la mesa nombra orillas y luces lejos.
+  Siguiente: nada a sentar. Motor quieto.
+  Decisión: prod de esta caja habla el resto; A01 no.
+
+Qué se cableó (2026-08-19, OK humano: hueco no se carga)
+  Habla VIVA: si van ≥4 min sin luz, un ejemplo con
+  los minutos de ESTA hora. No nombra el próximo.
+  Mesa viva + hueco: no extra para fichar.
+  Informe §4: dos frases fijas (cómo leerla cuando corra).
+  Mismo boleto. Cero chips. No A01.
+
+Qué se cableó (2026-08-19, OK humano: recolecta)
+  Habla: recuento (van N luces no calienta) a cadencia
+  20/40 o con hueco; final del reloj no calienta (T≥50).
+  Arranque: una frase con las tres. Informe §4: recuento,
+  start≠last, luz pinta de más.
+  Recolecta: experimento-organo-tiros/lab-banco/INFO_UTIL.txt
+  Mismo boleto. Cero chips. No A01. No 36.
+
+Fuentes
+  lab-banco/INFO_UTIL.txt · PISTAS.txt · PISTAS_OFICIOS.txt
+  ANALOGIAS: MONEDA CIEGA · START ≠ LAST · EXTRA = OCUPANCIA
+  ORIENTACION ≠ PREDICCION

@@ -1,0 +1,27 @@
+POOL lab-inter2-variants — variantes Pool 8 (sombra)
+======================================================
+fecha alta: 2026-08-31
+lab: hilo-corto/lab-inter2-variants/
+
+CONTEXTO
+  Pool 8 INTER2 prod NO se toca. Este lab busca otro pool
+  (candidato Pool 11+) con menos fichas y/o más precisión.
+
+PREGUNTA
+  ¿Umbral ≥3/≥4, peso desigual, o incluir P9 mejoran banda d≤1
+  vs REF-INTER2-ge2 (≥2 P0–P5)?
+
+FAMILIAS
+  H1 UMBRAL     ge3 · ge4 · ge5 · ge2+cap8/10
+  H2 PESO       P0×2 · V1×2 · P0+V1 · train-calibrado
+  H3 P9         ge2/ge3 7 votantes · P9 peso 0.5 · I8∩P9
+  H4 INFO R2    @19 cola · @20 opaca · H-1 wrap/h14 · combos
+
+JUEZ
+  Banda d≤1 por hora · holdout 72h · detail 913h + data_3dias
+
+R2 (CERRADO)
+  ge2 + filtros INFO · run_lab_r2.py · FRÍO · pareto vacío
+
+VETO
+  No cablear dashboard sin OK · no reemplazar Pool 8

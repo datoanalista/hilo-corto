@@ -1,0 +1,39 @@
+LAB POOL × VENTANA 3 — R2 boleto desde histórico V3
+diseño: freq minutos de G con gap≤3 en lookback=80h (causal) · CERO prod
+
+n_horas=1036 lookback=80 hold=72 (desde idx 964)
+
+== HOLDOUT · juez = todas las G de la hora ==
+  [P0] horas=72 G=697 exacto=12.9% banda=37.2% k≈8.5
+  [P8] horas=72 G=697 exacto=25.5% banda=59.4% k≈14.5
+  [HIST-ALL-k9] horas=72 G=697 exacto=16.4% banda=39.6% k≈9.0
+  [HIST-V3-k9] horas=72 G=697 exacto=14.1% banda=30.0% k≈9.0
+  [HIST-V3-k14] horas=72 G=697 exacto=22.0% banda=45.9% k≈14.0
+  [HIST-V3-top20] horas=72 G=697 exacto=31.0% banda=65.1% k≈20.0
+  [HIST-ALL-top20] horas=72 G=697 exacto=33.7% banda=75.9% k≈20.0
+  [TIP] horas=72 G=625 exacto=14.1% banda=38.1% k≈1.0
+
+== HOLDOUT · juez = solo G gap≤3 de la hora ==
+  [P0] horas=72 G=364 exacto=14.8% banda=38.2% k≈8.5
+  [P8] horas=72 G=364 exacto=24.7% banda=56.3% k≈14.5
+  [HIST-ALL-k9] horas=72 G=364 exacto=16.2% banda=37.4% k≈9.0
+  [HIST-V3-k9] horas=72 G=364 exacto=22.0% banda=39.0% k≈9.0
+  [HIST-V3-k14] horas=72 G=364 exacto=30.5% banda=54.4% k≈14.0
+  [HIST-V3-top20] horas=72 G=364 exacto=40.1% banda=71.2% k≈20.0
+  [HIST-ALL-top20] horas=72 G=364 exacto=36.3% banda=76.6% k≈20.0
+  [TIP] horas=66 G=292 exacto=23.6% banda=60.3% k≈1.0
+
+== DELTA vs P0 (juez todas las G) ==
+  P8: Δbanda=+22.2pp banda=59.4% exacto=25.5% k≈14.5
+  HIST-ALL-k9: Δbanda=+2.4pp banda=39.6% exacto=16.4% k≈9.0
+  HIST-V3-k9: Δbanda=-7.2pp banda=30.0% exacto=14.1% k≈9.0
+  HIST-V3-k14: Δbanda=+8.8pp banda=45.9% exacto=22.0% k≈14.0
+  HIST-V3-top20: Δbanda=+28.0pp banda=65.1% exacto=31.0% k≈20.0
+  HIST-ALL-top20: Δbanda=+38.7pp banda=75.9% exacto=33.7% k≈20.0
+  TIP: Δbanda=+0.9pp banda=38.1% exacto=14.1% k≈1.0
+
+== VEREDICTO ==
+  OLOR diseño: HIST-V3-k14 (+8.8pp vs P0) · HIST-V3-top20 (+28.0pp vs P0) · HIST-ALL-k9 ≥ HIST-V3-k9 (V3 no aporta al diseño freq)
+  → candidato sombra; no cable P0 sin OK.
+  Tip LC sigue siendo otro oficio (no es boleto de k fichas).
+

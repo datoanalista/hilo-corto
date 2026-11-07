@@ -1,0 +1,244 @@
+LOOK · suma de R entre G  (no el hueco de al lado)
+cinta: c:\operacion-joker\depuracion\data_all_lightgreen.txt
+Horas: 288  h0-300726 → h23-100826  hold=48h
+R1=1  R2=2  R3=5  R4=10   juez = calce exacto de la SUMA
+Ventana civil: |Δt| ≤ 5 h. Contiguo de la misma hora no entra.
+
+Saltos civiles >1 h entre horas seguidas de cinta: 0
+Huecos G→G: 2546  median Σ=8  min=0  max=117
+Σ más frecuentes: 0×466, 2×191, 1×159, 5×123, 3×102, 10×88, 6×85, 4×80, 11×68, 13×66, 12×66, 7×66
+
+¿La suma es solo el conteo?
+  corr(Σ, n_R) = +0.921
+  corr(Σ, lumen G que cierra) = +0.018
+  Σ == lumen G que cierra: 13/2544  0.5%
+  Σ banda±1 vs lumen G:    55/2544  2.2%
+
+════ A · la Σ de un hueco, ¿está en ALGÚN hueco de la hora a lag k? ════
+  (no es el contiguo: es otra hora)
+  todas las horas
+    lag -5h    815/2501  32.6%
+    lag -4h    820/2514  32.6%
+    lag -3h    801/2523  31.7%
+    lag -2h    804/2534  31.7%
+    lag -1h    805/2542  31.7%
+    lag +1h    801/2541  31.5%
+    lag +2h    825/2538  32.5%
+    lag +3h    829/2531  32.8%
+    lag +4h    798/2517  31.7%
+    lag +5h    833/2507  33.2%
+    pasado     4045/12614  32.1%
+    futuro     4086/12634  32.3%
+
+════ A2 · nula honesta (se baraja la firma; el reloj no se mueve) ════
+    lag -5h   real 32.6%  nula_med 31.9%  p_nula=83/400
+    lag -4h   real 32.6%  nula_med 31.9%  p_nula=74/400
+    lag -3h   real 31.7%  nula_med 31.9%  p_nula=239/400
+    lag -2h   real 31.7%  nula_med 31.9%  p_nula=248/400
+    lag -1h   real 31.7%  nula_med 31.9%  p_nula=246/400
+    lag +1h   real 31.5%  nula_med 31.9%  p_nula=280/400
+    lag +2h   real 32.5%  nula_med 32.1%  p_nula=110/400
+    lag +3h   real 32.8%  nula_med 32.0%  p_nula=57/400
+    lag +4h   real 31.7%  nula_med 31.9%  p_nula=235/400
+    lag +5h   real 33.2%  nula_med 31.9%  p_nula=21/400
+
+  ¿La Σ aparece en la UNIÓN de las horas pasadas / futuras (≤5)?
+    pasado  1764/2546  69.3%
+    futuro  1782/2546  70.0%
+    alguno  2123/2546  83.4%
+  (esto solo es alto si la cifra es común; mirar A2 vs nula)
+
+════ A3 · misma mira, pero con n_R (sin pesos) ════
+    lag -5h   n_R 51.6%  nula 51.4%  p_nula=156/400   | Σ 32.6%
+    lag -4h   n_R 53.0%  nula 51.3%  p_nula=13/400   | Σ 32.6%
+    lag -3h   n_R 52.0%  nula 51.5%  p_nula=104/400   | Σ 31.7%
+    lag -2h   n_R 51.3%  nula 51.4%  p_nula=216/400   | Σ 31.7%
+    lag -1h   n_R 51.8%  nula 51.3%  p_nula=123/400   | Σ 31.7%
+    lag +1h   n_R 51.6%  nula 51.4%  p_nula=178/400   | Σ 31.5%
+    lag +2h   n_R 51.9%  nula 51.4%  p_nula=110/400   | Σ 32.5%
+    lag +3h   n_R 51.2%  nula 51.4%  p_nula=226/400   | Σ 32.8%
+    lag +4h   n_R 51.1%  nula 51.4%  p_nula=248/400   | Σ 31.7%
+    lag +5h   n_R 52.3%  nula 51.4%  p_nula=58/400   | Σ 33.2%
+
+════ B · mismo ordinal: hueco #k de H vs #k de H+lag ════
+    lag -5h     99/2075  4.8%  nula_med 5.6%  p_nula=384/400
+    lag -4h    120/2090  5.7%  nula_med 5.7%  p_nula=174/400
+    lag -3h    118/2130  5.5%  nula_med 5.6%  p_nula=238/400
+    lag -2h    109/2109  5.2%  nula_med 5.6%  p_nula=337/400
+    lag -1h    111/2132  5.2%  nula_med 5.6%  p_nula=325/400
+    lag +1h    111/2132  5.2%  nula_med 5.6%  p_nula=325/400
+    lag +2h    109/2109  5.2%  nula_med 5.6%  p_nula=337/400
+    lag +3h    118/2130  5.5%  nula_med 5.6%  p_nula=238/400
+    lag +4h    120/2090  5.7%  nula_med 5.7%  p_nula=174/400
+    lag +5h     99/2075  4.8%  nula_med 5.6%  p_nula=384/400
+
+════ C · firma de la hora (no el hueco suelto) ════
+  — primer hueco Σ —
+    lag -5h     21/283   7.4%  nula 6.4%  p_nula=93/400
+    lag -4h     16/284   5.6%  nula 6.3%  p_nula=300/400
+    lag -3h     18/285   6.3%  nula 6.3%  p_nula=212/400
+    lag -2h     21/286   7.3%  nula 6.3%  p_nula=105/400
+    lag -1h     10/287   3.5%  nula 6.3%  p_nula=397/400
+    lag +1h     10/287   3.5%  nula 6.3%  p_nula=397/400
+    lag +2h     21/286   7.3%  nula 6.3%  p_nula=105/400
+    lag +3h     18/285   6.3%  nula 6.3%  p_nula=212/400
+    lag +4h     16/284   5.6%  nula 6.3%  p_nula=300/400
+    lag +5h     21/283   7.4%  nula 6.4%  p_nula=93/400
+
+  — max hueco Σ —
+    lag -5h      8/283   2.8%  nula 1.8%  p_nula=66/400
+    lag -4h      4/284   1.4%  nula 1.8%  p_nula=313/400
+    lag -3h      2/285   0.7%  nula 1.8%  p_nula=390/400
+    lag -2h      2/286   0.7%  nula 1.7%  p_nula=390/400
+    lag -1h      5/287   1.7%  nula 1.7%  p_nula=263/400
+    lag +1h      5/287   1.7%  nula 1.7%  p_nula=263/400
+    lag +2h      2/286   0.7%  nula 1.7%  p_nula=390/400
+    lag +3h      2/285   0.7%  nula 1.8%  p_nula=390/400
+    lag +4h      4/284   1.4%  nula 1.8%  p_nula=313/400
+    lag +5h      8/283   2.8%  nula 1.8%  p_nula=66/400
+
+  — total R de la hora —
+    lag -5h      3/283   1.1%  nula 1.1%  p_nula=290/400
+    lag -4h      3/284   1.1%  nula 1.4%  p_nula=289/400
+    lag -3h      2/285   0.7%  nula 1.4%  p_nula=349/400
+    lag -2h      8/286   2.8%  nula 1.0%  p_nula=14/400
+    lag -1h      3/287   1.0%  nula 1.4%  p_nula=284/400
+    lag +1h      3/287   1.0%  nula 1.4%  p_nula=284/400
+    lag +2h      8/286   2.8%  nula 1.0%  p_nula=14/400
+    lag +3h      2/285   0.7%  nula 1.4%  p_nula=349/400
+    lag +4h      3/284   1.1%  nula 1.4%  p_nula=289/400
+    lag +5h      3/283   1.1%  nula 1.1%  p_nula=290/400
+
+════ D · par (Σ_k, Σ_{k+1}) mismo ordinal en H+lag ════
+    lag -5h      5/1792  0.3%  nula 0.3%  p_nula=254/400
+    lag -4h      5/1806  0.3%  nula 0.3%  p_nula=240/400
+    lag -3h      2/1845  0.1%  nula 0.3%  p_nula=394/400
+    lag -2h      5/1823  0.3%  nula 0.3%  p_nula=259/400
+    lag -1h      3/1845  0.2%  nula 0.3%  p_nula=375/400
+    lag +1h      3/1845  0.2%  nula 0.3%  p_nula=375/400
+    lag +2h      5/1823  0.3%  nula 0.3%  p_nula=259/400
+    lag +3h      2/1845  0.1%  nula 0.3%  p_nula=394/400
+    lag +4h      5/1806  0.3%  nula 0.3%  p_nula=240/400
+    lag +5h      5/1792  0.3%  nula 0.3%  p_nula=254/400
+
+════ E · ¿aguanta en mitades y hold? (ordinal #k y total hora) ════
+  — 1ª mitad train · 120 h —
+    ordinal  pasado 5.6%  futuro 5.6%
+    total    pasado 1.7%  futuro 1.7%
+  — 2ª mitad train · 120 h —
+    ordinal  pasado 4.7%  futuro 4.7%
+    total    pasado 1.4%  futuro 1.4%
+  — hold cola · 48 h —
+    ordinal  pasado 5.6%  futuro 5.6%
+    total    pasado 0.4%  futuro 0.4%
+
+════ F · cruces de escala ════
+  hueco.Σ == total de la hora vecina
+    lag -5h      0/2501  0.0%
+    lag -4h      0/2514  0.0%
+    lag -3h      0/2523  0.0%
+    lag -2h      0/2534  0.0%
+    lag -1h      0/2542  0.0%
+    lag +1h      0/2541  0.0%
+    lag +2h      0/2538  0.0%
+    lag +3h      0/2531  0.0%
+    lag +4h      0/2517  0.0%
+    lag +5h      0/2507  0.0%
+  hueco.Σ == prefijo o sufijo de la vecina
+    lag -5h    302/2501  12.1%
+    lag -4h    308/2514  12.3%
+    lag -3h    281/2523  11.1%
+    lag -2h    320/2534  12.6%
+    lag -1h    327/2542  12.9%
+    lag +1h    308/2541  12.1%
+    lag +2h    279/2538  11.0%
+    lag +3h    316/2531  12.5%
+    lag +4h    309/2517  12.3%
+    lag +5h    322/2507  12.8%
+
+════ G · si sumamos lumen+boost de cada R (no solo la letra) ════
+  ordinal con Σ = lumen+boost
+    lag -5h   4.5%  nula 5.3%  p_nula=392/400
+    lag -4h   5.3%  nula 5.4%  p_nula=213/400
+    lag -3h   5.3%  nula 5.3%  p_nula=202/400
+    lag -2h   5.5%  nula 5.3%  p_nula=143/400
+    lag -1h   5.2%  nula 5.3%  p_nula=242/400
+    lag +1h   5.2%  nula 5.3%  p_nula=242/400
+    lag +2h   5.5%  nula 5.3%  p_nula=143/400
+    lag +3h   5.3%  nula 5.3%  p_nula=202/400
+    lag +4h   5.3%  nula 5.4%  p_nula=213/400
+    lag +5h   4.5%  nula 5.3%  p_nula=392/400
+
+════ H · el contiguo de la MISMA hora (no es la pregunta) ════
+  Σ == Σ del siguiente hueco: 130/2258  5.8%
+  banda ±1:                    275/2258  12.2%
+
+════ películas · ordinal Σ calza a lag −2 y +2 ════
+  — lag −2 —
+  h4-300726    hueco#0 Σ=0   @00→01   h2-300726    hueco#0 Σ=0 @05→06
+  h4-300726    hueco#2 Σ=1   @06→08   h2-300726    hueco#2 Σ=1 @16→18
+  h5-300726    hueco#6 Σ=0   @41→42   h3-300726    hueco#6 Σ=0 @46→47
+  h15-300726   hueco#1 Σ=10  @16→19   h13-300726   hueco#1 Σ=10 @09→11
+  h15-300726   hueco#7 Σ=0   @34→36   h13-300726   hueco#7 Σ=0 @45→48
+  h16-300726   hueco#0 Σ=0   @07→09   h14-300726   hueco#0 Σ=0 @00→02
+  h17-300726   hueco#5 Σ=0   @32→34   h15-300726   hueco#5 Σ=0 @30→32
+  h18-300726   hueco#7 Σ=0   @33→34   h16-300726   hueco#7 Σ=0 @42→44
+  h0-310726    hueco#1 Σ=0   @04→06   h22-300726   hueco#1 Σ=0 @10→12
+  h3-310726    hueco#0 Σ=12  @03→06   h1-310726    hueco#0 Σ=12 @05→11
+  h3-310726    hueco#2 Σ=1   @08→10   h1-310726    hueco#2 Σ=1 @15→17
+  h4-310726    hueco#3 Σ=0   @17→19   h2-310726    hueco#3 Σ=0 @17→19
+  h5-310726    hueco#2 Σ=1   @13→15   h3-310726    hueco#2 Σ=1 @08→10
+  h6-310726    hueco#11 Σ=0   @45→46   h4-310726    hueco#11 Σ=0 @55→58
+  h8-310726    hueco#6 Σ=0   @36→38   h6-310726    hueco#6 Σ=0 @19→20
+  h8-310726    hueco#9 Σ=4   @46→51   h6-310726    hueco#9 Σ=4 @36→41
+  — lag +2 —
+  h2-300726    hueco#0 Σ=0   @05→06   h4-300726    hueco#0 Σ=0 @00→01
+  h2-300726    hueco#2 Σ=1   @16→18   h4-300726    hueco#2 Σ=1 @06→08
+  h3-300726    hueco#6 Σ=0   @46→47   h5-300726    hueco#6 Σ=0 @41→42
+  h13-300726   hueco#1 Σ=10  @09→11   h15-300726   hueco#1 Σ=10 @16→19
+  h13-300726   hueco#7 Σ=0   @45→48   h15-300726   hueco#7 Σ=0 @34→36
+  h14-300726   hueco#0 Σ=0   @00→02   h16-300726   hueco#0 Σ=0 @07→09
+  h15-300726   hueco#5 Σ=0   @30→32   h17-300726   hueco#5 Σ=0 @32→34
+  h16-300726   hueco#7 Σ=0   @42→44   h18-300726   hueco#7 Σ=0 @33→34
+  h22-300726   hueco#1 Σ=0   @10→12   h0-310726    hueco#1 Σ=0 @04→06
+  h1-310726    hueco#0 Σ=12  @05→11   h3-310726    hueco#0 Σ=12 @03→06
+  h1-310726    hueco#2 Σ=1   @15→17   h3-310726    hueco#2 Σ=1 @08→10
+  h2-310726    hueco#3 Σ=0   @17→19   h4-310726    hueco#3 Σ=0 @17→19
+  h3-310726    hueco#2 Σ=1   @08→10   h5-310726    hueco#2 Σ=1 @13→15
+  h4-310726    hueco#11 Σ=0   @55→58   h6-310726    hueco#11 Σ=0 @45→46
+  h6-310726    hueco#6 Σ=0   @19→20   h8-310726    hueco#6 Σ=0 @36→38
+  h6-310726    hueco#9 Σ=4   @36→41   h8-310726    hueco#9 Σ=4 @46→51
+
+════ un día ════
+  día 300726  (Σ = suma R entre G de esa hora)
+    h0-300726    nG=5  nR=57  total=118   huecos[37 44 9 3]
+    h1-300726    nG=9  nR=46  total=112   huecos[19 48 0 10 0 0 9 24]
+    h2-300726    nG=12 nR=47  total=113   huecos[0 25 1 4 5 16 8 0 0 22 0]
+    h3-300726    nG=10 nR=47  total=106   huecos[2 4 53 18 3 4 0 4 6]
+    h4-300726    nG=14 nR=41  total=113   huecos[0 3 1 23 36 10 0 3 9 8 5 14 0]
+    h5-300726    nG=9  nR=54  total=149   huecos[17 0 33 13 22 3 0 0]
+    h6-300726    nG=14 nR=41  total=116   huecos[10 2 2 5 0 13 1 6 1 0 13 15 5]
+    h7-300726    nG=8  nR=56  total=156   huecos[0 20 4 26 30 21 24]
+    h8-300726    nG=8  nR=56  total=171   huecos[23 15 6 17 12 61 5]
+    h9-300726    nG=8  nR=55  total=163   huecos[1 52 19 0 47 0 21]
+    h10-300726   nG=10 nR=53  total=138   huecos[44 3 15 12 17 7 0 4 36]
+    h11-300726   nG=10 nR=49  total=136   huecos[0 28 15 4 15 30 8 1 34]
+    h12-300726   nG=6  nR=56  total=126   huecos[3 9 28 40 2]
+    h13-300726   nG=11 nR=50  total=170   huecos[20 10 13 36 14 20 21 0 1 13]
+    h14-300726   nG=10 nR=48  total=126   huecos[0 46 0 39 5 3 14 1 10]
+    h15-300726   nG=14 nR=44  total=128   huecos[40 10 1 5 9 0 0 0 0 35 26 2 0]
+    h16-300726   nG=11 nR=51  total=135   huecos[0 4 13 15 3 35 8 0 3 12]
+    h17-300726   nG=12 nR=49  total=122   huecos[6 19 9 0 30 0 7 5 1 9 4]
+    h18-300726   nG=13 nR=48  total=127   huecos[7 17 3 6 17 13 1 0 2 19 5 26]
+    h19-300726   nG=8  nR=54  total=128   huecos[2 6 70 8 2 6 1]
+    h20-300726   nG=13 nR=43  total=134   huecos[36 11 0 14 0 0 16 22 0 1 13 9]
+    h21-300726   nG=13 nR=47  total=125   huecos[36 1 10 0 14 2 11 2 23 11 3 0]
+    h22-300726   nG=8  nR=56  total=138   huecos[1 0 10 15 6 41 19]
+    h23-300726   nG=6  nR=60  total=167   huecos[53 18 21 2 34]
+
+Lectura:
+  Calce = misma suma de pesos R, otra hora ≤5 h.
+  Nula = barajar el orden de horas (misma bolsa, se rompe el tiempo).
+  Si real ≈ nula: la cifra es común, no eco.
+  Si ordinal o total levantan en un lag y en las dos mitades: olor.
+  Cero cable.

@@ -1,0 +1,40 @@
+POOL lab-ruleta-zero — Supuesto ruleta 54 casillas
+====================================================
+fecha alta: 2026-08-31
+lab: hilo-corto/lab-ruleta-zero/
+
+PREGUNTA
+  Si la data fuera un juego ruleta (54 casillas, R=1x/2x/5x/10x,
+  G1–G4 bonos), ¿qué predicciones salen desde cero y cómo
+  comparan con prod (INTER2 / clásico / H-1)?
+
+SUPUESTO (forma humana imagen)
+  54 casillas · 45 R · G4=1 G3=3 G2=2 G1=3
+  R partido por frecuencia empírica: 21/13/7/4
+
+HIPÓTESIS
+  H0  La mezcla G/R calza 9/54 (~16.7%) en frecuencia.
+  H1  Ruleta iid predice LETRA mejor que azar pero no minuto.
+  H2  Minutos uniformes + k~wheel NO alcanzan banda prod.
+  H3  Prod gana en minuto; ruleta solo describe mezcla global.
+
+MODELOS MINUTO (juez banda d≤1)
+  RZ-PLANTATE     k=0 (ruleta no nombra minuto)
+  RZ-IID-UNIF     k=mediana nG train · minutos uniformes
+  RZ-WHEEL-K      k=n_tiros·9/54 · minutos uniformes
+  PROD-INTER2     boleto live actual
+  PROD-CLASSIC    Pool 9 clásico
+  REF-H1          foto H-1 (conocimiento, no ruleta)
+
+MODELOS LETRA (siguiente tiro)
+  RZ-HUMAN        slots imagen
+  RZ-EMP-FREQ     slots frecuencia data (G1↔G2 ajuste)
+  RZ-URN          urna R45 + menú G9
+
+CINTA
+  depuracion/depurar-all-4G-detail.txt (cerradas)
+  holdout: 72 h · train walk-forward acumulativo
+
+VETO
+  No cablear dashboard. No tip casino como prod.
+  No A01. Jaccard no es eje.

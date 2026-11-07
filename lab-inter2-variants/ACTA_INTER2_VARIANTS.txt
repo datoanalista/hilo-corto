@@ -1,0 +1,68 @@
+ACTA LAB INTER2 VARIANTES — Ronda 1 (CERRADO)
+===============================================
+fecha: 2026-08-31
+lab: hilo-corto/lab-inter2-variants/
+script: run_lab.py → reports/LAB_INTER2_VARIANTS.txt
+
+PREGUNTA
+  Pool 8 prod NO se toca. ¿Variantes INTER2 (umbral, peso, P9)
+  dan más precisión con menos fichas? → candidato pool sombra nuevo.
+
+CINTA
+  depurar-all-4G-detail · 913 h · holdout 72 h
+  data_3dias · 916 h · holdout 72 h (réplica)
+  juez: banda d≤1 por hora · chips P0–P5 walk + P9=chips_classic
+
+BASELINE
+  REF-INTER2-ge2 = Pool 8 actual (≥2 de P0–P5)
+  detail holdout: 60.5% banda · k≈14.3 · hit 100%
+  data_3dias holdout: 59.1% · k≈14.2
+
+── H1 UMBRAL / menos fichas ──
+  I8-ge3    17.3%  k≈3.2   ΔREF −43 pp
+  I8-ge4     1.6%  k≈0.3   ΔREF −59 pp
+  I8-ge5     0.0%  k=0     ΔREF −60 pp (72/72 horas k=0)
+  I8-ge2-cap10  42.5%  k=10  ΔREF −18 pp
+  I8-ge2-cap8   35.2%  k=8   ΔREF −25 pp
+  VEREDICTO: FRÍO. Menos fichas = mucha menos banda.
+  No hay pareto (misma banda con menos k).
+
+── H2 PESO desigual ──
+  W-P0x2-min3      34.5%  k≈6.7   ΔREF −26 pp
+  W-V1x2-min3      34.7%  k≈7.1   ΔREF −26 pp
+  W-TRAIN-min2     42.9%  k≈9.1   ΔREF −18 pp (mejor peso)
+  W-TRAIN-min2.5   17.3%  k≈3.2   ΔREF −43 pp
+  Pesos train ≈ planos (oficial 1.00, betas 0.99–1.02).
+  VEREDICTO: FRÍO. Ningún esquema supera REF.
+
+── H3 incluir P9 ──
+  I8+P9-ge2        72.1%  k≈18.0  ΔREF +12 pp
+  I8+P9-wP9half    60.5%  k≈14.3  = REF (P9≈P0 duplicado)
+  I8∩P9            28.2%  k≈5.0   ΔREF −32 pp
+  I8+P9-ge3        34.5%  k≈6.7   ΔREF −26 pp
+  VEREDICTO: I8+P9-ge2 = OLOR artefacto (mismo H2 show-motor:
+  P9 = chips_classic ≈ P0 → 7º voto infla acuerdo, k sube).
+  No motor válido para cable. I8∩P9 FRÍO (estricto de más).
+
+── SÍNTESIS R1 ──
+  Pool 8 prod se queda. No hay candidato sombra mejor en banda/k.
+  Tradeoff menos fichas → pierde banda; no hay punto dulce holdout.
+  P9 en acuerdo ge2 sube banda numérica por doble voto — descartado.
+  VIVE=0 cablear variante · VIVE=1 confirmación Pool 8 óptimo en oficio
+  OLOR=I8+P9-ge2 diagnóstico · FRÍO=ge3+, pesos, cap, intersección P9
+  CERRADO R1 · R2 ge2+INFO abajo
+
+── RONDA 2 — ge2 + filtros INFO (@19 · @20 · H-1) ──
+  Script: run_lab_r2.py · 15 filtros sobre ge2 (umbral sigue ≥2)
+  Señales: cola Tier-A @19 · opaca @20 · wrap H-1 · h14 sin G · combos
+
+  Mejor holdout: F-H1-h14sinG-2059  59.7%  k=14.1  ΔREF −0.7 pp
+  @19 cola-A: 52.1% k=12.4 Δ−8.4 · @20 opaca: 50.8% Δ−9.7
+  Combos: F-19cola+20opaca 42.9% Δ−17.6
+  PARETO vs REF: ninguno (recorta k pero pierde banda)
+  VEREDICTO: FRÍO cablear pool sombra INFO-filter.
+  INFO sirve lectura Brillo/Tips; no recortar chips INTER2 pre-hora.
+
+  CERRADO R1+R2
+
+fin

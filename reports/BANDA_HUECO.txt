@@ -1,0 +1,35 @@
+BANDA — BASE vs HUECO (HZ primero)
+stamp 2026-08-22 22:49
+prod: hilo-corto · BASE = motor.py (sin tocar)
+HUECO-HZ: saca minuto 01 del boleto (hazard)
+HUECO-SOM02: +1 sombra (mediana huecos H-1)
+juez: banda d<=1 · n cilindro>=4 · lab sin boleto prod
+
+── BASE ──
+  n=725  k=9.02  G/h=1.62  ±1/h=2.65  score=4.27
+  colapso=0.97%  score/ficha=0.473
+
+── HUECO-HZ ──
+  n=725  k=8.78  G/h=1.52  ±1/h=2.66  score=4.18
+  colapso=1.10%  score/ficha=0.476
+
+── HUECO-SOM02 ──
+  n=725  k=9.26  G/h=1.66  ±1/h=2.71  score=4.37
+  colapso=0.83%  score/ficha=0.472
+
+── HZ→SOM02 ──
+  n=725  k=9.14  G/h=1.57  ±1/h=2.77  score=4.34
+  colapso=0.69%  score/ficha=0.475
+
+════════════════════════════════
+Δ vs BASE
+════════════════════════════════
+  HUECO-HZ      DESCARTA  Δscore=-0.090  Δeff=+0.0025  Δk=-0.24
+  HUECO-SOM02   PROMETE  Δscore=+0.101  Δeff=-0.0015  Δk=+0.24
+  HZ→SOM02      PROMETE  Δscore=+0.070  Δeff=+0.0017  Δk=+0.12
+
+══ LECTURA ══
+  HZ primero (pedido). SOM02 = referencia previa.
+  Nada se cablea al dashboard sin OK.
+
+FIN

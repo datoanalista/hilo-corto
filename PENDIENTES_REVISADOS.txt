@@ -1,0 +1,142 @@
+PENDIENTES REVISADOS — hilo-corto / prod dashboard
+==================================================
+stamp 2026-09-02  (casa limpia — revisión documentación completa)
+Oficio: cerrar todo lo que quedaba “al aire” tras labs ago–sep.
+No es pool. Es inventario de decisiones. Cero LIVE.
+
+Regla: cada ítem tiene ESTADO final + acta. Si no hay OK humano
+explícito para boleto/chip nuevo → CERRADO sin cable.
+
+Resumen: 18 cableados · 21 cerrados · 0 promete · 0 labs ABIERTO.
+Brújula Biblioteca: BITACORA bloque CASA LIMPIA · HILO_CORTO.txt
+
+════════════════════════════════════════════════════════════════
+A. CABLEADO (hecho — no reabrir)
+════════════════════════════════════════════════════════════════
+
+ID              Qué                         Acta / código
+──────────────  ──────────────────────────  ─────────────────────────────
+CABLE-01        LC-01 tip Next              livecero F4 · tipProxima.js
+CABLE-02        Pool 8 INTER2 fijo          mejora-vivo · inter2 R1+R2
+CABLE-03        Pool 10 LIVE-RC sombra      lab-live-recompute · liveRc.js
+CABLE-04        Brillo + modal @40          lab-prohibido E7 · brilloInfo.js
+CABLE-05        Eco tejido (libro)          lab-prohibido E7 · ecoInfo.js
+CABLE-06        Calendario hod              lab-calendario R1–R3 · calendarioInfo.js
+CABLE-07        Supernova + generosidad     lab-supernova · supernovaInfo.js
+                + opacidad día              ACTA_GENEROSIDAD_OPACO
+CABLE-08        Cola G @min19               lab-g-cola · colaGInfo.js
+CABLE-09        Bloque perfil @20+          lab-intra-hora · bloquePerfilInfo.js
+CABLE-10        Cierre abierto @55          lab-alerta-costura H8 · cierreAbiertoInfo.js
+CABLE-11        Global-pool @40 👍/👎       lab-global-pool · globalPoolInfo.js
+CABLE-12        Costura h14→h15 pill        lab-h15 · pasoLiveInfo.js
+CABLE-13        Ola post-SN (~)             sesión UX 2026-09 · olaPostSnInfo.js
+CABLE-14        Extracción live + reingesta dashboard/extraccion · Extraccion.jsx
+CABLE-15        TODO-01/03/04 tablero       el-54-restante/PENDIENTES.txt
+CABLE-18        SOM02 chip sombra motor     ACTA_LAB_SOM02_VS_PROD 2026-08-29
+                (+1 ficha max H-1 + paso)   motor.py · som02ProdTip Tips
+CABLE-16        Tips recomendación sombra   ACTA_TIPS_SOMBRA · ciudad.js (INFO)
+CABLE-17        Cronista tips vivo          livegreen F4.5 · /api/tips/cronista
+
+════════════════════════════════════════════════════════════════
+B. CERRADO sin cable (decisión explícita — no al aire)
+════════════════════════════════════════════════════════════════
+
+ID              Qué                         Veredicto
+──────────────  ──────────────────────────  ─────────────────────────────
+NO-01           Combo costura @55 min       FRÍO como tip aparte; solo
+                (L_wrap|R|G50-54)           cierre abierto H8 cableado.
+                ACTA_ALERTA_COSTURA H5–H7  ACTA_ALERTA_COSTURA.txt
+
+NO-02           Tip “olor bloque temprano”  ACTA_POOL_CIERRE: +5–7 pp
+                en fila pools @55           modesto · no gate · CERRADO.
+                                            ACTA_POOL_CIERRE.txt
+
+NO-03           HUECO-HZ (sacar chip 01)    DESCARTA Δscore −0.09.
+                                            ACTA_BANDA_HUECO.txt
+
+NO-04           Variantes INTER2 ge3/cap/   FRÍO R1+R2 · Pool 8 intacto.
+                peso / INFO @19/@20         ACTA_INTER2_VARIANTS.txt
+
+NO-05           Show-motor reemplazo prod   FRÍO · clásico ≈ show.
+                                            ACTA_SHOW_MOTOR.txt
+
+NO-06           Ruleta-zero vs INTER2       CERRADO R1 · prod intacto.
+                                            ACTA_RULETA_ZERO.txt
+
+NO-07           Rearm pools minuto/bloque   FRÍO · lift era fill azar.
+                                            ACTA_LG12.txt (rearm-pools)
+
+NO-08           Mejora-vivo selectores      FRÍO · FIJO 43.4% sostiene.
+                roll/prev/h1fit/sticky      ACTA mejora-vivo R2
+
+NO-09           CAP14 INTER2 opcional       FRÍO opcional · no cableado.
+                                            BITACORA mejora-vivo
+
+NO-10           Calendario vie/noc 1 línea  OLOR R3 · CalendarioModal ya
+                extra en Brillo             cubre hod; línea suelta NO.
+                                            ACTA_APERTURA R3
+
+NO-11           lab-h15 “acumular holdout”  STANDBY looking · costuraH15
+                lab-h678 idem               ya cableada · ACTA_H15 · H678
+
+NO-12           Supernova H3 tejido post-SN FRÍO · ACTA_SUPERNOVA
+NO-13           Supernova H8 fuzzy combo    FRÍO · banda brillo basta
+
+NO-14           G-cola pre-hora hod solo    FRÍO holdout vacío · ACTA_G_COLA
+
+NO-15           Livecero F5 cierre pool     STANDBY documental · LC-01
+                (no bloquea prod)           ya cableado · LIVECERO/LEEME.txt
+
+NO-16           Livegreen LG-43 tip         ARCHIVO · LC-01 ganó walk
+
+NO-17           Emulador J3 → prod          CERRADO lab · betas UI sombra
+                (no norte prod)             ACTA_CIERRE_LAB emulador-j3
+
+NO-18           Informe vivo por tiro (B)   NO CABLEADO por diseño.
+                el-54 TODO-04               Lector pulso, no boleto.
+                                            PENDIENTES.txt TODO-04
+
+NO-19           Trenes G/R supernova        RETIRADO · ACTA_SUPERNOVA
+
+NO-20           Front perf OOM/reload       HECHO 2026-09-02 · no pendiente.
+                                            ACTA_DASHBOARD_FICHAS_V2 §5
+
+NO-21           lab-g-explosion R2          CERRADO 2026-09-02 · OLOR INFO
+                multi-bloque @39 + unicornio VIVE=0 · humano: sin utilidad
+                                            predictiva · NO cable · archivo
+                                            ACTA_G_EXPLOSION · LAB_G_EXPLOSION_R2
+
+════════════════════════════════════════════════════════════════
+C. PROMETE (candidato — pide OK humano explícito para chip)
+════════════════════════════════════════════════════════════════
+
+  (vacío 2026-09-02 — SOM02 ya cableado motor 2026-08-29)
+
+════════════════════════════════════════════════════════════════
+D. ABIERTO (labs con ronda pendiente)
+════════════════════════════════════════════════════════════════
+
+  (vacío 2026-09-02 — g-explosion R2 cerrada)
+
+════════════════════════════════════════════════════════════════
+E. STANDBY hermanos (no son pendientes de hilo-corto)
+════════════════════════════════════════════════════════════════
+
+  Órgano de tiros front voz     INVENTARIO ORGANO-TIROS STANDBY
+  Mente-en-blanco FASE3         INVENTARIO MENTE-BLANCO
+  Ley-generador                 ABIERTO hermano · no dashboard
+  PARA_INVESTIGAR PI-1/2/3      CERRADAS · no bloquean prod
+  el-54 TODO-05 lectura L-01…   inventario cuaderno · no chips
+
+════════════════════════════════════════════════════════════════
+F. DÓNDE MIRAR (una sola brújula)
+════════════════════════════════════════════════════════════════
+
+  Relato humano     Biblioteca/10_ensenanzas/BITACORA.txt
+  Pistas finas      Biblioteca/10_ensenanzas/REGISTRO.txt
+  Fichas prod       INVENTARIO_FICHAS_VS_LEY.txt
+  Índice dashboard  ACTA_DASHBOARD_FICHAS_V2.txt
+  Instrumentos      Biblioteca/06_instrumentos/LECTURAS_LIVE_DASHBOARD.txt
+  Este cierre       ESTE archivo (sync → Biblioteca/_oficial/pools/)
+
+FIN — casa limpia 2026-09-02: 18 cable · 21 cerrados · 0 ABIERTO · 0 promete.

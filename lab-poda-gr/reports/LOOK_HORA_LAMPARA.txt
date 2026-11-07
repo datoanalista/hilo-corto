@@ -1,0 +1,53 @@
+LOOK · lámpara: mismo tip LC-01, ¿me siento?
+No se cambia el número. Callar ≠ tip nuevo.
+Juez: banda d≤1 tip vs minuto de ESA G.
+
+════ TRAIN  ·  8431 tips ════
+  siempre          juega 8431/8431  calla    0  banda 3219/8431  exacto 1230/8431  horas con cobro 982/1091  de lo callado: se pasaba 0/0 · caía 0/0
+  p30≥9            juega 8067/8431  calla  364  banda 3187/8067  exacto 1223/8067  horas con cobro 968/1074  de lo callado: se pasaba 299/364 · caía 32/364
+  p30≥7            juega 7715/8431  calla  716  banda 3124/7715  exacto 1200/7715  horas con cobro 942/1055  de lo callado: se pasaba 515/716 · caía 95/716
+  largo+p30≥9      juega 8129/8431  calla  302  banda 3193/8129  exacto 1223/8129  horas con cobro 969/1083  de lo callado: se pasaba 255/302 · caía 26/302
+  solo-largo       juega 7032/8431  calla 1399  banda 2770/7032  exacto 1065/7032  horas con cobro 936/1083  de lo callado: se pasaba 435/1399 · caía 449/1399
+
+════ HOLD 72 h  ·  490 tips ════
+  siempre          juega  490/490  calla    0  banda 174/490  exacto 65/490  horas con cobro 64/72  de lo callado: se pasaba 0/0 · caía 0/0
+  p30≥9            juega  466/490  calla   24  banda 170/466  exacto 62/466  horas con cobro 61/69  de lo callado: se pasaba 17/24 · caía 4/24
+  p30≥7            juega  430/490  calla   60  banda 162/430  exacto 58/430  horas con cobro 57/65  de lo callado: se pasaba 33/60 · caía 12/60
+  largo+p30≥9      juega  467/490  calla   23  banda 170/467  exacto 62/467  horas con cobro 61/69  de lo callado: se pasaba 16/23 · caía 4/23
+  solo-largo       juega  396/490  calla   94  banda 144/396  exacto 52/396  horas con cobro 56/69  de lo callado: se pasaba 30/94 · caía 30/94
+
+════ películas: lo que callaría p30≥9 (train, primeras tiras) ════
+  h10-230726   06·L11 → 17ET0  p30=11 tip 28 G 18  largo
+  h13-230726   02·S16 → 18·k3  p30=16 tip 34 G 21  largo
+  h16-230726   10·L13 → 23·k4  p30=13 tip 36 G 29  largo
+  h19-230726   12·L11 → 25·k3  p30=13 tip 38 G 30  largo
+  h6-240726    01·L13 → 14·k2  p30=13 tip 27 G 18  largo
+  h16-240726   05·L9 → 14·k2  p30=9 tip 23 G 17  largo
+  h17-240726   02·L10 → 12·k4  p30=10 tip 22 G 16  largo
+  h19-240726   19·L11 → 29·L9  p30=10 tip 39 G 39  cae
+  h19-240726   29·L9 → 39·k2  p30=10 tip 49 G 44  largo
+  h1-250726    00·L14 → 14·k3  p30=14 tip 28 G 19  largo
+  h6-250726    00·L10 → 10·T0  p30=10 tip 20 G 12  largo
+  h12-250726   01·S16 → 17·k3  p30=16 tip 33 G 21  largo
+  h16-250726   01·L10 → 11·C1  p30=10 tip 21 G 13  largo
+  h21-250726   08·S20 → 26·T0  p30=18 tip 44 G 28  largo
+  h1-260726    01·S18 → 18·m6  p30=17 tip 35 G 25  largo
+  h4-260726    01·S16 → 15·C1  p30=14 tip 29 G 18  largo
+
+════ películas: p30≥9 y AUN ASÍ caía (la lámpara habría callado un cobro) ════
+  h19-240726   19·L11 → 29·L9  p30=10 tip 39 G 39
+  h11-270726   16·S16 → 32·m8  p30=9 tip 41 G 40
+  h12-040826   03·L9 → 13·L10  p30=10 tip 23 G 22
+  h5-100826    01·m7 → 10Ek2  p30=9 tip 19 G 18
+  h20-110826   13·S30 → 40·L9  p30=10 tip 50 G 50
+  h21-110826   12·L13 → 25·L12  p30=10 tip 35 G 36
+  h6-130826    03·m6 → 13·m8  p30=10 tip 23 G 24
+  h7-160826    05·L11 → 16·m8  p30=11 tip 27 G 26
+  h23-170826   01·m7 → 10·m7  p30=9 tip 19 G 18
+  h0-180826    13·L9 → 23·m8  p30=10 tip 33 G 32
+  (en train hay 32 cobros que p30≥9 habría apagado)
+
+Lectura:
+  Si lo callado es casi todo ‘se pasó’, la lámpara limpia.
+  Si apaga muchos ‘cae’, está cortando cobros: no coronar.
+  Hold manda para no sentar. Cero cable.

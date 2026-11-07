@@ -1,0 +1,78 @@
+LAB HORA FLACA — 883 h con G+lumen
+
+== DISTRIBUCIÓN nG ==
+  nG= 1:    1 (0.1%)
+  nG= 2:    2 (0.2%)
+  nG= 3:    2 (0.2%)
+  nG= 4:    5 (0.6%)
+  nG= 5:   29 (3.3%)
+  nG= 6:   49 (5.5%)
+  nG= 7:   76 (8.6%)
+  nG= 8:  120 (13.6%)
+  nG= 9:  134 (15.2%)
+  nG=10:  136 (15.4%)
+  nG=11:  104 (11.8%)
+  nG=12:   90 (10.2%)
+  nG=13:   70 (7.9%)
+  nG=14:   35 (4.0%)
+  nG=15:   14 (1.6%)
+  mediana nG=10
+
+  nG=1: 1 (0.1%)
+  nG<=2: 3 (0.3%)
+  nG<=3: 5 (0.6%)
+
+== PERFIL nG=1 vs resto ==
+  sumG med: 48 vs 594
+  meanG med: 48 vs 59
+  maxG med: 48 vs 156
+  P(opaca): 100% vs 27%
+  P(G>500): 0% vs 5%
+
+== PERFIL nG<=2 vs nG>=8 ==
+  sumG med: 77 vs 637
+  P(opaca): 100% vs 18%
+
+== nG=1 — minuto de la única G ==
+  med min=16 · bloque 0-19: 100% · bloque 40-59: 0%
+
+== H+1 tras hora flaca ==
+  nG=1 -> H+1 lift sum med=+663 · lift nG med=+9 n=1
+  nG<=2 -> H+1 lift sum med=+548 · lift nG med=+11 n=3
+  nG<=3 -> H+1 lift sum med=+477 · lift nG med=+10 n=5
+  nG>=8 -> H+1 lift sum med=-50 · lift nG med=-1 n=718
+
+== MISMO DÍA ==
+  días con al menos 1 hora nG=1: 1/38
+  días con 2+ horas nG<=2: 0
+
+== HOD P(nG=1) top ==
+  h07: 2.7% (n=37)
+  h23: 0.0% (n=37)
+  h22: 0.0% (n=37)
+  h21: 0.0% (n=36)
+  h20: 0.0% (n=36)
+  h19: 0.0% (n=37)
+  bottom:
+  h00: 0.0% (n=37)
+  h01: 0.0% (n=36)
+  h02: 0.0% (n=37)
+  global: 0.1%
+
+== EN VIVO: al min 20 con 0-1 G ==
+  horas con <=1 G en 0-19: 92 (10.4%)
+  de esas, cierran opacas (sum<450): 48%
+  de esas, cierran generosas (sum>=850): 11%
+
+== nG=0 (sin G en hora) ==
+  (load_horas filtra horas sin G — no medible aquí)
+
+== CENSO nG=1 (todas) ==
+  h7-270726 h07 min=16 sum=48 mean=48 max=48
+
+== VEREDICTO ==
+  nG=1 = 0.1% horas · P(opaca)=100% vs resto 27%
+  señal temprana: <=1 G al min 20 -> 48% opacas
+  1 sola G puede traer mucho lumen (outlier) — no confundir nG bajo con sumG bajo
+  H+1: ver lift — olor rebote posible tras hora muerta
+  VIVE=0 como cola; OLOR-VIVE para dashboard si se cablea

@@ -1,0 +1,120 @@
+######################################################################
+# ANULADO 2026-09-06 · JUEZ INVÁLIDO
+# Este informe cobra color y cadenas (R-R-G) en toda la cinta.
+# Densidad 9/54. No es corrimiento. No citar.
+# Vigente: LAB_NEXT3_CORRIMIENTO.txt · JUEZ.txt · ACTA_PODA_GR.txt
+######################################################################
+
+════════════════════════════════════════════════════════════════════
+NEXT 3 · PRUEBA HISTÓRICA (poda G-R + tip Pool 7, tiro a tiro)
+════════════════════════════════════════════════════════════════════
+ANULADO. El encabezado original decía «Cero Jaccard» y debajo contaba
+cadenas globales. No usar.
+
+Cinta: 1081 h  · train 1009 h  · holdout 72 h
+
+── TIRO A TIRO · TRAIN ──
+Predicciones tiro a tiro: 29,473   aciertos: 16,819   (57.1%)
+
+Rol          |       N |      OK |  Acierto |  Pred G |  Salió G |  Prec G
+-------------+---------+---------+----------+---------+----------+--------
+poda_R       |   7,405 |   6,782 |    91.6% |       0 |      623 |       —
+inercia_G    |   2,231 |     922 |    41.3% |   2,231 |      922 |   41.3%
+ventana_G    |  11,358 |   1,959 |    17.2% |  11,358 |    1,959 |   17.2%
+ventana_R    |   8,479 |   7,156 |    84.4% |       0 |    1,323 |       —
+
+Matriz predicho → real:
+               real G     real R
+  pred G        2,881     10,708
+  pred R        1,946     13,938
+
+── TIRO A TIRO · HOLDOUT 72 h ──
+Predicciones tiro a tiro: 2,085   aciertos: 1,003   (48.1%)
+
+Rol          |       N |      OK |  Acierto |  Pred G |  Salió G |  Prec G
+-------------+---------+---------+----------+---------+----------+--------
+poda_R       |     400 |     350 |    87.5% |       0 |       50 |       —
+inercia_G    |     303 |      75 |    24.8% |     303 |       75 |   24.8%
+ventana_G    |     864 |     159 |    18.4% |     864 |      159 |   18.4%
+ventana_R    |     518 |     419 |    80.9% |       0 |       99 |       —
+
+Matriz predicho → real:
+               real G     real R
+  pred G          234        933
+  pred R          149        769
+
+── SECUENCIAS DE 3 · TRAIN (snapshot al abrir) ──
+al_caer_G: 9,289 ventanas · secuencia 3/3 exacta 2,010 (21.6%) · slots 15,330/27,867 (55.0%)
+  Patrones predichos (top):
+    R-G-G    3,439 veces ( 37.0%) · de esas, 3/3 exactas 88 (2.6%)
+    R-R-R    2,403 veces ( 25.9%) · de esas, 3/3 exactas 1,548 (64.4%)
+    G-G-G    1,425 veces ( 15.3%) · de esas, 3/3 exactas 13 (0.9%)
+    R-R-G    1,165 veces ( 12.5%) · de esas, 3/3 exactas 144 (12.4%)
+    G-R-R      313 veces (  3.4%) · de esas, 3/3 exactas 179 (57.2%)
+    G-G-R      224 veces (  2.4%) · de esas, 3/3 exactas 10 (4.5%)
+    G-R-G      187 veces (  2.0%) · de esas, 3/3 exactas 10 (5.3%)
+    R-G-R      133 veces (  1.4%) · de esas, 3/3 exactas 18 (13.5%)
+  Patrones reales (top):
+    R-R-R    5,452 ( 58.7%)
+    R-R-G    1,092 ( 11.8%)
+    R-G-R    1,060 ( 11.4%)
+    G-R-R    1,036 ( 11.2%)
+    G-G-R      204 (  2.2%)
+    R-G-G      204 (  2.2%)
+al_confirmar_GR: 7,659 ventanas · secuencia 3/3 exacta 777 (10.1%) · slots 9,931/22,977 (43.2%)
+  Patrones predichos (top):
+    G-G-R    2,037 veces ( 26.6%) · de esas, 3/3 exactas 47 (2.3%)
+    G-G-G    1,945 veces ( 25.4%) · de esas, 3/3 exactas 9 (0.5%)
+    R-R-G    1,405 veces ( 18.3%) · de esas, 3/3 exactas 179 (12.7%)
+    R-G-G    1,121 veces ( 14.6%) · de esas, 3/3 exactas 25 (2.2%)
+    R-R-R      858 veces ( 11.2%) · de esas, 3/3 exactas 488 (56.9%)
+    G-R-R      293 veces (  3.8%) · de esas, 3/3 exactas 29 (9.9%)
+  Patrones reales (top):
+    R-R-R    4,451 ( 58.1%)
+    R-G-R      923 ( 12.1%)
+    R-R-G      902 ( 11.8%)
+    G-R-R      850 ( 11.1%)
+    G-R-G      189 (  2.5%)
+    G-G-R      166 (  2.2%)
+
+── SECUENCIAS DE 3 · HOLDOUT ──
+al_caer_G: 675 ventanas · secuencia 3/3 exacta 89 (13.2%) · slots 932/2,025 (46.0%)
+  Patrones predichos (top):
+    G-G-G      190 veces ( 28.1%) · de esas, 3/3 exactas 5 (2.6%)
+    R-G-G      182 veces ( 27.0%) · de esas, 3/3 exactas 2 (1.1%)
+    R-R-R      116 veces ( 17.2%) · de esas, 3/3 exactas 60 (51.7%)
+    R-R-G       73 veces ( 10.8%) · de esas, 3/3 exactas 10 (13.7%)
+    G-R-R       50 veces (  7.4%) · de esas, 3/3 exactas 7 (14.0%)
+    G-R-G       33 veces (  4.9%) · de esas, 3/3 exactas 1 (3.0%)
+    G-G-R       19 veces (  2.8%) · de esas, 3/3 exactas 1 (5.3%)
+    R-G-R       12 veces (  1.8%) · de esas, 3/3 exactas 3 (25.0%)
+  Patrones reales (top):
+    R-R-R      371 ( 55.0%)
+    R-G-R       88 ( 13.0%)
+    R-R-G       83 ( 12.3%)
+    G-R-R       77 ( 11.4%)
+    G-R-G       20 (  3.0%)
+    G-G-R       15 (  2.2%)
+al_confirmar_GR: 545 ventanas · secuencia 3/3 exacta 46 (8.4%) · slots 681/1,635 (41.7%)
+  Patrones predichos (top):
+    G-G-R      154 veces ( 28.3%) · de esas, 3/3 exactas 5 (3.2%)
+    G-G-G      140 veces ( 25.7%) · de esas, 3/3 exactas 1 (0.7%)
+    R-R-G       98 veces ( 18.0%) · de esas, 3/3 exactas 11 (11.2%)
+    R-G-G       87 veces ( 16.0%) · de esas, 3/3 exactas 1 (1.1%)
+    R-R-R       40 veces (  7.3%) · de esas, 3/3 exactas 21 (52.5%)
+    G-R-R       26 veces (  4.8%) · de esas, 3/3 exactas 7 (26.9%)
+  Patrones reales (top):
+    R-R-R      292 ( 53.6%)
+    G-R-R       74 ( 13.6%)
+    R-R-G       71 ( 13.0%)
+    R-G-R       69 ( 12.7%)
+    R-G-G       14 (  2.6%)
+    G-R-G       12 (  2.2%)
+
+════════════════════════════════════════════════════════════════════
+LECTURA
+════════════════════════════════════════════════════════════════════
+· Poda +1 (predice R): 87.5% acierto (350/400 fueron R).
+· Inercia Tren/Estirada (predice G en +1): 24.8% · salió G en 24.8%.
+· Ventana predice G (minuto en tip ±1): precisión 18.4% (159 G de 864 disparos). El resto de esa zona fueron R.
+· Ventana predice R (fuera de tip): 80.9% acierto.

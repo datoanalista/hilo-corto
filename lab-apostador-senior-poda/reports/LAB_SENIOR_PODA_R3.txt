@@ -1,0 +1,226 @@
+LAB SENIOR-PODA — R3
+RAMA A: tip EXACTO en +2..+4 (sin anillo ±1) · RAMA B: silla también en R
+chip: LC-01 minutos · juez: banda d<=1 + PnL 1:1 · hora a hora
+CERO prod · CERO ML/fuzzy · CERO Jaccard · CERO P(tiro=G) como veredicto
+3/4/Tren/exacto/silla = FORMAS. No se coronan. Holdout 72 = el de R0.
+R2 HOLD no se reabre: SOLO_ZONA 28.3%/88.4%/+139 · ANCLA +94 · R0 +68
+LOOK R2 (no ficha): tip exacto techo +2..+4 hold 73.9%/+112 · anillo −18
+
+n=1097 train=1025 hold=72
+  (cinta motor last=h1-070926)
+
+  ESTIMACIÓN (causal, todas las puertas de zona/silla):
+    m_est = (m_ancla + gap_del_slot) mod 60   ·  1 tiro ≈ 1 min
+    gap_del_slot = índice_tiro(slot) − índice_tiro(G_ancla)
+    En RAMA A el slot es la G siguiente. En RAMA B es cada tiro
+    apostable de la ventana (+2..+4, +1 si Tren/Estirada).
+    NO se usa el m0 real de la G que cae. Filtrar por ese m0 = leak
+    → banda 100% por construcción. No se juega.
+  EXACTO_ANCLA: GO la ráfaga si tip == alguno de {mG+2,+3,+4}
+    (o +1 si Tren/Estirada). Sin anillo ±1. Cero G futura.
+  ZONA_ANCLA: lo mismo con anillo tip ±1 (R2).
+  SOLO_ZONA / SILLA_G: GO el asiento G cuya m_est pisa tip ±1.
+  SILLA_TODOS: GO ese asiento AUNQUE el tiro sea R (pierdes 1).
+    Si es G y banda, ganas 1. PnL 1:1 mezcla color + minuto.
+
+== TRAIN ==
+  -- universo G→G (RAMA A + baselines) --
+  [PODA_R0]
+    eventos=8929  GO=4265 (47.8%)  NO_GO=4664
+    exacto 22.3%  borde 37.0%  banda 59.4%
+    pnl=+801.0  avg/evento=+0.0897
+    hora a hora: 1024 h · con GO 993 · cobraron banda 847/993 (85.3%) · PnL>0 509/1024 (49.7%) · med PnL/h +0.0
+    motivos GO: estirada=676, gap2=1305, gap3=1105, gap4=917, tren=262
+  [SOLO_ZONA]
+    eventos=8929  GO=2386 (26.7%)  NO_GO=6543
+    exacto 38.4%  borde 49.5%  banda 87.8%
+    pnl=+1806.0  avg/evento=+0.2023
+    hora a hora: 1024 h · con GO 821 · cobraron banda 798/821 (97.2%) · PnL>0 744/1024 (72.7%) · med PnL/h +1.0
+    motivos GO: estirada=158, gap2=758, gap3=735, gap4=544, tren=191
+  [ZONA_ANCLA]
+    eventos=8929  GO=3812 (42.7%)  NO_GO=5117
+    exacto 25.0%  borde 41.0%  banda 65.9%
+    pnl=+1216.0  avg/evento=+0.1362
+    hora a hora: 1024 h · con GO 924 · cobraron banda 840/924 (90.9%) · PnL>0 597/1024 (58.3%) · med PnL/h +1.0
+    motivos GO: estirada=596, gap2=1157, gap3=981, gap4=817, tren=261
+  [EXACTO_ANCLA]
+    eventos=8929  GO=3003 (33.6%)  NO_GO=5926
+    exacto 29.7%  borde 44.9%  banda 74.6%
+    pnl=+1475.0  avg/evento=+0.1652
+    hora a hora: 1024 h · con GO 826 · cobraron banda 771/826 (93.3%) · PnL>0 645/1024 (63.0%) · med PnL/h +1.0
+    motivos GO: estirada=434, gap2=933, gap3=764, gap4=618, tren=254
+  -- universo asientos (RAMA B) --
+  [SILLA_G]
+    eventos=29871  GO=2388 (8.0%)  NO_GO=27483
+    exacto 38.4%  borde 49.5%  banda 87.9%
+    asientos GO: R 0 (0.0%)  G-banda 2099 (87.9%)  G-fuera 289 (12.1%)
+    pnl=+1810.0  avg/evento=+0.0606
+    hora a hora: 1025 h · con GO 821 · cobraron banda 798/821 (97.2%) · PnL>0 745/1025 (72.7%) · med PnL/h +1.0
+    motivos GO: estirada=158, gap2=759, gap3=736, gap4=544, tren=191
+  [SILLA_TODOS]
+    eventos=29871  GO=13508 (45.2%)  NO_GO=16363
+    exacto 36.2%  borde 50.3%  banda 15.5%
+    asientos GO: R 11120 (82.3%)  G-banda 2099 (15.5%)  G-fuera 289 (2.1%)
+    pnl=-9310.0  avg/evento=-0.3117
+    hora a hora: 1025 h · con GO 1025 · cobraron banda 798/1025 (77.9%) · PnL>0 0/1025 (0.0%) · med PnL/h -9.0
+    motivos GO: estirada=167, gap2=4601, gap3=4433, gap4=3202, tren=1105
+    diag reloj (sobre GO de forma R0): n=4265  m_est en tip±1 55.9%  real en tip±1 59.4%
+      reloj vs real: d=0 44.4%  d=1 50.2%  d=2 4.1%  d≥3 1.2%
+      ambos 2096  solo_est 290  solo_real 437  ninguno 1442
+      LEAK si se filtrara por m0 de la G que cae: n=2533  banda 100%  pnl +2533  (no es política; solo contraste)
+    colas de R0 según puerta de ANCLA / EXACTO (universo G→G):
+    tip±1 ancla    n=3812  banda 65.9%  pnl +1216  (si se jugara esa cola de R0)
+    tip fuera      n=453  banda 4.2%  pnl -415  (si se jugara esa cola de R0)
+    tip EXACTO     n=3003  banda 74.6%  pnl +1475  (si se jugara esa cola de R0)
+    anillo ±1      n=809  banda 34.0%  pnl -259  (si se jugara esa cola de R0)
+    tip techo      n=3812  banda 65.9%  pnl +1216  (si se jugara esa cola de R0)
+    tip lejano     n=453  banda 4.2%  pnl -415  (si se jugara esa cola de R0)
+    techo d=0      n=2879  banda 75.6%  pnl +1473  (si se jugara esa cola de R0)
+    techo d=1      n=933  banda 36.2%  pnl -257  (si se jugara esa cola de R0)
+    techo d≥2      n=453  banda 4.2%  pnl -415  (si se jugara esa cola de R0)
+    silla est      n=2386  banda 87.8%  pnl +1806  (si se jugara esa cola de R0)
+    no silla       n=1879  banda 23.3%  pnl -1005  (si se jugara esa cola de R0)
+    dist(tip, {+2,+3,+4}): d=0:2879  d=1:933  d=2:166  d=3:75  d=4:62  d=5:46  d=6:27  d=7:21  d=8:56
+    RAMA B — desglose de asientos (ventana +2..+4 / +1 Tren-Estirada):
+      anclas con tip=9786  cola-fin-hora=857  slots ventana=29871  apostables=22383
+      apostables: R 18116  G-banda 2536  G-fuera 1731
+      GO SILLA_TODOS=13508  R 11120 (82.3%)  G-banda 2099 (15.5%)  G-fuera 289 (2.1%)
+      PnL mixto (color+minuto) -9310  PnL (i) solo G +1810  PnL color-ciego (±1 si G/R, ignora minuto) -8732
+      sanity SILLA_G vs SOLO_ZONA: GO 2388 vs 2386  pnl +1810 vs +1806  (DIFF: cola-hora o G sin lumen)
+
+== HOLDOUT ==
+  -- universo G→G (RAMA A + baselines) --
+  [PODA_R0]
+    eventos=640  GO=330 (51.6%)  NO_GO=310
+    exacto 21.2%  borde 39.1%  banda 60.3%
+    pnl=+68.0  avg/evento=+0.1062
+    hora a hora: 72 h · con GO 70 · cobraron banda 58/70 (82.9%) · PnL>0 39/72 (54.2%) · med PnL/h +1.0
+    motivos GO: estirada=56, gap2=105, gap3=82, gap4=66, tren=21
+  [SOLO_ZONA]
+    eventos=640  GO=181 (28.3%)  NO_GO=459
+    exacto 36.5%  borde 51.9%  banda 88.4%
+    pnl=+139.0  avg/evento=+0.2172
+    hora a hora: 72 h · con GO 56 · cobraron banda 53/56 (94.6%) · PnL>0 50/72 (69.4%) · med PnL/h +1.0
+    motivos GO: estirada=10, gap2=68, gap3=48, gap4=37, tren=18
+  [ZONA_ANCLA]
+    eventos=640  GO=304 (47.5%)  NO_GO=336
+    exacto 23.0%  borde 42.4%  banda 65.5%
+    pnl=+94.0  avg/evento=+0.1469
+    hora a hora: 72 h · con GO 62 · cobraron banda 58/62 (93.5%) · PnL>0 41/72 (56.9%) · med PnL/h +1.0
+    motivos GO: estirada=50, gap2=99, gap3=74, gap4=60, tren=21
+  [EXACTO_ANCLA]
+    eventos=640  GO=245 (38.3%)  NO_GO=395
+    exacto 26.9%  borde 44.5%  banda 71.4%
+    pnl=+105.0  avg/evento=+0.1641
+    hora a hora: 72 h · con GO 58 · cobraron banda 52/58 (89.7%) · PnL>0 41/72 (56.9%) · med PnL/h +1.0
+    motivos GO: estirada=42, gap2=82, gap3=50, gap4=50, tren=21
+  -- universo asientos (RAMA B) --
+  [SILLA_G]
+    eventos=2097  GO=181 (8.6%)  NO_GO=1916
+    exacto 36.5%  borde 51.9%  banda 88.4%
+    asientos GO: R 0 (0.0%)  G-banda 160 (88.4%)  G-fuera 21 (11.6%)
+    pnl=+139.0  avg/evento=+0.0663
+    hora a hora: 72 h · con GO 56 · cobraron banda 53/56 (94.6%) · PnL>0 50/72 (69.4%) · med PnL/h +1.0
+    motivos GO: estirada=10, gap2=68, gap3=48, gap4=37, tren=18
+  [SILLA_TODOS]
+    eventos=2097  GO=981 (46.8%)  NO_GO=1116
+    exacto 40.5%  borde 49.3%  banda 16.3%
+    asientos GO: R 800 (81.5%)  G-banda 160 (16.3%)  G-fuera 21 (2.1%)
+    pnl=-661.0  avg/evento=-0.3152
+    hora a hora: 72 h · con GO 72 · cobraron banda 53/72 (73.6%) · PnL>0 1/72 (1.4%) · med PnL/h -9.5
+    motivos GO: estirada=52, gap2=325, gap3=311, gap4=213, tren=80
+    diag reloj (sobre GO de forma R0): n=330  m_est en tip±1 54.8%  real en tip±1 60.3%
+      reloj vs real: d=0 44.2%  d=1 50.0%  d=2 3.9%  d≥3 1.8%
+      ambos 160  solo_est 21  solo_real 39  ninguno 110
+      LEAK si se filtrara por m0 de la G que cae: n=199  banda 100%  pnl +199  (no es política; solo contraste)
+    colas de R0 según puerta de ANCLA / EXACTO (universo G→G):
+    tip±1 ancla    n=304  banda 65.5%  pnl +94  (si se jugara esa cola de R0)
+    tip fuera      n=26  banda 0.0%  pnl -26  (si se jugara esa cola de R0)
+    tip EXACTO     n=245  banda 71.4%  pnl +105  (si se jugara esa cola de R0)
+    anillo ±1      n=59  banda 40.7%  pnl -11  (si se jugara esa cola de R0)
+    tip techo      n=304  banda 65.5%  pnl +94  (si se jugara esa cola de R0)
+    tip lejano     n=26  banda 0.0%  pnl -26  (si se jugara esa cola de R0)
+    techo d=0      n=234  banda 73.9%  pnl +112  (si se jugara esa cola de R0)
+    techo d=1      n=70  banda 37.1%  pnl -18  (si se jugara esa cola de R0)
+    techo d≥2      n=26  banda 0.0%  pnl -26  (si se jugara esa cola de R0)
+    silla est      n=181  banda 88.4%  pnl +139  (si se jugara esa cola de R0)
+    no silla       n=149  banda 26.2%  pnl -71  (si se jugara esa cola de R0)
+    dist(tip, {+2,+3,+4}): d=0:234  d=1:70  d=2:5  d=3:5  d=4:6  d=5:1  d=6:2  d=7:1  d=8:6
+    RAMA B — desglose de asientos (ventana +2..+4 / +1 Tren-Estirada):
+      anclas con tip=705  cola-fin-hora=65  slots ventana=2097  apostables=1749
+      apostables: R 1419  G-banda 199  G-fuera 131
+      GO SILLA_TODOS=981  R 800 (81.5%)  G-banda 160 (16.3%)  G-fuera 21 (2.1%)
+      PnL mixto (color+minuto) -661  PnL (i) solo G +139  PnL color-ciego (±1 si G/R, ignora minuto) -619
+      sanity SILLA_G vs SOLO_ZONA: GO 181 vs 181  pnl +139 vs +139  (alineados)
+
+== DIFF HOLDOUT vs PODA_R0 (universo G→G) ==
+  SOLO_ZONA          cov 28.3%  banda 88.4%  pnl +139  Δbanda +28.1pp  Δpnl +71  Δcov -23.3pp
+  ZONA_ANCLA         cov 47.5%  banda 65.5%  pnl +94  Δbanda +5.2pp  Δpnl +26  Δcov -4.1pp
+  EXACTO_ANCLA       cov 38.3%  banda 71.4%  pnl +105  Δbanda +11.1pp  Δpnl +37  Δcov -13.3pp
+
+== DIFF TRAIN vs PODA_R0 (universo G→G) ==
+  SOLO_ZONA          cov 26.7%  banda 87.8%  pnl +1806  Δbanda +28.5pp  Δpnl +1005  Δcov -21.0pp
+  ZONA_ANCLA         cov 42.7%  banda 65.9%  pnl +1216  Δbanda +6.6pp  Δpnl +415  Δcov -5.1pp
+  EXACTO_ANCLA       cov 33.6%  banda 74.6%  pnl +1475  Δbanda +15.2pp  Δpnl +674  Δcov -14.1pp
+
+== DIFF HOLDOUT vs SOLO_ZONA (¿exacto / ancla sostienen la silla?) ==
+  EXACTO_ANCLA       cov 38.3%  banda 71.4%  pnl +105  Δbanda -17.0pp  Δpnl -34  Δcov +10.0pp
+  ZONA_ANCLA         cov 47.5%  banda 65.5%  pnl +94  Δbanda -22.9pp  Δpnl -45  Δcov +19.2pp
+  PODA_R0            cov 51.6%  banda 60.3%  pnl +68  Δbanda -28.1pp  Δpnl -71  Δcov +23.3pp
+
+== DIFF HOLDOUT vs ZONA_ANCLA (¿el ±1 del ancla sigue restando?) ==
+  EXACTO_ANCLA       cov 38.3%  banda 71.4%  pnl +105  Δbanda +6.0pp  Δpnl +11  Δcov -9.2pp
+
+== RANK HOLDOUT universo G→G (juez = PnL luego banda) ==
+  1. SOLO_ZONA          HOLD cov 28.3% banda 88.4% pnl +139  PnL>0 50/72  | TRAIN cov 26.7% banda 87.8% pnl +1806
+  2. EXACTO_ANCLA       HOLD cov 38.3% banda 71.4% pnl +105  PnL>0 41/72  | TRAIN cov 33.6% banda 74.6% pnl +1475
+  3. ZONA_ANCLA         HOLD cov 47.5% banda 65.5% pnl +94  PnL>0 41/72  | TRAIN cov 42.7% banda 65.9% pnl +1216
+  4. PODA_R0            HOLD cov 51.6% banda 60.3% pnl +68  PnL>0 39/72  | TRAIN cov 47.8% banda 59.4% pnl +801
+
+== RANK HOLDOUT universo asientos (RAMA B; juez = PnL mixto) ==
+  1. SILLA_G            HOLD GO 181 banda 88.4% pnl +139  PnL>0 50/72  | TRAIN GO 2388 pnl +1810
+  2. SILLA_TODOS        HOLD GO 981 banda 16.3% pnl -661  PnL>0 1/72  | TRAIN GO 13508 pnl -9310
+
+== LECTURA ==
+  ESTIMACIÓN vs LEAK
+  m_est=(m_ancla+gap_del_slot) mod 60. No m0 de la G que cae.
+  Reloj vs real d≤1 94.2%.  LEAK (filtrar por m0 futuro): n=199 banda 100% pnl +199. Eso NO se juega.
+
+  RAMA A — ¿el exacto sostiene el +112 y el ±1 sigue restando?
+  EXACTO_ANCLA HOLD 38.3% / 71.4% / +105  PnL>0 41/72  vs ZONA_ANCLA 47.5% / 65.5% / +94  vs PODA_R0 +68  vs SOLO_ZONA +139.
+  Train EXACTO_ANCLA 33.6% / 74.6% / +1475 vs ANCLA +1216 vs R0 +801 vs SOLO_ZONA +1806.
+  Cola R0 tip EXACTO (ventana ancla, no techo): hold n=245 banda 71.4% pnl +105 · anillo ±1 n=59 banda 40.7% pnl -11.
+  LOOK techo d=0 (R2 +112): hold n=234 banda 73.9% pnl +112 · techo d=1 n=70 banda 37.1% pnl -18.
+  Train cola exacto-ancla n=3003 banda 74.6% pnl +1475 · anillo n=809 pnl -259.
+
+  RAMA B — ¿la silla sirve aunque salga R, o solo cobra con G?
+  (i) solo G = SILLA_G / SOLO_ZONA: HOLD GO 181 banda 88.4% pnl +139  PnL>0 50/72  (SOLO_ZONA 181 / +139).
+  (ii) todos los asientos = SILLA_TODOS: HOLD GO 981 banda 16.3% pnl mixto -661  PnL>0 1/72.
+  De los GO de SILLA_TODOS hold: R 800 (81.5%) · G-banda 160 (16.3%) · G-fuera 21 (2.1%).
+  PnL hold: mixto -661 · (i) solo G +139 · color-ciego -619.
+  Train SILLA_TODOS GO 13508 pnl -9310 · (i) solo G +1810 · R 11120 / G-banda 2099 / G-fuera 289.
+  SOLO_ZONA de R2 NO apostaba R: el walk era G→G. Hold
+  SOLO_ZONA = 181 G (banda 160 · fuera 21 · R 0). SILLA_TODOS es la
+  misma silla sobre cada tiro apostable cuya m_est pisa
+  tip ±1, también los R. Train SILLA_G vs SOLO_ZONA:
+  GO 2388 vs 2386 (Δ+2; cola-hora / G sin lumen). Hold alineado.
+
+  Combinar, no coronar. Tres capas, un taller:
+    A puerta poda · B chip como asiento (silla) o como
+    filtro de ráfaga (ancla ±1 / exacto) · C silla-en-R
+    = el mismo asiento cobrado cuando el color falta.
+  1) Exacto recorta el anillo que resta (hold −11, train −259)
+     y queda entre ANCLA y SILLA. No es el 89%.
+  2) El +112 era LOOK techo d=0 (sin +1). La política pedida
+     (ventana ancla, +1 si Tren/Estirada) da +105. El LOOK
+     +112 sigue; no se corona como política.
+  3) SILLA G-only sigue concentrando: hold +139 / 88.4%.
+  4) SOLO_ZONA no apostaba R (hold 0/181). El 88% es minuto
+     entre G que se sentaron, no un ‘hay que estar’.
+  5) Silla-en-R: 81.5% de los GO hold son miss de color.
+     Mixto −661 · 1/72 verde. FRÍO.
+  6) Color-ciego hold −619: el asiento tampoco paga color.
+  VIVE (olor, no cable): SILLA G-only ≥ EXACTO_ANCLA ≥
+  ZONA_ANCLA ≥ PODA_R0. FRÍO: SILLA_TODOS.
+  No cable. No ML. Formas, no coronas. Cero fuzzy.
+

@@ -1,0 +1,28 @@
+ACTA LOOK — LÁMPARA EN HISTÓRICO LARGO
+======================================
+fecha: 2026-09-12
+lab: hilo-corto/lab-poda-gr/
+script: look_hora_lampara_hist.py → reports/LOOK_HORA_LAMPARA_HIST.txt
+Cero prod. Cero LIVE. Cero tip nuevo. Cero cable.
+
+PREGUNTA
+  La lámpara (callar si p30 sigue largo) sobre la cinta
+  larga, caminando como la mesa: LC-01 + puerta de poda.
+  Dos mitades del train + hold. No solo el corte 9.
+
+CINTA
+  1168 h  h10-230726 → h0-120926
+  Train 1096 h · hold 72 h · mitades 548/548
+
+VEREDICTO
+  Sobre TODOS los tips, callar p30≥9 limpia pases y
+  apaga algunos cobros (ya se vio).
+  Sobre la PUERTA (como se juega): lo callado era
+  casi todo ‘se pasó’. Train p30≥9: 162/165 pases,
+  3 cobros. p30≥12: 65/65 pases, 0 cobros.
+  Las dos mitades dicen lo mismo. Hold: 8/8 pases,
+  0 cobros. No es cola de 72 h.
+  Callar tras cola sin mirar p30 no se usa (look previo).
+
+NO CABLEAR. No cortar Pool 7. Filtro encima de la
+puerta, no un pool nuevo.

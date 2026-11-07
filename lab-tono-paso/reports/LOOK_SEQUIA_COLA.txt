@@ -1,0 +1,227 @@
+LOOK · cola de sequías largas (15 / 20 / 30 / 36 R)
+36 = forma (sequía muy larga), no ficha. Unidad = hora.
+Luz = G núcleo (tipo 1–4). Extra/G5 no rompe la sequía de luces.
+Juez: hora a hora. No Jaccard. No P(tiro=G). No cadena de toda la cinta.
+
+Cinta load_cinta (con ≥1 G): 1088 h · train 1016 · holdout 72
+Cinta cruda (incluye 0 G): 1043 h de 1043 tags
+Horas 0 G núcleo en cruda: 0
+
+════════ TRAIN (horas con ≥1 G, split oficial)  1016 horas ════════
+  Horas sin ninguna luz (0 G núcleo): 0  0.0%
+  Clima: floja 203 · normal 667 · rica 146
+
+  1. DÓNDE VIVE LA COLA (máx R seguidas DE ESA hora, una cifra por hora)
+     cubo     | horas |  %
+     0-4      |     0 | 0.0%
+     5-9      |   117 | 11.5%
+     10-14    |   395 | 38.9%
+     15-19    |   313 | 30.8%
+     20-29    |   167 | 16.4%
+     30-35    |    14 | 1.4%
+     36+      |    10 | 1.0%
+     máx-R de la hora: p50=14  p90=22  p99=35  tope=61
+
+  2. HORAS QUE ALCANZAN el umbral (origen de la racha que lo toca)
+     k   | cualquier | intra (tras G) | lead (aún no 1ª G) | cola (cierra sin romper)
+     ≥15 |   504   49.6% |   412   40.6% |    61    6.0% |    76    7.5%
+     ≥20 |   191   18.8% |   141   13.9% |    17    1.7% |    36    3.5%
+     ≥30 |    24    2.4% |    16    1.6% |     4    0.4% |     4    0.4%
+     ≥36 |    10    1.0% |     7    0.7% |     2    0.2% |     1    0.1%
+
+  3. DESDE el k-ésimo R (postura live: ya van k R, ¿qué queda EN ESA hora?)
+     No es 'la racha completa terminó en G' (eso es tautología de intra/lead).
+     ≥15: 504 horas  (lead 61 · intra 393 · cola 50)
+        se acaba la hora sin G posterior       50  9.9%
+        aún cae G en lo que queda             454  90.1%
+           luego racimo (próx G ≤3 tiros)     214  42.5%
+           rompe y queda sola (no hay 2ª)      52  10.3%
+           rompe + hueco medio (4 R)           42  8.3%
+           rompe + otra sequía / sin 2ª       198  39.3%
+           R AÚN por delante hasta esa G: p50=2  0 más=93  ≥5 más=147
+        tinta de la que cae: G1:116 G2:136 G3:143 G4:59  · lumen p50=45  n=454
+        al tocar el R nº 15: tiros que quedan p50=28  minutos hasta :00 p50=29
+        tocan k y ya no queda tiro (cierre): 7  1.4%
+        clima de esas horas: floja 172 · normal 315 · rica 17
+     ≥20: 191 horas  (lead 17 · intra 138 · cola 36)
+        se acaba la hora sin G posterior       36  18.8%
+        aún cae G en lo que queda             155  81.2%
+           luego racimo (próx G ≤3 tiros)      73  38.2%
+           rompe y queda sola (no hay 2ª)      29  15.2%
+           rompe + hueco medio (4 R)            9  4.7%
+           rompe + otra sequía / sin 2ª        73  38.2%
+           R AÚN por delante hasta esa G: p50=2  0 más=33  ≥5 más=49
+        tinta de la que cae: G1:39 G2:45 G3:57 G4:14  · lumen p50=45  n=155
+        al tocar el R nº 20: tiros que quedan p50=20  minutos hasta :00 p50=22
+        tocan k y ya no queda tiro (cierre): 6  3.1%
+        clima de esas horas: floja 97 · normal 93 · rica 1
+     ≥30: 24 horas  (lead 4 · intra 16 · cola 4)
+        se acaba la hora sin G posterior        4  16.7%
+        aún cae G en lo que queda              20  83.3%
+           luego racimo (próx G ≤3 tiros)       9  37.5%
+           rompe y queda sola (no hay 2ª)       3  12.5%
+           rompe + hueco medio (4 R)            3  12.5%
+           rompe + otra sequía / sin 2ª         8  33.3%
+           R AÚN por delante hasta esa G: p50=5  0 más=3  ≥5 más=11
+        tinta de la que cae: G1:7 G2:9 G3:4  · lumen p50=36  n=20
+        al tocar el R nº 30: tiros que quedan p50=18  minutos hasta :00 p50=18
+        tocan k y ya no queda tiro (cierre): 1  4.2%
+        clima de esas horas: floja 21 · normal 3 · rica 0
+     ≥36: 10 horas  (lead 2 · intra 7 · cola 1)
+        se acaba la hora sin G posterior        1  10.0%
+        aún cae G en lo que queda               9  90.0%
+           luego racimo (próx G ≤3 tiros)       4  40.0%
+           rompe y queda sola (no hay 2ª)       2  20.0%
+           rompe + hueco medio (4 R)            1  10.0%
+           rompe + otra sequía / sin 2ª         4  40.0%
+           R AÚN por delante hasta esa G: p50=3  0 más=2  ≥5 más=2
+        tinta de la que cae: G1:2 G2:3 G3:4  · lumen p50=45  n=9
+        al tocar el R nº 36: tiros que quedan p50=19  minutos hasta :00 p50=18
+        tocan k y ya no queda tiro (cierre): 0  0.0%
+        clima de esas horas: floja 10 · normal 0 · rica 0
+        horas ≥36:
+          h14-230726  nG=5 floja  intra 39R  quedan=16  G1 lm=32  gaps_tras=[]
+          h6-250726  nG=7 floja  intra 39R  quedan=12  G3 lm=24  gaps_tras=[3, 0]
+          h23-260726  nG=2 floja  lead 61R  quedan=31  G1 lm=63  gaps_tras=[4]
+          h7-270726  nG=1 floja  tail 45R  quedan=9  sin G después  gaps_tras=[]
+          h17-280726  nG=2 floja  intra 39R  quedan=11  G2 lm=41  gaps_tras=[]
+          h7-040826  nG=5 floja  intra 36R  quedan=23  G3 lm=72  gaps_tras=[0, 12]
+          h2-090826  nG=7 floja  lead 37R  quedan=28  G2 lm=50  gaps_tras=[6, 2, 7]
+          h22-100826  nG=4 floja  intra 39R  quedan=12  G3 lm=45  gaps_tras=[1, 4]
+          h13-220826  nG=6 floja  intra 36R  quedan=22  G3 lm=36  gaps_tras=[6, 1, 5]
+          h21-240826  nG=6 floja  intra 44R  quedan=32  G2 lm=65  gaps_tras=[3, 0, 13]
+
+  4. TINTA BASE de la misma tanda (todas las luces, no la cola)
+     G1 21.9%  G2 33.3%  G3 33.3%  G4 11.5%  · lumen p50=45
+
+  5. MESA FRÍA al arrancar (lead) vs INTRA vs COLA — ≥15 como foto
+     aún no 1ª G: 61 h  6.0%
+        de esas rachas ≥15, rompen con G: 61/61  100.0%
+     tras una G: 412 h  40.6%
+        de esas rachas ≥15, rompen con G: 460/460  100.0%
+     cierra la hora: 76 h  7.5%
+        de esas rachas ≥15, rompen con G: 0/76  0.0%
+
+  6. SEQUÍA QUE CRUZA el :00 (cola H + lead H+1, horas consecutivas)
+     pares consecutivos: 1004
+     k   | pares | % pares | H+1 abre G | H+1 se acaba 0 G
+     ≥15 |   212 |   21.1% |  212  100.0% |    0    0.0%
+     ≥20 |    96 |    9.6% |   96  100.0% |    0    0.0%
+     ≥30 |    27 |    2.7% |   27  100.0% |    0    0.0%
+     ≥36 |     9 |    0.9% |    9  100.0% |    0    0.0%
+     top cruces:
+        h22-260726 + h23-260726: 63 R  (2+61)  abre G
+        h20-240826 + h21-240826: 49 R  (5+44)  abre G
+        h7-270726 + h8-270726: 45 R  (45+0)  abre G
+        h1-080826 + h2-080826: 45 R  (28+17)  abre G
+        h1-090826 + h2-090826: 45 R  (8+37)  abre G
+
+════════ HOLDOUT 72 h (horas con ≥1 G)  72 horas ════════
+  Horas sin ninguna luz (0 G núcleo): 0  0.0%
+  Clima: floja 14 · normal 44 · rica 14
+
+  1. DÓNDE VIVE LA COLA (máx R seguidas DE ESA hora, una cifra por hora)
+     cubo     | horas |  %
+     0-4      |     0 | 0.0%
+     5-9      |    15 | 20.8%
+     10-14    |    22 | 30.6%
+     15-19    |    20 | 27.8%
+     20-29    |    14 | 19.4%
+     30-35    |     1 | 1.4%
+     36+      |     0 | 0.0%
+     máx-R de la hora: p50=14  p90=21  p99=29  tope=31
+
+  2. HORAS QUE ALCANZAN el umbral (origen de la racha que lo toca)
+     k   | cualquier | intra (tras G) | lead (aún no 1ª G) | cola (cierra sin romper)
+     ≥15 |    35   48.6% |    28   38.9% |     4    5.6% |     4    5.6%
+     ≥20 |    15   20.8% |     9   12.5% |     3    4.2% |     3    4.2%
+     ≥30 |     1    1.4% |     1    1.4% |     0    0.0% |     0    0.0%
+     ≥36 |     0    0.0% |     0    0.0% |     0    0.0% |     0    0.0%
+
+  3. DESDE el k-ésimo R (postura live: ya van k R, ¿qué queda EN ESA hora?)
+     No es 'la racha completa terminó en G' (eso es tautología de intra/lead).
+     ≥15: 35 horas  (lead 4 · intra 27 · cola 4)
+        se acaba la hora sin G posterior        4  11.4%
+        aún cae G en lo que queda              31  88.6%
+           luego racimo (próx G ≤3 tiros)      15  42.9%
+           rompe y queda sola (no hay 2ª)       2  5.7%
+           rompe + hueco medio (4 R)            3  8.6%
+           rompe + otra sequía / sin 2ª        13  37.1%
+           R AÚN por delante hasta esa G: p50=3  0 más=4  ≥5 más=11
+        tinta de la que cae: G1:11 G2:7 G3:11 G4:2  · lumen p50=48  n=31
+        al tocar el R nº 15: tiros que quedan p50=29  minutos hasta :00 p50=29
+        tocan k y ya no queda tiro (cierre): 0  0.0%
+        clima de esas horas: floja 13 · normal 21 · rica 1
+     ≥20: 15 horas  (lead 3 · intra 9 · cola 3)
+        se acaba la hora sin G posterior        3  20.0%
+        aún cae G en lo que queda              12  80.0%
+           luego racimo (próx G ≤3 tiros)       5  33.3%
+           rompe y queda sola (no hay 2ª)       2  13.3%
+           rompe + hueco medio (4 R)            0  0.0%
+           rompe + otra sequía / sin 2ª         7  46.7%
+           R AÚN por delante hasta esa G: p50=2  0 más=4  ≥5 más=4
+        tinta de la que cae: G1:3 G2:4 G3:3 G4:2  · lumen p50=46  n=12
+        al tocar el R nº 20: tiros que quedan p50=16  minutos hasta :00 p50=15
+        tocan k y ya no queda tiro (cierre): 0  0.0%
+        clima de esas horas: floja 9 · normal 6 · rica 0
+     ≥30: 1 horas  (lead 0 · intra 1 · cola 0)
+        se acaba la hora sin G posterior        0  0.0%
+        aún cae G en lo que queda               1  100.0%
+           luego racimo (próx G ≤3 tiros)       0  0.0%
+           rompe y queda sola (no hay 2ª)       1  100.0%
+           rompe + hueco medio (4 R)            0  0.0%
+           rompe + otra sequía / sin 2ª         1  100.0%
+           R AÚN por delante hasta esa G: p50=1  0 más=0  ≥5 más=0
+        tinta de la que cae: G4:1  · lumen p50=134  n=1
+        al tocar el R nº 30: tiros que quedan p50=5  minutos hasta :00 p50=6
+        tocan k y ya no queda tiro (cierre): 0  0.0%
+        clima de esas horas: floja 1 · normal 0 · rica 0
+     ≥36: 0 horas
+
+  4. TINTA BASE de la misma tanda (todas las luces, no la cola)
+     G1 24.0%  G2 32.5%  G3 32.8%  G4 10.6%  · lumen p50=45
+
+  5. MESA FRÍA al arrancar (lead) vs INTRA vs COLA — ≥15 como foto
+     aún no 1ª G: 4 h  5.6%
+        de esas rachas ≥15, rompen con G: 4/4  100.0%
+     tras una G: 28 h  38.9%
+        de esas rachas ≥15, rompen con G: 31/31  100.0%
+     cierra la hora: 4 h  5.6%
+        de esas rachas ≥15, rompen con G: 0/4  0.0%
+
+  6. SEQUÍA QUE CRUZA el :00 (cola H + lead H+1, horas consecutivas)
+     pares consecutivos: 32
+     k   | pares | % pares | H+1 abre G | H+1 se acaba 0 G
+     ≥15 |     4 |   12.5% |    4  100.0% |    0    0.0%
+     ≥20 |     2 |    6.2% |    2  100.0% |    0    0.0%
+     ≥30 |     0 |    0.0% |    0       — |    0       —
+     ≥36 |     0 |    0.0% |    0       — |    0       —
+     top cruces:
+        h18-030926 + h19-030926: 25 R  (23+2)  abre G
+        h12-040926 + h13-040926: 24 R  (3+21)  abre G
+        h14-060926 + h15-060926: 19 R  (1+18)  abre G
+        h16-060926 + h17-060926: 16 R  (2+14)  abre G
+        h8-060926 + h9-060926: 14 R  (3+11)  abre G
+
+════════ HORAS 0 G (cruda; no entran al split de load_cinta) ════════
+  n=0
+
+════════════════════════════════ LECTURA ════════════════════════════════
+Ya estaba: hueco no es pila · gap≥5 no perseguir (banda ~10%) ·
+SEQUIA3 / Next 3 callan a los 3–4 R · LC-01 no se estira por tono ·
+espera G→G = sombra de L · p es de ESA hora · racimo corto O sequía.
+Diff de este look: situar 36 en la cola ≥15/20/30 y nombrar escenarios
+hora a hora (rompe / racimo / se acaba / cruza :00). No cable.
+
+TIPS (oficios combinados, no un “ahora toca G”)
+  · Go! / Next 3 / SEQUIA3: siguen en silencio desde los 3–4 R.
+    A los 36 ya van callados rato. No se despiertan por tono ni por k.
+  · LC-01: no se estira a +36. El tip de la G previa está frío.
+    Si cae una G nueva, LC-01 se recalcula (p30 de huecos vistos);
+    eso no es permiso para cazar la sequía.
+  · Tras la que rompe: V3 puede hablar OTRA VEZ 3 tiros (racimo).
+    Si no llega, silencio otra vez. Misma política, no una nueva.
+  · “Aún cae G en lo que queda” (9/10 a ≥36) = cupo floja + minutos
+    por delante + sombra de L, NO P(próximo tiro=G). n=10, cola.
+  · 36 vive solo en floja (10/10 train). Holdout 72 h: 0 horas ≥36
+    (tope 31). No es ley de cada tanda.

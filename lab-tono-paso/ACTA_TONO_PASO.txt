@@ -1,0 +1,39 @@
+ACTA LAB — TONO × PASO (Next 3 / P7 V3)
+=======================================
+fecha: 2026-09-06
+lab: hilo-corto/lab-tono-paso/
+script: eval_tono_paso.py → reports/LAB_TONO_PASO.txt
+Cero prod. Cero LIVE. Cero Jaccard.
+
+PREGUNTA
+  Si la hora apagada estira el paso, ¿Next 3 o Pool 7 V3 deben
+  seguir un camino aletargado (tip más lejos / ventana más larga)?
+
+JUEZ
+  Banda d≤1, minuto tip vs ESA G, hora a hora.
+  Tono final = foto. Política = causal.
+
+VEREDICTO
+  NO estirar. El hueco apagado es bimodal (racimo corto O sequía),
+  no un paso único de 6–10 R. El piso FLOOR4/6 cae en el valle.
+
+NÚMEROS (train 1013 h / holdout 72 h)
+  G siguiente en ≤3 tiros: apagada 36% · fuerte 50–52% (train).
+  Horas cuyo paso mediano es ≤3 tiros: apagada 15% · fuerte 49%.
+  Banda todas las G (hold): LC-01 40.2% · FELIZ+2 42.2% · FLOOR6 30.8% · PASO_R 32.4%.
+  Ya aletargado causal (hold): LC-01 37.5% · FELIZ+2 43.8% · FLOOR6 20.5%.
+  V3 tiene al menos un tiro en 93% de las apagadas; mediana 2 jugadas vs 5–6 en fuerte.
+
+CENSUS
+  ESTIRAR tip por tono (FLOOR4/6, HOD7, PASO_R)  FRÍO
+  Alargar V3 a 6–10 tiros en apagada             VETO (mismo desgaste que V5)
+  Next 3 pintar color R/G                        ANULADO (juez-trampa)
+  V3 = oficio del racimo; tono = volumen         VIVE (no cable nuevo)
+  Next 3 minutos + pasa/zona/fuera               CABLEADO (dashboard, 2026-09-06)
+                                                 Next 3 UI retirada (2026-09-06)
+  Go! alineado a poda +1 (ventana +2..+4)        CABLEADO (dashboard, 2026-09-06)
+                                                 Tren/Estirada: el pegado sí entra
+                                                 Alarma P7 no se tocó
+
+DÓNDE
+  POOL_TONO_PASO.txt · reports/LAB_TONO_PASO.txt

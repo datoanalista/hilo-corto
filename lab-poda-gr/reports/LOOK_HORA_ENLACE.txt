@@ -1,0 +1,247 @@
+LOOK · ¿los gestos van enlazados?
+No es tip. No es «% de horas». No es el relato 6–7 / 12 / 2G.
+Tres preguntas distintas. Si se mezclan, parece azar o parece ley.
+
+DATA  train histórico 1092 h con hueco. Hold no se mezcla.
+
+════════════════════════════════ 1. EL TIPO ELIGE LA BOLSA ════════════════════════════════
+Bolsa = letras que ESA hora tiene, sin importar el orden.
+Se muestran horas reales, no un promedio de tono.
+
+  h10-230726   norm mesa  nG=11 E=1 T=3  bolsa TTTkkmmmmL
+      06·L11  17ET0  18·T0  20·k3  24·m8  32·T0  33·m7  40·m7  47·k2  50·m5  →56
+  h11-230726   opac mesa  nG=9  E=0 T=0  bolsa kkkkmLLL
+      01·m7  08·L11  20·k2  23·L10  33·k2  37·k3  41·L14  53·k2  →56
+  h12-230726   fuer mesa  nG=12 E=1 T=1  bolsa TCCkkkkmmmL
+      03·k2  06·C1  10·k4  14·m5  20·k3  24·k2  28·m6  34·m7  41·L9  49·C1  52ET0  →54
+  h13-230726   fuer mesa  nG=9  E=2 T=2  bolsa TTCCkkSS
+      02·S16  18·k3  21ET0  24·C1  26·C1  29·k4  34·S17  50ET0  →52
+  h14-230726   apag floja nG=5  E=0 T=0  bolsa kkmS
+      02·k4  07·m6  12·k2  16·S39  →49
+  h16-230726   opac floja nG=7  E=0 T=0  bolsa kkkmLL
+      10·L13  23·k4  29·m8  37·L9  47·k4  51·k3  →55
+  h17-230726   apag mesa  nG=9  E=0 T=0  bolsa CkkmmmLS
+      03·m6  10·L10  20·S17  36·m5  41·m5  47·k3  51·C1  54·k2  →57
+  h18-230726   rica cupo+ nG=13 E=1 T=1  bolsa TCCCkkkkkkmS
+      03·k4  08ET0  10·k2  14·k2  18·C1  21·m6  28·k2  31·C1  34·k2  37·C1  40·S16  55·k3  →59
+  h19-230726   rica mesa  nG=10 E=1 T=2  bolsa TTCkkkmmL
+      12·L11  25·k3  30·m7  37·k3  42ET0  44·T0  45·m5  51·C1  54·k4  →59
+  h20-230726   rica mesa  nG=9  E=0 T=1  bolsa TkkkkmLL
+      10·k3  14·m5  21·T0  22·k3  27·k3  31·L11  42·L11  52·k3  →57
+  h21-230726   opac mesa  nG=11 E=0 T=1  bolsa TCkkkkkmmL
+      02·k4  07·k4  12·L14  25·k4  30·T0  31·m5  37·C1  39·k3  43·k3  47·m7  →57
+  h22-230726   rica cupo+ nG=15 E=0 T=3  bolsa TTTCCCkkkkkkkm
+      13·k2  17·k3  21·k3  26·C1  28·k2  32·k2  35·C1  37·T0  39·m5  45·T0  46·C1  49·T0  51·k2  54·k3  →58
+  h23-230726   norm cupo+ nG=13 E=2 T=3  bolsa TTTCCCCkkkmS
+      03·C1  05·S18  21·k4  27·k3  31ET0  33·C1  36·T0  37ET0  39·C1  42·k4  48·m6  54·C1  →57
+  h0-240726    apag mesa  nG=10 E=1 T=1  bolsa TCkkkkmmL
+      04·k4  09·k3  13·k4  18·k3  22·m8  31·C1  34·m8  42·L12  54ET0  →56
+  h3-240726    norm mesa  nG=12 E=3 T=3  bolsa TTTCkkkkkmm
+      14·m8  22ET0  23·k2  27ET0  29·k2  32·k2  36·k2  39·k2  43ET0  45·m5  52·C1  →54
+  h4-240726    norm cupo+ nG=13 E=2 T=6  bolsa TTTTTTkkkmmL
+      11·T0  12·T0  13·k2  17·T0  19·k2  22·T0  23·k4  28·m5  34·L10  45ET0  48ET0  49·m7  →57
+  h18-240726   apag floja nG=6  E=1 T=1  bolsa TkkkL
+      27·k4  32·L11  44·k3  48ET0  50·k4  →56
+  h20-240726   opac cupo+ nG=13 E=1 T=2  bolsa TTCCkkkkkmLL
+      02·k2  05·L11  16·k2  20·k2  23·C1  26·T0  27·k2  31·k2  34·m6  41ET0  43·L10  54·C1  →56
+  h22-240726   fuer cupo+ nG=13 E=1 T=2  bolsa TTCCCkkkkkkS
+      01ET0  03·T0  05·k2  08·k2  12·k2  16·k3  19·S16  37·C1  40·C1  42·C1  45·k2  49·k4  →55
+  h0-250726    opac cupo+ nG=13 E=1 T=2  bolsa TTCkkkkmmmmL
+      01·C1  03ET0  05·T0  07·m6  13·k3  18·m6  24·k2  27·L10  37·m5  43·m5  49·k3  53·k3  →57
+  h5-250726    fuer cupo+ nG=15 E=3 T=5  bolsa TTTTTCCkkkkmmL
+      05·k2  08·C1  11ET0  12·k3  17·T0  18·T0  20·C1  22ET0  24·m5  31·L10  42·k2  45·m5  52·k3  56ET0  →58
+  h8-250726    norm floja nG=6  E=1 T=1  bolsa TkmmS
+      05·m7  12ET0  15·m6  21·S26  45·k3  →49
+  h11-250726   apag cupo+ nG=13 E=0 T=3  bolsa TTTkkkkkmmmL
+      00·k3  04·k3  08·T0  10·k3  14·k2  17·k3  21·T0  23·m5  28·m5  34·T0  36·L12  47·m8  →56
+  h22-250726   opac floja nG=7  E=1 T=1  bolsa TmmmLL
+      03·m6  10·L11  21·L15  34·m7  41ET0  44·m8  →52
+  h8-260726    rica floja nG=6  E=0 T=0  bolsa kmmLL
+      05·m6  12·L15  25·k2  29·L15  44·m6  →51
+  h2-280726    fuer floja nG=5  E=1 T=1  bolsa TLSS
+      09ET0  12·S16  26·L10  37·S16  →53
+  h14-020826   fuer floja nG=5  E=0 T=0  bolsa mmmL
+      04·m8  13·m7  20·m5  26·L9  →36
+  h11-070826   norm floja nG=6  E=0 T=0  bolsa mmmLS
+      03·m6  10·m8  18·m5  24·L15  39·S17  →55
+  h6-100826    rica floja nG=7  E=0 T=0  bolsa CkmmLL
+      15·L10  25·m6  32·k3  37·m8  46·L9  56·C1  →58
+
+Lectura de esas bolsas (sin saco):
+  floja/apagada: la palabra es corta y aparecen L o S.
+  cupo+/rica: la palabra es larga y caben varias T y C.
+  Eso NO es que los gestos «vayan de la mano» entre sí.
+  Es que el cupo/tono elige CUÁNTAS letras y de qué grosor.
+  Bitácora: el clima dice cuántas luces, no el tiro.
+
+════════════════════════════════ 2. ORDEN vs BARAJAR LA MISMA BOLSA ════════════════════════════════
+Si el gesto anterior ATARA al siguiente, el orden real
+se distinguiría de barajar las mismas letras de ESA hora.
+Pegajosa = racha real > p90 del barajado de SU bolsa.
+Revuelta  = racha real ≤ mediana del barajado (sopa de su bolsa).
+
+— horas PEGAJOSAS (el orden se pega más que su propia bolsa) —
+  h15-230726   fuer mesa  nG=12 E=1 T=4  run 4  nulo 2/3  bolsa TTTTCkkkmmS
+      05·C1  08·S17  24·m7  31ET0  33·T0  34·T0  36·T0  37·k2  41·k2  43·m6  51·k2  →54
+  h0-240726    apag mesa  nG=10 E=1 T=1  run 4  nulo 2/3  bolsa TCkkkkmmL
+      04·k4  09·k3  13·k4  18·k3  22·m8  31·C1  34·m8  42·L12  54ET0  →56
+  h3-240726    norm mesa  nG=12 E=3 T=3  run 4  nulo 2/3  bolsa TTTCkkkkkmm
+      14·m8  22ET0  23·k2  27ET0  29·k2  32·k2  36·k2  39·k2  43ET0  45·m5  52·C1  →54
+  h7-290726    rica mesa  nG=12 E=2 T=2  run 6  nulo 3/4  bolsa TTkkkkkkmmm
+      03ET0  05ET0  07·m7  14·m6  21·m7  30·k4  36·k2  39·k2  42·k3  48·k2  52·k2  →55
+  h15-300726   fuer cupo+ nG=14 E=3 T=5  run 4  nulo 2/3  bolsa TTTTTCCCCmmLS
+      00·S16  16·C1  19·C1  21·C1  23·m7  30ET0  32ET0  34·T0  36ET0  38·L9  46·m8  54·C1  58·T0  →59
+  h18-300726   norm cupo+ nG=13 E=0 T=1  run 5  nulo 2/3  bolsa TCCCkkkkkmmL
+      03·k3  07·k3  11·k2  14·k4  19·k4  23·m6  30·C1  33·T0  34·C1  37·m7  45·C1  47·L13  →59
+  h5-310726    opac mesa  nG=10 E=0 T=0  run 3  nulo 2/2  bolsa CCkkmmmLS
+      00·L10  10·C1  13·C1  15·k2  18·m5  24·m5  29·m6  38·k2  41·S16  →57
+  h0-050826    norm mesa  nG=11 E=1 T=2  run 3  nulo 2/2  bolsa TTCCkkkmLL
+      04·L13  16ET0  18·k2  22·k3  26·k3  31·L13  44·C1  46·C1  49·m7  56·T0  →58
+
+— horas REVUELTAS (el orden = su bolsa en cualquier orden) —
+  h10-230726   norm mesa  nG=11 E=1 T=3  run 2  nulo 2/3  bolsa TTTkkmmmmL
+      06·L11  17ET0  18·T0  20·k3  24·m8  32·T0  33·m7  40·m7  47·k2  50·m5  →56
+  h11-230726   opac mesa  nG=9  E=0 T=0  run 2  nulo 2/3  bolsa kkkkmLLL
+      01·m7  08·L11  20·k2  23·L10  33·k2  37·k3  41·L14  53·k2  →56
+  h12-230726   fuer mesa  nG=12 E=1 T=1  run 2  nulo 2/3  bolsa TCCkkkkmmmL
+      03·k2  06·C1  10·k4  14·m5  20·k3  24·k2  28·m6  34·m7  41·L9  49·C1  52ET0  →54
+  h13-230726   fuer mesa  nG=9  E=2 T=2  run 2  nulo 2/2  bolsa TTCCkkSS
+      02·S16  18·k3  21ET0  24·C1  26·C1  29·k4  34·S17  50ET0  →52
+  h16-230726   opac floja nG=7  E=0 T=0  run 2  nulo 2/3  bolsa kkkmLL
+      10·L13  23·k4  29·m8  37·L9  47·k4  51·k3  →55
+  h17-230726   apag mesa  nG=9  E=0 T=0  run 2  nulo 2/3  bolsa CkkmmmLS
+      03·m6  10·L10  20·S17  36·m5  41·m5  47·k3  51·C1  54·k2  →57
+  h18-230726   rica cupo+ nG=13 E=1 T=1  run 2  nulo 3/4  bolsa TCCCkkkkkkmS
+      03·k4  08ET0  10·k2  14·k2  18·C1  21·m6  28·k2  31·C1  34·k2  37·C1  40·S16  55·k3  →59
+  h19-230726   rica mesa  nG=10 E=1 T=2  run 2  nulo 2/2  bolsa TTCkkkmmL
+      12·L11  25·k3  30·m7  37·k3  42ET0  44·T0  45·m5  51·C1  54·k4  →59
+
+— ¿el LARGO del hueco ata el largo del siguiente? (misma hora) —
+  |corr|≥0.55 entre huecos seguidos (una película, no un %):
+  h11-230726   opac mesa  nG=9  E=0 T=0  corr=-0.62  R: 7 11 2 10 2 3 14 2
+  h14-230726   apag floja nG=5  E=0 T=0  corr=-0.91  R: 4 6 2 39
+  h3-240726    norm mesa  nG=12 E=3 T=3  corr=-0.59  R: 8 0 2 0 2 2 2 2 0 5 1
+  h5-240726    norm mesa  nG=9  E=1 T=1  corr=-0.57  R: 3 8 0 11 6 2 5 3
+  h14-240726   norm mesa  nG=8  E=0 T=0  corr=-0.76  R: 7 9 1 10 3 7 7
+  h15-240726   norm mesa  nG=8  E=0 T=0  corr=-0.88  R: 4 7 5 3 8 2 11
+  |corr|<0.15 (el siguiente hueco no copia al anterior):
+  h13-230726   fuer mesa  nG=9  E=2 T=2  corr=-0.13  R: 16 3 0 1 1 4 17 0
+  h15-230726   fuer mesa  nG=12 E=1 T=4  corr=+0.15  R: 1 17 7 0 0 0 0 2 2 6 2
+  h18-230726   rica cupo+ nG=13 E=1 T=1  corr=-0.13  R: 4 0 2 2 1 6 2 1 2 1 16 3
+  h19-230726   rica mesa  nG=10 E=1 T=2  corr=-0.03  R: 11 3 7 3 0 0 5 1 4
+  h21-230726   opac mesa  nG=11 E=0 T=1  corr=-0.05  R: 4 4 14 4 0 5 1 3 3 7
+  h23-230726   norm cupo+ nG=13 E=2 T=3  corr=+0.02  R: 1 18 4 3 0 1 0 0 1 4 6 1
+
+════════════════════════════════ 3. OTRAS ATADURAS (no tus ejemplos) ════════════════════════════════
+
+— A. La G que ABRE ¿ata el hueco? (E vs no-E) —
+  Siguientes 10 huecos abiertos por E, y 10 abiertos por G corta.
+  Se mira el hueco que ELLA abre, no un saco de horas.
+  abre E:
+    h10-230726 @17 E→T0  tinta G3 lm 36
+    h12-230726 @52 E→T0  tinta G2 lm 18
+    h13-230726 @21 E→T0  tinta G3 lm 24
+    h13-230726 @50 E→T0  tinta G2 lm 135
+    h15-230726 @31 E→T0  tinta G3 lm 54
+    h18-230726 @08 E→T0  tinta G2 lm 107
+    h19-230726 @42 E→T0  tinta G4 lm 155
+    h23-230726 @31 E→T0  tinta G3 lm 27
+    h23-230726 @37 E→T0  tinta G3 lm 18
+    h0-240726 @54 E→T0  tinta G3 lm 18
+  abre G corta:
+    h10-230726 @06 ·→L11  tinta G2 lm 17
+    h10-230726 @18 ·→T0  tinta G4 lm 69
+    h10-230726 @20 ·→k3  tinta G1 lm 41
+    h10-230726 @24 ·→m8  tinta G4 lm 86
+    h10-230726 @32 ·→T0  tinta G1 lm 16
+    h10-230726 @33 ·→m7  tinta G1 lm 22
+    h10-230726 @40 ·→m7  tinta G1 lm 245
+    h10-230726 @47 ·→k2  tinta G3 lm 81
+    h10-230726 @50 ·→m5  tinta G1 lm 39
+    h11-230726 @01 ·→m7  tinta G2 lm 25
+
+— B. Lumen de la G que abre (no es E; es brillo) —
+  G con lm≥80 y el hueco que abre; después G con lm≤20.
+  lm≥80:
+    h10-230726 @24 lm86 → m8
+    h10-230726 @40 lm245 → m7
+    h10-230726 @47 lm81 → k2
+    h11-230726 @23 lm165 → L10
+    h12-230726 @10 lm442 → k4
+    h12-230726 @28 lm111 → m6
+    h12-230726 @41 lm95 → L9
+    h13-230726 @24 lm151 → C1
+  lm≤20:
+    h10-230726 @06 lm17 → L11
+    h10-230726 @32 lm16 → T0
+    h11-230726 @41 lm18 → L14
+    h12-230726 @03 lm13 → k2
+    h12-230726 @14 lm20 → m5
+    h12-230726 @20 lm18 → k3
+    h12-230726 @49 lm10 → C1
+    h12-230726 @52 lm18 → T0
+
+— C. Tinta que CIERRA un hueco ≥16 (pulso de bitácora, no el vivo) —
+    h13-230726 S16 cierra en G1 @18  h13-230726   fuer mesa  nG=9  E=2 T=2
+    h13-230726 S17 cierra en G2 @50  h13-230726   fuer mesa  nG=9  E=2 T=2
+    h14-230726 S39 cierra en G1 @49  h14-230726   apag floja nG=5  E=0 T=0
+    h15-230726 S17 cierra en G2 @24  h15-230726   fuer mesa  nG=12 E=1 T=4
+    h17-230726 S17 cierra en G1 @36  h17-230726   apag mesa  nG=9  E=0 T=0
+    h18-230726 S16 cierra en G3 @55  h18-230726   rica cupo+ nG=13 E=1 T=1
+    h23-230726 S18 cierra en G1 @21  h23-230726   norm cupo+ nG=13 E=2 T=3
+    h8-240726 S18 cierra en G3 @28  h8-240726    opac mesa  nG=10 E=1 T=2
+    h9-240726 S17 cierra en G2 @49  h9-240726    rica mesa  nG=9  E=0 T=0
+    h22-240726 S16 cierra en G1 @37  h22-240726   fuer cupo+ nG=13 E=1 T=2
+
+— D. Costura H → H+1 (gesto, no cupo) —
+  Bitácora: las horas se juntan por el PULSO cortado, no por el cupo.
+  Aquí: última letra de H y primera de la siguiente mesa.
+  doce costuras seguidas del arranque del corpus:
+    h10-230726 …m  →  m… h11-230726   misma letra   bolsas TTTkkmmmmL|kkkkmLLL
+    h11-230726 …k  →  k… h12-230726   misma letra   bolsas kkkkmLLL|TCCkkkkmmmL
+    h12-230726 …T  →  S… h13-230726   cambia   bolsas TCCkkkkmmmL|TTCCkkSS
+    h13-230726 …T  →  k… h14-230726   cambia   bolsas TTCCkkSS|kkmS
+    h14-230726 …S  →  C… h15-230726   cambia   bolsas kkmS|TTTTCkkkmmS
+    h15-230726 …k  →  L… h16-230726   cambia   bolsas TTTTCkkkmmS|kkkmLL
+    h16-230726 …k  →  m… h17-230726   cambia   bolsas kkkmLL|CkkmmmLS
+    h17-230726 …k  →  k… h18-230726   misma letra   bolsas CkkmmmLS|TCCCkkkkkkmS
+    h18-230726 …k  →  L… h19-230726   cambia   bolsas TCCCkkkkkkmS|TTCkkkmmL
+    h19-230726 …k  →  k… h20-230726   misma letra   bolsas TTCkkkmmL|TkkkkmLL
+    h20-230726 …k  →  k… h21-230726   misma letra   bolsas TkkkkmLL|TCkkkkkmmL
+    h21-230726 …m  →  k… h22-230726   cambia   bolsas TCkkkkkmmL|TTTCCCkkkkkkkm
+  de 1039 costuras del mismo día, la letra se copia 215 veces.
+  Eso no corona enlace: dos bolsas ricas copian T por crowding, no por memoria.
+
+— E. ¿El PRIMER hueco de la hora ata el resto? —
+  Se muestra el primero y la bolsa del RESTO (sin el primero).
+  h10-230726   norm mesa  nG=11 E=1 T=3  abre L  resto TTTkkmmmm
+  h11-230726   opac mesa  nG=9  E=0 T=0  abre m  resto kkkkLLL
+  h12-230726   fuer mesa  nG=12 E=1 T=1  abre k  resto TCCkkkmmmL
+  h13-230726   fuer mesa  nG=9  E=2 T=2  abre S  resto TTCCkkS
+  h15-230726   fuer mesa  nG=12 E=1 T=4  abre C  resto TTTTkkkmmS
+  h16-230726   opac floja nG=7  E=0 T=0  abre L  resto kkkmL
+  h17-230726   apag mesa  nG=9  E=0 T=0  abre m  resto CkkmmLS
+  h18-230726   rica cupo+ nG=13 E=1 T=1  abre k  resto TCCCkkkkkmS
+  h19-230726   rica mesa  nG=10 E=1 T=2  abre L  resto TTCkkkmm
+  h20-230726   rica mesa  nG=9  E=0 T=1  abre k  resto TkkkmLL
+
+════════════════════════════════ LECTURA ════════════════════════════════
+1. Van de la mano con el TIPO de hora en la BOLSA, no en el baile.
+   Apagada/floja: palabra corta, caben L/S. Rica: palabra larga, caben T/C.
+   Eso ya era cupo. No es que k «llame» a L.
+2. El ORDEN, dado esa bolsa, casi no ata. Hay horas pegajosas
+   (una letra se pega: kkkkkk, TTTTT) y horas revueltas.
+   La pegajosa es crowding / isla que se rompe, no un coreógrafo.
+   El largo de un hueco no copia al siguiente (|corr| chica en la
+   mayoría de las películas de abajo-de-0.15).
+3. Otras ataduras: la G que abre (E o lumen) NO elige un hueco fijo
+   en las tiras. La tinta que CIERRA una sequía sí habla el pulso
+   (L largo → luz; a veces G4). Eso es el interruptor, no el gesto.
+4. Costura: a veces se copia la letra, a veces no. La bolsa de H+1
+   es otra mesa. El pulso cruza el :00; el gesto no es un hilo.
+5. Azar acá no significa «dado». Significa: dado el cupo de ESTA
+   hora, el siguiente gesto no está amarrado al anterior.
+   Los átomos no se sueltan del cuerpo; el orden sí se baraja.
+
+NO SENTAR: tip · «apagada implica S» · cadena gesto→gesto · dashboard.
+Cero cable. Cero Jaccard.

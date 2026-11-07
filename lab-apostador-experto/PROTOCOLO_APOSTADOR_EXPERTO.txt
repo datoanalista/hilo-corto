@@ -1,0 +1,17 @@
+PROTOCOLO — lab-apostador-experto
+=================================
+stamp 2026-09-04
+
+0. Punto de partida: BITACORA v2 + POOL_APOSTADOR_EXPERTO.txt
+1. Cero tocar prod (dashboard, motor, servir, LIVE).
+2. Script: python run_r0.py → reports/LAB_APOSTADOR_EXPERTO_R0.txt
+   R1: python run_r1.py (si H0 deja mineral)
+3. Holdout: 72 h finales (causal). Train = resto.
+4. Juez decisión:
+     hit = |minuto_G_siguiente − tip| ≤ 1 (banda prod)
+     stake: NO_GO=0 · WEAK=1 · STRONG=3
+     PnL tip = +stake si hit else −stake (odds 1:1 lab)
+5. Veredicto: VIVE | OLOR | FRÍO por H*
+6. Misma entrega: ACTA + REGISTRO + bloque BITACORA si cambia lo traído
+7. Máx 3 rondas formalizadas salvo OK humano
+8. Nada a prod sin OK explícito

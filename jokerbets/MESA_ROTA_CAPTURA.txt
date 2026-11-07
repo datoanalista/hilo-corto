@@ -1,0 +1,40 @@
+Captura peor escenario — mesa caída / mantenimiento (99501, SALIR, blur Betano)
+================================================================================
+
+Qué hace prod (bot + extracción)
+  · Alarma: 5 min sin pulso cinta (confirmado/tiros/gap/brillo) Y Disculpe o Play en DOM → F5×3.
+  · enCurso Go! puede quedar fijo con mesa sana — no dispara F5 solo.
+  · Tras F5: si sigue “Disculpe las molestias” → falla origen → F5×3 cada 3 min
+    hasta que enCurso vuelva a avanzar.
+  · enCurso avanza → se apaga modo origen; otra vez regla de 5 min.
+  · Play preventivo: cada 10 min solo hora floja (OFF/ALERTA sin Go/apuesta),
+    consulta ligera nano-player; evita llegar a Disculpe en horas muertas.
+  · Con play pausado los tiros pueden seguir; Disculpe = mucho más tarde sin actividad.
+  · Señal dashboard → bot: POST cada 2 s.
+  · Relogin Betano: fuera de alcance por ahora
+
+Por qué ahora no se mueve el reloj
+  · Si el juego está caído, el WS deja de avanzar → dashboard puede marcar Offline y
+    enCurso no cambia → a los 5 min debería F5 global (si extracción + bot corren).
+
+Captura manual (3 ventanas, peor caso)
+--------------------------------------
+  1) F12 → pestaña Console.
+  2) Arriba a la izquierda del console: desplegable de contexto → elegir el iframe
+     del juego (URL con sw420101, skywind, live-client-jokers). NO el top de la casa
+     si el error está dentro del iframe.
+  3) Pegar el contenido de:
+     dashboard/extraccion/console-captura-mesa-rota.js
+  4) Copiar el JSON que imprime (o en console: copy(JSON.stringify(__JB_MESA_CAPTURA__,null,2)))
+  5) Guardar como mesa-rota-<casa>-<color>.json en:
+     dashboard/extraccion/inactividad-scan/
+
+Prueba rápida en vivo (misma consola)
+  · JB_MESA_F5()           — recarga la pestaña del contexto actual
+  · JB_MESA_CLICK_SALIR() — clic al SALIR si la captura lo vio (Jugabet)
+
+Lab automático (Chrome cerrado desde dashboard)
+  node dashboard/extraccion/jokerbets-inactividad-dom-scan.js inactividad
+  Ver jokerbets/INACTIVIDAD_PASOS.txt
+
+Tras cambiar jokerbets-dom.js / jokerbets-bot.js: reiniciar extracción desde dashboard.

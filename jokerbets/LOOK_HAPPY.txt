@@ -1,0 +1,65 @@
+LOOK HAPPY — piso de lumen y si se sostiene
+fuente C:\operacion-joker\experimento-nueva-caja-negra\hilo-corto\data\data_3dias.txt  horas 1310
+alto = lumen/G ≥85  ·  gordo = ≥150  ·  happy-cierre = suma≥850
+
+— lumen/G por tercio (TODA hora) —
+  00-19  n= 4177  med 43  %≥85 19.9%
+  20-39  n= 4231  med 45  %≥85 21.3%
+  40-59  n= 4235  med 45  %≥85 21.7%
+— lumen/G por tercio (solo horas que CIERRAN fuerte+) —
+  00-19  n=  862  med 50  %≥85 31.0%  %≥150 15.0%
+  20-39  n=  926  med 50  %≥85 31.7%  %≥150 14.9%
+  40-59  n=  946  med 50  %≥85 30.7%  %≥150 16.7%
+
+— ¿se sostiene el piso? (G que quedan DESPUÉS del gatillo) —
+  1ª G≥85: 1104 h con cola · nG resto 7077  med 45  %≥85 21.3%  %≥150  7.8%  %<50 57.6%
+  1ª G≥150: 618 h con cola · nG resto 3450  med 45  %≥85 22.1%  %≥150  8.3%  %<50 57.9%
+  1ª G<40 (control): 1290 h con cola · nG resto 9874  med 45  %≥85 21.1%  %≥150  7.8%  %<50 57.7%
+  ya 2× G≥85: 701 h · nG resto 3298  med 45  %≥85 21.4%
+
+— de esta banda, ¿qué es la SIGUIENTE hora? —
+  muy_apagado  n= 392  →  muy_apagado 29% · opaco 24% · normal 28% · fuerte 11% · muy_fuerte 6% · supernova 1%
+  opaco        n= 322  →  muy_apagado 28% · opaco 24% · normal 31% · fuerte 10% · muy_fuerte 4% · supernova 2%
+  normal       n= 357  →  muy_apagado 29% · opaco 25% · normal 27% · fuerte 12% · muy_fuerte 6% · supernova 1%
+  fuerte       n= 148  →  muy_apagado 34% · opaco 29% · normal 21% · fuerte 9% · muy_fuerte 5% · supernova 2%
+  muy_fuerte   n=  71  →  muy_apagado 37% · opaco 17% · normal 21% · fuerte 17% · muy_fuerte 6% · supernova 3%
+  supernova    n=  19  →  muy_apagado 26% · opaco 26% · normal 37% · fuerte 11%
+
+— tras K horas muy_apagado/opaco seguidas, la que sigue —
+  K=1  n= 335  fuerte+  20.0%  normal  26.6%  sigue apag/op  53.4%
+  K=2  n= 179  fuerte+  16.2%  normal  26.8%  sigue apag/op  57.0%
+  K=3  n= 102  fuerte+  15.7%  normal  34.3%  sigue apag/op  50.0%
+  K=4  n=  51  fuerte+  13.7%  normal  39.2%  sigue apag/op  47.1%
+  K=5  n=  47  fuerte+  14.9%  normal  36.2%  sigue apag/op  48.9%
+— gatillo EN CURSO (suma ya alcanzada) → G que quedan —
+  suma≥450: 784 h  med min-gatillo 38  resto nG 2912  med 45  %≥85 22.2%  %≥150  8.6%
+  suma≥600: 464 h  med min-gatillo 42  resto nG 1533  med 45  %≥85 22.1%  %≥150  9.1%
+  suma≥850: 172 h  med min-gatillo 42  resto nG 538  med 39  %≥85 20.8%  %≥150  7.4%
+  suma≥1100: 65 h  med min-gatillo 42  resto nG 230  med 36  %≥85 20.0%  %≥150  6.1%
+— foto @T (lo ya caído) → G posteriores a T —
+  corte min 19:
+    0 G≥85 ya      n= 676  resto nG 4323  med 45  %≥85 21.3%
+    1 G≥85 ya      n= 465  resto nG 3062  med 45  %≥85 21.9%
+    ≥2 G≥85 ya     n= 168  resto nG 1081  med 45  %≥85 21.4%
+    suma≥400 ya    n= 124  resto nG  778  med 45  %≥85 22.0%
+    suma≥600 ya    n=  32  resto nG  221  med 40  %≥85 18.6%
+  corte min 29:
+    0 G≥85 ya      n= 481  resto nG 2273  med 45  %≥85 22.0%
+    1 G≥85 ya      n= 489  resto nG 2393  med 45  %≥85 21.5%
+    ≥2 G≥85 ya     n= 337  resto nG 1660  med 45  %≥85 21.8%
+    suma≥400 ya    n= 298  resto nG 1470  med 45  %≥85 22.0%
+    suma≥600 ya    n=  94  resto nG  438  med 40  %≥85 20.5%
+  corte min 39:
+    0 G≥85 ya      n= 321  resto nG 1031  med 45  %≥85 20.9%
+    1 G≥85 ya      n= 459  resto nG 1528  med 45  %≥85 22.7%
+    ≥2 G≥85 ya     n= 499  resto nG 1676  med 45  %≥85 21.4%
+    suma≥400 ya    n= 562  resto nG 1876  med 45  %≥85 21.8%
+    suma≥600 ya    n= 203  resto nG  680  med 40  %≥85 19.7%
+— @19: media de G ya caídas vs cierre fuerte+ —
+  med<40   n= 322  cierra fuerte+   9.0%
+  40–49    n= 205  cierra fuerte+  12.7%
+  50–67    n= 273  cierra fuerte+  15.4%
+  ≥68      n= 350  cierra fuerte+  36.9%
+
+No sentar. Happy hour = régimen de la hora, no un G gordo suelto.
+No se anticipa. Se detecta en curso.

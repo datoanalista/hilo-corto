@@ -1,0 +1,95 @@
+LAB SOM02 vs PROD (BASE) — fichas + rendimiento
+stamp 2026-08-29 03:28
+Lab: hilo-corto · juez banda d<=1 · cilindro>=4
+BASE = emitir_boleto sin chip sombra (islas+costura). SOM02 = boleto prod (incluye sombra si cupo).
+Cero LIVE. motor.py no tocado.
+
+══ CÓMO SE PROPONE LA FICHA ══
+
+  1. foto = islas H-1 (nucleo previo)
+  2. paso = mediana de huecos entre islas (1..20)
+  3. cand = (max(foto) + paso) %% 60
+  4. Entra solo si: k < clima · cand≠01 · no en boleto · d>=2 a chips
+
+══ RESUMEN RENDIMIENTO (n=871) ══
+
+  quien     k      hits    ±1     score   colapso  score/ficha
+  BASE      9.00   1.60   2.61   4.21    1.15%   0.468
+  SOM02     9.25   1.64   2.66   4.31    1.03%   0.466
+  Δ         +0.25   +0.04   +0.06   +0.10    -0.11 pp  -0.0019
+
+══ FICHAS PROPUESTAS ══
+
+  Horas donde entra chip nuevo: 216 / 871 (24.8%)
+  Horas sin ficha nueva:        655
+
+  Motivo de NO entrar:
+    cupo_lleno_k>=clima     552
+    ya_en_boleto            41
+    fermion_d<2             35
+    veto_minuto_01          27
+
+  Resultado de la ficha nueva vs luces reales (solo cuando entra):
+    EXACTO        37  (17.1%)
+    VECINO        48  (22.2%)
+    FALLA        131  (60.6%)
+
+  Solo en horas donde SÍ entra la ficha (n=216):
+    score BASE  3.44
+    score SOM02 3.84
+    Δ           +0.40
+
+══ MUESTRA DE FICHAS (primeras 25 que entraron) ══
+
+  for          cand paso   nG    res  BASE   SOM      Δ
+  h14-230726     55    3    5  FALLA     2     2     +0
+  h15-230726     54    5   12 EXACTO     1     2     +1
+  h17-230726      3    8    9 EXACTO     5     6     +1
+  h21-230726      2    5   11 EXACTO     4     5     +1
+  h2-240726       2    6   12  FALLA     3     3     +0
+  h6-240726      57    7   16 VECINO     6     8     +2
+  h8-240726      59    3   10 EXACTO     5     6     +1
+  h15-240726      3    8    8  FALLA     3     3     +0
+  h16-240726      2    7   11  FALLA     5     5     +0
+  h20-240726     55    8   13 VECINO     2     4     +2
+  h0-250726       0    4   13 VECINO     4     5     +1
+  h9-250726      55    6   12  FALLA     3     3     +0
+  h11-250726      4    6   13 EXACTO     6     7     +1
+  h13-250726     46    5    9  FALLA     3     3     +0
+  h21-250726      2    4    8  FALLA     5     5     +0
+  h22-250726     59    3    7  FALLA     2     2     +0
+  h4-260726       3    6   11  FALLA     5     5     +0
+  h5-260726      57    4   11  FALLA     4     4     +0
+  h7-260726      55    6   12  FALLA     4     4     +0
+  h13-260726     50    4    7  FALLA     2     2     +0
+  h17-260726     58    7    9  FALLA     4     4     +0
+  h18-260726      4    8   10 VECINO     6     7     +1
+  h21-260726     59    7   12  FALLA     4     4     +0
+  h0-270726       4    5   15  FALLA     4     4     +0
+  h4-270726       4    6    8  FALLA     3     3     +0
+  … +191 más (ver JSON)
+
+══ DONDE LA FICHA SUBE SCORE (top) ══
+
+  h6-240726  cand=57  VECINO  BASE=6 → SOM=8 (Δ+2)
+  h20-240726  cand=55  VECINO  BASE=2 → SOM=4 (Δ+2)
+  h10-290726  cand=58  EXACTO  BASE=2 → SOM=4 (Δ+2)
+  h8-310726  cand=52  EXACTO  BASE=2 → SOM=4 (Δ+2)
+  h19-140826  cand=04  VECINO  BASE=5 → SOM=7 (Δ+2)
+  h19-160826  cand=05  EXACTO  BASE=3 → SOM=5 (Δ+2)
+  h3-200826  cand=40  VECINO  BASE=3 → SOM=5 (Δ+2)
+  h15-230726  cand=54  EXACTO  BASE=1 → SOM=2 (Δ+1)
+
+══ DONDE BAJA O EMPATA PEOR (top) ══
+
+  (ninguna hora con Δ<0 al entrar ficha — raro; mirar JSON)
+
+══ VEREDICTO LAB ══
+
+  Δscore global: +0.099
+  Δk:            +0.25
+  Δeff:          -0.0019
+  Ficha aterriza (Exact+vecino): 39.4% de las propuestas
+
+  Censo: VIVE prod (SOM02 cableado motor 2026-08-29). Monitorear Δ online.
+FIN

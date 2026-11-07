@@ -1,0 +1,50 @@
+LAB CALENDARIO-HOD — RONDA 2
+============================================================
+train=822 test=72 base mean_G train=66.6
+
+-- R2-H1 DOW×tramo · holdout signo --
+  dom/tar: train +18% (n=40) test +0% (n=0) —
+  lun/tar: train +6% (n=40) test +0% (n=0) —
+  mar/man: train +14% (n=40) test +0% (n=0) —
+  mar/tar: train -15% (n=40) test +0% (n=0) —
+  mie/man: train -6% (n=40) test +0% (n=0) —
+  mie/noc: train +6% (n=35) test -18% (n=5) FLIP
+  jue/noc: train +8% (n=40) test -2% (n=8) FLIP
+  vie/man: train -7% (n=40) test -20% (n=8) OK
+  vie/tar: train +14% (n=40) test -7% (n=8) FLIP
+  vie/noc: train -17% (n=40) test -9% (n=8) OK
+  sab/noc: train -11% (n=40) test -29% (n=3) OK
+  resumen: OK=3 FLIP=3
+
+-- R2-H2 mean_G@40 en celdas |lift|>=5% (train) --
+  vie/noc lift=-17%: mean@40=55.9 vs base@40=66.2 n=40
+  vie/tar lift=+14%: mean@40=80.3 vs base@40=66.2 n=40
+  sab/noc lift=-11%: mean@40=62.3 vs base@40=66.2 n=40
+  jue/noc lift=+8%: mean@40=65.8 vs base@40=66.2 n=39
+  vie/man lift=-7%: mean@40=60.4 vs base@40=66.2 n=40
+  mie/noc lift=+6%: mean@40=73.5 vs base@40=66.2 n=35
+
+-- R2-H3 COSTURA opaco→siguiente hod (mismo día) --
+  filtro: vie / tar
+  filtro: mar / man
+  filtro: * / tar
+    h14→h15: op med=+18.1 (n=14) norm med=12.375 test_op=4.49545454545455
+    h10→h11: op med=+12.0 (n=11) norm med=-3.910256410256416 test_op=None
+
+-- R2-H4 lun h08↔h09 (acumular) --
+  train: r=0.8965403363900257 n=5
+  test: r=— n=0
+  all: r=0.8965403363900257 n=5
+
+-- R2-H5 TEJIDO +1d · r train vs test --
+  h10→h08: train r=0.7872626311701021 n=34 test r=— n=2 —
+  h04→h13: train r=0.7149622950407555 n=33 test r=— n=2 —
+  h15→h19: train r=0.6250848383786451 n=33 test r=— n=1 —
+  h22→h09: train r=0.738572863298901 n=34 test r=— n=3 —
+  h09→h10: train r=0.7245113184062052 n=34 test r=— n=2 —
+
+-- SÍNTESIS R2 --
+  DOW×tramo OK: vie/noc train -17%
+  holdout grueso: 3 OK / 3 FLIP
+  vie/tar h14 op→h15: med +5.5 (n_op=2)
+  cable: no · INFO Brillo/Eco · anti-Jaccard

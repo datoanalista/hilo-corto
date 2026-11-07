@@ -1,0 +1,66 @@
+ACTA GENEROSIDAD Y OPACIDAD DÍA
+================================
+fecha: 2026-08-28
+lab: hilo-corto (sesión lumen · cinta dashboard ~868–869 h)
+fuentes: análisis sesión 2026-08-28 · generosidadInfo.js · opacidadInfo.js
+
+PREGUNTA
+  ¿Días generosos vs opacos tienen ley? ¿Opacidad arrastra hora/día?
+  ¿Se puede cablear olor con fecha live?
+
+── GENEROSIDAD (día ≥25% horas sum≥850, n≥12h) ──
+
+SE VE
+  · 11/37 días generosos (~30%) · mediana gap 3 d calendario
+  · Ancla hod: h14/h15/h19 (olor cluster 17–19 ago)
+  · Día generoso ≠ más luz total siempre (26-jul: 2 SN, 25% gen)
+  · Falso generoso: P_gen≥25% + P_op≥35% + med/h<600 (1 caso: 19-ago)
+  · Noche discrimina (32% gen vs 9% resto en días generosos)
+  · r(día_idx, P_gen)≈−0,24 — sin tendencia alcista
+  · DOW olor: mié/jue más gen · vie más opaco (n pequeño)
+
+NO SE VE
+  · Memoria día+1 generoso (POST P_gen 16% vs base)
+  · Calendario fijo · tren GR predictivo (retirado UI)
+  · Día+1 hereda generosidad (r≈0)
+
+CABLEADO
+  · Panel Proyección: fechas live, ventana ±1d, confianza olor
+  · Etiquetas: generoso / día partido / opaco / en curso
+
+── OPACIDAD (hora sum<450 o mean<42) ──
+
+SE VE
+  · ~29% horas opacas · racha med 1h · p90 2h · max 6h
+  · P(opaca H+1 | opaca H)≈31% vs base 30% (lift ~1,04)
+  · Tras hora opaca: mean H+1 sube ~+16 (rebote, no castigo multi-h)
+  · r(pct_opaco_d, pct_opaco_d+1)≈−0,02 · r(sum_d, sum_d+1)≈0,03
+  · Post-racha 6h opacas: 6h siguientes vuelven a banda normal
+  · DOW plano salvo vie ~38% op (olor)
+
+NO SE VE
+  · Termostato diario post-racha opaca
+  · Día siguiente sistemáticamente peor tras día oscuro
+
+CABLEADO
+  · Modal Brillo: tipsOpacidad (castigo ~1h · post-opaca · ayer opaco)
+  · opacidadInfo.js · usa cinta live + hora anterior
+
+── VEREDICTO ──
+
+VIVE (INFO cableable)
+  · Castigo opaco ≈1 hora, no arrastra día
+  · Día generoso: olor ventana 3d±1 con fecha (no boleto)
+  · Día partido detectable por mediana + P_op
+
+OLOR
+  · Cluster calendario 17–19 ago · viernes opacos · mediodía cuello
+
+FRÍO
+  · Predicción tren GR · predicción día+1 generoso/opaco
+
+DECISIÓN
+  Acta cierra hilo analítico generosidad/opacidad sesión 2026-08-28.
+  Lab supernova sigue cerrado (H4 VIVE). No lab-opaco-racha H9 salvo pedido.
+
+fin

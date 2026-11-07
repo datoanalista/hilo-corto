@@ -1,0 +1,102 @@
+LAB SUPERNOVA — hilo-corto
+n=883 train=811 test=72 holdout=72
+SN=13 (1.5%)
+
+============================================================
+RONDA 1 — baseline
+============================================================
+-- H1 CLUSTERING full --
+  SN n=13 / 883 h (1.47%)
+  gaps h: med=32 mean=63 min=2 max=175
+  P(gap<24h)=33% P(gap>120h)=25%
+  null iid: P(gap<24h) sim=31% vs obs=33%
+  ventanas 48h con >=2 SN: 103/835 (12%)
+  VEREDICTO: OLOR cluster corto
+
+-- H2 PRECURSOR COLA  --
+  1er G>500: med min=35 p90=52 (n=13)
+  tipos 1er>500: {3: 5, 2: 3, 4: 3, 1: 2}
+  en bloque 40-59: 38%
+  regla G3|4+L largo+min>=35 antes 1er>500: 4/13
+  VEREDICTO: FRIO
+
+-- H3 TEJIDO POST-SN  --
+  SN train por hod: {0: 1, 4: 1, 8: 2, 9: 1, 12: 1, 13: 1, 14: 1, 15: 2, 20: 1, 21: 1, 22: 1}
+  h04 SN -> h13 SN en 48h: 100% (n=1)
+  h15 SN -> h19 SN en 48h: 0% (n=2)
+  VEREDICTO: FRIO
+
+-- H4 CASI-SN 1100-1599 vs >=1600  --
+  casi n=50  SN n=13
+  casi  med_nG=12 med_mean=109 med_max=450 P(n500>0)=40%
+  SN    med_nG=11 med_mean=199 med_max=1425 P(n500>0)=100%
+  SN con G>500: 13/13 | casi sin G>500: 30/50
+  VEREDICTO: VIVE cola G>500 separa casi vs SN
+
+-- H5 COOLDOWN H+1  --
+  post-SN d_mean: med=-149 (n=13)
+  post-B   d_mean: med=-26 (n=280)
+  VEREDICTO: OLOR
+
+-- H6 DOBLE SN / DÍA  --
+  días con SN: 11  doble: 2
+    230726: h20-230726 + h22-230726 gap=2h sum=1606+4434
+    260726: h8-260726 + h14-260726 gap=6h sum=2976+2701
+  VEREDICTO: OLOR (casos raros, no ley)
+
+-- H7 DÍA REORDENA MAPA HOD  --
+  r(perfil hod | día SN vs día no SN): med=-0.02 (n=286 pares)
+  VEREDICTO: OLOR mapa hod distinto en días SN
+
+-- H8 FUZZY/REGLAS @40  --
+  TEST band@40  prec=0% rec=0% lift=0.0 alerts=1
+  TEST combo    prec=0% rec=0% lift=0.0 alerts=4
+  CV combo: prec=13% rec=77% f1=0.23
+  VEREDICTO: OLOR
+
+============================================================
+RONDA 2 — profundizar OLOR/VIVE
+============================================================
+-- H1 R2 ventana post-SN (48h) --
+  P(SN|48h post SN train)=0.00% n=2
+  base test=0.00%
+  lift vs fuera ventana=0.00
+
+-- H2 R3 regla cola CV --
+  G>500+G3|4: prec=25% rec=62% lift=17.0
+
+-- H4 CASI-SN 1100-1599 vs >=1600 r2 holdout test SN --
+  casi n=50  SN n=13
+  casi  med_nG=12 med_mean=109 med_max=450 P(n500>0)=40%
+  SN    med_nG=11 med_mean=199 med_max=1425 P(n500>0)=100%
+  SN con G>500: 13/13 | casi sin G>500: 30/50
+  VEREDICTO: VIVE cola G>500 separa casi vs SN
+  test: SN=0 casi=5
+
+-- H5 COOLDOWN H+1 solo test --
+  post-B   d_mean: med=-18 (n=28)
+  VEREDICTO: FRIO
+
+============================================================
+RONDA 3 — holdout + síntesis
+============================================================
+-- Resumen veredictos --
+  H1: OLOR
+  H2: FRIO
+  H3: FRIO
+  H4: VIVE
+  H5: OLOR
+  H6: OLOR
+  H7: OLOR
+  H8: OLOR
+
+-- INFO cableable (si humano OK) --
+  · H4 VIVE: G>500 separa casi-SN de SN → copy modal
+  · H2 OLOR: cola G3|4 min>=35 → capa antes de SN
+  · H5 OLOR: post-SN H+1 enfriamiento → tip modal
+  · H8: reglas @40 (validar con banda brilloInfo)
+  · H1/H3/H6/H7: anotar bodega, no cablear score
+
+-- FRÍO confirmado --
+  · Cadencia fija · DOW · pre-hora · ML puro (n=13)
+

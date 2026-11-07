@@ -1,0 +1,68 @@
+LAB RULETA-ZERO — supuesto casino 54 casillas
+cinta minuto: depurar-all-4G-detail.txt
+cinta letras: data_all_lightgreen.txt
+tiros letra=17066 · horas cerradas=920
+holdout=72 h · PRIMERA_UTIL=h10-230726
+
+== H0 MEZCLA GLOBAL — ¿calza ruleta 9/54? ==
+  lightgreen (R1–R4): tiros n=17066
+    R 14232 (83.4%) · G 2834 (16.6%)
+    G teórico 9/54 = 16.7% · Δ -0.1pp
+  detail (R corto): tiros n=54310
+    R 45291 (83.4%) · G 9019 (16.6%)
+  slots humano vs empírico lightgreen (freq→54):
+    R1: humano=21  emp=21  n=6612
+    R2: humano=13  emp=13  n=4137
+    R3: humano= 7  emp= 7  n=2233
+    R4: humano= 4  emp= 4  n=1250
+    G1: humano= 3  emp= 2  n=612
+    G2: humano= 2  emp= 3  n=912
+    G3: humano= 3  emp= 3  n=962
+    G4: humano= 1  emp= 1  n=348
+  Ajuste vs imagen: G1↔G2 (humano 3/2 · data 2/3).
+
+== H1 LETRA — predicción iid ruleta (holdout) ==
+  train tags=216 test tags=72 test tiros=4236
+  modelo · logloss · top1% · vs uniform
+    RZ-EMP-iid        ll=1.706  top1=37.3%  Δll=-0.374
+    RZ-TRAIN-iid      ll=1.706  top1=37.3%  Δll=-0.374
+    RZ-URN-EMP        ll=1.706  top1=37.3%  Δll=-0.374
+    RZ-HUMAN-iid      ll=1.715  top1=37.3%  Δll=-0.364
+    UNIFORM-8         ll=2.079  top1=37.3%  Δll=+0.000
+  Lectura: si Δll≈0 vs uniform → ruleta iid no predice letra.
+
+== H2 MINUTO — banda d≤1 vs prod (mismo juez) ==
+  mediana nG train=10 · P(G) wheel=0.167
+  horas train=848 holdout=71
+
+  modelo · banda_train · banda_hold · hit_hold · k_med_hold
+    RZ-PLANTATE     tr=0.0%  ho=0.0%  hit_ho=0.0%  k_med=0
+    RZ-IID-UNIF     tr=42.9%  ho=44.5%  hit_ho=100.0%  k_med=10
+    RZ-WHEEL-K      tr=42.4%  ho=42.4%  hit_ho=98.6%  k_med=10
+    REF-H1          tr=44.8%  ho=45.7%  hit_ho=98.6%  k_med=9
+    PROD-CLASSIC    tr=44.2%  ho=45.1%  hit_ho=98.6%  k_med=9
+    PROD-INTER2     tr=59.9%  ho=60.6%  hit_ho=100.0%  k_med=14
+
+== H3 LO QUE RULETA NO EXPLICA (conocimiento vigente) ==
+  cierre LARGO → 1er tiro G: 259/274 (94.5%)
+  cierre CORTO → 1er tiro G: 0/645 (0.0%)
+  Ruleta iid no distingue cierre largo/corto → pierde SEGURO ~95%.
+
+== H4 PROD vs CLÁSICO (referencia hilo) ==
+  horas histórico=919 · P0==P9 idénticas=0
+  banda media INTER2=60.3% · CLASSIC=44.6% · H1 foto=44.8%
+
+============================================================
+SÍNTESIS lab-ruleta-zero
+============================================================
+  H0: mezcla G/R ≈ 9/54 — la FORMA ruleta describe el plato.
+  H1: letra iid — mejora vs uniforme (frecuencias) pero sin memoria de tiro.
+  H2: minuto — RZ uniforme ≈ H1/clásico (~46%); INTER2 ~61% (prod gana).
+  H3: cierre largo/corto — fuera del supuesto ruleta.
+
+  VEREDICTO:
+    · Como DESCRIPCIÓN global: SÍ (9/54, slots R, menú G).
+    · Como PREDICTOR de minuto: NO alcanza INTER2.
+    · RZ uniforme ≈ foto H-1 en banda (~46%) — geometría, no mapa.
+    · Prod INTER2 +16pp sobre ruleta/H1 — no convergerías al mismo boleto.
+

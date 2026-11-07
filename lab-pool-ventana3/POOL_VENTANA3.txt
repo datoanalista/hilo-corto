@@ -1,0 +1,28 @@
+POOL LAB — pools × ventana 3 (punta Pool 8)
+============================================
+stamp 2026-09-04
+Lab: hilo-corto/lab-pool-ventana3/
+Cero prod · cero LIVE · cero cable Pool 8
+
+PREGUNTA
+  La data (apostador SEQUIA3) habla: G con gap≤3 tiros
+  son más “cazables”. ¿Construir / filtrar pools con esa
+  ventana sube la puntería de Pool 8 (INTER2)?
+
+FORMA (analogía)
+  Ventana 3 = criba de CUÁNDO / qué G cuentan.
+  No es Jaccard. No es A01.
+
+JUEZ
+  exacto d=0 · borde d=1 · banda d≤1 · cobertura
+  Holdout 72 h · train resto
+  Baseline = INTER2 (Pool 8) vs todas las G.
+
+VARIANTES R0
+  P8-ALL     INTER2 vs todas las G (control)
+  P8-V3      INTER2 vs solo G con gap≤3
+  P8-SEQ     INTER2 vs solo G con gap>3 (sequía)
+  P8∩TIP-V3  INTER2 ∩ tipLC±1 vs G gap≤3
+  TIP-V3     tip LC solo vs G gap≤3
+
+FIN

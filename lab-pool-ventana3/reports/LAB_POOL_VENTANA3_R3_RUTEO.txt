@@ -1,0 +1,43 @@
+LAB POOL × VENTANA 3 — R3 ruteo tip↔P8 (espina)
+ROUTE: gap≤3 → tip LC · gap>3 → chip P8 más cerca del tip LC
+CERO prod
+
+n=1036 train=964 hold=72
+
+== TRAIN · censo tip vs P8 por régimen ==
+  V3 gap≤3: n=3737 LC banda=57.8% exacto=22.2% · P8tip banda=39.9% exacto=14.2%
+  SEQ gap>3: n=4668 LC banda=19.7% exacto=6.9% · P8tip banda=18.4% exacto=6.0%
+
+== TRAIN · políticas ==
+  [ALWAYS_TIP] cov=100.0% GO=8405/8405 exacto=13.7% banda=36.7% pnl=-2241.0
+  [SEQUIA3] cov=44.5% GO=3737/8405 exacto=22.2% banda=57.8% pnl=+585.0
+  [ALWAYS_P8] cov=99.3% GO=8347/8405 exacto=9.7% banda=28.2% pnl=-3643.0
+  [SEQUIA3_P8] cov=44.1% GO=3707/8405 exacto=14.4% banda=40.2% pnl=-723.0
+  [ROUTE] cov=99.7% GO=8377/8405 exacto=13.2% banda=36.1% pnl=-2335.0
+  [ROUTE_INV] cov=100.0% GO=8405/8405 exacto=10.2% banda=28.8% pnl=-3557.0
+
+== HOLDOUT · censo tip vs P8 por régimen ==
+  V3 gap≤3: n=292 LC banda=60.3% exacto=23.6% · P8tip banda=40.1% exacto=16.1%
+  SEQ gap>3: n=333 LC banda=18.6% exacto=5.7% · P8tip banda=18.6% exacto=5.7%
+
+== HOLDOUT · políticas ==
+  [ALWAYS_TIP] cov=100.0% GO=625/625 exacto=14.1% banda=38.1% pnl=-149.0
+  [SEQUIA3] cov=46.7% GO=292/625 exacto=23.6% banda=60.3% pnl=+60.0
+  [ALWAYS_P8] cov=93.6% GO=585/625 exacto=11.3% banda=30.6% pnl=-227.0
+  [SEQUIA3_P8] cov=43.5% GO=272/625 exacto=17.3% banda=43.0% pnl=-38.0
+  [ROUTE] cov=96.8% GO=605/625 exacto=14.5% banda=39.3% pnl=-129.0
+  [ROUTE_INV] cov=100.0% GO=625/625 exacto=10.7% banda=30.2% pnl=-247.0
+
+== DELTA holdout vs SEQUIA3 ==
+  ALWAYS_TIP: Δbanda=-22.2pp Δpnl=-209.0 Δcov=+53.3pp
+  ALWAYS_P8: Δbanda=-29.7pp Δpnl=-287.0 Δcov=+46.9pp
+  SEQUIA3_P8: Δbanda=-17.3pp Δpnl=-98.0 Δcov=-3.2pp
+  ROUTE: Δbanda=-20.9pp Δpnl=-189.0 Δcov=+50.1pp
+  ROUTE_INV: Δbanda=-30.0pp Δpnl=-307.0 Δcov=+53.3pp
+
+== VEREDICTO ==
+  Régimen hold: V3 LC 60.3% vs P8 40.1% · SEQ LC 18.6% vs P8 18.6%
+  ESPINA CERRADA: en V3 LC > P8tip · ROUTE no gana a SEQUIA3 (espina sacada: no ruteo)
+  SEQUIA3 (solo tip en V3, NO_GO en sequía) sigue siendo la política.
+  Tema pools×ventana3 CERRADO.
+

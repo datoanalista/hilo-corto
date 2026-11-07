@@ -1,0 +1,24 @@
+ACTA LOOK — TIPO VIVO vs RESTO DE LA HORA
+=========================================
+fecha: 2026-09-11
+lab: hilo-corto/lab-poda-gr/
+script: look_hora_viva.py → reports/LOOK_HORA_VIVA.txt
+Cero prod. Cero LIVE. Cero tip. Cero cable.
+
+PREGUNTA
+  ¿Se puede usar lo ya caído como tipo que se actualiza
+  y nombra qué esperar en los minutos que quedan?
+
+FICHA
+  Cortes 12 / 15 / 20 / 25 / 30 / 40. Train histórico.
+  Tipo vivo = ritmo visto hasta T, proyectado a 60 min.
+
+VEREDICTO
+  El resto no copia el arranque. Las G que quedan son
+  las mismas en flaca / mesa / llena. Andén plano
+  (bitácora): el recuento no cambia el tercio que sigue.
+  Marcador de lo YA caído: sí. Pronóstico del resto: no.
+  Tren en el resto no lo decide el arranque.
+  Sequía en el resto: sesgo leve, no ley.
+
+NO SENTAR tipo-vivo → apuesta de los 30–40 min restantes.

@@ -1,0 +1,34 @@
+LAB POOL × VENTANA 3 — R1 Pool 0 (classic) live
+ventana=3 · chips = boleto H-1 classic · CERO prod
+
+n_horas=1036 train=964 hold=72
+
+== TRAIN ==
+  G 2ª+: 8405 · gap≤3: 3737 (44.5%) · sequía: 4668
+  [P0-ALL] n=8405 exacto=15.0% banda=42.2% k≈9.1
+  [P0-V3] n=3737 exacto=14.2% banda=42.0% k≈9.2
+  [P0-SEQ] n=4668 exacto=15.6% banda=42.4% k≈9.1
+  [TIP-V3] n=3737 exacto=22.2% banda=57.8% k≈1.0
+  [P0∩TIP-V3] n=3737 exacto=8.0% banda=23.1% k≈0.5
+  [P8-V3 (ref)] n=3737 exacto=23.8% banda=58.6% k≈0.0
+  acuerdo tip∩P0 en V3: 43.8%
+
+== HOLDOUT ==
+  G 2ª+: 625 · gap≤3: 292 (46.7%) · sequía: 333
+  [P0-ALL] n=625 exacto=12.3% banda=36.6% k≈8.4
+  [P0-V3] n=292 exacto=14.0% banda=37.3% k≈8.2
+  [P0-SEQ] n=333 exacto=10.8% banda=36.0% k≈8.5
+  [TIP-V3] n=292 exacto=23.6% banda=60.3% k≈1.0
+  [P0∩TIP-V3] n=292 exacto=8.6% banda=21.2% k≈0.4
+  [P8-V3 (ref)] n=292 exacto=25.7% banda=58.9% k≈0.0
+  acuerdo tip∩P0 en V3: 39.7%
+
+== DELTA holdout vs P0-ALL ==
+  P0-ALL banda=36.6% exacto=12.3%
+  P0-V3  Δbanda=+0.7pp Δexacto=+1.7pp cov=46.7%
+  P0-SEQ Δbanda=-0.6pp
+  TIP-V3 banda=60.3% · P0∩TIP-V3 banda=21.2% · P8-V3 banda=58.9%
+
+== VEREDICTO ==
+  OLOR: tip LC ≥ P0 en V3 (mismo oficio apostador)
+

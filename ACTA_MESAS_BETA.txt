@@ -1,0 +1,50 @@
+ACTA — mesas oficiales + betas en dashboard
+============================================
+stamp 2026-08-23
+Lab: hilo-corto/dashboard (+ servir.py)
+Pedido: MESA OFICIAL · MESA BETA V.x · dropdown · Todas
+Cero LIVE. motor.py boleto no tocado.
+
+════════════════════════════════
+QUÉ SE CABLEÓ
+════════════════════════════════
+
+  Backend
+    src/mesas_beta.py  — 5 emuladores J3 → chips sombra
+    servir.py          — catalogo_mesas · mesas{} · joker=oficial
+
+  Frontend
+    App.jsx            — dropdown mesa (default oficial) · botón Todas
+    MesasTodas.jsx     — grilla 6 mesas · mismo live
+    Panel.jsx          — badge nombre mesa
+    index.css          — select · grilla · badges
+
+  Catálogo
+    MESA OFICIAL   = boleto prod (islas+costura)
+    MESA BETA V.1  = EJ-01
+    MESA BETA V.2  = EJ-01c
+    MESA BETA V.3  = EJ-02
+    MESA BETA V.4  = EJ-03
+    MESA BETA V.5  = EJ-05v2
+
+  Betas: Faro nG (sin oracle de hora futura). Solo lectura.
+
+════════════════════════════════
+QUÉ NO
+════════════════════════════════
+
+  No escribe boleto prod.
+  No Diff SOM02 a chip.
+  No blend de mesas.
+  No A01.
+
+════════════════════════════════
+CÓMO VER
+════════════════════════════════
+
+  python servir.py
+  (o npm run dev en dashboard/)
+
+  Mesa → dropdown elige mesa · Todas = consolidado.
+
+FIN

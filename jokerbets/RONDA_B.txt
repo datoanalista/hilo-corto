@@ -1,0 +1,27 @@
+RONDA B — 3 Chrome + WS (jokerbets-mesa)
+========================================
+stamp 2026-10-13
+
+Qué cablea
+  · Lee jokerbets/config.json (notebook activo, 3 URLs).
+  · Abre 3 perfiles Playwright en dashboard/extraccion/perfiles/{c-rojo,c-azul,c-verde}.
+  · Navega a cada URL (headed). Login manual la primera vez por perfil.
+  · WS Skywind: cuenta con wsPrimaria alimenta la cinta; si calla >45s tras
+    haber frames, rota backup (failover).
+  · Sin clics de apuesta (fase C).
+
+Cómo probar
+  1. URLs pegadas y guardadas (Cuentas → URLs).
+  2. Reiniciar servir.py (rutas + env JOKERBETS_MULTI).
+  3. Cuentas → «Iniciar 3 Chrome» (o Extracción → Comenzar captura; mismo API).
+  4. Deben abrirse 3 ventanas Chrome. Iniciar sesión / play en cada una si pide.
+  5. Mesa: header Online, cinta con tiros nuevos.
+  6. Cuentas: «Chrome activo», WS activa en una tarjeta (color primaria).
+
+Qué NO es aún
+  · SALDO DOM, chip 50, círculo, color (C).
+  · Mail (D).
+  · F5 protocolo fino (solo watchdog heredado del extractor v1).
+
+Perfiles
+  dashboard/extraccion/perfiles/ — no borrar si ya hay sesión guardada.

@@ -1,0 +1,59 @@
+BANDERA BORRADOR — cuándo entrar (no es REGLA cerrada)
+=====================================================
+stamp 2026-10-13
+Cinta 1310 h. LOOK_HAPPY. El humano aún cierra REGLA.txt.
+
+Idea
+  No se espera el cierre para saber si fue fuerte.
+  No se gasta en hora apagada.
+  No se apuesta a ciegas “por si aparece”.
+  Se entra cuando el régimen YA se ve, a mitad de camino.
+
+PROHIBIDO (no gastar)
+  · Menos de 2 G caídas: no hay media. Ciego.
+  · Media de G ya caídas <40. Cierra fuerte+ solo 9%.
+  · Racha de horas muy_apagado/opaco: no apostar el
+    primer respiro. Eso camina a normal, no a happy.
+  · Hora siguiente a una fuerte / muy_fuerte / supernova.
+    El happy no se hereda (techo).
+  · Un solo G≥85 como única señal. El resto no se levanta.
+  · Suma ya ≥850 y minuto ≥40: lo que queda es más flaco.
+    Llegaste tarde.
+
+ESPERA (mirar, ficha en el bolsillo)
+  · 00–15: todavía se está armando el tercio.
+  · Media ya vista 40–67: olor a normal. No es apagada,
+    tampoco happy. Dejá caminar.
+  · Se rompió una racha apagada y apareció “normal”:
+    eso es arreglo, no entrada.
+
+INDICIO DE ENTRAR (resto de ESA hora, no la siguiente)
+  Puerta A, juntos:
+    1) Ya hay ≥2 G.
+    2) Media de esas G ≥68  (en la cinta, @19 → 37% cierra
+       fuerte+ vs 18% base). Mejor si se sostiene @29.
+    3) Minuto <40. Si la suma aún no tocó 850, queda hora
+       por delante. Si ya la tocó, no entres a la cola.
+    4) Esta hora no es la de después de un pico.
+  Puerta B (extra): 2 G≥100 y la 2ª antes del min 19.
+    44 h en la API. No sustituye a A.
+
+  Eso no adivina el próximo tiro. Recorta las apagadas
+  y el ciego. Sigue habiendo G bajos dentro del happy.
+  37% no es pleno: 6 de cada 10 veces @19-media-alta
+  la hora NO cierra fuerte. Por eso es indicio, no alarma.
+
+Qué gana esto
+  Evita ~55% de horas apagada/opaca.
+  Evita el “por si sale”.
+  Acepta perder G gordos sueltos en hora flaca
+  (eso lo asumiste).
+
+Qué no gana
+  No marca el color. 3 cuentas = 3 colores = total.
+  Fijo RGB. No cazar carga (eso destapa un color).
+  No marca el minuto de Pool 7 (otro oficio: tip±1).
+  Ficha vigente de papel: $150/bono. Ver INTERRUPTOR.txt.
+
+Cerrar esto → copiar a REGLA.txt cuando el humano diga OK.
+Cero bot mientras tanto.

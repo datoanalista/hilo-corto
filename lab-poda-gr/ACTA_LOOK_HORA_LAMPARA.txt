@@ -1,0 +1,25 @@
+ACTA LOOK — LÁMPARA SOBRE LC-01
+===============================
+fecha: 2026-09-12
+lab: hilo-corto/lab-poda-gr/
+script: look_hora_lampara.py → reports/LOOK_HORA_LAMPARA.txt
+Cero prod. Cero LIVE. Cero tip nuevo. Cero cable.
+
+PREGUNTA
+  Mismo tip LC-01. ¿Callar cuando el p30 sigue largo
+  limpia el “se pasó”, o apaga cobros?
+
+FICHA
+  Train 8431 tips · hold 72 h 490 tips.
+  Políticas: p30≥9 · p30≥7 · largo+p30≥9 · solo-largo.
+  Juez: banda d≤1. No se mueve el número.
+
+VEREDICTO
+  p30≥9 limpia: de lo callado, casi todo era ‘se pasó’
+  (train 299/364 · hold 17/24). Apaga pocos cobros
+  (32 train · 4 hold). Es un filtro chico, no un pool.
+  Callar tras cola/sequía SIN mirar p30 corta a medias
+  (hold 30/94 eran cobros): no.
+  p30≥7 corta de más.
+
+NO CABLEAR. No cortar Pool 7. Ver, no sentar.

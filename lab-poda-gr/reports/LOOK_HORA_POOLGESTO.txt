@@ -1,0 +1,61 @@
+LOOK · tip/pools × gesto
+LC-01 = Next / zona Pool 7: última G + p30 de los huecos YA vistos.
+cae = tip a ≤1 min de la G. largo = el tip se pasó (G antes). corto = G después.
+train 8424 tips con gesto previo y G siguiente. Hold no se mezcla.
+
+════ 1. Tras CADA gesto, qué hizo LC-01 ════
+  tras tren                    n=1513  cae 612/1513  se pasó 61/1513  se quedó 840/1513
+  tras casi                    n=1243  cae 511/1243  se pasó 76/1243  se quedó 656/1243
+  tras corto                   n=2585  cae 1041/2585  se pasó 364/2585  se quedó 1180/2585
+  tras medio                   n=1685  cae 603/1685  se pasó 422/1685  se quedó 660/1685
+  tras cola                    n=1065  cae 350/1065  se pasó 307/1065  se quedó 408/1065
+  tras sequía                  n= 333  cae 99/333  se pasó 127/333  se quedó 107/333
+
+════ 2. El cruce (no es el 12+9) ════
+  previo largo (cola/sequía)   n=1398  cae 449/1398  se pasó 434/1398  se quedó 515/1398
+  previo no largo              n=7026  cae 2767/7026  se pasó 923/7026  se quedó 3336/7026
+  p30 todavía ≥9               n= 363  cae 32/363  se pasó 298/363  se quedó 33/363
+  p30 ya corto (<9)            n=8061  cae 3184/8061  se pasó 1059/8061  se quedó 3818/8061
+  largo Y p30≥9                n= 301  cae 26/301  se pasó 254/301  se quedó 21/301
+  largo pero p30<9             n=1097  cae 423/1097  se pasó 180/1097  se quedó 494/1097
+
+════ 3. Películas: tras cola, tip vs G ════
+  h10-230726   06·L11 → 17ET0   p30=11 tip 28  G 18  largo
+  h11-230726   08·L11 → 20·k2   p30=7 tip 27  G 23  largo
+  h11-230726   23·L10 → 33·k2   p30=7 tip 40  G 37  largo
+  h11-230726   41·L14 → 53·k2   p30=4 tip 57  G 56  cae
+  h12-230726   41·L9 → 49·C1   p30=4 tip 53  G 52  cae
+  h16-230726   10·L13 → 23·k4   p30=13 tip 36  G 29  largo
+  h16-230726   37·L9 → 47·k4   p30=8 tip 55  G 51  largo
+  h17-230726   10·L10 → 20·S17   p30=7 tip 27  G 36  corto
+  h19-230726   12·L11 → 25·k3   p30=13 tip 38  G 30  largo
+  h20-230726   31·L11 → 42·L11   p30=4 tip 46  G 52  corto
+  h20-230726   42·L11 → 52·k3   p30=4 tip 56  G 57  cae
+  h21-230726   12·L14 → 25·k4   p30=5 tip 30  G 30  cae
+  h0-240726    42·L12 → 54ET0   p30=4 tip 58  G 56  largo
+  h1-240726    43·L10 → 54·C1   p30=6 tip 59  G 56  largo
+  h2-240726    14·L10 → 25·T0   p30=3 tip 28  G 27  cae
+  h4-240726    34·L10 → 45ET0   p30=1 tip 46  G 48  corto
+
+════ 4. Películas: dos colas (forma 12+9) y el tip ════
+  h20-230726   31·L11 42·L11 → 52·k3  p30=4 tip 56 G 57  cae
+  h19-240726   19·L11 29·L9 → 39·k2  p30=10 tip 49 G 44  largo
+  h21-240726   09·L12 21·L9 → 31·C1  p30=5 tip 36 G 34  largo
+  h3-250726    11·L13 23·L14 → 37·T0  p30=2 tip 39 G 38  cae
+  h22-250726   10·L11 21·L15 → 34·m7  p30=7 tip 41 G 41  cae
+  h23-250726   05·L10 16·L12 → 27·k2  p30=4 tip 31 G 30  cae
+  h22-260726   26·L14 40·L11 → 53·k3  p30=3 tip 56 G 57  cae
+  h9-270726    19·L9 29·L9 → 39ET0  p30=9 tip 48 G 41  largo
+  h8-280726    17·L12 30·L9 → 40·T0  p30=10 tip 50 G 41  largo
+  h13-280726   21·L10 31·L12 → 43·T0  p30=10 tip 53 G 45  largo
+  (L+L con siguiente: 10 en train)
+
+Lectura:
+  LC-01 recuerda el LARGO de los huecos ya vistos (p30).
+  El próximo gesto no copia ese largo: suele ser corto.
+  Ahí el tip se PASA: apunta lejos y la G ya cayó.
+  Si el p30 ya era corto (la hora traía muchos k), no se pasa:
+  el tip y la G corta coinciden.
+  Los chips de pool son menú de la hora, no leen el gesto:
+  la G corta cae ENTRE fichas → también se pasan de largo.
+  Cruzar = no es un tip nuevo; es leer CUÁNDO el menú miente.

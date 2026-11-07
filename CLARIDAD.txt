@@ -1,0 +1,104 @@
+CLARIDAD — revisada con tus respuestas (aún no se implementa)
+=============================================================
+stamp 2026-10-13 b
+Prod intacto: hilo-corto. Casa bots: jokerbets-mesa.
+Servidor = el otro notebook. Este PC = lector vía Cloudflare.
+Quien clica es el servidor. Cloudflare no mueve fichas.
+
+0. Infra (queda tal cual)
+  Notebook servidor: servir.py + extractor + (futuro) 3 sesiones.
+  Cloudflare = URL de LECTURA (saldos, estados, rachas).
+  Este local no corre nada. No cambia el túnel.
+  Una máquina, un dashboard. Lo nuevo se suma en ESTA copia.
+
+1. URLs
+  Las 3 fijas se pegan en un modal. Lista ampliable (2º / 3º
+  servidor más adelante): N URL, no hardcode de 3.
+  Guardadas en esta casa, no en prod.
+
+2. Login y F5
+  Las 3 ya tienen sesión. Como v1: inactividad ~10 min
+  desloguea o pausa video (botón play; el resultado a veces
+  sigue). Detalle al cablear. Ver §4 opciones.
+
+3. Saldo y botón del medio
+  Saldo vive en el frame del juego. Tú cargas a mano.
+  1 pulsación del círculo = $50 en los 4 bonos.
+  $150/bono = 3 pulsaciones. La moneda se ve al construir.
+  El $ de la tarjeta: se LEE del frame (y se cruza con el
+  libro). No se inventa.
+
+4. ¿3 iframes en el dashboard? Opciones reales
+  A) Iframes DENTRO de la pestaña del dashboard
+     · El casino (Skywind) casi siempre manda X-Frame-Options
+       / CSP frame-ancestors: el iframe sale en blanco.
+     · 3 iframes en EL MISMO navegador = LAS MISMAS cookies.
+       Tres cuentas no caben. Una sesión pisa a las otras.
+     · Si miras por Cloudflare, el iframe corre en ESTE PC,
+       no en el servidor. El clic quedaría en el lector.
+       Eso rompe “el servidor manipula”.
+     Veredicto: no es la casa de 3 cuentas + CF lector.
+
+  B) 3 perfiles Playwright EN EL SERVIDOR (recomendada)
+     · Un Chrome persistente por cuenta (como hoy, ×3).
+     · Pueden ir headed (se ven en el notebook) o headless.
+     · El dashboard (pestaña 1, la de siempre) no se toca.
+     · Pestaña 2 = mando: estados, $ leído, rachas, ON/OFF.
+       No embebe el juego. Lee lo que el servidor ya tiene.
+     · DOM sí se manipula (Playwright = el frame del juego).
+     · Inactividad: se detecta play/pausa, “session expired”,
+       silencio de WS. No hace falta F5 ciego cada 5 min.
+     · Si el WS sigue vivo con el video pausado, la cinta
+       no se cae. El F5 pasa a ser protocolo de ALARMA
+       (silencio / mantenimiento), no reloj.
+
+  C) 3 ventanas Chrome visibles en el servidor, dashboard aparte
+     Igual que B, pero headed sí o sí. Más fácil de mirar
+     sentado en el notebook. Peor si el servidor va solo.
+
+  Oficio junto: B (o C si quieres verlas). A no.
+
+5. Extracción
+  Una de las 3 es PRIMARIA (WS). Las otras 2 = backup:
+  si la primaria calla N segundos, se pasa a la siguiente.
+  Protocolo F5 agresivo si:
+    · silencio WS > umbral
+    · texto de mantenimiento / “volver pronto”
+    · las 3 mudas
+  Eso sí vale. No F5 de reloj en mesa viva (ya sabemos
+  que desprende el iframe).
+
+6. Puerta B (2 G≥100 antes del min 19)
+  LOOK_OPTIMO: 44 h de 1043 (4%). La 2ª G cae al min 30
+  en la mediana: casi nunca es “prende al tiro”.
+  @19 paga más en TOTAL. B paga más por hora en pocas.
+  MVP = solo puerta A. B se puede sumar después si el
+  libro ya corre. No vale la pena retrasar el cable.
+
+7. UI
+  Pestaña 1: dashboard tal cual (cabecera, pools, Next…).
+  Pestaña 2: 3 cuentas ($, rachas, ESPERANDO / ALERTA /
+  EN RACHA) + lista de URLs + semáforo de señal.
+  Un solo navegador de LECTURA (Cloudflare).
+  En el servidor, además, los 3 perfiles que clican.
+
+8. Correo / alerta
+  Sí, capa 2, simple: al CERRAR una hora que estuvo ON
+  y hubo apuesta → mail (o webhook). No alarma por cada
+  tiro. Se ve al final del MVP, no antes del interruptor.
+
+9. Mapa de estados (igual)
+  ESPERANDO = OFF
+  ALERTA    = se arma (00–19 / media 40–67)
+  EN RACHA  = puerta A ON. Clic solo en tip±1.
+
+10. Sigue pendiente para REGLA / cable
+  · OK para copiar INTERRUPTOR → REGLA (puerta A, $150,
+    zona, color a muerte, $20k).
+  · Las 3 URLs (se pegan en el modal; no las pongas en
+    el chat si no quieres).
+  · Un pantallazo del selector RGB (opcional).
+  · Destino del mail (Gmail / otro) cuando toque la alerta.
+
+Cero clics. Cero iframes en Cloudflare. Cero F5 ciego.
+Cuando REGLA esté llena se implementa en jokerbets-mesa.

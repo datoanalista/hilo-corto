@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "activeNotebookId": "nb-local",
+  "arranqueUsd": 20000,
+  "apuestaModo": "200",
+  "notebooks": [
+    {
+      "id": "nb-local",
+      "nombre": "Servidor 1 (local)",
+      "cuentas": [
+        {
+          "id": "c-rojo",
+          "color": "rojo",
+          "bonoColor": "verde",
+          "url": "https://jugabet-apuesta.cl/launch/live-casino/iframe/skywind-live-jokers-wheel",
+          "wsPrimaria": false
+        },
+        {
+          "id": "c-azul",
+          "color": "azul",
+          "bonoColor": "azul",
+          "url": "https://jugabet-apuesta.cl/launch/live-casino/iframe/skywind-live-jokers-wheel",
+          "wsPrimaria": true
+        },
+        {
+          "id": "c-verde",
+          "color": "verde",
+          "bonoColor": "rojo",
+          "url": "https://jugabet-apuesta.cl/launch/live-casino/iframe/skywind-live-jokers-wheel",
+          "wsPrimaria": false
+        }
+      ]
+    }
+  ],
+  "ntfy": {
+    "enabled": true,
+    "server": "https://ntfy.sh",
+    "topic": "jokers-bots",
+    "priority": "high",
+    "tipos": [
+      "ronda_acertada"
+    ]
+  }
+}

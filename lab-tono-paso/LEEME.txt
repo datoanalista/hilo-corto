@@ -1,0 +1,5 @@
+LAB TONO-PASO
+=============
+Cero prod. Cero LIVE. Cero Jaccard.
+
+Leer: ACTA_TONO_PASO.txt → reports/LAB_TONO_PASO.txt

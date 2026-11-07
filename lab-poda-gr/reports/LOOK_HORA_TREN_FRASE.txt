@@ -1,0 +1,226 @@
+LOOK · tren 3–5 G: cómo se llega
+Forma base: sequía larga se acaba → huecos se acortan → G-G-G…
+No el hueco de 10–20 R pegado al tren. No Jaccard. No saco de %.
+Cinta 1173 h  h10-230726 → h12-120926  hold 72h
+Tren = 3, 4 o 5 G núcleo pegadas (0 R). Extra tipo 5 no cuenta.
+
+Lectura de una línea:
+  antes[15S 4k 2k] = huecos ya cerrados, de más viejo a más nuevo.
+  —nR:atom— entre las G. T3/T4/T5 = largo del tren.
+  durs G = duración de las G que caminan hacia el tren (¿se achican?).
+
+════ TRAIN · trenes 3–5 · 242 trenes ════
+  — FORMA · S (≥16) y se acorta hasta el tren · 2 películas —
+  h23-240826   T3  antes[16S 5m]  FORMA · S (≥16) y se acorta hasta el tren  G1@24/110s —16R:S— G3@39/86s —5R:m— G2@44/93s —0R:T— G3@46/85s —0R:T— G2@47/90s  durs G [110, 86, 93]
+  h2-020926    T3  antes[22S 12L 1C 1C]  FORMA · S (≥16) y se acorta hasta el tren  G3@08/84s —22R:S— G1@28/114s —12R:L— G1@39/114s —1R:C— G2@42/88s —1R:C— G4@44/96s —0R:T— G1@46/108s —0R:T— G3@48/90s  durs G [114, 114, 88, 96]
+
+  — FORMA · cola/S (≥10) y se acorta hasta el tren · 2 películas —
+  h10-080826   T3  antes[15L 4k 4k 1C 1C]  FORMA · cola/S (≥10) y se acorta hasta el tren  G2@01/47s —15R:L— G2@15/44s —4R:k— G2@20/50s —4R:k— G1@26/47s —1R:C— G3@28/55s —1R:C— G3@31/86s —0R:T— G3@32/101s —0R:T— G2@34/51s  durs G [50, 47, 55, 86]
+  h5-120826    T3  antes[15L 1C 1C]  FORMA · cola/S (≥10) y se acorta hasta el tren  G2@04/48s —15R:L— G4@20/54s —1R:C— G3@22/47s —1R:C— G2@24/106s —0R:T— G2@26/143s —0R:T— G4@29/52s  durs G [48, 54, 47, 106]
+
+  — ANTI · sequía pegada al tren (el ejemplo dice que no) · 38 películas —
+  h10-230726   T3  antes[11L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@06/50s —11R:L— G3@17/101s —0R:T— G4@18/98s —0R:T— G1@20/49s  durs G↑ [50, 101]
+  h4-240726    T3  antes[0T 2k 0T 4k 5m 10L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G1@17/96s —0R:T— G2@19/50s —2R:k— G3@22/88s —0R:T— G3@23/53s —4R:k— G3@28/49s —5R:m— G3@34/52s —10R:L— G2@45/134s —0R:T— G1@48/106s —0R:T— G1@49/52s  durs G [53, 49, 52, 134]
+  h7-240726    T3  antes[1C 13L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@03/48s —1R:C— G4@06/54s —13R:L— G4@20/89s —0R:T— G3@22/127s —0R:T— G2@24/42s  durs G↑ [48, 54, 89]
+  h3-250726    T3  antes[1C 0T 0T 2k 13L 14L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G4@02/50s —1R:C— G2@04/87s —0R:T— G3@06/99s —0R:T— G3@08/44s —2R:k— G3@11/47s —13R:L— G3@23/48s —14R:L— G1@37/88s —0R:T— G2@38/141s —0R:T— G1@41/46s  durs G↑ [44, 47, 48, 88]
+  h9-250726    T3  antes[5m 0T 0T 2k 14L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G1@03/56s —5R:m— G4@10/119s —0R:T— G1@12/86s —0R:T— G3@13/48s —2R:k— G3@17/50s —14R:L— G3@30/112s —0R:T— G1@32/113s —0R:T— G1@34/48s  durs G [86, 48, 50, 112]
+  h14-250726   T3  antes[6m 4k 11L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G1@10/52s —6R:m— G3@17/50s —4R:k— G3@22/55s —11R:L— G3@33/94s —0R:T— G1@34/120s —0R:T— G1@36/50s  durs G [52, 50, 55, 94]
+  h0-260726    T3  antes[10L 1C 0T 0T 2k 19S]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G1@14/53s —10R:L— G4@26/49s —1R:C— G2@28/81s —0R:T— G3@30/107s —0R:T— G2@32/46s —2R:k— G4@35/58s —19R:S— G1@53/92s —0R:T— G3@54/82s —0R:T— G2@56/48s  durs G [107, 46, 58, 92]
+  h0-270726    T4  antes[0T 6m 1C 7m 0T 12L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@16/95s —0R:T— G2@18/50s —6R:m— G1@26/48s —1R:C— G3@28/49s —7R:m— G3@35/86s —0R:T— G3@36/50s —12R:L— G3@49/124s —0R:T— G1@51/81s —0R:T— G2@52/93s —0R:T— G2@54/48s  durs G [49, 86, 50, 124]
+  h18-270726   T4  antes[1C 0T 0T 11L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@00/46s —1R:C— G3@02/115s —0R:T— G1@04/89s —0R:T— G2@06/49s —11R:L— G3@16/128s —0R:T— G3@18/91s —0R:T— G2@20/102s —0R:T— G4@22/52s  durs G [115, 89, 49, 128]
+  h6-290726    T3  antes[16S 4k 5m 9L 15L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@02/50s —16R:S— G4@17/51s —4R:k— G1@21/47s —5R:m— G1@27/52s —9R:L— G1@36/43s —15R:L— G3@50/102s —0R:T— G2@52/189s —0R:T— G4@55/60s  durs G [47, 52, 43, 102]
+  h4-310726    T4  antes[3k 0T 10L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@01/48s —3R:k— G3@05/82s —0R:T— G2@06/51s —10R:L— G4@17/119s —0R:T— G1@19/109s —0R:T— G2@21/87s —0R:T— G3@22/55s  durs G [48, 82, 51, 119]
+  h6-010826    T3  antes[7m 15L 1C 1C 0T 14L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@13/51s —7R:m— G1@22/51s —15R:L— G2@35/44s —1R:C— G3@38/47s —1R:C— G3@40/112s —0R:T— G1@42/51s —14R:L— G3@55/84s —0R:T— G3@56/83s —0R:T— G3@58/48s  durs G [47, 112, 51, 84]
+  h3-020826    T3  antes[1C 0T 7m 3k 3k 12L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@06/56s —1R:C— G1@09/115s —0R:T— G4@11/54s —7R:m— G1@21/54s —3R:k— G1@26/57s —3R:k— G3@30/56s —12R:L— G2@44/82s —0R:T— G2@46/90s —0R:T— G3@47/56s  durs G [54, 57, 56, 82]
+  h7-030826    T3  antes[14L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@02/46s —14R:L— G2@16/104s —0R:T— G2@18/79s —0R:T— G3@19/63s  durs G↑ [46, 104]
+  h12-050826   T4  antes[4k 6m 3k 0T 11L 15L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@06/48s —4R:k— G3@11/45s —6R:m— G1@17/47s —3R:k— G2@22/83s —0R:T— G2@23/45s —11R:L— G1@33/38s —15R:L— G4@46/107s —0R:T— G4@47/85s —0R:T— G3@49/73s —0R:T— G3@50/47s  durs G [83, 45, 38, 107]
+  h23-060826   T3  antes[5m 4k 2k 1C 22S]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@00/50s —5R:m— G2@05/51s —4R:k— G1@10/42s —2R:k— G3@13/48s —1R:C— G4@16/59s —22R:S— G4@37/101s —0R:T— G3@38/118s —0R:T— G1@40/50s  durs G↑ [42, 48, 59, 101]
+  h8-080826    T3  antes[8m 0T 10L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@05/53s —8R:m— G2@14/81s —0R:T— G3@16/52s —10R:L— G2@26/109s —0R:T— G2@28/144s —0R:T— G1@30/43s  durs G [53, 81, 52, 109]
+  h23-090826   T4  antes[0T 0T 7m 9L 0T 16S]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G1@02/92s —0R:T— G3@03/100s —0R:T— G3@05/60s —7R:m— G3@14/57s —9R:L— G3@25/87s —0R:T— G3@26/55s —16R:S— G1@43/85s —0R:T— G3@44/126s —0R:T— G2@46/88s —0R:T— G3@48/55s  durs G [57, 87, 55, 85]
+  h15-130826   T3  antes[11L 13L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@01/92s —11R:L— G3@12/154s —13R:L— G3@25/72s —0R:T— G3@27/90s —0R:T— G2@28/47s  durs G [92, 154, 72]
+  h20-130826   T5  antes[0T 1C 0T 4k 9L 14L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G4@06/102s —0R:T— G3@08/42s —1R:C— G1@10/102s —0R:T— G4@12/54s —4R:k— G3@17/44s —9R:L— G3@26/46s —14R:L— G1@38/88s —0R:T— G3@39/106s —0R:T— G1@41/77s —0R:T— G2@42/106s —0R:T— G2@44/46s  durs G [54, 44, 46, 88]
+  h22-160826   T3  antes[10L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G1@03/49s —10R:L— G4@14/98s —0R:T— G2@15/100s —0R:T— G3@17/50s  durs G↑ [49, 98]
+  h12-220826   T3  antes[0T 7m 2k 4k 1C 17S]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@06/100s —0R:T— G3@08/85s —7R:m— G2@15/91s —2R:k— G2@19/134s —4R:k— G4@25/105s —1R:C— G1@28/112s —17R:S— G2@44/102s —0R:T— G3@46/142s —0R:T— G4@49/151s  durs G [134, 105, 112, 102]
+  h21-220826   T3  antes[4k 20S 0T 1C 2k 11L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@15/96s —4R:k— G3@20/80s —20R:S— G4@38/102s —0R:T— G1@39/127s —1R:C— G3@42/83s —2R:k— G3@45/80s —11R:L— G2@55/99s —0R:T— G1@57/104s —0R:T— G4@59/195s  durs G [127, 83, 80, 99]
+  h4-250826    T3  antes[4k 2k 3k 15L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@07/104s —4R:k— G2@12/105s —2R:k— G1@16/113s —3R:k— G1@20/123s —15R:L— G4@37/100s —0R:T— G2@38/108s —0R:T— G3@40/90s  durs G [105, 113, 123, 100]
+  h9-270826    T3  antes[5m 1C 1C 3k 1C 12L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@04/89s —5R:m— G2@10/133s —1R:C— G2@13/133s —1R:C— G3@16/102s —3R:k— G2@20/110s —1R:C— G1@23/118s —12R:L— G3@35/110s —0R:T— G2@36/114s —0R:T— G3@38/95s  durs G [102, 110, 118, 110]
+  h18-280826   T3  antes[0T 7m 2k 10L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G1@03/89s —0R:T— G4@05/145s —7R:m— G2@13/103s —2R:k— G3@16/93s —10R:L— G3@26/81s —0R:T— G3@28/93s —0R:T— G1@29/119s  durs G↓ [145, 103, 93, 81]
+  h19-300826   T3  antes[4k 1C 9L 5m 11L 10L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@04/100s —4R:k— G4@09/101s —1R:C— G2@11/93s —9R:L— G2@20/98s —5R:m— G1@26/107s —11R:L— G4@37/97s —10R:L— G3@47/84s —0R:T— G3@49/101s —0R:T— G1@50/101s  durs G [98, 107, 97, 84]
+  h15-310826   T4  antes[0T 6m 1C 11L 0T 13L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@05/89s —0R:T— G1@06/110s —6R:m— G2@13/119s —1R:C— G1@16/119s —11R:L— G2@28/103s —0R:T— G1@30/121s —13R:L— G1@44/136s —0R:T— G1@46/134s —0R:T— G1@48/128s —0R:T— G3@50/93s  durs G [119, 103, 121, 136]
+  h1-010926    T3  antes[7m 0T 9L 8m 4k 19S]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@02/81s —7R:m— G3@09/87s —0R:T— G2@10/106s —9R:L— G4@19/171s —8R:m— G2@29/121s —4R:k— G2@34/98s —19R:S— G4@52/101s —0R:T— G1@54/102s —0R:T— G2@56/94s  durs G [171, 121, 98, 101]
+  h18-010926   T3  antes[5m 10L 10L 3k 1C 20S]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@04/95s —5R:m— G2@11/99s —10R:L— G3@21/82s —10R:L— G3@30/88s —3R:k— G4@34/147s —1R:C— G3@37/87s —20R:S— G3@55/90s —0R:T— G2@57/124s —0R:T— G2@59/80s  durs G [88, 147, 87, 90]
+  h20-030926   T3  antes[11L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@03/96s —11R:L— G1@14/128s —0R:T— G3@16/84s —0R:T— G3@17/74s  durs G↑ [96, 128]
+  h20-030926   T3  antes[0T 4k 0T 7m 0T 11L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@16/84s —0R:T— G3@17/74s —4R:k— G1@22/124s —0R:T— G3@24/100s —7R:m— G2@31/117s —0R:T— G1@33/92s —11R:L— G1@44/120s —0R:T— G1@46/103s —0R:T— G1@48/128s  durs G [100, 117, 92, 120]
+  h22-030926   T3  antes[0T 10L 1C 4k 2k 29S]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@03/98s —0R:T— G2@05/108s —10R:L— G2@15/98s —1R:C— G3@18/100s —4R:k— G3@23/88s —2R:k— G2@26/98s —29R:S— G2@51/91s —0R:T— G2@53/94s —0R:T— G1@54/102s  durs G [100, 88, 98, 91]
+  h13-060926   T3  antes[0T 9L 10L 9L 1C 10L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@06/106s —0R:T— G3@08/90s —9R:L— G4@17/115s —10R:L— G2@28/91s —9R:L— G1@37/101s —1R:C— G2@40/102s —10R:L— G3@51/102s —0R:T— G3@52/82s —0R:T— G2@54/95s  durs G↑ [91, 101, 102, 102]
+  h22-060926   T4  antes[8m 15L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@08/96s —8R:m— G3@16/91s —15R:L— G1@30/130s —0R:T— G2@32/84s —0R:T— G1@34/85s —0R:T— G3@35/110s  durs G [96, 91, 130]
+  h12-080926   T4  antes[14L 6m 8m 10L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@01/55s —14R:L— G1@15/50s —6R:m— G4@22/61s —8R:m— G3@31/48s —10R:L— G1@43/110s —0R:T— G3@45/126s —0R:T— G2@47/115s —0R:T— G1@49/56s  durs G [50, 61, 48, 110]
+    … +2 películas más de esta frase
+
+  — baja, pero el primero no era sequía · 3 películas —
+  h12-270726   T3  antes[9L 5m]  baja, pero el primero no era sequía  G3@03/44s —9R:L— G4@13/53s —5R:m— G3@18/120s —0R:T— G1@20/75s —0R:T— G3@21/51s  durs G↑ [44, 53, 120]
+  h21-190826   T3  antes[6m 2k 2k]  baja, pero el primero no era sequía  G2@00/48s —6R:m— G1@08/56s —2R:k— G3@11/51s —2R:k— G2@14/181s —0R:T— G4@17/97s —0R:T— G1@19/55s  durs G [48, 56, 51, 181]
+  h12-310826   T3  antes[6m 5m]  baja, pero el primero no era sequía  G1@02/117s —6R:m— G3@10/96s —5R:m— G3@16/79s —0R:T— G3@17/87s —0R:T— G4@19/109s  durs G↓ [117, 96, 79]
+
+  — hubo largo, pero no bajó en orden · 54 películas —
+  h15-230726   T5  antes[1C 17S 7m]  hubo largo, pero no bajó en orden  G1@05/50s —1R:C— G1@08/49s —17R:S— G2@24/41s —7R:m— G3@31/105s —0R:T— G2@33/90s —0R:T— G2@34/78s —0R:T— G3@36/83s —0R:T— G3@37/48s  durs G [50, 49, 41, 105]
+  h19-230726   T3  antes[11L 3k 7m 3k]  hubo largo, pero no bajó en orden  G2@12/44s —11R:L— G1@25/57s —3R:k— G4@30/54s —7R:m— G2@37/54s —3R:k— G4@42/137s —0R:T— G3@44/80s —0R:T— G3@45/46s  durs G [57, 54, 54, 137]
+  h23-230726   T3  antes[1C 18S 4k 3k 0T 1C]  hubo largo, pero no bajó en orden  G3@03/43s —1R:C— G2@05/44s —18R:S— G1@21/51s —4R:k— G1@27/53s —3R:k— G3@31/114s —0R:T— G2@33/53s —1R:C— G3@36/96s —0R:T— G3@37/104s —0R:T— G4@39/57s  durs G [53, 114, 53, 96]
+  h12-250726   T4  antes[16S 3k 8m 5m]  hubo largo, pero no bajó en orden  G2@01/56s —16R:S— G4@17/52s —3R:k— G3@21/46s —8R:m— G3@30/56s —5R:m— G1@36/100s —0R:T— G1@38/85s —0R:T— G3@39/106s —0R:T— G2@41/47s  durs G [52, 46, 56, 100]
+  h0-260726    T3  antes[2k 3k 2k 0T 10L 1C]  hubo largo, pero no bajó en orden  G3@01/48s —2R:k— G3@04/57s —3R:k— G1@09/55s —2R:k— G1@12/124s —0R:T— G1@14/53s —10R:L— G4@26/49s —1R:C— G2@28/81s —0R:T— G3@30/107s —0R:T— G2@32/46s  durs G [124, 53, 49, 81]
+  h8-280726    T4  antes[12L 4k 12L 9L]  hubo largo, pero no bajó en orden  G1@00/47s —12R:L— G1@12/52s —4R:k— G3@17/47s —12R:L— G2@30/56s —9R:L— G1@40/97s —0R:T— G3@41/109s —0R:T— G1@43/97s —0R:T— G3@45/55s  durs G [52, 47, 56, 97]
+  h9-280726    T3  antes[2k 13L 4k]  hubo largo, pero no bajó en orden  G2@07/52s —2R:k— G3@10/49s —13R:L— G4@24/55s —4R:k— G2@29/146s —0R:T— G4@32/101s —0R:T— G2@33/48s  durs G [52, 49, 55, 146]
+  h13-290726   T3  antes[0T 11L 3k 18S 2k 2k]  hubo largo, pero no bajó en orden  G2@07/121s —0R:T— G2@09/52s —11R:L— G3@20/45s —3R:k— G1@25/52s —18R:S— G2@42/57s —2R:k— G2@46/50s —2R:k— G2@50/130s —0R:T— G1@52/124s —0R:T— G2@54/49s  durs G [52, 57, 50, 130]
+  h1-300726    T3  antes[5m 14L 0T 7m]  hubo largo, pero no bajó en orden  G4@00/53s —5R:m— G1@06/47s —14R:L— G3@19/91s —0R:T— G2@21/285s —7R:m— G4@35/106s —0R:T— G2@37/106s —0R:T— G4@38/59s  durs G [47, 91, 285, 106]
+  h5-300726    T3  antes[9L 0T 10L 7m 9L 2k]  hubo largo, pero no bajó en orden  G3@00/51s —9R:L— G2@09/128s —0R:T— G3@11/47s —10R:L— G1@21/48s —7R:m— G4@29/55s —9R:L— G1@37/50s —2R:k— G3@41/105s —0R:T— G3@42/124s —0R:T— G1@44/51s  durs G [48, 55, 50, 105]
+  h15-300726   T5  antes[16S 1C 1C 1C 7m]  hubo largo, pero no bajó en orden  G4@00/55s —16R:S— G1@16/50s —1R:C— G2@19/51s —1R:C— G3@21/49s —1R:C— G1@23/54s —7R:m— G1@30/102s —0R:T— G2@32/123s —0R:T— G1@34/95s —0R:T— G3@36/102s —0R:T— G4@38/56s  durs G [51, 49, 54, 102]
+  h20-300726   T3  antes[12L 3k 0T 3k]  hubo largo, pero no bajó en orden  G2@01/45s —12R:L— G3@12/51s —3R:k— G1@16/98s —0R:T— G2@18/42s —3R:k— G3@22/106s —0R:T— G2@24/91s —0R:T— G2@25/48s  durs G [51, 98, 42, 106]
+  h4-310726    T3  antes[0T 0T 7m 6m 14L 1C]  hubo largo, pero no bajó en orden  G1@19/109s —0R:T— G2@21/87s —0R:T— G3@22/55s —7R:m— G3@30/51s —6R:m— G3@37/52s —14R:L— G1@51/51s —1R:C— G1@54/89s —0R:T— G2@55/125s —0R:T— G1@58/131s  durs G [51, 52, 51, 89]
+  h11-310726   T3  antes[0T 11L 9L]  hubo largo, pero no bajó en orden  G2@04/77s —0R:T— G3@05/43s —11R:L— G3@15/47s —9R:L— G2@24/102s —0R:T— G2@26/91s —0R:T— G3@28/55s  durs G [77, 43, 47, 102]
+  h14-310726   T3  antes[9L 11L 2k 15L 1C 1C]  hubo largo, pero no bajó en orden  G4@07/59s —9R:L— G2@17/48s —11R:L— G1@29/49s —2R:k— G2@32/53s —15R:L— G3@47/49s —1R:C— G3@50/50s —1R:C— G1@52/94s —0R:T— G3@54/117s —0R:T— G1@56/49s  durs G [53, 49, 50, 94]
+  h15-010826   T3  antes[0T 17S 1C 11L 2k]  hubo largo, pero no bajó en orden  G4@09/99s —0R:T— G2@10/48s —17R:S— G1@27/51s —1R:C— G4@29/53s —11R:L— G3@40/51s —2R:k— G2@44/99s —0R:T— G1@46/95s —0R:T— G2@47/101s  durs G [51, 53, 51, 99]
+    … +38 películas más de esta frase
+
+  — otra frase · 88 películas —
+  h10-240726   T3  antes[7m 1C 6m 6m 1C]  otra frase  G2@00/53s —7R:m— G3@08/49s —1R:C— G3@10/54s —6R:m— G3@17/56s —6R:m— G2@24/44s —1R:C— G3@26/105s —0R:T— G2@28/147s —0R:T— G1@30/48s  durs G [54, 56, 44, 105]
+  h7-250726    T3  antes[0T 0T 9L 1C 2k 9L]  otra frase  G2@00/99s —0R:T— G3@01/129s —0R:T— G1@03/51s —9R:L— G2@13/49s —1R:C— G2@15/49s —2R:k— G3@19/48s —9R:L— G4@28/99s —0R:T— G2@30/85s —0R:T— G2@31/48s  durs G [49, 49, 48, 99]
+  h9-250726    T3  antes[5m]  otra frase  G1@03/56s —5R:m— G4@10/119s —0R:T— G1@12/86s —0R:T— G3@13/48s  durs G↑ [56, 119]
+  h18-250726   T4  antes[4k 2k 5m 1C 0T 1C]  otra frase  G4@29/51s —4R:k— G3@33/45s —2R:k— G2@37/47s —5R:m— G4@42/55s —1R:C— G3@45/87s —0R:T— G3@46/43s —1R:C— G2@49/108s —0R:T— G2@50/114s —0R:T— G1@52/85s —0R:T— G3@54/47s  durs G [55, 87, 43, 108]
+  h1-260726    T3  antes[1C 3k 0T 2k 0T 5m]  otra frase  G3@30/59s —1R:C— G3@33/51s —3R:k— G2@37/105s —0R:T— G2@39/56s —2R:k— G2@43/93s —0R:T— G2@44/52s —5R:m— G3@50/85s —0R:T— G2@52/82s —0R:T— G3@53/48s  durs G [56, 93, 52, 85]
+  h10-260726   T3  antes[0T 4k 1C 2k 5m 8m]  otra frase  G3@29/89s —0R:T— G3@30/55s —4R:k— G1@35/51s —1R:C— G2@38/54s —2R:k— G2@41/51s —5R:m— G2@48/56s —8R:m— G3@56/83s —0R:T— G3@58/107s —0R:T— G2@59/46s  durs G [54, 51, 56, 83]
+  h2-270726    T3  antes[4k 2k 1C 7m]  otra frase  G1@05/49s —4R:k— G3@10/46s —2R:k— G3@13/50s —1R:C— G1@16/48s —7R:m— G1@23/90s —0R:T— G3@25/71s —0R:T— G1@26/52s  durs G [46, 50, 48, 90]
+  h5-270726    T3  antes[2k 7m 8m 1C]  otra frase  G3@01/46s —2R:k— G1@04/48s —7R:m— G3@11/42s —8R:m— G2@19/47s —1R:C— G4@21/112s —0R:T— G2@23/146s —0R:T— G4@26/61s  durs G [48, 42, 47, 112]
+  h18-270726   T3  antes[2k 2k 8m 1C 1C 9L]  otra frase  G3@27/51s —2R:k— G3@30/43s —2R:k— G2@32/50s —8R:m— G3@41/41s —1R:C— G3@43/47s —1R:C— G3@45/44s —9R:L— G3@54/118s —0R:T— G1@55/92s —0R:T— G3@57/52s  durs G [41, 47, 44, 118]
+  h22-270726   T4  antes[5m 9L 3k 9L]  otra frase  G1@00/45s —5R:m— G3@06/45s —9R:L— G3@16/51s —3R:k— G2@20/45s —9R:L— G1@30/81s —0R:T— G2@31/120s —0R:T— G1@33/86s —0R:T— G3@35/52s  durs G [45, 51, 45, 81]
+  h4-280726    T3  antes[7m 1C 2k 3k 0T 4k]  otra frase  G3@14/47s —7R:m— G2@21/52s —1R:C— G3@23/49s —2R:k— G2@27/55s —3R:k— G3@31/107s —0R:T— G1@33/57s —4R:k— G2@38/98s —0R:T— G3@40/119s —0R:T— G1@42/64s  durs G [55, 107, 57, 98]
+  h7-280726    T3  antes[1C 4k 6m 6m 1C]  otra frase  G1@15/50s —1R:C— G3@17/55s —4R:k— G3@22/48s —6R:m— G4@29/55s —6R:m— G3@36/47s —1R:C— G2@38/84s —0R:T— G3@40/103s —0R:T— G3@41/50s  durs G [48, 55, 47, 84]
+  h15-280726   T3  antes[9L]  otra frase  G3@09/48s —9R:L— G1@18/90s —0R:T— G2@20/89s —0R:T— G3@21/50s  durs G↑ [48, 90]
+  h5-290726    T3  antes[0T 1C 5m 0T 6m 3k]  otra frase  G1@16/75s —0R:T— G3@18/48s —1R:C— G2@20/49s —5R:m— G3@26/122s —0R:T— G1@28/51s —6R:m— G3@34/52s —3R:k— G1@39/108s —0R:T— G2@41/86s —0R:T— G3@42/55s  durs G [122, 51, 52, 108]
+  h10-290726   T3  antes[5m 0T 1C 5m 6m 3k]  otra frase  G3@27/53s —5R:m— G4@34/106s —0R:T— G2@35/52s —1R:C— G2@38/50s —5R:m— G2@44/52s —6R:m— G2@51/56s —3R:k— G2@55/106s —0R:T— G4@57/92s —0R:T— G3@58/56s  durs G↑ [50, 52, 56, 106]
+  h17-290726   T3  antes[1C 5m 3k 7m 4k]  otra frase  G3@03/48s —1R:C— G4@05/52s —5R:m— G3@11/51s —3R:k— G2@15/50s —7R:m— G2@24/51s —4R:k— G2@29/122s —0R:T— G1@31/86s —0R:T— G2@33/45s  durs G [51, 50, 51, 122]
+    … +72 películas más de esta frase
+
+  — sin_antes · tren al arranque de la hora · 28 películas —
+  h4-240726    T3  antes[—]  sin_antes · tren al arranque de la hora  G4@11/93s —0R:T— G3@12/80s —0R:T— G3@13/49s
+  h22-240726   T3  antes[—]  sin_antes · tren al arranque de la hora  G1@01/107s —0R:T— G1@03/88s —0R:T— G2@05/45s
+  h7-250726    T3  antes[—]  sin_antes · tren al arranque de la hora  G2@00/99s —0R:T— G3@01/129s —0R:T— G1@03/51s
+  h15-260726   T4  antes[—]  sin_antes · tren al arranque de la hora  G2@03/93s —0R:T— G3@04/106s —0R:T— G2@06/92s —0R:T— G3@08/60s
+  h7-290726    T3  antes[—]  sin_antes · tren al arranque de la hora  G1@03/101s —0R:T— G2@05/103s —0R:T— G2@07/48s
+  h0-310726    T3  antes[—]  sin_antes · tren al arranque de la hora  G1@02/122s —0R:T— G1@04/114s —0R:T— G2@06/49s
+  h12-310726   T3  antes[—]  sin_antes · tren al arranque de la hora  G3@02/112s —0R:T— G1@04/89s —0R:T— G2@06/52s
+  h19-040826   T3  antes[—]  sin_antes · tren al arranque de la hora  G1@02/82s —0R:T— G3@03/115s —0R:T— G2@05/43s
+  h12-060826   T3  antes[—]  sin_antes · tren al arranque de la hora  G3@06/92s —0R:T— G1@07/84s —0R:T— G3@09/39s
+  h8-090826    T3  antes[—]  sin_antes · tren al arranque de la hora  G3@05/79s —0R:T— G3@06/100s —0R:T— G2@08/46s
+  h23-090826   T3  antes[—]  sin_antes · tren al arranque de la hora  G1@02/92s —0R:T— G3@03/100s —0R:T— G3@05/60s
+  h20-100826   T3  antes[—]  sin_antes · tren al arranque de la hora  G3@00/93s —0R:T— G2@01/111s —0R:T— G1@03/48s
+  h16-120826   T3  antes[—]  sin_antes · tren al arranque de la hora  G4@04/139s —0R:T— G1@06/116s —0R:T— G2@08/52s
+  h6-140826    T4  antes[—]  sin_antes · tren al arranque de la hora  G3@04/120s —0R:T— G2@06/141s —0R:T— G1@08/116s —0R:T— G4@10/55s
+  h19-140826   T4  antes[—]  sin_antes · tren al arranque de la hora  G3@03/118s —0R:T— G1@05/95s —0R:T— G2@07/80s —0R:T— G3@08/52s
+  h18-170826   T4  antes[—]  sin_antes · tren al arranque de la hora  G1@07/83s —0R:T— G3@08/85s —0R:T— G3@10/92s —0R:T— G2@11/54s
+    … +12 películas más de esta frase
+
+  — ya era corto · el tren nace en racimo · 27 películas —
+  h0-250726    T3  antes[1C]  ya era corto · el tren nace en racimo  G2@01/44s —1R:C— G4@03/100s —0R:T— G2@05/97s —0R:T— G3@07/46s  durs G↑ [44, 100]
+  h3-250726    T3  antes[1C]  ya era corto · el tren nace en racimo  G4@02/50s —1R:C— G2@04/87s —0R:T— G3@06/99s —0R:T— G3@08/44s  durs G↑ [50, 87]
+  h5-250726    T3  antes[2k 1C 0T 3k]  ya era corto · el tren nace en racimo  G1@05/51s —2R:k— G2@08/53s —1R:C— G2@11/107s —0R:T— G2@12/47s —3R:k— G2@17/97s —0R:T— G2@18/93s —0R:T— G1@20/46s  durs G [53, 107, 47, 97]
+  h6-270726    T3  antes[0T 3k 1C 0T 2k 4k]  ya era corto · el tren nace en racimo  G3@04/135s —0R:T— G4@06/54s —3R:k— G2@10/45s —1R:C— G1@13/83s —0R:T— G3@15/49s —2R:k— G3@18/43s —4R:k— G2@23/78s —0R:T— G3@24/112s —0R:T— G1@26/46s  durs G [83, 49, 43, 78]
+  h18-270726   T3  antes[1C]  ya era corto · el tren nace en racimo  G3@00/46s —1R:C— G3@02/115s —0R:T— G1@04/89s —0R:T— G2@06/49s  durs G↑ [46, 115]
+  h19-280726   T3  antes[0T 4k 1C]  ya era corto · el tren nace en racimo  G4@05/107s —0R:T— G2@07/46s —4R:k— G4@12/56s —1R:C— G2@14/89s —0R:T— G3@16/179s —0R:T— G4@19/53s  durs G [107, 46, 56, 89]
+  h19-280726   T3  antes[0T 4k 1C 0T 0T 2k]  ya era corto · el tren nace en racimo  G4@05/107s —0R:T— G2@07/46s —4R:k— G4@12/56s —1R:C— G2@14/89s —0R:T— G3@16/179s —0R:T— G4@19/53s —2R:k— G3@22/184s —0R:T— G4@25/102s —0R:T— G3@27/44s  durs G [89, 179, 53, 184]
+  h11-290726   T3  antes[3k]  ya era corto · el tren nace en racimo  G3@06/50s —3R:k— G2@10/93s —0R:T— G2@12/114s —0R:T— G1@14/52s  durs G↑ [50, 93]
+  h22-290726   T3  antes[0T 2k 0T 2k 2k 2k]  ya era corto · el tren nace en racimo  G2@40/91s —0R:T— G3@41/49s —2R:k— G2@44/92s —0R:T— G2@46/47s —2R:k— G3@49/44s —2R:k— G3@52/49s —2R:k— G3@55/77s —0R:T— G2@56/105s —0R:T— G4@58/55s  durs G [47, 44, 49, 77]
+  h6-310726    T3  antes[0T 2k 0T 4k 2k 1C]  ya era corto · el tren nace en racimo  G4@01/96s —0R:T— G3@03/48s —2R:k— G3@06/81s —0R:T— G3@07/46s —4R:k— G2@12/61s —2R:k— G2@16/48s —1R:C— G2@19/85s —0R:T— G2@20/89s —0R:T— G3@22/44s  durs G [46, 61, 48, 85]
+  h12-310726   T3  antes[0T 0T 4k]  ya era corto · el tren nace en racimo  G3@02/112s —0R:T— G1@04/89s —0R:T— G2@06/52s —4R:k— G1@11/87s —0R:T— G3@13/89s —0R:T— G2@14/48s  durs G [112, 89, 52, 87]
+  h13-010826   T3  antes[2k 1C 1C]  ya era corto · el tren nace en racimo  G4@02/56s —2R:k— G1@05/59s —1R:C— G3@08/58s —1R:C— G1@10/88s —0R:T— G3@12/125s —0R:T— G1@14/52s  durs G [56, 59, 58, 88]
+  h19-020826   T3  antes[3k 4k]  ya era corto · el tren nace en racimo  G2@03/44s —3R:k— G2@07/45s —4R:k— G1@12/90s —0R:T— G2@13/96s —0R:T— G3@15/49s  durs G↑ [44, 45, 90]
+  h9-030826    T3  antes[0T 4k]  ya era corto · el tren nace en racimo  G2@08/82s —0R:T— G2@09/53s —4R:k— G2@15/105s —0R:T— G2@16/110s —0R:T— G4@18/66s  durs G [82, 53, 105]
+  h21-030826   T3  antes[1C 3k]  ya era corto · el tren nace en racimo  G3@08/62s —1R:C— G2@11/59s —3R:k— G1@16/122s —0R:T— G1@18/103s —0R:T— G4@19/59s  durs G [62, 59, 122]
+  h5-040826    T3  antes[0T 4k]  ya era corto · el tren nace en racimo  G2@07/134s —0R:T— G4@09/52s —4R:k— G2@26/92s —0R:T— G2@27/122s —0R:T— G2@29/50s  durs G [134, 52, 92]
+    … +11 películas más de esta frase
+
+  vecino inmediato (último hueco antes del tren), cifra por cifra:
+    1R×37  2R×26  3R×24  4R×22  5R×17  6R×14  7R×14  8R×10  9R×12  10R×8  11R×6  12R×3  13R×4  14R×5  15R×4  16R×1  17R×1  18R×1  19R×2  20R×1  22R×1  29R×1  · tren al arranque×28
+
+════ HOLD 72 h · trenes 3–5 · 17 trenes ════
+  — ANTI · sequía pegada al tren (el ejemplo dice que no) · 2 películas —
+  h5-100926    T3  antes[2k 16S]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@03/46s —2R:k— G1@07/57s —16R:S— G2@22/95s —0R:T— G1@24/102s —0R:T— G2@26/45s  durs G↑ [46, 57, 95]
+  h5-100926    T3  antes[0T 0T 1C 0T 5m 16S]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@22/95s —0R:T— G1@24/102s —0R:T— G2@26/45s —1R:C— G2@28/84s —0R:T— G1@29/57s —5R:m— G3@35/51s —16R:S— G2@51/93s —0R:T— G3@53/141s —0R:T— G3@55/59s  durs G [84, 57, 51, 93]
+
+  — hubo largo, pero no bajó en orden · 4 películas —
+  h15-090926   T3  antes[6m 8m 2k 11L 0T 1C]  hubo largo, pero no bajó en orden  G4@11/60s —6R:m— G2@18/47s —8R:m— G1@26/49s —2R:k— G1@30/45s —11R:L— G1@41/98s —0R:T— G3@43/52s —1R:C— G3@45/117s —0R:T— G1@47/117s —0R:T— G1@49/50s  durs G [45, 98, 52, 117]
+  h9-100926    T4  antes[11L 5m 2k 0T 8m 5m]  hubo largo, pero no bajó en orden  G4@08/53s —11R:L— G4@20/57s —5R:m— G4@28/67s —2R:k— G3@32/140s —0R:T— G1@34/62s —8R:m— G3@44/54s —5R:m— G1@50/110s —0R:T— G4@52/99s —0R:T— G3@54/153s —0R:T— G4@57/69s  durs G [140, 62, 54, 110]
+  h21-100926   T3  antes[2k 5m 1C 1C 12L 5m]  hubo largo, pero no bajó en orden  G2@03/78s —2R:k— G3@06/88s —5R:m— G3@12/90s —1R:C— G1@14/101s —1R:C— G2@17/104s —12R:L— G3@29/99s —5R:m— G2@35/106s —0R:T— G3@37/133s —0R:T— G2@39/94s  durs G [101, 104, 99, 106]
+  h18-110926   T3  antes[8m 1C 13L 6m 7m]  hubo largo, pero no bajó en orden  G3@03/107s —8R:m— G2@11/83s —1R:C— G1@14/114s —13R:L— G2@27/91s —6R:m— G3@34/91s —7R:m— G1@41/106s —0R:T— G3@43/99s —0R:T— G3@45/92s  durs G [114, 91, 91, 106]
+
+  — otra frase · 8 películas —
+  h23-090926   T4  antes[1C 6m]  otra frase  G4@21/59s —1R:C— G2@23/49s —6R:m— G1@31/81s —0R:T— G2@32/105s —0R:T— G3@34/95s —0R:T— G3@35/52s  durs G [59, 49, 81]
+  h23-090926   T3  antes[1C 6m 0T 0T 0T 8m]  otra frase  G4@21/59s —1R:C— G2@23/49s —6R:m— G1@31/81s —0R:T— G2@32/105s —0R:T— G3@34/95s —0R:T— G3@35/52s —8R:m— G3@44/117s —0R:T— G1@46/91s —0R:T— G2@47/106s  durs G [105, 95, 52, 117]
+  h19-100926   T3  antes[7m 2k 3k]  otra frase  G3@02/98s —7R:m— G2@10/96s —2R:k— G2@14/94s —3R:k— G4@18/105s —0R:T— G3@19/99s —0R:T— G3@21/121s  durs G [98, 96, 94, 105]
+  h7-110926    T3  antes[5m 4k 5m 3k]  otra frase  G1@02/100s —5R:m— G3@08/92s —4R:k— G1@13/106s —5R:m— G1@19/101s —3R:k— G3@23/85s —0R:T— G1@25/108s —0R:T— G2@26/103s  durs G [92, 106, 101, 85]
+  h7-110926    T3  antes[4k 5m 3k 0T 0T 8m]  otra frase  G3@08/92s —4R:k— G1@13/106s —5R:m— G1@19/101s —3R:k— G3@23/85s —0R:T— G1@25/108s —0R:T— G2@26/103s —8R:m— G2@36/93s —0R:T— G2@37/116s —0R:T— G4@39/100s  durs G [85, 108, 103, 93]
+  h17-110926   T3  antes[1C 2k 3k 8m 0T 5m]  otra frase  G1@27/122s —1R:C— G1@30/103s —2R:k— G3@33/94s —3R:k— G2@37/98s —8R:m— G3@45/130s —0R:T— G2@48/94s —5R:m— G1@54/90s —0R:T— G3@55/93s —0R:T— G2@57/86s  durs G [98, 130, 94, 90]
+  h23-110926   T3  antes[2k 6m 1C 3k 2k 5m]  otra frase  G2@04/79s —2R:k— G2@07/109s —6R:m— G3@14/120s —1R:C— G2@17/108s —3R:k— G3@23/109s —2R:k— G3@26/87s —5R:m— G2@32/115s —0R:T— G1@34/128s —0R:T— G4@36/103s  durs G [108, 109, 87, 115]
+  h1-120926    T4  antes[3k 2k 3k 2k 7m]  otra frase  G3@04/91s —3R:k— G1@08/127s —2R:k— G4@12/108s —3R:k— G3@17/86s —2R:k— G1@20/115s —7R:m— G3@28/87s —0R:T— G3@30/89s —0R:T— G2@31/100s —0R:T— G3@33/87s  durs G [108, 86, 115, 87]
+
+  — sin_antes · tren al arranque de la hora · 1 películas —
+  h15-090926   T3  antes[—]  sin_antes · tren al arranque de la hora  G2@08/94s —0R:T— G3@09/103s —0R:T— G4@11/60s
+
+  — ya era corto · el tren nace en racimo · 2 películas —
+  h17-100926   T5  antes[1C 1C]  ya era corto · el tren nace en racimo  G3@00/92s —1R:C— G3@03/94s —1R:C— G1@05/103s —0R:T— G1@07/98s —0R:T— G1@09/92s —0R:T— G2@10/104s —0R:T— G2@12/90s  durs G↑ [92, 94, 103]
+  h6-110926    T3  antes[1C]  ya era corto · el tren nace en racimo  G3@14/91s —1R:C— G3@16/83s —0R:T— G3@18/99s —0R:T— G2@19/96s  durs G↓ [91, 83]
+
+  vecino inmediato (último hueco antes del tren), cifra por cifra:
+    1R×3  3R×2  5R×4  6R×1  7R×2  8R×2  16R×2  · tren al arranque×1
+
+════ todas las T4 y T5 del train (sin recorte) ════
+  h15-230726   T5  antes[1C 17S 7m]  hubo largo, pero no bajó en orden  G1@05/50s —1R:C— G1@08/49s —17R:S— G2@24/41s —7R:m— G3@31/105s —0R:T— G2@33/90s —0R:T— G2@34/78s —0R:T— G3@36/83s —0R:T— G3@37/48s  durs G [50, 49, 41, 105]
+  h12-250726   T4  antes[16S 3k 8m 5m]  hubo largo, pero no bajó en orden  G2@01/56s —16R:S— G4@17/52s —3R:k— G3@21/46s —8R:m— G3@30/56s —5R:m— G1@36/100s —0R:T— G1@38/85s —0R:T— G3@39/106s —0R:T— G2@41/47s  durs G [52, 46, 56, 100]
+  h18-250726   T4  antes[4k 2k 5m 1C 0T 1C]  otra frase  G4@29/51s —4R:k— G3@33/45s —2R:k— G2@37/47s —5R:m— G4@42/55s —1R:C— G3@45/87s —0R:T— G3@46/43s —1R:C— G2@49/108s —0R:T— G2@50/114s —0R:T— G1@52/85s —0R:T— G3@54/47s  durs G [55, 87, 43, 108]
+  h15-260726   T4  antes[—]  sin_antes · tren al arranque de la hora  G2@03/93s —0R:T— G3@04/106s —0R:T— G2@06/92s —0R:T— G3@08/60s
+  h0-270726    T4  antes[0T 6m 1C 7m 0T 12L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@16/95s —0R:T— G2@18/50s —6R:m— G1@26/48s —1R:C— G3@28/49s —7R:m— G3@35/86s —0R:T— G3@36/50s —12R:L— G3@49/124s —0R:T— G1@51/81s —0R:T— G2@52/93s —0R:T— G2@54/48s  durs G [49, 86, 50, 124]
+  h18-270726   T4  antes[1C 0T 0T 11L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@00/46s —1R:C— G3@02/115s —0R:T— G1@04/89s —0R:T— G2@06/49s —11R:L— G3@16/128s —0R:T— G3@18/91s —0R:T— G2@20/102s —0R:T— G4@22/52s  durs G [115, 89, 49, 128]
+  h22-270726   T4  antes[5m 9L 3k 9L]  otra frase  G1@00/45s —5R:m— G3@06/45s —9R:L— G3@16/51s —3R:k— G2@20/45s —9R:L— G1@30/81s —0R:T— G2@31/120s —0R:T— G1@33/86s —0R:T— G3@35/52s  durs G [45, 51, 45, 81]
+  h8-280726    T4  antes[12L 4k 12L 9L]  hubo largo, pero no bajó en orden  G1@00/47s —12R:L— G1@12/52s —4R:k— G3@17/47s —12R:L— G2@30/56s —9R:L— G1@40/97s —0R:T— G3@41/109s —0R:T— G1@43/97s —0R:T— G3@45/55s  durs G [52, 47, 56, 97]
+  h15-300726   T5  antes[16S 1C 1C 1C 7m]  hubo largo, pero no bajó en orden  G4@00/55s —16R:S— G1@16/50s —1R:C— G2@19/51s —1R:C— G3@21/49s —1R:C— G1@23/54s —7R:m— G1@30/102s —0R:T— G2@32/123s —0R:T— G1@34/95s —0R:T— G3@36/102s —0R:T— G4@38/56s  durs G [51, 49, 54, 102]
+  h4-310726    T4  antes[3k 0T 10L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@01/48s —3R:k— G3@05/82s —0R:T— G2@06/51s —10R:L— G4@17/119s —0R:T— G1@19/109s —0R:T— G2@21/87s —0R:T— G3@22/55s  durs G [48, 82, 51, 119]
+  h8-020826    T4  antes[3k 4k 7m]  otra frase  G2@06/50s —3R:k— G3@11/64s —4R:k— G3@16/44s —7R:m— G4@23/93s —0R:T— G2@25/93s —0R:T— G2@26/91s —0R:T— G2@28/53s  durs G [50, 64, 44, 93]
+  h20-020826   T4  antes[0T 6m 1C 4k 5m 6m]  otra frase  G3@03/88s —0R:T— G2@04/44s —6R:m— G2@11/49s —1R:C— G2@13/55s —4R:k— G3@18/48s —5R:m— G1@24/46s —6R:m— G2@30/88s —0R:T— G1@31/142s —0R:T— G4@34/133s —0R:T— G2@36/45s  durs G [55, 48, 46, 88]
+  h10-030826   T4  antes[20S 13L 2k 0T 7m 3k]  hubo largo, pero no bajó en orden  G4@02/58s —20R:S— G3@19/40s —13R:L— G2@32/52s —2R:k— G3@35/98s —0R:T— G3@37/47s —7R:m— G1@45/54s —3R:k— G4@50/89s —0R:T— G3@51/89s —0R:T— G3@53/112s —0R:T— G2@55/51s  durs G [98, 47, 54, 89]
+  h1-040826    T4  antes[1C 0T 1C 10L 5m]  hubo largo, pero no bajó en orden  G3@00/54s —1R:C— G1@03/84s —0R:T— G3@05/56s —1R:C— G2@07/53s —10R:L— G2@18/48s —5R:m— G4@25/107s —0R:T— G2@27/100s —0R:T— G1@29/94s —0R:T— G2@30/53s  durs G [56, 53, 48, 107]
+  h12-050826   T4  antes[4k 6m 3k 0T 11L 15L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@06/48s —4R:k— G3@11/45s —6R:m— G1@17/47s —3R:k— G2@22/83s —0R:T— G2@23/45s —11R:L— G1@33/38s —15R:L— G4@46/107s —0R:T— G4@47/85s —0R:T— G3@49/73s —0R:T— G3@50/47s  durs G [83, 45, 38, 107]
+  h17-070826   T5  antes[2k 10L 20S 0T 6m 3k]  hubo largo, pero no bajó en orden  G4@04/60s —2R:k— G2@08/52s —10R:L— G1@18/49s —20R:S— G4@38/105s —0R:T— G2@40/54s —6R:m— G2@47/47s —3R:k— G2@52/179s —0R:T— G4@55/86s —0R:T— G2@56/85s —0R:T— G3@57/112s —0R:T— G4@59/104s  durs G [105, 54, 47, 179]
+  h6-090826    T4  antes[6m 0T 0T 1C 6m 3k]  otra frase  G1@00/50s —6R:m— G4@08/114s —0R:T— G2@09/98s —0R:T— G2@11/49s —1R:C— G3@14/52s —6R:m— G2@21/48s —3R:k— G2@25/96s —0R:T— G3@27/89s —0R:T— G2@28/78s —0R:T— G3@29/57s  durs G [49, 52, 48, 96]
+  h23-090826   T4  antes[0T 0T 7m 9L 0T 16S]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G1@02/92s —0R:T— G3@03/100s —0R:T— G3@05/60s —7R:m— G3@14/57s —9R:L— G3@25/87s —0R:T— G3@26/55s —16R:S— G1@43/85s —0R:T— G3@44/126s —0R:T— G2@46/88s —0R:T— G3@48/55s  durs G [57, 87, 55, 85]
+  h8-110826    T4  antes[0T 4k 1C 1C 13L 1C]  hubo largo, pero no bajó en orden  G1@01/90s —0R:T— G3@03/49s —4R:k— G3@08/53s —1R:C— G3@10/55s —1R:C— G3@13/53s —13R:L— G2@26/47s —1R:C— G4@29/96s —0R:T— G2@30/85s —0R:T— G3@32/112s —0R:T— G2@34/44s  durs G [55, 53, 47, 96]
+  h0-120826    T4  antes[13L 0T 5m]  hubo largo, pero no bajó en orden  G3@08/56s —13R:L— G2@21/82s —0R:T— G2@23/49s —5R:m— G1@30/88s —0R:T— G2@31/193s —0R:T— G4@34/102s —0R:T— G2@36/55s  durs G [56, 82, 49, 88]
+  h20-130826   T5  antes[0T 1C 0T 4k 9L 14L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G4@06/102s —0R:T— G3@08/42s —1R:C— G1@10/102s —0R:T— G4@12/54s —4R:k— G3@17/44s —9R:L— G3@26/46s —14R:L— G1@38/88s —0R:T— G3@39/106s —0R:T— G1@41/77s —0R:T— G2@42/106s —0R:T— G2@44/46s  durs G [54, 44, 46, 88]
+  h6-140826    T4  antes[—]  sin_antes · tren al arranque de la hora  G3@04/120s —0R:T— G2@06/141s —0R:T— G1@08/116s —0R:T— G4@10/55s
+  h14-140826   T4  antes[3k 4k 2k 3k 2k]  ya era corto · el tren nace en racimo  G3@09/47s —3R:k— G1@14/58s —4R:k— G1@19/51s —2R:k— G4@23/54s —3R:k— G2@27/47s —2R:k— G4@31/114s —0R:T— G2@33/138s —0R:T— G1@35/116s —0R:T— G1@37/54s  durs G [51, 54, 47, 114]
+  h19-140826   T4  antes[—]  sin_antes · tren al arranque de la hora  G3@03/118s —0R:T— G1@05/95s —0R:T— G2@07/80s —0R:T— G3@08/52s
+  h23-150826   T4  antes[5m 1C 0T 4k 5m 7m]  otra frase  G4@01/58s —5R:m— G2@08/57s —1R:C— G2@11/113s —0R:T— G2@12/52s —4R:k— G2@18/54s —5R:m— G2@23/51s —7R:m— G3@31/90s —0R:T— G1@33/94s —0R:T— G3@34/96s —0R:T— G3@36/50s  durs G [52, 54, 51, 90]
+  h18-170826   T4  antes[—]  sin_antes · tren al arranque de la hora  G1@07/83s —0R:T— G3@08/85s —0R:T— G3@10/92s —0R:T— G2@11/54s
+  h9-180826    T4  antes[0T 1C 2k 7m 9L 4k]  otra frase  G3@12/93s —0R:T— G2@13/49s —1R:C— G2@16/50s —2R:k— G3@19/44s —7R:m— G2@26/55s —9R:L— G3@36/52s —4R:k— G1@41/192s —0R:T— G4@44/154s —0R:T— G4@47/127s —0R:T— G2@49/51s  durs G [44, 55, 52, 192]
+  h14-190826   T4  antes[5m 2k 4k 0T 3k]  otra frase  G2@03/53s —5R:m— G1@10/55s —2R:k— G4@15/52s —4R:k— G2@20/120s —0R:T— G1@22/50s —3R:k— G4@27/97s —0R:T— G3@28/99s —0R:T— G2@30/91s —0R:T— G3@31/50s  durs G [52, 120, 50, 97]
+  h15-190826   T4  antes[3k 4k 3k]  ya era corto · el tren nace en racimo  G3@14/128s —3R:k— G1@21/52s —4R:k— G4@26/53s —3R:k— G4@32/228s —0R:T— G4@36/150s —0R:T— G4@39/98s —0R:T— G3@40/56s  durs G [128, 52, 53, 228]
+  h21-200826   T4  antes[4k]  ya era corto · el tren nace en racimo  G1@00/57s —4R:k— G2@05/101s —0R:T— G4@07/113s —0R:T— G1@09/116s —0R:T— G1@11/54s  durs G↑ [57, 101]
+  h22-200826   T4  antes[3k]  ya era corto · el tren nace en racimo  G4@00/62s —3R:k— G1@05/100s —0R:T— G2@06/122s —0R:T— G1@08/96s —0R:T— G3@10/56s  durs G↑ [62, 100]
+  h13-260826   T4  antes[0T 6m 3k 2k 4k 3k]  otra frase  G2@15/97s —0R:T— G1@17/105s —6R:m— G1@24/108s —3R:k— G3@28/88s —2R:k— G2@31/114s —4R:k— G2@37/89s —3R:k— G2@41/111s —0R:T— G4@43/145s —0R:T— G2@45/105s —0R:T— G2@47/103s  durs G [88, 114, 89, 111]
+  h4-270826    T4  antes[—]  sin_antes · tren al arranque de la hora  G3@02/96s —0R:T— G4@03/141s —0R:T— G2@06/106s —0R:T— G2@07/114s
+  h15-290826   T4  antes[9L]  otra frase  G1@19/109s —9R:L— G2@28/101s —0R:T— G3@30/89s —0R:T— G3@31/91s —0R:T— G1@33/97s  durs G↓ [109, 101]
+  h20-290826   T4  antes[2k 9L 1C 4k 3k 6m]  otra frase  G3@03/89s —2R:k— G3@06/86s —9R:L— G2@15/128s —1R:C— G4@18/137s —4R:k— G3@24/80s —3R:k— G1@28/92s —6R:m— G2@34/91s —0R:T— G2@36/92s —0R:T— G3@37/86s —0R:T— G4@39/145s  durs G [137, 80, 92, 91]
+  h23-300826   T4  antes[0T 6m]  otra frase  G1@16/134s —0R:T— G1@19/117s —6R:m— G1@26/110s —0R:T— G2@28/108s —0R:T— G2@29/101s —0R:T— G1@31/107s  durs G↓ [134, 117, 110]
+  h15-310826   T4  antes[0T 6m 1C 11L 0T 13L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@05/89s —0R:T— G1@06/110s —6R:m— G2@13/119s —1R:C— G1@16/119s —11R:L— G2@28/103s —0R:T— G1@30/121s —13R:L— G1@44/136s —0R:T— G1@46/134s —0R:T— G1@48/128s —0R:T— G3@50/93s  durs G [119, 103, 121, 136]
+  h21-310826   T4  antes[6m 1C 4k]  otra frase  G1@08/125s —6R:m— G3@16/97s —1R:C— G3@18/100s —4R:k— G2@23/92s —0R:T— G3@25/91s —0R:T— G2@26/91s —0R:T— G1@28/120s  durs G [125, 97, 100, 92]
+  h22-060926   T4  antes[8m 15L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G3@08/96s —8R:m— G3@16/91s —15R:L— G1@30/130s —0R:T— G2@32/84s —0R:T— G1@34/85s —0R:T— G3@35/110s  durs G [96, 91, 130]
+  h12-080926   T4  antes[14L 6m 8m 10L]  ANTI · sequía pegada al tren (el ejemplo dice que no)  G2@01/55s —14R:L— G1@15/50s —6R:m— G4@22/61s —8R:m— G3@31/48s —10R:L— G1@43/110s —0R:T— G3@45/126s —0R:T— G2@47/115s —0R:T— G1@49/56s  durs G [50, 61, 48, 110]
+
+════ T4 y T5 del hold ════
+  h23-090926   T4  antes[1C 6m]  otra frase  G4@21/59s —1R:C— G2@23/49s —6R:m— G1@31/81s —0R:T— G2@32/105s —0R:T— G3@34/95s —0R:T— G3@35/52s  durs G [59, 49, 81]
+  h9-100926    T4  antes[11L 5m 2k 0T 8m 5m]  hubo largo, pero no bajó en orden  G4@08/53s —11R:L— G4@20/57s —5R:m— G4@28/67s —2R:k— G3@32/140s —0R:T— G1@34/62s —8R:m— G3@44/54s —5R:m— G1@50/110s —0R:T— G4@52/99s —0R:T— G3@54/153s —0R:T— G4@57/69s  durs G [140, 62, 54, 110]
+  h17-100926   T5  antes[1C 1C]  ya era corto · el tren nace en racimo  G3@00/92s —1R:C— G3@03/94s —1R:C— G1@05/103s —0R:T— G1@07/98s —0R:T— G1@09/92s —0R:T— G2@10/104s —0R:T— G2@12/90s  durs G↑ [92, 94, 103]
+  h1-120926    T4  antes[3k 2k 3k 2k 7m]  otra frase  G3@04/91s —3R:k— G1@08/127s —2R:k— G4@12/108s —3R:k— G3@17/86s —2R:k— G1@20/115s —7R:m— G3@28/87s —0R:T— G3@30/89s —0R:T— G2@31/100s —0R:T— G3@33/87s  durs G [108, 86, 115, 87]
+
+Lectura:
+  La forma base se confirma o se parte en las películas, no en un %.
+  ANTI = sequía ≥10 R pegada al tren: si aparece, el ejemplo no cubre eso.
+  Cero cable.

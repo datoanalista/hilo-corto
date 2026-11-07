@@ -1,0 +1,41 @@
+LAB APOSTADOR EXPERTO — R2+R3 potencias sobre SEQUIA3
+ventana fijada=3 tiros · CERO prod
+
+n=1026 train=954 hold=72
+
+== R2 TRAIN ==
+  [ALWAYS_TIP] cov=100.0% GO=8328/8328 exacto=13.7% +-1=23.0% banda=36.7% pnl=-2218.0 strong=0 weak=8328
+  [SEQUIA] cov=44.6% GO=3712/8328 exacto=22.1% +-1=35.7% banda=57.9% pnl=+586.0 strong=0 weak=3712
+  [SEQUIA_P8] cov=26.5% GO=2207/8328 exacto=21.4% +-1=36.0% banda=57.5% pnl=+329.0 strong=0 weak=2207
+  [SEQUIA_EWMA] cov=23.6% GO=1965/8328 exacto=22.6% +-1=37.8% banda=60.4% pnl=+409.0 strong=0 weak=1965
+  [SEQUIA_SOFT] cov=28.4% GO=2364/8328 exacto=22.9% +-1=37.8% banda=60.7% pnl=+508.0 strong=0 weak=2364
+  [SEQUIA_P8_EWMA] cov=14.1% GO=1172/8328 exacto=22.4% +-1=37.5% banda=60.0% pnl=+234.0 strong=0 weak=1172
+  [SEQUIA_P8_SOFT] cov=18.3% GO=1526/8328 exacto=22.9% +-1=37.8% banda=60.7% pnl=+326.0 strong=0 weak=1526
+
+== R2 HOLDOUT ==
+  [ALWAYS_TIP] cov=100.0% GO=607/607 exacto=15.0% +-1=23.6% banda=38.6% pnl=-139.0 strong=0 weak=607
+  [SEQUIA] cov=45.3% GO=275/607 exacto=25.1% +-1=34.9% banda=60.0% pnl=+55.0 strong=0 weak=275
+  [SEQUIA_P8] cov=29.2% GO=177/607 exacto=23.2% +-1=36.2% banda=59.3% pnl=+33.0 strong=0 weak=177
+  [SEQUIA_EWMA] cov=28.5% GO=173/607 exacto=28.9% +-1=33.5% banda=62.4% pnl=+43.0 strong=0 weak=173
+  [SEQUIA_SOFT] cov=32.0% GO=194/607 exacto=27.3% +-1=35.1% banda=62.4% pnl=+48.0 strong=0 weak=194
+  [SEQUIA_P8_EWMA] cov=18.8% GO=114/607 exacto=24.6% +-1=38.6% banda=63.2% pnl=+30.0 strong=0 weak=114
+  [SEQUIA_P8_SOFT] cov=21.7% GO=132/607 exacto=23.5% +-1=37.9% banda=61.4% pnl=+30.0 strong=0 weak=132
+
+== R3 HOLDOUT (espina miss_streak>=2) ==
+  [SEQUIA] cov=45.3% GO=275/607 exacto=25.1% +-1=34.9% banda=60.0% pnl=+55.0 strong=0 weak=275
+  [SEQUIA_MISS2] cov=29.5% GO=179/607 exacto=26.8% +-1=35.8% banda=62.6% pnl=+45.0 strong=0 weak=179
+
+== DELTA vs SEQUIA3 (holdout) ==
+  base SEQUIA: banda=60.0% pnl=+55.0 cov=45.3%
+  SEQUIA_P8: Δbanda=-0.7pp Δpnl=-22.0 Δcov=-16.1pp
+  SEQUIA_EWMA: Δbanda=+2.4pp Δpnl=-12.0 Δcov=-16.8pp
+  SEQUIA_SOFT: Δbanda=+2.4pp Δpnl=-7.0 Δcov=-13.3pp
+  SEQUIA_P8_EWMA: Δbanda=+3.2pp Δpnl=-25.0 Δcov=-26.5pp
+  SEQUIA_P8_SOFT: Δbanda=+1.4pp Δpnl=-25.0 Δcov=-23.6pp
+  SEQUIA_MISS2: Δbanda=+2.6pp Δpnl=-10.0 Δcov=-15.8pp
+
+== VEREDICTO ==
+  SIN OLOR nuevo material vs SEQUIA3 sola.
+  P8/EWMA/soft/miss2 no mejoran banda+PnL juntos de forma clara.
+  → candidata a cable: SEQUIA3 (tip LC, TTL 3 tiros, stake WEAK).
+

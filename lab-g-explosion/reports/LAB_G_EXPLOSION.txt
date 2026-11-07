@@ -1,0 +1,149 @@
+LAB G-EXPLOSION — Ronda 1
+cinta: depurar-all-4G-detail.txt + extraccion-en-vivo (horas nuevas)
+n=919 h · train=847 · holdout=72
+
+== H0 CENSO — G extrema (una sola G) ==
+  Horas con al menos 1 G: 919
+  G>=500: 48 eventos en 46 h (5.01% horas)
+    bloques: {'40-59': 15, '20-39': 21, '0-19': 12}
+    min med=28 p90=52
+    lumen med=756 max=3000
+  G>=800: 21 eventos en 20 h (2.18% horas)
+    bloques: {'40-59': 8, '20-39': 8, '0-19': 5}
+    min med=35 p90=55
+    lumen med=1300 max=3000
+  G>=1000: 15 eventos en 15 h (1.63% horas)
+    bloques: {'40-59': 6, '20-39': 7, '0-19': 2}
+    min med=35 p90=52
+    lumen med=1400 max=3000
+  G>=1200: 13 eventos en 13 h (1.41% horas)
+    bloques: {'20-39': 6, '40-59': 5, '0-19': 2}
+    min med=35 p90=51
+    lumen med=1425 max=3000
+  G>=1500: 6 eventos en 6 h (0.65% horas)
+    bloques: {'20-39': 3, '40-59': 3}
+    min med=38 p90=51
+    lumen med=1995 max=3000
+
+== H1 BLOQUE — dónde cae la explosión ==
+  G>=800 (n=21):
+    bloque 40-59: 8 (38%)
+    bloque 20-39: 8 (38%)
+    bloque 0-19: 5 (24%)
+  G>=1000 (n=15):
+    bloque 20-39: 7 (47%)
+    bloque 40-59: 6 (40%)
+    bloque 0-19: 2 (13%)
+  G>=1200 (n=13):
+    bloque 20-39: 6 (46%)
+    bloque 40-59: 5 (38%)
+    bloque 0-19: 2 (15%)
+
+== H2 PERFIL @19/@39 — horas con G>=1000 vs resto ==
+  positivos n=15 · negativos n=904
+    acum@19: con=339 vs sin=201 (Δ+138)
+    acum@39: con=1286 vs sin=410 (Δ+876)
+    nG@39: con=7 vs sin=6 (Δ+0)
+    meanG@39: con=183 vs sin=63 (Δ+120)
+    maxG@39: con=1010 vs sin=155 (Δ+855)
+    sumG hora: con=2209 vs sin=618 (Δ+1591)
+  Insight lab-g-cola: acum@19 suele ser igual; leer @35-39 o unicornio
+  VEREDICTO: OLOR perfil tardío · FRÍO regla única @19
+
+== H2 PERFIL @19/@39 — horas con G>=1200 vs resto ==
+  positivos n=13 · negativos n=906
+    acum@19: con=366 vs sin=201 (Δ+166)
+    acum@39: con=1351 vs sin=411 (Δ+940)
+    nG@39: con=7 vs sin=6 (Δ+0)
+    meanG@39: con=190 vs sin=64 (Δ+126)
+    maxG@39: con=1074 vs sin=156 (Δ+918)
+    sumG hora: con=2312 vs sin=620 (Δ+1692)
+  Insight lab-g-cola: acum@19 suele ser igual; leer @35-39 o unicornio
+  VEREDICTO: OLOR perfil tardío · FRÍO regla única @19
+
+== H3 AVISO @39 → bloque 40–59 · G>=800 ==
+  base train=0.83%
+    generosa@39: nG>=8 & meanG>=75
+      tr prec=3.4% rec=29% tp=2 fp=57 | ho prec=0.0% rec=0% tp=0
+    dia_caliente_proxy: hod14|15 & acum@39>=400
+      tr prec=2.5% rec=14% tp=1 fp=39 | ho prec=0.0% rec=0% tp=0
+    estricta@39: maxG>=250 & meanG>=70 & G34 fuerte & sin cola
+      tr prec=1.1% rec=14% tp=1 fp=86 | ho prec=0.0% rec=0% tp=0
+    cierre@39: acum>=550 & maxG>=200 & sin G>=umbral ya
+      tr prec=0.9% rec=14% tp=1 fp=113 | ho prec=0.0% rec=0% tp=0
+  VEREDICTO: FRÍO / OLOR débil
+
+== H3 AVISO @39 → bloque 40–59 · G>=1000 ==
+  base train=0.59%
+    dia_caliente_proxy: hod14|15 & acum@39>=400
+      tr prec=2.5% rec=20% tp=1 fp=39 | ho prec=0.0% rec=0% tp=0
+    generosa@39: nG>=8 & meanG>=75
+      tr prec=1.7% rec=20% tp=1 fp=58 | ho prec=0.0% rec=0% tp=0
+    estricta@39: maxG>=250 & meanG>=70 & G34 fuerte & sin cola
+      tr prec=1.1% rec=20% tp=1 fp=89 | ho prec=0.0% rec=0% tp=0
+    cierre@39: acum>=550 & maxG>=200 & sin G>=umbral ya
+      tr prec=0.8% rec=20% tp=1 fp=117 | ho prec=0.0% rec=0% tp=0
+  VEREDICTO: FRÍO / OLOR débil
+
+== H3 AVISO @39 → bloque 40–59 · G>=1200 ==
+  base train=0.47%
+    dia_caliente_proxy: hod14|15 & acum@39>=400
+      tr prec=2.5% rec=25% tp=1 fp=39 | ho prec=0.0% rec=0% tp=0
+    generosa@39: nG>=8 & meanG>=75
+      tr prec=1.7% rec=25% tp=1 fp=58 | ho prec=0.0% rec=0% tp=0
+    estricta@39: maxG>=250 & meanG>=70 & G34 fuerte & sin cola
+      tr prec=1.1% rec=25% tp=1 fp=89 | ho prec=0.0% rec=0% tp=0
+    cierre@39: acum>=550 & maxG>=200 & sin G>=umbral ya
+      tr prec=0.8% rec=25% tp=1 fp=118 | ho prec=0.0% rec=0% tp=0
+  VEREDICTO: FRÍO (base ~0 · n eventos insuficiente)
+
+== H4 AVISO @19 → bloque 20–39 · G>=1000 ==
+  base train=0.83%
+    apertura@19: maxG>=85 & sin G>=umbral en 0-19: tr prec=0.2% rec=14% tp=1 fp=422 | ho prec=0.0% rec=0%
+    apertura@19: meanG>=65 & nG>=2 & sin cola: tr prec=0.4% rec=14% tp=1 fp=243 | ho prec=0.0% rec=0%
+  VEREDICTO: FRÍO (lab-g-cola R1 — prec ~2%)
+
+== H5 ESCALERA — prec @39→40-59 según umbral ==
+  regla: generosa@39 (nG>=8, meanG>=75)
+    G>=500: base=1.53% prec=3.4% rec=15% tp=2 ho=0%
+    G>=800: base=0.83% prec=3.4% rec=29% tp=2 ho=0%
+    G>=1000: base=0.59% prec=1.7% rec=20% tp=1 ho=0%
+    G>=1200: base=0.47% prec=1.7% rec=25% tp=1 ho=0%
+
+== H6 CASO H14-300826 (G3 1200 min 44) ==
+  evento: G1200 tipo 3 min 44 bloque 40-59
+  @19: acum=30 nG=1 mean=30.0 max=30
+  @39: acum=149 nG=4 mean=37.2 max=59
+  ¿Reglas @39→40-59 habrían avisado bloque ANTES del min 40?
+    generosa@39: nG>=8 & meanG>=75: no
+    cierre@39: acum>=550 & maxG>=200 & sin G>=umbral ya: no
+    estricta@39: maxG>=250 & meanG>=70 & G34 fuerte & sin cola: no
+    dia_caliente_proxy: hod14|15 & acum@39>=400: no
+  Perfil: UNICORNIO (hora débil @39 + explosión única en 40-59)
+  VEREDICTO: caso escapa reglas actuales — motivo del lab
+
+== H7 FUENTES ==
+  detail: c:\operacion-joker\depuracion\depurar-all-4G-detail.txt
+    horas solo detail: 904
+    horas detail+live: 919
+    horas solo en live (no en detail): 15
+    G>=1000: detail=14 · merge=15
+    G>=1200: detail=12 · merge=13
+
+============================================================
+SÍNTESIS RONDA 1
+============================================================
+  PREGUNTA: aviso de BLOQUE antes de G explosiva (≥1200)
+
+  H0: censo por umbral — ver arriba
+  H1: bloque dominante 40-59 para G altas (si n>0)
+  H2: perfil @39 separa mejor que @19 (olor tardío)
+  H3/H4: reglas @39/@19 — prec baja si umbral sube
+  H6: H14 unicornio — no olería bloque con reglas vigentes
+
+  DECISIÓN PROVISIONAL:
+    · G>=1200: n insuficiente para VIVE — seguir con proxy G>=1000/800
+    · Mejor copy: olor BLOQUE 40-59 @39 cuando hora generosa
+    · Unicornio (H14) requiere capa día caliente sin perfil @39
+    · R2: reglas unicornio + holdout solo live + G>=800
+

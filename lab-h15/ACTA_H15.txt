@@ -1,0 +1,76 @@
+ACTA LAB H15
+============
+fecha: 2026-08-29
+lab: hilo-corto/lab-h15/
+script: run_lab.py -> reports/LAB_H15.txt
+cinta: data_3dias.txt · 872 h · h15 train=34 test=3 · holdout 72h
+
+PREGUNTA
+  Por que h15 lidera med_sum (~733)? H1-H8: perfil, costura h14,
+  DOW, dia generoso, eco 15->19, SN/colgante, intra @20/@40, eco 5->15.
+
+── RONDA 1 ──
+
+H1 PERFIL (E1)
+  SE VE: rank #1 med_sum train (732) · lift mean_G +13.7 vs h14
+         med_nG=10 (igual cluster) · p_gen 32%
+  NO SE VE: test rank #4 (n=3) · p_gen test 0%
+  VEREDICTO: OLOR — gana por intensidad/G, no cupo
+
+H2 COSTURA h14->h15 (E2)
+  SE VE: lift +152 mismo dia (n=33) · test +195 (n=3)
+         h14 opaco -> h15 lift +345 (n=13)
+         h14 normal -> lift +212 (n=13)
+  NO SE VE: h14 ya fuerte -> h15 baja -183 (n=7) techo/regresion
+  VEREDICTO: VIVE — rebote post-h14 opaco es la firma fuerte
+
+H3 DOW x h15 (E3)
+  SE VE: spread DOW med 494 (mar 372 0% vs vie 866 60%)
+  NO SE VE: n~5/celda · test n=3
+  VEREDICTO: VIVE en spread · OLOR en regla (muestra chica)
+
+H4 DIA GENEROSO (E4)
+  SE VE: p_gen 50% vs 25% · med +107 dia gen vs gris
+  NO SE VE: h15 nunca 1er hora gen del dia · lift <150
+  VEREDICTO: FRIO como ley · OLOR debil (amplifica, no arrastra)
+
+H5 ECO h15->h19 +1d (E5)
+  SE VE: tip dashboard ya existente
+  NO SE VE: lift +11 (n=9 vs 24) << null ~293
+  VEREDICTO: FRIO en numeros — eco no se sostiene en train
+
+H6 SN / COLGANTE (E6)
+  SE VE: 2 SN · leave-one-out med 732 estable · rank #1 sin SN
+  VEREDICTO: VIVE — mediana robusta; cola SN no explica el #1
+
+H7 INTRA @20/@40 (E7)
+  SE VE: h15 mean@40=69.3 vs h14 59.3 · 44% late-heavy (no cola pura)
+         15/34 con @40 >= q75
+  VEREDICTO: OLOR — hora completa fuerte, no solo min 30-59
+
+H8 ECO h5->h15 +1d (E8)
+  SE VE: lift +209 h15 tras h5 fuerte@40 (n=6)
+  NO SE VE: n chico · sin holdout
+  VEREDICTO: OLOR — entrada matutina prometedora, validar
+
+── SINTESIS ──
+
+VIVE (cablear INFO si humano OK)
+  H2 costura h14 opaco -> h15 sube (+345)
+  H6 mediana #1 robusta sin SN
+
+OLOR (bodega / tips)
+  H1 masa por mean_G · H3 DOW local · H7 @40 fuerte
+  H8 h5->h15 · H4 amplifica dia gen debil
+
+FRIO
+  H5 puente h15->h19 (lift ~0 en train)
+  H4 dia generoso como ley dura
+
+DECISION
+  Cableado INFO: tip costura h14->h15 en BrilloModal + MapaPanel
+  (costuraInfo.js · lab-h15 H2 VIVE).
+  No cablear boleto. Matar copy eco h15->h19 como predictor (H5 FRIO).
+  Siguiente: acumular cinta para H8 n>=10 y DOW holdout.
+
+fin

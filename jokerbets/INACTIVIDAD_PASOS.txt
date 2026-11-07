@@ -1,0 +1,55 @@
+Escaneo DOM — inactividad (PLAY) y error SALIR / 506
+=====================================================
+
+Objetivo
+  · Tras apostar a mano, esperar ~10 min SIN F5 hasta overlay PLAY.
+  · Capturar botón play + mensaje (prod: clic play siempre).
+  · Documentar pantalla negra + botón SALIR + código 506 (prod: F5).
+
+Salida
+  dashboard/extraccion/inactividad-scan/REGISTRO_INACTIVIDAD.jsonl
+  dashboard/extraccion/inactividad-scan/REPORTE-*.txt
+  PNG por cuenta y fase (pagina + iframe)
+
+Antes de correr
+---------------
+  1) Dashboard → Detener 3 Chrome.
+  2) PowerShell:
+
+     cd c:\operacion-joker\experimento-nueva-caja-negra\jokerbets-mesa\dashboard\extraccion
+     node jokerbets-inactividad-dom-scan.js inactividad
+
+  3) Inicia sesión si hace falta. Deja Joker's Show en vivo.
+
+Flujo (mirá PowerShell)
+-----------------------
+  Enter 1 — apuesta_ultimo_clic
+    Justo después de chip $50 + clic centro (última apuesta manual).
+
+  Espera automática (sin F5)
+    Cada ~5 s el script mira PLAY y SALIR en las 3 ventanas.
+    Cuando detecta PLAY → avisa → Enter 2 captura inactividad_play.
+    Si detecta SALIR/506 antes → avisa → Enter 2 captura error_salir.
+
+  Enter 3 — mesa_viva_post_play (opcional)
+    Después de clic PLAY a mano; mesa normal otra vez.
+
+  Enter 4 — error_salir_manual (opcional)
+    Solo si en ese momento ves la pantalla negra SALIR.
+    (Difícil de forzar; sirve si te cae en vivo durante el lab.)
+
+Pantalla SALIR (referencia humana 2026-10-17)
+  Texto: "no está disponible temporalmente" + botón SALIR.
+  "Código de error: 506" + Trace Id.
+  Prod: page.reload() en las 3 cuentas (no clic SALIR).
+
+Volver al bot
+-------------
+  Enter en el último prompt (aunque no haya SALIR) → guarda JSONL y cierra bien.
+  Ctrl+C antes del final: conservás PNG pero puede faltar REGISTRO_INACTIVIDAD.jsonl.
+  Luego Dashboard → Iniciar 3 Chrome.
+
+Notas
+  · Este script NO cablea el bot; genera JSONL para click play + F5 alarma.
+  · No uses F5 durante la espera o no verás inactividad real.
+  · Repetí en Jugabet y Betano si el overlay difiere.

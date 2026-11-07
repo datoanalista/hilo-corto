@@ -1,0 +1,166 @@
+LOOK · Cobertura de G · estrategia cableada (gatillo + poda + ventana)
+Fecha: 2026-09-06
+Gatillo = FORMA: no se apuesta la G que abre. No corona «perder la primera».
+JUEZ = cobertura hora a hora: G de ESA hora cuyo tiro está en casilla apostable
+/ todas las G de ESA hora. NO es banda. NO es PnL color.
+
+Política causal (como Go! cableado; last G = ancla; no se une al :00):
+  1. La G que abre (1ª de hora / 1ª que rompe sequía) se ESPERA. No se apuesta.
+  2. Tras esa G: NO apostar +1, salvo variante.
+     (A) poda siempre = look de apuesta N.
+     (B) poda salvo Tren (2+ G ya pegadas) o Estirada (dur≥100s) = lo cableado.
+  3. Apostar +2,+3,+4. Si 4 R tras la G (gap≥5) → sequía, silencio hasta la
+     próxima G (otra vez gatillo, no se apuesta).
+  4. Cada G nueva ancla de nuevo (como diagnosticarGo). La G no se apuesta a
+     sí misma: la casilla se decide antes de ver el color.
+Cero Jaccard. Cero cable al dashboard.
+
+Cinta load_horas_y_cinta: 1092 h · train 1020 · holdout 72
+HOLDOUT=72 (core_ae). Horas = las de load_cinta (≥1 G).
+Base P(tiro=G) — train 9906/59822 16.6% · holdout 722/4152 17.4%
+G/hora mediana train: 9.7  hold: 10.0
+
+════════ TRAIN  1020 h · 9906 G ════════
+── Cobertura (juez) · N=3 ──
+  (A) poda siempre:     33.4%   3309/9906   · apuestas 20021   · G/apuesta 16.5%
+  (B) Tren/Estirada:    42.8%   4244/9906   · apuestas 22283   · G/apuesta 19.0%
+  cobertura hora a hora (B): mediana 41.7%  · p10 16.7%  · p90 60.0%
+  Apuestas/hora (B): mediana 22  p90 28  max 34   · no es 40
+  Apuestas/hora (A): mediana 20  p90 25  max 32
+  Apuestas hasta sequía (B, ventanas apiladas si cae G): n=4867  mediana 3  p90 8  max 22
+    Techo por ancla = 3 casillas (+2,+3,+4), +1 si Tren/Estirada.
+    Si cae G, ancla de nuevo: no son 40 tiros ciegos, es racimo sobre racimo.
+  Roles (B):
+    G-gatillo: 5028  50.8%  · 1ª de hora 1020  · rompe sequía 4008  · atrapadas 0  0.0%
+    G-seguidoras (ventana o pegada):    4878  atrapadas 4244  87.0%
+      de ellas pegadas gap=1: 1569  atrapadas 935  59.6%
+      de ellas ventana:       3309  atrapadas 3309  100.0%
+  Roles (A):
+    G-gatillo: 5028  50.8%  · 1ª de hora 1020  · rompe sequía 4008  · atrapadas 0  0.0%
+    G-seguidoras (ventana o pegada):    4878  atrapadas 3309  67.8%
+      de ellas pegadas gap=1: 1569  atrapadas 0  0.0%
+      de ellas ventana:       3309  atrapadas 3309  100.0%
+  Destino de G-con-previa · (B)
+    G con previa (no 1ª de hora): 8886
+    gap=1 pegada:      1569  17.7%   · atrapadas 935/1569  59.6%
+    gap 2..4 ventana:  3309  37.2%   · atrapadas 3309/3309  100.0%
+    gap≥5 sequía:      4008  45.1%   · atrapadas 0/4008  0.0%   (son gatillo que rompe sequía; no se apuestan)
+  Destino de G-con-previa · (A)
+    G con previa (no 1ª de hora): 8886
+    gap=1 pegada:      1569  17.7%   · atrapadas 0/1569  0.0%
+    gap 2..4 ventana:  3309  37.2%   · atrapadas 3309/3309  100.0%
+    gap≥5 sequía:      4008  45.1%   · atrapadas 0/4008  0.0%   (son gatillo que rompe sequía; no se apuestan)
+
+── Oficio comparado (apuestas | %G atrapadas | G/apuesta | horas | ap/hora) ──
+  oficio  |    ap. |  G atrap |  G/ap  | horas | apuestas/hora
+  --------------------------------------------------------------------
+  ALL     |  59822 |   100.0% |   16.6% |  1020 | med 59  p90 64  max 70
+  N3_A    |  20021 |    33.4% |   16.5% |  1020 | med 20  p90 25  max 32
+  N3_B    |  22283 |    42.8% |   19.0% |  1020 | med 22  p90 28  max 34
+  N4_A    |  24432 |    40.6% |   16.5% |  1020 | med 24  p90 30  max 38
+  N4_B    |  26694 |    50.1% |   18.6% |  1020 | med 26  p90 33  max 39
+  SOLO+1  |   9733 |    15.8% |   16.1% |  1020 | med 9  p90 13  max 18
+
+── Tren (2+ G pegadas) ──
+  TRAIN · conteo de eventos (misma cinta)
+    horas con ≥1 tren (2+ G pegadas): 756  · eventos tren: 1308  · G en tren: 2877  · G-seguidoras del tren (2ª+): 1569
+    (A) poda siempre: coge 0/1569  0.0%  · horas donde coge alguna: 0/756
+    (B) Tren/Estirada: coge 935/1569  59.6%  · horas donde coge alguna: 558/756
+      2ª del tren vía Estirada (prev ≥100s): 674  · 2ª perdida (prev no larga): 634
+      3ª+ vía Tren (ya hay 2+ G): 261
+  Oficio hermano · de las G atrapadas (B) con tip LC-01:  2520/4244 minuto en LC-01 ±1  59.4%   (NO es el score de cobertura)
+
+════════ HOLDOUT 72 h  72 h · 722 G ════════
+── Cobertura (juez) · N=3 ──
+  (A) poda siempre:     36.3%   262/722   · apuestas 1412   · G/apuesta 18.6%
+  (B) Tren/Estirada:    46.7%   337/722   · apuestas 1749   · G/apuesta 19.3%
+  cobertura hora a hora (B): mediana 45.5%  · p10 20.0%  · p90 63.6%
+  Apuestas/hora (B): mediana 24  p90 31  max 37   · no es 40
+  Apuestas/hora (A): mediana 20  p90 26  max 29
+  Apuestas hasta sequía (B, ventanas apiladas si cae G): n=331  mediana 4  p90 9  max 21
+    Techo por ancla = 3 casillas (+2,+3,+4), +1 si Tren/Estirada.
+    Si cae G, ancla de nuevo: no son 40 tiros ciegos, es racimo sobre racimo.
+  Roles (B):
+    G-gatillo: 342  47.4%  · 1ª de hora 72  · rompe sequía 270  · atrapadas 0  0.0%
+    G-seguidoras (ventana o pegada):    380  atrapadas 337  88.7%
+      de ellas pegadas gap=1: 118  atrapadas 75  63.6%
+      de ellas ventana:       262  atrapadas 262  100.0%
+  Roles (A):
+    G-gatillo: 342  47.4%  · 1ª de hora 72  · rompe sequía 270  · atrapadas 0  0.0%
+    G-seguidoras (ventana o pegada):    380  atrapadas 262  68.9%
+      de ellas pegadas gap=1: 118  atrapadas 0  0.0%
+      de ellas ventana:       262  atrapadas 262  100.0%
+  Destino de G-con-previa · (B)
+    G con previa (no 1ª de hora): 650
+    gap=1 pegada:       118  18.2%   · atrapadas 75/118  63.6%
+    gap 2..4 ventana:   262  40.3%   · atrapadas 262/262  100.0%
+    gap≥5 sequía:       270  41.5%   · atrapadas 0/270  0.0%   (son gatillo que rompe sequía; no se apuestan)
+  Destino de G-con-previa · (A)
+    G con previa (no 1ª de hora): 650
+    gap=1 pegada:       118  18.2%   · atrapadas 0/118  0.0%
+    gap 2..4 ventana:   262  40.3%   · atrapadas 262/262  100.0%
+    gap≥5 sequía:       270  41.5%   · atrapadas 0/270  0.0%   (son gatillo que rompe sequía; no se apuestan)
+
+── Oficio comparado (apuestas | %G atrapadas | G/apuesta | horas | ap/hora) ──
+  oficio  |    ap. |  G atrap |  G/ap  | horas | apuestas/hora
+  --------------------------------------------------------------------
+  ALL     |   4152 |   100.0% |   17.4% |    72 | med 58  p90 64  max 65
+  N3_A    |   1412 |    36.3% |   18.6% |    72 | med 20  p90 26  max 29
+  N3_B    |   1749 |    46.7% |   19.3% |    72 | med 24  p90 31  max 37
+  N4_A    |   1709 |    43.4% |   18.3% |    72 | med 24  p90 30  max 34
+  N4_B    |   2046 |    53.7% |   19.0% |    72 | med 28  p90 35  max 41
+  SOLO+1  |    710 |    16.3% |   16.6% |    72 | med 10  p90 13  max 15
+
+── Tren (2+ G pegadas) ──
+  HOLDOUT 72 h · conteo de eventos (misma cinta)
+    horas con ≥1 tren (2+ G pegadas): 57  · eventos tren: 98  · G en tren: 216  · G-seguidoras del tren (2ª+): 118
+    (A) poda siempre: coge 0/118  0.0%  · horas donde coge alguna: 0/57
+    (B) Tren/Estirada: coge 75/118  63.6%  · horas donde coge alguna: 44/57
+      2ª del tren vía Estirada (prev ≥100s): 55  · 2ª perdida (prev no larga): 43
+      3ª+ vía Tren (ya hay 2+ G): 20
+  Oficio hermano · de las G atrapadas (B) con tip LC-01:  206/337 minuto en LC-01 ±1  61.1%   (NO es el score de cobertura)
+
+════════════════════════════════ LEAD ════════════════════════════════
+  % G atrapadas (B, cableado N=3):  train 42.8%   holdout 46.7%
+  % G atrapadas (A, poda siempre):  train 33.4%   holdout 36.3%
+  Apuestas/hora (B): train med 22 p90 28 max 34  · hold med 24 p90 31 max 37
+  Qué se pierde (B train, suma 100%):
+    atrapadas            4244/9906  42.8%
+    gatillo 1ª de hora   1020/9906  10.3%
+    gatillo rompe-seq    4008/9906  40.5%   (gap≥5; nueva isla)
+    pegada no except.     634/9906  6.4%   (2ª de GG, 1ª no larga)
+  Qué se pierde (B hold, suma 100%):
+    atrapadas             337/722  46.7%
+    gatillo 1ª de hora     72/722  10.0%
+    gatillo rompe-seq     270/722  37.4%   (gap≥5; nueva isla)
+    pegada no except.      43/722  6.0%   (2ª de GG, 1ª no larga)
+
+════════════════════════════════ ¿EL TRADE ES RAZONABLE? ════════════════════════════════
+  Comparar oficios (no coronar N=3 por un racimo):
+  ALL   train 100.0% G con 59 ap/h  G/ap 16.6%   · hold 100.0%  58 ap/h
+  N3_B  train 42.8% G con 22 ap/h  G/ap 19.0%   · hold 46.7%  24 ap/h
+  N4_B  train 50.1% G con 26 ap/h  G/ap 18.6%   · hold 53.7%  28 ap/h
+  SOLO+1 train 15.8% G con 9 ap/h  G/ap 16.1%   · hold 16.3%  10 ap/h
+
+  Razones (la G inicial es FORMA de gatillo; el número decide si el trade cabe):
+  1. Impuesto del gatillo: train 50.8% de las G no tienen casilla previa (10.3% 1ª de hora + 40.5% rompe-sequía). Apostarlas = ALL (~59 ap/h), no 3 por ancla.
+  2. Cosecha de seguidoras (B): train 87.0% de las 4878 G-seguidoras caen en casilla apostable. Hold 88.7%. Eso es el racimo corto (gap 2..4), no la densidad ciega.
+  3. La pegada (+1) no es el racimo: train 1569 G en gap=1 (15.8% de todas). SOLO+1 las cobra todas y deja el resto. (A) pierde las 1569. (B) recupera 935/1569 59.6% (Tren 3ª+ o Estirada).
+  4. Sequía gap≥5: train 4008 G 40.5%. No son seguidoras perdidas de ESTA ráfaga: son el próximo gatillo. N=4 alarga un tiro y sube cobertura 50.1% vs 42.8% a costa de más apuestas (26 vs 22/h).
+  5. Volumen: B no es 40 ni 59 ap/h. Train mediana 22 · p90 28 · max 34. Techo por ancla = 3 (+1 si inercia). Si el racimo sigue, se apila otra terna. ALL gasta 59/h para el 100% de las G. G/apuesta de B (19.0%) vs p de la hora (16.6%): el extra es inercia (pegada tras larga/Tren), no un filo de color en +2..+4 (ahí G/ap ≈ p).
+  6. Tren: (A) coge 0/1569 pegadas de tren (poda siempre). (B) coge 935/1569 59.6% train · hold 75/118 63.6%. Matiz: la 2ª de un GG no es Tren todavía (hace falta 2 G ya cerradas). (B) salva la 2ª solo si la 1ª fue Estirada (674 train); la 3ª+ sí entra por Tren (261 train). (A) pierde el tren entero de pegadas.
+
+  Lectura (no cablear):
+  · 3 casillas por ancla bastan para el racimo gap 2..4 (100% de esas).
+  · La G inicial se pierde por oficio: no hay casilla antes. Es cara
+    (~10% 1ª de hora + ~40% rompe-sequía = ~mitad de las G; isla, no mancha).
+    El 100% exige ~50–60 ap/h (ALL).
+  · (B) vs (A) no es un puñado: +9 pp train / +10 pp hold, todas en la pegada.
+    (A) pierde el tren entero de pegadas. (B) no coge el tren entero:
+    2ª solo si Estirada; 3ª+ sí por Tren. Tras G≥100s, el +1 ya es G ~89%
+    (tras largo ≈95, salvo fuga): Estirada no es adorno.
+  · N=3 es el oficio del racimo corto. N=4 compra G en gap=5 (el primer
+    tiro de lo que N=3 llama sequía) a ~+4 ap/h. ALL compra todas.
+    SOLO+1 es la sombra: solo la pegada, no la ventana.
+  · Oficio hermano: de las G que sí cayeron en casilla, LC-01 ±1 se anota
+    en cada split. No es este juez.

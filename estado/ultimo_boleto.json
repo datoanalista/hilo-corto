@@ -1,0 +1,284 @@
+{
+  "based_on": "h2-190926",
+  "for": "h3-190926",
+  "boleto": [
+    1,
+    6,
+    10,
+    15,
+    22,
+    29,
+    40,
+    45,
+    51,
+    55,
+    59
+  ],
+  "tiros": [
+    {
+      "minuto": 1,
+      "flag": "TIBIO",
+      "rol": "beta",
+      "cubre": [
+        0,
+        1,
+        2
+      ],
+      "apunta": 1
+    },
+    {
+      "minuto": 6,
+      "flag": "TIBIO",
+      "rol": "beta",
+      "cubre": [
+        5,
+        6,
+        7
+      ],
+      "apunta": 6
+    },
+    {
+      "minuto": 10,
+      "flag": "TIBIO",
+      "rol": "beta",
+      "cubre": [
+        9,
+        10,
+        11
+      ],
+      "apunta": 10
+    },
+    {
+      "minuto": 15,
+      "flag": "TIBIO",
+      "rol": "beta",
+      "cubre": [
+        14,
+        15,
+        16
+      ],
+      "apunta": 15
+    },
+    {
+      "minuto": 22,
+      "flag": "TIBIO",
+      "rol": "beta",
+      "cubre": [
+        21,
+        22,
+        23
+      ],
+      "apunta": 22
+    },
+    {
+      "minuto": 29,
+      "flag": "TIBIO",
+      "rol": "beta",
+      "cubre": [
+        28,
+        29,
+        30
+      ],
+      "apunta": 29
+    },
+    {
+      "minuto": 40,
+      "flag": "TIBIO",
+      "rol": "beta",
+      "cubre": [
+        39,
+        40,
+        41
+      ],
+      "apunta": 40
+    },
+    {
+      "minuto": 45,
+      "flag": "TIBIO",
+      "rol": "beta",
+      "cubre": [
+        44,
+        45,
+        46
+      ],
+      "apunta": 45
+    },
+    {
+      "minuto": 51,
+      "flag": "TIBIO",
+      "rol": "beta",
+      "cubre": [
+        50,
+        51,
+        52
+      ],
+      "apunta": 51
+    },
+    {
+      "minuto": 55,
+      "flag": "TIBIO",
+      "rol": "beta",
+      "cubre": [
+        54,
+        55,
+        56
+      ],
+      "apunta": 55
+    },
+    {
+      "minuto": 59,
+      "flag": "TIBIO",
+      "rol": "beta",
+      "cubre": [
+        58,
+        59,
+        0
+      ],
+      "apunta": 59
+    }
+  ],
+  "zonas_anden": [
+    {
+      "anden": "temprano",
+      "rango": [
+        0,
+        19
+      ],
+      "islas_H1": 3,
+      "esperadas": 3,
+      "flag": "NORMAL",
+      "nota": "cupo visto en H-1, no pronostico de la proxima"
+    },
+    {
+      "anden": "medio",
+      "rango": [
+        20,
+        39
+      ],
+      "islas_H1": 3,
+      "esperadas": 3,
+      "flag": "NORMAL",
+      "nota": "cupo visto en H-1, no pronostico de la proxima"
+    },
+    {
+      "anden": "tarde",
+      "rango": [
+        40,
+        59
+      ],
+      "islas_H1": 5,
+      "esperadas": 5,
+      "flag": "CUPOSA",
+      "nota": "cupo visto en H-1, no pronostico de la proxima"
+    }
+  ],
+  "zonas_racimo": [
+    {
+      "desde": 51,
+      "hasta": 59,
+      "n_islas": 3,
+      "flag": "TIBIA",
+      "nota": "entre 51 y 59 H-1 trajo 3 islas intercaladas (zona a mirar)"
+    }
+  ],
+  "orillas": [],
+  "foto": [
+    6,
+    10,
+    15,
+    22,
+    29,
+    32,
+    40,
+    45,
+    51,
+    55,
+    59
+  ],
+  "resto": {
+    "skip": [
+      1,
+      4,
+      8,
+      12,
+      13,
+      17,
+      20,
+      24,
+      27,
+      30,
+      31,
+      34,
+      38,
+      42,
+      43,
+      47,
+      49,
+      53,
+      57
+    ],
+    "puentes": [
+      8,
+      53,
+      57
+    ]
+  },
+  "meta": {
+    "maquina": "hilo-corto · INTER2 live (A)",
+    "k_efectivo": 11,
+    "nG_clima": 11,
+    "clima": "normal",
+    "mix": {
+      "costura": 1,
+      "isla": 10
+    },
+    "t0_s": 112,
+    "casilla_arranque": 1,
+    "prev_largo": true,
+    "n_islas_h1": 11,
+    "som02": {
+      "cand": null,
+      "paso": 5,
+      "motivo": "cupo_lleno_k>=clima",
+      "entrada": false
+    },
+    "columnas": 4,
+    "n_cerradas": 12,
+    "calentamiento": false,
+    "nota": "Boleto LIVE = minuto exacto en ≥2 de P0–P5. P0 clásico en sombra. Juez banda d≤1.",
+    "live_modo": "inter2",
+    "chips_classic": [
+      1,
+      6,
+      10,
+      15,
+      22,
+      29,
+      40,
+      45,
+      51,
+      55,
+      59
+    ],
+    "chips_inter2": [
+      1,
+      6,
+      10,
+      15,
+      22,
+      29,
+      40,
+      45,
+      51,
+      55,
+      59
+    ],
+    "inter2_fallback": true,
+    "inter2_k": 11,
+    "inter2_pools": {
+      "oficial": 11
+    }
+  },
+  "lectura": "Mesa h3-190926\n(en la anterior, h2-190926, ya se vieron las luces)\n\nBoleto LIVE · INTER2 (acuerdo exacto ≥2 de P0–P5).\nMinutos con acuerdo: 11. Pool 9 tenía 11.\nSin acuerdo ≥2 esta hora — se usó el boleto clásico P0 (fallback).\n\n1) Número seguro\nINTER2 no usa SEGURO de costura: todas las fichas son banda (±1).\n\n2) ¿Te sentás a esta mesa?\nSí. 11 fichas donde al menos dos pools (P0–P5) pusieron el mismo minuto. No agregues de más.\n\n3) Tus fichas\nCada una cobra si sale ESE minuto o el de al lado (tres números pegados).\n  01  cobra 00, 01 y 02\n  06  cobra 05, 06 y 07\n  10  cobra 09, 10 y 11\n  15  cobra 14, 15 y 16\n  22  cobra 21, 22 y 23\n  29  cobra 28, 29 y 30\n  40  cobra 39, 40 y 41\n  45  cobra 44, 45 y 46\n  51  cobra 50, 51 y 52\n  55  cobra 54, 55 y 56\n  59  cobra 58, 59 y 00\n\nPool 9 (motor clásico) sigue visible en sombra para comparar.\n",
+  "lectura_classic": "Mesa h3-190926\n(en la anterior, h2-190926, ya se vieron las luces)\n\n1) Número seguro\nSí: el 01. Es la única apuesta a pleno. Si el cierre anterior fue largo, ese minuto casi siempre paga.\n\n2) ¿Te sentás a esta mesa?\nSí. Ponemos 11 fichas: son los minutos que prendieron la vez anterior. No agregues de más.\n\n3) Tus fichas\nCada una cobra si sale ESE minuto o el de al lado (tres números pegados). No es pleno, salvo el seguro de arriba.\n  01  cobra 00, 01 y 02  ← pleno\n  06  cobra 05, 06 y 07\n  10  cobra 09, 10 y 11\n  15  cobra 14, 15 y 16\n  22  cobra 21, 22 y 23\n  29  cobra 28, 29 y 30\n  40  cobra 39, 40 y 41\n  45  cobra 44, 45 y 46\n  51  cobra 50, 51 y 52\n  55  cobra 54, 55 y 56\n  59  cobra 58, 59 y 00\nTramos que quedan cubiertos: 00-02, 05-07, 09-11, 14-16, 21-23, 28-30, 39-41, 44-46, 50-52, 54-56, 58-59.\n\n4) Mientras corre la mesa\nDel 00 al 19 están 01, 06, 10 y 15. Si llega el minuto 20 y no cobraste ninguna, no persigas el hueco del medio. Queda 40, 45, 51, 55 y 59 al final, o plantate.\nSeñal más fuerte: si de 00 a 19 no cayó NINGUNA luz (ni las tuyas ni otras), no sigas tirando. Esas mesas suelen ser cortas.\nAl minuto 20 se cierra ese tercio: 0 luces → plantate; 1 → a menudo corta, no agregues; 2 o más → seguí el plan. No llenes el reloj aunque se vea viva: el último tercio no se hincha.\nAl minuto 40: si el medio (20-39) quedó en blanco, otra vez corta. No persigas. Un solo aviso a los 30 lava el plantate: el corte útil es 20 y 40.\nEl hueco no se carga (cómo VA la hora, no cómo se viene). Ejemplo: si cayó el 12 y van 6 minutos sin otra, el 18 no está más caliente que el 13. No pongas ficha nueva porque “ya toca”.\nSi la mesa ya prendió varias y ahora hay un hueco, no fiche un extra: viva no te debe una de más. Van 4 luces no apaga ni enciende la próxima. Si viene flaca y cae una suelta en el hueco, se nombra; no es ficha nueva.\nEl final del reloj no calienta. Ejemplo: un tiro que empieza en el 55 tiene la misma chance que uno a las 10. Lo gordo es el que cruza la hora (está partido), no “los últimos minutos”.\nUna luz pinta de más: ocupa varios minutos. El del medio no es otra luz; no lo fiche. El +2 de la última tampoco es orilla de la foto.\nSi una ficha ya cobró (ese minuto o el de al lado), no persigas los otros dos de esa tripleta: nueve de diez veces no hay segunda luz ahí.\nSi 01 y 06 no cobran ni de vecino, no es motivo para cancelar toda la mesa. Las otras de ese tramo (10 y 15) siguen; no las retires.\nEn el medio están 22 y 29. Solo si el primer tercio cobró o la mesa no está en blanco.\nAl final: 40, 45, 51, 55 y 59. Si venís sin cobrar y la mesa no está seca, es la última carta. Si venís en blanco desde el 00, plantate antes.\n\n5) Qué no jugar\nNo pongas fichas entre 31 y 38 (8 minutos sin cobertura). La mesa anterior no los nombró.\nNo apuestes el minuto de al lado de una luz que YA salió: casi no se pegan dos luces juntas.\nNo agregues minutos que no están en la lista de arriba.\nSi una ficha ya cobró, no persigas los otros dos de ESA ficha (nueve de diez no hay segunda luz ahí). Eso no es lo mismo que una luz lejos de tus fichas: si caen dos juntas en un hueco, tampoco persigas la compañera.\nSi acaba de caer una luz, no pongas ficha dos minutos más adelante como si fuera orilla de la foto.\nNo cuelgues minutos extra. La próxima mesa no se llena con estas cuatro.\n\n6) El resto se lee, no se apuesta\nA dos minutos de las islas de la mesa anterior hay orillas: 01, 04, 08, 12, 13, 17, 20, 24 …(+11). Se nombran; no las fichés. Se llenan como cualquier silla vacía.\nPuente (orilla entre dos islas cercanas): 08, 53, 57. También se nombra, no se ficha.\nLas luces que nazcan lejos de tus fichas se nombran al caer (sueltas, de a dos o en grupo). No son ficha nueva.\n"
+}

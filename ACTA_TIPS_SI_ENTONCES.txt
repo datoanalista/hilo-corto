@@ -1,0 +1,29 @@
+ACTA — Tips en forma si-entonces (toda la lectura)
+Fecha: 2026-08-22
+Lab: experimento-nueva-caja-negra/hilo-corto
+Diff: copy + UI. Cero chips nuevos. Cero LIVE.
+
+Qué quedó
+  Todas las filas de Tips usan la misma forma que la recomendación
+  principal (SOMBRA):
+    1) Qué mirás
+    2) Si … → entonces …
+    3) (opcional) Ver ejemplos con números
+
+Filas
+  · Recomendación principal (sombra) — ya validada
+  · Cupo de la mesa (faro)
+  · Orillas (pronóstico) + cada orilla viva
+  · Luz lejos (primera / sola / pareja / racimo)
+  · Piso: letras de tiro · potenciador · extra
+
+UI
+  Habla.jsx: al tocar cualquier fila, el detalle muestra mira +
+  siEntonces + tabla de ejemplos (mismo patrón que la caja principal).
+  Párrafos de mesa.js y notaPiso alineados al mismo lenguaje.
+
+No es
+  Chip nuevo. Pack. Cambio de boleto. A01 / MUTE / Zion.
+
+Veredicto
+  Lectura ordenada, misma gramática en todas las pistas.

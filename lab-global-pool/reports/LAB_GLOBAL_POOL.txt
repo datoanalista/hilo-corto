@@ -1,0 +1,145 @@
+LAB GLOBAL-POOL — recomendacion SI/NO (no boleto)
+Cinta: 931 tags · horas evaluables: 922
+Desde h10-230726 · prod proxy = P8 INTER2 · juez banda d≤1 resto hora
+
+=== HIPÓTESIS ===
+  H1  plantate @20 si 00-19 vacío + mesa global fría (<30%)
+  H2  ir si ≥3 pools con banda prefix ≥50%
+  H3  ir si P8 prefix ≥45% o P8 >> P0
+  H4  ir si ≥5 pools apuntan cerca tip LC (±2)
+  H5  ir si media ponderada prefix ≥48%
+  H6  plantarse si P8 falló últimas 2 G
+  H7  ir si P10 y P8 prefix ≥40%
+  H8  combo frío fuerte (blank+miss / warm≤1+miss)
+
+=== BLOQUES FIJOS (P8 · sin señal · perder bloque = no medir ese tramo) ===
+  bloque      banda P8   G/h media   horas banda>=50%
+  00-19         60.4%     3.3        73.1%
+  20-39         60.0%     3.3        71.8%
+  40-59         60.0%     3.2        73.0%
+  00-59 full    60.4%     9.8        80.2%
+  20-59         60.0%     6.5        76.5%
+  30-59         59.9%     4.9        73.6%
+  40-59+        60.0%     3.2        73.0%
+
+=== SWEEP CORTE @cut (1 decision/hora · resto >= cut · todas las estrategias) ===
+  cut = minuto desde el cual se evalua SI/NO · resto = oficiales en [cut..59]
+   cut  estrategia          play%   banda@GO   lift vs full
+  @50  H4-quorum-6         51.2%    64.4%    +4.4pp
+  @40  H4-quorum-6         46.6%    64.2%    +4.2pp
+  @50  H4-quorum-LC        66.6%    62.9%    +2.9pp
+  @50  H4-quorum-4         78.8%    62.2%    +2.3pp
+  @40  H4-quorum-LC        63.7%    61.8%    +1.8pp
+  @40  H4-quorum-4         76.6%    61.4%    +1.4pp
+  @30  H4-quorum-6         46.7%    60.8%    +1.0pp
+  @30  H4-quorum-LC        62.6%    60.7%    +0.9pp
+  @30  H4-quorum-4         76.0%    60.5%    +0.7pp
+  @50  H6-no-cold2         82.4%    60.4%    +0.4pp
+  @10  H7-P10+P8           87.5%    60.0%    +0.3pp
+  @20  H3-P8-gate          80.7%    60.3%    +0.3pp
+  @20  H4-quorum-4         71.7%    60.3%    +0.2pp
+  @10  H9-P8|P10           89.8%    59.9%    +0.2pp
+  @10  H3-P8-gate          90.0%    59.9%    +0.2pp
+  @20  H9-P8|P10           80.9%    60.2%    +0.2pp
+  @40  H3-P8-gate          82.7%    60.2%    +0.2pp
+  @10  H4-quorum-6         32.0%    59.9%    +0.1pp
+  @40  H7-P10+P8           69.1%    60.1%    +0.1pp
+  @50  H7-P10+P8           75.7%    60.1%    +0.1pp
+
+=== MEJOR @cut por estrategia (lift banda@GO vs ALWAYS@ mismo cut) ===
+  estrategia          best@   play%   banda@GO   lift
+  H1-blank@20         @30   99.9%    59.9%    +0.0pp
+  H2-warm≥3           @00   100.0%    60.4%    +0.0pp
+  H3-P8-gate          @20   80.7%    60.3%    +0.3pp
+  H4-quorum-LC        @50   66.6%    62.9%    +2.9pp
+  H5-weight≥48        @00   100.0%    60.4%    +0.0pp
+  H6-no-cold2         @50   82.4%    60.4%    +0.4pp
+  H7-P10+P8           @10   87.5%    60.0%    +0.3pp
+  H8-combo            @20   98.4%    60.1%    +0.1pp
+  H4-quorum-4         @50   78.8%    62.2%    +2.3pp
+  H4-quorum-6         @50   51.2%    64.4%    +4.4pp
+  H9-P8|P10           @10   89.8%    59.9%    +0.2pp
+
+=== PIERDE BLOQUE + 1 decision @cut (00..cut-1 fuera · SI juega cut..59) ===
+   cut  estrategia          play%   banda si SI   lift vs jugar cut..59 siempre
+  --- baseline siempre-SI desde @20: banda 60.0% ---
+  --- baseline siempre-SI desde @30: banda 59.9% ---
+  @30  H4-quorum-LC        62.6%    60.7%    +0.9pp
+  @30  H4-quorum-4         76.0%    60.5%    +0.7pp
+  @30  H4-quorum-6         46.7%    60.8%    +1.0pp
+  --- baseline siempre-SI desde @40: banda 60.0% ---
+  @40  H4-quorum-LC        63.7%    61.8%    +1.8pp
+  @40  H4-quorum-4         76.6%    61.4%    +1.4pp
+  @40  H4-quorum-6         46.6%    64.2%    +4.2pp
+  --- baseline siempre-SI desde @50: banda 60.0% ---
+  @50  H4-quorum-LC        66.6%    62.9%    +2.9pp
+  @50  H4-quorum-4         78.8%    62.2%    +2.3pp
+  @50  H4-quorum-6         51.2%    64.4%    +4.4pp
+
+  Top 8 pierde-bloque:
+    @50 H4-quorum-6         play=51.2%  banda@GO=64.4%  lift=+4.4pp  (base@50=60.0%)
+    @40 H4-quorum-6         play=46.6%  banda@GO=64.2%  lift=+4.2pp  (base@40=60.0%)
+    @50 H4-quorum-LC        play=66.6%  banda@GO=62.9%  lift=+2.9pp  (base@50=60.0%)
+    @50 H4-quorum-4         play=78.8%  banda@GO=62.2%  lift=+2.3pp  (base@50=60.0%)
+    @40 H4-quorum-LC        play=63.7%  banda@GO=61.8%  lift=+1.8pp  (base@40=60.0%)
+    @40 H4-quorum-4         play=76.6%  banda@GO=61.4%  lift=+1.4pp  (base@40=60.0%)
+    @30 H4-quorum-6         play=46.7%  banda@GO=60.8%  lift=+1.0pp  (base@30=59.9%)
+    @30 H4-quorum-LC        play=62.6%  banda@GO=60.7%  lift=+0.9pp  (base@30=59.9%)
+
+=== MATRIZ lift @cut x H4-quorum (celda = lift pp vs always@cut) ===
+   cut  @00  @10  @20  @30  @40  @50
+  H4-quorum-LC      +0.0  -0.1  -0.1  +0.9  +1.8  +2.9
+  H4-quorum-4       -60.4  -0.2  +0.2  +0.7  +1.4  +2.3
+  H4-quorum-6       -60.4  +0.1  -0.5  +1.0  +4.2  +4.4
+  H3-P8-gate        +0.0  +0.2  +0.3  -0.3  +0.2  -0.1
+  H7-P10+P8         +0.0  +0.3  +0.0  -0.2  +0.1  +0.1
+
+=== PASO A PASO (cada G → resto de hora) ===
+  estrategia          play%   banda@GO   banda@NO   lift@GO   NO-GO ok
+  ALWAYS_GO           100.0%    59.8%     0.0%      base        —
+  H1-blank@20         99.9%    59.9%    44.8%    +0.0pp    50.0%
+  H2-warm≥3           91.4%    59.6%    62.3%    -0.2pp    23.1%
+  H3-P8-gate          85.6%    59.8%    60.2%    -0.1pp    25.4%
+  H4-quorum-LC        65.0%    60.2%    59.2%    +0.3pp    26.9%
+  H5-weight≥48        69.0%    59.2%    61.3%    -0.7pp    25.0%
+  H6-no-cold2         87.9%    59.6%    61.6%    -0.2pp    24.5%
+  H7-P10+P8           75.3%    59.9%    59.6%    +0.1pp    26.5%
+  H8-combo            98.6%    59.8%    59.5%    +0.0pp    27.3%
+
+=== CORTE @20 (una decision/hora · resto 20-59) ===
+  estrategia          play%   banda@GO   banda@NO   lift@GO
+  ALWAYS_GO           100.0%    60.0%     0.0%      base
+  H1-blank@20         100.0%    60.0%     0.0%    +0.0pp
+  H2-warm≥3           91.2%    59.8%    62.6%    -0.2pp
+  H3-P8-gate          80.7%    60.3%    59.0%    +0.3pp
+  H4-quorum-LC        58.1%    59.9%    60.2%    -0.1pp
+  H5-weight≥48        64.4%    59.9%    60.4%    -0.2pp
+  H6-no-cold2         87.1%    60.1%    59.7%    +0.0pp
+  H7-P10+P8           65.3%    60.1%    60.0%    +0.0pp
+  H8-combo            98.4%    60.1%    54.3%    +0.1pp
+  H4-quorum-4         71.7%    60.3%    59.4%    +0.2pp
+  H4-quorum-6         42.0%    59.5%    60.4%    -0.5pp
+  H9-P8|P10           80.9%    60.2%    59.2%    +0.2pp
+
+=== CANDIDATOS UI (play≥55% · lift banda@GO) ===
+  H4-quorum-LC        play=65.0%  banda@GO=60.2%  lift=+0.3pp
+  H7-P10+P8           play=75.3%  banda@GO=59.9%  lift=+0.1pp
+  H1-blank@20         play=99.9%  banda@GO=59.9%  lift=+0.0pp
+  H8-combo            play=98.6%  banda@GO=59.8%  lift=+0.0pp
+  H3-P8-gate          play=85.6%  banda@GO=59.8%  lift=-0.1pp
+
+=== VEREDICTO VENTANAS ===
+  Hora completa P8: 60.4%
+  Bloque fijo 20-59: 60.0% (pierdes el tramo anterior)
+  Bloque fijo 30-59: 59.9% (pierdes el tramo anterior)
+  Bloque fijo 40-59+: 60.0% (pierdes el tramo anterior)
+  Mejor 1-shot @cut: @50 H4-quorum-6  play=51.2% banda=64.4% lift=+4.4pp
+  Mejor pierde-bloque: @50 H4-quorum-6  play=51.2% banda=64.4% lift=+4.4pp vs siempre@50
+
+=== LECTURA ===
+  · ALWAYS_GO = baseline (seguir siempre).
+  · banda@GO > baseline = filtrar NO-GO mejoró lo que queda.
+  · banda@NO < banda@GO = el NO acierta (resto era peor).
+  · NO-GO ok = % veces que al plantarse el resto era <45%.
+
+INFO sombra. No boleto LIVE. Siguiente: cablear SI/NO en barra live.

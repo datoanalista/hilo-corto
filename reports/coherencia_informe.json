@@ -1,0 +1,71 @@
+{
+  "n": 519,
+  "G_hora": 1.7379576107899808,
+  "pm1_hora": 2.6396917148362236,
+  "score_hora": 4.377649325626204,
+  "pct_banda": 0.43962848297213625,
+  "colapso": 0.011560693641618497,
+  "costura_G": 0.9477124183006536,
+  "costura_n": 153,
+  "racimo": {
+    "n_zonas": 619,
+    "G_en_zona_vs_cupo_prometido": 0.36562127828503377,
+    "G_en_zona_hora": 1.7745664739884393
+  },
+  "anden_desvio_medio": 4.865125240847784,
+  "muestras": [
+    {
+      "tipo": "largo",
+      "for": "h11-230726",
+      "oficiales": [
+        1,
+        8,
+        20,
+        23,
+        33,
+        37,
+        41,
+        53,
+        56
+      ],
+      "G": 3,
+      "pm1": 3,
+      "lectura": "Informe para h11-230726 (sobre h10-230726).\nClima normal, caben ~11 pulsos.\nCierre largo: un SEGURO exacto en el minuto 01 (primer tiro de la proxima).\nSEGURO: 01 (apunta exacto).\nTIBIOS (10), cada uno cubre persist y ambos +-1: 06 cubre 05-07; 17 cubre 16-18; 18 cubre 17-19; 20 cubre 19-21; 24 cubre 23-25; 32 cubre 31-33; 40 cubre 39-41; 47 cubre 46-48; 50 cubre 49-51; 56 cubre 55-57.\nZonas: entre 17 y 24 H-1 trajo 4 islas intercaladas (zona a mirar).\nAndenes H-1 (cupo visto, no pronostico): temprano 3 (NORMAL) | medio 4 (NORMAL) | tarde 4 (NORMAL).\nOrillas (lectura, no chip): 19.\nNo se nombra lado +1 ni -1. +-2 queda fuera. No se rellena con tiros frios."
+    },
+    {
+      "tipo": "racimo",
+      "for": "h12-230726",
+      "oficiales": [
+        3,
+        6,
+        10,
+        14,
+        20,
+        24,
+        28,
+        34,
+        41,
+        49,
+        52,
+        54
+      ],
+      "G": 2,
+      "pm1": 4,
+      "lectura": "Informe para h12-230726 (sobre h11-230726).\nClima normal, caben ~10 pulsos.\nCierre corto: no hay SEGURO. Los chips son TIBIOS de banda.\nTIBIOS (9), cada uno cubre persist y ambos +-1: 01 cubre 00-02; 08 cubre 07-09; 20 cubre 19-21; 23 cubre 22-24; 33 cubre 32-34; 37 cubre 36-38; 41 cubre 40-42; 53 cubre 52-54; 56 cubre 55-57.\nZonas: entre 33 y 41 H-1 trajo 3 islas intercaladas (zona a mirar).\nAndenes H-1 (cupo visto, no pronostico): temprano 2 (NORMAL) | medio 4 (NORMAL) | tarde 3 (NORMAL).\nOrillas: ninguna.\nNo se nombra lado +1 ni -1. +-2 queda fuera. No se rellena con tiros frios."
+    },
+    {
+      "tipo": "pobre",
+      "for": "h14-230726",
+      "oficiales": [
+        2,
+        7,
+        12,
+        16,
+        49
+      ],
+      "G": 1,
+      "pm1": 1,
+      "lectura": "Informe para h14-230726 (sobre h13-230726).\nClima normal, caben ~10 pulsos.\nCierre corto: no hay SEGURO. Los chips son TIBIOS de banda.\nTIBIOS (9), cada uno cubre persist y ambos +-1: 02 cubre 01-03; 18 cubre 17-19; 21 cubre 20-22; 24 cubre 23-25; 26 cubre 25-27; 29 cubre 28-30; 34 cubre 33-35; 50 cubre 49-51; 52 cubre 51-53.\nZonas: entre 18 y 29 H-1 trajo 5 islas intercaladas (zona a mirar).\nAndenes H-1 (cupo visto, no pronostico): temprano 2 (NORMAL) | medio 5 (CUPOSA) | tarde 2 (NORMAL).\nOrillas (lectura, no chip): 25, 51.\nNo se nombra lado +1 ni -1. +-2 queda fuera. No se rellena con tiros frios."
+    }
+  ]
+}

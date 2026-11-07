@@ -1,0 +1,32 @@
+BANCO APOSTADOR EXPERTO
+=======================
+stamp 2026-09-04
+Forma: paradigma × sim/asim × HIP/MIN/REV/KILL
+
+── MUNDO ──
+HIP-01  Siempre tip LC-01 (control ingenuo)
+HIP-02  Nunca apostar (control bankroll cero)
+MIN-01  Tip solo si tip∈banda de algún chip boleto H-1 (±1)
+
+── VENTAJA (dos señales) ──
+HIP-03  Tip LC + acuerdo boleto/Pool8-proxy → STRONG; tip solo → WEAK
+HIP-04  Conflicto tip vs boleto → NO_GO
+
+── RELOJ ──
+HIP-05  EWMA hit-rate tip (α~0.08): si < base → NO_GO
+HIP-06  Tras 2 misses seguidos → NO_GO hasta 1 hit
+REV-01  Ventana fija últimas 20 tips (vs EWMA)
+
+── CONTRASTE / SENIOR ──
+HIP-07  Fuzzy: score = w1·edge_lc + w2·acuerdo + w3·ewma − w4·racha_miss
+        GO_STRONG si score≥θs · GO_WEAK si θw≤score<θs · else NO_GO
+HIP-08  Stake proporcional a score (continuo) — KILL por ahora (salida discreta)
+
+── JUEZ ──
+HIP-09  Maximizar PnL holdout (1:1) con drawdown max acotado
+MIN-02  Maximizar hit-rate condicional en GO (selectividad)
+
+── VETO ──
+KILL-01 Cablear dashboard en R0
+KILL-02 Mezclar A01 / super-apostador fiel
+KILL-03 Jaccard como selector de ideas

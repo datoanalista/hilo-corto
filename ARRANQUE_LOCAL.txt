@@ -1,0 +1,40 @@
+ARRANQUE LOCAL — jokerbets-mesa (antes que el notebook servidor)
+================================================================
+stamp 2026-10-13
+
+Alcance
+  Implementar y probar ACÁ (este PC).
+  Cuando esté OK → mismo árbol en el notebook + Cloudflare.
+  Prod hilo-corto no se toca.
+
+Terminal 1 (raíz jokerbets-mesa)
+  python servir.py
+  → http://127.0.0.1:8765  (API + dist si existe)
+
+Terminal 2 (dashboard)
+  cd dashboard
+  npm install   (solo la primera vez)
+  npm run dev
+  → http://localhost:5953/  (UI dev; /api → proxy 8765)
+
+Terminal 0 (una sola vez — extracción / Playwright)
+  cd dashboard/extraccion
+  npm install
+
+Login: mismas credenciales que el dashboard hilo-corto.
+Extracción Ronda B: Cuentas → «Iniciar 3 Chrome» (3 ventanas + WS).
+  No hace falta un 4.º navegador: la mesa del dashboard lee la misma cinta.
+  Mesa Online cuando el WS de la primaria (azul) conecte y haya rondas.
+
+Parar: Ctrl+C en cada terminal.
+
+Push al teléfono (ntfy.sh, gratis)
+  1. Instala la app «ntfy» (Android / iPhone) desde la tienda.
+  2. Suscríbete a un topic SECRETO (ej. joker-tu-apodo-7k3m) — quien adivine
+     el nombre puede mandarte spam; no uses algo obvio.
+  3. En jokerbets/config.json → ntfy: enabled true, topic el mismo nombre.
+  4. Reinicia servir.py y Detener → Iniciar 3 Chrome.
+  Flujo: extracción detecta apuesta → POST localhost → servir → ntfy.sh →
+  notificación push en el celular (título + texto, como WhatsApp/alerta).
+  Push al teléfono solo cuando sube PREMIO con cobro real (ganancia), no al apostar
+  ni al cambiar moneda. ntfy.tipos por defecto: premio.

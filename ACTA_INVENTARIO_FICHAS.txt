@@ -1,0 +1,41 @@
+ACTA — inventario fichas prod × ley/VIVA
+========================================
+stamp 2026-09-02  (V2 lecturas live)
+Lab: hilo-corto (prod = dashboard)
+Fuente: INVENTARIO_FICHAS_VS_LEY.txt · ACTA_DASHBOARD_FICHAS_V2.txt
+Walk: python walk.py --from h10-230726 --no-filas
+
+════════════════════════════════
+PREGUNTA
+════════════════════════════════
+
+  ¿Qué fichas entrega el dashboard hoy, cuáles
+  capas de ley/VIVA ya están cableadas, y qué
+  comparación es la correcta (banda d<=1)?
+
+════════════════════════════════
+VEREDICTO
+════════════════════════════════
+
+  1. Prod = boleto SEGURO(costura) + TIBIO(islas H-1) + SOM02 sombra
+     + pools P0–P8 + sombra P7 LC / P10 RC
+     + lecturas INFO live (16 instrumentos, ver LECTURAS_LIVE_DASHBOARD).
+  2. VIVA = generador de foto (dial/gesto). Oficio
+     hermano. No sustituye fichas del dashboard.
+  3. Comparación correcta: walk banda del boleto
+     (score ~4.27, k~9, colapso ~1%, techo área ~45%).
+     No “VIVA vs Exact cinta” como si fuera prod.
+  4. HUECOS útiles (candidatos): hazard / sombra
+     nsil+2 / wrap→chip — solo si mejoran banda o habla.
+  5. No rearmar experimentos desde 0.
+
+════════════════════════════════
+SIGUIENTE
+════════════════════════════════
+
+  Pendientes cerrados: PENDIENTES_REVISADOS.txt (2026-09-02).
+
+  Un experimento = una capa HUECO → medir banda
+  (y Tips si aplica). Diff solo pregunta nueva.
+
+FIN

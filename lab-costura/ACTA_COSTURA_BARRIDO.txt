@@ -1,0 +1,35 @@
+ACTA LAB COSTURA — BARRIDO REBOTES
+====================================
+fecha: 2026-08-29
+lab: hilo-corto/lab-costura/
+script: run_lab.py -> reports/LAB_COSTURA_BARRIDO.txt
+
+PREGUNTA
+  Hay mas rebotes/techo ademas de h14-h15 y h08-h09?
+
+HALLAZGO CLAVE
+  Fisica GENERICA: casi todo par opaco-> rebote positivo (castigo ~1h).
+  Eso ya vive en opacidadInfo. No duplicar 23 tips.
+
+  Pares con VALOR DECISION extra (mas alla del generico):
+
+VIVE / PRIORIDAD CABLE
+  h15->h16 techo fu=-780 (n=11) — espejo natural post-h15
+  (complemento obligatorio del tip h14->h15)
+
+OLOR — siguiente ola INFO
+  h01->h02 rebote op=+434 (madrugada)
+  h18->h19 rebote op=+313 (tarde / olor h19)
+  h11->h12 valle->sube lift=+52
+  h13->h15 gap2 op=+383 (salta h14 — raro)
+
+FRIO / ya cubierto
+  h07->h08, h04->h05, etc: olor generico sin lift total
+  h22->h23 contradictorio
+  eco +1d: no sustituye costura mismo dia (H5 h15 lab FRIO)
+
+DECISION
+  No cablear los 23 pares. Mantener generico + pares VIVE.
+  Siguiente tip recomendado: h15->h16 techo (cerrar ciclo mediodia).
+
+fin

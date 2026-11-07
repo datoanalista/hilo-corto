@@ -1,0 +1,66 @@
+LOOK CUENTAS — Pool 7 + horas que YA se ven fuertes
+cinta 1310 h · indicio @19 350 · cierran fuerte+ 129 / normal 123
+Cobro (mesa): $50 × multiplicador. 80× → $4.000 brutos.
+3 cuentas cubren los 3 colores → casa cobra el TOTAL.
+G de lumen 80: casa +4.000 − 600 = +3.400. R: −600.
+Silla: zona tip±1 post-19. Color a muerte.
+Cortes RGB = MODELO (la cinta no trae 60/50/2).
+
+— recibos de cinta (G ~80, mismo cobro) —
+  h15-230726 min 33  lm 75  bruto $3750  neto casa $+3150
+  h15-230726 min 54  lm 80  bruto $4000  neto casa $+3400
+  h2-250726 min 27  lm 80  bruto $4000  neto casa $+3400
+  h2-250726 min 31  lm 80  bruto $4000  neto casa $+3400
+  h2-260726 min 53  lm 85  bruto $4250  neto casa $+3650
+  h12-260726 min 09  lm 78  bruto $3900  neto casa $+3300
+
+— lo que se puede DETECTAR en vivo (indicio @19 + zona) —
+  [reparto igual (lm/3)]
+  indicio: tiros 4407  G 1029  casa +781750  med/hora +325
+    pozo $60k (3×20k juntas): suelo 57750  vidas@0 0  / 350 h
+    rojo  $20k: pnl +271550  suelo 19250  vidas@0 0  cierre 291550
+    azul  $20k: pnl +260050  suelo 19250  vidas@0 0  cierre 280050
+    verde $20k: pnl +250150  suelo 19250  vidas@0 0  cierre 270150
+
+  [2/50/60 rotando de color]
+  indicio: tiros 4407  G 1029  casa +781750  med/hora +325
+    pozo $60k (3×20k juntas): suelo 57750  vidas@0 0  / 350 h
+    rojo  $20k: pnl +349500  suelo 20000  vidas@0 0  cierre 369500
+    azul  $20k: pnl +244800  suelo 16700  vidas@0 0  cierre 264800
+    verde $20k: pnl +187450  suelo 19100  vidas@0 0  cierre 207450
+
+  [verde SIEMPRE el 2× (peor a-muerte)]
+  indicio: tiros 4407  G 1029  casa +781750  med/hora +325
+    pozo $60k (3×20k juntas): suelo 57750  vidas@0 0  / 350 h
+    rojo  $20k: pnl +999850  suelo 20000  vidas@0 0  cierre 1019850
+    azul  $20k: pnl +627900  suelo 20000  vidas@0 0  cierre 647900
+    verde $20k: pnl -846000  suelo -2950  vidas@0 40  cierre 16450
+
+— techo: las que además CIERRAN fuerte+ (oráculo, no se exige) —
+  [reparto igual]
+  oráculo fuerte+: tiros 1794  G 474  casa +840450  med/hora +3900
+    pozo $60k (3×20k juntas): suelo 57750  vidas@0 0  / 129 h
+    rojo  $20k: pnl +284950  suelo 19250  vidas@0 0  cierre 304950
+    azul  $20k: pnl +280200  suelo 19250  vidas@0 0  cierre 300200
+    verde $20k: pnl +275300  suelo 19250  vidas@0 0  cierre 295300
+
+  [2/50/60 rotando]
+  oráculo fuerte+: tiros 1794  G 474  casa +840450  med/hora +3900
+    pozo $60k (3×20k juntas): suelo 57750  vidas@0 0  / 129 h
+    rojo  $20k: pnl +299450  suelo 19850  vidas@0 0  cierre 319450
+    azul  $20k: pnl +245000  suelo 18050  vidas@0 0  cierre 265000
+    verde $20k: pnl +296000  suelo 19850  vidas@0 0  cierre 316000
+
+  [verde siempre flaco]
+  oráculo fuerte+: tiros 1794  G 474  casa +840450  med/hora +3900
+    pozo $60k (3×20k juntas): suelo 57750  vidas@0 0  / 129 h
+    rojo  $20k: pnl +689650  suelo 20000  vidas@0 0  cierre 709650
+    azul  $20k: pnl +487500  suelo 20000  vidas@0 0  cierre 507500
+    verde $20k: pnl -336700  suelo -2650  vidas@0 15  cierre 550
+
+Lectura
+  · Casa (pozo 60k) no toca $0 en 350 h de indicio ni en 129 de techo.
+  · Si el 2× rota de color, ninguna wallet de $20k toca $0.
+  · Si UN color es siempre el flaco, ESA cuenta sí puede secarse
+    aunque la casa gane. Eso es el único $0 nuevo de ‘a muerte’.
+  · El $0 de rociar todos los tiros sigue siendo el peligro real.

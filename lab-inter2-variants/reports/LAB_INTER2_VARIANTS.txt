@@ -1,0 +1,150 @@
+LAB INTER2 VARIANTES — Pool 8 sombra
+detail: c:\operacion-joker\depuracion\depurar-all-4G-detail.txt
+juez: banda d≤1 · holdout=72h
+
+========================================================================
+FUENTE depurar-all-4G-detail · horas=913 · train=841 · holdout=72
+  pesos train-calibrados: oficial=1.00, beta-v1=0.99, beta-v2=1.01, beta-v3=0.99, beta-v4=1.01, beta-v5=1.00
+
+== RANKING holdout — banda · k · exact · Δ vs REF ==
+  motor                   ho_banda  ho_k  ho_exact  hit%  k=0  Δpp
+  REF-INTER2-ge2           60.5%   14.3   24.9%    100%    0   +0.0pp
+  I8-ge3                   17.3%    3.2    5.4%     81%    3  -43.2pp
+  I8-ge4                    1.6%    0.3    0.5%     14%   54  -58.9pp
+  I8-ge5                    0.0%    0.0    0.0%      0%   72  -60.5pp
+  I8-ge2-cap8              35.2%    8.0   13.7%     97%    0  -25.3pp
+  I8-ge2-cap10             42.5%   10.0   16.0%     99%    0  -18.0pp
+  I8-ge3-cap10             17.3%    3.2    5.4%     81%    3  -43.2pp
+  I8-ge3-cap8              17.3%    3.2    5.4%     81%    3  -43.2pp
+  W-P0x2-min3              34.5%    6.7   13.7%     97%    0  -26.0pp
+  W-P0x2-min2.5            34.5%    6.7   13.7%     97%    0  -26.0pp
+  W-P0x3-min4              28.4%    5.1   11.2%     94%    0  -32.1pp
+  W-V1x2-min3              34.7%    7.1   11.7%     97%    0  -25.8pp
+  W-P0+V1-min3.5           18.0%    3.2    5.8%     82%    2  -42.5pp
+  W-TRAIN-min2             42.9%    9.1   14.1%     99%    0  -17.6pp
+  W-TRAIN-min2.5           17.3%    3.2    5.4%     81%    3  -43.2pp
+  W-TRAIN-min3             10.8%    1.9    2.8%     61%   10  -49.7pp
+  I8+P9-ge2                72.1%   18.0   32.3%    100%    0  +11.6pp
+  I8+P9-ge3                34.5%    6.7   13.7%     97%    0  -26.0pp
+  I8+P9-ge4                 9.8%    1.6    2.9%     60%   10  -50.7pp
+  I8+P9-ge2-cap10          46.9%   10.0   19.5%    100%    0  -13.5pp
+  I8∩P9                    28.2%    5.0   11.2%     94%    0  -32.3pp
+  I8+P9-wP9half-ge2        60.5%   14.3   24.9%    100%    0   +0.0pp
+
+  REF train 60.3% k=14.7 · holdout 60.5% k=14.3
+
+== H1 UMBRAL / menos fichas — vs REF ==
+  I8-ge3                  banda=17.3%  k=3.2  Δ=-43.2pp  Δk=-11.1
+  I8-ge4                  banda=1.6%  k=0.3  Δ=-58.9pp  Δk=-14.0
+  I8-ge5                  banda=0.0%  k=0.0  Δ=-60.5pp  Δk=-14.3
+  I8-ge2-cap8             banda=35.2%  k=8.0  Δ=-25.3pp  Δk=-6.3
+  I8-ge2-cap10            banda=42.5%  k=10.0  Δ=-18.0pp  Δk=-4.3
+  I8-ge3-cap10            banda=17.3%  k=3.2  Δ=-43.2pp  Δk=-11.1
+  I8-ge3-cap8             banda=17.3%  k=3.2  Δ=-43.2pp  Δk=-11.1
+
+== H2 PESO desigual ==
+  W-P0x2-min3             banda=34.5%  k=6.7  Δ=-26.0pp
+  W-P0x2-min2.5           banda=34.5%  k=6.7  Δ=-26.0pp
+  W-P0x3-min4             banda=28.4%  k=5.1  Δ=-32.1pp
+  W-V1x2-min3             banda=34.7%  k=7.1  Δ=-25.8pp
+  W-P0+V1-min3.5          banda=18.0%  k=3.2  Δ=-42.5pp
+  W-TRAIN-min2            banda=42.9%  k=9.1  Δ=-17.6pp
+  W-TRAIN-min2.5          banda=17.3%  k=3.2  Δ=-43.2pp
+  W-TRAIN-min3            banda=10.8%  k=1.9  Δ=-49.7pp
+
+== H3 incluir P9 ==
+  I8+P9-ge2               banda=72.1%  k=18.0  Δ=+11.6pp
+  I8+P9-ge3               banda=34.5%  k=6.7  Δ=-26.0pp
+  I8+P9-ge4               banda=9.8%  k=1.6  Δ=-50.7pp
+  I8+P9-ge2-cap10         banda=46.9%  k=10.0  Δ=-13.5pp
+  I8∩P9                   banda=28.2%  k=5.0  Δ=-32.3pp
+  I8+P9-wP9half-ge2       banda=60.5%  k=14.3  Δ=+0.0pp
+
+== PARETO — misma/más banda con menos fichas (holdout) ==
+  (ninguno domina REF en banda/k)
+
+== TOP 5 holdout banda ==
+  1. I8+P9-ge2  72.1%  k=18.0  ΔREF=+11.6pp
+  2. REF-INTER2-ge2  60.5%  k=14.3  ΔREF=+0.0pp
+  3. I8+P9-wP9half-ge2  60.5%  k=14.3  ΔREF=+0.0pp
+  4. I8+P9-ge2-cap10  46.9%  k=10.0  ΔREF=-13.5pp
+  5. W-TRAIN-min2  42.9%  k=9.1  ΔREF=-17.6pp
+
+  sanity REF vs recorrer inter2 mism en holdout: 0/72
+
+
+========================================================================
+FUENTE data_3dias · horas=916 · train=844 · holdout=72
+  pesos train-calibrados: oficial=0.99, beta-v1=1.00, beta-v2=1.02, beta-v3=0.98, beta-v4=1.01, beta-v5=1.00
+
+== RANKING holdout — banda · k · exact · Δ vs REF ==
+  motor                   ho_banda  ho_k  ho_exact  hit%  k=0  Δpp
+  REF-INTER2-ge2           59.1%   14.2   25.8%    100%    0   +0.0pp
+  I8-ge3                   17.7%    3.3    7.9%     79%    3  -41.4pp
+  I8-ge4                    3.7%    0.5    2.0%     25%   40  -55.3pp
+  I8-ge5                    0.2%    0.0    0.2%      1%   71  -58.9pp
+  I8-ge2-cap8              36.6%    8.0   16.1%     99%    0  -22.5pp
+  I8-ge2-cap10             44.3%   10.0   19.2%    100%    0  -14.8pp
+  I8-ge3-cap10             17.7%    3.3    7.9%     79%    3  -41.4pp
+  I8-ge3-cap8              17.7%    3.3    7.9%     79%    3  -41.4pp
+  W-P0x2-min3              30.9%    6.4   13.4%     97%    0  -28.2pp
+  W-P0x2-min2.5            30.9%    6.4   13.4%     97%    0  -28.2pp
+  W-P0x3-min4              24.4%    4.9   10.3%     96%    0  -34.7pp
+  W-V1x2-min3              36.2%    7.0   14.6%    100%    0  -22.8pp
+  W-P0+V1-min3.5           18.8%    3.3    8.3%     86%    2  -40.3pp
+  W-TRAIN-min2             40.9%    8.7   16.9%    100%    0  -18.2pp
+  W-TRAIN-min2.5           17.7%    3.3    7.9%     79%    3  -41.4pp
+  W-TRAIN-min3             10.3%    1.8    4.4%     60%    9  -48.8pp
+  I8+P9-ge2                70.6%   18.0   31.9%    100%    0  +11.5pp
+  I8+P9-ge3                30.9%    6.4   13.4%     97%    0  -28.2pp
+  I8+P9-ge4                10.7%    1.8    4.8%     60%    9  -48.4pp
+  I8+P9-ge2-cap10          44.4%   10.0   19.5%     99%    0  -14.7pp
+  I8∩P9                    23.2%    4.8    9.8%     94%    0  -35.9pp
+  I8+P9-wP9half-ge2        59.1%   14.2   25.8%    100%    0   +0.0pp
+
+  REF train 60.5% k=14.7 · holdout 59.1% k=14.2
+
+== H1 UMBRAL / menos fichas — vs REF ==
+  I8-ge3                  banda=17.7%  k=3.3  Δ=-41.4pp  Δk=-10.9
+  I8-ge4                  banda=3.7%  k=0.5  Δ=-55.3pp  Δk=-13.6
+  I8-ge5                  banda=0.2%  k=0.0  Δ=-58.9pp  Δk=-14.2
+  I8-ge2-cap8             banda=36.6%  k=8.0  Δ=-22.5pp  Δk=-6.2
+  I8-ge2-cap10            banda=44.3%  k=10.0  Δ=-14.8pp  Δk=-4.2
+  I8-ge3-cap10            banda=17.7%  k=3.3  Δ=-41.4pp  Δk=-10.9
+  I8-ge3-cap8             banda=17.7%  k=3.3  Δ=-41.4pp  Δk=-10.9
+
+== H2 PESO desigual ==
+  W-P0x2-min3             banda=30.9%  k=6.4  Δ=-28.2pp
+  W-P0x2-min2.5           banda=30.9%  k=6.4  Δ=-28.2pp
+  W-P0x3-min4             banda=24.4%  k=4.9  Δ=-34.7pp
+  W-V1x2-min3             banda=36.2%  k=7.0  Δ=-22.8pp
+  W-P0+V1-min3.5          banda=18.8%  k=3.3  Δ=-40.3pp
+  W-TRAIN-min2            banda=40.9%  k=8.7  Δ=-18.2pp
+  W-TRAIN-min2.5          banda=17.7%  k=3.3  Δ=-41.4pp
+  W-TRAIN-min3            banda=10.3%  k=1.8  Δ=-48.8pp
+
+== H3 incluir P9 ==
+  I8+P9-ge2               banda=70.6%  k=18.0  Δ=+11.5pp
+  I8+P9-ge3               banda=30.9%  k=6.4  Δ=-28.2pp
+  I8+P9-ge4               banda=10.7%  k=1.8  Δ=-48.4pp
+  I8+P9-ge2-cap10         banda=44.4%  k=10.0  Δ=-14.7pp
+  I8∩P9                   banda=23.2%  k=4.8  Δ=-35.9pp
+  I8+P9-wP9half-ge2       banda=59.1%  k=14.2  Δ=+0.0pp
+
+== PARETO — misma/más banda con menos fichas (holdout) ==
+  (ninguno domina REF en banda/k)
+
+== TOP 5 holdout banda ==
+  1. I8+P9-ge2  70.6%  k=18.0  ΔREF=+11.5pp
+  2. REF-INTER2-ge2  59.1%  k=14.2  ΔREF=+0.0pp
+  3. I8+P9-wP9half-ge2  59.1%  k=14.2  ΔREF=+0.0pp
+  4. I8+P9-ge2-cap10  44.4%  k=10.0  ΔREF=-14.7pp
+  5. I8-ge2-cap10  44.3%  k=10.0  ΔREF=-14.8pp
+
+  sanity REF vs recorrer inter2 mism en holdout: 0/72
+
+== NOTAS ==
+  Pool 8 prod NO tocado. Candidatos = pool sombra nuevo si humano OK.
+  REF-INTER2-ge2 = acuerdo ≥2 P0–P5 (Pool 8 actual).
+  P9 = chips_classic (Pool 9). Pesos TRAIN solo en train tags.
+

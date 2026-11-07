@@ -1,0 +1,155 @@
+LAB LIVE-RECOMPUTE — extracción min a min · pool extra
+cinta: depurar-all-4G-detail.txt
+horas walk=913 · holdout tags=72 · horas ho=72
+
+== H1 PASO — predict next G @ cada luz (J1/J4 banda d≤1) ==
+  horas holdout ≈ 72 · pasos = sum(nG-1) por hora
+
+  motor · banda_all · banda_ho · hablo_ho · Δ vs INTER2-fix
+    REF-INTER2-FIX      all=31.0%  ho=27.1%  hablo=641  Δfix=+0.0pp
+    REF-LC01            all=45.0%  ho=39.6%  hablo=652  Δfix=+12.4pp
+    RC-01-TRIM          all=31.0%  ho=27.1%  hablo=641  Δfix=+0.0pp
+    RC-02-VENTANA       all=42.7%  ho=37.4%  hablo=649  Δfix=+10.3pp
+    RC-05-ACUERDO       all=34.1%  ho=31.7%  hablo=520  Δfix=+4.6pp
+    RC-04-NG-LIVE       all=42.6%  ho=36.7%  hablo=649  Δfix=+9.5pp
+    RC-03-MULTI24       all=60.5%  ho=55.3%  hablo=649  Δfix=+28.2pp
+    RC-04-MULTI93       all=63.0%  ho=59.8%  hablo=652  Δfix=+32.7pp
+
+  ranking holdout paso:
+    1. RC-04-MULTI93  59.8%  (Δ INTER2-fix +32.7pp)
+    2. RC-03-MULTI24  55.3%  (Δ INTER2-fix +28.2pp)
+    3. REF-LC01  39.6%  (Δ INTER2-fix +12.4pp)
+    4. RC-02-VENTANA  37.4%  (Δ INTER2-fix +10.3pp)
+    5. RC-04-NG-LIVE  36.7%  (Δ INTER2-fix +9.5pp)
+    6. RC-05-ACUERDO  31.7%  (Δ INTER2-fix +4.6pp)
+    7. REF-INTER2-FIX  27.1%  (Δ INTER2-fix +0.0pp)
+    8. RC-01-TRIM  27.1%  (Δ INTER2-fix +0.0pp)
+
+== H2 HORA — lista acumulada tips vs INTER2 fijo (banda d≤1) ==
+    INTER2 fijo hora      60.5%  k≈14.3
+    LC-01 chips acum      41.1%
+    RC-MULTI93 union/hora 60.3%
+
+============================================================
+SÍNTESIS lab-live-recompute R1
+============================================================
+  Mejor paso holdout: RC-04-MULTI93 @ 59.8%
+  REF-INTER2-fix paso: 27.1%
+  OLOR: RC-04-MULTI93 supera INTER2 fijo en paso (+32.7pp)
+  REF-LC01 paso: 39.6% (Pool 7 canónico)
+
+  VEREDICTO R1:
+    · Pool live-recompute = otro juez (paso next-G), no boleto hora INTER2.
+    · Multi RC-03/04 = candidatos pool sombra adicional.
+    · Cablear solo tras R2 confirmación + OK humano.
+
+
+
+LAB LIVE-RECOMPUTE R2 — agota variantes · detail + extraccion-en-vivo
+  detail tags=926 · extra file=120
+  only_extra=3 · overlap=117
+  extra path: extraccion-en-vivo.txt
+
+  estrategias: single=30 · multi=18 · total=48
+
+── DETAIL h22-300826 · walk=913h · holdout=72h ──
+
+== H1 DETAIL holdout — ranking completo ==
+  estrategias=48 · ref INTER2-fix paso=27.1%
+
+     1. RC-M93-p35              59.8%  (Δ +32.7pp)
+     2. RC-M93-p30              59.8%  (Δ +32.7pp)
+     3. RC-04-MULTI93           59.8%  (Δ +32.7pp)
+     4. RC-M24-p35-d4           59.7%  (Δ +32.5pp)
+     5. RC-M24-p30-d4           59.7%  (Δ +32.5pp)
+     6. RC-M24-p25-d4           59.5%  (Δ +32.4pp)
+     7. RC-M93-p25              58.7%  (Δ +31.6pp)
+     8. RC-M24-p35-d3           58.4%  (Δ +31.3pp)
+     9. RC-M24-p30-d3           58.4%  (Δ +31.3pp)
+    10. RC-M24-p25-d3           58.0%  (Δ +30.8pp)
+    11. RC-M92-p35              56.3%  (Δ +29.1pp)
+    12. RC-M92-p30              56.3%  (Δ +29.1pp)
+    13. RC-06-MULTI92           56.3%  (Δ +29.1pp)
+    14. RC-M92-p25              55.4%  (Δ +28.2pp)
+    15. RC-M24-p35-d2           55.3%  (Δ +28.2pp)
+    16. RC-M24-p30-d2           55.3%  (Δ +28.2pp)
+    17. RC-03-MULTI24           55.3%  (Δ +28.2pp)
+    18. RC-M24-p25-d2           54.4%  (Δ +27.2pp)
+    19. REF-LC01                39.6%  (Δ +12.4pp)
+    20. RC-16-RELOJ-FERM        39.6%  (Δ +12.4pp)
+
+== ABLATION RC-M93 — top grid ==
+    RC-M93-p35              59.8%
+    RC-M93-p30              59.8%
+    RC-M93-p25              58.7%
+
+== ABLATION RC-M24 — top grid ==
+    RC-M24-p35-d4           59.7%
+    RC-M24-p30-d4           59.7%
+    RC-M24-p25-d4           59.5%
+    RC-M24-p35-d3           58.4%
+    RC-M24-p30-d3           58.4%
+    RC-M24-p25-d3           58.0%
+    RC-M24-p35-d2           55.3%
+    RC-M24-p30-d2           55.3%
+
+== ABLATION RC-M92 — top grid ==
+    RC-M92-p35              56.3%
+    RC-M92-p30              56.3%
+    RC-M92-p25              55.4%
+
+== HORA — union best multi vs INTER2 (holdout) ==
+    INTER2 fijo           60.5%
+    RC-04-MULTI93 union  60.3%
+    LC-01 acum            41.1%
+
+── MERGED data_3dias+extra · walk=912h · holdout=72h ──
+
+== H2 MERGED holdout — top 12 ==
+  estrategias=48 · ref INTER2-fix paso=26.3%
+
+     1. RC-M93-p35              61.4%  (Δ +35.0pp)
+     2. RC-M93-p30              61.4%  (Δ +35.0pp)
+     3. RC-04-MULTI93           61.4%  (Δ +35.0pp)
+     4. RC-M93-p25              60.9%  (Δ +34.6pp)
+     5. RC-M24-p35-d4           59.5%  (Δ +33.2pp)
+     6. RC-M24-p30-d4           59.5%  (Δ +33.2pp)
+     7. RC-M24-p25-d4           59.5%  (Δ +33.2pp)
+     8. RC-M24-p35-d3           58.3%  (Δ +31.9pp)
+     9. RC-M24-p30-d3           58.3%  (Δ +31.9pp)
+    10. RC-M24-p25-d3           58.1%  (Δ +31.8pp)
+    11. RC-M92-p35              56.5%  (Δ +30.2pp)
+    12. RC-M92-p30              56.5%  (Δ +30.2pp)
+
+== EXTRA — horas solo extraccion-en-vivo ==
+  n=3 tags=['h0-310826', 'h1-310826', 'h2-310826']
+    1. RC-M24-p35-d4  57.1%  (Δfix +25.0pp)
+    2. RC-M24-p30-d4  57.1%  (Δfix +25.0pp)
+    3. RC-M24-p25-d4  57.1%  (Δfix +25.0pp)
+    4. RC-M93-p35  46.4%  (Δfix +14.3pp)
+    5. RC-M93-p30  46.4%  (Δfix +14.3pp)
+    6. RC-M93-p25  46.4%  (Δfix +14.3pp)
+
+== REFRESH — últimas 30h overlap extra∩detail ==
+    1. RC-M24-p35-d4  61.6%  (Δfix +34.0pp)
+    2. RC-M24-p35-d3  61.6%  (Δfix +34.0pp)
+    3. RC-M24-p35-d2  60.1%  (Δfix +32.5pp)
+    4. RC-M92-p35  59.3%  (Δfix +31.7pp)
+    5. RC-M93-p25  58.9%  (Δfix +31.3pp)
+
+============================================================
+SÍNTESIS lab-live-recompute R2 — CERRADO
+============================================================
+  Detail holdout #1: RC-M93-p35 @ 59.8%
+  REF-INTER2-fix paso: 27.1%
+  Grid MULTI93 best: RC-M93-p35 @ 59.8%
+  Grid MULTI24 best: RC-M24-p35-d4 @ 59.7%
+  Merged #1: RC-M93-p35 @ 61.4%
+
+  VEREDICTO R2:
+    · Pool 10 LIVE-RC = RC-04-MULTI93 (p30 {c,c+1,c+2}) sombra adicional.
+    · No reemplaza Pool 8 INTER2 (boleto pre-hora 60% vs paso multi ~60%).
+    · Ventana/híbrido/LC-xx no superan multi93 en holdout detail.
+    · extra-en-vivo confirma dirección (n pequeño).
+    · Cable: chipsLiveRc() · pin opcional · cero cambio P0–P8/P7.
+

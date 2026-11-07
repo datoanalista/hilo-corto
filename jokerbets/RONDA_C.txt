@@ -1,0 +1,38 @@
+RONDA C — clics + SALDO (jokerbets-mesa)
+========================================
+stamp 2026-10-13
+
+Qué cablea
+  · Loop bot en el mismo Node que los 3 Chrome (jokerbets-bot.js).
+  · Dashboard escribe señal: POST /api/jokerbets/senal (puerta A, zona, ON).
+  · «Armar clics (C)» → jokerbets-bot-armado.json (doble seguro).
+  · En zona + armado + ON: chip 50 → círculo ×3 por cuenta.
+  · Pantalla «TOMA TU DECISIÓN»: rojo=1.er botón, azul=2.º, verde=3.er (izq/centro/der).
+  · SALDO leído del texto del frame (heurístico).
+
+Cómo probar (con cuidado — dinero real)
+  1. B corriendo (3 Chrome + Online).
+  2. Reiniciar servir.py tras actualizar código.
+  3. Cuentas → «Armar clics (C)» solo cuando quieras probar clics reales.
+  4. Esperar interruptor ON + minuto en tip±1 (Mesa muestra en zona).
+  5. Ver en tarjeta: ultimoGesto (circulo-x3, color-rojo, etc.) y SALDO DOM.
+  6. Para parar clics: «Clics armados» otra vez (desarmar) o Detener Chrome.
+
+Nota ventanas
+  · localhost:5953 = dashboard (no es un 4.º Chrome de juego).
+  · Solo 3 Chrome son las cuentas.
+
+Si falla el clic
+  · Selectores afinar en jokerbets-dom.js (F12 en iframe → copy selector).
+  · Captura + outerHTML de chip 50 y botón decisión ayudan.
+
+Apuesta manual (Cuentas)
+  · Armar clics + «Apuesta manual $200» (un clic = un disparo).
+  · Las 3 cuentas: chip 50 + 1× centro ($50×4 bonos = $200). Prod ON: ×3 = $600.
+  · No exige interruptor ON. Bono decisión: idx 0/1/2 por color fijo.
+  · Log: apuesta_manual, bono_color (+verif / ?verif).
+
+F5 multi (8 min)
+  · Keep-alive reload en rojo, azul y verde (pausa 2.5 s entre ventanas).
+
+Mail = fase D.

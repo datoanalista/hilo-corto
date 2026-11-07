@@ -1,0 +1,133 @@
+DINERO Y OFICIO — respuestas (papel)
+====================================
+stamp 2026-10-13
+LOOK_BANCA.txt · ACTA_SENIOR_PODA · BANDERA_BORRADOR
+
+Modelo de cobro (mesa, 2026-10-13)
+  4 bonos en la ruleta. 3 colores en el juego de bono.
+  Las 3 cuentas cubren los 3 colores. Casa = TOTAL del bono.
+  R → −600. G → 50×lm − 600  (lm = rojo+azul+verde).
+  LOOK_COLORES 3/4 queda anulado: se confundió bono con color.
+  LOOK_BANCA vuelve a ser el libro de casa (indicio+zona
+  +782k / 0 vaciados bajo ese modelo). Verificar recibo.
+
+1. ¿Normal o fuerte?
+  Con confirmación en curso, conviene el régimen que YA se ve
+  fuerte (media @19 ≥68), no “entrar también en normal
+  para tener más horas”.
+  Lumen/G al cierre: normal med 45 media 66 · fuerte med 50
+  media 84 · muy_fuerte media 108.
+  En el modelo, oráculo+ZONA: fuerte+ med/hora +3900 casa ·
+  normal +300. Rocíar TODO tiro en normal: −4600/hora y 7
+  vaciados de $20k en 123 h.
+  Normal se MIRA (la racha se arregla). No se compra.
+
+2. ¿Pool 7 o Apostador?
+  Pool 7 (silla LC-01 / SOLO_ZONA) es el mejor DÓNDE.
+  Hold: cov 28% · banda 89% · pnl +141.
+  Apostador sentado en todas las sillas (SILLA_TODOS) es
+  FRÍO: 81% de esos asientos son R · hold −661.
+  Eso es cazar G. Seca el pozo. Lo dijiste: las gordas
+  entre sequías no se persiguen.
+  Oficio combinado: bandera (CUÁNDO, régimen) × Pool 7
+  (DÓNDE, minuto). No un agente nuevo. No Apostador-spray.
+
+3. ¿Un agente que compare horas y suba a $100?
+  No. La orden ya tiene dueño: bandera × zona.
+  La ficha $100 se prueba como ESCALA FIJA (LOOK_FICHA100),
+  no como un agente que decide tiro a tiro.
+
+4. Colchón $20.000 × 3
+  100 tiros a $200. A $400, 50 tiros.
+  Si se apuesta CADA tiro de la hora: el modelo quiebra
+  (todas las horas, todo post-19: −1.76M casa, 27 vaciados).
+  Si solo zona + indicio @19: 0 vaciados en 350 h de
+  indicio, suelo de cuenta ~19k (casa = total del bono).
+  $60 si se pierde todo no es bancarrota tuya. Sirve de
+  laboratorio SI no se rocían minutos. Si se rocían, el
+  colchón no alcanza ni para aprender.
+
+5. Probabilidad de $0 (API real, LOOK_API)
+  Fuente: depuracion/consolidado-jocker.json (solo lectura).
+  61070 rondas · 1043 h · corte 0/1/2 por G.
+  Recibo: 80× × $50 = $4.000. Casa +3.400. R −600.
+  Oficio: indicio @19 + Pool 7 zona. 281 h. 3376 tiros · 858 G.
+  Casa +996.550 · med/hora +1.500.
+  Pozo $60k: suelo 57.750 · vidas@0 = 0 / 281 h.
+  Color a muerte (tajada REAL, no modelo):
+    c0/c1/c2 ~33% del lumen cada uno. El 0 ROTA.
+    c0 es 0 más a menudo (16%) y también el máximo más a menudo.
+    3 wallets $20k: 0 vaciados. Suelos 20.000 / 18.400 / 18.400.
+  El “un color SIEMPRE flaco” del modelo no aparece en la API.
+  60% de las G un color se lleva ≥55% — por eso se ve la carga.
+  Como las 3 cubren, da lo mismo: la casa cobra el total.
+  El $0 de rociar todos los tiros sigue siendo el peligro.
+  Techo (cierran fuerte+, 100 h): casa +882k, 0 vaciados.
+
+6. ¿Rotar colores porque uno se carga?
+  No. Las 3 cuentas ya cubren los 3. La casa siempre
+  cobra 60×+50×+2×. Rotar solo cambia qué wallet
+  se lleva el gordo. Cazar el cargado rompe la
+  cobertura (dos al mismo color). Ver COLORES.txt.
+
+7. Ficha $100 / $30k × 3 (LOOK_FICHA100, API real)
+  R −400/cuenta. G: 100×color − 300. Casa G: 100×lm − 900.
+  Caso 150+100+50: casa +29.100. Recibos zona ≥250 existen
+  (dice 720, 600, 336…).
+  Oficio (indicio+zona, 281 h): casa +2.250.500 · med +3.800.
+  Pozo $90k: suelo 86.400 · vidas@0 = 0.
+  3 wallets $30k: 0 vaciados. Suelos 30.000 / 27.100 / 27.100.
+  $90k NO es el doble de $60k: ficha ×2, pozo ×1.5 (75 R vs 100).
+  Aun así, con el oficio, el suelo apenas baja $3.600.
+  Spray post-19 a $400: pozo toca $0 tres veces. Eso es
+  lo que el casino quiere. No se hace.
+
+8. ¿Mensual? ¿24/7? ¿$250 / $1.000? (LOOK_ESCALA)
+  API: 23-jul → 4-sep 2026 = 43,4 días. No es un mes.
+  +2.250.500 a $100 es ESA ventana. Regla de tres:
+  ~+51.800/día · ~+1.55M / 30 d SI se repite la densidad.
+  Indicio: 281 h = 26,9% de la cinta · 6,5 h/día.
+  0 vaciados en la muestra ≠ 0 para siempre.
+  24/7: el reloj puede mirar. La ficha solo bandera × zona.
+  Apostar las 1043 h (zona, sin bandera) es otro oficio.
+  $250/bono en este $30k (30 R de aire; racha R máx 16):
+    pozo suelo 81k (90%) · wallets 100/76/76% · 0 vaciados.
+    No bajó de la mitad. Menos aire que $100 (75 R).
+  $1.000/bono en este $30k (7 R de aire):
+    c1/c2 suelo $1.000 (3%). Un par de R y es $0.
+    El “0 vaciados” aquí es suerte de cuándo cayó la racha.
+  Mismo aire que $100/$30k (75 R):
+    $250 → $75k/cuenta · $1.000 → $300k/cuenta.
+
+9. Óptimo de ficha y chispa (LOOK_OPTIMO)
+  16 R = 16 apuestas de ZONA seguidas que fueron R.
+  No se ensancha Pool 7. Aire vs esa racha (16):
+    $50 → 150 R (holgado)  $100 → 75  $150 → 50 (3×)
+    $200 → 37  $250 → 30 (1,9×). Ninguno vació en 281 h.
+  Banda de ficha en este $30k: $150. $100 si se quiere más aire.
+  $50 sobra colchón. $250 cabe en ESTA cinta, menos margen.
+  Pool 7 en muy_apagado: med/hora −600. Lo que viste. No entrar.
+  1ª G≥100 o ≥200: el resto sigue med 45, 16% ≥100 = control.
+  2 G≥100: 186 h, 46% cierra fuerte+. La 2ª cae al min 30 (med).
+  Solo 44/186 antes del min 19. No es “prende al tiro” habitual.
+  Tren G-G pegados ≥100: 29 h. Isla, no mancha.
+
+10. ¿$20k o $30k? ¿Cuándo subir? (ficha $150, zona, API)
+  $20k × 3: aire 33 R vs racha 16. Pozo suelo 91%. Wallet peor 78%.
+  0 vaciados / 281 h. Cabe. Menos holgura que $30k (50 R, 86%).
+  $20k + $100 da el mismo aire que $30k + $150 (50 R).
+  Preferencia de papel: $20k arranque, ficha $150. El $30k es
+  holgura, no requisito. No recargar desde el sueldo para “subir”.
+  Subir ficha ($150→$200): cuando ESA cuenta ya creció por el
+  oficio (~+50%, ~$30k) y se revisó que no se roció. No por
+  calendario. No tras un G gordo. Aire ≥3×16 R otra vez.
+
+11. ¿Sizer dinámico o fijo? (LOOK_SIZER)
+  $150 fijo $20k: casa +3.38M  suelo 91%/78%  0 vaciados.
+  Escalón cada 4–5 h o proporcional: casa ~+5.5M  MISMO suelo.
+  Subió a $250 a las 2 revisiones y no bajó (esta cinta gana).
+  El suelo no mejora. La ruina no baja. Es techo de ficha.
+  3 semanas ($150): min wallet ya $330k. Ahí se revisa a mano.
+  No un agente cada 4 h fuertes.
+
+Cero bot. Cero cazar color. Oficio = zona, no todos los tiros.

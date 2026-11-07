@@ -1,0 +1,415 @@
+LOOK · ¿35 R levantan racimo?  (k = 15 / 20 / 30 / 35 / 36)
+35 = forma (cola extrema), no ficha. Esta hora live es FORMA, no ley.
+Unidad = evento causal al tocar el R nº k. Luz = G núcleo (1–4).
+Dos preguntas distintas:
+  A) P(próxima G en ≤3 tiros | ya van k R)  — ¿se acaba YA la sequía?
+  B) P(racimo tras la que rompe | ya van k R) — ¿viene mancha después?
+Juez: hora a hora. Cero cable.
+
+Cinta load_cinta (≥1 G): 1089 h · train 1017 · holdout 72
+Cinta cruda: 1043 h
+
+════════ TRAIN  1017 horas ════════
+  BASE (sin condicionar a 35)
+     cualquier racha que ROMPE: racimo ≤3 = 3961/8033  49.3%  · sola 860/8033  10.7%
+     tras cualquier G (pares G→G + última sin 2ª): G en ≤3 = 4863/9706  50.1%
+     al 1er R de cualquier racha: P(G en ≤3) = 3616/8878  40.7%
+
+  k=15  (evento = se toca el R nº 15, sin leak)
+     horas/eventos: intra 412 · lead 61 · cola-en-hora 76 · cruce :00 141
+        INTRA (tras G de esa hora): n=412
+           P(próx G ≤3 tiros)      201  48.8%
+           aún cae G en la hora    412  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe    191  46.4%   (den=todas; si rompe: 46.4%)
+           rompe y queda sola       55  13.3%
+           R aún hasta esa G: p50=3  0 más=81  ≤2 más=201  ≥5 más=136
+           clima: floja 141 · normal 258 · rica 13
+        LEAD (aún no 1ª G): n=61
+           P(próx G ≤3 tiros)       37  60.7%
+           aún cae G en la hora     61  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe     32  52.5%   (den=todas; si rompe: 52.5%)
+           rompe y queda sola        1  1.6%
+           R aún hasta esa G: p50=2  0 más=18  ≤2 más=37  ≥5 más=17
+           clima: floja 27 · normal 31 · rica 3
+        COLA (cierra la hora; no mira H+1): n=76
+           P(próx G ≤3 tiros)        0  0.0%
+           aún cae G en la hora      0  0.0%
+           se acaba sin G           76  100.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: —)
+           rompe y queda sola        0  0.0%
+           clima: floja 39 · normal 36 · rica 1
+        CRUCE :00 (cola H + lead H+1; k cae en H+1): n=141
+           P(próx G ≤3 tiros)       66  46.8%
+           aún cae G en la hora    141  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe     70  49.6%   (den=todas; si rompe: 49.6%)
+           rompe y queda sola        1  0.7%
+           R aún hasta esa G: p50=3  0 más=22  ≤2 más=66  ≥5 más=45
+           clima: floja 51 · normal 81 · rica 9
+        TODAS las posturas de ESA hora (sin cruce): n=549
+           P(próx G ≤3 tiros)      238  43.4%
+           aún cae G en la hora    473  86.2%
+           se acaba sin G           76  13.8%
+           racimo tras la rompe    223  40.6%   (den=todas; si rompe: 47.1%)
+           rompe y queda sola       56  10.2%
+           R aún hasta esa G: p50=2  0 más=99  ≤2 más=238  ≥5 más=153
+           clima: floja 207 · normal 325 · rica 17
+
+  k=20  (evento = se toca el R nº 20, sin leak)
+     horas/eventos: intra 141 · lead 17 · cola-en-hora 36 · cruce :00 64
+        INTRA (tras G de esa hora): n=141
+           P(próx G ≤3 tiros)       71  50.4%
+           aún cae G en la hora    141  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe     68  48.2%   (den=todas; si rompe: 48.2%)
+           rompe y queda sola       30  21.3%
+           R aún hasta esa G: p50=2  0 más=31  ≤2 más=71  ≥5 más=43
+           clima: floja 67 · normal 74 · rica 0
+        LEAD (aún no 1ª G): n=17
+           P(próx G ≤3 tiros)        8  47.1%
+           aún cae G en la hora     17  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      7  41.2%   (den=todas; si rompe: 41.2%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=3  0 más=3  ≤2 más=8  ≥5 más=7
+           clima: floja 11 · normal 6 · rica 0
+        COLA (cierra la hora; no mira H+1): n=36
+           P(próx G ≤3 tiros)        0  0.0%
+           aún cae G en la hora      0  0.0%
+           se acaba sin G           36  100.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: —)
+           rompe y queda sola        0  0.0%
+           clima: floja 22 · normal 13 · rica 1
+        CRUCE :00 (cola H + lead H+1; k cae en H+1): n=64
+           P(próx G ≤3 tiros)       21  32.8%
+           aún cae G en la hora     64  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe     30  46.9%   (den=todas; si rompe: 46.9%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=4  0 más=11  ≤2 más=21  ≥5 más=32
+           clima: floja 28 · normal 32 · rica 4
+        TODAS las posturas de ESA hora (sin cruce): n=194
+           P(próx G ≤3 tiros)       79  40.7%
+           aún cae G en la hora    158  81.4%
+           se acaba sin G           36  18.6%
+           racimo tras la rompe     75  38.7%   (den=todas; si rompe: 47.5%)
+           rompe y queda sola       30  15.5%
+           R aún hasta esa G: p50=2  0 más=34  ≤2 más=79  ≥5 más=50
+           clima: floja 100 · normal 93 · rica 1
+
+  k=30  (evento = se toca el R nº 30, sin leak)
+     horas/eventos: intra 16 · lead 4 · cola-en-hora 4 · cruce :00 23
+        INTRA (tras G de esa hora): n=16
+           P(próx G ≤3 tiros)        4  25.0%
+           aún cae G en la hora     16  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      9  56.2%   (den=todas; si rompe: 56.2%)
+           rompe y queda sola        3  18.8%
+           R aún hasta esa G: p50=5  0 más=2  ≤2 más=4  ≥5 más=9
+           clima: floja 15 · normal 1 · rica 0
+        LEAD (aún no 1ª G): n=4
+           P(próx G ≤3 tiros)        2  50.0%
+           aún cae G en la hora      4  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: 0.0%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=4  0 más=1  ≤2 más=2  ≥5 más=2
+           clima: floja 3 · normal 1 · rica 0
+        COLA (cierra la hora; no mira H+1): n=4
+           P(próx G ≤3 tiros)        0  0.0%
+           aún cae G en la hora      0  0.0%
+           se acaba sin G            4  100.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: —)
+           rompe y queda sola        0  0.0%
+           clima: floja 3 · normal 1 · rica 0
+        CRUCE :00 (cola H + lead H+1; k cae en H+1): n=23
+           P(próx G ≤3 tiros)        9  39.1%
+           aún cae G en la hora     23  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe     12  52.2%   (den=todas; si rompe: 52.2%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=4  0 más=1  ≤2 más=9  ≥5 más=9
+           clima: floja 7 · normal 15 · rica 1
+        TODAS las posturas de ESA hora (sin cruce): n=24
+           P(próx G ≤3 tiros)        6  25.0%
+           aún cae G en la hora     20  83.3%
+           se acaba sin G            4  16.7%
+           racimo tras la rompe      9  37.5%   (den=todas; si rompe: 45.0%)
+           rompe y queda sola        3  12.5%
+           R aún hasta esa G: p50=5  0 más=3  ≤2 más=6  ≥5 más=11
+           clima: floja 21 · normal 3 · rica 0
+
+  k=35  (evento = se toca el R nº 35, sin leak)
+     horas/eventos: intra 9 · lead 2 · cola-en-hora 1 · cruce :00 11
+        INTRA (tras G de esa hora): n=9
+           P(próx G ≤3 tiros)        4  44.4%
+           aún cae G en la hora      9  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      5  55.6%   (den=todas; si rompe: 55.6%)
+           rompe y queda sola        3  33.3%
+           R aún hasta esa G: p50=4  0 más=2  ≤2 más=4  ≥5 más=1
+           clima: floja 9 · normal 0 · rica 0
+        LEAD (aún no 1ª G): n=2
+           P(próx G ≤3 tiros)        1  50.0%
+           aún cae G en la hora      2  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: 0.0%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=14  0 más=0  ≤2 más=1  ≥5 más=1
+           clima: floja 2 · normal 0 · rica 0
+        COLA (cierra la hora; no mira H+1): n=1
+           P(próx G ≤3 tiros)        0  0.0%
+           aún cae G en la hora      0  0.0%
+           se acaba sin G            1  100.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: —)
+           rompe y queda sola        0  0.0%
+           clima: floja 1 · normal 0 · rica 0
+        CRUCE :00 (cola H + lead H+1; k cae en H+1): n=11
+           P(próx G ≤3 tiros)        4  36.4%
+           aún cae G en la hora     11  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      5  45.5%   (den=todas; si rompe: 45.5%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=5  0 más=3  ≤2 más=4  ≥5 más=6
+           clima: floja 5 · normal 6 · rica 0
+        TODAS las posturas de ESA hora (sin cruce): n=12
+           P(próx G ≤3 tiros)        5  41.7%
+           aún cae G en la hora     11  91.7%
+           se acaba sin G            1  8.3%
+           racimo tras la rompe      5  41.7%   (den=todas; si rompe: 45.5%)
+           rompe y queda sola        3  25.0%
+           R aún hasta esa G: p50=4  0 más=2  ≤2 más=5  ≥5 más=2
+           clima: floja 12 · normal 0 · rica 0
+     lista k=35 (intra/lead/cola de esa hora):
+       h14-230726  intra 39R  floja nG=5  g≤3=no  racimo=no  G1 lm=32
+       h6-250726  intra 39R  floja nG=7  g≤3=no  racimo=sí  G3 lm=24
+       h17-280726  intra 39R  floja nG=2  g≤3=no  racimo=no  G2 lm=41
+       h7-040826  intra 36R  floja nG=5  g≤3=sí  racimo=sí  G3 lm=72
+       h22-100826  intra 39R  floja nG=4  g≤3=no  racimo=sí  G3 lm=45
+       h17-130826  intra 35R  floja nG=3  g≤3=sí  racimo=sí  G1 lm=103
+       h13-220826  intra 36R  floja nG=6  g≤3=sí  racimo=no  G3 lm=36
+       h21-240826  intra 44R  floja nG=6  g≤3=no  racimo=sí  G2 lm=65
+       h14-250826  intra 35R  floja nG=5  g≤3=sí  racimo=no  G1 lm=18
+       h23-260726  lead 61R  floja nG=2  g≤3=no  racimo=no  G1 lm=63
+       h2-090826  lead 37R  floja nG=7  g≤3=sí  racimo=no  G2 lm=50
+       h7-270726  tail 45R  floja nG=1  g≤3=no  racimo=no  sin G después
+     lista k=35 CRUCE:
+       h17-240726+h18-240726  3+32=35R  g≤3=sí  racimo=no  G2
+       h22-260726+h23-260726  2+61=63R  g≤3=no  racimo=no  G1
+       h1-280726+h2-280726  25+10=35R  g≤3=sí  racimo=sí  G2
+       h1-080826+h2-080826  28+17=45R  g≤3=no  racimo=sí  G4
+       h1-090826+h2-090826  8+37=45R  g≤3=no  racimo=no  G2
+       h18-100826+h19-100826  31+4=35R  g≤3=sí  racimo=sí  G3
+       h2-200826+h3-200826  26+11=37R  g≤3=sí  racimo=no  G1
+       h2-240826+h3-240826  23+15=38R  g≤3=no  racimo=no  G1
+       h20-240826+h21-240826  5+44=49R  g≤3=no  racimo=sí  G2
+       h4-020926+h5-020926  12+29=41R  g≤3=no  racimo=no  G1
+       h15-030926+h16-030926  33+7=40R  g≤3=no  racimo=sí  G2
+
+  k=36  (evento = se toca el R nº 36, sin leak)
+     horas/eventos: intra 7 · lead 2 · cola-en-hora 1 · cruce :00 8
+        INTRA (tras G de esa hora): n=7
+           P(próx G ≤3 tiros)        2  28.6%
+           aún cae G en la hora      7  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      4  57.1%   (den=todas; si rompe: 57.1%)
+           rompe y queda sola        2  28.6%
+           R aún hasta esa G: p50=3  0 más=2  ≤2 más=2  ≥5 más=1
+           clima: floja 7 · normal 0 · rica 0
+        LEAD (aún no 1ª G): n=2
+           P(próx G ≤3 tiros)        1  50.0%
+           aún cae G en la hora      2  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: 0.0%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=13  0 más=0  ≤2 más=1  ≥5 más=1
+           clima: floja 2 · normal 0 · rica 0
+        COLA (cierra la hora; no mira H+1): n=1
+           P(próx G ≤3 tiros)        0  0.0%
+           aún cae G en la hora      0  0.0%
+           se acaba sin G            1  100.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: —)
+           rompe y queda sola        0  0.0%
+           clima: floja 1 · normal 0 · rica 0
+        CRUCE :00 (cola H + lead H+1; k cae en H+1): n=8
+           P(próx G ≤3 tiros)        2  25.0%
+           aún cae G en la hora      8  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      3  37.5%   (den=todas; si rompe: 37.5%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=7  0 más=0  ≤2 más=2  ≥5 más=5
+           clima: floja 3 · normal 5 · rica 0
+        TODAS las posturas de ESA hora (sin cruce): n=10
+           P(próx G ≤3 tiros)        3  30.0%
+           aún cae G en la hora      9  90.0%
+           se acaba sin G            1  10.0%
+           racimo tras la rompe      4  40.0%   (den=todas; si rompe: 44.4%)
+           rompe y queda sola        2  20.0%
+           R aún hasta esa G: p50=3  0 más=2  ≤2 más=3  ≥5 más=2
+           clima: floja 10 · normal 0 · rica 0
+
+════════ HOLDOUT 72 h  72 horas ════════
+  BASE (sin condicionar a 35)
+     cualquier racha que ROMPE: racimo ≤3 = 294/572  51.4%  · sola 57/572  10.0%
+     tras cualquier G (pares G→G + última sin 2ª): G en ≤3 = 379/707  53.6%
+     al 1er R de cualquier racha: P(G en ≤3) = 270/631  42.8%
+
+  k=15  (evento = se toca el R nº 15, sin leak)
+     horas/eventos: intra 28 · lead 5 · cola-en-hora 4 · cruce :00 3
+        INTRA (tras G de esa hora): n=28
+           P(próx G ≤3 tiros)       15  53.6%
+           aún cae G en la hora     28  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe     15  53.6%   (den=todas; si rompe: 53.6%)
+           rompe y queda sola        2  7.1%
+           R aún hasta esa G: p50=2  0 más=4  ≤2 más=15  ≥5 más=8
+           clima: floja 9 · normal 18 · rica 1
+        LEAD (aún no 1ª G): n=5
+           P(próx G ≤3 tiros)        0  0.0%
+           aún cae G en la hora      5  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      2  40.0%   (den=todas; si rompe: 40.0%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=6  0 más=0  ≤2 más=0  ≥5 más=4
+           clima: floja 3 · normal 2 · rica 0
+        COLA (cierra la hora; no mira H+1): n=4
+           P(próx G ≤3 tiros)        0  0.0%
+           aún cae G en la hora      0  0.0%
+           se acaba sin G            4  100.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: —)
+           rompe y queda sola        0  0.0%
+           clima: floja 2 · normal 2 · rica 0
+        CRUCE :00 (cola H + lead H+1; k cae en H+1): n=3
+           P(próx G ≤3 tiros)        1  33.3%
+           aún cae G en la hora      3  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      1  33.3%   (den=todas; si rompe: 33.3%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=4  0 más=0  ≤2 más=1  ≥5 más=1
+           clima: floja 2 · normal 1 · rica 0
+        TODAS las posturas de ESA hora (sin cruce): n=37
+           P(próx G ≤3 tiros)       15  40.5%
+           aún cae G en la hora     33  89.2%
+           se acaba sin G            4  10.8%
+           racimo tras la rompe     17  45.9%   (den=todas; si rompe: 51.5%)
+           rompe y queda sola        2  5.4%
+           R aún hasta esa G: p50=3  0 más=4  ≤2 más=15  ≥5 más=12
+           clima: floja 14 · normal 22 · rica 1
+
+  k=20  (evento = se toca el R nº 20, sin leak)
+     horas/eventos: intra 9 · lead 4 · cola-en-hora 3 · cruce :00 1
+        INTRA (tras G de esa hora): n=9
+           P(próx G ≤3 tiros)        4  44.4%
+           aún cae G en la hora      9  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      4  44.4%   (den=todas; si rompe: 44.4%)
+           rompe y queda sola        2  22.2%
+           R aún hasta esa G: p50=3  0 más=4  ≤2 más=4  ≥5 más=4
+           clima: floja 5 · normal 4 · rica 0
+        LEAD (aún no 1ª G): n=4
+           P(próx G ≤3 tiros)        4  100.0%
+           aún cae G en la hora      4  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      2  50.0%   (den=todas; si rompe: 50.0%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=1  0 más=1  ≤2 más=4  ≥5 más=0
+           clima: floja 3 · normal 1 · rica 0
+        COLA (cierra la hora; no mira H+1): n=3
+           P(próx G ≤3 tiros)        0  0.0%
+           aún cae G en la hora      0  0.0%
+           se acaba sin G            3  100.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: —)
+           rompe y queda sola        0  0.0%
+           clima: floja 1 · normal 2 · rica 0
+        CRUCE :00 (cola H + lead H+1; k cae en H+1): n=1
+           P(próx G ≤3 tiros)        0  0.0%
+           aún cae G en la hora      1  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: 0.0%)
+           rompe y queda sola        0  0.0%
+           R aún hasta esa G: p50=4  0 más=0  ≤2 más=0  ≥5 más=0
+           clima: floja 1 · normal 0 · rica 0
+        TODAS las posturas de ESA hora (sin cruce): n=16
+           P(próx G ≤3 tiros)        8  50.0%
+           aún cae G en la hora     13  81.2%
+           se acaba sin G            3  18.8%
+           racimo tras la rompe      6  37.5%   (den=todas; si rompe: 46.2%)
+           rompe y queda sola        2  12.5%
+           R aún hasta esa G: p50=1  0 más=5  ≤2 más=8  ≥5 más=4
+           clima: floja 9 · normal 7 · rica 0
+
+  k=30  (evento = se toca el R nº 30, sin leak)
+     horas/eventos: intra 1 · lead 0 · cola-en-hora 0 · cruce :00 0
+        INTRA (tras G de esa hora): n=1
+           P(próx G ≤3 tiros)        1  100.0%
+           aún cae G en la hora      1  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: 0.0%)
+           rompe y queda sola        1  100.0%
+           R aún hasta esa G: p50=1  0 más=0  ≤2 más=1  ≥5 más=0
+           clima: floja 1 · normal 0 · rica 0
+        LEAD (aún no 1ª G): n=0
+        COLA (cierra la hora; no mira H+1): n=0
+        CRUCE :00 (cola H + lead H+1; k cae en H+1): n=0
+        TODAS las posturas de ESA hora (sin cruce): n=1
+           P(próx G ≤3 tiros)        1  100.0%
+           aún cae G en la hora      1  100.0%
+           se acaba sin G            0  0.0%
+           racimo tras la rompe      0  0.0%   (den=todas; si rompe: 0.0%)
+           rompe y queda sola        1  100.0%
+           R aún hasta esa G: p50=1  0 más=0  ≤2 más=1  ≥5 más=0
+           clima: floja 1 · normal 0 · rica 0
+
+  k=35  (evento = se toca el R nº 35, sin leak)
+     horas/eventos: intra 0 · lead 0 · cola-en-hora 0 · cruce :00 0
+        INTRA (tras G de esa hora): n=0
+        LEAD (aún no 1ª G): n=0
+        COLA (cierra la hora; no mira H+1): n=0
+        CRUCE :00 (cola H + lead H+1; k cae en H+1): n=0
+     lista k=35 (intra/lead/cola de esa hora):
+
+  k=36  (evento = se toca el R nº 36, sin leak)
+     horas/eventos: intra 0 · lead 0 · cola-en-hora 0 · cruce :00 0
+        INTRA (tras G de esa hora): n=0
+        LEAD (aún no 1ª G): n=0
+        COLA (cierra la hora; no mira H+1): n=0
+        CRUCE :00 (cola H + lead H+1; k cae en H+1): n=0
+
+════════════════════════════════ LECTURA ════════════════════════════════
+Ya estaba: hueco no es pila · SEQUIA3 calla a 3–4 R · racimo O sequía.
+Diff: k=35 (exacto al tocar) · A vs B · intra / lead / cruce :00.
+
+VEREDICTO
+  NO sabemos que hay racimo a los 35 R. Esta hora live (cruce + G3 +
+  racimo de 4) es UNA rama. La otra (sola / otra sequía / se acaba)
+  pesa lo mismo. 35 no levanta A ni B vs k=15 ni vs la base.
+  Holdout 72 h: 0 horas tocan 35 (tope 31). n train en 35 = 12 (floja).
+  Alarma a 35 es fácil de cablear y es OTRO oficio (despertar en
+  sequía), el contrario de SEQUIA3. Cero cable. Cero beep P7.
+
+NÚMEROS QUE CIERRAN (train 1017 h; evento = se toca el R nº k)
+  Base sin condicionar a 35
+    cualquier racha que rompe → racimo ≤3     49.3%
+    tras cualquier G → próxima G ≤3           50.1%
+    al 1er R de cualquier racha → G en ≤3     40.7%
+  A = P(próx G ≤3 | ya van k R)   B = P(racimo tras rompe | k)
+    k     A todas   B todas   B intra   B cruce
+    15    43.4%     40.6%     46.4%     49.6%
+    20    40.7%     38.7%     48.2%     46.9%
+    30    25.0%     37.5%     56.2%*    52.2%
+    35    41.7%     41.7%     55.6%*    45.5%
+    36    30.0%     40.0%     57.1%*    37.5%
+    * n intra a 30/35/36 = 16 / 9 / 7. Cinco de nueve no es ley.
+  Cruce :00 a 35 (la forma de esta live): 11 pares · A 36.4% · B 45.5%.
+  Lead a 35: 2/2 aún cae G · 0/2 racimo.
+  Cola que cierra: 1/12 se acaba sin G en ESA hora.
+
+TIPS (oficios combinados, no “35 ⇒ G”)
+  · Go! / Next 3 / V3: siguen callados desde 3–4 R. No se despiertan
+    por k. Tras la que rompe, V3 puede hablar OTRA VEZ 3 tiros.
+  · LC-01: no se estira a +35. El tip de la G previa está frío.
+  · Alarma MP3 P7: solo zona tip ±1 del tiro en curso. No mezclar.
+  · Si se insiste: INFO mudo (“cola extrema, queda reloj”), sin
+    sonido de Pool 7. Hecho de mesa, no CALL.

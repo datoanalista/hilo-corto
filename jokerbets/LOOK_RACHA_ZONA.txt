@@ -1,0 +1,24 @@
+LOOK RACHA ZONA — qué es el 16 R
+indicio @19: 281 h  apuestas zona 3376  G en zona 858  (25.4% hit)
+Racha R más larga: 16 apuestas zona  en hora 2026-08-05-17
+Esas apuestas (minuto / no es cada tiro de la hora):
+  min 20  17:20  R  (sí se apostó, zona)
+  min 21  17:21  R  (sí se apostó, zona)
+  min 21  17:21  R  (sí se apostó, zona)
+  min 24  17:24  R  (sí se apostó, zona)
+  min 25  17:25  R  (sí se apostó, zona)
+  min 26  17:26  R  (sí se apostó, zona)
+  min 26  17:26  R  (sí se apostó, zona)
+  min 34  17:34  R  (sí se apostó, zona)
+  min 35  17:35  R  (sí se apostó, zona)
+  min 36  17:36  R  (sí se apostó, zona)
+  min 40  17:40  R  (sí se apostó, zona)
+  min 41  17:41  R  (sí se apostó, zona)
+  min 42  17:42  R  (sí se apostó, zona)
+  min 49  17:49  R  (sí se apostó, zona)
+  min 50  17:50  R  (sí se apostó, zona)
+  min 51  17:51  R  (sí se apostó, zona)
+
+Entre un R y el siguiente de esa lista hubo minutos SIN apuesta.
+G que cayeron fuera de ±1 no se apostaron y no cortan esta racha.
+No se persigue. No se ensancha la zona.

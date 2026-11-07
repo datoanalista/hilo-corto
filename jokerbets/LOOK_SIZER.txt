@@ -1,0 +1,33 @@
+LOOK SIZER — dinámico vs $150 fijo
+indicio 281 h · arranque $20k × 3 · zona · interruptor
+El ejemplo 4–5 h fuertes es FORMA. Se miden 4, 5 y proporcional.
+
+  $150 FIJO (todo el tramo): casa +3375750  piso pozo 54600 (91%)  vidas@0 0
+    wallets cierre 1325900/946700/1163150  suelo 15650 (78%)
+    ficha med 150  máx 150  subidas 0  bajadas 0
+
+  escalón cada 4 h de indicio (+50 si min≥30k, reset si <20k): casa +5496950  piso pozo 54600 (91%)  vidas@0 0
+    wallets cierre 2173200/1515700/1868050  suelo 15650 (78%)
+    ficha med 248  máx 250  subidas 2  bajadas 0
+
+  escalón cada 5 h de indicio: casa +5490050  piso pozo 54600 (91%)  vidas@0 0
+    wallets cierre 2171900/1508900/1869250  suelo 15650 (78%)
+    ficha med 247  máx 250  subidas 2  bajadas 0
+
+  proporcional cada 5 h (150×pozo/20k, clip 150–250): casa +5524450  piso pozo 54600 (91%)  vidas@0 0
+    wallets cierre 2180200/1517900/1886350  suelo 15650 (78%)
+    ficha med 248  máx 250  subidas 1  bajadas 0
+
+— revisión a ~3 semanas (136 h de indicio, ~21 d) —
+  solo esas 3 semanas, $150 fijo: casa +1345950  piso pozo 54600 (91%)  vidas@0 0
+    wallets cierre 389000/330200/686750  suelo 15650 (78%)
+    ficha med 150  máx 150  subidas 0  bajadas 0
+  ¿min wallet ≥ $30k al corte? True  min cierre 330200
+  Si sí: el resto del tramo podría pasar a $200 a mano.
+  Eso es revisión, no un agente tiro a tiro.
+
+Lectura
+  · Si el dinámico no mejora suelo NI reduce ruina, es capa extra.
+  · 4–5 h fuertes = racha ganadora. Subir ahí = techo de costura
+    en ficha (la hora siguiente a pico ya está OFF; esta es otra).
+  · Fijo + revisión a 3 semanas es el mismo oficio sin segundo interruptor.

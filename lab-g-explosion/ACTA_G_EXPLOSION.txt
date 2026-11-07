@@ -1,0 +1,92 @@
+ACTA LAB G-EXPLOSION — Ronda 1 (re-corrida)
+=============================================
+fecha: 2026-08-30
+lab: hilo-corto/lab-g-explosion/
+script: run_lab.py → reports/LAB_G_EXPLOSION.txt
+cinta PRINCIPAL: depuracion/depurar-all-4G-detail.txt (904 h · solo lectura)
++ extraccion-en-vivo.txt (15 h nuevas no en detail) · total 919 h
+holdout: 72 h
+
+NOTA: R1 inicial usó data_3dias+live por error. Vigente = detail 4G.
+
+PREGUNTA
+  ¿Se puede avisar el BLOQUE donde vendrá G explosiva (≥1200), ANTES?
+
+── RONDA 1 (detail) ──
+
+H0 CENSO (919 h)
+  G>=500:  48 ev · 46 h (5.0%)
+  G>=800:  21 ev · 20 h (2.2%)
+  G>=1000: 15 ev · 15 h (1.6%)
+  G>=1200: 13 ev · 13 h (1.4%)
+  G>=1500:  6 ev ·  6 h (0.7%)
+
+H1 BLOQUE G>=1200 (n=13)
+  20–39: 46% · 40–59: 38% · 0–19: 15%
+  NO hay bloque único — copy no puede ser solo 40–59
+
+H2 PERFIL @39 (G>=1200)
+  acum@39 1351 vs 411 · mean@39 190 vs 64 · maxG@39 1074 vs 156
+  VEREDICTO: OLOR tardío · FRÍO @19
+
+H3 @39 → 40–59 (G>=1200) · prec ~2% · holdout 0 tp · FRÍO
+
+H6 H14-300826 · unicornio · ninguna regla @39
+
+H7 FUENTES
+  detail solo: G>=1200 n=12 · merge live: n=13 (+h14-300826)
+
+── SÍNTESIS ──
+VIVE=0 · OLOR=perfil @39 + multi-bloque · FRÍO=regla única G>=1200
+R2: unicornio + aviso multi-bloque @39
+
+fin
+
+════════════════════════════════════════════════════════════════
+ACTA LAB G-EXPLOSION — Ronda 2
+════════════════════════════════════════════════════════════════
+fecha: 2026-09-02
+lab: hilo-corto/lab-g-explosion/
+script: run_r2.py → reports/LAB_G_EXPLOSION_R2.txt
+cinta: depurar-all-4G-detail + extraccion-en-vivo · n=988 h · holdout 72
+
+PREGUNTA R2
+  Multi-bloque (20–39 OR 40–59) @ min 39 + capa unicornio (h14-300826).
+
+── RONDA 2 ──
+
+H1 MULTI-BLOQUE @39 (train=916)
+  G>=800  base 1.53% · generosa@39 prec 7.9% rec 36% (tp=5 fp=58)
+  G>=1000 base 1.31% · generosa@39 prec 6.3% rec 33% (tp=4 fp=59)
+  G>=1200 base 1.09% · generosa@39 prec 6.3% rec 40% (tp=4 fp=59)
+  COMBO OR: prec ~3.1% rec ~60% (tp=6 fp=190) — muchos falsos positivos
+  holdout COMBO G>=1200: prec 13.3% tp=2 fp=13
+
+H2 COBERTURA G>=1200 (n=14)
+  9/14 con alguna regla @39 · 12/14 en bloques 20–59
+  2/14 en 0–19 (fuera target multi-bloque)
+
+H3 UNICORNIO h14-300826
+  G1200@45 hod=14 · @39 acum=149 mean=37 max=59
+  R1: NINGUNA regla · R2: SÍ vía flaca+dia (hod14|15 & mean@39<50)
+
+H4 PROXY G>=800 COMBO
+  tr prec 3.6% rec 50% · ho prec 13.3% tp=2
+
+H5 COPY INFO (propuesta — no cableado)
+  generosa@39: "Hora generosa @39 — vigilar bloques 20–59."
+  flaca+dia: "Unicornio tarde hod 14–15 — no descartar 40–59."
+  COMBO: "Olor explosión cola 20–59 posible."
+
+── SÍNTESIS R2 ──
+CENSO:
+  VIVE prod (aviso dashboard): 0 — prec insuficiente (~3–8%)
+  OLOR INFO @39 multi-bloque: sí — perfil + unicornio documentado
+  FRÍO: regla única → bloque 40–59 (R1 confirmado)
+
+DECISIÓN:
+  Lab CERRADO (R2 cumple mandato R1).
+  NO cablear dashboard — OK humano 2026-09-02: sin utilidad predictiva.
+  R3 no obligatoria (n G>=1200 ~1.4%).
+
+fin

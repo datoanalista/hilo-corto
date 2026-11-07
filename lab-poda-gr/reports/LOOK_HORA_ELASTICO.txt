@@ -1,0 +1,568 @@
+LOOK · hora elástica (bloques / vida). NO predicción.
+Unidad = HORA. Dentro = RACHA de cubos, no pool de anclas.
+Tono = suma lumen (cubetas LOOK_HUECO_TONO). Cupo = nG.
+Hueco = R entre G núcleo (tipo≠5). Extra no sienta.
+Cero tip. Cero d≤1 como juez. Cero Jaccard. Cero cable.
+
+MAPA DE CUBOS (oficio de esta mirada; colapsa LOOK_HORA_FORMAS):
+  pegada 0–1 R  (0_tren + 1_GRG · 2G / casi)
+  corto  2–4 R  (2_GRRG + 3-4R · G-RR-G / paso 4)
+  medio  5–8 R  (5R + 6-7R + el 8 de 8-10R · G-6R-G)
+  cola   9–15 R (9-10 + 11-15R · G-12R-G / 12–15)
+  sequia ≥16 R  (16R+ · 20 R y más)
+  9–10 R no tenía cubo propio en el relato vivo; se va con cola
+  (mismo “elástico largo” que G-12R-G). No se abre un 6º cubo.
+
+DATA
+  archivo: c:\operacion-joker\depuracion\depurar-all-4G-detail.txt
+  loader: load_horas_y_cinta = detail + horas live AUSENTES en detail
+  extra live (solo tags nuevos): C:\operacion-joker\experimento-nueva-caja-negra\hilo-corto\dashboard\extraccion\extraccion-en-vivo.txt
+  cinta 1165 h · train 1093 · holdout 72
+  con ≥1 G núcleo: train 1093 · hold 72
+  con ≥1 hueco: train 1092 · hold 72
+  con ≥3 huecos (mezcla 2–3): train 1087 · hold 71
+  CUERPO = train histórico. NO es la cola de ~900 anclas G+7
+  ni las ~559 ventanas hold de LOOK_G7. Hold 72 = testigo chico
+  (últimas 72 h del corpus; corte ya existente).
+  extra tipo 5: 0 en el lote. No entran.
+
+════════ TRAIN · CUERPO HISTÓRICO  1093 horas ════════
+Horas por tono: muy_apagado=314  opaco=264  normal=315  fuerte=122  muy_fuerte=62  supernova=16
+Horas por cupo: floja=213  normal=727  rica=153
+
+A. TONO — mezcla de cubos / rachas (n HORAS)
+   (solo horas con ≥3 huecos G→G; si no, no hay 2–3 tipos que mezclar)
+
+── muy_apagado  ·  308 horas ──
+
+   n_cubos distintos:  1=1  2=13  3=106  4+=188   · de 308 h
+   2 cubos cubren ≥2/3 de SUS huecos: 217/308 (70.5%)
+   3 cubos cubren ≥85% de SUS huecos: 210/308 (68.2%)
+   n_bloques (racha ≥2 del mismo cubo):  0=92  1=138  2=67  3+=11
+   ≥ mitad de huecos viven en alguna racha≥2: 95/308 (30.8%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         1         0         0 
+     2 cubos          1         8         3         1 
+     3 cubos         28        52        22         4 
+     4+             63        77        42         6 
+   monotipo (1 cubo): 1/308   mezcla 2: 13/308   mezcla 3: 106/308   4+: 188/308
+   presencia medio+cola (huecos, no racha): 170/308 (55.2%)
+   presencia medio+cola+pegada: 136/308 (44.2%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 5/308 (1.6%)
+   esos dos bloques + pegada en la hora: 5/308 (1.6%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 194/308 (63.0%)
+
+── opaco  ·  264 horas ──
+
+   n_cubos distintos:  1=0  2=4  3=72  4+=188   · de 264 h
+   2 cubos cubren ≥2/3 de SUS huecos: 194/264 (73.5%)
+   3 cubos cubren ≥85% de SUS huecos: 207/264 (78.4%)
+   n_bloques (racha ≥2 del mismo cubo):  0=42  1=92  2=92  3+=38
+   ≥ mitad de huecos viven en alguna racha≥2: 102/264 (38.6%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         1         3         0 
+     3 cubos          7        25        22        18 
+     4+             35        66        67        20 
+   monotipo (1 cubo): 0/264   mezcla 2: 4/264   mezcla 3: 72/264   4+: 188/264
+   presencia medio+cola (huecos, no racha): 175/264 (66.3%)
+   presencia medio+cola+pegada: 158/264 (59.8%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 4/264 (1.5%)
+   esos dos bloques + pegada en la hora: 2/264 (0.8%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 209/264 (79.2%)
+
+── normal  ·  315 horas ──
+
+   n_cubos distintos:  1=0  2=2  3=95  4+=218   · de 315 h
+   2 cubos cubren ≥2/3 de SUS huecos: 265/315 (84.1%)
+   3 cubos cubren ≥85% de SUS huecos: 274/315 (87.0%)
+   n_bloques (racha ≥2 del mismo cubo):  0=28  1=112  2=104  3+=71
+   ≥ mitad de huecos viven en alguna racha≥2: 130/315 (41.3%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         1         0         1 
+     3 cubos          4        27        32        32 
+     4+             24        84        72        38 
+   monotipo (1 cubo): 0/315   mezcla 2: 2/315   mezcla 3: 95/315   4+: 218/315
+   presencia medio+cola (huecos, no racha): 195/315 (61.9%)
+   presencia medio+cola+pegada: 184/315 (58.4%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 3/315 (1.0%)
+   esos dos bloques + pegada en la hora: 3/315 (1.0%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 282/315 (89.5%)
+
+── fuerte  ·  122 horas ──
+
+   n_cubos distintos:  1=0  2=4  3=31  4+=87   · de 122 h
+   2 cubos cubren ≥2/3 de SUS huecos: 97/122 (79.5%)
+   3 cubos cubren ≥85% de SUS huecos: 105/122 (86.1%)
+   n_bloques (racha ≥2 del mismo cubo):  0=12  1=34  2=43  3+=33
+   ≥ mitad de huecos viven en alguna racha≥2: 54/122 (44.3%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         2         2         0 
+     3 cubos          1         6         9        15 
+     4+             11        26        32        18 
+   monotipo (1 cubo): 0/122   mezcla 2: 4/122   mezcla 3: 31/122   4+: 87/122
+   presencia medio+cola (huecos, no racha): 77/122 (63.1%)
+   presencia medio+cola+pegada: 75/122 (61.5%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 1/122 (0.8%)
+   esos dos bloques + pegada en la hora: 1/122 (0.8%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 113/122 (92.6%)
+
+── muy_fuerte+  ·  78 horas ──
+
+   n_cubos distintos:  1=0  2=0  3=23  4+=55   · de 78 h
+   2 cubos cubren ≥2/3 de SUS huecos: 71/78 (91.0%)
+   3 cubos cubren ≥85% de SUS huecos: 69/78 (88.5%)
+   n_bloques (racha ≥2 del mismo cubo):  0=9  1=20  2=25  3+=24
+   ≥ mitad de huecos viven en alguna racha≥2: 32/78 (41.0%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         0         0         0 
+     3 cubos          3         5         3        12 
+     4+              6        15        22        12 
+   monotipo (1 cubo): 0/78   mezcla 2: 0/78   mezcla 3: 23/78   4+: 55/78
+   presencia medio+cola (huecos, no racha): 52/78 (66.7%)
+   presencia medio+cola+pegada: 50/78 (64.1%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 1/78 (1.3%)
+   esos dos bloques + pegada en la hora: 1/78 (1.3%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 72/78 (92.3%)
+
+A1. CUPO — lo mismo, sin mezclarlo con el tono
+   (solo horas con ≥3 huecos G→G; si no, no hay 2–3 tipos que mezclar)
+
+── floja  ·  207 horas ──
+
+   n_cubos distintos:  1=1  2=18  3=99  4+=89   · de 207 h
+   2 cubos cubren ≥2/3 de SUS huecos: 149/207 (72.0%)
+   3 cubos cubren ≥85% de SUS huecos: 118/207 (57.0%)
+   n_bloques (racha ≥2 del mismo cubo):  0=93  1=96  2=18  3+=0
+   ≥ mitad de huecos viven en alguna racha≥2: 53/207 (25.6%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         1         0         0 
+     2 cubos          1        11         6         0 
+     3 cubos         36        53        10         0 
+     4+             56        31         2         0 
+   monotipo (1 cubo): 1/207   mezcla 2: 18/207   mezcla 3: 99/207   4+: 89/207
+   presencia medio+cola (huecos, no racha): 103/207 (49.8%)
+   presencia medio+cola+pegada: 59/207 (28.5%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 4/207 (1.9%)
+   esos dos bloques + pegada en la hora: 2/207 (1.0%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 93/207 (44.9%)
+
+── normal  ·  727 horas ──
+
+   n_cubos distintos:  1=0  2=4  3=169  4+=554   · de 727 h
+   2 cubos cubren ≥2/3 de SUS huecos: 543/727 (74.7%)
+   3 cubos cubren ≥85% de SUS huecos: 599/727 (82.4%)
+   n_bloques (racha ≥2 del mismo cubo):  0=89  1=282  2=268  3+=88
+   ≥ mitad de huecos viven en alguna racha≥2: 270/727 (37.1%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         1         2         1 
+     3 cubos          7        56        71        35 
+     4+             82       225       195        52 
+   monotipo (1 cubo): 0/727   mezcla 2: 4/727   mezcla 3: 169/727   4+: 554/727
+   presencia medio+cola (huecos, no racha): 482/727 (66.3%)
+   presencia medio+cola+pegada: 460/727 (63.3%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 10/727 (1.4%)
+   esos dos bloques + pegada en la hora: 10/727 (1.4%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 627/727 (86.2%)
+
+── rica  ·  153 horas ──
+
+   n_cubos distintos:  1=0  2=1  3=59  4+=93   · de 153 h
+   2 cubos cubren ≥2/3 de SUS huecos: 152/153 (99.3%)
+   3 cubos cubren ≥85% de SUS huecos: 148/153 (96.7%)
+   n_bloques (racha ≥2 del mismo cubo):  0=1  1=18  2=45  3+=89
+   ≥ mitad de huecos viven en alguna racha≥2: 90/153 (58.8%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         0         0         1 
+     3 cubos          0         6         7        46 
+     4+              1        12        38        42 
+   monotipo (1 cubo): 0/153   mezcla 2: 1/153   mezcla 3: 59/153   4+: 93/153
+   presencia medio+cola (huecos, no racha): 84/153 (54.9%)
+   presencia medio+cola+pegada: 84/153 (54.9%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 0/153 (0.0%)
+   esos dos bloques + pegada en la hora: 0/153 (0.0%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 150/153 (98.0%)
+
+A2. EL EMPATE DE LOOK_HORA_FORMAS ¿ES MEZCLA DE 2–3 BLOQUES?
+   Empate = dos cubetas del CATÁLOGO (0_tren…16R+) empatan en ESA hora.
+   Aquí se cruza con n_cubos de oficio y con rachas≥2.
+   horas ≥3 huecos: 1087  ·  empate-catálogo: 399  ·  con moda: 688
+   — entre las EMPATE —
+
+   n_cubos distintos:  1=0  2=7  3=120  4+=272   · de 399 h
+   2 cubos cubren ≥2/3 de SUS huecos: 271/399 (67.9%)
+   3 cubos cubren ≥85% de SUS huecos: 297/399 (74.4%)
+   n_bloques (racha ≥2 del mismo cubo):  0=103  1=144  2=110  3+=42
+   ≥ mitad de huecos viven en alguna racha≥2: 112/399 (28.1%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          1         3         3         0 
+     3 cubos         24        45        33        18 
+     4+             78        96        74        24 
+   monotipo (1 cubo): 0/399   mezcla 2: 7/399   mezcla 3: 120/399   4+: 272/399
+   presencia medio+cola (huecos, no racha): 248/399 (62.2%)
+   presencia medio+cola+pegada: 223/399 (55.9%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 7/399 (1.8%)
+   esos dos bloques + pegada en la hora: 6/399 (1.5%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 315/399 (78.9%)
+   — entre las que SÍ tienen moda de catálogo —
+   n_cubos 1=1  2=16  3=207  4+=464  · bloques≥2: 356/688
+
+B. VIDA DE LA HORA (densidad intra-hora)
+   Densidad DENTRO de la hora. No es “zona manda el aterrizaje del hueco”.
+   horas nG≥6: 1042  (nG chico inventa “concentración”; por eso el corte)
+
+   B1. Mitades 0–29 vs 30–59  (nG de ESA mitad)
+     equilibrada |Δ|≤1: 452/1042 (43.4%)
+     inclina 2ª mitad (nG_30-59 ≥ nG_0-29 + 3): 163/1042 (15.6%)
+     inclina 1ª mitad (simétrico): 151/1042 (14.5%)
+     vuelco apagado→generoso (1ª ≤2 G y 2ª ≥5): 41/1042 (3.9%)
+     vuelco generoso→apagado: 38/1042 (3.6%)
+     tono-mitad apagada→generosa (lumen): 88/1042 (8.4%)
+     tono-mitad generosa→apagada: 76/1042 (7.3%)
+     nulo (G iid uniformes, nG med=10): P(|Δ|≥3) ≈ 34%. Si lo observado ≈ eso, la “mitad” es ruido de nG.
+
+   B2. Tercios 00–19 / 20–39 / 40–59 · densidad de G, no hueco
+     tercio con más G (sin empate):  00-19=257  20-39=251  40-59=254  empate=280
+     un tercio se lleva ≥50% de las G: 409/1042 (39.3%)
+     mediana de (máx tercio / nG): 0.44  (uniforme ≈ 0.40–0.45)
+     si los tres tercios se reparte el “quién gana” ≈ igual, el reloj 00/20/40 NO corta densidad (257/251/254 de 762).
+
+   B3. Tramo caliente (ventana 20 min que MÁS G junta, start libre)
+     No es zona 00/20/40: el start puede ser cualquier minuto 0..40.
+     mediana máx-ventana20 / nG: 0.50
+     horas con ≥50% G en algún tramo de 20 min: 755/1042 (72.5%)
+     horas con ≥60% G en algún tramo de 20 min: 238/1042 (22.8%)
+     por encima del p90 del nulo (minutos iid): 96/1042 (9.2%)  ← si ≈10%, es el nulo
+     start del tramo caliente (decenas): 00-09=275  10-19=212  20-29=218  30-39=293  40-49=44
+     si el start se reparte, el calor NO es el reloj 00/20/40.
+     span de la mitad más apretada de G: med 18 min  · ≤15 min 338/1042  · ≤20 min 755/1042
+
+   B4. Corte (mejor split 12..48) vs :30 vs borde de racha
+     horas con corte: 1042  · mediana del split: min 30
+     split cae cerca de :30 (±6): 198/1042 (19.0%)
+     el mejor split es ≥1.5× más marcado que partir en 30: 707/1042 (67.9%)
+     split más cerca de un BORDE DE RACHA que de :30: 923/1042 (88.6%)
+     split más cerca de :30 que de un borde: 38/1042 (3.6%)
+     dónde cae el split (decenas): 10-19=339  20-29=176  30-39=161  40-49=366
+
+C. TIRAS DE HORAS CONCRETAS (histórico, primera mitad del train)
+   No son las últimas 900 anclas ni el hold. Una tira = una hora.
+
+── h16-280726  muy_apagado  normal  nG=9  huecos=8  cubos=3  bloques=2  empate-cat=no
+   minutos G: 03 07 17 21 25 37 41 50 59
+   R entre G:    2  11   3   3  12   3   8   8
+   cubo:        cor  col  cor  cor  col  cor  med  med
+   rachas:      [corto×1]  [cola×1]  [corto×2]  [cola×1]  [corto×1]  [medio×2]
+   mitades nG 5|4  lumen 230|122  (opaca → apagada)  tercios 3|3|3  ventana20 4/9 @06
+
+── h5-090826  opaco  normal  nG=10  huecos=9  cubos=3  bloques=3  empate-cat=no
+   minutos G: 00 14 21 22 24 33 46 48 52 55
+   R entre G:   14   5   0   1   9  13   1   1   1
+   cubo:        col  med  peg  peg  col  col  peg  peg  peg
+   rachas:      [cola×1]  [medio×1]  [pegada×2]  [cola×2]  [pegada×3]
+   mitades nG 5|5  lumen 152|311  (apagada → opaca)  tercios 2|4|4  ventana20 5/10 @14
+
+── h16-060826  muy_fuerte+  normal  nG=11  huecos=10  cubos=3  bloques=2  empate-cat=no
+   minutos G: 00 04 13 18 21 28 33 37 42 51 55
+   R entre G:    4   8   3   2   6   3   3   3   9   3
+   cubo:        cor  med  cor  cor  med  cor  cor  cor  col  cor
+   rachas:      [corto×1]  [medio×1]  [corto×2]  [medio×1]  [corto×3]  [cola×1]  [corto×1]
+   mitades nG 6|5  lumen 947|272  (generosa → opaca)  tercios 4|4|3  ventana20 5/11 @18
+
+── h18-290726  normal  normal  nG=9  huecos=8  cubos=3  bloques=2  empate-cat=sí
+   minutos G: 02 03 12 15 26 37 44 50 56
+   R entre G:    0   9   1  11  10   6   5   5
+   cubo:        peg  col  peg  col  col  med  med  med
+   rachas:      [pegada×1]  [cola×1]  [pegada×1]  [cola×2]  [medio×3]
+   mitades nG 5|4  lumen 349|259  (opaca → opaca)  tercios 4|2|3  ventana20 4/9 @02
+
+════════ HOLDOUT · TESTIGO  72 horas ════════
+Horas por tono: muy_apagado=32  opaco=15  normal=15  fuerte=6  muy_fuerte=2  supernova=2
+Horas por cupo: floja=23  normal=43  rica=6
+Hold: n = HORAS. Celdas chicas. No coronar.
+
+A. TONO — mezcla de cubos / rachas (n HORAS)
+   (solo horas con ≥3 huecos G→G; si no, no hay 2–3 tipos que mezclar)
+
+── muy_apagado  ·  31 horas ──
+
+   n_cubos distintos:  1=0  2=5  3=14  4+=12   · de 31 h
+   2 cubos cubren ≥2/3 de SUS huecos: 24/31 (77.4%)
+   3 cubos cubren ≥85% de SUS huecos: 26/31 (83.9%)
+   n_bloques (racha ≥2 del mismo cubo):  0=8  1=13  2=9  3+=1
+   ≥ mitad de huecos viven en alguna racha≥2: 16/31 (51.6%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          1         3         1         0 
+     3 cubos          2         8         3         1 
+     4+              5         2         5         0 
+   monotipo (1 cubo): 0/31   mezcla 2: 5/31   mezcla 3: 14/31   4+: 12/31
+   presencia medio+cola (huecos, no racha): 14/31 (45.2%)
+   presencia medio+cola+pegada: 8/31 (25.8%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 0/31 (0.0%)
+   esos dos bloques + pegada en la hora: 0/31 (0.0%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 15/31 (48.4%)
+
+── opaco  ·  15 horas ──
+
+   n_cubos distintos:  1=0  2=0  3=4  4+=11   · de 15 h
+   2 cubos cubren ≥2/3 de SUS huecos: 12/15 (80.0%)
+   3 cubos cubren ≥85% de SUS huecos: 13/15 (86.7%)
+   n_bloques (racha ≥2 del mismo cubo):  0=2  1=5  2=6  3+=2
+   ≥ mitad de huecos viven en alguna racha≥2: 5/15 (33.3%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         0         0         0 
+     3 cubos          0         2         0         2 
+     4+              2         3         6         0 
+   monotipo (1 cubo): 0/15   mezcla 2: 0/15   mezcla 3: 4/15   4+: 11/15
+   presencia medio+cola (huecos, no racha): 12/15 (80.0%)
+   presencia medio+cola+pegada: 12/15 (80.0%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 0/15 (0.0%)
+   esos dos bloques + pegada en la hora: 0/15 (0.0%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 14/15 (93.3%)
+
+── normal  ·  15 horas ──
+
+   n_cubos distintos:  1=0  2=0  3=2  4+=13   · de 15 h
+   2 cubos cubren ≥2/3 de SUS huecos: 14/15 (93.3%)
+   3 cubos cubren ≥85% de SUS huecos: 12/15 (80.0%)
+   n_bloques (racha ≥2 del mismo cubo):  0=3  1=4  2=6  3+=2
+   ≥ mitad de huecos viven en alguna racha≥2: 3/15 (20.0%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         0         0         0 
+     3 cubos          0         0         2         0 
+     4+              3         4         4         2 
+   monotipo (1 cubo): 0/15   mezcla 2: 0/15   mezcla 3: 2/15   4+: 13/15
+   presencia medio+cola (huecos, no racha): 12/15 (80.0%)
+   presencia medio+cola+pegada: 12/15 (80.0%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 0/15 (0.0%)
+   esos dos bloques + pegada en la hora: 0/15 (0.0%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 13/15 (86.7%)
+
+── fuerte  ·  6 horas ──
+   (celda chica: n=6 HORAS. No coronar.)
+
+   n_cubos distintos:  1=0  2=0  3=2  4+=4   · de 6 h
+   2 cubos cubren ≥2/3 de SUS huecos: 6/6 (100.0%)
+   3 cubos cubren ≥85% de SUS huecos: 6/6 (100.0%)
+   n_bloques (racha ≥2 del mismo cubo):  0=0  1=1  2=4  3+=1
+   ≥ mitad de huecos viven en alguna racha≥2: 5/6 (83.3%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         0         0         0 
+     3 cubos          0         1         1         0 
+     4+              0         0         3         1 
+   monotipo (1 cubo): 0/6   mezcla 2: 0/6   mezcla 3: 2/6   4+: 4/6
+   presencia medio+cola (huecos, no racha): 4/6 (66.7%)
+   presencia medio+cola+pegada: 4/6 (66.7%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 1/6 (16.7%)
+   esos dos bloques + pegada en la hora: 1/6 (16.7%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 6/6 (100.0%)
+
+── muy_fuerte+  ·  4 horas ──
+   (celda chica: n=4 HORAS. No coronar.)
+
+   n_cubos distintos:  1=0  2=0  3=1  4+=3   · de 4 h
+   2 cubos cubren ≥2/3 de SUS huecos: 3/4 (75.0%)
+   3 cubos cubren ≥85% de SUS huecos: 3/4 (75.0%)
+   n_bloques (racha ≥2 del mismo cubo):  0=1  1=1  2=2  3+=0
+   ≥ mitad de huecos viven en alguna racha≥2: 1/4 (25.0%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         0         0         0 
+     3 cubos          0         0         1         0 
+     4+              1         1         1         0 
+   monotipo (1 cubo): 0/4   mezcla 2: 0/4   mezcla 3: 1/4   4+: 3/4
+   presencia medio+cola (huecos, no racha): 2/4 (50.0%)
+   presencia medio+cola+pegada: 2/4 (50.0%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 0/4 (0.0%)
+   esos dos bloques + pegada en la hora: 0/4 (0.0%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 4/4 (100.0%)
+
+A1. CUPO — lo mismo, sin mezclarlo con el tono
+   (solo horas con ≥3 huecos G→G; si no, no hay 2–3 tipos que mezclar)
+
+── floja  ·  22 horas ──
+
+   n_cubos distintos:  1=0  2=4  3=13  4+=5   · de 22 h
+   2 cubos cubren ≥2/3 de SUS huecos: 19/22 (86.4%)
+   3 cubos cubren ≥85% de SUS huecos: 17/22 (77.3%)
+   n_bloques (racha ≥2 del mismo cubo):  0=7  1=13  2=2  3+=0
+   ≥ mitad de huecos viven en alguna racha≥2: 9/22 (40.9%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          1         3         0         0 
+     3 cubos          2         9         2         0 
+     4+              4         1         0         0 
+   monotipo (1 cubo): 0/22   mezcla 2: 4/22   mezcla 3: 13/22   4+: 5/22
+   presencia medio+cola (huecos, no racha): 9/22 (40.9%)
+   presencia medio+cola+pegada: 3/22 (13.6%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 0/22 (0.0%)
+   esos dos bloques + pegada en la hora: 0/22 (0.0%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 5/22 (22.7%)
+
+── normal  ·  43 horas ──
+
+   n_cubos distintos:  1=0  2=1  3=8  4+=34   · de 43 h
+   2 cubos cubren ≥2/3 de SUS huecos: 34/43 (79.1%)
+   3 cubos cubren ≥85% de SUS huecos: 37/43 (86.0%)
+   n_bloques (racha ≥2 del mismo cubo):  0=7  1=10  2=21  3+=5
+   ≥ mitad de huecos viven en alguna racha≥2: 19/43 (44.2%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         0         1         0 
+     3 cubos          0         2         4         2 
+     4+              7         8        16         3 
+   monotipo (1 cubo): 0/43   mezcla 2: 1/43   mezcla 3: 8/43   4+: 34/43
+   presencia medio+cola (huecos, no racha): 31/43 (72.1%)
+   presencia medio+cola+pegada: 31/43 (72.1%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 1/43 (2.3%)
+   esos dos bloques + pegada en la hora: 1/43 (2.3%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 41/43 (95.3%)
+
+── rica  ·  6 horas ──
+   (celda chica: n=6 HORAS. No coronar.)
+
+   n_cubos distintos:  1=0  2=0  3=2  4+=4   · de 6 h
+   2 cubos cubren ≥2/3 de SUS huecos: 6/6 (100.0%)
+   3 cubos cubren ≥85% de SUS huecos: 6/6 (100.0%)
+   n_bloques (racha ≥2 del mismo cubo):  0=0  1=1  2=4  3+=1
+   ≥ mitad de huecos viven en alguna racha≥2: 2/6 (33.3%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         0         0         0 
+     3 cubos          0         0         1         1 
+     4+              0         1         3         0 
+   monotipo (1 cubo): 0/6   mezcla 2: 0/6   mezcla 3: 2/6   4+: 4/6
+   presencia medio+cola (huecos, no racha): 4/6 (66.7%)
+   presencia medio+cola+pegada: 4/6 (66.7%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 0/6 (0.0%)
+   esos dos bloques + pegada en la hora: 0/6 (0.0%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 6/6 (100.0%)
+
+A2. EL EMPATE DE LOOK_HORA_FORMAS ¿ES MEZCLA DE 2–3 BLOQUES?
+   Empate = dos cubetas del CATÁLOGO (0_tren…16R+) empatan en ESA hora.
+   Aquí se cruza con n_cubos de oficio y con rachas≥2.
+   horas ≥3 huecos: 71  ·  empate-catálogo: 27  ·  con moda: 44
+   — entre las EMPATE —
+
+   n_cubos distintos:  1=0  2=0  3=11  4+=16   · de 27 h
+   2 cubos cubren ≥2/3 de SUS huecos: 21/27 (77.8%)
+   3 cubos cubren ≥85% de SUS huecos: 22/27 (81.5%)
+   n_bloques (racha ≥2 del mismo cubo):  0=5  1=9  2=12  3+=1
+   ≥ mitad de huecos viven en alguna racha≥2: 10/27 (37.0%)
+   rejilla n_cubos × n_bloques (n HORAS, no % de G):
+            bloques0  bloques1  bloques2  bloques3+
+     1 cubo           0         0         0         0 
+     2 cubos          0         0         0         0 
+     3 cubos          0         5         6         0 
+     4+              5         4         6         1 
+   monotipo (1 cubo): 0/27   mezcla 2: 0/27   mezcla 3: 11/27   4+: 16/27
+   presencia medio+cola (huecos, no racha): 15/27 (55.6%)
+   presencia medio+cola+pegada: 13/27 (48.1%)
+   BLOQUE medio (≥2) y BLOQUE cola (≥2): 1/27 (3.7%)
+   esos dos bloques + pegada en la hora: 1/27 (3.7%)
+   pegada EN MEDIO de dos rachas (no solo al borde): 19/27 (70.4%)
+   — entre las que SÍ tienen moda de catálogo —
+   n_cubos 1=0  2=5  3=12  4+=27  · bloques≥2: 20/44
+
+B. VIDA DE LA HORA (densidad intra-hora)
+   Densidad DENTRO de la hora. No es “zona manda el aterrizaje del hueco”.
+   horas nG≥6: 64  (nG chico inventa “concentración”; por eso el corte)
+
+   B1. Mitades 0–29 vs 30–59  (nG de ESA mitad)
+     equilibrada |Δ|≤1: 29/64 (45.3%)
+     inclina 2ª mitad (nG_30-59 ≥ nG_0-29 + 3): 13/64 (20.3%)
+     inclina 1ª mitad (simétrico): 10/64 (15.6%)
+     vuelco apagado→generoso (1ª ≤2 G y 2ª ≥5): 5/64 (7.8%)
+     vuelco generoso→apagado: 2/64 (3.1%)
+     tono-mitad apagada→generosa (lumen): 4/64 (6.2%)
+     tono-mitad generosa→apagada: 5/64 (7.8%)
+     nulo (G iid uniformes, nG med=9): P(|Δ|≥3) ≈ 51%. Si lo observado ≈ eso, la “mitad” es ruido de nG.
+
+   B2. Tercios 00–19 / 20–39 / 40–59 · densidad de G, no hueco
+     tercio con más G (sin empate):  00-19=13  20-39=20  40-59=16  empate=15
+     un tercio se lleva ≥50% de las G: 29/64 (45.3%)
+     mediana de (máx tercio / nG): 0.45  (uniforme ≈ 0.40–0.45)
+     si los tres tercios se reparte el “quién gana” ≈ igual, el reloj 00/20/40 NO corta densidad (13/20/16 de 49).
+
+   B3. Tramo caliente (ventana 20 min que MÁS G junta, start libre)
+     No es zona 00/20/40: el start puede ser cualquier minuto 0..40.
+     mediana máx-ventana20 / nG: 0.50
+     horas con ≥50% G en algún tramo de 20 min: 44/64 (68.8%)
+     horas con ≥60% G en algún tramo de 20 min: 17/64 (26.6%)
+     por encima del p90 del nulo (minutos iid): 10/64 (15.6%)  ← si ≈10%, es el nulo
+     start del tramo caliente (decenas): 00-09=12  10-19=16  20-29=16  30-39=13  40-49=7
+     si el start se reparte, el calor NO es el reloj 00/20/40.
+     span de la mitad más apretada de G: med 17 min  · ≤15 min 27/64  · ≤20 min 44/64
+
+   B4. Corte (mejor split 12..48) vs :30 vs borde de racha
+     horas con corte: 64  · mediana del split: min 28
+     split cae cerca de :30 (±6): 16/64 (25.0%)
+     el mejor split es ≥1.5× más marcado que partir en 30: 41/64 (64.1%)
+     split más cerca de un BORDE DE RACHA que de :30: 57/64 (89.1%)
+     split más cerca de :30 que de un borde: 3/64 (4.7%)
+     dónde cae el split (decenas): 10-19=15  20-29=18  30-39=9  40-49=22
+
+
+════════════════════════════════ LECTURA ════════════════════════════════
+Unidad = HORA. Cuerpo = TRAIN histórico. Hold = testigo. Cero Jaccard.
+
+TRAIN: 1093 h con G  ·  1087 con ≥3 huecos
+  muy_apagado     308 h  mono 1  mez2 13  mez3 106  4+ 188  bloques≥2 78  med+col 170  BLOQUE med+col 5
+  opaco           264 h  mono 0  mez2 4  mez3 72  4+ 188  bloques≥2 130  med+col 175  BLOQUE med+col 4
+  fuerte          122 h  mono 0  mez2 4  mez3 31  4+ 87  bloques≥2 76  med+col 77  BLOQUE med+col 1
+  muy_fuerte+      78 h  mono 0  mez2 0  mez3 23  4+ 55  bloques≥2 49  med+col 52  BLOQUE med+col 1
+HOLD (testigo): 72 h con G  ·  71 con ≥3 huecos
+  muy_apagado      31 h  mono 0  mez2 5  mez3 14  4+ 12  bloques≥2 10  med+col 14  BLOQUE med+col 0
+  opaco            15 h  mono 0  mez2 0  mez3 4  4+ 11  bloques≥2 8  med+col 12  BLOQUE med+col 0
+  fuerte            6 h  mono 0  mez2 0  mez3 2  4+ 4  bloques≥2 5  med+col 4  BLOQUE med+col 1
+  muy_fuerte+       4 h  mono 0  mez2 0  mez3 1  4+ 3  bloques≥2 2  med+col 2  BLOQUE med+col 0
+
+CONTRASTE CON LOOK_HORA_FORMAS (no se esconde)
+  Ya: apagada plural 3–4 R, no 6–7; empate ~40%; colas = evento;
+      corto+cola bimodal; horas del mismo tono no se parecen.
+  NUEVO sobre el empate: de 308 apagadas con ≥3 huecos, mono 1 · 2 cubos 13 · 3 cubos 106 · 4+ 188.
+    Empate-catálogo en esas: 129/308. De TODO el train ≥3 huecos, empate 399/1087.
+    El empate NO es monotipo: 1 cubo 0/399 · 2 7 · 3 120 · 4+ 272.
+    ¿Son BLOQUES (racha≥2) o sopa de huecos sueltos? empate con ≥2 bloques: 152/399 · empate 3+ cubos y 0–1 bloque (sopa): 243/399.
+  Relato vivo G-6R-G + G-12R-G + pegadas: presencia medio+cola+pegada apagada 136/308 · opaca 158/264.
+    Como RACHAS≥2 (un bloque 6 y un bloque 12): apagada 5/308 · opaca 4/264. Eso es más raro que “aparecen los dos cubos”.
+  Vida / mitad: de 1042 h nG≥6, vuelco 1ª-apagada→2ª-generosa 41/1042 · inclina |Δ|≥3 314/1042 · calor > p90 nulo 96/1042.
+    Corte: mediana min 30 · cerca de racha 923/1042 · cerca de :30 38/1042.
+    Ojo: con 3–4 cubos hay muchos bordes; “cerca de racha” es fácil.
+    No corona que el corte SEA la racha. El :30 tampoco manda.
+
+YA ESTABA: corto+cola como mezcla de la hora (evento, no moda);
+  zona 00/20/40 no manda aterrizaje del hueco; islas; paso med 4/2.
+NUEVO: el empate no es monotipo NI dos bloques G-6 + G-12.
+  Es sopa de 3–4 cubos (a veces 2 cubren la mayoría de huecos).
+  La pegada entre rachas sí es frecuente. El vuelco a mitad no.
+  Tramo caliente ≈ nulo de nG chico. Tercios no cortan densidad.
+NO SENTAR: tip · d≤1 · COVER/SPAN · cubetas de día · “la hora
+  siempre parte a mitad” · taxonomía al dashboard. Hold chico.

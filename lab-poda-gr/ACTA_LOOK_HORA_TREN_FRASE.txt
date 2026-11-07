@@ -1,0 +1,47 @@
+ACTA LOOK — TREN 3–5: CÓMO SE LLEGA
+===================================
+fecha: 2026-09-12
+lab: hilo-corto/lab-poda-gr/
+script: look_hora_tren_frase.py → reports/LOOK_HORA_TREN_FRASE.txt
+cinta: 1173 h  h10-230726 → h12-120926
+Cero prod. Cero tip. Cero Jaccard. Cero cable.
+
+PREGUNTA (forma del humano)
+  Tren 3–4–5 G no nace de sequía 10–20 R
+  pegada. Nace: sequía larga se acaba →
+  huecos se acortan → G-G-G…
+
+VEREDICTO
+  La escalera limpia existe. Pocas.
+    h2-020926  22R → 12R → 1R → 1R → T3
+    h10-080826 15R → 4R → 4R → 1R → 1R → T3
+    h23-240826 16R → 5R → T3
+    h5-120826  15R → 1R → 1R → T3
+
+  El primo (sequía se acaba, luego ya no
+  es sequía, luego tren, sin bajar en
+  orden) es más habitual. Ej. h15-230726
+  T5: 17R → 7R → GGGGG. h15-300726 T5:
+  16R → 1 → 1 → 1 → 7 → GGGGG.
+
+  Lo que el ejemplo niega también tiene
+  película: sequía pegada al tren.
+    h23-060826  22R → T3
+    h22-030926  29R → T3
+    h18-010926  20R → T3
+    h20-130826  14R → T5
+  Hold: h5-100926  16R → T3 (dos veces).
+
+  Otras llegadas, también reales:
+  · tren al :00 de la hora (sin antes)
+  · ya era racimo corto (1–4 R) y se pega
+
+  Duración de G: el tren suele ABRIR con
+  G larga (100s+). No es «G largas que
+  se achican»; son huecos que a veces
+  se achican. La G que cierra la sequía
+  y abre el tren a menudo es estirada.
+
+NO CABLEAR. No es ley «si se acorta,
+viene tren». Tampoco «nunca sequía
+pegada». Dos frases conviven.

@@ -1,0 +1,50 @@
+COLORES — dos capas, cobertura total
+====================================
+stamp 2026-10-13  corrige el mal corte 3/4
+LOOK_COLORES.txt queda ARCHIVO (premisa falsa).
+
+Contrato de mesa (como lo dictó el humano)
+  Capa 1 — ruleta: 4 bonos (Luck, Deluxe, Dice, Showhow).
+  Si la punta cae en uno, las 3 cuentas ENTRAN al juego.
+  Capa 2 — juego de bono: 3 colores (rojo / azul / verde).
+  Cada cuenta elige uno. Ejemplo Luck: 60× rojo, 50× azul, 2× verde.
+  Las 3 cubren los 3. La casa se lleva el TOTAL del bono.
+  El lumen de la cinta ES esa suma. No falta un 4º color.
+
+1. Qué estaba mal
+  Se leyó “4 colores” donde decía 4 BONOS.
+  De ahí el 75% y “tajada fuera”. Eso no es la mesa.
+  LOOK_BANCA (50×lm − 600) vuelve a ser el libro de CASA,
+  no un techo. Sigue faltando un recibo real del $50×mult.
+
+2. ¿Rotar?
+  Para la casa: da lo mismo. Ya está todo cubierto.
+  60+50+2 = 112, fijen o roten.
+  Para cada wallet: el 2× se lo come UNA cuenta.
+  Rotar solo baraja quién se lleva el 60× y quién el 2×.
+  No sube el pozo. No baja el pozo.
+
+  Oficio combinado:
+    a) CUÁNDO = bandera (régimen ya visto).
+    b) DÓNDE = Pool 7 / zona.
+    c) COBERTURA = 1 cuenta por color, siempre los 3.
+       Nunca dos cuentas al mismo color: eso SÍ deja
+       un multiplicador fuera y rompe el total.
+    d) ORDEN RGB = indiferente para la casa.
+       Fijo es más simple. Rotar = seguro entre wallets,
+       no filo.
+
+3. Qué no hacer
+  No cazar el color que “viene cargado”: si las 3 ya
+  cubren, perseguirlo es mandar dos cuentas al mismo
+  plato y destapar otro. Ahí sí se fuga lumen.
+  No 4ª cuenta. No agente de color.
+
+API (consolidado-jocker.json, 10116 G)
+  c0/c1/c2 ~33% cada uno. El 0 rota (c0 16% · c1 7% · c2 2%).
+  Un color ≥55% del total: 60% de las G. Se carga, y se cubre.
+  A muerte + zona + indicio: 0 vaciados en las 3 wallets.
+  LOOK_API.txt.
+
+Asignación: fija, un índice API por cuenta (0/1/2).
+Cero bot. Cero $100. Cero REGLA cerrada.

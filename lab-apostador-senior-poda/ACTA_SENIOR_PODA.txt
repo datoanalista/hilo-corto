@@ -1,0 +1,317 @@
+ACTA LAB SENIOR-PODA
+====================
+lab: hilo-corto/lab-apostador-senior-poda/
+cinta: detail+live · n=1096 h · holdout 72
+Cero cambios prod (dashboard/motor/LIVE). Cero ML/fuzzy/Jaccard.
+
+
+R0 — 2026-09-07 (no reabrir holdout como novedad)
+------------------------------------------------
+script: eval_r0.py → reports/LAB_SENIOR_PODA_R0.txt
+
+PREGUNTA
+  ¿El apostador con ESTA puerta (esperar G post-sequía · poda +1
+  salvo Tren/Estirada · +2..+4 vs tip LC-01 ±1 · pools como ayuda)
+  ya se midió, o es el Go/No-Go, o es otro oficio?
+
+  Go/No-Go = compuerta de CUÁNDO. No es este apostador.
+  SEQUIA3 viejo: corta a 3 tiros pero el +1 AÚN se juega.
+
+  HOLDOUT 72 h
+    LC01_ALL        cov 100%   banda 38.0%  pnl −154
+    SEQUIA3_VIEJO   cov 46.6%  banda 59.4%  pnl +56
+    PODA            cov 51.2%  banda 60.7%  pnl +70   PnL>0 39/72
+  TRAIN
+    SEQUIA3_VIEJO   cov 44.7%  banda 57.9%  pnl +626
+    PODA            cov 47.8%  banda 59.4%  pnl +797
+  AYUDA: recorta sin sumar (hold mesa 30/72). ML/fuzzy no.
+
+
+R1 — 2026-09-07 (pedido: fino de la PUERTA, no ML)
+--------------------------------------------------
+script: eval_r1.py → reports/LAB_SENIOR_PODA_R1.txt
+
+PREGUNTA
+  De las formas de PUERTA (ventana / +1 / zona / gatillo / ancla),
+  ¿cuál gana como apostador (banda d≤1 + PnL 1:1) frente a PODA_R0?
+
+── ARQUITECTURA (A+B+C sobre taller D) ──
+
+  A  Puerta: ancla G · no sequía · gaps {2,3,4} · +1 Tren/Estirada
+  B  Chip: tip LC-01. En R0 = juez. En SOLO_ZONA = también COMPUERTA
+     (solo si el reloj 1:1 del tiro cae en tip ±1).
+  C  Ayuda pools: renglón de control (acuerdo ≥K). No eje.
+  D  Taller: este lab. Mismo walk causal que R0.
+
+  3/4/Tren = FORMAS. No se coronan. Extra de catálogo: ENTRADA_GR
+  (lab PODA G-R: no abrir si el ancla fue pegada).
+
+── HOLDOUT 72 h ──
+
+  PODA_R0         cov 51.2%  banda 60.7%  pnl +70   PnL>0 39/72
+  SOLO_ZONA       cov 28.3%  banda 89.0%  pnl +141  PnL>0 50/72
+                  Δbanda +28.3pp · Δpnl +71 · Δcov −23.0pp
+  GATILLO_HORA    cov 46.2%  banda 62.5%  pnl +74   PnL>0 37/72
+                  Δbanda +1.8pp · Δpnl +4 · Δcov −5.0pp
+  VENTANA_23      cov 40.6%  banda 62.7%  pnl +66
+  ESTIRADA_ONLY   cov 49.7%  banda 59.7%  pnl +62
+  PODA_SIEMPRE    cov 39.5%  banda 60.5%  pnl +53
+  VENTANA_2345    cov 59.1%  banda 56.6%  pnl +50
+  ENTRADA_GR      cov 41.6%  banda 57.1%  pnl +38
+
+── TRAIN (misma forma) ──
+
+  PODA_R0         cov 47.8%  banda 59.4%  pnl +797
+  SOLO_ZONA       cov 26.7%  banda 87.8%  pnl +1801  Δpnl +1004
+  GATILLO_HORA    cov 42.9%  banda 62.1%  pnl +926   Δpnl +129
+  VENTANA_23      cov 37.5%  banda 61.4%  pnl +765
+  ESTIRADA_ONLY   cov 46.2%  banda 58.6%  pnl +710
+  PODA_SIEMPRE    cov 37.2%  banda 59.7%  pnl +641
+  VENTANA_2345    cov 55.8%  banda 55.9%  pnl +584
+  ENTRADA_GR      cov 39.0%  banda 57.3%  pnl +507
+
+── POR QUÉ ZONA GANA (y qué NO es) ──
+
+  m_est = (minuto ancla + gap) mod 60. No usa el m0 real de la
+  G que cae. Hold, sobre 328 GO de R0: reloj vs real
+  d=0 44.8% · d=1 49.7% · d=2 3.7% · d≥3 1.8%  (d≤1 = 94.5%).
+  ambos 161 · solo_est 20 · solo_real 38 · ninguno 109.
+  La cola que R0 sí juega (reloj fuera del tip) neto 38−109 = −71.
+  Por eso zona +141 y R0 +70.
+
+  No es un segundo motor. Es A × B: la puerta de poda y el chip
+  como asiento. Jugar todos los tiros de la ventana diluye.
+  Sentarse solo en la silla del tip concentra. El 89% nace de
+  la física de casa (1 tiro ≈ 1 min), no de un filo nuevo.
+
+── CONTROL AYUDA (no eje) ──
+
+  Hold 30/72 h con mesa (R0 ya: incompleto, no novedad):
+  PODA_R0 49.8% / 57.5% / +19 · AYUDA_P8 26.3% / 58.2% / +11
+  Δbanda +0.7 · Δpnl −8. Recorta sin sumar.
+
+── CENSO ──
+
+  VIVE prod: 0 (cero cable)
+  OLOR: SOLO_ZONA ≥ PODA_R0 en banda+PnL (hold y train).
+        GATILLO_HORA misma dirección; Δ hold chico (+4).
+  FRÍO: VENTANA_2345 (N=4 desgaste en minutos)
+        ENTRADA_GR (exigir ancla G-R resta)
+        PODA_SIEMPRE (matar Tren/Estirada cuesta PnL)
+        CONTROL_AYUDA (R0; no se reabre)
+  CERCA: VENTANA_23 (−4 pnl; el +4 aún paga)
+         ESTIRADA_ONLY (−8; tren de 2 G cortas aún aporta)
+  FRÁGIL: Δ hold de GATILLO_HORA (+4)
+
+── ML / FUZZY ──
+
+  No en R1. Primero la puerta. Fuzzy de esta casa = SENIOR_FUZZY
+  sin esta poda (hold −167). Otro edificio: no se nombra.
+
+── DECISIÓN ──
+
+  Lab ABIERTO archivo. R1 de la puerta hecha. No minar 40 HIP.
+  Candidata de oficio: A (poda +2..+4 · Tren/Estirada) × B
+  (chip como compuerta de silla), no B solo como juez.
+  No coronar 3, ni 4, ni Tren, ni “sí zona”.
+  Siguiente solo con pedido, no ML:
+    1) zona × gatillo (combinar las dos que no restan)
+    2) zona en el ancla (¿el tip apunta a +2..+4?) sin el gap
+       de la G que cae — para ver si el 89% sobrevive sin el
+       reloj retrospectivo.
+  Cero cable dashboard.
+
+
+R2 — 2026-09-07 (pedido: «ok sigue» · ancla vs silla)
+-----------------------------------------------------
+script: eval_r2.py → reports/LAB_SENIOR_PODA_R2.txt
+cinta: n=1097 h (R1 era 1096; +1 h, last=h1-070926). Holdout 72.
+
+PREGUNTA
+  ¿ZONA_ANCLA (tip, al cerrar la G ancla, apunta a +2..+4)
+  sostiene el +141 / 89%, o el 89% era el filtro de reloj-del-tiro?
+  ¿Zona × gatillo suma? ¿Techo (no persigas tip lejano) mueve?
+
+  ESTIMACIÓN SOLO_ZONA (causal, no leak):
+    m_est = (m_ancla + gap_del_slot) mod 60. 1 tiro ≈ 1 min.
+    NO usa el m0 de la G que cae. Filtrar por ese m0 = quedarse
+    solo los aciertos del juez → banda 100% por construcción.
+
+── HOLDOUT 72 h (esta cinta; R1 HOLD no se reabre) ──
+
+  SOLO_ZONA         cov 28.3%  banda 88.4%  pnl +139  PnL>0 50/72
+  ZONA_X_GATILLO    cov 42.7%  banda 67.8%  pnl +97   PnL>0 40/72
+  ZONA_ANCLA        cov 47.5%  banda 65.5%  pnl +94   PnL>0 41/72
+  ZONA_ANCLA_TECHO  cov 47.5%  banda 65.5%  pnl +94   (≡ ANCLA)
+  GATILLO_HORA      cov 46.7%  banda 61.9%  pnl +71   PnL>0 37/72
+  PODA_R0           cov 51.6%  banda 60.3%  pnl +68   PnL>0 39/72
+
+  R1 HOLD congelado: SOLO_ZONA 28.3%/89.0%/+141 · GATILLO +74 · R0 +70
+  Drift = cinta +1 h, no novedad.
+
+── TRAIN ──
+
+  SOLO_ZONA         cov 26.7%  banda 87.8%  pnl +1806
+  ZONA_X_GATILLO    cov 37.8%  banda 69.9%  pnl +1346
+  ZONA_ANCLA/TECHO  cov 42.7%  banda 65.9%  pnl +1216
+  GATILLO_HORA      cov 42.9%  banda 62.2%  pnl +931
+  PODA_R0           cov 47.8%  banda 59.4%  pnl +801
+
+── ESPERADO vs LEAK ──
+
+  Hold, sobre 330 GO de R0:
+    reloj vs real d≤1 94.2% (d=0 44.2% · d=1 50.0%)
+    silla (m_est en tip±1) 181 · 88.4% · +139
+    no-silla 149 · 26.2% · −71
+    LEAK m0 futuro: n=199 banda 100% pnl +199  ← NO es política
+  El 88–89% es silla + física 1 tiro≈1 min. No oráculo.
+  No leak de minuto de la G que cae.
+
+── ¿EL ANCLA SOSTIENE EL +141? ──
+
+  NO. ZONA_ANCLA +94 / 65.5% vs SOLO_ZONA +139 / 88.4%.
+  El 89% no sobrevive sin el reloj del slot.
+  Sí recorta la cola lejana (tip fuera de +2..+4 ±1):
+    hold n=26 banda 0.0% pnl −26
+    train n=453 banda 4.2% pnl −415
+  “No persigas” paga. No es el 89%. TECHO ≡ ANCLA
+  (meter mG+1 en la ventana no movió ningún GO).
+
+── LOOK (no política, no se corona) ──
+
+  tip EXACTO en {+2,+3,+4} hold 234 / 73.9% / +112
+  anillo d=1                  70 / 37.1% / −18
+  El ±1 del ancla resta. Train: exacto +1473 · anillo −257.
+  Solo con pedido.
+
+── CENSO ──
+
+  VIVE prod: 0 (cero cable)
+  OLOR: SOLO_ZONA sigue ≥ (silla, no leak)
+        ZONA_X_GATILLO ≥ ZONA_ANCLA ≥ PODA_R0
+        (ráfaga en el ancla recorta cola 0%; no es el 89%)
+  FRÍO: ZONA_ANCLA_TECHO (≡ ANCLA en esta cinta)
+  FRÁGIL: Δ hold X_GATILLO vs ANCLA (+3)
+  LOOK: tip exacto en +2..+4 (no ficha)
+
+── DECISIÓN ──
+
+  Lab ABIERTO archivo. R2 hecha. No minar 40 HIP. No ML. No cable.
+  Dos oficios, no uno:
+    · SILLA (SOLO_ZONA): chip como asiento del reloj. 88–89%.
+    · RÁFAGA (ZONA_ANCLA / × gatillo): tip apunta a +2..+4
+      al cerrar el ancla. ~66% / +94..+97. Corta tip lejano.
+  No coronar silla, ni ancla, ni 3, ni 4.
+  Siguiente solo con pedido, no ML:
+    1) tip exacto en +2..+4 (el anillo del ancla resta)
+    2) silla también cuando el tiro es R (juez de silla vacía)
+  Cero cable dashboard.
+
+
+R3 — 2026-09-07 (pedido: «ambos» · exacto + silla en R)
+-------------------------------------------------------
+script: eval_r3.py → reports/LAB_SENIOR_PODA_R3.txt
+cinta: n=1097 h · holdout 72 · last=h1-070926. R2 HOLD no se reabre.
+
+PREGUNTA
+  1) ¿EXACTO_ANCLA (tip == {mG+2,+3,+4}, o +1 si Tren/Estirada;
+     sin anillo ±1) sostiene el LOOK +112, y el ±1 sigue restando?
+  2) ¿La silla sirve de “hay que estar” aunque el tiro sea R,
+     o solo cobra cuando hay G?
+
+  ESTIMACIÓN (causal, cero leak):
+    m_est = (m_ancla + gap_del_slot) mod 60. 1 tiro ≈ 1 min.
+    NO usa el m0 de la G que cae.
+
+── ARQUITECTURA (A+B+C sobre taller D) ──
+
+  A  Puerta: ancla G · no sequía · gaps {2,3,4} · +1 Tren/Estirada
+  B  Chip LC-01: asiento del reloj (silla) O filtro de ráfaga
+     al cerrar el ancla (±1 = ZONA_ANCLA · exacto = EXACTO_ANCLA)
+  C  Silla-en-R: el mismo asiento cobrado también si el tiro es R
+     (pierdes 1). Si G y banda, ganas 1. PnL 1:1 mezcla color+minuto.
+  D  Taller: este lab. Universo G→G para A; asientos para C.
+
+  Exacto / silla / silla-en-R = FORMAS. No se coronan.
+
+── HOLDOUT 72 h · universo G→G (RAMA A) ──
+
+  SOLO_ZONA       cov 28.3%  banda 88.4%  pnl +139  PnL>0 50/72
+  EXACTO_ANCLA    cov 38.3%  banda 71.4%  pnl +105  PnL>0 41/72
+  ZONA_ANCLA      cov 47.5%  banda 65.5%  pnl +94   PnL>0 41/72
+  PODA_R0         cov 51.6%  banda 60.3%  pnl +68   PnL>0 39/72
+
+  EXACTO vs ANCLA: Δbanda +6.0pp · Δpnl +11 · Δcov −9.2pp
+  EXACTO vs SOLO_ZONA: Δbanda −17.0pp · Δpnl −34
+
+── TRAIN · universo G→G ──
+
+  SOLO_ZONA       cov 26.7%  banda 87.8%  pnl +1806
+  EXACTO_ANCLA    cov 33.6%  banda 74.6%  pnl +1475
+  ZONA_ANCLA      cov 42.7%  banda 65.9%  pnl +1216
+  PODA_R0         cov 47.8%  banda 59.4%  pnl +801
+
+── ¿EL EXACTO SOSTIENE EL +112? ──
+
+  Como POLÍTICA (ventana ancla, +1 si Tren/Estirada): NO.
+  Hold +105 / 71.4% (n=245). No es +112. No es el 89%.
+  LOOK techo d=0 (R2, sin +1): hold n=234 banda 73.9% pnl +112
+  — el número sigue; no es esta política.
+  El ±1 del ancla SIGUE restando:
+    hold anillo n=59 banda 40.7% pnl −11
+    train anillo n=809 banda 34.0% pnl −259
+  ZONA_ANCLA = EXACTO + anillo = +105 + (−11) = +94.
+
+── RAMA B — silla también en R ──
+
+  SOLO_ZONA de R2 NO apostaba R (walk G→G). Hold 181 GO:
+    R 0 · G-banda 160 (88.4%) · G-fuera 21 (11.6%) · pnl +139
+  SILLA_TODOS = la misma silla en cada tiro apostable
+  cuya m_est pisa tip ±1, AUNQUE sea R.
+
+  HOLDOUT SILLA_TODOS  GO 981  banda-mixta 16.3%  pnl −661
+    R 800 (81.5%) · G-banda 160 (16.3%) · G-fuera 21 (2.1%)
+    (i) solo G +139 · (ii) mixto −661 · color-ciego −619
+    PnL>0 1/72 · med PnL/h −9.5
+  TRAIN    GO 13508  pnl −9310
+    R 11120 · G-banda 2099 · G-fuera 289 · (i) solo G +1810
+
+  Hold SILLA_G ≡ SOLO_ZONA (181 / +139). Train Δ+2 GO
+  (cola-hora / G sin lumen; no mueve el veredicto).
+
+── ¿LA SILLA SIRVE AUNQUE SALGA R? ──
+
+  NO. Solo cobra cuando hay G. El 88% es minuto entre G
+  que se sentaron, no un “hay que estar”. 4 de cada 5 GO
+  de SILLA_TODOS son miss de color. El asiento tampoco
+  paga color (color-ciego hold −619).
+
+── CENSO ──
+
+  VIVE prod: 0 (cero cable)
+  OLOR: SILLA G-only ≥ EXACTO_ANCLA ≥ ZONA_ANCLA ≥ PODA_R0
+        (exacto recorta anillo; no es el 89%)
+  FRÍO: SILLA_TODOS (silla-en-R; mixto hold −661)
+  LOOK: techo d=0 +112 (no política; +1 Tren baja a +105)
+
+── DECISIÓN ──
+
+  Lab ABIERTO archivo. R3 hecha. No minar 40 HIP. No ML. No cable.
+  Dos oficios vivos, uno frío:
+    · SILLA G-only (SOLO_ZONA): asiento del reloj. 88–89% / +139.
+    · RÁFAGA EXACTA: tip == +2..+4 (o +1 Tren). ~71% / +105.
+      Más estrecha que ±1 (+94). No es la silla.
+    · SILLA-EN-R: FRÍO. No es “hay que estar”.
+  No coronar exacto, ni silla, ni 3, ni 4.
+  Siguiente solo con pedido. Cero cable dashboard.
+
+
+CABLE — pastilla Apostador: (2026-09-07)
+---------------------------------------
+Pedido: «ok, entonces cablea apostador».
+Dashboard: pastilla a la derecha de Next: (MesasTodasV2).
+Sí = silla de minuto (m_est = m_ancla+gap en tip LC-01 ±1).
+Pasa = poda +1. No = sequía / sin G / ventana fuera tip.
+NO es “este tiro es G” (SILLA_TODOS FRÍO −661).
+No Next 3. No alarma P7. No COVER/SPAN. Cero LIVE writes.
+VIVE prod: pastilla (no apuesta automática).

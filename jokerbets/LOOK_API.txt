@@ -1,0 +1,57 @@
+LOOK API — consolidado-jocker.json · corte real 0/1/2
+actualizado 2026-09-04T19:56:43-04:00  rondas 61070  horas 1043
+indicio @19 281  ·  de esas, cierran fuerte+ 100
+Cobro: $50 × mult. 80× → $4.000 brutos. Casa = c0+c1+c2.
+Color a muerte. Silla zona tip±1 post-19.
+Solo lectura. Cero escritura a depuracion.
+
+— foto de las tajadas (toda la API, G con lumen>0) —
+  G con corte 10116  ·  un color ≥55% del total: 6035 (59.7%)
+  tajada media / % del lumen / veces 0 / veces el mínimo / veces el máximo:
+    c0: media 22.7  33.6%  cero 1647 (16.3%)  min 4864  max 3798
+    c1: media 22.0  32.6%  cero 677 (6.7%)  min 3153  max 3360
+    c2: media 22.7  33.7%  cero 197 (1.9%)  min 2099  max 2958
+
+— foto en horas con indicio @19 —
+  G con corte 2856  ·  un color ≥55% del total: 1744 (61.1%)
+  tajada media / % del lumen / veces 0 / veces el mínimo / veces el máximo:
+    c0: media 28.3  34.9%  cero 442 (15.5%)  min 1331  max 1123
+    c1: media 26.0  32.0%  cero 164 (5.7%)  min 869  max 926
+    c2: media 26.9  33.1%  cero 47 (1.6%)  min 656  max 807
+
+— foto solo en tiros ZONA de esas horas —
+  G con corte 858  ·  un color ≥55% del total: 503 (58.6%)
+  tajada media / % del lumen / veces 0 / veces el mínimo / veces el máximo:
+    c0: media 24.9  35.3%  cero 149 (17.4%)  min 416  max 318
+    c1: media 21.9  31.1%  cero 50 (5.8%)  min 262  max 284
+    c2: media 23.6  33.5%  cero 12 (1.4%)  min 180  max 256
+
+— recibos zona (G ~80, corte real) —
+  2026-07-23T15:54  luck     lm  80  c0=10 c1=40 c2=30  bruto $4000  neto $+3400  wallets +300/+1800/+1300
+  2026-07-23T18:21  deluxe   lm  88  c0=4 c1=80 c2=4  bruto $4400  neto $+3800  wallets +0/+3800/+0
+  2026-07-25T02:31  wheel    lm  80  c0=32 c1=25 c2=23  bruto $4000  neto $+3400  wallets +1400/+1050/+950
+  2026-07-26T12:31  luck     lm  75  c0=20 c1=40 c2=15  bruto $3750  neto $+3150  wallets +800/+1800/+550
+  2026-07-27T02:38  luck     lm  90  c0=20 c1=30 c2=40  bruto $4500  neto $+3900  wallets +800/+1300/+1800
+  2026-07-27T13:37  wheel    lm  87  c0=39 c1=10 c2=38  bruto $4350  neto $+3750  wallets +1750/+300/+1700
+  2026-07-30T15:38  wheel    lm  83  c0=58 c1=14 c2=11  bruto $4150  neto $+3550  wallets +2700/+500/+350
+  2026-07-31T11:50  deluxe   lm  79  c0=4 c1=40 c2=35  bruto $3950  neto $+3350  wallets +0/+1800/+1550
+
+— libro: indicio @19 + zona (lo que se puede detectar) —
+  indicio+zona: tiros 3376  G 858  casa +996550  med/hora +1500
+    pozo $60k: suelo 57750  vidas@0 0  / 281 h
+    c0 $20k: pnl +392400  suelo 20000  vidas@0 0  cierre 412400
+    c1 $20k: pnl +266000  suelo 18400  vidas@0 0  cierre 286000
+    c2 $20k: pnl +338150  suelo 18400  vidas@0 0  cierre 358150
+
+— techo: esas que además cierran fuerte+ (oráculo) —
+  oráculo fuerte+: tiros 1309  G 380  casa +882300  med/hora +4800
+    pozo $60k: suelo 57750  vidas@0 0  / 100 h
+    c0 $20k: pnl +375200  suelo 20000  vidas@0 0  cierre 395200
+    c1 $20k: pnl +225700  suelo 18400  vidas@0 0  cierre 245700
+    c2 $20k: pnl +281400  suelo 18400  vidas@0 0  cierre 301400
+
+Lectura
+  · Casa usa el corte REAL. Ya no es 2/50/60 inventado.
+  · Si un índice se come el 0 más que los otros, ESA wallet
+    es la que puede secarse a muerte. Si los 0 rotan, no.
+  · c0/c1/c2 = claves API. Luck en pantalla: izq / centro / der.

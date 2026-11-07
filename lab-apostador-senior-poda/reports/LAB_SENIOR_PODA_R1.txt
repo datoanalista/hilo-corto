@@ -1,0 +1,197 @@
+LAB SENIOR-PODA — R1
+barrido de PUERTA (formas: ventana / +1 / zona / gatillo / ancla)
+chip: LC-01 minutos ±1 · juez: banda d<=1 + PnL 1:1 · hora a hora
+CERO prod · CERO ML/fuzzy · CERO Jaccard · CERO P(tiro=G) como veredicto
+3/4/Tren = FORMAS. No se coronan. Holdout 72 = el de R0 (no novedad).
+
+precompute mesas (solo control AYUDA; las puertas no necesitan chips)…
+n=1096 train=1024 hold=72 mesas=1046
+horas con chips P0/P8: train 1016/1024 · hold 30/72  (cinta motor last=h20-060926)
+  CONTROL_AYUDA_P8 = renglón de control (acuerdo ≥1), no eje.
+  SOLO_ZONA: m_est = (minuto ancla + gap) mod 60  (1 tiro ≈ 1 min).
+  ENTRADA_GR: extra del catálogo (PODA G-R): no abrir si el ancla fue pegada.
+
+== TRAIN ==
+  [PODA_R0]
+    eventos=8919  GO=4259 (47.8%)  NO_GO=4660
+    exacto 22.4%  borde 37.0%  banda 59.4%
+    pnl=+797.0  avg/evento=+0.0894
+    hora a hora: 1023 h · con GO 992 · cobraron banda 846/992 (85.3%) · PnL>0 508/1023 (49.7%) · med PnL/h +0.0
+    motivos GO: estirada=676, gap2=1304, gap3=1103, gap4=914, tren=262
+  [PODA_SIEMPRE]
+    eventos=8919  GO=3321 (37.2%)  NO_GO=5598
+    exacto 21.7%  borde 38.0%  banda 59.7%
+    pnl=+641.0  avg/evento=+0.0719
+    hora a hora: 1023 h · con GO 961 · cobraron banda 788/961 (82.0%) · PnL>0 472/1023 (46.1%) · med PnL/h +0.0
+    motivos GO: gap2=1304, gap3=1103, gap4=914
+  [VENTANA_23]
+    eventos=8919  GO=3345 (37.5%)  NO_GO=5574
+    exacto 23.7%  borde 37.7%  banda 61.4%
+    pnl=+765.0  avg/evento=+0.0858
+    hora a hora: 1023 h · con GO 959 · cobraron banda 763/959 (79.6%) · PnL>0 506/1023 (49.5%) · med PnL/h +0.0
+    motivos GO: estirada=676, gap2=1304, gap3=1103, tren=262
+  [VENTANA_2345]
+    eventos=8919  GO=4974 (55.8%)  NO_GO=3945
+    exacto 21.5%  borde 34.4%  banda 55.9%
+    pnl=+584.0  avg/evento=+0.0655
+    hora a hora: 1023 h · con GO 1003 · cobraron banda 876/1003 (87.3%) · PnL>0 478/1023 (46.7%) · med PnL/h +0.0
+    motivos GO: estirada=676, gap2=1304, gap3=1103, gap4=914, gap5=715, tren=262
+  [SOLO_ZONA]
+    eventos=8919  GO=2381 (26.7%)  NO_GO=6538
+    exacto 38.4%  borde 49.4%  banda 87.8%
+    pnl=+1801.0  avg/evento=+0.2019
+    hora a hora: 1023 h · con GO 820 · cobraron banda 797/820 (97.2%) · PnL>0 743/1023 (72.6%) · med PnL/h +1.0
+    motivos GO: estirada=158, gap2=757, gap3=734, gap4=541, tren=191
+  [GATILLO_HORA]
+    eventos=8919  GO=3824 (42.9%)  NO_GO=5095
+    exacto 24.0%  borde 38.1%  banda 62.1%
+    pnl=+926.0  avg/evento=+0.1038
+    hora a hora: 1023 h · con GO 975 · cobraron banda 824/975 (84.5%) · PnL>0 546/1023 (53.4%) · med PnL/h +1.0
+    motivos GO: estirada=578, gap2=1190, gap3=978, gap4=816, tren=262
+  [ESTIRADA_ONLY]
+    eventos=8919  GO=4124 (46.2%)  NO_GO=4795
+    exacto 21.9%  borde 36.7%  banda 58.6%
+    pnl=+710.0  avg/evento=+0.0796
+    hora a hora: 1023 h · con GO 990 · cobraron banda 833/990 (84.1%) · PnL>0 488/1023 (47.7%) · med PnL/h +0.0
+    motivos GO: estirada=803, gap2=1304, gap3=1103, gap4=914
+  [ENTRADA_GR]
+    eventos=8919  GO=3475 (39.0%)  NO_GO=5444
+    exacto 21.2%  borde 36.1%  banda 57.3%
+    pnl=+507.0  avg/evento=+0.0568
+    hora a hora: 1023 h · con GO 977 · cobraron banda 777/977 (79.5%) · PnL>0 455/1023 (44.5%) · med PnL/h +0.0
+    motivos GO: estirada=676, gap2=1104, gap3=922, gap4=773
+  [CONTROL_AYUDA_P8]
+    eventos=8919  GO=2522 (28.3%)  NO_GO=6397
+    exacto 22.5%  borde 36.7%  banda 59.2%
+    pnl=+466.0  avg/evento=+0.0522
+    hora a hora: 1023 h · con GO 886 · cobraron banda 702/886 (79.2%) · PnL>0 432/1023 (42.2%) · med PnL/h +0.0
+    motivos GO: estirada=393, gap2=760, gap3=671, gap4=539, tren=159
+    diag zona (sobre GO de forma R0): n=4259  m_est en tip±1 55.9%  real en tip±1 59.4%
+      reloj vs real: d=0 44.4%  d=1 50.3%  d=2 4.1%  d≥3 1.2%
+      ambos 2091  solo_est 290  solo_real 437  ninguno 1441
+
+== HOLDOUT ==
+  [PODA_R0]
+    eventos=640  GO=328 (51.2%)  NO_GO=312
+    exacto 21.6%  borde 39.0%  banda 60.7%
+    pnl=+70.0  avg/evento=+0.1094
+    hora a hora: 72 h · con GO 70 · cobraron banda 58/70 (82.9%) · PnL>0 39/72 (54.2%) · med PnL/h +1.0
+    motivos GO: estirada=54, gap2=102, gap3=83, gap4=68, tren=21
+  [PODA_SIEMPRE]
+    eventos=640  GO=253 (39.5%)  NO_GO=387
+    exacto 20.9%  borde 39.5%  banda 60.5%
+    pnl=+53.0  avg/evento=+0.0828
+    hora a hora: 72 h · con GO 68 · cobraron banda 56/68 (82.4%) · PnL>0 35/72 (48.6%) · med PnL/h +0.0
+    motivos GO: gap2=102, gap3=83, gap4=68
+  [VENTANA_23]
+    eventos=640  GO=260 (40.6%)  NO_GO=380
+    exacto 22.7%  borde 40.0%  banda 62.7%
+    pnl=+66.0  avg/evento=+0.1031
+    hora a hora: 72 h · con GO 69 · cobraron banda 54/69 (78.3%) · PnL>0 37/72 (51.4%) · med PnL/h +1.0
+    motivos GO: estirada=54, gap2=102, gap3=83, tren=21
+  [VENTANA_2345]
+    eventos=640  GO=378 (59.1%)  NO_GO=262
+    exacto 20.4%  borde 36.2%  banda 56.6%
+    pnl=+50.0  avg/evento=+0.0781
+    hora a hora: 72 h · con GO 71 · cobraron banda 59/71 (83.1%) · PnL>0 39/72 (54.2%) · med PnL/h +1.0
+    motivos GO: estirada=54, gap2=102, gap3=83, gap4=68, gap5=50, tren=21
+  [SOLO_ZONA]
+    eventos=640  GO=181 (28.3%)  NO_GO=459
+    exacto 37.0%  borde 51.9%  banda 89.0%
+    pnl=+141.0  avg/evento=+0.2203
+    hora a hora: 72 h · con GO 56 · cobraron banda 53/56 (94.6%) · PnL>0 50/72 (69.4%) · med PnL/h +1.0
+    motivos GO: estirada=10, gap2=65, gap3=48, gap4=40, tren=18
+  [GATILLO_HORA]
+    eventos=640  GO=296 (46.2%)  NO_GO=344
+    exacto 23.3%  borde 39.2%  banda 62.5%
+    pnl=+74.0  avg/evento=+0.1156
+    hora a hora: 72 h · con GO 67 · cobraron banda 54/67 (80.6%) · PnL>0 37/72 (51.4%) · med PnL/h +1.0
+    motivos GO: estirada=49, gap2=93, gap3=71, gap4=62, tren=21
+  [ESTIRADA_ONLY]
+    eventos=640  GO=318 (49.7%)  NO_GO=322
+    exacto 21.4%  borde 38.4%  banda 59.7%
+    pnl=+62.0  avg/evento=+0.0969
+    hora a hora: 72 h · con GO 70 · cobraron banda 58/70 (82.9%) · PnL>0 39/72 (54.2%) · med PnL/h +1.0
+    motivos GO: estirada=65, gap2=102, gap3=83, gap4=68
+  [ENTRADA_GR]
+    eventos=640  GO=266 (41.6%)  NO_GO=374
+    exacto 20.3%  borde 36.8%  banda 57.1%
+    pnl=+38.0  avg/evento=+0.0594
+    hora a hora: 72 h · con GO 70 · cobraron banda 54/70 (77.1%) · PnL>0 34/72 (47.2%) · med PnL/h +0.0
+    motivos GO: estirada=54, gap2=80, gap3=76, gap4=56
+  [CONTROL_AYUDA_P8]
+    eventos=640  GO=67 (10.5%)  NO_GO=573
+    exacto 16.4%  borde 41.8%  banda 58.2%
+    pnl=+11.0  avg/evento=+0.0172
+    hora a hora: 72 h · con GO 27 · cobraron banda 18/27 (66.7%) · PnL>0 12/72 (16.7%) · med PnL/h +0.0
+    motivos GO: estirada=11, gap2=19, gap3=23, gap4=13, tren=1
+    diag zona (sobre GO de forma R0): n=328  m_est en tip±1 55.2%  real en tip±1 60.7%
+      reloj vs real: d=0 44.8%  d=1 49.7%  d=2 3.7%  d≥3 1.8%
+      ambos 161  solo_est 20  solo_real 38  ninguno 109
+
+== DIFF HOLDOUT vs PODA_R0 ==
+  PODA_SIEMPRE     cov 39.5%  banda 60.5%  pnl +53  Δbanda -0.2pp  Δpnl -17  Δcov -11.7pp
+  VENTANA_23       cov 40.6%  banda 62.7%  pnl +66  Δbanda +2.0pp  Δpnl -4  Δcov -10.6pp
+  VENTANA_2345     cov 59.1%  banda 56.6%  pnl +50  Δbanda -4.1pp  Δpnl -20  Δcov +7.8pp
+  SOLO_ZONA        cov 28.3%  banda 89.0%  pnl +141  Δbanda +28.3pp  Δpnl +71  Δcov -23.0pp
+  GATILLO_HORA     cov 46.2%  banda 62.5%  pnl +74  Δbanda +1.8pp  Δpnl +4  Δcov -5.0pp
+  ESTIRADA_ONLY    cov 49.7%  banda 59.7%  pnl +62  Δbanda -0.9pp  Δpnl -8  Δcov -1.6pp
+  ENTRADA_GR       cov 41.6%  banda 57.1%  pnl +38  Δbanda -3.5pp  Δpnl -32  Δcov -9.7pp
+
+== DIFF TRAIN vs PODA_R0 ==
+  PODA_SIEMPRE     cov 37.2%  banda 59.7%  pnl +641  Δbanda +0.3pp  Δpnl -156  Δcov -10.5pp
+  VENTANA_23       cov 37.5%  banda 61.4%  pnl +765  Δbanda +2.1pp  Δpnl -32  Δcov -10.2pp
+  VENTANA_2345     cov 55.8%  banda 55.9%  pnl +584  Δbanda -3.5pp  Δpnl -213  Δcov +8.0pp
+  SOLO_ZONA        cov 26.7%  banda 87.8%  pnl +1801  Δbanda +28.5pp  Δpnl +1004  Δcov -21.1pp
+  GATILLO_HORA     cov 42.9%  banda 62.1%  pnl +926  Δbanda +2.8pp  Δpnl +129  Δcov -4.9pp
+  ESTIRADA_ONLY    cov 46.2%  banda 58.6%  pnl +710  Δbanda -0.7pp  Δpnl -87  Δcov -1.5pp
+  ENTRADA_GR       cov 39.0%  banda 57.3%  pnl +507  Δbanda -2.1pp  Δpnl -290  Δcov -8.8pp
+
+== CONTROL AYUDA (no eje) · hold horas con mesa 30/72 ==
+  [PODA_R0]
+    eventos=255  GO=127 (49.8%)  NO_GO=128
+    exacto 21.3%  borde 36.2%  banda 57.5%
+    pnl=+19.0  avg/evento=+0.0745
+    hora a hora: 30 h · con GO 29 · cobraron banda 24/29 (82.8%) · PnL>0 14/30 (46.7%) · med PnL/h -0.5
+  [CONTROL_AYUDA_P8]
+    eventos=255  GO=67 (26.3%)  NO_GO=188
+    exacto 16.4%  borde 41.8%  banda 58.2%
+    pnl=+11.0  avg/evento=+0.0431
+    hora a hora: 30 h · con GO 27 · cobraron banda 18/27 (66.7%) · PnL>0 12/30 (40.0%) · med PnL/h +0.0
+  CONTROL − PODA_R0 (mesa): Δbanda +0.7pp  Δpnl -8.0  Δcov -23.5pp
+  (R0 ya: ayuda recorta sin sumar. No se reabre como novedad.)
+
+== RANK HOLDOUT (puertas; juez = PnL luego banda) ==
+  1. SOLO_ZONA        HOLD cov 28.3% banda 89.0% pnl +141  PnL>0 50/72  | TRAIN cov 26.7% banda 87.8% pnl +1801
+  2. GATILLO_HORA     HOLD cov 46.2% banda 62.5% pnl +74  PnL>0 37/72  | TRAIN cov 42.9% banda 62.1% pnl +926
+  3. PODA_R0          HOLD cov 51.2% banda 60.7% pnl +70  PnL>0 39/72  | TRAIN cov 47.8% banda 59.4% pnl +797
+  4. VENTANA_23       HOLD cov 40.6% banda 62.7% pnl +66  PnL>0 37/72  | TRAIN cov 37.5% banda 61.4% pnl +765
+  5. ESTIRADA_ONLY    HOLD cov 49.7% banda 59.7% pnl +62  PnL>0 39/72  | TRAIN cov 46.2% banda 58.6% pnl +710
+  6. PODA_SIEMPRE     HOLD cov 39.5% banda 60.5% pnl +53  PnL>0 35/72  | TRAIN cov 37.2% banda 59.7% pnl +641
+  7. VENTANA_2345     HOLD cov 59.1% banda 56.6% pnl +50  PnL>0 39/72  | TRAIN cov 55.8% banda 55.9% pnl +584
+  8. ENTRADA_GR       HOLD cov 41.6% banda 57.1% pnl +38  PnL>0 34/72  | TRAIN cov 39.0% banda 57.3% pnl +507
+
+== LECTURA ==
+  Formas, no coronas. Comparar contra PODA_R0 (R0 ya medida).
+  Gana hold: SOLO_ZONA (cov 28.3% banda 89.0% pnl +141) vs R0
+  (51.2% / 60.7% / +70). Train misma forma (26.7% / 87.8% / +1801
+  vs 47.8% / 59.4% / +797). No es oráculo: el reloj 1:1 del gap
+  vs el minuto real de la G está a d≤1 en 94.5% hold (44.8% d=0 ·
+  49.7% d=1). Sobre GO R0 hold: ambos 161 · solo_est 20 ·
+  solo_real 38 · ninguno 109. La cola que R0 sí juega
+  (reloj fuera del tip) neto 38−109 = −71. Por eso zona +141
+  y R0 +70. Arquitectura: puerta A (+2..+4 · Tren/Estirada) ×
+  chip B como COMPUERTA (sentarse solo en la silla del tip),
+  no solo como juez.
+  GATILLO_HORA: hold +74 / 62.5% (Δpnl +4) · train +926 / 62.1%
+  (Δpnl +129). Misma dirección; hold chico. No coronar.
+  FRÍO: VENTANA_2345 (N=4 desgaste en minutos: hold 56.6% +50)
+  · ENTRADA_GR (ancla G-R resta: hold 57.1% +38)
+  · PODA_SIEMPRE (matar +1 Tren/Estirada: hold +53).
+  Cerca de R0, no ganan: VENTANA_23 (−4 pnl; el +4 aún paga)
+  · ESTIRADA_ONLY (−8; el tren de 2 G cortas aún aporta).
+  CONTROL_AYUDA_P8 = acuerdo ≥K; renglón, no eje. R0 ya.
+  Siguiente (no ML): zona × gatillo, o zona decidida en el ancla
+  (¿el tip apunta a +2..+4?) sin usar el gap de la G que cae.
+  Cero cable. Cero fuzzy.
+

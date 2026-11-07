@@ -1,0 +1,207 @@
+LOOK · aviso del acortadero · cola en minutos
+Aviso = se cerró una sequía ≥10 R y el SIGUIENTE hueco ya no es sequía.
+Esa G (la que cierra la corta) es el reloj del aviso.
+Cola útil = minutos desde ese aviso hasta la 1ª G del tren.
+No Jaccard. No saco. Cero cable.
+Cinta 1174 h  h10-230726 → h13-120926
+
+════ TRAIN · 1327 sequías ≥10R cerradas ════
+  — AVISO y el tren viene DESPUÉS (sí se ve antes) · 47 películas —
+  h19-230726   S11 @25 → 3R:k @30 (+5 min)  T3 42–45 (3 min)  tren 42–45 · cola aviso→tren 12 min  actividad 20 min
+  h23-230726   S18 @21 → 4R:k @27 (+6 min)  T3 36–39 (3 min)  tren 36–39 · cola aviso→tren 9 min  actividad 18 min
+  h12-250726   S16 @17 → 3R:k @21 (+4 min)  T4 36–41 (5 min)  tren 36–41 · cola aviso→tren 15 min  actividad 24 min
+  h1-260726    S18 @18 → 6R:m @25 (+7 min)  T3 50–53 (3 min)  tren 50–53 · cola aviso→tren 25 min  actividad 35 min
+  h13-290726   S18 @42 → 2R:k @46 (+4 min)  T3 50–54 (4 min)  tren 50–54 · cola aviso→tren 4 min  actividad 12 min
+  h22-290726   S10 @11 → 1R:C @14 (+3 min)  T3 55–58 (3 min)  tren 55–58 · cola aviso→tren 41 min  actividad 47 min
+  h1-300726    S14 @19 → 0R:T @21 (+2 min)  T3 35–38 (3 min)  tren 35–38 · cola aviso→tren 14 min  actividad 19 min
+  h5-300726    S10 @21 → 7R:m @29 (+8 min)  T3 41–44 (3 min)  tren 41–44 · cola aviso→tren 12 min  actividad 23 min
+  h15-300726   S16 @16 → 1R:C @19 (+3 min)  T5 30–38 (8 min)  tren 30–38 · cola aviso→tren 11 min  actividad 22 min
+  h20-300726   S12 @12 → 3R:k @16 (+4 min)  T3 22–25 (3 min)  tren 22–25 · cola aviso→tren 6 min  actividad 13 min
+  h14-310726   S15 @47 → 1R:C @50 (+3 min)  T3 52–56 (4 min)  tren 52–56 · cola aviso→tren 2 min  actividad 9 min
+  h0-030826    S13 @32 → 0R:T @34 (+2 min)  T3 56–59 (3 min)  tren 56–59 · cola aviso→tren 22 min  actividad 27 min
+  h5-030826    S13 @26 → 7R:m @37 (+11 min)  T3 40–44 (4 min)  tren 40–44 · cola aviso→tren 3 min  actividad 18 min
+  h10-030826   S13 @32 → 2R:k @35 (+3 min)  T4 50–55 (5 min)  tren 50–55 · cola aviso→tren 15 min  actividad 23 min
+  h6-040826    S19 @33 → 8R:m @41 (+8 min)  T3 53–56 (3 min)  tren 53–56 · cola aviso→tren 12 min  actividad 23 min
+  h23-050826   S10 @11 → 1R:C @14 (+3 min)  T3 20–24 (4 min)  tren 20–24 · cola aviso→tren 6 min  actividad 13 min
+  h17-070826   S20 @38 → 0R:T @40 (+2 min)  T5 52–59 (7 min)  tren 52–59 · cola aviso→tren 12 min  actividad 21 min
+  h10-080826   S15 @15 → 4R:k @20 (+5 min)  T3 31–34 (3 min)  tren 31–34 · cola aviso→tren 11 min  actividad 19 min
+  h20-080826   S21 @22 → 1R:C @25 (+3 min)  T3 34–38 (4 min)  tren 34–38 · cola aviso→tren 9 min  actividad 16 min
+  h23-080826   S14 @14 → 1R:C @18 (+4 min)  T3 34–37 (3 min)  tren 34–37 · cola aviso→tren 16 min  actividad 23 min
+  h21-090826   S10 @12 → 2R:k @15 (+3 min)  T3 49–52 (3 min)  tren 49–52 · cola aviso→tren 34 min  actividad 40 min
+  h7-100826    S24 @26 → 1R:C @29 (+3 min)  T3 39–42 (3 min)  tren 39–42 · cola aviso→tren 10 min  actividad 16 min
+  h0-120826    S13 @21 → 0R:T @23 (+2 min)  T4 30–36 (6 min)  tren 30–36 · cola aviso→tren 7 min  actividad 15 min
+  h5-120826    S15 @20 → 1R:C @22 (+2 min)  T3 24–29 (5 min)  tren 24–29 · cola aviso→tren 2 min  actividad 9 min
+    … +23 películas
+  minutos CIERRE→AVISO (esperar la primera corta):
+    2min×6  3min×18  4min×9  5min×3  6min×4  7min×3  8min×2  9min×1  11min×1
+  minutos AVISO→1ª G del tren (la cola útil):
+    2min×4  3min×3  4min×1  5min×2  6min×6  7min×3  8min×3  9min×3  10min×4  11min×4  12min×4  >12min×10
+  minutos del tren mismo:
+    3min×22  4min×16  5min×4  6min×1  7min×1  8min×2  >12min×1
+  minutos CIERRE→última G del tren (toda la actividad):
+    9min×3  10min×1  12min×2  >12min×41
+
+  — AVISO = 1ª G del tren (la corta cierra y ya pega) · 16 películas —
+  h15-230726   S17 @24 → 7R:m @31 (+7 min)  T5 31–37 (6 min)  el aviso ES la 1ª G del tren  actividad 13 min
+  h0-260726    S10 @26 → 1R:C @28 (+2 min)  T3 28–32 (4 min)  el aviso ES la 1ª G del tren  actividad 6 min
+  h8-280726    S12 @30 → 9R:L @40 (+10 min)  T4 40–45 (5 min)  el aviso ES la 1ª G del tren  actividad 15 min
+  h9-280726    S13 @24 → 4R:k @29 (+5 min)  T3 29–33 (4 min)  el aviso ES la 1ª G del tren  actividad 9 min
+  h4-310726    S14 @51 → 1R:C @54 (+3 min)  T3 54–58 (4 min)  el aviso ES la 1ª G del tren  actividad 7 min
+  h11-310726   S11 @15 → 9R:L @24 (+9 min)  T3 24–28 (4 min)  el aviso ES la 1ª G del tren  actividad 13 min
+  h15-010826   S11 @40 → 2R:k @44 (+4 min)  T3 44–47 (3 min)  el aviso ES la 1ª G del tren  actividad 7 min
+  h11-030826   S20 @54 → 1R:C @56 (+2 min)  T3 56–59 (3 min)  el aviso ES la 1ª G del tren  actividad 5 min
+  h12-030826   S10 @28 → 1R:C @30 (+2 min)  T3 30–34 (4 min)  el aviso ES la 1ª G del tren  actividad 6 min
+  h1-040826    S10 @18 → 5R:m @25 (+7 min)  T4 25–30 (5 min)  el aviso ES la 1ª G del tren  actividad 12 min
+  h17-060826   S14 @43 → 4R:k @48 (+5 min)  T3 48–51 (3 min)  el aviso ES la 1ª G del tren  actividad 8 min
+  h8-110826    S13 @26 → 1R:C @29 (+3 min)  T4 29–34 (5 min)  el aviso ES la 1ª G del tren  actividad 8 min
+  h23-180826   S17 @39 → 2R:k @43 (+4 min)  T3 43–46 (3 min)  el aviso ES la 1ª G del tren  actividad 7 min
+  h13-190826   S16 @32 → 5R:m @39 (+7 min)  T3 39–42 (3 min)  el aviso ES la 1ª G del tren  actividad 10 min
+  h15-240826   S11 @32 → 6R:m @38 (+6 min)  T3 38–42 (4 min)  el aviso ES la 1ª G del tren  actividad 10 min
+  h23-240826   S16 @39 → 5R:m @44 (+5 min)  T3 44–47 (3 min)  el aviso ES la 1ª G del tren  actividad 8 min
+  minutos CIERRE→1ª G del tren (= la corta):
+    2min×3  3min×2  4min×2  5min×3  6min×1  7min×3  9min×1  10min×1
+  minutos del tren mismo (eso es la cola):
+    3min×6  4min×6  5min×3  6min×1
+
+  — AVISO y no hay tren: se acortó y se apagó · 878 películas —
+  h11-230726   S11 @20 → 2R @23 (+3 min)  aviso y NO tren después
+  h11-230726   S10 @33 → 2R @37 (+4 min)  aviso y NO tren después
+  h11-230726   S14 @53 → 2R @56 (+3 min)  aviso y NO tren después
+  h13-230726   S16 @18 → 3R @21 (+3 min)  aviso y NO tren después
+  h13-230726   S17 @50 → 0R @52 (+2 min)  aviso y NO tren después
+  h16-230726   S13 @23 → 4R @29 (+6 min)  aviso y NO tren después
+  h17-230726   S17 @36 → 5R @41 (+5 min)  aviso y NO tren después
+  h18-230726   S16 @55 → 3R @59 (+4 min)  aviso y NO tren después
+  h20-230726   S11 @52 → 3R @57 (+5 min)  aviso y NO tren después
+  h21-230726   S14 @25 → 4R @30 (+5 min)  aviso y NO tren después
+    … +868 películas
+
+  — SEQUÍA PEGADA al tren (no hay aviso) · 38 películas —
+  h10-230726   S11 @17 → T3 pegado (sin hueco corto)  tren 17–20 (3 min)  G3@17/101s…G1@20/49s
+  h4-240726    S10 @45 → T3 pegado (sin hueco corto)  tren 45–49 (4 min)  G2@45/134s…G1@49/52s
+  h7-240726    S13 @20 → T3 pegado (sin hueco corto)  tren 20–24 (4 min)  G4@20/89s…G2@24/42s
+  h3-250726    S14 @37 → T3 pegado (sin hueco corto)  tren 37–41 (4 min)  G1@37/88s…G1@41/46s
+  h9-250726    S14 @30 → T3 pegado (sin hueco corto)  tren 30–34 (4 min)  G3@30/112s…G1@34/48s
+  h14-250726   S11 @33 → T3 pegado (sin hueco corto)  tren 33–36 (3 min)  G3@33/94s…G1@36/50s
+  h0-260726    S19 @53 → T3 pegado (sin hueco corto)  tren 53–56 (3 min)  G1@53/92s…G2@56/48s
+  h0-270726    S12 @49 → T4 pegado (sin hueco corto)  tren 49–54 (5 min)  G3@49/124s…G2@54/48s
+  h18-270726   S11 @16 → T4 pegado (sin hueco corto)  tren 16–22 (6 min)  G3@16/128s…G4@22/52s
+  h6-290726    S15 @50 → T3 pegado (sin hueco corto)  tren 50–55 (5 min)  G3@50/102s…G4@55/60s
+  h4-310726    S10 @17 → T4 pegado (sin hueco corto)  tren 17–22 (5 min)  G4@17/119s…G3@22/55s
+  h6-010826    S14 @55 → T3 pegado (sin hueco corto)  tren 55–58 (3 min)  G3@55/84s…G3@58/48s
+  h3-020826    S12 @44 → T3 pegado (sin hueco corto)  tren 44–47 (3 min)  G2@44/82s…G3@47/56s
+  h7-030826    S14 @16 → T3 pegado (sin hueco corto)  tren 16–19 (3 min)  G2@16/104s…G3@19/63s
+  h12-050826   S15 @46 → T4 pegado (sin hueco corto)  tren 46–50 (4 min)  G4@46/107s…G3@50/47s
+  h23-060826   S22 @37 → T3 pegado (sin hueco corto)  tren 37–40 (3 min)  G4@37/101s…G1@40/50s
+  h8-080826    S10 @26 → T3 pegado (sin hueco corto)  tren 26–30 (4 min)  G2@26/109s…G1@30/43s
+  h23-090826   S16 @43 → T4 pegado (sin hueco corto)  tren 43–48 (5 min)  G1@43/85s…G3@48/55s
+  h15-130826   S13 @25 → T3 pegado (sin hueco corto)  tren 25–28 (3 min)  G3@25/72s…G2@28/47s
+  h20-130826   S14 @38 → T5 pegado (sin hueco corto)  tren 38–44 (6 min)  G1@38/88s…G2@44/46s
+  h22-160826   S10 @14 → T3 pegado (sin hueco corto)  tren 14–17 (3 min)  G4@14/98s…G3@17/50s
+  h12-220826   S17 @44 → T3 pegado (sin hueco corto)  tren 44–49 (5 min)  G2@44/102s…G4@49/151s
+  h21-220826   S11 @55 → T3 pegado (sin hueco corto)  tren 55–59 (4 min)  G2@55/99s…G4@59/195s
+  h4-250826    S15 @37 → T3 pegado (sin hueco corto)  tren 37–40 (3 min)  G4@37/100s…G3@40/90s
+    … +14 películas
+  minutos del tren pegado (no hubo aviso):
+    3min×18  4min×10  5min×6  6min×4
+
+  — cierra S y sigue otra S · 154 películas —
+  h17-230726   S10 @20 → otra S17  no hay acortadero
+  h20-230726   S11 @42 → otra S11  no hay acortadero
+  h3-250726    S13 @23 → otra S14  no hay acortadero
+  h13-250726   S17 @22 → otra S10  no hay acortadero
+  h22-250726   S11 @21 → otra S15  no hay acortadero
+  h23-250726   S10 @16 → otra S12  no hay acortadero
+  h6-260726    S10 @30 → otra S18  no hay acortadero
+  h11-260726   S10 @14 → otra S19  no hay acortadero
+  h13-260726   S11 @33 → otra S22  no hay acortadero
+  h16-260726   S18 @27 → otra S11  no hay acortadero
+    … +144 películas
+
+  — cierra S y se acaba la hora · 194 películas —
+  h14-230726   S39 cierra @49  G1@49/50s  · se acaba la hora
+  h12-240726   S11 cierra @57  G4@57/54s  · se acaba la hora
+  h15-240726   S11 cierra @55  G1@55/49s  · se acaba la hora
+  h2-250726    S15 cierra @55  G2@55/45s  · se acaba la hora
+  h21-250726   S18 cierra @56  G3@56/48s  · se acaba la hora
+  h3-260726    S13 cierra @57  G1@57/45s  · se acaba la hora
+  h9-260726    S19 cierra @58  G2@58/51s  · se acaba la hora
+  h13-260726   S22 cierra @54  G1@54/47s  · se acaba la hora
+  h20-260726   S21 cierra @52  G1@52/53s  · se acaba la hora
+  h4-270726    S14 cierra @59  G1@59/49s  · se acaba la hora
+    … +184 películas
+
+════ HOLD 72 h · 82 sequías ≥10R cerradas ════
+  — AVISO y el tren viene DESPUÉS (sí se ve antes) · 4 películas —
+  h15-090926   S11 @41 → 0R:T @43 (+2 min)  T3 45–49 (4 min)  tren 45–49 · cola aviso→tren 2 min  actividad 8 min
+  h9-100926    S11 @20 → 5R:m @28 (+8 min)  T4 50–57 (7 min)  tren 50–57 · cola aviso→tren 22 min  actividad 37 min
+  h17-110926   S11 @23 → 2R:k @27 (+4 min)  T3 54–57 (3 min)  tren 54–57 · cola aviso→tren 27 min  actividad 34 min
+  h18-110926   S13 @27 → 6R:m @34 (+7 min)  T3 41–45 (4 min)  tren 41–45 · cola aviso→tren 7 min  actividad 18 min
+  minutos CIERRE→AVISO (esperar la primera corta):
+    2min×1  4min×1  7min×1  8min×1
+  minutos AVISO→1ª G del tren (la cola útil):
+    2min×1  7min×1  >12min×2
+  minutos del tren mismo:
+    3min×1  4min×2  7min×1
+  minutos CIERRE→última G del tren (toda la actividad):
+    8min×1  >12min×3
+
+  — AVISO = 1ª G del tren (la corta cierra y ya pega) · 2 películas —
+  h21-100926   S12 @29 → 5R:m @35 (+6 min)  T3 35–39 (4 min)  el aviso ES la 1ª G del tren  actividad 10 min
+  h13-120926   S21 @24 → 2R:k @27 (+3 min)  T3 27–31 (4 min)  el aviso ES la 1ª G del tren  actividad 7 min
+  minutos CIERRE→1ª G del tren (= la corta):
+    3min×1  6min×1
+  minutos del tren mismo (eso es la cola):
+    4min×2
+
+  — AVISO y no hay tren: se acortó y se apagó · 50 películas —
+  h5-090926    S30 @45 → 2R @48 (+3 min)  aviso y NO tren después
+  h6-090926    S20 @47 → 6R @54 (+7 min)  aviso y NO tren después
+  h7-090926    S13 @30 → 0R @33 (+3 min)  aviso y NO tren después
+  h8-090926    S15 @25 → 6R @34 (+9 min)  aviso y NO tren después
+  h8-090926    S11 @50 → 1R @52 (+2 min)  aviso y NO tren después
+  h9-090926    S10 @48 → 1R @50 (+2 min)  aviso y NO tren después
+  h13-090926   S10 @26 → 0R @28 (+2 min)  aviso y NO tren después
+  h16-090926   S16 @47 → 5R @53 (+6 min)  aviso y NO tren después
+  h19-090926   S10 @20 → 5R @26 (+6 min)  aviso y NO tren después
+  h20-090926   S12 @26 → 3R @31 (+5 min)  aviso y NO tren después
+    … +40 películas
+
+  — SEQUÍA PEGADA al tren (no hay aviso) · 2 películas —
+  h5-100926    S16 @22 → T3 pegado (sin hueco corto)  tren 22–26 (4 min)  G2@22/95s…G2@26/45s
+  h5-100926    S16 @51 → T3 pegado (sin hueco corto)  tren 51–55 (4 min)  G2@51/93s…G3@55/59s
+  minutos del tren pegado (no hubo aviso):
+    4min×2
+
+  — cierra S y sigue otra S · 13 películas —
+  h7-090926    S13 @16 → otra S13  no hay acortadero
+  h13-090926   S10 @15 → otra S10  no hay acortadero
+  h16-090926   S12 @18 → otra S14  no hay acortadero
+  h16-090926   S14 @31 → otra S16  no hay acortadero
+  h10-100926   S39 @44 → otra S13  no hay acortadero
+  h12-100926   S12 @22 → otra S11  no hay acortadero
+  h12-100926   S11 @35 → otra S12  no hay acortadero
+  h16-100926   S17 @30 → otra S12  no hay acortadero
+  h3-110926    S13 @46 → otra S10  no hay acortadero
+  h8-110926    S15 @30 → otra S15  no hay acortadero
+    … +3 películas
+
+  — cierra S y se acaba la hora · 11 películas —
+  h7-090926    S12 cierra @56  G2@56/46s  · se acaba la hora
+  h12-090926   S12 cierra @56  G1@56/58s  · se acaba la hora
+  h15-090926   S10 cierra @59  G3@59/49s  · se acaba la hora
+  h17-090926   S25 cierra @46  G1@46/54s  · se acaba la hora
+  h18-090926   S20 cierra @57  G3@57/52s  · se acaba la hora
+  h22-090926   S17 cierra @44  G2@44/51s  · se acaba la hora
+  h11-100926   S17 cierra @59  G2@59/55s  · se acaba la hora
+  h13-110926   S14 cierra @57  G1@57/133s  · se acaba la hora
+  h16-110926   S10 cierra @58  G2@58/98s  · se acaba la hora
+  h2-120926    S11 cierra @59  G1@59/133s  · se acaba la hora
+    … +1 películas
+
+Lectura:
+  Si aviso_antes dura 2–5 min, hay cola corta para sentarse.
+  Si aviso_es_tren: no viste el tren venir; lo estás pisando.
+  Si pegada: no hay identificación previa.
+  aviso_seco: el acortadero no promete tren.
+  Cero cable.

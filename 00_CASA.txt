@@ -1,0 +1,25 @@
+JOKERBETS-MESA — copia para bots de apuesta
+===========================================
+stamp 2026-10-13
+
+Qué es
+  Copia de hilo-corto. Aquí se implementan los bots.
+  NO es prod. Prod sigue en:
+  experimento-nueva-caja-negra/hilo-corto/dashboard
+
+Qué no es
+  No es A01. No se escribe LIVE (depuracion\).
+  No se pisa el dashboard de hilo-corto.
+
+Copia
+  Fuente: hilo-corto (446 archivos, sin node_modules ni perfil Chrome).
+  En esta casa: npm install / perfil nuevo, cuando se implemente.
+
+Estrategia (papel, vigente)
+  jokerbets/INTERRUPTOR.txt
+  Ficha $150 · Pool 7 tip±1 · color a muerte · $20k arranque
+  Cero bot hasta REGLA.txt llena.
+
+Siguiente
+  CLARIDAD.txt · STORYBOARD.txt · DOM_CABLE.txt
+  (diseño; aún no implementado).

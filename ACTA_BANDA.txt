@@ -1,0 +1,76 @@
+ACTA — juez banda d<=1 (hilo-corto)
+===================================
+stamp 2026-08-17
+Lab: experimento-nueva-caja-negra/hilo-corto
+Cero LIVE. No A01. No Jaccard.
+
+Pregunta
+  El concurso rankea G y +-1 (banda). +-2 = fuera.
+  ¿Se pueden disparar pocos tiros DINAMICOS a esa banda,
+  con flag por tiro, y nombrar zonas, sin 40 fichas?
+
+Se ve
+  Techo: 45.3% de las G oficiales de H caen a d<=1 de H-1
+  (2343 / 5168, 519 h desde h10-230726). El anillo PINTA
+  ~27 sillas; un sombrero del mismo tamano pinta 45.1%
+  (lift 1.00). Es techo de AREA / densidad, no atraccion.
+  La prueba de que NO es azar es la CINTA: costura 94.8%
+  (145/153) vs 1.7% un sombrero de 1 silla.
+  Copiar las islas de H-1 cubre ESE techo. k medio ~10.
+  Colapso (score banda = 0): 1.3% de las horas.
+  Horas pobres (nG<=7, n=88): score medio 2.93; colapso 3.4%.
+  Costura (cierre largo): 94.8% G. Sigue siendo el unico
+  dardo SEGURO exacto.
+  Cruce (minuto que es +-1 de dos islas): k medio 1.7;
+  colapso 49% si se dispara SOLO. Sirve de orilla en el
+  informe, no de boleto.
+  Anillo completo (ambos vecinos, k~18): score 6.42 pero
+  es gordo. El pedido era pocos chips, no 18-40.
+
+No se ve
+  Senal de lado +1 vs -1. Inercia del caminante 14%
+  (peor que pegar). No se nombra el lado.
+  Anden que "tire mas G": p(G) por anden es plano
+  (bitácora). La zona es cupo/teatro, no tasa.
+  Dardo de 95% en cierre corto. No hay.
+
+Ya estaba
+  El anillo es el mapa. El cubo gordo es paso +-1.
+  Clima = cuantas luces y que anden. Luces se repelen.
+  Jaccard hora x hora ~ azar: no entra.
+
+Nuevo (de este taller, mismo objeto)
+  El juez de ESTA caja pasa a banda d<=1, no Exact solo.
+  El chip TIBIO es la casilla de H-1 (cubre persist y
+  ambos +-1), no el vecino. Afinar a exacto = costura.
+  Producto = informe (flag, apunta, cubre, zonas), no
+  una lista muda.
+
+Walk del informe (519 h)
+  k medio 9.15
+  G 1.74 / hora   +-1 2.64 / hora   score 4.38
+  (G+-+1)/oficiales = 43.96%  (902 + 1370 / 5168)
+  colapso 1.16%
+  lift Exact vs azar 1.15 (el Exact no era el objetivo)
+
+Limite
+  Sin costura no hay exacto de 95%. El techo de la banda
+  con islas de H-1 es ~45% de las oficiales. El otro 55%
+  es semilla / paso2 / lejos: no se cubre con pocos chips
+  del tablero. No se inventa para taparlo.
+
+Recorte de fichas (mismo juez, 519 h)
+  Islas (k=9.15): score 4.38 · 0.48/ficha · colapso 1.2%
+  Racimo+costura (k=4.29): score 2.03 · 0.47/ficha · colapso 24%
+    (16% de horas sin tiro: no hay racimo)
+  Solo costura (k=0.29): 1.14/ficha · colapso 72%
+  El racimo NO es mas seguro: misma eficiencia, se cae
+  la estabilidad. Es zona del informe, no el boleto.
+  Costura es el unico chip mas denso; es raro (29% horas).
+
+Entrega (lectura humana, 2026-08-17)
+  estado/ultimo_informe.txt + hoja "informe" del xlsx.
+  Coherente: chips TIBIOS/SEGURO vs banda (score 4.38, costura 94.8%).
+  No coherente como pronostico: racimo ~37% del cupo cae en la
+  zona; anden desvio medio ~5 sillas. El texto nombra cupo de
+  H-1 (zona a mirar), no "se esperan N G".

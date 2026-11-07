@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Node
+node_modules/
+dashboard/node_modules/
+dashboard/extraccion/node_modules/
+dashboard/dist/
+
+# Chrome / Playwright perfiles (cookies, sesión)
+dashboard/extraccion/perfiles/
+**/perfiles/
+
+# Estado runtime bot / extracción
+dashboard/extraccion/*.pid
+dashboard/extraccion/extraccion.pid
+dashboard/extraccion/extraccion-estado.json
+dashboard/extraccion/extraccion-en-vivo.txt
+dashboard/extraccion/ultima-url-mesa.txt
+dashboard/extraccion/jokerbets-senal.json
+dashboard/extraccion/jokerbets-bot-armado.json
+dashboard/extraccion/jokerbets-simul-pool7.json
+dashboard/extraccion/jokerbets-manual.json
+dashboard/extraccion/jokerbets-cuentas-estado.json
+dashboard/extraccion/jokerbets-ui-pulse.json
+dashboard/extraccion/*.jsonl
+dashboard/extraccion/apuesta-scan/
+dashboard/extraccion/bono-scan/
+dashboard/extraccion/inactividad-scan/
+
+# Logs / reportes locales
+*.log
+vigilar-servir.log
+reports/*.xlsx
+reports/*.jsonl
+estado/estado.json
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+.env
+.env.*
+!.env.example

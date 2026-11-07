@@ -1,0 +1,127 @@
+LOOK · lámpara en histórico largo (cinta 4G, hold = últimas 72 h)
+Horas: 1168  primera h10-230726  última h0-120926
+Train 1096 h · hold 72 h · dos mitades del train 548/548
+Tip = LC-01 (no se mueve). Lámpara = no me siento.
+Puerta = poda +1 salvo tren/estirada · +2..+4 · no sequía.
+
+════ TRAIN histórico · 9532 eventos · 1095 h ════
+— todos los tips (sin puerta) —
+  nada           sit  9532/9532   calla    0  banda 3544/9532  exacto 1345/9532  pnl -2444  horas+ 1006/1095  callado: pasaba 0/0 caía 0/0
+  p30≥9          sit  9168/9532   calla  364  banda 3512/9168  exacto 1338/9168  pnl -2144  horas+ 992/1095  callado: pasaba 299/364 caía 32/364
+  p30≥10         sit  9249/9532   calla  283  banda 3522/9249  exacto 1340/9249  pnl -2205  horas+ 996/1095  callado: pasaba 240/283 caía 22/283
+  p30≥12         sit  9373/9532   calla  159  banda 3540/9373  exacto 1344/9373  pnl -2293  horas+ 1004/1095  callado: pasaba 152/159 caía 4/159
+  largo+p30≥9    sit  9230/9532   calla  302  banda 3518/9230  exacto 1338/9230  pnl -2194  horas+ 993/1095  callado: pasaba 255/302 caía 26/302
+— solo puerta de poda (como la mesa) —
+  nada           sit  4563/4563   calla    0  banda 2739/4563  exacto 1047/4563  pnl +915  horas+ 908/1054  callado: pasaba 0/0 caía 0/0
+  p30≥9          sit  4398/4563   calla  165  banda 2736/4398  exacto 1046/4398  pnl +1074  horas+ 905/1054  callado: pasaba 162/165 caía 3/165
+  p30≥10         sit  4444/4563   calla  119  banda 2738/4444  exacto 1047/4444  pnl +1032  horas+ 907/1054  callado: pasaba 118/119 caía 1/119
+  p30≥12         sit  4498/4563   calla   65  banda 2739/4498  exacto 1047/4498  pnl +980  horas+ 908/1054  callado: pasaba 65/65 caía 0/65
+  largo+p30≥9    sit  4428/4563   calla  135  banda 2738/4428  exacto 1046/4428  pnl +1048  horas+ 907/1054  callado: pasaba 134/135 caía 1/135
+
+════ 1ª mitad train · 4909 eventos · 547 h ════
+— todos los tips (sin puerta) —
+  nada           sit  4909/4909   calla    0  banda 1852/4909  exacto 708/4909  pnl -1205  horas+ 504/547  callado: pasaba 0/0 caía 0/0
+  p30≥9          sit  4747/4909   calla  162  banda 1845/4747  exacto 706/4747  pnl -1057  horas+ 501/547  callado: pasaba 139/162 caía 7/162
+  p30≥10         sit  4780/4909   calla  129  banda 1847/4780  exacto 706/4780  pnl -1086  horas+ 501/547  callado: pasaba 115/129 caía 5/129
+  p30≥12         sit  4834/4909   calla   75  banda 1852/4834  exacto 708/4834  pnl -1130  horas+ 504/547  callado: pasaba 73/75 caía 0/75
+  largo+p30≥9    sit  4767/4909   calla  142  banda 1847/4767  exacto 706/4767  pnl -1073  horas+ 501/547  callado: pasaba 128/142 caía 5/142
+— solo puerta de poda (como la mesa) —
+  nada           sit  2385/2385   calla    0  banda 1444/2385  exacto 551/2385  pnl +503  horas+ 463/534  callado: pasaba 0/0 caía 0/0
+  p30≥9          sit  2304/2385   calla   81  banda 1443/2304  exacto 551/2304  pnl +582  horas+ 462/534  callado: pasaba 80/81 caía 1/81
+  p30≥10         sit  2322/2385   calla   63  banda 1444/2322  exacto 551/2322  pnl +566  horas+ 463/534  callado: pasaba 63/63 caía 0/63
+  p30≥12         sit  2348/2385   calla   37  banda 1444/2348  exacto 551/2348  pnl +540  horas+ 463/534  callado: pasaba 37/37 caía 0/37
+  largo+p30≥9    sit  2311/2385   calla   74  banda 1444/2311  exacto 551/2311  pnl +577  horas+ 463/534  callado: pasaba 74/74 caía 0/74
+
+════ 2ª mitad train · 4623 eventos · 548 h ════
+— todos los tips (sin puerta) —
+  nada           sit  4623/4623   calla    0  banda 1692/4623  exacto 637/4623  pnl -1239  horas+ 502/548  callado: pasaba 0/0 caía 0/0
+  p30≥9          sit  4421/4623   calla  202  banda 1667/4421  exacto 632/4421  pnl -1087  horas+ 491/548  callado: pasaba 160/202 caía 25/202
+  p30≥10         sit  4469/4623   calla  154  banda 1675/4469  exacto 634/4469  pnl -1119  horas+ 495/548  callado: pasaba 125/154 caía 17/154
+  p30≥12         sit  4539/4623   calla   84  banda 1688/4539  exacto 636/4539  pnl -1163  horas+ 500/548  callado: pasaba 79/84 caía 4/84
+  largo+p30≥9    sit  4463/4623   calla  160  banda 1671/4463  exacto 632/4463  pnl -1121  horas+ 492/548  callado: pasaba 127/160 caía 21/160
+— solo puerta de poda (como la mesa) —
+  nada           sit  2178/2178   calla    0  banda 1295/2178  exacto 496/2178  pnl +412  horas+ 445/520  callado: pasaba 0/0 caía 0/0
+  p30≥9          sit  2094/2178   calla   84  banda 1293/2094  exacto 495/2094  pnl +492  horas+ 443/520  callado: pasaba 82/84 caía 2/84
+  p30≥10         sit  2122/2178   calla   56  banda 1294/2122  exacto 496/2122  pnl +466  horas+ 444/520  callado: pasaba 55/56 caía 1/56
+  p30≥12         sit  2150/2178   calla   28  banda 1295/2150  exacto 496/2150  pnl +440  horas+ 445/520  callado: pasaba 28/28 caía 0/28
+  largo+p30≥9    sit  2117/2178   calla   61  banda 1294/2117  exacto 495/2117  pnl +471  horas+ 444/520  callado: pasaba 60/61 caía 1/61
+
+════ HOLD 72 h (cola del detail) · 559 eventos · 72 h ════
+— todos los tips (sin puerta) —
+  nada           sit   559/559    calla    0  banda 199/559  exacto 78/559  pnl -161  horas+ 66/72  callado: pasaba 0/0 caía 0/0
+  p30≥9          sit   535/559    calla   24  banda 195/535  exacto 75/535  pnl -145  horas+ 63/72  callado: pasaba 17/24 caía 4/24
+  p30≥10         sit   537/559    calla   22  banda 195/537  exacto 75/537  pnl -147  horas+ 63/72  callado: pasaba 15/22 caía 4/22
+  p30≥12         sit   548/559    calla   11  banda 196/548  exacto 76/548  pnl -156  horas+ 64/72  callado: pasaba 7/11 caía 3/11
+  largo+p30≥9    sit   536/559    calla   23  banda 195/536  exacto 75/536  pnl -146  horas+ 63/72  callado: pasaba 16/23 caía 4/23
+— solo puerta de poda (como la mesa) —
+  nada           sit   268/268    calla    0  banda 152/268  exacto 64/268  pnl +36  horas+ 53/67  callado: pasaba 0/0 caía 0/0
+  p30≥9          sit   260/268    calla    8  banda 152/260  exacto 64/260  pnl +44  horas+ 53/67  callado: pasaba 8/8 caía 0/8
+  p30≥10         sit   260/268    calla    8  banda 152/260  exacto 64/260  pnl +44  horas+ 53/67  callado: pasaba 8/8 caía 0/8
+  p30≥12         sit   263/268    calla    5  banda 152/263  exacto 64/263  pnl +41  horas+ 53/67  callado: pasaba 5/5 caía 0/5
+  largo+p30≥9    sit   260/268    calla    8  banda 152/260  exacto 64/260  pnl +44  horas+ 53/67  callado: pasaba 8/8 caía 0/8
+
+════ películas históricas: p30≥9 sobre la PUERTA ════
+  h10-230726   @17 prev=L p30=11 tip 28 G 18 no  este=T0
+  h13-230726   @18 prev=S p30=16 tip 34 G 21 no  este=k3
+  h19-230726   @25 prev=L p30=13 tip 38 G 30 no  este=k3
+  h6-240726    @14 prev=L p30=13 tip 27 G 18 no  este=k2
+  h16-240726   @14 prev=L p30=9 tip 23 G 17 no  este=k2
+  h19-240726   @39 prev=L p30=10 tip 49 G 44 no  este=k2
+  h1-250726    @14 prev=L p30=14 tip 28 G 19 no  este=k3
+  h12-250726   @17 prev=S p30=16 tip 33 G 21 no  este=k3
+  h16-250726   @11 prev=L p30=10 tip 21 G 13 no  este=C1
+  h4-260726    @15 prev=S p30=14 tip 29 G 18 no  este=C1
+  h19-260726   @14 prev=L p30=13 tip 27 G 17 no  este=k2
+  h20-260726   @17 prev=S p30=15 tip 32 G 20 no  este=C1
+  h4-270726    @25 prev=L p30=13 tip 38 G 29 no  este=k3
+  h9-270726    @39 prev=L p30=9 tip 48 G 41 no  este=T0
+  h15-270726   @18 prev=L p30=13 tip 31 G 22 no  este=k3
+  h20-280726   @23 prev=L p30=9 tip 32 G 25 no  este=T0
+  h20-290726   @18 prev=m p30=9 tip 27 G 22 no  este=k2
+  h21-290726   @26 prev=L p30=9 tip 35 G 29 no  este=k3
+  h22-290726   @11 prev=L p30=11 tip 22 G 14 no  este=C1
+  h5-300726    @09 prev=L p30=9 tip 18 G 11 no  este=T0
+
+════ un día histórico (primera fecha del train con ≥8 eventos) ════
+  día 230726
+    h10-230726   @06 p30=5  tip 11 G 17  —          fuera  miss
+    h10-230726   @17 p30=11 tip 28 G 18  —   LÁMPARA poda  miss
+    h10-230726   @18 p30=1  tip 19 G 20  SIT        poda  ok
+    h10-230726   @20 p30=1  tip 21 G 24  SIT        poda  miss
+    h10-230726   @24 p30=2  tip 26 G 32  —          fuera  miss
+    h10-230726   @32 p30=2  tip 34 G 33  —          fuera  ok
+    h10-230726   @33 p30=1  tip 34 G 40  —          fuera  miss
+    h10-230726   @40 p30=2  tip 42 G 47  —          fuera  miss
+    h10-230726   @47 p30=2  tip 49 G 50  SIT        poda  ok
+    h10-230726   @50 p30=2  tip 52 G 56  —          fuera  miss
+    h11-230726   @01 p30=5  tip 06 G 08  —          fuera  miss
+    h11-230726   @08 p30=7  tip 15 G 20  —          fuera  miss
+    h11-230726   @20 p30=7  tip 27 G 23  SIT        poda  miss
+    h11-230726   @23 p30=3  tip 26 G 33  —          fuera  miss
+    h11-230726   @33 p30=7  tip 40 G 37  SIT        poda  miss
+    h11-230726   @37 p30=4  tip 41 G 41  SIT        poda  ok
+    h11-230726   @41 p30=4  tip 45 G 53  —          fuera  miss
+    h11-230726   @53 p30=4  tip 57 G 56  SIT        poda  ok
+    h12-230726   @03 p30=5  tip 08 G 06  SIT        poda  miss
+    h12-230726   @06 p30=3  tip 09 G 10  SIT        poda  ok
+    h12-230726   @10 p30=3  tip 13 G 14  —          fuera  ok
+    h12-230726   @14 p30=3  tip 17 G 20  —          fuera  miss
+    h12-230726   @20 p30=4  tip 24 G 24  SIT        poda  ok
+    h12-230726   @24 p30=4  tip 28 G 28  SIT        poda  ok
+    h12-230726   @28 p30=4  tip 32 G 34  —          fuera  miss
+    h12-230726   @34 p30=4  tip 38 G 41  —          fuera  miss
+    h12-230726   @41 p30=4  tip 45 G 49  —          fuera  miss
+    h12-230726   @49 p30=4  tip 53 G 52  SIT        poda  ok
+    h12-230726   @52 p30=4  tip 56 G 54  SIT        poda  miss
+    h13-230726   @02 p30=5  tip 07 G 18  —          fuera  miss
+    h13-230726   @18 p30=16 tip 34 G 21  —   LÁMPARA poda  miss
+    h13-230726   @21 p30=3  tip 24 G 24  SIT        poda  ok
+    h13-230726   @24 p30=3  tip 27 G 26  SIT        poda  ok
+    h13-230726   @26 p30=3  tip 29 G 29  SIT        poda  ok
+    h13-230726   @29 p30=3  tip 32 G 34  —          fuera  miss
+    h13-230726   @34 p30=3  tip 37 G 50  —          fuera  miss
+
+Lectura:
+  Histórico puro, dos mitades: si la lámpara limpia en ambas, no es cola.
+  Sobre la PUERTA importa más: es como se juega.
+  Cero cable. No cortar Pool 7.

@@ -1,0 +1,72 @@
+ARCHIVO — premisa falsa (2026-10-13)
+Se midió “3 de 4 colores”. En la mesa son 3 colores y 3 cuentas:
+cobertura TOTAL. Este look no se cita como libro.
+Vigente: COLORES.txt · LOOK_BANCA.txt (casa = 50×lm − 600).
+
+LOOK COLORES — el lumen de la cinta es la SUMA de 4 tajadas
+horas 1310 · indicio @19 350 · oráculo fuerte+ 129
+Política de silla: misma que el borrador (zona tip±1, post-19).
+Los cortes son MODELO (la cinta no trae rojo/azul/verde/amarillo).
+3 cuentas cubren 3 de 4. Apuesta $200. Colchón $20.000.
+
+Teorema (si siempre dejan 1 color fuera, y ese hueco no persigue la carga):
+  E[captura] = 75% del lumen, da igual que un color se cargue.
+  Casa por G = 50×(lm−tajada_fuera) − 600. Ya no es 50×lm − 600.
+
+— indicio @19 + ZONA, 3 modos de corte × 3 políticas —
+  [4 partes iguales]
+  fijo  RGB  (dejan amarillo) : tiros 4407  G 1029  casa -57300  med/hora -1575  captura 75.5% del lumen
+    cuentas suelo -500 / -250 / -200  vidas@0 4 (reponen $20k)
+  rotan cuál dejan fuera      : tiros 4407  G 1029  casa -79650  med/hora -1600  captura 74.9% del lumen
+    cuentas suelo -1600 / -550 / -400  vidas@0 4 (reponen $20k)
+  cazan los 3 de la G anterior: tiros 4407  G 1029  casa -57300  med/hora -1575  captura 75.5% del lumen
+    cuentas suelo -500 / -250 / -200  vidas@0 4 (reponen $20k)
+
+  [siempre un color = 0]
+  fijo  RGB  (dejan amarillo) : tiros 4407  G 1029  casa -79700  med/hora -1725  captura 74.9% del lumen
+    cuentas suelo -1550 / -750 / -700  vidas@0 5 (reponen $20k)
+  rotan cuál dejan fuera      : tiros 4407  G 1029  casa -68250  med/hora -1650  captura 75.2% del lumen
+    cuentas suelo -1400 / -700 / -550  vidas@0 4 (reponen $20k)
+  cazan los 3 de la G anterior: tiros 4407  G 1029  casa -62800  med/hora -1725  captura 75.3% del lumen
+    cuentas suelo -1350 / -1100 / 9150  vidas@0 4 (reponen $20k)
+
+  [un color se lleva 55–80%]
+  fijo  RGB  (dejan amarillo) : tiros 4407  G 1029  casa -95750  med/hora -1700  captura 74.4% del lumen
+    cuentas suelo -1800 / -200 / 10350  vidas@0 5 (reponen $20k)
+  rotan cuál dejan fuera      : tiros 4407  G 1029  casa -62400  med/hora -1800  captura 75.4% del lumen
+    cuentas suelo -1550 / -1400 / -50  vidas@0 3 (reponen $20k)
+  cazan los 3 de la G anterior: tiros 4407  G 1029  casa -142800  med/hora -1800  captura 73.0% del lumen
+    cuentas suelo -1950 / -1250 / -650  vidas@0 7 (reponen $20k)
+
+— mismo, solo horas que CIERRAN fuerte+ (oráculo, techo) —
+  [4 partes iguales]
+  fijo  RGB                   : tiros 1794  G 474  casa +369150  med/hora +900  captura 75.4% del lumen
+    cuentas suelo 18450 / 18550 / 18550  vidas@0 0 (reponen $20k)
+  rotan hueco                 : tiros 1794  G 474  casa +359350  med/hora +850  captura 74.9% del lumen
+    cuentas suelo 18400 / 18500 / 18550  vidas@0 0 (reponen $20k)
+  cazan carga previa          : tiros 1794  G 474  casa +369150  med/hora +900  captura 75.4% del lumen
+    cuentas suelo 18450 / 18550 / 18550  vidas@0 0 (reponen $20k)
+
+  [siempre un color = 0]
+  fijo  RGB                   : tiros 1794  G 474  casa +383750  med/hora +650  captura 76.2% del lumen
+    cuentas suelo 17050 / 19250 / 19250  vidas@0 0 (reponen $20k)
+  rotan hueco                 : tiros 1794  G 474  casa +352250  med/hora +950  captura 74.5% del lumen
+    cuentas suelo 15450 / 18800 / 18950  vidas@0 0 (reponen $20k)
+  cazan carga previa          : tiros 1794  G 474  casa +375000  med/hora +1100  captura 75.7% del lumen
+    cuentas suelo 16750 / 17100 / 19250  vidas@0 0 (reponen $20k)
+
+  [un color se lleva 55–80%]
+  fijo  RGB                   : tiros 1794  G 474  casa +331750  med/hora +1300  captura 73.5% del lumen
+    cuentas suelo 17050 / 17900 / 18350  vidas@0 0 (reponen $20k)
+  rotan hueco                 : tiros 1794  G 474  casa +365900  med/hora +950  captura 75.2% del lumen
+    cuentas suelo 16250 / 17550 / 19900  vidas@0 0 (reponen $20k)
+  cazan carga previa          : tiros 1794  G 474  casa +373900  med/hora +1250  captura 75.7% del lumen
+    cuentas suelo 10650 / 18600 / 20000  vidas@0 0 (reponen $20k)
+
+Lectura
+  · Fijo vs rota: la casa casi no se mueve. Solo se barajan los suelos.
+  · Cazar la carga de la G que YA pagó: no gana lumen. A veces pierde.
+  · El 50×lm−600 de LOOK_BANCA era el techo (como si cobraran el total).
+  · Con 3 de 4, el libro real vive cerca del 75% de ese techo.
+  · Para saber SI un color se pega de verdad hay que guardar el corte
+    (bonusResult por clave), no solo la suma. Hoy no está en la cinta.

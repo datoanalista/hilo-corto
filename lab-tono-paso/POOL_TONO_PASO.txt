@@ -1,0 +1,21 @@
+POOL TONO-PASO
+==============
+Casa: hilo-corto. Cero prod. Cero LIVE. Cero Jaccard.
+
+Pregunta
+  El tono de ESA hora mueve el paso (apagada ~4 R, fuerte ~2 R).
+  ¿Next 3 (ventana 3 tiros) y Pool 7 V3 / LC-01 deben seguir
+  un camino aletargado cuando el tono ya se ve apagado?
+
+No es la ficha
+  Ni “esta hora muy apagada”, ni “6 u 11 R”, ni pintar más R.
+
+Juez
+  Banda d≤1: minuto tip vs minuto real de ESA G, hora a hora.
+  Tono de lectura = suma final (foto). Tono de política = causal
+  (solo G ya vistas). Filtrar por “G cayó en 3 tiros” no es hallazgo.
+
+Oficios que se cruzan
+  A) LC-01 minutos (Pool 7)
+  B) SEQUIA3 / Next 3 (3 tiros)
+  C) tono causal (mean/paso ya visto) y prior hod

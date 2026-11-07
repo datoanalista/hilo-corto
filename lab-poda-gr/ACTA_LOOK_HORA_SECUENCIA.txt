@@ -1,0 +1,34 @@
+ACTA LOOK — HORA EN SECUENCIA (frase, no promedio)
+==================================================
+fecha: 2026-09-11
+lab: hilo-corto/lab-poda-gr/
+script: look_hora_secuencia.py → reports/LOOK_HORA_SECUENCIA.txt
+Cero prod. Cero LIVE. Cero Jaccard. Cero tip. Cero cable.
+
+PREGUNTA
+  Identificar cómo se MUEVE la hora (masa morfológica: mismos
+  átomos, renglón distinto). No promediar. No puntuar solo el
+  relato vivo (6–7 / 12–15 / 2G). Punto de partida para leer
+  la hora en curso: ¿vienen más estiradas que trenes? Si ya
+  pasó un tren al inicio, leer el resto; no esperar el mismo
+  gesto por saco.
+
+FICHA
+  Unidad = la hora caminando izquierda→derecha, y la de al lado.
+  Átomo = hueco G→G (T C k m L S) + E si la G que abre ≥100 s.
+  Cuerpo = train histórico 1093 h. Hold no se mezcla.
+  Analogía «elástico / 6–7 / 12» = forma del relato, no la lengua.
+  Bitácora: cómo VA esta hora; isla; no álbum de mapas de minutos.
+  No se reabre H-1→H de cupo.
+
+QUÉ HAY EN EL REPORT
+  Películas de 3 días históricos (24 h cada uno) con costura.
+  Después del primer tren: el resto de ESA hora (volvió T / no).
+  Marcador [E/T] mientras camina (estirada vs tren, sin saco).
+  Sílabas (pares) que no estaban en el relato, con UNA película.
+  Gestos de oficio: S→T, E abre S, S cierra G4, tren al cierre.
+  Límites del cuerpo (borde de UNA hora, no %).
+
+NO SENTAR
+  «si tren al inicio, no otro tren» como ley (las películas
+  muestran las dos cosas). Tip. d≤1. Dashboard. COVER/SPAN.

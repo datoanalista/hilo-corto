@@ -1,0 +1,111 @@
+LOOK · hueco (R entre G) × tono × zona
+Una hora = una ficha. No se unionan huecos de toda la cinta como juez.
+
+════════ TRAIN  1013 horas con ≥2 G ════════
+
+1. TONO DE LA HORA (suma lumen G) × paso (mediana R-entre-G de ESA hora)
+Tono          | Horas |  med nG | med meanG | med paso | paso 6+ | paso 10+
+--------------+-------+---------+-----------+----------+---------+---------
+muy_apagado   |   285 |       8 |        45 |      4 R |   35.8% |     9.1%
+opaco         |   246 |      10 |        55 |      4 R |   17.1% |     2.4%
+normal        |   296 |      11 |        65 |      3 R |    9.8% |     0.0%
+fuerte        |   111 |      11 |        81 |      2 R |    5.4% |     1.8%
+muy_fuerte    |    59 |      12 |       110 |      2 R |    6.8% |     0.0%
+supernova     |    16 |      12 |       208 |      2 R |   12.5% |     0.0%
+
+2. ZONA · fracción media de las G de ESA hora (no se tiran todas las G a un saco)
+Tono          |    00-19 |    20-39 |    40-59 | hueco med al caer en cada zona
+muy_apagado   |     33% |     33% |     33% | k 3 / 5 / 5
+opaco         |     33% |     33% |     33% | k 2 / 4 / 4
+normal        |     33% |     33% |     33% | k 2 / 3 / 3
+fuerte        |     33% |     33% |     33% | k 2 / 3 / 2
+muy_fuerte    |     28% |     33% |     33% | k 2 / 3 / 2
+
+3. RELATO (misma hora): ¿hay un hueco ≥6 y los 2 siguientes son cortos (≤3)?
+   Eso es 'apagón y luego 2–3 G juntas'. Se cuenta HORAS que lo cumplen, no huecos.
+Tono          | Horas |  tuvo k≥6 | y luego racimo |  k≥11 y racimo
+muy_apagado   |   285 |     99.3% |          53.3% |          30.2%
+opaco         |   246 |     99.2% |          61.0% |          26.4%
+normal        |   296 |     99.0% |          65.9% |          22.0%
+fuerte        |   111 |     97.3% |          69.4% |          27.9%
+muy_fuerte    |    59 |     98.3% |          76.3% |          30.5%
+
+4. ¿G chicas en hora apagada? mean lumen de las G de ESA hora
+   Cuidado: el tono ES la suma. Mean bajo + pocas G = apagada por construcción.
+   Por eso se mira también el clima (nG), que no es el tono.
+  muy_apagado    mediana meanG=45  · meanG<50: 70.9%  · tinta G1:21%  G2:34%  G3:38%  G4:6%
+  opaco          mediana meanG=55  · meanG<50: 30.9%  · tinta G1:21%  G2:35%  G3:33%  G4:11%
+  normal         mediana meanG=65  · meanG<50: 6.4%  · tinta G1:23%  G2:32%  G3:32%  G4:13%
+  fuerte         mediana meanG=81  · meanG<50: 0.0%  · tinta G1:24%  G2:33%  G3:29%  G4:15%
+  muy_fuerte     mediana meanG=110  · meanG<50: 0.0%  · tinta G1:20%  G2:30%  G3:32%  G4:17%
+
+5. CUPO (nG) — el mismo relato, sin mezclarlo con el tono de luz
+Clima    | Horas | med paso |     k≥6 |  k≥6+racimo | med meanG
+floja    |   200 |      6 R |   99.0% |       41.5% |        59
+normal   |   667 |      3 R |   99.4% |       66.4% |        60
+rica     |   146 |      2 R |   95.9% |       72.6% |        58
+
+6. Tras el primer hueco ≥6 de la hora: ¿esa G es chica? ¿las que siguen también?
+Tono          |  Horas c/k≥6 | med lum G-corte | med lum 2 sig
+muy_apagado   |          283 |              38 |            41
+opaco         |          244 |              45 |            49
+normal        |          293 |              45 |            57
+fuerte        |          108 |              54 |            60
+muy_fuerte    |           58 |              58 |            71
+════════ HOLDOUT  72 horas con ≥2 G ════════
+
+1. TONO DE LA HORA (suma lumen G) × paso (mediana R-entre-G de ESA hora)
+Tono          | Horas |  med nG | med meanG | med paso | paso 6+ | paso 10+
+--------------+-------+---------+-----------+----------+---------+---------
+muy_apagado   |    23 |       7 |        43 |      4 R |   30.4% |    17.4%
+opaco         |    12 |       9 |        53 |      4 R |   25.0% |     8.3%
+normal        |    24 |      11 |        63 |      2 R |    0.0% |     0.0%
+fuerte        |     9 |      11 |        86 |      2 R |   11.1% |    11.1%
+muy_fuerte    |     4 |      12 |       103 |      2 R |    0.0% |     0.0%
+
+2. ZONA · fracción media de las G de ESA hora (no se tiran todas las G a un saco)
+Tono          |    00-19 |    20-39 |    40-59 | hueco med al caer en cada zona
+muy_apagado   |     33% |     36% |     29% | k 2 / 4 / 6
+opaco         |     38% |     26% |     33% | k 3 / 4 / 4
+normal        |     31% |     31% |     37% | k 2 / 3 / 2
+fuerte        |     31% |     36% |     36% | k 2 / 2 / 2
+muy_fuerte    |     27% |     42% |     22% | k 2 / 1 / 3
+
+3. RELATO (misma hora): ¿hay un hueco ≥6 y los 2 siguientes son cortos (≤3)?
+   Eso es 'apagón y luego 2–3 G juntas'. Se cuenta HORAS que lo cumplen, no huecos.
+Tono          | Horas |  tuvo k≥6 | y luego racimo |  k≥11 y racimo
+muy_apagado   |    23 |    100.0% |          39.1% |          17.4%
+opaco         |    12 |    100.0% |          50.0% |          25.0%
+normal        |    24 |    100.0% |          75.0% |          25.0%
+fuerte        |     9 |     88.9% |          77.8% |          11.1%
+muy_fuerte    |     4 |    100.0% |          50.0% |          25.0%
+
+4. ¿G chicas en hora apagada? mean lumen de las G de ESA hora
+   Cuidado: el tono ES la suma. Mean bajo + pocas G = apagada por construcción.
+   Por eso se mira también el clima (nG), que no es el tono.
+  muy_apagado    mediana meanG=43  · meanG<50: 65.2%  · tinta G1:25%  G2:33%  G3:34%  G4:7%
+  opaco          mediana meanG=53  · meanG<50: 25.0%  · tinta G1:21%  G2:37%  G3:31%  G4:11%
+  normal         mediana meanG=63  · meanG<50: 8.3%  · tinta G1:24%  G2:33%  G3:33%  G4:10%
+  fuerte         mediana meanG=86  · meanG<50: 0.0%  · tinta G1:23%  G2:26%  G3:34%  G4:18%
+  muy_fuerte     mediana meanG=103  · meanG<50: 0.0%  · tinta G1:22%  G2:35%  G3:29%  G4:14%
+
+5. CUPO (nG) — el mismo relato, sin mezclarlo con el tono de luz
+Clima    | Horas | med paso |     k≥6 |  k≥6+racimo | med meanG
+floja    |    15 |      8 R |  100.0% |       33.3% |        58
+normal   |    43 |      3 R |  100.0% |       65.1% |        62
+rica     |    14 |      2 R |   92.9% |       64.3% |        52
+
+6. Tras el primer hueco ≥6 de la hora: ¿esa G es chica? ¿las que siguen también?
+Tono          |  Horas c/k≥6 | med lum G-corte | med lum 2 sig
+muy_apagado   |           23 |              36 |            35
+opaco         |           12 |              47 |            46
+normal        |           24 |              56 |            44
+fuerte        |            8 |              75 |            74
+muy_fuerte    |            4 |              90 |            30
+
+════════════════════════════════ LECTURA ════════════════════════════════
+El tono (suma) y el paso (R entre G) se mueven juntos porque la hora
+apagada suele tener menos G: el palo se estira. No es una zona del reloj
+que 'prefiera' el hueco largo.
+El racimo corto DESPUÉS de un hueco ≥6 existe, pero no es ley de las
+apagadas: también pasa en fuertes. No sentar.

@@ -1,0 +1,58 @@
+═══════════════════════════════════════════════════════════════════════════════════
+INFORME LAB PODA G-R · juez = banda d≤1 / exacto (corrimiento)
+Hit G / color NO es juez. Ver JUEZ.txt · LAB_NEXT3_CORRIMIENTO.txt
+═══════════════════════════════════════════════════════════════════════════════════
+Cero prod · cero Jaccard
+
+Horas analizadas: 1081 (Train: 1009 h, Holdout: 72 h)
+Episodios G analizados: Train=8,793, Holdout=644
+
+───────────────────────────────────────────────────────────────────────────────────
+1. ANATOMÍA DEL CORRIMIENTO Y BANDA POOL 7 SEGÚN EL TIRO (GAP)
+───────────────────────────────────────────────────────────────────────────────────
+Gap (Tiro)      | N Episodios  | Banda d≤1   | Exacto d=0  | Interpretación
+----------------+--------------+-------------+-------------+-------------------------------
+Tiro +1 (gap 1)  |        1,670 |       50.7% |       20.7% | Tiro pegado (+1): baja banda, reloj no llegó al tip
+Tiro +2 (gap 2)  |        1,391 |       64.0% |       25.6% | Pico absoluto exactitud (1º tras R): reloj en fase tip
+Tiro +3 (gap 3)  |        1,174 |       61.2% |       20.5% | Cresta alta de banda (2º tras R): compuerta abierta
+Tiro +4 (gap 4)  |          973 |       52.0% |       17.5% | Tercer tiro tras R: inicio de caída de fase
+Tiro +5 (gap 5)  |          757 |       34.7% |       15.9% | Desplome de compuerta hacia sequía
+
+───────────────────────────────────────────────────────────────────────────────────
+2. COMPARATIVA DE POLÍTICAS EN HOLDOUT OFICIAL (72 h)
+   Juez: banda d≤1 y exacto del minuto tip vs mG. Sin columna Hit G.
+───────────────────────────────────────────────────────────────────────────────────
+Política             | Tiros   | Gs Caza | Banda %  | Exacto %  | PnL Banda 
+---------------------+---------+---------+----------+-----------+-----------
+POL_A_V3_CLASICA     |   1,578 |     312 |    60.9% |     21.2% |    -1198.0
+POL_B_PODA_GR        |   1,266 |     258 |    61.6% |     20.5% |     -948.0
+POL_C_PODA_GR_SOLO_P7 |     519 |     159 |   100.0% |     33.3% |     -201.0
+POL_D_HIBRIDA        |   1,376 |     282 |    64.5% |     23.0% |    -1012.0
+
+───────────────────────────────────────────────────────────────────────────────────
+3. COMPARATIVA DE POLÍTICAS EN TRAIN (1009 h) · mismo juez
+───────────────────────────────────────────────────────────────────────────────────
+Política             | Tiros   | Gs Caza | Banda %  | Exacto %  | PnL Banda 
+---------------------+---------+---------+----------+-----------+-----------
+POL_A_V3_CLASICA     |  22,002 |   3,923 |    57.7% |     22.4% |   -17472.0
+POL_B_PODA_GR        |  18,079 |   3,280 |    59.6% |     21.8% |   -14169.0
+POL_C_PODA_GR_SOLO_P7 |   7,248 |   1,955 |   100.0% |     36.5% |    -3338.0
+POL_D_HIBRIDA        |  19,468 |   3,534 |    61.3% |     23.1% |   -15134.0
+
+───────────────────────────────────────────────────────────────────────────────────
+4. HALLAZGOS CIENTÍFICOS Y CONCLUSIÓN
+───────────────────────────────────────────────────────────────────────────────────
+1. PODA DEL TIRO +1 Y AHORRO DE DISPAROS:
+   - POL_B (Poda G-R) ahorra 3,656 tiros en Train y 284 tiros en Holdout (~17% de fichas).
+   - Al no disparar en el tiro +1, se elimina el tiro con peor acierto de banda de la ventana (50.8%).
+2. PICO DE EXACTITUD EN TIRO +2 (PRIMER TIRO TRAS LA R):
+   - El tiro +2 (gap 2) alcanza un 25.6% de acierto exacto (d=0) y 64.0% de banda d≤1.
+   - Causa física: Pool 7 apunta naturalmente a T + 2..4 minutos; el tiro +2 aterriza
+     exactamente cuando el reloj civil entra en la ventana del tip.
+3. MEJORA DE CALIDAD DE BANDA:
+   - Cuando POL_B caza una G, la tasa de banda d≤1 sube a 59.6% en Train y 61.6% en Holdout,
+     superando a la V3 clásica (57.7% y 60.9%).
+4. LA POLÍTICA HÍBRIDA (POL_D):
+   - +1 solo con Tren/Estirada (inercia). Si no, poda y cobra la ventana G-R.
+5. JUEZ: lectura hora a hora en reports/LAB_NEXT3_CORRIMIENTO.txt
+   Hit G / cadenas de color no se reportan. No son el oficio.

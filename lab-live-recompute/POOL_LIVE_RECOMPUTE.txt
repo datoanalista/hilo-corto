@@ -1,0 +1,38 @@
+POOL lab-live-recompute — Pool extra intra-hora (extracción live)
+================================================================
+fecha alta: 2026-08-31
+lab: hilo-corto/lab-live-recompute/
+
+CONTEXTO
+  Pool ADICIONAL: recomputa con luces parciales de extracción en vivo.
+  No toca INTER2 / P0–P5 / LC-01 cableados. Sombra / lab.
+
+PREGUNTA R1
+  Simulando minuto a minuto (prefix luces @ cada G),
+  ¿algún motor RC supera INTER2 fijo o LC-01 reloj?
+
+MOTORES (paso = predict next G tras prefix)
+  REF-INTER2-FIX   next chip boleto INTER2 pre-hora (baseline fijo)
+  REF-LC01         reloj T+p30 (Pool 7 canónico)
+  RC-01-TRIM       INTER2 chips futuros > T (recorte muertos)
+  RC-02-VENTANA    LG-43 ventana p30 δ2 sobre P0–P5
+  RC-03-MULTI24    LC-24 top3 ventana (J4 multi)
+  RC-04-MULTI93    LC-93 {c,c+1,c+2} reloj (J4 multi)
+  RC-05-ACUERDO    next_chip ≥2 pools coinciden
+
+JUECES
+  J1 single-tip banda d≤1 (livecero)
+  J4 multi-tip banda d≤1 (LC-24/93)
+
+CINTA
+  depurar-all-4G-detail.txt · chips P0–P5+INTER2 walk · holdout 72h
+
+VETO
+  No cablear dashboard sin OK · no reemplazar Pool 8
+
+── RONDA 2 (CERRADO) ──
+  48 estrategias: singles LC/híbrido/ventana + grid p25/p30/p35 × d2/3/4
+  Fuentes: detail 913h · merged data_3dias+extra 912h · extra-only 3h
+  GANADOR: RC-04-MULTI93 (p30 {c,c+1,c+2}) 59.8% paso holdout
+  OLOR: RC-M24-p35-d4 59.7% · refresh 30h 61.6%
+  CABLEADO 2026-08-31: Pool 10 LIVE-RC · liveRc.js · PENDIENTES_REVISADOS CABLE-03
